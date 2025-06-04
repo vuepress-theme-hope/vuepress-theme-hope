@@ -51,7 +51,7 @@ export default defineClientConfig({
 
     // 在客户端中访问 DOM
     onMounted(() => {
-      // 在挂在后 使用 DOM API
+      // 在挂载后使用 DOM API
       document.querySelector("#app");
     });
   },

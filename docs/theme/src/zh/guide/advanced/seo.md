@@ -43,7 +43,7 @@ tag:
 |        `og:image`        | `themeConfig.hostname` + `page.frontmatter.image` \|\| 页面的第一张图片\|\| 插件选项的 `fallbackImage` |
 |    `og:updated_time`     |                                         `page.git.updatedTime`                                         |
 |       `og:locale`        |                                              `page.lang`                                               |
-|  `og:locale:alternate`   |                                  `themeConfig.locales` 包含的其他语言                                  |
+|  `og:locale:alternate`   |                                   `siteData.locales` 包含的其他语言                                    |
 |      `twitter:card`      |                                `"summary_large_image"` (仅在找到图片时)                                |
 |   `twitter:image:alt`    |                                     `page.title` (仅在找到图片时)                                      |
 |     `article:author`     |                          `page.frontmatter.author` \|\| `themeConfig.author`                           |
@@ -53,15 +53,15 @@ tag:
 
 ### 默认的 JSON-LD 生成逻辑
 
-|     属性名      |                                 值                                 |
-| :-------------: | :----------------------------------------------------------------: |
-|   `@context`    |                       `"https://schema.org"`                       |
-|     `@type`     |                          `"NewsArticle"`                           |
-|   `headline`    |                            `page.title`                            |
-|     `image`     | 页面中的图片\|\| `themeConfig.hostname` + `page.frontmatter.image` |
-| `datePublished` |        `page.frontmatter.date` \|\| `page.git.createdTime`         |
-| `dateModified`  |                       `page.git.updatedTime`                       |
-|    `author`     |        `page.frontmatter.author` \|\| `themeConfig.author`         |
+|     属性名      |                                                 值                                                 |
+| :-------------: | :------------------------------------------------------------------------------------------------: |
+|   `@context`    |                                       `"https://schema.org"`                                       |
+|     `@type`     |                                          `"NewsArticle"`                                           |
+|   `headline`    |                                            `page.title`                                            |
+|     `image`     | 页面中的图片\|\| `themeConfig.hostname` + `page.frontmatter.image` \|\| 插件选项的 `fallbackImage` |
+| `datePublished` |                        `page.frontmatter.date` \|\| `page.git.createdTime`                         |
+| `dateModified`  |                                       `page.git.updatedTime`                                       |
+|    `author`     |                        `page.frontmatter.author` \|\| `themeConfig.author`                         |
 
 ## 直接添加 head 标签
 
@@ -113,10 +113,10 @@ function ogp(
 
 详细的参数结构详见 [SEO 插件配置][seo-config]。
 
-比如你在使用某个第三方主题，并按照主题要求为每篇文章在 front matter 中设置了 `banner`，那你可以传入这样的 `ogp`:
+比如你在使用某个第三方主题，并按照主题要求为每篇文章在 frontmatter 中设置了 `banner`，那你可以传入这样的 `ogp`:
 
 ```ts
-({
+seoPlugin({
   ogp: (ogp, page) => ({
     ...ogp,
     "og:image": page.frontmatter.banner || ogp["og:image"],

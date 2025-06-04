@@ -19,7 +19,7 @@ To make the plugin work better, you may need to check the [page config](../../co
 
 :::
 
-The plugin will make your site fully support [Open Content Protocol OGP](https://ogp.me/) and [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/) to enhance the SEO of the site.
+The plugin injects tags into the site `<head>` to make your site fully support [Open Content Protocol OGP](https://ogp.me/) and [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/) to enhance the SEO of the site.
 
 If you don't need this plugin, please set `plugins.seo` to `false` in theme options.
 
@@ -29,13 +29,9 @@ If you don't need this plugin, please set `plugins.seo` to `false` in theme opti
 
 The plugin works out of the box. Without any config, it will extract information from the page content as much as possible to complete the necessary tags required by OGP and JSON-LD.
 
-By default, the plugin will read the site config and page frontmatter to automatically generate tags as much as possible. Such as site name, page title, page type, writing date, last update date, and article tags are all automatically generated.
-
-The following are the `<meta>` tags and their values that will be injected into `<head>` by default:
+By default, the plugin will read the site config, theme config and page frontmatter to automatically generate as much as possible. Such as site name, page title, page type, writing date, last update date, and article tags are all automatically generated.
 
 ### Default OGP Generation
-
-The following are the `<meta>` tags and their value injected into `<head>` by default to satisfy OGP:
 
 |        Meta Name         |                                                      Value                                                       |
 | :----------------------: | :--------------------------------------------------------------------------------------------------------------: |
@@ -47,7 +43,7 @@ The following are the `<meta>` tags and their value injected into `<head>` by de
 |        `og:image`        | `themeConfig.hostname` + `page.frontmatter.image` \|\|first image in page \|\| `fallbackImage` in plugin options |
 |    `og:updated_time`     |                                              `page.git.updatedTime`                                              |
 |       `og:locale`        |                                                   `page.lang`                                                    |
-|  `og:locale:alternate`   |                                 Other languages including in `siteData.locales`                                  |
+|  `og:locale:alternate`   |                                  Other languages included in `siteData.locales`                                  |
 |      `twitter:card`      |                            `"summary_large_image"` (only available when image found)                             |
 |   `twitter:image:alt`    |                                  `page.title` (only available when image found)                                  |
 |     `article:author`     |                               `page.frontmatter.author` \|\| `themeConfig.author`                                |
@@ -57,15 +53,15 @@ The following are the `<meta>` tags and their value injected into `<head>` by de
 
 ### Default JSON-LD Generation
 
-|  Property Name  |                                                   Value                                                   |
-| :-------------: | :-------------------------------------------------------------------------------------------------------: |
-|   `@context`    |                                          `"https://schema.org"`                                           |
-|     `@type`     |                                              `"NewsArticle"`                                              |
-|   `headline`    |                                               `page.title`                                                |
-|     `image`     | image in page \|\| `themeConfig.hostname` + `page.frontmatter.image` \|\| `siteFavIcon` in plugin options |
-| `datePublished` |                            `page.frontmatter.date` \|\| `page.git.createdTime`                            |
-| `dateModified`  |                                          `page.git.updatedTime`                                           |
-|    `author`     |                            `page.frontmatter.author` \|\| `themeConfig.author`                            |
+|  Property Name  |                                                    Value                                                     |
+| :-------------: | :----------------------------------------------------------------------------------------------------------: |
+|   `@context`    |                                            `"https://schema.org"`                                            |
+|     `@type`     |                                               `"NewsArticle"`                                                |
+|   `headline`    |                                                 `page.title`                                                 |
+|     `image`     | images in page \|\| `themeConfig.hostname` + `page.frontmatter.image` \|\| `fallbackImage` in plugin options |
+| `datePublished` |                             `page.frontmatter.date` \|\| `page.git.createdTime`                              |
+| `dateModified`  |                                            `page.git.updatedTime`                                            |
+|    `author`     |                             `page.frontmatter.author` \|\| `themeConfig.author`                              |
 
 ## Setting Tags Directly
 

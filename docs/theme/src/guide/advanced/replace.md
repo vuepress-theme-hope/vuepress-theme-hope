@@ -1,5 +1,5 @@
 ---
-title: Replace Components
+title: Component Replacement
 icon: boxes-packing
 order: -2
 category:
@@ -9,13 +9,13 @@ tag:
   - Customize
 ---
 
-When setting `{ custom: true }` in [Behavior options](../../config/theme/behavior.md), the theme will import components through `@theme-hope` alias, so you can use it to replace any component of the theme.
+Replace theme components using alias when `{ custom: true }` is set in [behavior options](../../config/theme/behavior.md).
 
 <!-- more -->
 
-## How to Replace via Alias
+## Alias Configuration
 
-You need to replace the component alias used in the theme with `alias` option in your own VuePress config file.
+Configure component replacement in your VuePress config:
 
 ```ts twoslash title=".vuepress/config.ts"
 import { getDirname, path } from "vuepress/utils";
@@ -32,7 +32,7 @@ export default {
   ),
 
   alias: {
-    // Here you can redirect aliases to your own components
+    // Replace theme components with custom implementations
     // For example, here we change the theme's home page component to HomePage.vue under user .vuepress/components
     "@theme-hope/components/home/HomePage": path.resolve(
       __dirname,
@@ -42,7 +42,7 @@ export default {
 };
 ```
 
-Some components provide slots, in this case, you can directly import the original component when overriding the component, and pass in the content you need through the slot.
+For components with slots, you can import them and customize content through slots.
 
 ## Theme Alias
 
@@ -90,7 +90,7 @@ Some components provide slots, in this case, you can directly import the origina
 
 - `@theme-hope/components/base/TOC`: table of contents
 
-  Slots: `toc` `tocBefore`, `tocAfter`
+  Slots: `toc`, `tocBefore`, `tocAfter`
 
 ### Home Page Components
 
@@ -250,7 +250,7 @@ Some components provide slots, in this case, you can directly import the origina
 
   - `heroInfo`, `heroLogo`, `heroBg` slots are piped to `BlogHero` component.
   - `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt` slots are piped to `ArticleList` component.
-  - `bloggerInfo` slot is piped to BloggerInfo` component.
+  - `bloggerInfo` slot is piped to `BloggerInfo` component.
   - `infoBefore`, `infoAfter` slots are piped to `InfoPanel` component.
   - `contentBefore`, `contentAfter` slots are piped to `MarkdownContent` component.
 
@@ -269,7 +269,7 @@ Some components provide slots, in this case, you can directly import the origina
   Slots: `default`, `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt`, `articleBefore`, `articleAfter`, `bloggerInfo`, `infoBefore`, `infoAfter`
 
   - `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt` slots are piped to `ArticleList` component.
-  - `bloggerInfo` slot is piped to ``BloggerInfo` component.
+  - `bloggerInfo` slot is piped to `BloggerInfo` component.
   - `infoBefore`, `infoAfter` slots are piped to `InfoPanel` component.
 
 - `@theme-hope/components/blog/InfoList`: blog info list
@@ -278,7 +278,7 @@ Some components provide slots, in this case, you can directly import the origina
 
 - `@theme-hope/components/blog/InfoPanel`: blog info panel
 
-  - `bloggerInfo` slot is piped to ``BloggerInfo` component.
+  - `bloggerInfo` slot is piped to `BloggerInfo` component.
 
 - `@theme-hope/components/blog/Pagination`: pagination
 
@@ -300,7 +300,7 @@ Some components provide slots, in this case, you can directly import the origina
 
   Slots: `articleBefore`, `articleAfter`, `bloggerInfo`, `infoBefore`, `infoAfter`
 
-  - `bloggerInfo` slot is piped to ``BloggerInfo` component.
+  - `bloggerInfo` slot is piped to `BloggerInfo` component.
   - `infoBefore`, `infoAfter` slots are piped to `InfoPanel` component.
 
 - `@theme-hope/components/blog/TypePage`: type page
@@ -308,7 +308,7 @@ Some components provide slots, in this case, you can directly import the origina
   Slots: `default`, `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt`, `articleBefore`, `articleAfter`, `bloggerInfo`, `infoBefore`, `infoAfter`
 
   - `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt` slots are piped to `ArticleList` component.
-  - `bloggerInfo` slot is piped to ``BloggerInfo` component.
+  - `bloggerInfo` slot is piped to `BloggerInfo` component.
   - `infoBefore`, `infoAfter` slots are piped to `InfoPanel` component.
 
 - `@theme-hope/components/blog/icons`: blog icons

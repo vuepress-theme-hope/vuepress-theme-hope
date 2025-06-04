@@ -1,5 +1,5 @@
 ---
-title: Theme Extending
+title: Theme Extension
 icon: clone
 order: -1
 category:
@@ -9,17 +9,25 @@ tag:
   - Customize
 ---
 
-`vuepress-theme-hope` supports extending just like `@vuepress/theme-default`.
+Extend `vuepress-theme-hope` to create custom themes.
 
-You can create your own theme based on `vuepress-theme-hope` and use it locally or publish it according to your needs.
+<!-- more -->
 
-## How to Extend Theme Hope
+## Extension Setup
 
-You need to create an entry file for your theme and import `hopeTheme` from `vuepress-theme-hope`.
+Create a theme entry file importing `hopeTheme`:
 
-In your entry file, set `extends: hopeTheme(options)` to extend the `vuepress-theme-hope` theme.
+```ts
+import { hopeTheme } from "vuepress-theme-hope";
 
-The aliases of the same name (`alias`) and layouts (`layouts`) of your own newly created theme has higher priority over the extended theme `vuepress-theme-hope`, which means that you can override `vuepress-theme-hope` components via `alias` option in theme api, and you can add or override layouts via `layouts` in [client config file](../../cookbook/vuepress/config.md#client-config-file).
+export default (options: ThemeOptions) => ({
+  name: "your-custom-theme",
+  extends: hopeTheme(options),
+  // customizations
+});
+```
+
+Your theme's `alias` (in theme options) and `layouts` (in client config file) override the parent theme's configurations.
 
 ::: code-tabs#language
 
@@ -74,7 +82,7 @@ export default (options) => ({
 
 :::
 
-Also, you can add or override layout provided by `vuepress-theme-hope` via `layouts` with slots in your theme client config file.
+You can also override or add layouts provided by `vuepress-theme-hope` via `layouts` in your theme client config file.
 
 <!-- @include: ../customize/slots.md#layout -->
 

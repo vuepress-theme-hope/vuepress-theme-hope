@@ -9,9 +9,9 @@ tag:
   - Sitemap
 ---
 
-`vuepress-theme-hope` provide Sitemap generation with [`@vuepress/plugin-sitemap`][sitemap].
+`vuepress-theme-hope` provides Sitemap generation with built-in [`@vuepress/plugin-sitemap`][sitemap].
 
-The plugin will automatically generate the last update time of the page based on the Git timestamp of the page, and will also declare the alternative version link of the page in other languages according to the locales' config.
+The plugin automatically generates Sitemap for your website. It automatically generates the last update time of the page based on the Git timestamp of the page, and also declares the alternative version addresses of the page in other languages according to the site's multilingual configuration.
 
 If you don't need this plugin, please set `plugins.sitemap` to `false` in theme options.
 
@@ -29,7 +29,7 @@ To add other pages to the Sitemap outside the VuePress project page, please turn
 
 If you don't want certain pages to appear in the sitemap, you can turn them into an array and pass them to `excludeUrls`, or you can pass in a filter function though `filter` options. You can also set `sitemap.exclude` to `true` in page frontmatter.
 
-You can also control the output link through the `sitemapFilename`. The default output directory is `sitemap.xml`.
+You can also control the output address through the `sitemapFilename` option. The default is `sitemap.xml` in the output directory.
 
 ## Change Frequency
 
@@ -47,11 +47,19 @@ The legal frequencies are:
 
 ::: info Sitemap Intro
 
-Sitemaps may be addressed to users or to software. Many sites have user-visible sitemaps which present a systematic view, typically hierarchical, of the site. These are intended to help visitors find specific pages, and can also be used by crawlers. Alphabetically organized site maps, sometimes called site indexes, are a different approach.
+A sitemap provides SEO enhancements:
 
-For use by search engines and other crawlers, there is a structured format, the XML Sitemap, which lists the pages in a site, their relative importance, and how often they are updated. This is pointed to from the robots.txt file and is typically called sitemap.xml.
+- Provides search engine crawlers with links to browse the entire website;
+- Provides search engine crawlers with some links pointing to dynamic pages or pages that are difficult to reach by other methods;
+- If a visitor tries to access a URL that does not exist in the domain where the website is located, the visitor will be redirected to the "file not found" error page, and the sitemap can serve as the "quasi" content of that page.
 
-Google introduced the Sitemaps protocol, so web developers can publish lists of links from across their sites.
+Sitemaps enhance the effectiveness of search engine optimization by making all pages discoverable.
+
+Most search engines only track a limited number of links within a page, so when a website is very large, sitemaps become essential for making all content on the website accessible to search engines and visitors.
+
+Sitemaps are a protocol for site administrators to announce to search engine crawlers the pages of the site that can be crawled. The content of the sitemap file must follow the XML format definition. Each URL can contain the update cycle and time, and the priority of the URL in the entire site. This allows search engines to crawl website content more effectively.
+
+Google introduced Google Sitemaps so that web developers can publish lists of links from across their sites. Sitemap files can be used to guide web crawlers on how to find such pages.
 
 :::
 

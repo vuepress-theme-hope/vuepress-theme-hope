@@ -10,28 +10,20 @@ tag:
   - Advanced
 ---
 
-Here are some advanced uses of `vuepress-theme-hope`.
+Advanced features for `vuepress-theme-hope` customization.
 
-To properly use them the way you want, you should understand of how VuePress works, know about VuePress Plugin API, or related concepts.
+Requires understanding of VuePress internals, Plugin API, and related concepts.
 
-If you are new to frontend, you can give up these features at your discretion.
+::: warning Prerequisites
 
-::: warning
+These features require frontend development knowledge. Basic VuePress concepts are explained where necessary, but you should research additional information independently.
 
-To be as friendly as possible to newcomers, we added concept introductions that are important in the corresponding chapters of the document as much as possible.
+We provide guidance on customization approaches and learning paths, but not:
 
-If you are still confused what's it or what's it for after reading, we recommend you to learn through the internet or stop using those features.
-
-We are happy to answer your questions about how to customize related content. Also, if you do want to implement XXX, but don't know how, we are happy to give you advice on what you should learn to implement them.
-
-But please don't ask such questions:
-
-- What is XXX?
-- What does XXX do, why do we need it?
-- Here is something I wrote, it's throwing errors/ not working as I am expecting, how to fix it?
-- ...
-
-We do not want to "describe all the concepts involved and their usage to you" and "teach you how to implement the features you want" in telegram group or discussion panel.
+- Concept definitions
+- Feature explanations
+- Debugging assistance
+- Step-by-step tutorials
 
 :::
 

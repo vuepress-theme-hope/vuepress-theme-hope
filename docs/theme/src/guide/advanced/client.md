@@ -1,5 +1,5 @@
 ---
-title: Client Config file
+title: Client Config
 icon: gears
 order: -3
 category:
@@ -9,13 +9,13 @@ tag:
   - Client Config
 ---
 
-You can create `.vuepress/client.ts` or `.vuepress/client.js` as a [client config file](../../cookbook/vuepress/config.md#client-config-file) to customize your site.
+Configure site behavior using `.vuepress/client.ts` or `.vuepress/client.js` as a [client config file](../../cookbook/vuepress/config.md#client-config-file).
 
 <!-- more -->
 
-::: info
+::: info Reference
 
-To learn more about client config file, see [Advanced > Cookbook > Usage of Client Config](https://vuejs.press/advanced/cookbook/usage-of-client-config.html)
+See [VuePress Client Config Usage](https://vuejs.press/advanced/cookbook/usage-of-client-config.html) for details.
 
 :::
 
@@ -23,6 +23,7 @@ To learn more about client config file, see [Advanced > Cookbook > Usage of Clie
 
 ```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
+import { onMounted } from "vue";
 import ExampleGlobalComponent from "./components/ExampleGlobalComponent.vue";
 import ExampleRootComponent from "./components/ExampleRootComponent.vue";
 import { setupExampleCompositionAPI } from "./composables/exampleCompositionAPI";
@@ -49,7 +50,7 @@ export default defineClientConfig({
     // Register the global Composition API
     setupExampleCompositionAPI();
 
-    // access dom in client
+    // access DOM in client
     onMounted(() => {
       // use DOM API after mounted
       document.querySelector("#app");
