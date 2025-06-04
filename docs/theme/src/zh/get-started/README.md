@@ -13,7 +13,7 @@ category:
 
 ```component VPBanner
 title: 逐步教程
-content: 本教程针对那些不熟悉前端、Vue 或 VuePress 的小白，如果你已经有相关的经验，请从<i>主题介绍</i>开始。
+content: 本教程针对不熟悉前端、Vue 或 VuePress 的新手。如果你已经有相关经验，请从<i>主题介绍</i>开始。
 background: var(--bg-10)
 color: var(--banner-text)
 actions:

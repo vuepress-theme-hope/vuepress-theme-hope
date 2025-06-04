@@ -10,13 +10,13 @@ tag:
   - Project Content
 ---
 
-This tutorial guides you on how to generate page in a VuePress project.
+This tutorial guides you on how to generate pages in a VuePress project.
 
 <!-- more -->
 
 ## Generating Pages
 
-VuePress is Markdown-Centered. Each Markdown file inside your project is a standalone page.
+VuePress is Markdown-centered. Each Markdown file inside your project is a standalone page.
 
 By default, the route path of a page is determined by the relative path of your Markdown file.
 
@@ -41,9 +41,9 @@ The route path of your Markdown files are:
 | `/demo/README.md` | `/demo/`          |
 | `/demo/page.md`   | `/demo/page.html` |
 
-::: tip README\.md
+::: tip README.md
 
-`README.md` is a special case. In Markdown, by convention, it will be used as the home page of the folder where it is located. So when it is rendered as a web page, its corresponding path is the home page path `index.html` in the web page.
+`README.md` is a special case. In Markdown, by convention, it serves as the homepage of the folder where it is located. So when it is rendered as a web page, its corresponding path is the homepage path `index.html`.
 
 This should be easy to understand.
 
@@ -59,7 +59,7 @@ You can try editing the Markdown file yourself to modify the content of the temp
 
 If you don't know Markdown yet, check out the [Markdown Tutorial](../cookbook/markdown/README.md).
 
-In about fifteen minutes, you can learn how to write Markdown, remember to come back after reading it!
+In about fifteen minutes, you can learn how to write Markdown. Remember to come back after reading it!
 
 :::
 
@@ -89,4 +89,4 @@ description: the description of the page
 ...
 ```
 
-You may noticed that fields in demo Frontmatter are very similar to [VuePress config file](../cookbook/vuepress/config.md#config-file). You can override the `lang`, `title`, `description` and other properties of the current page through Frontmatter. Therefore, you can think of Frontmatter as a page-level scope config, which usually has the highest priority, and the config only takes effect on the current page.
+You may have noticed that fields in demo Frontmatter are very similar to the [VuePress config file](../cookbook/vuepress/config.md#config-file). You can override the `lang`, `title`, `description` and other properties of the current page through Frontmatter. Therefore, you can think of Frontmatter as page-level scope config, which usually has the highest priority, and the config only takes effect on the current page.

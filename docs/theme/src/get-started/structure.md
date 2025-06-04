@@ -10,13 +10,13 @@ tag:
   - Project Structure
 ---
 
-This tutorial will introduce VuePress project structure.
+This tutorial introduces VuePress project structure.
 
 <!-- more -->
 
-## VuePress project structure
+## VuePress Project Structure
 
-VuePress only controls the files in the VuePress project folder, that is, the parameters in the previous chapter. Other files in project are not used by VuePress.
+VuePress only controls the files in the VuePress project folder, that is, the parameters in the previous chapter. Other files in the project are not used by VuePress.
 
 ::: note
 
@@ -30,7 +30,7 @@ A basic project structure is as follows:
 .
 ├── .github (optional) → GitHub config file storage path
 │     └── workflow → GitHub workflow configuration
-│          └── docs-deploy.yml → Workflow for automatic deployment of documents
+│          └── docs-deploy.yml → Workflow for automatic deployment of documentation
 │
 ├── src → docs folder
 │    │
@@ -42,7 +42,7 @@ A basic project structure is as follows:
 │    │    │
 │    │    ├── styles (optional) → style-related files
 │    │    │
-│    │    ├── config.{js,ts} (optional) → the entry file of the configuration file
+│    │    ├── config.{js,ts} (optional) → the entry file of the configuration
 │    │    │
 │    │    └── client.{js,ts} (optional) → client application file
 │    │
@@ -50,5 +50,5 @@ A basic project structure is as follows:
 │    │
 │    └── README.md → Project Homepage
 │
-└── package.json → Nodejs configuration file
+└── package.json → Node.js configuration file
 ```

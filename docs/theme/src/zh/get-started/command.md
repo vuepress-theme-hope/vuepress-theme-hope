@@ -16,8 +16,8 @@ tag:
 
 ## 常用命令
 
-- `vuepress dev <dir>` 会启动一个开发服务器，以便让你在本地开发你的 VuePress 站点。
-- `vuepress build <dir>` 会将你的 VuePress 站点构建成静态文件，以便你进行后续部署。
+- `vuepress dev <dir>` 启动开发服务器，用于本地开发你的 VuePress 站点。
+- `vuepress build <dir>` 将你的 VuePress 站点构建成静态文件，以便进行部署。
 
 :::: info 使用模板
 
@@ -61,13 +61,13 @@ tag:
 
 ::: tip 终止开发服务器
 
-如果你需要终止开发服务器，请点击终端，并连续两次按下 `Ctrl + C`。
+要终止开发服务器，请点击终端，并连续两次按下 `Ctrl + C`。
 
 :::
 
 ## 升级版本
 
-如果你需要升级主题和 VuePress 版本，请执行以下命令:
+要升级主题和 VuePress 版本，请执行以下命令:
 
 ::: code-tabs#shell
 

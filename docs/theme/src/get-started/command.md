@@ -16,8 +16,8 @@ This tutorial introduces VuePress project commands.
 
 ## Common Commands
 
-- `vuepress dev <dir>` will start a development server to allow you to develop your VuePress site locally.
-- `vuepress build <dir>` will build your VuePress site into static files for your subsequent deployment.
+- `vuepress dev <dir>` starts a development server for local development of your VuePress site.
+- `vuepress build <dir>` builds your VuePress site into static files for deployment.
 
 :::: info Using Template
 
@@ -59,15 +59,15 @@ This means you can use:
 
 ::::
 
-::: info Terminate DevServer
+::: info Terminating Development Server
 
-To terminate the development server, please click on the terminal and press `Ctrl + C` twice.
+To terminate the development server, click on the terminal and press `Ctrl + C` twice.
 
 :::
 
 ## Update Version
 
-If you need to upgrade your theme and VuePress version, execute the following command:
+To upgrade your theme and VuePress version, execute the following command:
 
 ::: code-tabs#shell
 

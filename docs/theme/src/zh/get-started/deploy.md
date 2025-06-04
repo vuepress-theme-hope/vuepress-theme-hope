@@ -16,7 +16,7 @@ tag:
 
 ## 构建项目
 
-当你在本地完成项目的初步开发后，你就可以使用 `pnpm docs:build` 命令构建网站。
+当你在本地完成项目的初步开发后，你可以使用 `pnpm docs:build` 命令构建网站。
 
 如果你在使用模板，网站内容将会输出到 VuePress 项目的 `.vuepress/dist` 文件夹下。这些文件就是 VuePress 的最终输出结果。
 

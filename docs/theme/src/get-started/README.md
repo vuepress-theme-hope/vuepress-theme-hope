@@ -13,7 +13,7 @@ category:
 
 ```component VPBanner
 title: Step-by-step tutorial
-content: This section is for newcomers which is not familiar with Frontend, Vue or VuePress.<br> If you already have experience with them, get started with <i>theme intro</i>.
+content: This section is for newcomers who are not familiar with Frontend, Vue or VuePress.<br> If you already have experience with them, get started with <i>theme intro</i>.
 background: var(--bg-10)
 color: var(--banner-text)
 actions:
@@ -25,13 +25,13 @@ actions:
 
 1. [Runtime Setup](env.md)
 
-1. [Create project](create.md)
+1. [Create Project](create.md)
 
-1. [Project command](command.md)
+1. [Project Command](command.md)
 
 1. [Project Content](content.md)
 
-1. [Project configuration](config.md)
+1. [Project Configuration](config.md)
 
 1. [Project Structure](structure.md)
 
