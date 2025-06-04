@@ -88,7 +88,7 @@ defineVuePlaygroundConfig({
 
 ## 案例
 
-:::: md-demo 简单的 Vue 交互演示
+:::: preview 简单的 Vue 交互演示
 
 ::: vue-playground Vue 交互演示 1
 
@@ -111,7 +111,7 @@ const msg = ref("你好交互演示!");
 
 ::::
 
-:::: md-demo 自定义导入与映射的 Vue 交互演示
+:::: preview 自定义导入与映射的 Vue 交互演示
 
 ::: vue-playground Vue 交互演示 2
 

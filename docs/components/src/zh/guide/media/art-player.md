@@ -40,13 +40,13 @@ npm i -D artplayer
 
 <!-- #region demo -->
 
-::: md-demo 一个视频播放器
+::: preview 一个视频播放器
 
 <ArtPlayer src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4" />
 
 :::
 
-::: md-demo 一个包含了封面的播放器
+::: preview 一个包含了封面的播放器
 
 <ArtPlayer
   src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4"
@@ -55,7 +55,7 @@ npm i -D artplayer
 
 :::
 
-::: md-demo 一个包含自定义设置的播放器
+::: preview 一个包含自定义设置的播放器
 
 <ArtPlayer
   src="https://vp-demo.u2sb.com/video/caminandes_03_llamigos_720p.mp4"
@@ -256,19 +256,19 @@ npm i -D dashjs hls.js mpegts.js
 
 :::
 
-::: md-demo HLS
+::: preview HLS
 
 <ArtPlayer src="https://mse-demo.u2sb.com/dash/master.m3u8" />
 
 :::
 
-::: md-demo FLV
+::: preview FLV
 
 <ArtPlayer src="https://mse-demo.u2sb.com/caminandes_03_llamigos_720p.flv" />
 
 :::
 
-::: md-demo DASH
+::: preview DASH
 
 <ArtPlayer src="https://mse-demo.u2sb.com/dash/caminandes_03_llamigos_720p.mpd" />
 

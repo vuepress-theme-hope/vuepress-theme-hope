@@ -84,7 +84,7 @@ defineSandpackConfig({
 
 ## Demo
 
-:::: md-demo Vue Demo
+:::: preview Vue Demo
 
 ::: sandpack#vue Vue Demo
 
@@ -107,7 +107,7 @@ const msg = ref("Hello Playground!");
 
 ::::
 
-:::: md-demo Vue Demo with customized settings
+:::: preview Vue Demo with customized settings
 
 ::: sandpack#vue Vue Demo with customized settings
 
@@ -169,7 +169,7 @@ const { charging, level } = useBattery();
 
 ::::
 
-:::: md-demo Vue Demo with file options
+:::: preview Vue Demo with file options
 
 ::: sandpack#vue Vue Demo with file options
 
@@ -223,7 +223,7 @@ const { charging, level } = useBattery();
 
 ::::
 
-:::: md-demo React demo
+:::: preview React demo
 
 ::: sandpack#react React demo [rtl theme=dark]
 

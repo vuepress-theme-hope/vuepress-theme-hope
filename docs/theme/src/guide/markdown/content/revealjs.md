@@ -144,7 +144,7 @@ Since Markdown contents between `@slidestart` and `@slideend` are handled by Rev
 
 ## Demo
 
-::: md-demo Simple presentation demo
+::: preview Simple presentation demo
 
 @slidestart
 

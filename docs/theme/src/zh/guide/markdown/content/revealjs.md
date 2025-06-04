@@ -144,7 +144,7 @@ const add = (a, b) => {
 
 ## 演示
 
-::: md-demo 简单幻灯片演示
+::: preview 简单幻灯片演示
 
 @slidestart
 

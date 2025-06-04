@@ -75,7 +75,7 @@ document.appendChild(linkElem);
 
 <!-- #region demo -->
 
-:::: md-demo 普通演示
+:::: preview 普通演示
 
 ::: normal-demo 演示
 

@@ -106,7 +106,7 @@ UnoCSS 预设默认使用[官方 playground](https://unocss.dev/play)，可通�
 
 ## 案例
 
-:::: md-demo TS
+:::: preview TS
 
 ::: playground#ts TS 案例 1
 
@@ -146,7 +146,7 @@ speak(msg);
 
 ::::
 
-:::: md-demo Vue
+:::: preview Vue
 
 ::: playground#vue 使用自定义导入的 Vue 案例
 
@@ -218,7 +218,7 @@ const msg = ref("Hello Playground!");
 
 ::::
 
-:::: md-demo UnoCSS
+:::: preview UnoCSS
 
 ::: playground#unocss UnoCSS 案例
 

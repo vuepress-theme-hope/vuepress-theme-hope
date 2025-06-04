@@ -28,7 +28,7 @@ export default hopeTheme({
 
 Use `!! !!` to mark a content as spoiler.
 
-::: md-demo Demo
+::: preview Demo
 
 VuePress Theme Hope is !!powerful!!.
 

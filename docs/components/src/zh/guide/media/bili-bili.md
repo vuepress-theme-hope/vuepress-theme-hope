@@ -10,13 +10,13 @@ title: BiliBili
 
 <!-- #region demo -->
 
-::: md-demo 一个 B 站视频
+::: preview 一个 B 站视频
 
 <BiliBili bvid="BV1kt411o7C3" />
 
 :::
 
-::: md-demo 一个自定义空降地址的 B 站视频
+::: preview 一个自定义空降地址的 B 站视频
 
 <BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" page="2" />
 

@@ -10,7 +10,7 @@ Banner 组件，用于展示 banner。
 
 <!-- #region demo -->
 
-::: md-demo 基础横幅
+::: preview 基础横幅
 
 <VPBanner
   title="Mr.Hope"

@@ -1,6 +1,5 @@
 import {
   getFullLocaleConfig,
-  getRootLang,
   isPlainObject,
   keys,
   startsWith,
@@ -102,6 +101,8 @@ export const getSearchPlugin = (
       return null;
     }
 
+    const rootLang = app.siteData.locales["/"].lang ?? app.siteData.lang;
+
     return slimsearchPlugin({
       indexContent: true,
       // Add supports for category and tags
@@ -142,8 +143,7 @@ export const getSearchPlugin = (
                       fieldName === "id" ? [text] : cut(text, true),
                   },
                 }
-              : // eslint-disable-next-line @typescript-eslint/no-deprecated
-                getRootLang(app).startsWith("zh")
+              : rootLang.startsWith("zh")
                 ? {
                     "/": {
                       tokenize: (text, fieldName) =>

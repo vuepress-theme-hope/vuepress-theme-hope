@@ -84,7 +84,7 @@ defineSandpackConfig({
 
 ## 示例
 
-:::: md-demo Vue 示例
+:::: preview Vue 示例
 
 ::: sandpack#vue Vue 示例
 
@@ -107,7 +107,7 @@ const msg = ref("Hello Playground!");
 
 ::::
 
-:::: md-demo 带自定义设置的 Vue 示例
+:::: preview 带自定义设置的 Vue 示例
 
 ::: sandpack#vue 带自定义设置的 Vue 示例
 
@@ -169,7 +169,7 @@ const { charging, level } = useBattery();
 
 ::::
 
-:::: md-demo 带文件选项的 Vue 示例
+:::: preview 带文件选项的 Vue 示例
 
 ::: sandpack#vue 带文件选项的 Vue 示例
 
@@ -223,7 +223,7 @@ const { charging, level } = useBattery();
 
 ::::
 
-:::: md-demo React 示例
+:::: preview React 示例
 
 ::: sandpack#react React 示例 [rtl theme=dark]
 

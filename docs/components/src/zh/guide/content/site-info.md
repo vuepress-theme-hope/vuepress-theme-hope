@@ -10,13 +10,13 @@ title: SiteInfo
 
 <!-- #region demo -->
 
-::: md-demo 基础站点信息
+::: preview 基础站点信息
 
 <SiteInfo name="Mr.Hope's Blog" url="https://mister-hope.com" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
 
 :::
 
-::: md-demo 有更多属性的站点信息
+::: preview 有更多属性的站点信息
 
 <SiteInfo
   name="Mr.Hope's Blog"

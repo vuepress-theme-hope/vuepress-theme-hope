@@ -33,7 +33,7 @@ Only the first code fence after `@tab` marker is rendered inside code tabs, othe
 
 ## Demo
 
-:::: md-demo
+:::: preview
 
 Install VuePress:
 

@@ -64,7 +64,7 @@ export default hopeTheme({
 
 ### Badge
 
-::: md-demo Badge types
+::: preview Badge types
 
 - <Badge text="tip" type="tip" vertical="middle" />
 - <Badge text="warning" type="warning" vertical="middle" />

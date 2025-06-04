@@ -10,7 +10,7 @@ Banner component, can be use to display banner.
 
 <!-- #region demo -->
 
-::: md-demo Basic Banner
+::: preview Basic Banner
 
 <VPBanner
   title="Mr.Hope"

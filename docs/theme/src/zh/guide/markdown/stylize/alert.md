@@ -26,7 +26,7 @@ export default hopeTheme({
 
 <!-- markdownlint-disable MD028 -->
 
-::: md-demo 警告案例
+::: preview 警告案例
 
 > [!important]
 > 重要文字

@@ -116,7 +116,7 @@ defineMermaidConfig({
 
 ## Demo
 
-::: md-demo Flowchart
+::: preview Flowchart
 
 ```mermaid
 ---
@@ -140,7 +140,7 @@ flowchart TB
 
 :::
 
-::: md-demo Sequence Diagram
+::: preview Sequence Diagram
 
 ```sequence Greetings
 Alice ->> Bob: Hello Bob, how are you?
@@ -155,7 +155,7 @@ Alice->John: Yes... John, how are you?
 
 :::
 
-::: md-demo Class Diagram
+::: preview Class Diagram
 
 ```class Animal Example
 note "From Duck till Zebra"
@@ -184,7 +184,7 @@ class Zebra{
 
 :::
 
-::: md-demo State Diagram
+::: preview State Diagram
 
 ```state Check if n is negative
 
@@ -197,7 +197,7 @@ if_state --> True : if n >= 0
 
 :::
 
-::: md-demo Entity Relationship Diagrams
+::: preview Entity Relationship Diagrams
 
 ```er Er Example
 CAR ||--o{ NAMED-DRIVER : allows
@@ -216,7 +216,7 @@ PERSON {
 
 :::
 
-::: md-demo User Journey Diagram
+::: preview User Journey Diagram
 
 ```journey
 title My working day
@@ -231,7 +231,7 @@ section Go home
 
 :::
 
-::: md-demo Gantt Diagrams
+::: preview Gantt Diagrams
 
 ```gantt
 dateFormat  YYYY-MM-DD
@@ -266,7 +266,7 @@ Add another diagram to demo page    :48h
 
 :::
 
-::: md-demo Pie Chart Diagrams
+::: preview Pie Chart Diagrams
 
 ```pie
 title What Voldemort doesn't have?
@@ -277,7 +277,7 @@ title What Voldemort doesn't have?
 
 :::
 
-::: md-demo Git Graph Diagrams
+::: preview Git Graph Diagrams
 
 ```git-graph
 commit
@@ -325,7 +325,7 @@ merge release
 
 :::
 
-::: md-demo C4C Diagrams
+::: preview C4C Diagrams
 
 ```c4c
 title System Context diagram for Internet Banking System
@@ -363,7 +363,7 @@ Rel(SystemC, customerA, "Sends e-mails to")
 
 :::
 
-::: md-demo Mindmap
+::: preview Mindmap
 
 ```mindmap
 root((VuePress))
@@ -386,7 +386,7 @@ root((VuePress))
 
 :::
 
-::: md-demo Timeline
+::: preview Timeline
 
 ```timeline
 title Timeline of Industrial Revolution
@@ -401,7 +401,7 @@ section 21st century
 
 :::
 
-::: md-demo Sankey
+::: preview Sankey
 
 ```sankey
 Agricultural 'waste',Bio-conversion,124.729
@@ -476,7 +476,7 @@ Wind,Electricity grid,289.366
 
 :::
 
-::: md-demo Requirement
+::: preview Requirement
 
 ```requirement
 requirement test_req {
@@ -495,7 +495,7 @@ test_entity - satisfies -> test_req
 
 :::
 
-::: md-demo Quadrant Chart
+::: preview Quadrant Chart
 
 ```quadrant
 title Reach and engagement of campaigns
@@ -515,7 +515,7 @@ Campaign F: [0.35, 0.78]
 
 :::
 
-::: md-demo XY Chart
+::: preview XY Chart
 
 ```xy
 title "Sales Revenue"
@@ -527,7 +527,7 @@ line [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
 
 :::
 
-::: md-demo Block Chart
+::: preview Block Chart
 
 ```block
 columns 3
@@ -543,7 +543,7 @@ class Backend,Database back
 
 :::
 
-::: md-demo Packet Chart
+::: preview Packet Chart
 
 ```packet
 title UDP Packet
@@ -556,7 +556,7 @@ title UDP Packet
 
 :::
 
-::: md-demo Radar Chart
+::: preview Radar Chart
 
 ```radar
 ---
@@ -581,7 +581,7 @@ curve c3{3,3,3,3,3}
 
 :::
 
-::: md-demo A Complex Example
+::: preview A Complex Example
 
 ```mermaid
 graph TB

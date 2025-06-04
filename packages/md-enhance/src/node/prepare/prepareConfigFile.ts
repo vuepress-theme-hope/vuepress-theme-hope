@@ -7,6 +7,7 @@ export const prepareConfigFile = async (
   app: App,
   options: MarkdownEnhancePluginOptions,
   status: Record<string, boolean>,
+  legacy = false,
 ): Promise<string> => {
   const imports = new Set<string>();
   const enhances = new Set<string>();
@@ -20,9 +21,12 @@ export const prepareConfigFile = async (
     imports.add(
       `import CodeDemo from "${CLIENT_FOLDER}components/CodeDemo.js";`,
     );
-    imports.add(`import MdDemo from "${CLIENT_FOLDER}components/MdDemo.js";`);
     enhances.add(`app.component("CodeDemo", CodeDemo);`);
-    enhances.add(`app.component("MdDemo", MdDemo);`);
+
+    if (legacy) {
+      imports.add(`import MdDemo from "${CLIENT_FOLDER}components/MdDemo.js";`);
+      enhances.add(`app.component("MdDemo", MdDemo);`);
+    }
   }
 
   if (status.echarts) {

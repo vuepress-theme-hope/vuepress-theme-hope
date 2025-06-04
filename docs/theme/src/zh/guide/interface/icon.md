@@ -98,7 +98,7 @@ export default hopeTheme({
 ::icon rotate vertical-align=middle:: <!-- <VPIcon icon="icon rotate" vertical-align="middle" -->
 ```
 
-::: md-demo Demo
+::: preview Demo
 
 ::home /blue::
 ::b:apple =2rem vertical-align=text-bottom::
@@ -114,7 +114,7 @@ export default hopeTheme({
 - `size` 属性接受一个 css 大小值，该值将用作图标大小（可选）
 - `verticalAlign` 属性接受一个 css 垂直对齐值，该值将用作图标垂直对齐（可选）
 
-::: md-demo Demo
+::: preview Demo
 
 <VPIcon icon="home" color="red" />
 <VPIcon
@@ -277,7 +277,7 @@ export default hopeTheme({
 
 <!-- markdownlint-disable MD034 -->
 
-::: md-demo 案例
+::: preview 案例
 
 完整链接: ::https://theme-hope-assets.vuejs.press/logo.svg::
 

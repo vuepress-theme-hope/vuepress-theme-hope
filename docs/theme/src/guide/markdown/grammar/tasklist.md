@@ -29,7 +29,7 @@ export default hopeTheme({
 - Use `- [ ] some text` to render an unchecked task item.
 - Use `- [x] some text` to render a checked task item. (Capital `X` is also supported)
 
-::: md-demo Demo
+::: preview Demo
 
 - [ ] Plan A
 - [x] Plan B

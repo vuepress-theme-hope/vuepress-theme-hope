@@ -66,7 +66,7 @@ export default hopeTheme({
 
 支持自定义颜色的徽章。
 
-::: md-demo 徽章类型
+::: preview 徽章类型
 
 - <Badge text="tip" type="tip" vertical="middle" />
 - <Badge text="warning" type="warning" vertical="middle" />

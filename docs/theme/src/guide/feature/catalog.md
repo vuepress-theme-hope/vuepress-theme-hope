@@ -54,7 +54,7 @@ For detailed configuration, see [Catalog plugin docs][catalog-config].
 
 You can use the `<Catalog>` component directly in Markdown to display the catalog.
 
-::: md-demo Homepage Catalog Demo
+::: preview Homepage Catalog Demo
 
 <!-- Used to limit height -->
 <div class="catalog-display-container">

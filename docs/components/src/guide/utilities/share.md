@@ -11,20 +11,20 @@ Share component, share page content to social media.
 
 <!-- #region demo -->
 
-::: md-demo Basic share
+::: preview Basic share
 
 <Share />
 
 :::
 
-::: md-demo Customize services
+::: preview Customize services
 
 <Share services="qq,weibo" />
 <Share :services="['qq','weibo']" />
 
 :::
 
-::: md-demo Colorful icon
+::: preview Colorful icon
 
 <Share colorful />
 

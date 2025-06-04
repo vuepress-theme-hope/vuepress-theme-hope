@@ -12,7 +12,7 @@ tag:
 
 <!-- markdownlint-disable -->
 
-::: md-demo Heading
+::: preview Heading
 
 # Heading 1
 
@@ -30,13 +30,13 @@ tag:
 
 <!-- markdownlint-restore -->
 
-::: md-demo Text
+::: preview Text
 
 This sentence has **bold**, _italic_ and ~~delete~~ style text.
 
 :::
 
-::: md-demo Paragraph
+::: preview Paragraph
 
 This is a paragraph.
 
@@ -44,7 +44,7 @@ This is another paragraph.
 
 :::
 
-::: md-demo Line Break
+::: preview Line Break
 
 I would like to line break at  
 this point or\
@@ -52,7 +52,7 @@ this point
 
 :::
 
-::: md-demo Blockquotes
+::: preview Blockquotes
 
 > Blockquotes can also be nested...
 >
@@ -62,7 +62,7 @@ this point
 
 :::
 
-::: md-demo Unordered List
+::: preview Unordered List
 
 - Create a list by starting a line with `-`
 - Make sub-lists by indenting 2 spaces:
@@ -80,7 +80,7 @@ this point
 
 :::
 
-::: md-demo Ordered List
+::: preview Ordered List
 
 1. Lorem ipsum dolor sit amet
 1. Consectetur adipiscing elit  
@@ -90,13 +90,13 @@ this point
 
 :::
 
-::: md-demo HR
+::: preview HR
 
 ---
 
 :::
 
-::: md-demo Link
+::: preview Link
 
 [Home page using absolute path](/)
 
@@ -104,7 +104,7 @@ this point
 
 :::
 
-::: md-demo Other links supported in VuePress
+::: preview Other links supported in VuePress
 
 - [Home page-Can route when editing Markdown file](../../README.md)
 
@@ -114,13 +114,13 @@ this point
 
 :::
 
-::: md-demo Image
+::: preview Image
 
 ![Logo](/logo.png)
 
 :::
 
-::: md-demo Emoji
+::: preview Emoji
 
 Classic:
 
@@ -138,7 +138,7 @@ For more see [emoji list](emoji/README.md)
 
 :::
 
-::: md-demo Tables
+::: preview Tables
 
 |           center           |                    right | left                    |
 | :------------------------: | -----------------------: | :---------------------- |
@@ -148,7 +148,7 @@ For more see [emoji list](emoji/README.md)
 
 :::
 
-::: md-demo Codes
+::: preview Codes
 
 Inline Code: `code`
 

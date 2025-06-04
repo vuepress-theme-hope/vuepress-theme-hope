@@ -34,7 +34,7 @@ npm i -D vidstack@next
 
 <!-- #region demo -->
 
-::: md-demo A video player
+::: preview A video player
 
 <VidStack
   src="https://files.vidstack.io/sprite-fight/720p.mp4"
@@ -43,7 +43,7 @@ npm i -D vidstack@next
 
 :::
 
-::: md-demo A video player with poster, subtitles, chapters and thumbnails
+::: preview A video player with poster, subtitles, chapters and thumbnails
 
 <VidStack
   title="Agent 327 Operation Barber Shop"
@@ -113,7 +113,7 @@ npm i -D vidstack@next
 
 :::
 
-::: md-demo A streaming video player
+::: preview A streaming video player
 
 <VidStack
   src="https://files.vidstack.io/sprite-fight/hls/stream.m3u8"
@@ -168,7 +168,7 @@ npm i -D vidstack@next
 
 :::
 
-::: md-demo An audio player
+::: preview An audio player
 
 <VidStack
   src="//theme-hope-assets.vuejs.press/files/sample.mp3"
@@ -177,7 +177,7 @@ npm i -D vidstack@next
 
 :::
 
-::: md-demo YouTube player
+::: preview YouTube player
 
 <VidStack
   src="youtube/_cMxraX_5RE"

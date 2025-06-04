@@ -34,7 +34,7 @@ export default hopeTheme({
 
 ## Demo
 
-::: md-demo
+::: preview
 
 Footnote 1 link[^first].
 

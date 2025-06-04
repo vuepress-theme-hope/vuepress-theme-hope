@@ -76,7 +76,7 @@ document.appendChild(linkElem);
 
 <!-- #region demo -->
 
-:::: md-demo Normal demo
+:::: preview Normal demo
 
 ::: normal-demo Demo
 

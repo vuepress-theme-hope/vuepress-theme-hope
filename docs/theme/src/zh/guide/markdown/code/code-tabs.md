@@ -33,7 +33,7 @@ export default hopeTheme({
 
 ## 演示
 
-:::: md-demo
+:::: preview
 
 安装 VuePress:
 

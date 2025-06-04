@@ -28,7 +28,7 @@ export default hopeTheme({
 
 <!-- markdownlint-disable MD028 -->
 
-::: md-demo Alert demo
+::: preview Alert demo
 
 > [!important]
 > This is important text

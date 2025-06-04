@@ -10,7 +10,7 @@ title: CodePen
 
 <!-- #region demo -->
 
-::: md-demo 一个使用用户和 Slug Hash 的案例
+::: preview 一个使用用户和 Slug Hash 的案例
 
 <CodePen
   user="kowlor"
@@ -22,7 +22,7 @@ title: CodePen
 
 :::
 
-::: md-demo 一个使用链接的案例
+::: preview 一个使用链接的案例
 
 <CodePen
   link="https://codepen.io/kowlor/pen/ZYYQoy"
@@ -33,7 +33,7 @@ title: CodePen
 
 :::
 
-::: md-demo 一个点击运行的案例
+::: preview 一个点击运行的案例
 
 <CodePen
   link="https://codepen.io/kowlor/pen/ZYYQoy"

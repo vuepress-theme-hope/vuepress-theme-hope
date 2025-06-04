@@ -12,13 +12,13 @@ PDF 预览组件。
 
 <!-- #region demo -->
 
-::: md-demo 默认 PDF 阅读器
+::: preview 默认 PDF 阅读器
 
 <PDF url="//theme-hope-assets.vuejs.press/files/sample.pdf" />
 
 :::
 
-::: md-demo 禁用工具栏且初始页面为第二页的阅读器
+::: preview 禁用工具栏且初始页面为第二页的阅读器
 
 <PDF url="//theme-hope-assets.vuejs.press/files/sample.pdf" page="2" no-toolbar />
 

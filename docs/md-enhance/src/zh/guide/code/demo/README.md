@@ -112,7 +112,7 @@ JSON 块是可选的，可用的配置详见 [配置](../../../config.md#demo)�
 
 <!-- #region demo -->
 
-:::: md-demo
+:::: preview
 
 ::: normal-demo 一个使用浏览器不支持解析语言 Demo
 

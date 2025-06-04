@@ -34,7 +34,7 @@ export default hopeTheme({
 
 ## 例子
 
-::: md-demo
+::: preview
 
 脚注 1 链接[^first]。
 

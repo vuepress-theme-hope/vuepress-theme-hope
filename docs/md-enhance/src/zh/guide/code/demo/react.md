@@ -39,7 +39,7 @@ icon: b:react
 
 <!-- #region demo -->
 
-:::: md-demo 一个函数式 React Demo
+:::: preview 一个函数式 React Demo
 
 ::: react-demo React 演示 1
 
@@ -74,7 +74,7 @@ export default () => {
 
 ::::
 
-:::: md-demo 一个类式 React Demo
+:::: preview 一个类式 React Demo
 
 ::: react-demo React 演示 2
 

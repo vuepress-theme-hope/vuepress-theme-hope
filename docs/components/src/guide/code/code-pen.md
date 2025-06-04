@@ -10,7 +10,7 @@ Embed CodePen demos in your Markdown.
 
 <!-- #region demo -->
 
-::: md-demo A demo with user and slug hash
+::: preview A demo with user and slug hash
 
 <CodePen
   user="kowlor"
@@ -22,7 +22,7 @@ Embed CodePen demos in your Markdown.
 
 :::
 
-::: md-demo A demo with link
+::: preview A demo with link
 
 <CodePen
   link="https://codepen.io/kowlor/pen/ZYYQoy"
@@ -33,7 +33,7 @@ Embed CodePen demos in your Markdown.
 
 :::
 
-::: md-demo A click to run demo
+::: preview A click to run demo
 
 <CodePen
   link="https://codepen.io/kowlor/pen/ZYYQoy"

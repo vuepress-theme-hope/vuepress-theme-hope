@@ -52,7 +52,7 @@ export default hopeTheme({
 
 ## 案例
 
-::: md-demo 快速使用 VPCard 组件
+::: preview 快速使用 VPCard 组件
 
 ```component VPCard
 title: Mr.Hope

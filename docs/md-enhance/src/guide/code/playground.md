@@ -106,7 +106,7 @@ You can set your own service url through `playground.config.unocss.service` in p
 
 ## Demo
 
-:::: md-demo TS
+:::: preview TS
 
 ::: playground#ts TS demo 1
 
@@ -146,7 +146,7 @@ speak(msg);
 
 ::::
 
-:::: md-demo Vue
+:::: preview Vue
 
 ::: playground#vue Vue demo with customized imports
 
@@ -218,7 +218,7 @@ const msg = ref("Hello Playground!");
 
 ::::
 
-:::: md-demo UnoCSS
+:::: preview UnoCSS
 
 ::: playground#unocss UnoCSS demo
 

@@ -41,7 +41,7 @@ This feature allows you to mark images with `#light` and `#dark` suffix to displ
 
 <ColorModeSwitch /> 👈 Try to toggle theme mode
 
-::: md-demo Image mark demo
+::: preview Image mark demo
 
 ![GitHub Light](/assets/image/github-light.svg#dark)
 ![GitHub Dark](/assets/image/github-dark.svg#light)
@@ -145,7 +145,7 @@ If the image is standalone in a line, wrapped or not wrapped by link, it will be
 
 <!-- markdownlint-disable MD034 -->
 
-::: md-demo Figure demo
+::: preview Figure demo
 
 ![VuePress Hope Logo](/favicon.ico)
 

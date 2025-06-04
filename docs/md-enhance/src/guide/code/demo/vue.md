@@ -46,7 +46,7 @@ export default {
 
 <!-- #region demo -->
 
-:::: md-demo A Vue Composition Demo
+:::: preview A Vue Composition Demo
 
 ::: vue-demo Vue demo 1
 
@@ -87,7 +87,7 @@ export default {
 
 ::::
 
-:::: md-demo A Vue Option Demo
+:::: preview A Vue Option Demo
 
 ::: vue-demo Vue demo 2
 

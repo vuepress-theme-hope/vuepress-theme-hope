@@ -10,13 +10,13 @@ Embed StackBlitz demo in Markdown files.
 
 <!-- #region demo -->
 
-::: md-demo A StackBlitz project
+::: preview A StackBlitz project
 
 <StackBlitz id="vuepress-theme-hope" />
 
 :::
 
-::: md-demo A StackBlitz project with custom settings
+::: preview A StackBlitz project with custom settings
 
 <StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
 

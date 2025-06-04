@@ -98,7 +98,7 @@ Use `::icon decorators... =size /color key=value complex-key="complex value"...:
 ::icon rotate vertical-align=middle:: <!-- <VPIcon icon="icon rotate" vertical-align="middle" -->
 ```
 
-::: md-demo Demo
+::: preview Demo
 
 ::home /blue::
 ::b:apple =2rem vertical-align=text-bottom::
@@ -114,7 +114,7 @@ Use `<VPIcon />` component to add icon in Vue components.
 - `size` prop accepts a css size value, which will be used as the icon size (optional)
 - `vertical-align` prop accepts a css value, which will be used as the icon vertical-align (optional)
 
-::: md-demo Demo
+::: preview Demo
 
 <VPIcon icon="home" color="red" />
 <VPIcon
@@ -277,7 +277,7 @@ Images links are supported with any icon types (relative links are NOT supported
 
 <!-- markdownlint-disable MD034 -->
 
-::: md-demo Demo
+::: preview Demo
 
 A full link: ::https://theme-hope-assets.vuejs.press/logo.svg::
 

@@ -112,7 +112,7 @@ Available CSS languages:
 
 <!-- #region demo -->
 
-:::: md-demo A demo using language not supported by browsers
+:::: preview A demo using language not supported by browsers
 
 ::: normal-demo Normal demo
 

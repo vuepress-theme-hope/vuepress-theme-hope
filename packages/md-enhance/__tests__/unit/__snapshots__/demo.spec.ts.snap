@@ -70,17 +70,5 @@ document.querySelector(&quot;h1&quot;).innerHTML = message;
 }
 </code></pre>
 </CodeDemo>
-<MdDemo title="A Markdown demo" id="md-demo-17">
-<template #default>
-<h1>Title</h1>
-<p>VuePress is powerful.</p>
-</template>
-<template #code>
-<pre><code class="language-md"># Title
-
-VuePress is powerful.
-</code></pre>
-</template>
-</MdDemo>
 "
 `;

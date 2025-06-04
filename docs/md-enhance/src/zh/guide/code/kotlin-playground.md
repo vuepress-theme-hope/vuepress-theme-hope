@@ -124,7 +124,7 @@ interface KotlinPlaygroundOptions {
 
 ## 案例
 
-:::: md-demo 基础交互演示
+:::: preview 基础交互演示
 
 ::: kotlin-playground 交互演示标题
 
@@ -143,7 +143,7 @@ fun main(args: Array<String>) {
 
 ::::
 
-:::: md-demo 只读交互演示
+:::: preview 只读交互演示
 
 ::: kotlin-playground 只读演示
 
@@ -167,7 +167,7 @@ fun main(args: Array<String>) {
 
 ::::
 
-:::: md-demo 带有测试的交互演示
+:::: preview 带有测试的交互演示
 
 ::: kotlin-playground 测试演示
 
@@ -209,7 +209,7 @@ data class RationalNumber(val numerator: Int, val denominator: Int)
 
 ::::
 
-:::: md-demo 使用外部 JS 库的交互演示
+:::: preview 使用外部 JS 库的交互演示
 
 ::: kotlin-playground 外部 JS 库
 
@@ -237,7 +237,7 @@ fun main() {
 
 ::::
 
-:::: md-demo 多个文件的交互演示
+:::: preview 多个文件的交互演示
 
 ::: kotlin-playground 多个文件
 

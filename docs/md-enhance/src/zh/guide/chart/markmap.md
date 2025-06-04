@@ -66,7 +66,7 @@ export default {
 
 ## 案例
 
-::: md-demo
+::: preview
 
 ````markmap
 ---

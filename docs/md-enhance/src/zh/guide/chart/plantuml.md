@@ -47,7 +47,7 @@ export default {
 <!-- markdownlint-disable -->
 <!-- prettier-ignore-start -->
 
-::: md-demo 序列图
+::: preview 序列图
 
 @startuml
 Alice -> Bob: 认证请求
@@ -76,7 +76,7 @@ end
 
 :::
 
-::: md-demo 用例图
+::: preview 用例图
 
 @startuml
 :Main Admin: as Admin
@@ -101,7 +101,7 @@ N2 .. (Use)
 
 :::
 
-::: md-demo 类图
+::: preview 类图
 
 @startuml
 abstract class AbstractList
@@ -138,7 +138,7 @@ annotation Annotation {
 
 :::
 
-::: md-demo 活动图
+::: preview 活动图
 
 @startuml
 start
@@ -177,7 +177,7 @@ stop
 
 :::
 
-::: md-demo 组件图
+::: preview 组件图
 
 @startuml
 package "Some Group" {
@@ -211,7 +211,7 @@ database "MySql" {
 
 :::
 
-::: md-demo 状态图
+::: preview 状态图
 
 @startuml
 state start1  <<start>>
@@ -238,7 +238,7 @@ join2   --> [*]     : from join\nto end
 
 :::
 
-::: md-demo 对象图
+::: preview 对象图
 
 @startuml
 object London
@@ -257,7 +257,7 @@ NewYork --> CapitalCity::USA
 
 :::
 
-::: md-demo 部署图
+::: preview 部署图
 
 @startuml
 node 节点 1
@@ -273,7 +273,7 @@ node 节点 5
 
 :::
 
-::: md-demo 时序图
+::: preview 时序图
 
 @startuml
 scale 5 as 150 pixels
@@ -335,7 +335,7 @@ db@:write_beg-1 -> addr@:write_end+1 : 保持
 
 :::
 
-::: md-demo 正则图
+::: preview 正则图
 
 @startregex
 /<style(\s*lang=(['"])(.*?)\2)?\s*(?:scoped)?>([\s\S]+)<\/style>
@@ -343,7 +343,7 @@ db@:write_beg-1 -> addr@:write_end+1 : 保持
 
 :::
 
-::: md-demo 网络图
+::: preview 网络图
 
 @startuml
 nwdiag {
@@ -375,7 +375,7 @@ nwdiag {
 
 :::
 
-::: md-demo 图形界面
+::: preview 图形界面
 
 @startsalt
 {+
@@ -392,7 +392,7 @@ nwdiag {
 
 :::
 
-::: md-demo 架构图
+::: preview 架构图
 
 @startuml
 skinparam rectangle<<behavior>> {
@@ -461,7 +461,7 @@ endlegend
 
 :::
 
-::: md-demo 甘特图
+::: preview 甘特图
 
 @startgantt
 <style>
@@ -546,7 +546,7 @@ end note
 
 :::
 
-::: md-demo 思维导图
+::: preview 思维导图
 
 @startmindmap
 caption figure 1
@@ -579,7 +579,7 @@ endlegend
 
 :::
 
-::: md-demo 工作分解结构图
+::: preview 工作分解结构图
 
 @startwbs
 + New Job
@@ -602,7 +602,7 @@ endlegend
 
 :::
 
-::: md-demo JSON
+::: preview JSON
 
 @startjson
 #highlight "lastName"
@@ -636,7 +636,7 @@ endlegend
 
 :::
 
-::: md-demo YAML
+::: preview YAML
 
 @startyaml
 doe: "a deer, a female deer"

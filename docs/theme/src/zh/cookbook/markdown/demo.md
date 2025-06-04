@@ -12,7 +12,7 @@ tag:
 
 <!-- markdownlint-disable -->
 
-::: md-demo 标题
+::: preview 标题
 
 # 一级标题
 
@@ -30,13 +30,13 @@ tag:
 
 <!-- markdownlint-restore -->
 
-::: md-demo 文本
+::: preview 文本
 
 这句话里拥有**加粗**、*倾斜*和~~删除~~
 
 :::
 
-::: md-demo 段落
+::: preview 段落
 
 这是一个段落。
 
@@ -44,7 +44,7 @@ tag:
 
 :::
 
-::: md-demo 换行
+::: preview 换行
 
 这是一句话不过我要在这里  
 换行且\
@@ -58,7 +58,7 @@ tag:
 
 :::
 
-::: md-demo 引用
+::: preview 引用
 
 > 引用也可以连用
 >
@@ -66,7 +66,7 @@ tag:
 
 :::
 
-::: md-demo 无序列表
+::: preview 无序列表
 
 - 无序列表项
 - 无序列表项
@@ -83,7 +83,7 @@ tag:
 
 :::
 
-::: md-demo 有序列表
+::: preview 有序列表
 
 1. 有序列表第一项
 1. 有序列表第二项  
@@ -99,13 +99,13 @@ tag:
 
 :::
 
-::: md-demo 分割线
+::: preview 分割线
 
 ---
 
 :::
 
-::: md-demo 链接
+::: preview 链接
 
 [根目录访问主页](/v2/)
 
@@ -117,7 +117,7 @@ tag:
 
 :::
 
-::: md-demo VuePress 兼容的其他链接
+::: preview VuePress 兼容的其他链接
 
 - [相对路径访问，兼容 Markdown 编写时相互跳转](../../README.md)
 
@@ -127,13 +127,13 @@ tag:
 
 :::
 
-::: md-demo 图片
+::: preview 图片
 
 ![Logo](/logo.png)
 
 :::
 
-::: md-demo Emoji
+::: preview Emoji
 
 经典方式:
 
@@ -151,7 +151,7 @@ tag:
 
 :::
 
-::: md-demo 表格
+::: preview 表格
 
 |     居中      |         右对齐 | 左对齐         |
 | :-----------: | -------------: | :------------- |
@@ -161,7 +161,7 @@ tag:
 
 :::
 
-::: md-demo 代码
+::: preview 代码
 
 行内代码效果: `code`
 

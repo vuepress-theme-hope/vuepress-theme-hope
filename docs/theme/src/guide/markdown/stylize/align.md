@@ -44,7 +44,7 @@ Contents to align justify
 :::
 ```
 
-::::: md-demo Nesting
+::::: preview Nesting
 
 Nesting can be done by increasing marker number of outer container:
 
@@ -58,7 +58,7 @@ Center contents...
 
 :::::
 
-:::: md-demo Escaping
+:::: preview Escaping
 
 \::: left
 
@@ -70,7 +70,7 @@ Escaping can be done by adding `\` to escape the marker
 
 ## Demo
 
-::::: md-demo Real life example
+::::: preview Real life example
 
 :::: caution
 VuePress Theme Hope V2 version is still in W.I.P, the API may have

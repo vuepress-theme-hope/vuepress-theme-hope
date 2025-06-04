@@ -86,7 +86,7 @@ defineVuePlaygroundConfig({
 
 ## Demo
 
-:::: md-demo Simple Vue Playground
+:::: preview Simple Vue Playground
 
 ::: vue-playground Playground 1
 
@@ -109,7 +109,7 @@ const msg = ref("Hello Playground!");
 
 ::::
 
-:::: md-demo Vue Playground with customized settings and import
+:::: preview Vue Playground with customized settings and import
 
 ::: vue-playground Playground 2
 

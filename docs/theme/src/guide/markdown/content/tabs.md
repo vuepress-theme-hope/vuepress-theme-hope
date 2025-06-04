@@ -129,7 +129,7 @@ pnpm add -D vuepress
 
 ## Demo
 
-:::: md-demo
+:::: preview
 
 A tab of fruit:
 

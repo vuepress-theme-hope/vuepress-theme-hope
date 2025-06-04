@@ -40,13 +40,13 @@ npm i -D vidstack@next
 
 <!-- #region demo -->
 
-::: md-demo An audio player
+::: preview An audio player
 
 <AudioPlayer src="//theme-hope-assets.vuejs.press/files/sample.mp3" />
 
 :::
 
-::: md-demo An audio player with poster and title
+::: preview An audio player with poster and title
 
 <AudioPlayer
   src="//theme-hope-assets.vuejs.press/files/sample.mp3"

@@ -30,7 +30,7 @@ export default hopeTheme({
 
 ## 演示
 
-:::: md-demo 默认标题的容器
+:::: preview 默认标题的容器
 
 ::: important
 重要容器。
@@ -62,7 +62,7 @@ export default hopeTheme({
 
 ::::
 
-:::: md-demo 自定义标题的容器
+:::: preview 自定义标题的容器
 
 ::: important 自定义标题
 
@@ -136,7 +136,7 @@ const a = 1;
 
 ::::
 
-:::: md-demo 不含内容的容器
+:::: preview 不含内容的容器
 
 ::: important 自定义重要
 :::

@@ -10,7 +10,7 @@ title: Badge
 
 ## 示例
 
-::: md-demo
+::: preview
 
 ## 标题徽章 <Badge text="新" type="tip" /> <Badge text="MrHope" color="grey" />
 

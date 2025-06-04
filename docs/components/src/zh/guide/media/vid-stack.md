@@ -34,7 +34,7 @@ npm i -D vidstack@next
 
 <!-- #region demo -->
 
-::: md-demo 视频播放器
+::: preview 视频播放器
 
 <VidStack
   src="https://files.vidstack.io/sprite-fight/720p.mp4"
@@ -43,7 +43,7 @@ npm i -D vidstack@next
 
 :::
 
-::: md-demo 有封面、章节、缩略图和字幕的播放器
+::: preview 有封面、章节、缩略图和字幕的播放器
 
 <VidStack
   title="Agent 327 Operation Barber Shop"
@@ -113,7 +113,7 @@ npm i -D vidstack@next
 
 :::
 
-::: md-demo 一个流式视频播放器
+::: preview 一个流式视频播放器
 
 <VidStack
   src="https://files.vidstack.io/sprite-fight/hls/stream.m3u8"
@@ -168,13 +168,13 @@ npm i -D vidstack@next
 
 :::
 
-::: md-demo 一个音频播放器
+::: preview 一个音频播放器
 
 <VidStack src="//theme-hope-assets.vuejs.press/files/sample.mp3" title="VidStack 示例音频" />
 
 :::
 
-::: md-demo YouTube 播放器
+::: preview YouTube 播放器
 
 <VidStack
   src="youtube/_cMxraX_5RE"

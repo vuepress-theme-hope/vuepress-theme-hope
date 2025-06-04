@@ -10,7 +10,7 @@ Card component, can be use to display items.
 
 <!-- #region demo -->
 
-::: md-demo Basic Card
+::: preview Basic Card
 
 <VPCard
   title="Mr.Hope"
@@ -78,7 +78,7 @@ To make background and font color adapt to dark mode automatically, you can pass
 
 If you want multiple cards in a responsive container, you can wrap them in a `div` with class `vp-card-container`:
 
-::: md-demo Responsive Card Container
+::: preview Responsive Card Container
 
 <div class="vp-card-container">
   <VPCard

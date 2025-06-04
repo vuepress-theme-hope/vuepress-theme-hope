@@ -11,20 +11,20 @@ description: 分享组件，将页面内容分享到社交媒体。
 
 <!-- #region demo -->
 
-::: md-demo 基础分享
+::: preview 基础分享
 
 <Share />
 
 :::
 
-::: md-demo 自定义分享服务
+::: preview 自定义分享服务
 
 <Share services="qq,weibo" />
 <Share :services="['qq','weibo']" />
 
 :::
 
-::: md-demo 彩色图标
+::: preview 彩色图标
 
 <Share colorful />
 

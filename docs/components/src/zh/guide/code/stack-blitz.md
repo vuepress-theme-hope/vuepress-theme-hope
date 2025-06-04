@@ -10,13 +10,13 @@ title: StackBlitz
 
 <!-- #region demo -->
 
-::: md-demo 一个 StackBlitz 项目
+::: preview 一个 StackBlitz 项目
 
 <StackBlitz id="vuepress-theme-hope" />
 
 :::
 
-::: md-demo 一个自定义设置的 StackBlitz 项目
+::: preview 一个自定义设置的 StackBlitz 项目
 
 <StackBlitz id="vuepress-theme-hope" hideExplorer hideNavigation hideDevtools />
 

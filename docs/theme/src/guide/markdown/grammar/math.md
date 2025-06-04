@@ -72,7 +72,7 @@ export default hopeTheme({
   $$
   ```
 
-::: md-demo Escaping
+::: preview Escaping
 
 Escaping can be done by using `\` before the `$` character, or adding space both before and after the `$` character.
 
@@ -82,13 +82,13 @@ The $a=1$ is a TeX equation, while $ a=1 $ and \$a=1$ is not.
 
 ## Demo
 
-::: md-demo Inline
+::: preview Inline
 
 Euler's identity $e^{i\pi}+1=0$ is a beautiful formula in $\mathbb{R}^2$.
 
 :::
 
-::: md-demo Display
+::: preview Display
 
 $$
 \frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)

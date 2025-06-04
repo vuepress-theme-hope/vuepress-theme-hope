@@ -47,7 +47,7 @@ content
 <!-- markdownlint-disable -->
 <!-- prettier-ignore-start -->
 
-::: md-demo Sequence Diagram
+::: preview Sequence Diagram
 
 @startuml
 Alice -> Bob: Authentication Request
@@ -76,7 +76,7 @@ end
 
 :::
 
-::: md-demo Use Case
+::: preview Use Case
 
 @startuml
 :Main Admin: as Admin
@@ -101,7 +101,7 @@ N2 .. (Use)
 
 :::
 
-::: md-demo Class
+::: preview Class
 
 @startuml
 abstract class AbstractList
@@ -138,7 +138,7 @@ annotation Annotation {
 
 :::
 
-::: md-demo Activity
+::: preview Activity
 
 @startuml
 start
@@ -177,7 +177,7 @@ stop
 
 :::
 
-::: md-demo Component
+::: preview Component
 
 @startuml
 package "Some Group" {
@@ -211,7 +211,7 @@ database "MySql" {
 
 :::
 
-::: md-demo State
+::: preview State
 
 @startuml
 state start1  <<start>>
@@ -238,7 +238,7 @@ join2   --> [*]     : from join\nto end
 
 :::
 
-::: md-demo Object
+::: preview Object
 
 @startuml
 object London
@@ -257,7 +257,7 @@ NewYork --> CapitalCity::USA
 
 :::
 
-::: md-demo Deployment
+::: preview Deployment
 
 @startuml
 node node1
@@ -273,7 +273,7 @@ node1 == node5
 
 :::
 
-::: md-demo Timing
+::: preview Timing
 
 @startuml
 scale 5 as 150 pixels
@@ -335,7 +335,7 @@ db@:write_beg-1 -> addr@:write_end+1 : hold
 
 :::
 
-::: md-demo RegExp
+::: preview RegExp
 
 @startregex
 /<style(\s*lang=(['"])(.*?)\2)?\s*(?:scoped)?>([\s\S]+)<\/style>
@@ -343,7 +343,7 @@ db@:write_beg-1 -> addr@:write_end+1 : hold
 
 :::
 
-::: md-demo Network
+::: preview Network
 
 @startuml
 nwdiag {
@@ -375,7 +375,7 @@ nwdiag {
 
 :::
 
-::: md-demo Salt
+::: preview Salt
 
 @startsalt
 {+
@@ -392,7 +392,7 @@ nwdiag {
 
 :::
 
-::: md-demo Archimate
+::: preview Archimate
 
 @startuml
 skinparam rectangle<<behavior>> {
@@ -461,7 +461,7 @@ endlegend
 
 :::
 
-::: md-demo Gantt
+::: preview Gantt
 
 @startgantt
 <style>
@@ -546,7 +546,7 @@ end note
 
 :::
 
-::: md-demo Mindmap
+::: preview Mindmap
 
 @startmindmap
 caption figure 1
@@ -579,7 +579,7 @@ endlegend
 
 :::
 
-::: md-demo WBS
+::: preview WBS
 
 @startwbs
 + New Job
@@ -602,7 +602,7 @@ endlegend
 
 :::
 
-::: md-demo JSON
+::: preview JSON
 
 @startjson
 #highlight "lastName"
@@ -636,7 +636,7 @@ endlegend
 
 :::
 
-::: md-demo YAML
+::: preview YAML
 
 @startyaml
 doe: "a deer, a female deer"

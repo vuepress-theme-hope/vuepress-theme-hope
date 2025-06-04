@@ -51,7 +51,7 @@ You can use component fence block to add a component into your markdown content.
 
 ## Demo
 
-::: md-demo VPCard
+::: preview VPCard
 
 ```component VPCard
 title: Mr.Hope

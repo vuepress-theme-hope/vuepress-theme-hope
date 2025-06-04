@@ -16,19 +16,19 @@ title: YouTube
 
 <!-- #region demo -->
 
-::: md-demo 一个 YouTube 视频
+::: preview 一个 YouTube 视频
 
 <YouTube id="0JJPfz5dg20" />
 
 :::
 
-::: md-demo 一个自定义设置的 YouTube 视频
+::: preview 一个自定义设置的 YouTube 视频
 
 <YouTube id="0JJPfz5dg20" disable-fullscreen />
 
 :::
 
-::: md-demo 一个 YouTube 播放列表
+::: preview 一个 YouTube 播放列表
 
 <YouTube list-type="playlist" list="PLJNLwTPak6dhCRzVelZIs2-DfBp01NX_1" />
 

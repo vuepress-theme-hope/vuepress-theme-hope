@@ -10,13 +10,13 @@ Embed BiliBili videos in Markdown files.
 
 <!-- #region demo -->
 
-::: md-demo A bilibili video
+::: preview A bilibili video
 
 <BiliBili bvid="BV1kt411o7C3" />
 
 :::
 
-::: md-demo A bilibili video with custom settings
+::: preview A bilibili video with custom settings
 
 <BiliBili aid="34304064" cid="109293122" ratio="9:16" time="60" page="2" />
 

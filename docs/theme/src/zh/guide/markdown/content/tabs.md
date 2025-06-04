@@ -90,7 +90,7 @@ export default hopeTheme({
 
 如果你想让一些选项卡组一起切换，你可以使用相同的选项卡 ID 来绑定它们。针对每个选项卡 ID 的选择会被存储并进行持久化。
 
-:::: md-demo 案例
+:::: preview 案例
 
 选择包管理器:
 
@@ -131,7 +131,7 @@ pnpm add -D vuepress
 
 ## 案例
 
-:::: md-demo 案例
+:::: preview 案例
 
 一个水果选项卡列表:
 

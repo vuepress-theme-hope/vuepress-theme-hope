@@ -40,13 +40,13 @@ npm i -D vidstack@next
 
 <!-- #region demo -->
 
-::: md-demo 一个视频播放器
+::: preview 一个视频播放器
 
 <VideoPlayer src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" />
 
 :::
 
-::: md-demo 一个包含了封面、多个源、缩略图、字幕和标记点的播放器
+::: preview 一个包含了封面、多个源、缩略图、字幕和标记点的播放器
 
 <VideoPlayer
   :src="[

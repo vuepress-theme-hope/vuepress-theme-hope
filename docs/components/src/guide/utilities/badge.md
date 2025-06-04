@@ -10,7 +10,7 @@ You can use it in Markdown to add some status for titles or links.
 
 ## Demo
 
-::: md-demo
+::: preview
 
 ## Heading Badge <Badge text="New" type="tip" /> <Badge text="MrHope" color="grey" />
 

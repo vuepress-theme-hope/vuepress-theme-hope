@@ -116,7 +116,7 @@ defineMermaidConfig({
 
 ## 例子
 
-::: md-demo 流程图
+::: preview 流程图
 
 ```mermaid
 ---
@@ -140,7 +140,7 @@ flowchart TB
 
 :::
 
-::: md-demo 循序图
+::: preview 循序图
 
 ```sequence Greetings
 Alice ->> Bob: Hello Bob, how are you?
@@ -155,7 +155,7 @@ Alice->John: Yes... John, how are you?
 
 :::
 
-::: md-demo 类图
+::: preview 类图
 
 ```class Animal Example
 note "From Duck till Zebra"
@@ -184,7 +184,7 @@ class Zebra{
 
 :::
 
-::: md-demo 状态图
+::: preview 状态图
 
 ```state Check if n is negative
 
@@ -197,7 +197,7 @@ if_state --> True : if n >= 0
 
 :::
 
-::: md-demo 关系图
+::: preview 关系图
 
 ```er Er Example
 CAR ||--o{ NAMED-DRIVER : allows
@@ -216,7 +216,7 @@ PERSON {
 
 :::
 
-::: md-demo 用户日记图
+::: preview 用户日记图
 
 ```journey
 title My working day
@@ -231,7 +231,7 @@ section Go home
 
 :::
 
-::: md-demo 甘特图
+::: preview 甘特图
 
 ```gantt
 dateFormat  YYYY-MM-DD
@@ -266,7 +266,7 @@ Add another diagram to demo page    :48h
 
 :::
 
-::: md-demo 饼图
+::: preview 饼图
 
 ```pie
 title What Voldemort doesn't have?
@@ -277,7 +277,7 @@ title What Voldemort doesn't have?
 
 :::
 
-::: md-demo Git 图表
+::: preview Git 图表
 
 ```git-graph
 commit
@@ -325,7 +325,7 @@ merge release
 
 :::
 
-::: md-demo C4C 图表
+::: preview C4C 图表
 
 ```c4c
 title System Context diagram for Internet Banking System
@@ -363,7 +363,7 @@ Rel(SystemC, customerA, "Sends e-mails to")
 
 :::
 
-::: md-demo 思维导图
+::: preview 思维导图
 
 ```mindmap
 root((VuePress))
@@ -386,7 +386,7 @@ root((VuePress))
 
 :::
 
-::: md-demo 时间线
+::: preview 时间线
 
 ```timeline
 title Timeline of Industrial Revolution
@@ -401,7 +401,7 @@ section 21st century
 
 :::
 
-::: md-demo 桑基图
+::: preview 桑基图
 
 ```sankey
 Agricultural 'waste',Bio-conversion,124.729
@@ -476,7 +476,7 @@ Wind,Electricity grid,289.366
 
 :::
 
-::: md-demo 依赖图
+::: preview 依赖图
 
 ```requirement
 requirement test_req {
@@ -495,7 +495,7 @@ test_entity - satisfies -> test_req
 
 :::
 
-::: md-demo 象限图
+::: preview 象限图
 
 ```quadrant
 title Reach and engagement of campaigns
@@ -515,7 +515,7 @@ Campaign F: [0.35, 0.78]
 
 :::
 
-::: md-demo XY 图
+::: preview XY 图
 
 ```xy
 title "Sales Revenue"
@@ -527,7 +527,7 @@ line [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
 
 :::
 
-::: md-demo 块图
+::: preview 块图
 
 ```block
 columns 3
@@ -543,7 +543,7 @@ class Backend,Database back
 
 :::
 
-::: md-demo 容器图
+::: preview 容器图
 
 ```packet
 title UDP Packet
@@ -556,7 +556,7 @@ title UDP Packet
 
 :::
 
-::: md-demo 雷达图
+::: preview 雷达图
 
 ```radar
 ---
@@ -581,7 +581,7 @@ curve c3{3,3,3,3,3}
 
 :::
 
-::: md-demo 一个复杂的案例
+::: preview 一个复杂的案例
 
 ```mermaid
 graph TB

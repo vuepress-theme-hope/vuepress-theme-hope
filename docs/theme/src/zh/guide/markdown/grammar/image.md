@@ -39,7 +39,7 @@ export default hopeTheme({
 
 此功能允许你通过 `#light` 和 `#dark` 标记图片，使得图片只在特定的模式显示。
 
-::: md-demo 图片 ID 标记示例
+::: preview 图片 ID 标记示例
 
 <ColorModeSwitch /> 👈 尝试切换主题
 
@@ -146,7 +146,7 @@ export default hopeTheme({
 
 <!-- markdownlint-disable MD034 -->
 
-::: md-demo 图片示例 demo
+::: preview 图片示例 demo
 
 ![VuePress Hope 图标](/favicon.ico)
 

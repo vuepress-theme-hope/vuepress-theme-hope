@@ -105,19 +105,19 @@ interface MarkdownItAttrsOptions {
 
 > 所有的 class 都使用 `margin:4px;padding:4px;border: 1px solid red;` 进行显示以展示效果。
 
-::: md-demo 行内元素
+::: preview 行内元素
 
 包含 `行内代码`{.inline-code} 和 ![favicon](/favicon.ico){.image} 的文字，也支持 _强调_{.inline-emphasis} 和 **加粗**{.inline-bold}。
 
 :::
 
-::: md-demo 块级元素
+::: preview 块级元素
 
 块级元素 {.block}
 
 :::
 
-::: md-demo 代码块
+::: preview 代码块
 
 ```js {.fence}
 const a = 1;
@@ -125,7 +125,7 @@ const a = 1;
 
 :::
 
-::: md-demo 表格
+::: preview 表格
 
 | 表格 |
 | ---- |
@@ -135,7 +135,7 @@ const a = 1;
 
 :::
 
-::: md-demo 列表
+::: preview 列表
 
 - 列表内容{.list-item}
 
@@ -146,13 +146,13 @@ const a = 1;
 
 :::
 
-::: md-demo 水平线
+::: preview 水平线
 
 --- {.horizontal}
 
 :::
 
-::: md-demo 换行
+::: preview 换行
 
 一行换行的文字  
 {.break}

@@ -4,7 +4,7 @@ title: Code Demo
 
 ## Demo
 
-::: md-demo Demo
+::: preview Demo
 
 ## Heading 2
 

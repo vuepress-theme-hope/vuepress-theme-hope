@@ -1,8 +1,10 @@
 import { container } from "@mdit/plugin-container";
+import { demo } from "@mdit/plugin-demo";
 import { encodeData } from "@vuepress/helper";
 import type { PluginSimple } from "markdown-it";
 import type Token from "markdown-it/lib/token.mjs";
 
+import { escapeHtml } from "../markdown-it/utils.js";
 import { logger } from "../utils.js";
 
 /** @deprecated */
@@ -44,5 +46,33 @@ export const legacyCodeDemo: PluginSimple = (md) => {
 `;
     },
     closeRender: () => `</CodeDemo>`,
+  });
+};
+
+/** @deprecated */
+export const mdDemo: PluginSimple = (md) => {
+  md.use(demo, {
+    name: "md-demo",
+    openRender: (tokens, index) => {
+      logger.warn(
+        "md-demo container is deprecated, you should use preview container instead.",
+      );
+
+      return `<MdDemo title="${escapeHtml(
+        tokens[index].info,
+      )}" id="md-demo-${index}">\n`;
+    },
+    codeRender: (tokens, index, options, _env, self) =>
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      `<template #code>\n${self.rules.fence!(
+        tokens,
+        index,
+        options,
+        _env,
+        self,
+      )}</template>\n`,
+    contentOpenRender: () => `<template #default>\n`,
+    contentCloseRender: () => `</template>\n`,
+    closeRender: () => "</MdDemo>\n",
   });
 };

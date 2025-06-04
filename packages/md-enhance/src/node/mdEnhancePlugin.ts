@@ -16,6 +16,7 @@ import {
   convertOptions,
   legacyCodeDemo,
   legacyFlowchart,
+  mdDemo,
 } from "./compact/index.js";
 import {
   CODE_DEMO_DEFAULT_SETTING,
@@ -27,7 +28,6 @@ import {
   getVuePlaygroundPreset,
   kotlinPlayground,
   markmap,
-  mdDemo,
   mermaid,
   normalDemo,
   plantuml,
@@ -187,13 +187,16 @@ export const mdEnhancePlugin =
         if (isArray(options.plantuml)) md.use(plantuml, options.plantuml);
         else if (options.plantuml) md.use(plantuml);
         if (options.demo) {
-          md.use(mdDemo);
           md.use(normalDemo);
           md.use(vueDemo);
           md.use(reactDemo);
           // TODO: Remove this in v2 stable
-          // eslint-disable-next-line @typescript-eslint/no-deprecated
-          if (legacy) md.use(legacyCodeDemo);
+          if (legacy) {
+            // eslint-disable-next-line @typescript-eslint/no-deprecated
+            md.use(legacyCodeDemo);
+            // eslint-disable-next-line @typescript-eslint/no-deprecated
+            md.use(mdDemo);
+          }
         }
         if (status.markmap) md.use(markmap);
         if (status.mermaid) md.use(mermaid);
@@ -215,6 +218,7 @@ export const mdEnhancePlugin =
         if (status.sandpack) md.use(sandpack);
       },
 
-      clientConfigFile: (app) => prepareConfigFile(app, options, status),
+      clientConfigFile: (app) =>
+        prepareConfigFile(app, options, status, legacy),
     };
   };

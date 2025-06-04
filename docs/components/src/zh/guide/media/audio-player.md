@@ -40,13 +40,13 @@ npm i -D vidstack@next
 
 <!-- #region demo -->
 
-::: md-demo 一个音频播放器
+::: preview 一个音频播放器
 
 <AudioPlayer src="//theme-hope-assets.vuejs.press/files/sample.mp3" />
 
 :::
 
-::: md-demo 一个拥有标题和封面的音频播放器
+::: preview 一个拥有标题和封面的音频播放器
 
 <AudioPlayer
   src="//theme-hope-assets.vuejs.press/files/sample.mp3"

@@ -44,7 +44,7 @@ export default hopeTheme({
 :::
 ```
 
-::::: md-demo 嵌套
+::::: preview 嵌套
 
 嵌套可以通过增加外层容器的 marker 数量完成:
 
@@ -58,7 +58,7 @@ export default hopeTheme({
 
 :::::
 
-::::: md-demo 转义
+::::: preview 转义
 
 转义可以通过在 marker 前添加 `\` 转义来完成:
 
@@ -70,7 +70,7 @@ export default hopeTheme({
 
 ## 演示
 
-::::: md-demo
+::::: preview
 
 :::: caution W.I.P
 VuePress Theme Hope V2 版本仍在制作中，API 可能会有

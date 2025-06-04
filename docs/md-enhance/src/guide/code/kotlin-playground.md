@@ -135,7 +135,7 @@ interface KotlinPlaygroundOptions {
 
 ## Demo
 
-:::: md-demo Basic Playground
+:::: preview Basic Playground
 
 ::: kotlin-playground Playground title
 
@@ -154,7 +154,7 @@ fun main(args: Array<String>) {
 
 ::::
 
-:::: md-demo Readonly Playground
+:::: preview Readonly Playground
 
 ::: kotlin-playground Readonly Playground
 
@@ -178,7 +178,7 @@ fun main(args: Array<String>) {
 
 ::::
 
-:::: md-demo Playground with tests
+:::: preview Playground with tests
 
 ::: kotlin-playground Test Playground
 
@@ -220,7 +220,7 @@ data class RationalNumber(val numerator: Int, val denominator: Int)
 
 ::::
 
-:::: md-demo Playground with external js libraries
+:::: preview Playground with external js libraries
 
 ::: kotlin-playground External JS Libraries
 
@@ -248,7 +248,7 @@ fun main() {
 
 ::::
 
-:::: md-demo Playground with multiple files
+:::: preview Playground with multiple files
 
 ::: kotlin-playground Multiple files
 

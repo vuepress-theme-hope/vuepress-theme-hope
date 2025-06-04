@@ -40,13 +40,13 @@ npm i -D vidstack@next
 
 <!-- #region demo -->
 
-::: md-demo A video player
+::: preview A video player
 
 <VideoPlayer src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" />
 
 :::
 
-::: md-demo A video player with poster, multiple sources, tracks, thumbnails and markers
+::: preview A video player with poster, multiple sources, tracks, thumbnails and markers
 
 <VideoPlayer
   :src="[

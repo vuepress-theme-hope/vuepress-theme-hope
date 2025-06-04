@@ -28,7 +28,7 @@ export default hopeTheme({
 
 使用 `!! !!` 标记剧透剧透文字。请注意两边需要有空格。
 
-::: md-demo 案例
+::: preview 案例
 
 VuePress Theme Hope !!非常强大!!!
 

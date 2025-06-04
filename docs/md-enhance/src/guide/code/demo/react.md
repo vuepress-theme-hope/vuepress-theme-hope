@@ -39,7 +39,7 @@ icon: b:react
 
 <!-- #region demo -->
 
-:::: md-demo A function-based React Demo
+:::: preview A function-based React Demo
 
 ::: react-demo React demo 1
 
@@ -75,7 +75,7 @@ export default () => {
 
 ::::
 
-:::: md-demo A class-based React Demo
+:::: preview A class-based React Demo
 
 ::: react-demo React demo 2
 

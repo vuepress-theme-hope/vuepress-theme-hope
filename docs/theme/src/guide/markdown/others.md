@@ -33,7 +33,7 @@ in VuePress.
 
 Since VuePress2 has removed V1's v-pre container in core, we provide `markdown.vPre` option to support it. You can use any Mustache syntax in `v-pre` container when enabling this:
 
-:::: md-demo
+:::: preview
 
 ::: v-pre
 

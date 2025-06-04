@@ -46,7 +46,7 @@ export default {
 
 <!-- #region demo -->
 
-:::: md-demo 一个 Vue Composition 演示
+:::: preview 一个 Vue Composition 演示
 
 ::: vue-demo Vue 演示 1
 
@@ -87,7 +87,7 @@ export default {
 
 ::::
 
-:::: md-demo 一个 Vue Option 演示
+:::: preview 一个 Vue Option 演示
 
 ::: vue-demo Vue 演示 2
 

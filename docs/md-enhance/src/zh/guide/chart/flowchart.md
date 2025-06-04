@@ -78,7 +78,7 @@ export default {
 
 ## 演示
 
-::: md-demo Vue 主题
+::: preview Vue 主题
 
 ```flow
 st=>start: 开始|past:>http://www.google.com[blank]
@@ -99,7 +99,7 @@ c2(no)->op2->e
 
 :::
 
-::: md-demo Ant 主题
+::: preview Ant 主题
 
 ```flow:ant
 st=>start: 开始|past:>http://www.google.com[blank]
@@ -120,7 +120,7 @@ c2(no)->op2->e
 
 :::
 
-::: md-demo Pie 主题
+::: preview Pie 主题
 
 ```flow:pie
 st=>start: 开始|past:>http://www.google.com[blank]
@@ -147,7 +147,7 @@ c2(no)->op2->e
 
 定义了结点形状
 
-::: md-demo 开始 & 结束
+::: preview 开始 & 结束
 
 - `[Variable]->start: [Text]`
 
@@ -168,7 +168,7 @@ st->e
 
 :::
 
-::: md-demo 操作
+::: preview 操作
 
 - `[Variable]->operation: [Text]`
 
@@ -181,7 +181,7 @@ process->e
 
 :::
 
-::: md-demo 输入输出
+::: preview 输入输出
 
 - `[Variable]->inputoutput: [Text]`
 
@@ -194,7 +194,7 @@ process->e
 
 :::
 
-::: md-demo 子程序
+::: preview 子程序
 
 - `[Variable]->subroutine: [Text]`
 
@@ -207,7 +207,7 @@ process->e
 
 :::
 
-::: md-demo 条件
+::: preview 条件
 
 - `[Variable]->condition: [Text]`
 
@@ -225,7 +225,7 @@ cond(no)->e
 
 :::
 
-::: md-demo 平行
+::: preview 平行
 
 定义同时开始的多个程序。
 

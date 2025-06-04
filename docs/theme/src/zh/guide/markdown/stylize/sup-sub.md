@@ -32,14 +32,14 @@ export default hopeTheme({
 - 使用`^ ^`进行上角标标注。
 - 使用`~ ~`进行下角标标注。
 
-::: md-demo 案例
+::: preview 案例
 
 - 19^th^
 - H~2~O
 
 :::
 
-::: md-demo 转义
+::: preview 转义
 
 你可以使用 `\` 来转义 `^` 和 `~`:
 

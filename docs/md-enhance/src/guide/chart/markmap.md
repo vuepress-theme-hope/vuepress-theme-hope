@@ -66,7 +66,7 @@ Configuring through frontmatter syntax is supported.
 
 ## Demo
 
-::: md-demo
+::: preview
 
 ````markmap
 ---

@@ -33,14 +33,14 @@ export default hopeTheme({
 - Use `^ ^` to mark the superscript.
 - Use `~ ~` to mark the subscript.
 
-::: md-demo Demo
+::: preview Demo
 
 - 19^th^
 - H~2~O
 
 :::
 
-::: md-demo Escaping
+::: preview Escaping
 
 You can use `\` to escape `^` and `~`:
 

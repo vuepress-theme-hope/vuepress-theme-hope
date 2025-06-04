@@ -32,7 +32,7 @@ tag:
 
 由于 VuePress2 在核心中删除了 V1 的 v-pre 容器，我们提供了 `markdown.vPre` 选项来支持它。你可以在启用此选项时在 `v-pre` 容器中使用任何 Mustache 语法:
 
-:::: md-demo
+:::: preview
 
 ::: v-pre
 

@@ -54,7 +54,7 @@ export default hopeTheme({
 
 你可以直接在 Markdown 中使用 `<Catalog>` 组件来显示目录。
 
-::: md-demo 主页目录案例
+::: preview 主页目录案例
 
 <!-- 用于限制高度 -->
 <div class="catalog-display-container">

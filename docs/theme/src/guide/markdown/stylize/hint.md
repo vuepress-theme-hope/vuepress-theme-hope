@@ -30,7 +30,7 @@ export default hopeTheme({
 
 ## Demo
 
-:::: md-demo Container with default title
+:::: preview Container with default title
 
 ::: important
 Important container
@@ -62,7 +62,7 @@ Details container
 
 ::::
 
-:::: md-demo Customize container title
+:::: preview Customize container title
 
 ::: important Custom Title
 
@@ -136,7 +136,7 @@ const a = 1;
 
 ::::
 
-:::: md-demo Container without body
+:::: preview Container without body
 
 ::: important Custom important
 :::

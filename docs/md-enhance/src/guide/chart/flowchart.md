@@ -78,7 +78,7 @@ Available presets for now:
 
 ## Demo
 
-::: md-demo Vue theme
+::: preview Vue theme
 
 ```flow
 st=>start: Start|past:>http://www.google.com[blank]
@@ -100,7 +100,7 @@ c2(no)->op2->e
 
 :::
 
-::: md-demo Ant theme
+::: preview Ant theme
 
 ```flow:ant
 st=>start: Start|past:>http://www.google.com[blank]
@@ -122,7 +122,7 @@ c2(no)->op2->e
 
 :::
 
-::: md-demo Pie theme
+::: preview Pie theme
 
 ```flow:pie
 st=>start: Start|past:>http://www.google.com[blank]
@@ -150,7 +150,7 @@ c2(no)->op2->e
 
 Defines the shape that the node will take.
 
-::: md-demo Start & End
+::: preview Start & End
 
 - `[Variable]->start: [Text]`
 
@@ -171,7 +171,7 @@ st->e
 
 :::
 
-::: md-demo Operation
+::: preview Operation
 
 Indicates that an operation needs to happen in the flow.
 
@@ -186,7 +186,7 @@ process->e
 
 :::
 
-::: md-demo Input / Output
+::: preview Input / Output
 
 Indicates that IO happens in a flow.
 
@@ -201,7 +201,7 @@ process->e
 
 :::
 
-::: md-demo Subroutine
+::: preview Subroutine
 
 Indicates that a subroutine happens in the flow and that there should be another flowchart that documents this subroutine.
 
@@ -216,7 +216,7 @@ process->e
 
 :::
 
-::: md-demo Condition
+::: preview Condition
 
 Allows for a conditional or logical statement to direct the flow into one of two or more paths.
 
@@ -236,7 +236,7 @@ cond(no)->e
 
 :::
 
-::: md-demo Parallel
+::: preview Parallel
 
 Allows for multiple flows to happen simultaneously.
 

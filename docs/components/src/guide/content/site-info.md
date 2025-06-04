@@ -10,13 +10,13 @@ SiteInfo component, can be used as friend link or project display.
 
 <!-- #region demo -->
 
-::: md-demo Basic site info
+::: preview Basic site info
 
 <SiteInfo name="Mr.Hope's Blog" url="https://mister-hope.com" preview="https://theme-hope.vuejs.press/assets/image/mrhope.jpg" />
 
 :::
 
-::: md-demo Site info with more properties
+::: preview Site info with more properties
 
 <SiteInfo
   name="Mr.Hope's Blog"

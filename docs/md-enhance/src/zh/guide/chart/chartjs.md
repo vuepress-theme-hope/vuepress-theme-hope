@@ -72,7 +72,7 @@ export default {
 
 ## 案例
 
-:::: md-demo 块状图
+:::: preview 块状图
 
 ::: chartjs 一个块状图案例
 
@@ -119,7 +119,7 @@ export default {
 
 ::::
 
-:::: md-demo 气泡图
+:::: preview 气泡图
 
 ::: chartjs 一个气泡图案例
 
@@ -145,7 +145,7 @@ export default {
 
 ::::
 
-:::: md-demo 线状图
+:::: preview 线状图
 
 ::: chartjs 一个线状图案例
 
@@ -171,7 +171,7 @@ export default {
 
 ::::
 
-:::: md-demo 玫瑰图
+:::: preview 玫瑰图
 
 ::: chartjs 一个玫瑰图案例
 
@@ -201,7 +201,7 @@ export default {
 
 ::::
 
-:::: md-demo 雷达图
+:::: preview 雷达图
 
 ::: chartjs 一个雷达图案例
 
@@ -249,7 +249,7 @@ export default {
 
 ::::
 
-:::: md-demo 散点图
+:::: preview 散点图
 
 ::: chartjs 一个散点图案例
 

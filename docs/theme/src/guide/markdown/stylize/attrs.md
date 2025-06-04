@@ -119,19 +119,19 @@ interface MarkdownItAttrsOptions {
 
 > All class are styled with `margin:4px;padding:4px;border: 1px solid red;` to show the effect.
 
-::: md-demo Inline
+::: preview Inline
 
 Text with `inline code`{.inline-code} and ![favicon](/favicon.ico){.image}, also supporting _emphasis_{.inline-emphasis} and **bold**{.inline-bold}.
 
 :::
 
-::: md-demo Block
+::: preview Block
 
 block content {.block}
 
 :::
 
-::: md-demo Fence
+::: preview Fence
 
 ```js {.fence}
 const a = 1;
@@ -139,7 +139,7 @@ const a = 1;
 
 :::
 
-::: md-demo Table
+::: preview Table
 
 | Table   |
 | ------- |
@@ -149,7 +149,7 @@ const a = 1;
 
 :::
 
-::: md-demo List
+::: preview List
 
 - list item{.list-item}
 
@@ -160,13 +160,13 @@ const a = 1;
 
 :::
 
-::: md-demo Horizontal
+::: preview Horizontal
 
 --- {.horizontal}
 
 :::
 
-::: md-demo Softbreak
+::: preview Softbreak
 
 A line with break
 {.break}

@@ -120,67 +120,67 @@ defineEChartsConfig({
 
 ## 案例
 
-:::: md-demo 线图
+:::: preview 线图
 
 <!-- @include: @echarts/line.snippet.md -->
 
 ::::
 
-:::: md-demo 柱状图
+:::: preview 柱状图
 
 <!-- @include: @echarts/bar.snippet.md -->
 
 ::::
 
-:::: md-demo 饼图
+:::: preview 饼图
 
 <!-- @include: @echarts/pie.snippet.md -->
 
 ::::
 
-:::: md-demo 散点图
+:::: preview 散点图
 
 <!-- @include: @echarts/scatter.snippet.md -->
 
 ::::
 
-:::: md-demo 极坐标图
+:::: preview 极坐标图
 
 <!-- @include: @echarts/polar.snippet.md -->
 
 ::::
 
-:::: md-demo 烛台图
+:::: preview 烛台图
 
 <!-- @include: @echarts/candlestick.snippet.md -->
 
 ::::
 
-:::: md-demo 雷达图
+:::: preview 雷达图
 
 <!-- @include: @echarts/radar.snippet.md -->
 
 ::::
 
-:::: md-demo 热力图
+:::: preview 热力图
 
 <!-- @include: @echarts/heat-map.snippet.md -->
 
 ::::
 
-:::: md-demo 树图
+:::: preview 树图
 
 <!-- @include: @echarts/tree.snippet.md -->
 
 ::::
 
-:::: md-demo 多图
+:::: preview 多图
 
 <!-- @include: @echarts/multiple.snippet.md -->
 
 ::::
 
-:::: md-demo 词云 (通过设置函数)
+:::: preview 词云 (通过设置函数)
 
 <!-- @include: @echarts/wordcloud.snippet.md -->
 
