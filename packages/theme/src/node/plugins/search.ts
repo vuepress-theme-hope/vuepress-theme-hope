@@ -101,7 +101,8 @@ export const getSearchPlugin = (
       return null;
     }
 
-    const rootLang = app.siteData.locales["/"].lang ?? app.siteData.lang;
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    const rootLang = app.siteData.locales?.["/"].lang ?? app.siteData.lang;
 
     return slimsearchPlugin({
       indexContent: true,
