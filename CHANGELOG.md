@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.91](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.90...v2.0.0-rc.91) (2025-06-05)
+
+### ✨ Features
+
+- **theme:** support preview plugin ([b15c6e8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b15c6e85653abe73cfed5b3eb202868888ec80b6))
+
+### 🐛 Bug Fixes
+
+- **theme:** fix issues when locale is not defined ([693c2fc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/693c2fcc8a3ace65cc294fc6cc333027f025c706))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.90](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.89...v2.0.0-rc.90) (2025-06-04)
 
 **Note:** Version bump only for package vuepress-theme-hope-root
