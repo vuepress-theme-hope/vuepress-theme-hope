@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.92](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.91...v2.0.0-rc.92) (2025-06-05)
+
+### 🐛 Bug Fixes
+
+- **theme:** fix wrong optional chaining ([7903516](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/79035162fdcd30a634be200bfdf081c4625119e3))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.91](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.90...v2.0.0-rc.91) (2025-06-05)
 
 ### ✨ Features
