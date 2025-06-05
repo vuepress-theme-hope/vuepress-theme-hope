@@ -1,7 +1,7 @@
 import { markdownStylizePlugin } from "@vuepress/plugin-markdown-stylize";
 import type { Plugin } from "vuepress/core";
 
-import type { MarkdownOptions } from "../../shared/index.js";
+import type { ThemeMarkdownOptions } from "../typings/index.js";
 
 /**
  * @private
@@ -11,7 +11,7 @@ import type { MarkdownOptions } from "../../shared/index.js";
 export const getMarkdownStylizePlugin = ({
   stylize = [],
   ...options
-}: MarkdownOptions): Plugin | null =>
+}: ThemeMarkdownOptions): Plugin | null =>
   markdownStylizePlugin({
     ...options,
     custom: stylize,

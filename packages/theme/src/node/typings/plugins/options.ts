@@ -25,7 +25,7 @@ import type { ComponentPluginOptions } from "vuepress-plugin-components";
 
 import type { BlogOptions } from "./blog.js";
 
-export interface DeprecatedPluginsOptions {
+export interface DeprecatedThemePluginsOptions {
   /**
    * @deprecated Use `markdown.linksCheck` instead
    */
@@ -77,7 +77,7 @@ export interface DeprecatedPluginsOptions {
   mdEnhance?: never;
 }
 
-export interface PluginsOptions extends DeprecatedPluginsOptions {
+export interface ThemePluginsOptions extends DeprecatedThemePluginsOptions {
   /**
    * Enable active-header-links plugin or not
    *

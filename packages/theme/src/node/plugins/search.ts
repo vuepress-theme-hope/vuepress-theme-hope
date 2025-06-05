@@ -12,11 +12,11 @@ import type { App, Page, Plugin } from "vuepress/core";
 import { colors } from "vuepress/utils";
 
 import type {
-  PluginsOptions,
   ThemeBasePageFrontmatter,
   ThemeData,
 } from "../../shared/index.js";
 import { themeLocaleInfo } from "../locales/index.js";
+import type { ThemePluginsOptions } from "../typings/index.js";
 import { logger } from "../utils.js";
 
 let docsearchPlugin: ((options: DocSearchPluginOptions) => Plugin) | null =
@@ -61,7 +61,7 @@ try {
 export const getSearchPlugin = (
   app: App,
   themeData: ThemeData,
-  plugins: PluginsOptions,
+  plugins: ThemePluginsOptions,
 ): Plugin | null => {
   const encryptedPaths = keys(themeData.encrypt.config ?? {});
   const isPageEncrypted = ({ path }: Page): boolean =>

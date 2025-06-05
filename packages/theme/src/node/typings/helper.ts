@@ -22,8 +22,8 @@ import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
 import type { WatermarkPluginOptions } from "@vuepress/plugin-watermark";
 import type { ComponentPluginOptions } from "vuepress-plugin-components";
 
+import type { BlogOptions } from "./plugins/index.js";
 import type {
-  BlogOptions,
   NavbarOptions,
   SidebarArrayOptions,
   SidebarObjectOptions,

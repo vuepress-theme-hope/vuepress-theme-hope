@@ -1,7 +1,7 @@
 import type { Plugin } from "vuepress";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
-import type { MarkdownOptions } from "../../shared/index.js";
+import type { ThemeMarkdownOptions } from "../typings/index.js";
 
 export const getMdEnhancePlugin = (
   {
@@ -16,7 +16,7 @@ export const getMdEnhancePlugin = (
     sandpack = false,
     vuePlayground = false,
     kotlinPlayground = false,
-  }: MarkdownOptions,
+  }: ThemeMarkdownOptions,
   legacy: boolean,
 ): Plugin | null => {
   if (

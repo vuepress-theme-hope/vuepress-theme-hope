@@ -9,10 +9,10 @@ import {
 } from "./utils.js";
 import type {
   ArticleInfoData,
-  BlogOptions,
   ThemeData,
   ThemeNormalPageFrontmatter,
 } from "../../../shared/index.js";
+import type { BlogOptions } from "../../typings/index.js";
 
 /** @private */
 export const getBlogArticleType = (

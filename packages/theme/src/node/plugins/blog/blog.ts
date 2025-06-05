@@ -13,10 +13,10 @@ import {
 } from "./type.js";
 import type {
   ArticleInfoData,
-  BlogOptions,
   ThemeData,
   ThemePageData,
 } from "../../../shared/index.js";
+import type { BlogOptions } from "../../typings/index.js";
 
 /** @private */
 export const getBlogPlugin = (

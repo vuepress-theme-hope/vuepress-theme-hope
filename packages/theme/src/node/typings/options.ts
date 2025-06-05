@@ -1,32 +1,32 @@
-import type { ThemeData as DefaultThemeData } from "@vuepress/plugin-theme-data";
+import type { ThemeData as CommonThemeData } from "@vuepress/plugin-theme-data";
 
+import type { ThemeMarkdownOptions } from "./markdown.js";
+import type { ThemePluginsOptions } from "./plugins/index.js";
 import type {
   AppearanceOptions,
   FeatureOptions,
   InfoOptions,
   LayoutOptions,
-  MarkdownOptions,
-  PluginsOptions,
   ThemeLocaleOptions,
 } from "../../shared/index.js";
 
 export interface ThemeOptions
-  extends AppearanceOptions,
+  extends CommonThemeData<ThemeLocaleOptions>,
+    AppearanceOptions,
     FeatureOptions,
     InfoOptions,
-    LayoutOptions,
-    DefaultThemeData<ThemeLocaleOptions> {
+    LayoutOptions {
   /**
    * Theme markdown options
    *
-   * 主题 markdown 选项
+   * 主题 Markdown 选项
    */
-  markdown?: MarkdownOptions;
+  markdown?: ThemeMarkdownOptions;
 
   /**
    * Theme plugins options
    *
    * 主题插件选项
    */
-  plugins?: PluginsOptions;
+  plugins?: ThemePluginsOptions;
 }

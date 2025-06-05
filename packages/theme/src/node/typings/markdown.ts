@@ -15,7 +15,7 @@ export type MarkdownHighlighterOptions =
   | ({ type: "prismjs" } & PrismjsPluginOptions)
   | ({ type: "shiki" } & ShikiPluginOptions);
 
-export interface MarkdownOptions
+export interface ThemeMarkdownOptions
   extends MarkdownExtPluginOptions,
     Pick<MarkdownHintPluginOptions, "alert" | "hint">,
     Pick<MarkdownImagePluginOptions, "figure">,

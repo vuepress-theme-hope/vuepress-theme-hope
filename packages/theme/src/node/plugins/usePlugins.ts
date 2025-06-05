@@ -7,12 +7,12 @@ import { useGitPlugin } from "./git.js";
 import { useExtendsPagePlugin } from "./pageConverter.js";
 import { usePrismjsPlugin } from "./prismjs.js";
 import { useShikiPlugin } from "./shiki.js";
+import type { ThemeData } from "../../shared/index.js";
 import type {
-  MarkdownOptions,
-  PluginsOptions,
-  ThemeData,
-} from "../../shared/index.js";
-import type { ThemeBehaviorOptions } from "../typings/index.js";
+  ThemeBehaviorOptions,
+  ThemeMarkdownOptions,
+  ThemePluginsOptions,
+} from "../typings/index.js";
 import { TEMPLATE_FOLDER } from "../utils.js";
 
 /**
@@ -23,8 +23,8 @@ import { TEMPLATE_FOLDER } from "../utils.js";
 export const usePlugins = (
   app: App,
   themeData: ThemeData,
-  { highlighter }: MarkdownOptions,
-  plugins: PluginsOptions,
+  { highlighter }: ThemeMarkdownOptions,
+  plugins: ThemePluginsOptions,
   hotReload: boolean,
   behavior: ThemeBehaviorOptions,
 ): void => {

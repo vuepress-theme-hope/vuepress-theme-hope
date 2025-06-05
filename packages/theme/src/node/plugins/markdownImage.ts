@@ -1,7 +1,7 @@
 import { markdownImagePlugin } from "@vuepress/plugin-markdown-image";
 import type { Plugin } from "vuepress/core";
 
-import type { MarkdownOptions } from "../../shared/index.js";
+import type { ThemeMarkdownOptions } from "../typings/index.js";
 
 /**
  * @private
@@ -9,7 +9,7 @@ import type { MarkdownOptions } from "../../shared/index.js";
  * Resolve options for @vuepress/plugin-markdown-image
  */
 export const getMarkdownImagePlugin = (
-  options: MarkdownOptions,
+  options: ThemeMarkdownOptions,
 ): Plugin | null =>
   markdownImagePlugin({
     figure: options.figure ?? false,
