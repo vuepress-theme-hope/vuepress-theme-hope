@@ -92,6 +92,8 @@ tag:
 
 - [@vuepress/plugin-markdown-math][markdown-math]: 公式支持
 
+- [@vuepress/plugin-markdown-preview][markdown-preview]: Markdown 预览支持
+
 - [@vuepress/plugin-notice][notice]: 提供公告
 
 - [@vuepress/plugin-rtl][rtl]: 提供 RTL 支持
@@ -132,6 +134,7 @@ tag:
 [markdown-hint]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-hint.html
 [markdown-image]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-image.html
 [markdown-math]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-math.html
+[markdown-preview]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-preview.html
 [links-check]: https://ecosystem.vuejs.press/zh/plugins/markdown/links-check.html
 [meilisearch]: https://ecosystem.vuejs.press/zh/plugins/search/meilisearch.html
 [notice]: https://ecosystem.vuejs.press/zh/plugins/features/notice.html

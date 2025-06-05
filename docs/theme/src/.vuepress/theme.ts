@@ -121,6 +121,7 @@ export default theme(
       },
       math: true,
       mark: true,
+      preview: true,
       revealjs: {
         plugins: ["highlight", "math", "search", "notes", "zoom"],
         themes: [

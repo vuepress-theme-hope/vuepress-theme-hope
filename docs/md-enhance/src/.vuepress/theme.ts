@@ -46,6 +46,7 @@ export default theme("md-enhance", {
     playground: {
       presets: ["ts", "vue", "unocss"],
     },
+    preview: true,
     sandpack: true,
     vuePlayground: true,
   },

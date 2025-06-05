@@ -10,7 +10,7 @@ import { componentsPlugin } from "vuepress-plugin-components";
  */
 export const getComponentsPlugin = (
   options?: ComponentPluginOptions | false,
-  legacy = false,
+  compact = false,
 ): Plugin | null =>
   options === false
     ? null
@@ -19,5 +19,5 @@ export const getComponentsPlugin = (
           components: ["Badge"],
           ...(isPlainObject(options) ? options : {}),
         },
-        legacy,
+        compact,
       );

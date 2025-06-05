@@ -113,6 +113,13 @@ export interface ThemeMarkdownOptions
   math?: MarkdownMathPluginOptions | boolean;
 
   /**
+   * Whether to enable preview support
+   *
+   * 是否启用预览支持
+   */
+  preview?: boolean;
+
+  /**
    * Customizing token stylize
    *
    * 自定义标记样式

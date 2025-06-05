@@ -12,10 +12,11 @@ tag:
 Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables more syntax and features in Markdown via the following plugins:
 
 - [@vuepress/plugin-markdown-ext][markdown-ext]
+- [@vuepress/plugin-markdown-hint][markdown-hint]
 - [@vuepress/plugin-markdown-image][markdown-image]
 - [@vuepress/plugin-markdown-include][markdown-include]
-- [@vuepress/plugin-markdown-hint][markdown-hint]
 - [@vuepress/plugin-markdown-math][markdown-math]
+- [@vuepress/plugin-markdown-preview][markdown-preview]
 - [@vuepress/plugin-markdown-stylize][markdown-stylize]
 - [@vuepress/plugin-markdown-tab][markdown-tab]
 - [@vuepress/plugin-link-check][link-check]
@@ -45,6 +46,7 @@ Don't worry about the size of your site. If you don't enable related features, t
 [markdown-include]: https://ecosystem.vuejs.press/plugins/markdown/markdown-include.html
 [markdown-hint]: https://ecosystem.vuejs.press/plugins/markdown/markdown-hint.html
 [markdown-math]: https://ecosystem.vuejs.press/plugins/markdown/markdown-math.html
+[markdown-preview]: https://ecosystem.vuejs.press/plugins/markdown/markdown-preview.html
 [markdown-stylize]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html
 [markdown-tab]: https://ecosystem.vuejs.press/plugins/markdown/markdown-tab.html
 [link-check]: https://ecosystem.vuejs.press/plugins/markdown/link-check.html

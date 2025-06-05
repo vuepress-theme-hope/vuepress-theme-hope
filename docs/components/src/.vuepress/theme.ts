@@ -60,7 +60,7 @@ export default theme("components", {
     codeTabs: true,
     imgMark: true,
     include: true,
-    demo: true,
+    preview: true,
   },
 
   plugins: {

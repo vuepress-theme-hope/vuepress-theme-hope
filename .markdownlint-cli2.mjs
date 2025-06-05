@@ -35,6 +35,7 @@ export default {
         "StackBlitz",
         "VPBanner",
         "VPCard",
+        "VPPreview",
         "VidStack",
         "VideoPlayer",
         "YouTube",

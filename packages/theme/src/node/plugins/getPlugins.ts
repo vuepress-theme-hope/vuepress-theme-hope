@@ -7,6 +7,7 @@ import { markdownExtPlugin } from "@vuepress/plugin-markdown-ext";
 import { markdownHintPlugin } from "@vuepress/plugin-markdown-hint";
 import { markdownIncludePlugin } from "@vuepress/plugin-markdown-include";
 import { markdownMathPlugin } from "@vuepress/plugin-markdown-math";
+import { markdownPreviewPlugin } from "@vuepress/plugin-markdown-preview";
 import { markdownTabPlugin } from "@vuepress/plugin-markdown-tab";
 import { nprogressPlugin } from "@vuepress/plugin-nprogress";
 import { photoSwipePlugin } from "@vuepress/plugin-photo-swipe";
@@ -52,7 +53,7 @@ export const getPlugins = (
     ThemeOptions,
     "hostname" | "hotReload" | "favicon" | "plugins" | "markdown"
   >,
-  legacy = false,
+  compact = false,
 ): PluginConfig => {
   checkPluginsOptions(pluginsOptions);
 
@@ -87,9 +88,11 @@ export const getPlugins = (
       : math
         ? markdownMathPlugin()
         : null,
+    // @vuepress/plugin-preview
+    markdownOptions.preview ? markdownPreviewPlugin() : null,
     // @vuepress/plugin-markdown-tab
     markdownTabPlugin(markdownOptions),
-    getMdEnhancePlugin(markdownOptions, legacy),
+    getMdEnhancePlugin(markdownOptions, compact),
     getMarkdownImagePlugin(markdownOptions),
     getMarkdownStylizePlugin(markdownOptions),
     getRevealJsPlugin(markdownOptions.revealjs),
@@ -118,7 +121,7 @@ export const getPlugins = (
       ? null
       : photoSwipePlugin(isPlainObject(photoSwipe) ? photoSwipe : {}),
 
-    getComponentsPlugin(pluginsOptions.components, legacy),
+    getComponentsPlugin(pluginsOptions.components, compact),
     getActiveHeaderLinksPlugin(pluginsOptions.activeHeaderLinks),
     getCatalogPlugin(pluginsOptions.catalog),
     pluginsOptions.nprogress === false ? null : nprogressPlugin(),
@@ -132,7 +135,7 @@ export const getPlugins = (
       pluginsOptions.feed,
       options.hostname,
       options.favicon,
-      legacy,
+      compact,
     ),
     getNoticePlugin(pluginsOptions.notice),
     getPwaPlugin(pluginsOptions.pwa, options.favicon),

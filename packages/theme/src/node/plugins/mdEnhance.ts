@@ -17,7 +17,7 @@ export const getMdEnhancePlugin = (
     vuePlayground = false,
     kotlinPlayground = false,
   }: ThemeMarkdownOptions,
-  legacy: boolean,
+  compact: boolean,
 ): Plugin | null => {
   if (
     !chartjs &&
@@ -49,6 +49,6 @@ export const getMdEnhancePlugin = (
       sandpack,
       vuePlayground,
     },
-    legacy,
+    compact,
   );
 };

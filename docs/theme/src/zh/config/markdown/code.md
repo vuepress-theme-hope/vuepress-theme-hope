@@ -21,6 +21,16 @@ tag:
 
 是否启用选项卡支持。
 
+## markdown.preview
+
+- 类型: `boolean`
+- 默认值: `false`
+- 详情:
+  - [Markdown → 预览](../../guide/markdown/code/preview.md)
+  - [@vuepress/plugin-markdown-preview][preview]
+
+是否启用预览支持。
+
 ## markdown.playground
 
 - 类型: `PlaygroundGlobalOptions`
@@ -233,3 +243,4 @@ CodePen 编辑器状态
 CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第三位代表演示页面。
 
 [codeTabs]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-tab.html#codeTabs
+[preview]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-preview.html

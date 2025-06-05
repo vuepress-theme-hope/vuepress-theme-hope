@@ -92,6 +92,8 @@ The following plugins are bundled by theme, you can enable them via configuratio
 
 - [@vuepress/plugin-markdown-math][markdown-math]: Formula support
 
+- [@vuepress/plugin-markdown-preview][markdown-preview]: Markdown preview support
+
 - [@vuepress/plugin-notice][notice]: Provides notice
 
 - [@vuepress/plugin-rtl][rtl]: Provides rtl support
@@ -131,6 +133,7 @@ These plugins are supported by theme, but you need to install them manually whil
 [markdown-hint]: https://ecosystem.vuejs.press/plugins/markdown/markdown-hint.html
 [markdown-image]: https://ecosystem.vuejs.press/plugins/markdown/markdown-image.html
 [markdown-math]: https://ecosystem.vuejs.press/plugins/markdown/markdown-math.html
+[markdown-preview]: https://ecosystem.vuejs.press/plugins/markdown/markdown-preview.html
 [meilisearch]: https://ecosystem.vuejs.press/plugins/search/meilisearch.html
 [notice]: https://ecosystem.vuejs.press/plugins/features/notice.html
 [nprogress]: https://ecosystem.vuejs.press/plugins/features/nprogress.html

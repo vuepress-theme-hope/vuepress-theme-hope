@@ -11,7 +11,7 @@ tag:
 
 The following options adds new code feature in Markdown, and can be set **under `markdown` property** in theme options.
 
-## markdown.markdown.codeTabs
+## markdown.codeTabs
 
 - Type: `boolean`
 - Default: `false`
@@ -20,6 +20,16 @@ The following options adds new code feature in Markdown, and can be set **under 
   - [@vuepress/plugin-markdown-tab → codeTabs][codeTabs]
 
 Whether to enable tabs support.
+
+## markdown.preview
+
+- Type: `boolean`
+- Default: `false`
+- Details:
+  - [Markdown → Preview](../../guide/markdown/code/preview.md)
+  - [@vuepress/plugin-markdown-preview][preview]
+
+Whether to enable preview support.
 
 ## markdown.playground
 
@@ -224,3 +234,4 @@ CodePen editor layout
 CodePen editor status
 
 [codeTabs]: https://ecosystem.vuejs.press/plugins/markdown/markdown-tab.html#codeTabs
+[preview]: https://ecosystem.vuejs.press/plugins/markdown/markdown-preview.html

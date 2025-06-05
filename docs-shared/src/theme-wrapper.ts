@@ -147,5 +147,5 @@ export const theme = (
     ...options,
   };
 
-  return hopeTheme(themeOptions);
+  return hopeTheme(themeOptions, false);
 };

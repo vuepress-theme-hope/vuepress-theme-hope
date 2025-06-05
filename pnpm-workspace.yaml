@@ -44,6 +44,7 @@ catalogs:
     "@vuepress/plugin-markdown-image": 2.0.0-rc.108
     "@vuepress/plugin-markdown-include": 2.0.0-rc.108
     "@vuepress/plugin-markdown-math": 2.0.0-rc.108
+    "@vuepress/plugin-markdown-preview": 2.0.0-rc.108
     "@vuepress/plugin-markdown-stylize": 2.0.0-rc.108
     "@vuepress/plugin-markdown-tab": 2.0.0-rc.108
     "@vuepress/plugin-meilisearch": 2.0.0-rc.108

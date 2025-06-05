@@ -12,10 +12,11 @@ tag:
 除了 VuePress 本身新增了一些 Markdown 语法外，`vuepress-theme-hope` 通过以下插件，在 Markdown 中启用了更多的语法与功能：
 
 - [@vuepress/plugin-markdown-ext][markdown-ext]
+- [@vuepress/plugin-markdown-hint][markdown-hint]
 - [@vuepress/plugin-markdown-image][markdown-image]
 - [@vuepress/plugin-markdown-include][markdown-include]
-- [@vuepress/plugin-markdown-hint][markdown-hint]
 - [@vuepress/plugin-markdown-math][markdown-math]
+- [@vuepress/plugin-markdown-preview][markdown-preview]
 - [@vuepress/plugin-markdown-stylize][markdown-stylize]
 - [@vuepress/plugin-markdown-tab][markdown-tab]
 - [@vuepress/plugin-link-check][link-check]
@@ -45,6 +46,7 @@ VuePress 自带的 GitHub 风格的表格，Emoji、TOC 都是开箱即用的。
 [markdown-include]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-include.html
 [markdown-hint]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-hint.html
 [markdown-math]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-math.html
+[markdown-preview]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-preview.html
 [markdown-stylize]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html
 [markdown-tab]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-tab.html
 [link-check]: https://ecosystem.vuejs.press/zh/plugins/markdown/link-check.html

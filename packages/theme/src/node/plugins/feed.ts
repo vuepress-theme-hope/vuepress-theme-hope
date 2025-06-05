@@ -32,7 +32,7 @@ export const getFeedPlugin = (
   options?: Omit<FeedPluginOptions, "hostname"> | boolean,
   hostname?: string,
   favicon?: string,
-  legacy = false,
+  compact = false,
 ): Plugin | null => {
   // Disable feed if feed is disabled or no options for feed plugin
   if (!options) return null;
@@ -87,6 +87,6 @@ export const getFeedPlugin = (
       defaultOptions,
       isPlainObject(options) ? options : { rss: true },
     ),
-    legacy,
+    compact,
   );
 };

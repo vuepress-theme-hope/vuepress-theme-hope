@@ -49,6 +49,9 @@ export const KNOWN_THEME_MARKDOWN_OPTIONS = [
   // plugin-markdown-include
   "include",
 
+  // plugin-markdown-preview
+  "preview",
+
   // plugin-markdown-stylize
   "align",
   "attrs",

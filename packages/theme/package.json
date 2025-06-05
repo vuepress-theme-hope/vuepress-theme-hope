@@ -104,6 +104,7 @@
     "@vuepress/plugin-markdown-image": "catalog:vuepress",
     "@vuepress/plugin-markdown-include": "catalog:vuepress",
     "@vuepress/plugin-markdown-math": "catalog:vuepress",
+    "@vuepress/plugin-markdown-preview": "catalog:vuepress",
     "@vuepress/plugin-markdown-stylize": "catalog:vuepress",
     "@vuepress/plugin-markdown-tab": "catalog:vuepress",
     "@vuepress/plugin-notice": "catalog:vuepress",
