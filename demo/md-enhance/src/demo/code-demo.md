@@ -4,18 +4,6 @@ title: Code Demo
 
 ## Demo
 
-::: preview Demo
-
-## Heading 2
-
-Text
-
-```js
-const a = 1;
-```
-
-:::
-
 ::: normal-demo Demo
 
 ```html
