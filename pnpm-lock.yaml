@@ -995,8 +995,8 @@ importers:
         specifier: ^0.21.0
         version: 0.21.0(markdown-it@14.1.0)
       '@mdit/plugin-uml':
-        specifier: ^0.21.0
-        version: 0.21.0(markdown-it@14.1.0)
+        specifier: ^0.22.0
+        version: 0.22.0(markdown-it@14.1.0)
       '@types/markdown-it':
         specifier: ^14.1.2
         version: 14.1.2
@@ -2596,6 +2596,15 @@ packages:
       markdown-it:
         optional: true
 
+  '@mdit/helper@0.22.0':
+    resolution: {integrity: sha512-2iJYa2PW59VhZgUYZKB88eYsq7Rn20gZbpe+Pnz3bRH/8goMA1YfbRM6oMhKSMX5C8IaK66IGutRJkHrRHhJEA==}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      markdown-it: ^14.1.0
+    peerDependenciesMeta:
+      markdown-it:
+        optional: true
+
   '@mdit/plugin-alert@0.21.0':
     resolution: {integrity: sha512-yOp2Nt+57StOwfViPy+j3EAK0y2msagkVrYj3fupSJWNCpXc0HSWC78Law/unqeTdjoVEF4FyckJEAhqPzVZLw==}
     peerDependencies:
@@ -2802,6 +2811,15 @@ packages:
 
   '@mdit/plugin-uml@0.21.0':
     resolution: {integrity: sha512-Ag8DFjiuyhwL4Xw+maTuwYAmELbwAyqfd2poigryyCK0VJY78iHSCTE5jmVHAMIq1NA7zJWqvTqodJA5WxXMuQ==}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      markdown-it: ^14.1.0
+    peerDependenciesMeta:
+      markdown-it:
+        optional: true
+
+  '@mdit/plugin-uml@0.22.0':
+    resolution: {integrity: sha512-QDEWc8eQThrklhjXfGHuOqeuQkLropo87yYlgg2kbrxuQPDjOODpwYNhPpoDd5fbLt0x3wCHRveKQY/WG/2WRQ==}
     engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
@@ -11840,6 +11858,12 @@ snapshots:
     optionalDependencies:
       markdown-it: 14.1.0
 
+  '@mdit/helper@0.22.0(markdown-it@14.1.0)':
+    dependencies:
+      '@types/markdown-it': 14.1.2
+    optionalDependencies:
+      markdown-it: 14.1.0
+
   '@mdit/plugin-alert@0.21.0(markdown-it@14.1.0)':
     dependencies:
       '@types/markdown-it': 14.1.2
@@ -11995,6 +12019,13 @@ snapshots:
   '@mdit/plugin-uml@0.21.0(markdown-it@14.1.0)':
     dependencies:
       '@mdit/helper': 0.21.0(markdown-it@14.1.0)
+      '@types/markdown-it': 14.1.2
+    optionalDependencies:
+      markdown-it: 14.1.0
+
+  '@mdit/plugin-uml@0.22.0(markdown-it@14.1.0)':
+    dependencies:
+      '@mdit/helper': 0.22.0(markdown-it@14.1.0)
       '@types/markdown-it': 14.1.2
     optionalDependencies:
       markdown-it: 14.1.0
