@@ -25,7 +25,7 @@ You can add new layouts or override existing layouts via `layouts` option in [cl
 
 <!-- #region layout -->
 
-```vue title=".vuepress/layout/Home.vue"
+```vue title=".vuepress/layouts/Home.vue"
 <script setup lang="ts">
 import { Layout } from "vuepress-theme-hope/client";
 </script>
@@ -44,7 +44,7 @@ import { Layout } from "vuepress-theme-hope/client";
 </template>
 ```
 
-```vue title=".vuepress/layout/Layout.vue"
+```vue title=".vuepress/layouts/Layout.vue"
 <script setup lang="ts">
 import { Layout } from "vuepress-theme-hope/client";
 </script>
