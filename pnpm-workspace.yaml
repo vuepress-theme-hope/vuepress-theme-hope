@@ -6,7 +6,7 @@ packages:
 catalog:
   "@vueuse/core": 13.3.0
   markmap-lib: 0.18.11
-  markmap-toolbar: 0.18.10
+  markmap-toolbar: 0.18.12
   markmap-view: 0.18.10
   mathjax-full: 3.2.2
   mermaid: 11.6.0
