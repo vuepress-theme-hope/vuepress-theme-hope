@@ -28,7 +28,7 @@
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/plugin-docsearch": "catalog:vuepress",
     "@vuepress/plugin-revealjs": "catalog:vuepress",
-    "chart.js": "4.4.9",
+    "chart.js": "4.5.0",
     "echarts": "5.6.0",
     "katex": "0.16.22",
     "kotlin-playground": "1.30.0",
