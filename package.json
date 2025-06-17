@@ -47,7 +47,7 @@
     "@lerna-lite/cli": "4.3.0",
     "@lerna-lite/publish": "4.3.0",
     "@rollup/plugin-alias": "5.1.1",
-    "@rollup/plugin-commonjs": "28.0.3",
+    "@rollup/plugin-commonjs": "28.0.6",
     "@rollup/plugin-node-resolve": "16.0.1",
     "@rollup/plugin-replace": "6.0.2",
     "@types/node": "22.15.30",
