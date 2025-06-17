@@ -40,6 +40,15 @@ Whether to enable ECharts support
 
 Whether to enable flowchart support
 
+## markdown.markmap
+
+- Type: `boolean`
+- Default: `false`
+- Details:
+  - [Markdown → Markmap](../../guide/markdown/chart/markmap.md)
+
+Whether to enable [Markmap](https://markmap.js.org/) support.
+
 ## markdown.mermaid
 
 - Type: `boolean`
@@ -47,7 +56,7 @@ Whether to enable flowchart support
 - Details:
   - [Markdown → Mermaid](../../guide/markdown/chart/mermaid.md)
 
-Whether to enable [Mermaid](https://mermaid.js.org/) support, you can pass in a config object to customize the behavior of Mermaid.
+Whether to enable [Mermaid](https://mermaid.js.org/) support.
 
 ## markdown.plantuml
 

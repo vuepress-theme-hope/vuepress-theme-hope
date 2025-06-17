@@ -27,14 +27,8 @@ export default defineUserConfig({
 
     sidebar: {
       "/demo/": [
-        "/demo/chartjs",
-        "/demo/echarts",
         "/demo/code-demo",
-        "/demo/flowchart",
         "/demo/kotlin-playground",
-        "/demo/markmap",
-        "/demo/mermaid",
-        "/demo/plantuml",
         "/demo/playground",
         "/demo/sandpack",
         "/demo/vue-playground",
@@ -44,14 +38,8 @@ export default defineUserConfig({
 
   plugins: [
     mdEnhancePlugin({
-      chartjs: true,
       demo: true,
-      echarts: true,
-      flowchart: true,
-      markmap: true,
-      mermaid: true,
       kotlinPlayground: true,
-      plantuml: true,
       playground: {
         presets: ["ts", "vue", "unocss"],
       },

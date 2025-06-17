@@ -12,11 +12,6 @@ export const prepareConfigFile = async (
   const imports = new Set<string>();
   const enhances = new Set<string>();
 
-  if (status.chartjs) {
-    imports.add(`import ChartJS from "${CLIENT_FOLDER}components/ChartJS.js";`);
-    enhances.add(`app.component("ChartJS", ChartJS)`);
-  }
-
   if (options.demo) {
     imports.add(
       `import CodeDemo from "${CLIENT_FOLDER}components/CodeDemo.js";`,
@@ -29,34 +24,11 @@ export const prepareConfigFile = async (
     }
   }
 
-  if (status.echarts) {
-    imports.add(`import ECharts from "${CLIENT_FOLDER}components/ECharts.js";`);
-    enhances.add(`app.component("ECharts", ECharts);`);
-  }
-
-  if (status.flowchart) {
-    imports.add(
-      `import FlowChart from "${CLIENT_FOLDER}components/FlowChart.js";`,
-    );
-
-    enhances.add(`app.component("FlowChart", FlowChart);`);
-  }
-
   if (status.kotlinPlayground) {
     imports.add(
       `import KotlinPlayground from "${CLIENT_FOLDER}components/KotlinPlayground.js";`,
     );
     enhances.add(`app.component("KotlinPlayground", KotlinPlayground);`);
-  }
-
-  if (status.markmap) {
-    imports.add(`import MarkMap from "${CLIENT_FOLDER}components/MarkMap.js";`);
-    enhances.add(`app.component("MarkMap", MarkMap);`);
-  }
-
-  if (status.mermaid) {
-    imports.add(`import Mermaid from "${CLIENT_FOLDER}components/Mermaid.js";`);
-    enhances.add(`app.component("Mermaid", Mermaid);`);
   }
 
   if (options.playground) {

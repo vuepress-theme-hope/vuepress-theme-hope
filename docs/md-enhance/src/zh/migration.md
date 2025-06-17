@@ -23,78 +23,6 @@ icon: code-compare
 
 - 新增 component 代码块以快速添加组件
 
-- Chart.js 支持
-
-  新增 `chart` 选项提供 [chart.js](https://www.chartjs.org/docs/latest/) 支持
-
-  ````md
-  ::: chartjs 标题
-
-  ```json
-  {
-    // chart.js 配置
-  }
-  ```
-
-  :::
-
-  ::: chartjs 标题
-
-  ```js
-  const config = {
-    // chart.js 配置
-  };
-  ```
-
-  :::
-  ````
-
-- ECharts 支持
-
-  新增 `echarts` 选项提供 [ECharts](https://echarts.apache.org/en/index.html) 支持。
-
-  ````md
-  ::: echarts 标题
-
-  ```json
-  {
-    // echarts 配置
-  }
-  ```
-
-  :::
-
-  ::: echarts 标题
-
-  ```js
-  const option = {
-    // echarts 配置
-  };
-  ```
-
-  :::
-  ````
-
-- 包含文件支持
-
-  新增 `include` 选项使用 `<!-- @include: -->` 将其他文件内容导入到 Markdown 中。
-
-  使用 `<!-- @include: filename -->` 导入文件。
-
-  如果要部分导入文件，你可以指定导入的行数
-
-  - `<!-- @include: filename{start-end} -->`
-  - `<!-- @include: filename{start-} -->`
-  - `<!-- @include: filename{-end} -->`
-
-  同时你也可以导入文件区域:
-
-  - `<!-- @include: filename#region -->`
-
-- MarkMap 支持
-
-  新增 `markmap` 选项通过 `markmap` 容器创建 [Markmap](https://markmap.js.org/)。
-
 - Playground
 
   通过官方预设和自定义选项嵌入交互演示
@@ -211,12 +139,14 @@ icon: code-compare
 
   请用 `@vuepress/plugin-revealjs` 代替
 
-## 预发布版本中的选项调整
+- `chartjs` `echarts` `flowchart` `markmap` `mermaid` `plantuml` 被移除
 
-- `mdImport` 被重命名为 `include`
+  请用 `@vuepress/plugin-markdown-chart` 代替
+
+## 预发布版本中的选项调整
 
 - `vpre` 选项被重命名为 `vPre`
 
 - `card` 由 `components` 替代
 
-- `mermaid` `vuePlayground` 等选项不再接受相关库的配置
+- `vuePlayground` 等选项不再接受相关库的配置

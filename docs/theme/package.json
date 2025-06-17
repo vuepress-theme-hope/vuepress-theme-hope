@@ -20,12 +20,13 @@
   },
   "dependencies": {
     "@types/katex": "0.16.7",
-    "@vue/repl": "4.5.1",
+    "@vue/repl": "4.6.1",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/highlighter-helper": "catalog:vuepress",
     "@vuepress/helper": "catalog:vuepress",
     "@vuepress/plugin-feed": "catalog:vuepress",
+    "@vuepress/plugin-markdown-chart": "catalog:vuepress",
     "@vuepress/plugin-revealjs": "catalog:vuepress",
     "@vuepress/shiki-twoslash": "catalog:vuepress",
     "@vueuse/core": "catalog:",
@@ -45,7 +46,6 @@
     "vue": "catalog:",
     "vuepress": "catalog:vuepress",
     "vuepress-plugin-components": "workspace:*",
-    "vuepress-plugin-md-enhance": "workspace:*",
     "vuepress-shared": "workspace:*",
     "vuepress-theme-hope": "workspace:*"
   }

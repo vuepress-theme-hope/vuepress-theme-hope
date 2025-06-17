@@ -9,13 +9,7 @@ import { logger } from "../utils.js";
 export const convertOptions = (
   options: MarkdownEnhancePluginOptions & Record<string, unknown>,
 ): void => {
-  const { deprecatedLogger, droppedLogger } = createConverter("md-enhance");
-
-  deprecatedLogger({
-    options,
-    old: "chart",
-    new: "chartjs",
-  });
+  const { droppedLogger } = createConverter("md-enhance");
 
   droppedLogger({
     options,
@@ -254,16 +248,41 @@ export const convertOptions = (
       )} from "vuepress-plugin-components" and use it instead.`,
     );
 
-  if (isPlainObject(options.mermaid)) {
-    logger.error(
-      `Customizing mermaid with option ${colors.magenta(
-        "mermaid",
-      )} is no longer supported, please import and use ${colors.magenta(
-        "defineMermaidConfig",
-      )} from ${colors.magenta("vuepress-plugin-md-enhance/client")} instead.`,
-    );
-    options.mermaid = true;
-  }
+  droppedLogger({
+    options,
+    old: "chart",
+    msg: "Please use @vuepress/plugin-markdown-chart instead.",
+  });
+  droppedLogger({
+    options,
+    old: "chartjs",
+    msg: "Please use @vuepress/plugin-markdown-chart instead.",
+  });
+  droppedLogger({
+    options,
+    old: "echarts",
+    msg: "Please use @vuepress/plugin-markdown-chart instead.",
+  });
+  droppedLogger({
+    options,
+    old: "flowchart",
+    msg: "Please use @vuepress/plugin-markdown-chart instead.",
+  });
+  droppedLogger({
+    options,
+    old: "markmap",
+    msg: "Please use @vuepress/plugin-markdown-chart instead.",
+  });
+  droppedLogger({
+    options,
+    old: "mermaid",
+    msg: "Please use @vuepress/plugin-markdown-chart instead.",
+  });
+  droppedLogger({
+    options,
+    old: "plantuml",
+    msg: "Please use @vuepress/plugin-markdown-chart instead.",
+  });
 
   if (isPlainObject(options.vuePlayground)) {
     logger.error(

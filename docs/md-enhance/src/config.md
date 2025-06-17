@@ -8,61 +8,6 @@ order: 2
 
 You can pass these options to the plugin:
 
-### chartjs
-
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Chart.js](./guide/chart/chartjs.md)
-
-Whether to enable chart support
-
-### echarts
-
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [ECharts](./guide/chart/echarts.md)
-
-Whether to enable ECharts support
-
-### flowchart
-
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Flowchart](./guide/chart/flowchart.md)
-
-Whether to enable flowchart support
-
-### markmap
-
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markmap](./guide/chart/markmap.md)
-
-Whether to enable [Markmap](https://markmap.js.org/) support.
-
-### mermaid
-
-- Type: `boolean`
-- Default: `false`
-- Enabled in GFM: Yes
-- Details:
-  - [Mermaid](./guide/chart/mermaid.md)
-
-Whether to enable [Mermaid](https://mermaid.js.org/) support.
-
-### plantuml
-
-- Type: `MarkdownItPlantumlOptions[] | boolean`
-- Default: `false`
-- Details:
-  - [Plantuml](./guide/chart/plantuml.md)
-
-Whether to enable [plantuml](https://plantuml.com/) support.
-
 ### playground
 
 - Type: `PlaygroundGlobalOptions`
@@ -291,43 +236,6 @@ Default value: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
 Whether to enable sandpack playground support.
 
 ## Client Config
-
-### defineEChartsConfig
-
-```ts
-interface EChartsConfig {
-  /**
-   * ECharts global options
-   */
-  option?: EChartsOption;
-
-  /**
-   * ECharts setup function
-   */
-  setup?: () => Promise<void>;
-}
-
-const defineEChartsConfig: (config: EChartsConfig) => void;
-```
-
-Define global options and setup for ECharts.
-
-### defineMermaidConfig
-
-```ts
-export type MermaidOptions = Omit<
-  MermaidConfig,
-  "startOnLoad" | "themeVariables"
-> & {
-  themeVariables?:
-    | MermaidThemeVariables
-    | ((isDarkMode: boolean) => MermaidThemeVariables);
-};
-
-const defineMermaidConfig: (options: MermaidOptions) => void;
-```
-
-Define config which you want to pass to mermaid. Additionally, you can use `themeVariables` to define colors of mermaid.
 
 ### defineKotlinPlaygroundConfig
 

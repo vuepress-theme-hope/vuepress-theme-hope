@@ -106,7 +106,7 @@ export default theme(
           if (file.startsWith("@echarts/"))
             return file.replace(
               "@echarts",
-              path.resolve(__dirname, "../../../md-enhance/src/echarts"),
+              path.resolve(__dirname, "../echarts"),
             );
 
           if (file.startsWith("@md-enhance/"))

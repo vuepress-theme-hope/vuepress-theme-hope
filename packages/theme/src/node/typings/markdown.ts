@@ -1,4 +1,5 @@
 import type { LinksCheckPluginOptions } from "@vuepress/plugin-links-check";
+import type { MarkdownChartPluginOptions } from "@vuepress/plugin-markdown-chart";
 import type { MarkdownExtPluginOptions } from "@vuepress/plugin-markdown-ext";
 import type { MarkdownHintPluginOptions } from "@vuepress/plugin-markdown-hint";
 import type { MarkdownImagePluginOptions } from "@vuepress/plugin-markdown-image";
@@ -16,24 +17,15 @@ export type MarkdownHighlighterOptions =
   | ({ type: "shiki" } & ShikiPluginOptions);
 
 export interface ThemeMarkdownOptions
-  extends MarkdownExtPluginOptions,
+  extends MarkdownChartPluginOptions,
+    MarkdownExtPluginOptions,
     Pick<MarkdownHintPluginOptions, "alert" | "hint">,
     Pick<MarkdownImagePluginOptions, "figure">,
     Omit<MarkdownStylizePluginOptions, "custom">,
     MarkdownTabPluginOptions,
     Pick<
       MarkdownEnhancePluginOptions,
-      | "chartjs"
-      | "echarts"
-      | "flowchart"
-      | "markmap"
-      | "mermaid"
-      | "plantuml"
-      | "demo"
-      | "playground"
-      | "kotlinPlayground"
-      | "vuePlayground"
-      | "sandpack"
+      "demo" | "playground" | "kotlinPlayground" | "vuePlayground" | "sandpack"
     > {
   /**
    * Options for @vuepress/links-check

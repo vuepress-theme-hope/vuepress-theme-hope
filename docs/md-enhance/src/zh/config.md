@@ -8,61 +8,6 @@ order: 2
 
 你可以设置以下插件选项来启用或禁用一些功能。
 
-### chartjs
-
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [Chart.js](./guide/chart/chartjs.md)
-
-是否启用图表支持。
-
-### echarts
-
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [ECharts](./guide/chart/echarts.md)
-
-是否启用 ECharts 图表支持。
-
-### flowchart
-
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [流程图](./guide/chart/flowchart.md)
-
-是否启用流程图支持。
-
-### markmap
-
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [Markmap](./guide/chart/markmap.md)
-
-是否启用 [Markmap](https://markmap.js.org/) 支持。
-
-### mermaid
-
-- 类型: `boolean`
-- 默认值: `false`
-- 在 GFM 中启用: 是
-- 详情:
-  - [Mermaid](./guide/chart/mermaid.md)
-
-是否启用 [Mermaid](https://mermaid.js.org/) 支持。
-
-### plantuml
-
-- 类型: `MarkdownItPlantumlOptions[] | boolean`
-- 默认值: `false`
-- 详情:
-  - [Plantuml](./guide/chart/plantuml.md)
-
-是否启用 [plantuml](https://plantuml.com/zh/) 支持。
-
 ### playground
 
 - 类型: `PlaygroundGlobalOptions`
@@ -300,43 +245,6 @@ CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第
 是否启用 Sandpack 交互演示。
 
 ## 客户端配置
-
-### defineEChartsConfig
-
-```ts
-interface EChartsConfig {
-  /**
-   * ECharts 全局选项
-   */
-  option?: EChartsOption;
-
-  /**
-   * ECharts 初始化函数
-   */
-  setup?: () => Promise<void>;
-}
-
-const defineEChartsConfig: (config: EChartsConfig) => void;
-```
-
-定义需要传递给 ECharts 的全局配置选项和设置函数。
-
-### defineMermaidConfig
-
-```ts
-export type MermaidOptions = Omit<
-  MermaidConfig,
-  "startOnLoad" | "themeVariables"
-> & {
-  themeVariables?:
-    | MermaidThemeVariables
-    | ((isDarkMode: boolean) => MermaidThemeVariables);
-};
-
-const defineMermaidConfig: (options: MermaidOptions) => void;
-```
-
-定义需要传递给 Mermaid 的配置选项。额外地，你可以通过 `themeVariables` 选项来设置主题变量。
 
 ### defineKotlinPlaygroundConfig
 
