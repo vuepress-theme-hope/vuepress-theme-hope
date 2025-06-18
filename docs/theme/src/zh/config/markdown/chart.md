@@ -40,6 +40,15 @@ tag:
 
 是否启用流程图支持
 
+## markdown.markmap
+
+- 类型: `boolean`
+- 默认值: `false`
+- 详情:
+  - [Markdown → Markmap](../../guide/markdown/chart/markmap.md)
+
+是否启用 [Markmap](https://markmap.js.org/) 支持。
+
 ## markdown.mermaid
 
 - 类型: `boolean`
@@ -47,7 +56,7 @@ tag:
 - 详情:
   - [Markdown → Mermaid](../../guide/markdown/chart/mermaid.md)
 
-是否启用 [Mermaid](https://mermaid.js.org/) 支持，你可以传入一个对象作为 Mermaid 的配置选项。
+是否启用 [Mermaid](https://mermaid.js.org/) 支持。
 
 ## markdown.plantuml
 

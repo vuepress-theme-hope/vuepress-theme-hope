@@ -10,20 +10,14 @@ export default [
       base: "client",
       files: [
         "index",
-        "components/ChartJS",
         "components/CodeDemo",
-        "components/ECharts",
-        "components/FlowChart",
         "components/KotlinPlayground",
-        "components/MarkMap",
         "components/MdDemo",
-        "components/Mermaid",
         "components/Playground",
         "components/SandPack",
         "components/VuePlayground",
       ],
     },
-
     {
       external: [
         "@vue/repl",
@@ -31,14 +25,7 @@ export default [
         "@vue/repl/monaco-editor",
         "@vuepress/helper/noopComponent",
         "balloon-css/balloon.css",
-        "chart.js/auto",
-        "echarts",
-        "flowchart.ts",
         "kotlin-playground",
-        "markmap-lib",
-        "markmap-toolbar",
-        "markmap-view",
-        "mermaid/dist/mermaid.esm.min.mjs",
         "sandpack-vue3",
       ],
       copy: [

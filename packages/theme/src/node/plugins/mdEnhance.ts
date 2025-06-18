@@ -5,12 +5,6 @@ import type { ThemeMarkdownOptions } from "../typings/index.js";
 
 export const getMdEnhancePlugin = (
   {
-    chartjs = false,
-    echarts = false,
-    flowchart = false,
-    markmap = false,
-    mermaid = false,
-    plantuml = false,
     demo = false,
     playground,
     sandpack = false,
@@ -20,12 +14,6 @@ export const getMdEnhancePlugin = (
   compact: boolean,
 ): Plugin | null => {
   if (
-    !chartjs &&
-    !echarts &&
-    !flowchart &&
-    !markmap &&
-    !mermaid &&
-    !plantuml &&
     !demo &&
     !playground &&
     !sandpack &&
@@ -37,14 +25,8 @@ export const getMdEnhancePlugin = (
 
   return mdEnhancePlugin(
     {
-      chartjs,
       demo,
-      echarts,
-      flowchart,
       kotlinPlayground,
-      markmap,
-      mermaid,
-      plantuml,
       playground,
       sandpack,
       vuePlayground,

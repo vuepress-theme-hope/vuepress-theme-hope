@@ -233,36 +233,6 @@ Donate Mr.Hope a cup of coffee. _Recommended_
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/content/revealjs.html)
 
-#### Chart.js
-
-<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/chartjs.html" width="100%" height="450"/>
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/chart/chartjs.html)
-
-#### ECharts
-
-<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/echarts.html" width="100%" height="800"/>
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/chart/echarts.html)
-
-#### Flowchart
-
-<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/flowchart.html" width="100%" height="450"/>
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/chart/flowchart.html)
-
-#### MarkMap
-
-<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/markmap.html" width="100%" height="380"/>
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/chart/markmap.html)
-
-#### Mermaid
-
-<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/mermaid.html" width="100%" height="620"/>
-
-- [View Detail](https://theme-hope.vuejs.press/guide/markdown/chart/mermaid.html)
-
 #### PlantUML
 
 @startuml

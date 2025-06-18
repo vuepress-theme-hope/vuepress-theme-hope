@@ -21,80 +21,6 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
   :::
   ```
 
-- Use `component` code block to add components easily
-
-- Chart.js support
-
-  Adds [chart.js](https://www.chartjs.org/docs/latest/) support via `chart` option
-
-  ````md
-  ::: chartjs Title
-
-  ```json
-  {
-    // chart.js config
-  }
-  ```
-
-  :::
-
-  ::: chartjs Title
-
-  ```js
-  const config = {
-    // chart.js config
-  };
-  ```
-
-  :::
-  ````
-
-- ECharts support
-
-  Adds [ECharts](https://echarts.apache.org/en/index.html) support via `echarts` option
-
-  ````md
-  ::: echarts Title
-
-  ```json
-  {
-    // chart.js config
-  }
-  ```
-
-  :::
-
-  ::: echarts Title
-
-  ```js
-  const option = {
-    // chart.js config
-  };
-  ```
-
-  :::
-  ````
-
-- content include support
-
-  Use `<!-- @include: -->` to include other file content in Markdown via `include` options.
-
-  Use `<!-- @include: filename -->` to include a file.
-
-  To partially import the file, you can specify the range of lines to be included:
-
-  - `<!-- @include: filename{start-end} -->`
-  - `<!-- @include: filename{start-} -->`
-  - `<!-- @include: filename{-end} -->`
-
-  Also, you can include file region:
-
-  - `<!-- @include: filename#region -->`
-
-- markmap support
-
-  Add `markmap` container to create [Markmap](https://markmap.js.org/) via `markmap` option.
-
 - Playground
 
   Embed interactive demo with official presets and custom options
@@ -211,12 +137,14 @@ You can pass the second argument `true` to enable legacy mode when calling `mdEn
 
   Please use `@vuepress/plugin-revealjs` instead
 
-## Options Adjustments in Pre-release Version
+- `chartjs` `echarts` `flowchart` `markmap` `mermaid` `plantuml` removed
 
-- `mdImport` is renamed to `include`
+  Please use `@vuepress/plugin-markdown-chart` instead
+
+## Options Adjustments in Pre-release Version
 
 - `vpre` is renamed to `vPre`
 
 - `card` is replaced by `components`
 
-- `mermaid` `vuePlayground` no longer accept lib options
+- `vuePlayground` no longer accept lib options

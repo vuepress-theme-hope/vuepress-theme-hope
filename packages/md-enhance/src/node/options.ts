@@ -1,5 +1,3 @@
-import type { MarkdownItPlantumlOptions } from "@mdit/plugin-plantuml";
-
 import type {
   PlaygroundGlobalOptions,
   VuePlaygroundOptions,
@@ -7,11 +5,6 @@ import type {
 import type { CodeDemoOptions } from "../shared/index.js";
 
 export interface DeprecatedMarkdownEnhancePluginOptions {
-  /**
-   * @deprecated use `chartjs` instead
-   */
-  chartjs?: boolean;
-
   /**
    * @deprecated use `alert` from `@vuepress/plugin-markdown-hint` instead
    */
@@ -146,6 +139,41 @@ export interface DeprecatedMarkdownEnhancePluginOptions {
    * @deprecated use `@vuepress/plugin-markdown-include` instead
    */
   include?: never;
+
+  /**
+   * @deprecated use `chartjs` from `@vuepress/plugin-markdown-chart` instead
+   */
+  chart?: boolean;
+
+  /**
+   * @deprecated use `chartjs` from `@vuepress/plugin-markdown-chart` instead
+   */
+  chartjs?: never;
+
+  /**
+   * @deprecated use `echarts` from `@vuepress/plugin-markdown-chart` instead
+   */
+  echarts?: never;
+
+  /**
+   * @deprecated use `flowchart` from `@vuepress/plugin-markdown-chart` instead
+   */
+  flowchart?: never;
+
+  /**
+   * @deprecated use `markmap` from `@vuepress/plugin-markdown-chart` instead
+   */
+  markmap?: never;
+
+  /**
+   * @deprecated use `mermaid` from `@vuepress/plugin-markdown-chart` instead
+   */
+  mermaid?: never;
+
+  /**
+   * @deprecated use `plantuml` from `@vuepress/plugin-markdown-chart` instead
+   */
+  plantuml?: never;
 }
 
 /**
@@ -153,60 +181,6 @@ export interface DeprecatedMarkdownEnhancePluginOptions {
  */
 export interface MarkdownEnhancePluginOptions
   extends DeprecatedMarkdownEnhancePluginOptions {
-  /**
-   * Whether to enable chart support
-   *
-   * 是否启用 chart 图表支持
-   *
-   * @default false
-   */
-  chartjs?: boolean;
-
-  /**
-   * Whether to enable echarts support
-   *
-   * 是否启用 echarts 图表支持
-   *
-   * @default false
-   */
-  echarts?: boolean;
-
-  /**
-   * Whether to enable flowchart support
-   *
-   * 是否启用 flowchart 流程图支持
-   *
-   * @default false
-   */
-  flowchart?: boolean;
-
-  /**
-   * Whether to enable markmap support
-   *
-   * 是否启用 markmap 流程图支持
-   *
-   * @default false
-   */
-  markmap?: boolean;
-
-  /**
-   * Whether to enable mermaid support
-   *
-   * 是否启用 Mermaid 流程图支持
-   *
-   * @default false
-   */
-  mermaid?: boolean;
-
-  /**
-   * Whether enable plantuml support
-   *
-   * 是否启用 plantuml 支持
-   *
-   * @default false
-   */
-  plantuml?: MarkdownItPlantumlOptions[] | boolean;
-
   /**
    * Whether to enable code-demo support
    *

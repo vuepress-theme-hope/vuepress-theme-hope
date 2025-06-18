@@ -201,36 +201,6 @@ VuePress Theme Hope !!十分强大!!.
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/stylize/stylize.html)
 
-#### 图表
-
-<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/chartjs.html" width="100%" height="450"/>
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/chart/chartjs.html)
-
-#### ECharts
-
-<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/echarts.html" width="100%" height="800"/>
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/chart/echarts.html)
-
-#### 流程图
-
-<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/flowchart.html" width="100%" height="450"/>
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/chart/flowchart.html)
-
-#### MarkMap
-
-<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/markmap.html" width="100%" height="380"/>
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/chart/markmap.html)
-
-#### Mermaid
-
-<iframe src="https://plugin-md-enhance-demo.vuejs.press/snippet/mermaid.html" width="100%" height="620"/>
-
-- [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/chart/mermaid.html)
-
 #### PlantUML
 
 @startuml

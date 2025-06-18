@@ -62,10 +62,8 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mdit/plugin-container": "^0.21.0",
-    "@mdit/plugin-demo": "^0.21.0",
-    "@mdit/plugin-plantuml": "^0.21.0",
-    "@mdit/plugin-uml": "^0.21.0",
+    "@mdit/plugin-container": "^0.22.1",
+    "@mdit/plugin-demo": "^0.22.1",
     "@types/markdown-it": "^14.1.2",
     "@vuepress/helper": "catalog:vuepress",
     "@vuepress/plugin-sass-palette": "catalog:vuepress",
@@ -83,14 +81,7 @@
   },
   "peerDependencies": {
     "@vue/repl": "^4.1.1",
-    "chart.js": "^4.0.0",
-    "echarts": "^5.0.0",
-    "flowchart.ts": "^3.0.0",
     "kotlin-playground": "^1.23.0",
-    "markmap-lib": "^0.18.5",
-    "markmap-toolbar": "^0.18.5",
-    "markmap-view": "^0.18.5",
-    "mermaid": "^11.6.0",
     "sandpack-vue3": "^3.0.0",
     "sass": "catalog:range",
     "sass-embedded": "catalog:range",
@@ -101,28 +92,7 @@
     "@vue/repl": {
       "optional": true
     },
-    "chart.js": {
-      "optional": true
-    },
-    "echarts": {
-      "optional": true
-    },
-    "flowchart.ts": {
-      "optional": true
-    },
     "kotlin-playground": {
-      "optional": true
-    },
-    "markmap-lib": {
-      "optional": true
-    },
-    "markmap-toolbar": {
-      "optional": true
-    },
-    "markmap-view": {
-      "optional": true
-    },
-    "mermaid": {
       "optional": true
     },
     "sandpack-vue3": {

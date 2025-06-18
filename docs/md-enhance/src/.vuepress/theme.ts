@@ -37,12 +37,7 @@ export default theme("md-enhance", {
     },
     chartjs: true,
     demo: true,
-    echarts: true,
-    flowchart: true,
     kotlinPlayground: true,
-    markmap: true,
-    mermaid: true,
-    plantuml: true,
     playground: {
       presets: ["ts", "vue", "unocss"],
     },

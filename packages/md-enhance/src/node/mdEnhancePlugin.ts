@@ -1,36 +1,22 @@
 import {
-  addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteOptimizeDepsNeedsInterop,
   addViteSsrExternal,
   addViteSsrNoExternal,
   chainWebpack,
-  isArray,
   isPlainObject,
 } from "@vuepress/helper";
 import { useSassPalettePlugin } from "@vuepress/plugin-sass-palette";
 import type { PluginFunction } from "vuepress/core";
 
-import {
-  chart,
-  convertOptions,
-  legacyCodeDemo,
-  legacyFlowchart,
-  mdDemo,
-} from "./compact/index.js";
+import { convertOptions, legacyCodeDemo, mdDemo } from "./compact/index.js";
 import {
   CODE_DEMO_DEFAULT_SETTING,
-  chartjs,
-  echarts,
-  flowchart,
   getTSPlaygroundPreset,
   getUnoPlaygroundPreset,
   getVuePlaygroundPreset,
   kotlinPlayground,
-  markmap,
-  mermaid,
   normalDemo,
-  plantuml,
   playground,
   reactDemo,
   sandpack,
@@ -61,16 +47,6 @@ export const mdEnhancePlugin =
       pkgs.every((pkg) => isInstalled(pkg, Boolean(options[key])));
 
     const status = {
-      chartjs: getStatus("chartjs", ["chart.js"]),
-      echarts: getStatus("echarts", ["echarts"]),
-      flowchart: getStatus("flowchart", ["flowchart.ts"]),
-      mark: getStatus("mark"),
-      markmap: getStatus("markmap", [
-        "markmap-lib",
-        "markmap-toolbar",
-        "markmap-view",
-      ]),
-      mermaid: getStatus("mermaid", ["mermaid"]),
       kotlinPlayground: getStatus("kotlinPlayground", ["kotlin-playground"]),
       sandpack: getStatus("sandpack", ["sandpack-vue3"]),
       vuePlayground: getStatus("vuePlayground", ["@vue/repl"]),
@@ -97,47 +73,6 @@ export const mdEnhancePlugin =
           "fflate",
           "vuepress-shared",
         ]);
-
-        if (status.chartjs) {
-          addViteOptimizeDepsExclude(
-            bundlerOptions,
-            app,
-            "chart.js/auto/auto.mjs",
-          );
-          addViteSsrExternal(bundlerOptions, app, "chart.js");
-        }
-
-        if (status.echarts) {
-          addViteOptimizeDepsExclude(bundlerOptions, app, "echarts");
-          addViteSsrExternal(bundlerOptions, app, "echarts");
-        }
-
-        if (status.flowchart) {
-          addViteOptimizeDepsExclude(bundlerOptions, app, "flowchart.ts");
-          addViteSsrExternal(bundlerOptions, app, "flowchart.ts");
-        }
-
-        if (status.markmap) {
-          addViteOptimizeDepsInclude(bundlerOptions, app, [
-            "markmap-lib",
-            "markmap-toolbar",
-            "markmap-view",
-          ]);
-          addViteSsrExternal(bundlerOptions, app, [
-            "markmap-lib",
-            "markmap-toolbar",
-            "markmap-view",
-          ]);
-        }
-
-        if (status.mermaid) {
-          addViteOptimizeDepsExclude(
-            bundlerOptions,
-            app,
-            "mermaid/dist/mermaid.esm.min.mjs",
-          );
-          addViteSsrExternal(bundlerOptions, app, "mermaid");
-        }
 
         if (status.kotlinPlayground) {
           addViteOptimizeDepsInclude(bundlerOptions, app, "kotlin-playground");
@@ -173,19 +108,6 @@ export const mdEnhancePlugin =
       },
 
       extendsMarkdown: (md): void => {
-        if (status.flowchart) {
-          md.use(flowchart);
-          // TODO: Remove this in v2 stable
-          // eslint-disable-next-line @typescript-eslint/no-deprecated
-          if (legacy) md.use(legacyFlowchart);
-        }
-        if (status.chartjs) {
-          md.use(chartjs);
-          if (legacy) md.use(chart);
-        }
-        if (status.echarts) md.use(echarts);
-        if (isArray(options.plantuml)) md.use(plantuml, options.plantuml);
-        else if (options.plantuml) md.use(plantuml);
         if (options.demo) {
           md.use(normalDemo);
           md.use(vueDemo);
@@ -198,8 +120,6 @@ export const mdEnhancePlugin =
             md.use(mdDemo);
           }
         }
-        if (status.markmap) md.use(markmap);
-        if (status.mermaid) md.use(mermaid);
         if (isPlainObject(options.playground)) {
           const { presets = [], config = {} } = options.playground;
 

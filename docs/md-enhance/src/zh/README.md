@@ -19,41 +19,6 @@ actions:
     link: ./config.html
 
 highlights:
-  - header: 嵌入图表
-    image: /assets/image/chart.svg
-    bgImage: https://theme-hope-assets.vuejs.press/bg/5-light.svg
-    bgImageDark: https://theme-hope-assets.vuejs.press/bg/5-dark.svg
-    highlights:
-      - title: Chart.js
-        icon: chart-simple
-        details: 在 Markdown 中展示 Chart.js 图表
-        link: ./guide/chart/chartjs.html
-
-      - title: ECharts
-        icon: bar-chart
-        details: 在 Markdown 中展示 ECharts 图表
-        link: ./guide/chart/echarts.html
-
-      - title: 流程图
-        icon: route
-        details: 在 Markdown 中添加流程图
-        link: ./guide/chart/flowchart.html
-
-      - title: Markmap
-        icon: b:markdown
-        details: 从 Markdown 生成思维导图
-        link: ./guide/chart/markmap.html
-
-      - title: Mermaid
-        icon: chart-pie
-        details: 在 Markdown 中添加 Mermaid 图例
-        link: ./guide/chart/mermaid.html
-
-      - title: Plantuml
-        icon: diagram-project
-        details: 在 Markdown 中添加 Plantuml
-        link: ./guide/chart/plantuml.html
-
   - header: 展示你的代码和工作
     image: /assets/image/code.svg
     bgImage: https://theme-hope-assets.vuejs.press/bg/4-light.svg

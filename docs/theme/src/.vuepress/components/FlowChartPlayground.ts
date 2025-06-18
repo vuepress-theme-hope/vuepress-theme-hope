@@ -3,7 +3,8 @@ import { useDebounceFn, useEventListener } from "@vueuse/core";
 import type { Chart } from "flowchart.ts";
 import type { VNode } from "vue";
 import { defineComponent, h, onMounted, ref, shallowRef, watch } from "vue";
-import { flowchartPresets } from "vuepress-plugin-md-enhance/client";
+
+import { flowchartPresets } from "../flowchart-presets/index.js";
 
 import "./flowchart-playground.scss";
 
@@ -65,7 +66,6 @@ export default defineComponent({
           if (scale.value !== newScale) {
             scale.value = newScale;
 
-            // @ts-expect-error: Preset type issues
             flowchart.draw(CONTAINER_ID, {
               ...flowchartPresets[preset.value],
               scale: newScale,
@@ -86,7 +86,6 @@ export default defineComponent({
         element.value!.innerHTML = "";
 
         // draw svg to #id
-        // @ts-expect-error: Preset type issues
         flowchart.draw(CONTAINER_ID, {
           ...flowchartPresets[preset.value],
           scale: scale.value,

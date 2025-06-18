@@ -3,6 +3,7 @@ import { backToTopPlugin } from "@vuepress/plugin-back-to-top";
 import { copyCodePlugin } from "@vuepress/plugin-copy-code";
 import { iconPlugin } from "@vuepress/plugin-icon";
 import { linksCheckPlugin } from "@vuepress/plugin-links-check";
+import { markdownChartPlugin } from "@vuepress/plugin-markdown-chart";
 import { markdownExtPlugin } from "@vuepress/plugin-markdown-ext";
 import { markdownHintPlugin } from "@vuepress/plugin-markdown-hint";
 import { markdownIncludePlugin } from "@vuepress/plugin-markdown-include";
@@ -74,6 +75,8 @@ export const getPlugins = (
     linksCheck === false
       ? null
       : linksCheckPlugin(isPlainObject(linksCheck) ? linksCheck : {}),
+    // @vuepress/plugin-markdown-chart
+    markdownChartPlugin(markdownOptions),
     // @vuepress/plugin-markdown-ext
     markdownExtPlugin(markdownOptions),
     // @vuepress/plugin-markdown-hint

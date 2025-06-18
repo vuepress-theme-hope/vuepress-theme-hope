@@ -38,11 +38,11 @@ export default config("", {
   alias: {
     "@FlowChartPlayground": path.resolve(
       __dirname,
-      "../../../md-enhance/src/.vuepress/components/FlowChartPlayground.js",
+      "./components/FlowChartPlayground.js",
     ),
     "@KatexPlayground": path.resolve(
       __dirname,
-      "../../../md-enhance/src/.vuepress/components/KatexPlayground.js",
+      "./components/KatexPlayground.js",
     ),
     "@ToggleRTLButton": path.resolve(
       __dirname,

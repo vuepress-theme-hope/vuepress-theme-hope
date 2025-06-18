@@ -19,12 +19,6 @@ Output will only include codes of features you enabled, so no need to worry abou
 
 :::
 
-## Charts
-
-<!-- @include: ./chart/README.md#intro -->
-
-<!-- @include: ./chart/README.md#demo -->
-
 ## Coding
 
 <!-- @include: ./code/README.md#intro -->
