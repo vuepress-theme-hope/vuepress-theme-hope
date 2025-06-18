@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.93](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.92...v2.0.0-rc.93) (2025-06-18)
+
+### ✨ Features
+
+- support new chart plugin ([#4958](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4958)) ([660a5c1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/660a5c1a6b2152df53a77a259a707b2306e07af0))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.90](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.89...v2.0.0-rc.90) (2025-06-04)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance
