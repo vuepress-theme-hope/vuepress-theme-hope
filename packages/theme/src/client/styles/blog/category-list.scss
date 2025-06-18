@@ -30,7 +30,7 @@
   color: var(--vp-c-text);
   box-shadow: 0 1px 4px 0 var(--vp-c-shadow);
 
-  word-break: break-word;
+  overflow-wrap: anywhere;
 
   cursor: pointer;
 
