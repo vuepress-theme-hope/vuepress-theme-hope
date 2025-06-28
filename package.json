@@ -58,7 +58,7 @@
     "cpx2": "8.0.0",
     "cross-env": "7.0.3",
     "eslint": "9.29.0",
-    "eslint-config-mister-hope": "0.9.5",
+    "eslint-config-mister-hope": "0.9.6",
     "eslint-plugin-vue": "10.2.0",
     "gulp": "5.0.1",
     "http-server": "14.1.1",
