@@ -1,7 +1,7 @@
 import { isPlainObject } from "@vuepress/helper";
 import { watch } from "chokidar";
 import type { ThemeFunction } from "vuepress/core";
-import { TEMPLATE_RENDERER_OUTLETS, path } from "vuepress/utils";
+import { TemplateRendererOutlet, path } from "vuepress/utils";
 
 import {
   checkThemeMarkdownOptions,
@@ -169,19 +169,19 @@ export const hopeTheme = (
         { content, head, lang, prefetch, preload, scripts, styles, version },
       ): string =>
         template
-          .replace(TEMPLATE_RENDERER_OUTLETS.CONTENT, () => content)
-          .replace(TEMPLATE_RENDERER_OUTLETS.HEAD, head)
+          .replace(TemplateRendererOutlet.CONTENT, () => content)
+          .replace(TemplateRendererOutlet.HEAD, head)
           .replace("{{ themeVersion }}", VERSION)
           .replace(
             "{{ themeMode }}",
             mainThemeOptions.darkmode === "enable" ? "dark" : "light",
           )
-          .replace(TEMPLATE_RENDERER_OUTLETS.LANG, lang)
-          .replace(TEMPLATE_RENDERER_OUTLETS.PREFETCH, prefetch)
-          .replace(TEMPLATE_RENDERER_OUTLETS.PRELOAD, preload)
-          .replace(TEMPLATE_RENDERER_OUTLETS.SCRIPTS, scripts)
-          .replace(TEMPLATE_RENDERER_OUTLETS.STYLES, styles)
-          .replace(TEMPLATE_RENDERER_OUTLETS.VERSION, version),
+          .replace(TemplateRendererOutlet.LANG, lang)
+          .replace(TemplateRendererOutlet.PREFETCH, prefetch)
+          .replace(TemplateRendererOutlet.PRELOAD, preload)
+          .replace(TemplateRendererOutlet.SCRIPTS, scripts)
+          .replace(TemplateRendererOutlet.STYLES, styles)
+          .replace(TemplateRendererOutlet.VERSION, version),
 
       clientConfigFile: (app) =>
         (behavior.custom ? prepareCustomConfigFile : prepareBundleConfigFile)(
