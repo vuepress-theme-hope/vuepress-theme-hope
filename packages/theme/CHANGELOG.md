@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.94](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.93...v2.0.0-rc.94) (2025-07-09)
+
+### 🐛 Bug Fixes
+
+- **theme:** fix sidebar with blog pages, close [#4960](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4960) ([3e1fc3d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/3e1fc3de0040f1109c4a7ba94776204582e9b539))
+- **theme:** fix wrong hint in article list, close [#4962](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4962) ([65f8d0e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/65f8d0ec138afd18d31af60e15359d543d854624))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.93](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.92...v2.0.0-rc.93) (2025-06-18)
 
 ### ✨ Features
