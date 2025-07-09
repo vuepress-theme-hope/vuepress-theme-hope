@@ -1,7 +1,6 @@
 # Operator
 
 - Some operators can be entered directly in math mode; others need to be generated using control sequences:
-
   - `+`: $+$
   - `-`: $-$
   - `\times`: $\times$

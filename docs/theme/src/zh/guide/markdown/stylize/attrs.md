@@ -138,7 +138,6 @@ const a = 1;
 ::: preview 列表
 
 - 列表内容{.list-item}
-
   - 嵌套列表内容
     {.nested}
 

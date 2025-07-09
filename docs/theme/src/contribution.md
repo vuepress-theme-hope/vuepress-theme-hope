@@ -107,12 +107,10 @@ For better performance, all plugins are packed and minified using rollup when th
 ## Project Development
 
 1. Build project: `pnpm build`
-
    - Use rollup to bundle source files and minify them, and output results to `lib` folder
    - Use `rollup-plugin-copy` to copy other files to `lib` folder
 
 1. Develop project: `pnpm dev`
-
    - Use `tsc` to compile ts file to `lib` folder
    - Use `cpx` to copy other files to `lib` folder
 

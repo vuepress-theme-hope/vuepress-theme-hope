@@ -58,7 +58,6 @@ You can customize TOC headers by setting an object `toc` in theme options and pa
 - `depth`: The levels of the headers.
 
   `1` to `6` for `<h1>` to `<h6>`
-
   - `false`: No headers.
   - `number`: only headings of that level will be displayed.
   - `[number, number]`: headings level tuple, where the first number should be less than the second number, for example, `[2, 4]`which means all headings from`<h2>`to`<h4>` will be displayed.

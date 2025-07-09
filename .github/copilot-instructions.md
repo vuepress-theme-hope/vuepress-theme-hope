@@ -94,18 +94,15 @@
 Each option in plugin/theme documentation must include these sections **in this exact order**:
 
 1. **Type**
-
    - English: `- Type: \`type\``
    - Chinese: `- 类型：\`type\``
    - Follow with code fence for complex types
 
 2. **Required Status**
-
    - Only for required options: `- Required: Yes` / `- 必填：是`
    - **Never write "Required: No" for optional options**
 
 3. **Default Value**
-
    - **INCLUDE Default when**: Default value is NOT the expected/obvious value
    - **OMIT Default when**: Default value is expected/obvious
      - `boolean` options with `false` default → **OMIT**

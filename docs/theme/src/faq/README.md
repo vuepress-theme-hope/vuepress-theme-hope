@@ -44,13 +44,11 @@ Please only start discussions about the VuePress Theme Hope and plugins written 
 :::
 
 - If you ran into some issues, please [open a discussion](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/new) on GitHub with:
-
   - full log running `vuepress dev [docs-dir] --debug`
   - error screenshot in browser console (if there are errors)
   - if your problem is related to display, please also provide related screenshots
 
 - If there is something you don't know how to solve, welcome to [open a discussion](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/new). Questions are always welcome, no matter **they are simple or not**. You only need to make sure three points:
-
   1. You have tried searching related docs through search box.
 
   1. You are providing a detailed description in the discussion.

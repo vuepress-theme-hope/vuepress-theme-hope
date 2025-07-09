@@ -25,7 +25,6 @@ A notice configuration item includes:
 - `actions`: Notice actions
 
   Should be an array of objects containing:
-
   - `text`: action text
   - `link`: action link (optional).
 

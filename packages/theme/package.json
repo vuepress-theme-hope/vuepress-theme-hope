@@ -122,7 +122,7 @@
     "@vueuse/core": "catalog:range",
     "balloon-css": "catalog:range",
     "bcrypt-ts": "^7.1.0",
-    "chokidar": "^3.6.0",
+    "chokidar": "^4.0.3",
     "vue": "catalog:range",
     "vuepress-plugin-components": "workspace:*",
     "vuepress-plugin-md-enhance": "workspace:*",

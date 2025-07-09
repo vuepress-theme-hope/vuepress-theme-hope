@@ -25,7 +25,6 @@ VuePress Theme Hope 允许你通过 [`@vuepress/plugin-notice`][notice] 添加�
 - `actions`: 通知操作
 
   应该是包含以下内容的对象数组:
-
   - `text`: 动作文本
   - `link` (可选): 操作链接。
 

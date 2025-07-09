@@ -46,13 +46,11 @@ category:
 :::
 
 - 如果你在使用中遇到了错误，请在 GitHub 上 [新开一个讨论](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/new)。你需要：
-
   - 运行 `vuepress dev [docs-dir] --debug` 并粘贴完整日志
   - 打开开发服务器网页控制台，并提供相关错误截图（如果有）
   - 如果你的问题与显示有关，请同时提供网页相关截图
 
 - 如果你遇到了使用问题但不知道如何解决，我们也欢迎你在 GitHub 上 [新开一个讨论](https://github.com/vuepress-theme-hope/vuepress-theme-hope/discussions/new)。问题总是受欢迎的，无论**它们是否简单**。你只需要确保三点：
-
   1. 你已经尝试通过搜索框搜索相关文档。
 
   1. 你在讨论中提供了详细的描述。

@@ -63,7 +63,6 @@ For components with slots, you can import them and customize content through slo
 - `@theme-hope/components/base/MainLayout`: main layout
 
   Slots: `default`, `navScreenTop`, `navScreenBottom`, `sidebarItems`, `sidebarTop`, `sidebarBottom`
-
   - `navScreenTop` `navScreenBottom` slots are piped to `NavBar` component.
   - `sidebarItems`, `sidebarTop`, `sidebarBottom` slots are piped to `Sidebar` component.
 
@@ -74,7 +73,6 @@ For components with slots, you can import them and customize content through slo
 - `@theme-hope/components/base/PageContent`: main page content
 
   Slots: `pageTop`, `pageBottom`, `content`, `contentBefore`, `contentAfter`, `toc`, `tocBefore`, `tocAfter`
-
   - `contentBefore`, `contentAfter` slots are piped to `MarkdownContent` component.
   - `toc`, `tocBefore`, `tocAfter` slots are piped to `TOC` component.
 
@@ -101,7 +99,6 @@ For components with slots, you can import them and customize content through slo
 - `@theme-hope/components/home/HeroInfo`: homepage logo and introduction
 
   Slots: `heroInfo`, `heroLogo`, `heroBg`
-
   - `heroInfo` slot receives `text` `tagline` `isFullScreen` and `style` props.
   - `heroLogo` slot receives `image` `imageDark` `alt` and `style` props.
   - `heroBg` slot receives `image` `imageDark` and `style` props.
@@ -111,14 +108,12 @@ For components with slots, you can import them and customize content through slo
 - `@theme-hope/components/home/HomePage`: default home page (project home page)
 
   Slots: `heroInfo`, `heroLogo`, `heroBg`, `heroBefore`, `heroAfter`, `content`, `contentBefore`, `contentAfter`
-
   - `heroInfo`, `heroLogo`, `heroBg` slots are piped to `HeroInfo` component.
   - `contentBefore`, `contentAfter` slots are piped to `MarkdownContent` component.
 
 - `@theme-hope/components/home/PortfolioHero`: portfolio hero
 
   Slots: `portfolioInfo`, `portfolioAvatar`, `portfolioBg`
-
   - `portfolioInfo` slot receives `name` `welcome` `title` `titles` and `links` props.
   - `portfolioAvatar` slot receives `avatar` `avatarDark` `style` and `alt` props.
   - `portfolioBg` slot receives `image` `imageDark` and `style` props.
@@ -126,7 +121,6 @@ For components with slots, you can import them and customize content through slo
 - `@theme-hope/components/home/PortfolioHome`: portfolio home page
 
   Slots: `portfolioInfo`, `portfolioAvatar`, `portfolioBg`
-
   - `portfolioInfo`, `portfolioAvatar`, `portfolioBg` slots are piped to `PortfolioHero` component.
 
 ### Navbar Components
@@ -138,7 +132,6 @@ For components with slots, you can import them and customize content through slo
 - `@theme-hope/components/navbar/Navbar`: navbar component
 
   Slots: `navScreenTop`, `navScreenBottom`
-
   - `navScreenTop` `navScreenBottom` slots are piped to `NavBar` component.
 
 - `@theme-hope/components/navbar/NavbarBrand`: navbar brand information
@@ -168,7 +161,6 @@ For components with slots, you can import them and customize content through slo
 - `@theme-hope/components/sidebar/Sidebar`: sidebar
 
   Slots: `sidebarItems`, `sidebarTop`, `sidebarBottom`
-
   - `sidebarItems` slot receives `sidebarItems` prop.
 
 - `@theme-hope/components/sidebar/SidebarChild`: sidebar link item
@@ -214,7 +206,6 @@ For components with slots, you can import them and customize content through slo
 - `@theme-hope/components/blog/ArticleItem`: article item
 
   Slots: `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt`
-
   - `articleTitle` slot receives `title` `isEncrypted` and `type` props.
   - `articleCover` slot receives `cover` props.
   - `articleInfo` slot receives `author` `category` `tag` `date` `isOriginal` `pageview` `readingTime` and `readingTimeLocale` props.
@@ -223,7 +214,6 @@ For components with slots, you can import them and customize content through slo
 - `@theme-hope/components/blog/ArticleList`: article list
 
   Slots: `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt`
-
   - `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt` slots are piped to `ArticleItem` component.
 
 - `@theme-hope/components/blog/ArticlesInfo`: article info
@@ -233,13 +223,11 @@ For components with slots, you can import them and customize content through slo
 - `@theme-hope/components/blog/BloggerInfo`: blogger info
 
   Slots: `bloggerInfo`
-
   - `bloggerInfo` slot receives `name` `avatar` and `description` props.
 
 - `@theme-hope/components/blog/BlogHero`: blog homepage logo and introduction
 
   Slots: `heroInfo`, `heroLogo`, `heroBg`,
-
   - `heroBg` slot receives `text` `tagline` `isFullScreen` and `style` props.
   - `heroLogo` slot receives `image` `imageDark` `alt` and `style` props.
   - `heroBg` slot receives `image` `imageDark` and `style` props.
@@ -247,7 +235,6 @@ For components with slots, you can import them and customize content through slo
 - `@theme-hope/components/blog/BlogHome`: blog home
 
   Slots: `heroInfo`, `heroLogo`, `heroBg`, `heroBefore`, `heroAfter`, `articleCover`, `articleTitle`, `articleInfo`, `articleExcerpt`, `bloggerInfo`, `infoBefore`, `infoAfter`, `content`, `contentBefore`, `contentAfter`
-
   - `heroInfo`, `heroLogo`, `heroBg` slots are piped to `BlogHero` component.
   - `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt` slots are piped to `ArticleList` component.
   - `bloggerInfo` slot is piped to `BloggerInfo` component.
@@ -257,7 +244,6 @@ For components with slots, you can import them and customize content through slo
 - `@theme-hope/components/blog/BlogMainLayout`: blog main layout
 
   Slots: `default`, `navScreenTop`, `navScreenBottom`, `sidebarItems`, `sidebarTop`, `sidebarBottom`, `bloggerInfo`
-
   - `navScreenTop`, `navScreenBottom` slots are piped to `NavBar` component.
 
 - `@theme-hope/components/blog/CategoriesInfo`: Category info
@@ -267,7 +253,6 @@ For components with slots, you can import them and customize content through slo
 - `@theme-hope/components/blog/CategoryPage`: category page
 
   Slots: `default`, `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt`, `articleBefore`, `articleAfter`, `bloggerInfo`, `infoBefore`, `infoAfter`
-
   - `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt` slots are piped to `ArticleList` component.
   - `bloggerInfo` slot is piped to `BloggerInfo` component.
   - `infoBefore`, `infoAfter` slots are piped to `InfoPanel` component.
@@ -277,7 +262,6 @@ For components with slots, you can import them and customize content through slo
   Slots: `bloggerInfo`, `infoBefore`, `infoAfter`
 
 - `@theme-hope/components/blog/InfoPanel`: blog info panel
-
   - `bloggerInfo` slot is piped to `BloggerInfo` component.
 
 - `@theme-hope/components/blog/Pagination`: pagination
@@ -299,14 +283,12 @@ For components with slots, you can import them and customize content through slo
 - `@theme-hope/components/blog/TimelinePage`: timeline page
 
   Slots: `articleBefore`, `articleAfter`, `bloggerInfo`, `infoBefore`, `infoAfter`
-
   - `bloggerInfo` slot is piped to `BloggerInfo` component.
   - `infoBefore`, `infoAfter` slots are piped to `InfoPanel` component.
 
 - `@theme-hope/components/blog/TypePage`: type page
 
   Slots: `default`, `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt`, `articleBefore`, `articleAfter`, `bloggerInfo`, `infoBefore`, `infoAfter`
-
   - `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt` slots are piped to `ArticleList` component.
   - `bloggerInfo` slot is piped to `BloggerInfo` component.
   - `infoBefore`, `infoAfter` slots are piped to `InfoPanel` component.

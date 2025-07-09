@@ -64,7 +64,6 @@ export default {
 - `@theme-hope/components/base/MainLayout`: 主布局
 
   插槽: `default`, `navScreenTop`, `navScreenBottom`, `sidebarItems`, `sidebarTop`, `sidebarBottom`
-
   - `navScreenTop` `navScreenBottom` 插槽被传递到 `NavBar` 组件。
   - `sidebarItems`, `sidebarTop`, `sidebarBottom` 插槽被传递到 `Sidebar` 组件。
 
@@ -75,7 +74,6 @@ export default {
 - `@theme-hope/components/base/PageContent`: 主要页面内容
 
   插槽: `pageTop`, `pageBottom`, `content`, `contentBefore`, `contentAfter`, `toc`, `tocBefore`, `tocAfter`
-
   - `contentBefore`, `contentAfter` 插槽被传递到 `MarkdownContent` 组件。
   - `toc`, `tocBefore`, `tocAfter` 插槽被传递到 `TOC` 组件。
 
@@ -102,7 +100,6 @@ export default {
 - `@theme-hope/components/home/HeroInfo`: 主页英雄信息
 
   插槽: `heroInfo`, `heroLogo`, `heroBg`
-
   - `heroInfo` 插槽接收 `text` `tagline` `isFullScreen` 和 `style` 属性。
   - `heroLogo` 插槽接收 `image` `imageDark` `alt` 和 `style` 属性。
   - `heroBg` 插槽接收 `image` `imageDark` 和 `style` 属性。
@@ -112,14 +109,12 @@ export default {
 - `@theme-hope/components/home/HomePage`: 默认主页 (项目主页)
 
   插槽: `heroInfo`, `heroLogo`, `heroBg`, `heroBefore`, `heroAfter`, `content`, `contentBefore`, `contentAfter`
-
   - `heroInfo`, `heroLogo`, `heroBg` 插槽被传递到 `HeroInfo` 组件。
   - `heroBefore`, `heroAfter` 插槽被传递到 `MainFadeInUpTransition` 组件。
 
 - `@theme-hope/components/home/PortfolioHero`: 作品集英雄信息
 
   插槽: `portfolioInfo`, `portfolioAvatar`, `portfolioBg`
-
   - `portfolioInfo` 插槽接收 `name` `welcome` `title` `titles` 和 `links` 属性。
   - `portfolioAvatar` 插槽接收 `avatar` `avatarDark` `style` 和 `alt` 属性。
   - `portfolioBg` 插槽接收 `image` `imageDark` 和 `style` 属性。
@@ -127,7 +122,6 @@ export default {
 - `@theme-hope/components/home/PortfolioHome`: 作品集主页
 
   插槽: `portfolioInfo`, `portfolioAvatar`, `portfolioBg`
-
   - `portfolioInfo`, `portfolioAvatar`, `portfolioBg` 插槽被传递到 `PortfolioHero` 组件。
 
 ### 导航栏组件
@@ -139,7 +133,6 @@ export default {
 - `@theme-hope/components/navbar/Navbar`: 导航栏组件
 
   插槽: `navScreenTop`, `navScreenBottom`
-
   - `navScreenTop` `navScreenBottom` 插槽被传递到 `NavBar` 组件。
 
 - `@theme-hope/components/navbar/NavbarBrand`: 导航栏品牌信息
@@ -169,7 +162,6 @@ export default {
 - `@theme-hope/components/sidebar/Sidebar`: 侧边栏
 
   插槽: `sidebarItems`, `sidebarTop`, `sidebarBottom`
-
   - `sidebarItems` 插槽接收 `sidebarItems` 属性。
 
 - `@theme-hope/components/sidebar/SidebarChild`: 侧边栏子项
@@ -214,7 +206,6 @@ export default {
 - `@theme-hope/components/blog/ArticleItem`: 文章项目
 
   插槽: `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt`
-
   - `articleTitle` 插槽接收 `title` `isEncrypted` 和 `type` 属性。
   - `articleCover` 插槽接收 `cover` 属性。
   - `articleInfo` 插槽接收 `author` `category` `tag` `date` `isOriginal` `pageview` `readingTime` 和 `readingTimeLocale` 属性。
@@ -223,7 +214,6 @@ export default {
 - `@theme-hope/components/blog/ArticleList`: 文章列表
 
   插槽: `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt`
-
   - `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt` 插槽被传递到 `ArticleItem` 组件。
 
 - `@theme-hope/components/blog/ArticlesInfo`: 文章信息
@@ -233,13 +223,11 @@ export default {
 - `@theme-hope/components/blog/BloggerInfo`: 博主信息
 
   插槽: `bloggerInfo`
-
   - `bloggerInfo` 插槽接收 `name` `avatar` 和 `description` 属性。
 
 - `@theme-hope/components/blog/BlogHero`: 博客英雄信息
 
   插槽: `heroInfo`, `heroLogo`, `heroBg`
-
   - `heroInfo` 插槽接收 `text` `tagline` `isFullScreen` 和 `style` 属性。
   - `heroLogo` 插槽接收 `image` `imageDark` `alt` 和 `style` 属性。
   - `heroBg` 插槽接收 `image` `imageDark` 和 `style` 属性。
@@ -247,7 +235,6 @@ export default {
 - `@theme-hope/components/blog/BlogHome`: 博客主页
 
   插槽: `heroInfo`, `heroLogo`, `heroBg`, `heroBefore`, `heroAfter`, `articleCover`, `articleTitle`, `articleInfo`, `articleExcerpt`, `bloggerInfo`, `infoBefore`, `infoAfter`, `content`, `contentBefore`, `contentAfter`
-
   - `heroInfo`, `heroLogo`, `heroBg` 插槽被传递到 `BlogHero` 组件。
   - `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt` 插槽被传递到 `ArticleList` 组件。
   - `bloggerInfo` 插槽被传递到 `BloggerInfo` 组件。
@@ -257,7 +244,6 @@ export default {
 - `@theme-hope/components/blog/BlogMainLayout`: 博客主布局
 
   插槽: `default`, `navScreenTop`, `navScreenBottom`, `sidebarItems`, `sidebarTop`, `sidebarBottom`, `bloggerInfo`
-
   - `navScreenTop` `navScreenBottom` 插槽被传递到 `NavBar` 组件。
 
 - `@theme-hope/components/blog/CategoriesInfo`: 分类信息
@@ -267,7 +253,6 @@ export default {
 - `@theme-hope/components/blog/CategoryPage`: 分类页面
 
   插槽: `default`, `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt`, `articleBefore`, `articleAfter`, `bloggerInfo`, `infoBefore`, `infoAfter`
-
   - `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt` 插槽被传递到 `ArticleList` 组件。
   - `bloggerInfo` 插槽被传递到 `BloggerInfo` 组件。
   - `infoBefore`, `infoAfter` 插槽被传递到 `InfoPanel` 组件。
@@ -277,7 +262,6 @@ export default {
   插槽: `bloggerInfo`, `infoBefore`, `infoAfter`
 
 - `@theme-hope/components/blog/InfoPanel`: 信息面板
-
   - `bloggerInfo` 插槽被传递到 `BloggerInfo` 组件。
 
 - `@theme-hope/components/blog/Pagination`: 分页导航
@@ -299,14 +283,12 @@ export default {
 - `@theme-hope/components/blog/TimelinePage`: 时间线页面
 
   插槽: `articleBefore`, `articleAfter`, `bloggerInfo`, `infoBefore`, `infoAfter`
-
   - `bloggerInfo` 插槽被传递到 `BloggerInfo` 组件。
   - `infoBefore`, `infoAfter` 插槽被传递到 `InfoPanel` 组件。
 
 - `@theme-hope/components/blog/TypePage`: type page
 
   插槽: `default`, `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt`, `articleBefore`, `articleAfter`, `bloggerInfo`, `infoBefore`, `infoAfter`
-
   - `articleTitle`, `articleCover`, `articleInfo`, `articleExcerpt` 插槽被传递到 `ArticleList` 组件。
   - `bloggerInfo` 插槽被传递到 `BloggerInfo` 组件。
   - `infoBefore`, `infoAfter` 插槽被传递到 `InfoPanel` 组件。

@@ -67,7 +67,6 @@ In it, you can use 2 directives:
 - `@setting` then a json block to customize settings.
 
   Supported options:
-
   - `data-version`: Target Kotlin compiler version
   - `data-min-compiler-version`: Minimum target Kotlin compiler version
   - `data-target-platform`: target platform, can be `junit`, `canvas`, `js` or `java` (default).

@@ -386,7 +386,6 @@ tag:
    ::: important 配置文件要求
 
    为了让插件正常工作：
-
    - `lang` 选择器必须在 `selectors` 字段中保持不变
    - `custom_settings` 中的所有当前字段不得删除。
 
@@ -404,7 +403,6 @@ tag:
    ```
 
    此处：
-
    - `<MEILISEARCH_HOST_URL>` 应为你的 MeiliSearch 实例的主机 URL
    - `<MEILISEARCH_MASTER_KEY>` 是你提供的主密钥。
    - `<absolute-path-to-your-config-file>` 是你创建的配置文件的绝对路径。
@@ -429,7 +427,6 @@ tag:
    ```
 
    此处：
-
    - `<YOUR_HOST>` 是你的 MeiliSearch 实例的主机 URL
    - `<MASTER_KEY>` 是 MeiliSearch 生成的主密钥
    - `<YOUR_INDEX_NAME>` 是你创建的索引名称

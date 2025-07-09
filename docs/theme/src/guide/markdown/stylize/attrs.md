@@ -152,7 +152,6 @@ const a = 1;
 ::: preview List
 
 - list item{.list-item}
-
   - nested list item
     {.nested}
 

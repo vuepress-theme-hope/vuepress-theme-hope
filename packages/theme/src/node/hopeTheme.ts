@@ -1,7 +1,7 @@
 import { isPlainObject } from "@vuepress/helper";
 import { watch } from "chokidar";
 import type { ThemeFunction } from "vuepress/core";
-import { TEMPLATE_RENDERER_OUTLETS, path } from "vuepress/utils";
+import { TemplateRendererOutlet, path } from "vuepress/utils";
 
 import {
   checkThemeMarkdownOptions,
@@ -125,14 +125,14 @@ export const hopeTheme = (
 
       onWatched: (app, watchers): void => {
         if (hotReload) {
-          const structureSidebarWatcher = watch(
-            // This ensures the page is generated or updated
-            "pages/**/*.vue",
-            {
-              cwd: app.dir.temp(),
-              ignoreInitial: true,
-            },
-          );
+          // This ensure the page is generated or updated
+          const structureSidebarWatcher = watch("pages", {
+            cwd: app.dir.temp(),
+            ignoreInitial: true,
+            // only watch vue files
+            ignored: (path, stats) =>
+              Boolean(stats?.isFile() && !path.endsWith(".vue")),
+          });
 
           structureSidebarWatcher.on("add", () => {
             void prepareSidebarData(app, themeData, sidebarSorter);
@@ -169,19 +169,19 @@ export const hopeTheme = (
         { content, head, lang, prefetch, preload, scripts, styles, version },
       ): string =>
         template
-          .replace(TEMPLATE_RENDERER_OUTLETS.CONTENT, () => content)
-          .replace(TEMPLATE_RENDERER_OUTLETS.HEAD, head)
+          .replace(TemplateRendererOutlet.Content, () => content)
+          .replace(TemplateRendererOutlet.Head, head)
           .replace("{{ themeVersion }}", VERSION)
           .replace(
             "{{ themeMode }}",
             mainThemeOptions.darkmode === "enable" ? "dark" : "light",
           )
-          .replace(TEMPLATE_RENDERER_OUTLETS.LANG, lang)
-          .replace(TEMPLATE_RENDERER_OUTLETS.PREFETCH, prefetch)
-          .replace(TEMPLATE_RENDERER_OUTLETS.PRELOAD, preload)
-          .replace(TEMPLATE_RENDERER_OUTLETS.SCRIPTS, scripts)
-          .replace(TEMPLATE_RENDERER_OUTLETS.STYLES, styles)
-          .replace(TEMPLATE_RENDERER_OUTLETS.VERSION, version),
+          .replace(TemplateRendererOutlet.Lang, lang)
+          .replace(TemplateRendererOutlet.Prefetch, prefetch)
+          .replace(TemplateRendererOutlet.Preload, preload)
+          .replace(TemplateRendererOutlet.Scripts, scripts)
+          .replace(TemplateRendererOutlet.Styles, styles)
+          .replace(TemplateRendererOutlet.Version, version),
 
       clientConfigFile: (app) =>
         (behavior.custom ? prepareCustomConfigFile : prepareBundleConfigFile)(

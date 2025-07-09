@@ -119,7 +119,6 @@ export default defineComponent({
               roughnessMap: roughnessTexture,
               displacementScale: 0.15,
               emissiveIntensity: 0.4,
-              reflectivity: 1,
             });
 
             logo1 = new Mesh(geometry, material);
@@ -142,7 +141,6 @@ export default defineComponent({
               roughnessMap: roughnessTexture,
               displacementScale: 0.15,
               emissiveIntensity: 0.4,
-              reflectivity: 1,
             });
 
             logo2 = new Mesh(geometry, material);

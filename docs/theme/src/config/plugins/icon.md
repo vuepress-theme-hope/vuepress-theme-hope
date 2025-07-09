@@ -40,7 +40,6 @@ The theme provides blog feature via `@vuepress/plugin-icon`. For instructions, p
   Icon assets to be used.
 
   The following keywords are supported and you may use other CDN links or even your own.:
-
   - `iconify`: Iconify
   - `fontawesome`: Font Awesome free icons only
   - `fontawesome-with-brands`: Font Awesome free icons and brand icons
@@ -60,7 +59,6 @@ The theme provides blog feature via `@vuepress/plugin-icon`. For instructions, p
   Type of the icon, the plugin will try to infer the type from the assets, and fallbacks to `unknown`.
 
   Notably, the plugin can recognize:
-
   - iconfont css links
   - fontawesome kits
   - CDN links for fontawesome and iconify
@@ -72,7 +70,6 @@ The theme provides blog feature via `@vuepress/plugin-icon`. For instructions, p
 - Details:
 
   Prefix for the icon component. By default, the plugin will use:
-
   - `iconfont icon-` for iconfont type
   - `fas fa-` for fontawesome type
   - empty string for all other types

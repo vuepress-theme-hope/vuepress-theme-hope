@@ -85,12 +85,10 @@ In short, anyone can enjoy the convenience of Markdown's enhanced syntax.
 ### Layouts Improvement
 
 - [Navbar](../layout/navbar.md):
-
   - Support for icons and path prefix.
   - Improved layout on mobile.
 
 - [Sidebar](../layout/sidebar.md):
-
   - Support for icons and path prefix.
   - Auto generating sidebars from [file structure](../layout/sidebar.md#generate-from-file-structure).
 
@@ -105,7 +103,6 @@ In short, anyone can enjoy the convenience of Markdown's enhanced syntax.
 ### Page Meta
 
 - [Page info](../feature/page-info.md) including:
-
   - Author
   - Writing date
   - Word count and estimated reading time
@@ -123,19 +120,16 @@ In short, anyone can enjoy the convenience of Markdown's enhanced syntax.
 - [Catalog Page auto-generation](../feature/catalog.md)
 
 - Search feature
-
   - [Crawler search support with docsearch](../feature/search.md#use-vuepressplugin-docsearch)
   - [Powerful client search support with slimsearch](../feature/search.md#use-vuepressplugin-slimsearch).
 
 - [Page Encryption](../feature/encrypt.md) feature to limit access.
 
 - Copyright
-
   - [Copyright appending](../feature/copyright.md) while copying, or directly disable page copy and selection
   - Add [Watermark](../feature/watermark.md)
 
 - Search Engine Optimization
-
   - [SEO Enhancement](../advanced/seo.md) with full support of OGP and JSON-LD protocols
 
   - [Sitemap Generation](../advanced/sitemap.md)

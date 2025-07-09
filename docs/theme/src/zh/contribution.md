@@ -110,12 +110,10 @@ VuePress 同时运行在客户端和 Node 端。 Node 侧有像 `fs` 这样的 n
 ## 项目的运行与开发
 
 1. 构建项目: `pnpm build`
-
    - 使用 rollup 打包并压缩代码，并输出到 `lib` 文件夹
    - 使用 `rollup-plugin-copy` 复制其他文件到 `lib` 文件夹
 
 1. 开发项目: `pnpm dev`
-
    - 使用 `tsc` 编译 TypeScript 文件到 `lib` 文件夹
    - 使用 `cpx` 复制其他文件到 `lib` 文件夹
 

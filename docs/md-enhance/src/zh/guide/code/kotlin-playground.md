@@ -67,7 +67,6 @@ export default {
 - `@setting` 紧跟一个自定义设置的 json 块
 
   支持的选项:
-
   - `data-version`: 目标 Kotlin 编译器版本
   - `data-min-compiler-version`: 最低目标 Kotlin 编译器版本
   - `data-target-platform`: 目标平台，可以是 `junit`，`canvas`，`js` 或 `java`（默认）。
