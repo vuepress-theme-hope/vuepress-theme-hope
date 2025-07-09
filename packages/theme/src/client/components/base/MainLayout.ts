@@ -293,7 +293,7 @@ export default defineComponent({
                     ),
               ),
               // Sidebar
-              h(Sidebar, null, slots),
+              noSidebar ? null : h(Sidebar, null, slots),
               slots.default(),
               h(PageFooter),
             ],

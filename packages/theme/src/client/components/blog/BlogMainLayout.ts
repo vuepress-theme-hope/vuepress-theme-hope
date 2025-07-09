@@ -39,7 +39,7 @@ export default defineComponent({
       h(SkipLink),
       h(
         MainLayout,
-        { noToc: true },
+        { noSidebar: !isMobile.value, noToc: true },
         {
           ...slots,
           navScreenBottom: () =>
