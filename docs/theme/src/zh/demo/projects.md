@@ -81,7 +81,7 @@ docs:
     logo: https://xtsat.github.io/SteamTools-Guide/logo/Steam++Logo_1024.png
     url: https://xtsat.github.io/SteamTools-Guide/zh/
     repo: https://github.com/XTsat/SteamTools-Guide
-    preview: /assets/image/korepi.jpg
+    preview: /assets/image/watt.jpg
 
   - name: JavaGuide
     desc: 「Java学习+面试指南」一份涵盖大部分 Java 程序员所需要掌握的核心知识。准备 Java 面试，首选 JavaGuide！
