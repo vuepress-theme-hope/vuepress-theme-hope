@@ -133,7 +133,14 @@ export default defineComponent({
                 onUpdateCurrentPage: updatePage,
               }),
             ]
-          : h("h2", { class: "vp-empty-hint" }, blogLocale.value.empty),
+          : h(
+              "h2",
+              { class: "vp-empty-hint" },
+              blogLocale.value.empty.replace(
+                "$text",
+                blogLocale.value.article.toLocaleLowerCase(),
+              ),
+            ),
       );
   },
 });
