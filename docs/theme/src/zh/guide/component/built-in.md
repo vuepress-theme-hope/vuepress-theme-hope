@@ -59,6 +59,8 @@ export default hopeTheme({
   },
 });
 ```
+## 组件介绍
+详细的组件介绍请见 [组件库-指南](https://plugin-components.vuejs.press/zh/guide/)
 
 ## 杂项
 
