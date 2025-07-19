@@ -22,8 +22,8 @@ catalogs:
       specifier: 3.2.2
       version: 3.2.2
     mermaid:
-      specifier: 11.8.1
-      version: 11.8.1
+      specifier: 11.9.0
+      version: 11.9.0
     reveal.js:
       specifier: 5.2.1
       version: 5.2.1
@@ -495,7 +495,7 @@ importers:
         version: 3.2.2
       mermaid:
         specifier: 'catalog:'
-        version: 11.8.1
+        version: 11.9.0
       reveal.js:
         specifier: 'catalog:'
         version: 5.2.1
@@ -561,7 +561,7 @@ importers:
         version: 3.2.2
       mermaid:
         specifier: 'catalog:'
-        version: 11.8.1
+        version: 11.9.0
       reveal.js:
         specifier: 'catalog:'
         version: 5.2.1
@@ -730,7 +730,7 @@ importers:
         version: 0.16.22
       mermaid:
         specifier: 'catalog:'
-        version: 11.8.1
+        version: 11.9.0
       sandpack-vue3:
         specifier: 3.1.12
         version: 3.1.12(vue@3.5.17(typescript@5.8.3))
@@ -781,7 +781,7 @@ importers:
         version: 2.0.0-rc.112(typescript@5.8.3)(vuepress@2.0.0-rc.24(@vuepress/bundler-vite@2.0.0-rc.24(@types/node@24.0.12)(jiti@2.4.2)(lightningcss@1.30.1)(sass-embedded@1.89.2)(sass@1.89.2)(terser@5.43.1)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0))(@vuepress/bundler-webpack@2.0.0-rc.24(esbuild@0.25.6)(typescript@5.8.3))(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)))
       '@vuepress/plugin-markdown-chart':
         specifier: catalog:vuepress
-        version: 2.0.0-rc.112(chart.js@4.5.0)(echarts@5.6.0)(flowchart.ts@3.0.1)(markdown-it@14.1.0)(markmap-lib@0.18.12(markmap-common@0.18.9))(markmap-toolbar@0.18.12(markmap-common@0.18.9))(markmap-view@0.18.12(markmap-common@0.18.9))(mermaid@11.8.1)(typescript@5.8.3)(vuepress@2.0.0-rc.24(@vuepress/bundler-vite@2.0.0-rc.24(@types/node@24.0.12)(jiti@2.4.2)(lightningcss@1.30.1)(sass-embedded@1.89.2)(sass@1.89.2)(terser@5.43.1)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0))(@vuepress/bundler-webpack@2.0.0-rc.24(esbuild@0.25.6)(typescript@5.8.3))(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)))
+        version: 2.0.0-rc.112(chart.js@4.5.0)(echarts@5.6.0)(flowchart.ts@3.0.1)(markdown-it@14.1.0)(markmap-lib@0.18.12(markmap-common@0.18.9))(markmap-toolbar@0.18.12(markmap-common@0.18.9))(markmap-view@0.18.12(markmap-common@0.18.9))(mermaid@11.9.0)(typescript@5.8.3)(vuepress@2.0.0-rc.24(@vuepress/bundler-vite@2.0.0-rc.24(@types/node@24.0.12)(jiti@2.4.2)(lightningcss@1.30.1)(sass-embedded@1.89.2)(sass@1.89.2)(terser@5.43.1)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0))(@vuepress/bundler-webpack@2.0.0-rc.24(esbuild@0.25.6)(typescript@5.8.3))(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)))
       '@vuepress/plugin-revealjs':
         specifier: catalog:vuepress
         version: 2.0.0-rc.112(markdown-it@14.1.0)(typescript@5.8.3)(vuepress@2.0.0-rc.24(@vuepress/bundler-vite@2.0.0-rc.24(@types/node@24.0.12)(jiti@2.4.2)(lightningcss@1.30.1)(sass-embedded@1.89.2)(sass@1.89.2)(terser@5.43.1)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0))(@vuepress/bundler-webpack@2.0.0-rc.24(esbuild@0.25.6)(typescript@5.8.3))(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)))
@@ -820,7 +820,7 @@ importers:
         version: 0.18.12(markmap-common@0.18.9)
       mermaid:
         specifier: 'catalog:'
-        version: 11.8.1
+        version: 11.9.0
       sandpack-vue3:
         specifier: 3.1.12
         version: 3.1.12(vue@3.5.17(typescript@5.8.3))
@@ -1109,7 +1109,7 @@ importers:
         version: 2.0.0-rc.112(typescript@5.8.3)(vuepress@2.0.0-rc.24(@vuepress/bundler-vite@2.0.0-rc.24(@types/node@24.0.12)(jiti@2.4.2)(lightningcss@1.30.1)(sass-embedded@1.89.2)(sass@1.89.2)(terser@5.43.1)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0))(@vuepress/bundler-webpack@2.0.0-rc.24(esbuild@0.25.6)(typescript@5.8.3))(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)))
       '@vuepress/plugin-markdown-chart':
         specifier: catalog:vuepress
-        version: 2.0.0-rc.112(chart.js@4.5.0)(echarts@5.6.0)(flowchart.ts@3.0.1)(markdown-it@14.1.0)(markmap-lib@0.18.12(markmap-common@0.18.9))(markmap-toolbar@0.18.12(markmap-common@0.18.9))(markmap-view@0.18.12(markmap-common@0.18.9))(mermaid@11.8.1)(typescript@5.8.3)(vuepress@2.0.0-rc.24(@vuepress/bundler-vite@2.0.0-rc.24(@types/node@24.0.12)(jiti@2.4.2)(lightningcss@1.30.1)(sass-embedded@1.89.2)(sass@1.89.2)(terser@5.43.1)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0))(@vuepress/bundler-webpack@2.0.0-rc.24(esbuild@0.25.6)(typescript@5.8.3))(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)))
+        version: 2.0.0-rc.112(chart.js@4.5.0)(echarts@5.6.0)(flowchart.ts@3.0.1)(markdown-it@14.1.0)(markmap-lib@0.18.12(markmap-common@0.18.9))(markmap-toolbar@0.18.12(markmap-common@0.18.9))(markmap-view@0.18.12(markmap-common@0.18.9))(mermaid@11.9.0)(typescript@5.8.3)(vuepress@2.0.0-rc.24(@vuepress/bundler-vite@2.0.0-rc.24(@types/node@24.0.12)(jiti@2.4.2)(lightningcss@1.30.1)(sass-embedded@1.89.2)(sass@1.89.2)(terser@5.43.1)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0))(@vuepress/bundler-webpack@2.0.0-rc.24(esbuild@0.25.6)(typescript@5.8.3))(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)))
       '@vuepress/plugin-markdown-ext':
         specifier: catalog:vuepress
         version: 2.0.0-rc.112(markdown-it@14.1.0)(typescript@5.8.3)(vuepress@2.0.0-rc.24(@vuepress/bundler-vite@2.0.0-rc.24(@types/node@24.0.12)(jiti@2.4.2)(lightningcss@1.30.1)(sass-embedded@1.89.2)(sass@1.89.2)(terser@5.43.1)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0))(@vuepress/bundler-webpack@2.0.0-rc.24(esbuild@0.25.6)(typescript@5.8.3))(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)))
@@ -2790,8 +2790,8 @@ packages:
       markdown-it:
         optional: true
 
-  '@mermaid-js/parser@0.6.1':
-    resolution: {integrity: sha512-lCQNpV8R4lgsGcjX5667UiuDLk2micCtjtxR1YKbBXvN5w2v+FeLYoHrTSSrjwXdMcDYvE4ZBPvKT31dfeSmmA==}
+  '@mermaid-js/parser@0.6.2':
+    resolution: {integrity: sha512-+PO02uGF6L6Cs0Bw8RpGhikVvMWEysfAyl27qTlroUB8jSWr1lL0Sf6zi78ZxlSnmgSY2AMMKVgghnN9jTtwkQ==}
 
   '@napi-rs/wasm-runtime@0.2.11':
     resolution: {integrity: sha512-9DPkXtvHydrcOsopiYpUgPHpmj0HWZKMUnL2dZqpvC42lsratuBG06V5ipyno0fUek5VlFsNQ+AcFATSrJXgMA==}
@@ -7229,11 +7229,6 @@ packages:
     peerDependencies:
       marked: '>=4 <17'
 
-  marked@15.0.12:
-    resolution: {integrity: sha512-8dD6FusOQSrpv9Z1rdNMdlSgQOIP880DHqnohobOmYLElGEqAL/JvxvuxZO16r4HtjTlfPRDC1hbvxC9dPN2nA==}
-    engines: {node: '>= 18'}
-    hasBin: true
-
   marked@16.0.0:
     resolution: {integrity: sha512-MUKMXDjsD/eptB7GPzxo4xcnLS6oo7/RHimUMHEDRhUooPwmN9BEpMl7AEOJv3bmso169wHI2wUF9VQgL7zfmA==}
     engines: {node: '>= 20'}
@@ -7365,8 +7360,8 @@ packages:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
 
-  mermaid@11.8.1:
-    resolution: {integrity: sha512-VSXJLqP1Sqw5sGr273mhvpPRhXwE6NlmMSqBZQw+yZJoAJkOIPPn/uT3teeCBx60Fkt5zEI3FrH2eVT0jXRDzw==}
+  mermaid@11.9.0:
+    resolution: {integrity: sha512-YdPXn9slEwO0omQfQIsW6vS84weVQftIyyTGAZCwM//MGhPzL1+l6vO6bkf0wnP4tHigH1alZ5Ooy3HXI2gOag==}
 
   meshoptimizer@0.18.1:
     resolution: {integrity: sha512-ZhoIoL7TNV4s5B6+rx5mC//fw8/POGyNxS/DZyCJeiZ12ScLfVwRE/GfsxwiTkMYYD5DmK2/JXnEVXqL4rF+Sw==}
@@ -12063,7 +12058,7 @@ snapshots:
     optionalDependencies:
       markdown-it: 14.1.0
 
-  '@mermaid-js/parser@0.6.1':
+  '@mermaid-js/parser@0.6.2':
     dependencies:
       langium: 3.3.1
 
@@ -13600,7 +13595,7 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@vuepress/plugin-markdown-chart@2.0.0-rc.112(chart.js@4.5.0)(echarts@5.6.0)(flowchart.ts@3.0.1)(markdown-it@14.1.0)(markmap-lib@0.18.12(markmap-common@0.18.9))(markmap-toolbar@0.18.12(markmap-common@0.18.9))(markmap-view@0.18.12(markmap-common@0.18.9))(mermaid@11.8.1)(typescript@5.8.3)(vuepress@2.0.0-rc.24(@vuepress/bundler-vite@2.0.0-rc.24(@types/node@24.0.12)(jiti@2.4.2)(lightningcss@1.30.1)(sass-embedded@1.89.2)(sass@1.89.2)(terser@5.43.1)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0))(@vuepress/bundler-webpack@2.0.0-rc.24(esbuild@0.25.6)(typescript@5.8.3))(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)))':
+  '@vuepress/plugin-markdown-chart@2.0.0-rc.112(chart.js@4.5.0)(echarts@5.6.0)(flowchart.ts@3.0.1)(markdown-it@14.1.0)(markmap-lib@0.18.12(markmap-common@0.18.9))(markmap-toolbar@0.18.12(markmap-common@0.18.9))(markmap-view@0.18.12(markmap-common@0.18.9))(mermaid@11.9.0)(typescript@5.8.3)(vuepress@2.0.0-rc.24(@vuepress/bundler-vite@2.0.0-rc.24(@types/node@24.0.12)(jiti@2.4.2)(lightningcss@1.30.1)(sass-embedded@1.89.2)(sass@1.89.2)(terser@5.43.1)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0))(@vuepress/bundler-webpack@2.0.0-rc.24(esbuild@0.25.6)(typescript@5.8.3))(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)))':
     dependencies:
       '@mdit/plugin-container': 0.22.1(markdown-it@14.1.0)
       '@mdit/plugin-plantuml': 0.22.2(markdown-it@14.1.0)
@@ -13615,7 +13610,7 @@ snapshots:
       markmap-lib: 0.18.12(markmap-common@0.18.9)
       markmap-toolbar: 0.18.12(markmap-common@0.18.9)
       markmap-view: 0.18.12(markmap-common@0.18.9)
-      mermaid: 11.8.1
+      mermaid: 11.9.0
     transitivePeerDependencies:
       - markdown-it
       - typescript
@@ -17314,8 +17309,6 @@ snapshots:
     dependencies:
       marked: 16.0.0
 
-  marked@15.0.12: {}
-
   marked@16.0.0: {}
 
   markmap-common@0.18.9:
@@ -17526,11 +17519,11 @@ snapshots:
 
   merge2@1.4.1: {}
 
-  mermaid@11.8.1:
+  mermaid@11.9.0:
     dependencies:
       '@braintree/sanitize-url': 7.1.1
       '@iconify/utils': 2.3.0
-      '@mermaid-js/parser': 0.6.1
+      '@mermaid-js/parser': 0.6.2
       '@types/d3': 7.4.3
       cytoscape: 3.32.1
       cytoscape-cose-bilkent: 4.1.0(cytoscape@3.32.1)
@@ -17543,7 +17536,7 @@ snapshots:
       katex: 0.16.22
       khroma: 2.1.0
       lodash-es: 4.17.21
-      marked: 15.0.12
+      marked: 16.0.0
       roughjs: 4.6.6
       stylis: 4.3.6
       ts-dedent: 2.2.0
