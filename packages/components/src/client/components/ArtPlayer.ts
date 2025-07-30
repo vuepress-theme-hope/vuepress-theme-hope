@@ -195,7 +195,7 @@ export default defineComponent({
         ...ART_PLAYER_OPTIONS,
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         container: el.value!,
-        poster: props.poster,
+        poster: props.poster ?? "",
         url: getLink(props.src),
         type: props.type ?? getTypeByUrl(props.src),
         lang: getLang(lang.value),
