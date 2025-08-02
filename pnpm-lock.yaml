@@ -344,8 +344,8 @@ importers:
         specifier: 5.2.3
         version: 5.2.3
       artplayer-plugin-danmuku:
-        specifier: 5.1.6
-        version: 5.1.6
+        specifier: 5.1.8
+        version: 5.1.8
       dashjs:
         specifier: 4.7.4
         version: 4.7.4
@@ -636,8 +636,8 @@ importers:
         specifier: 5.2.3
         version: 5.2.3
       artplayer-plugin-danmuku:
-        specifier: 5.1.6
-        version: 5.1.6
+        specifier: 5.1.8
+        version: 5.1.8
       dashjs:
         specifier: 4.7.4
         version: 4.7.4
@@ -4420,8 +4420,8 @@ packages:
     resolution: {integrity: sha512-BNoCY6SXXPQ7gF2opIP4GBE+Xw7U+pHMYKuzjgCN3GwiaIR09UUeKfheyIry77QtrCBlC0KK0q5/TER/tYh3PQ==}
     engines: {node: '>= 0.4'}
 
-  artplayer-plugin-danmuku@5.1.6:
-    resolution: {integrity: sha512-3JufaEvxI0bTR74vxLU7K9F9OLmR3yrDFqeflV0T0QWedabassX5hsl0AyNNcjVkfdm3A5s1YC0icdtiFZA1Ig==}
+  artplayer-plugin-danmuku@5.1.8:
+    resolution: {integrity: sha512-J9kUtU46/07ZckvmfFDwfJRJDLD7UIfrWVutc7EqDCkUModArOISifXkD27/R2ruIpfAJk6HxOfB0cQfvjbZCQ==}
 
   artplayer@5.2.3:
     resolution: {integrity: sha512-WaOZQrpZn/L+GgI2f0TEsoAL3Wb+v16Mu0JmWh7qKFYuvr11WNt3dWhWeIaCfoHy3NtkCWM9jTP+xwwsxdElZQ==}
@@ -8981,6 +8981,7 @@ packages:
   source-map@0.8.0-beta.0:
     resolution: {integrity: sha512-2ymg6oRBpebeZi9UUNsgQ89bhx01TcTkmNTGnNO88imTmbSgy4nfujrgVEFKWpMTEGA11EDkTt7mqObTPdigIA==}
     engines: {node: '>= 8'}
+    deprecated: The work that was done in this beta branch won't be included in future versions
 
   sourcemap-codec@1.4.8:
     resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
@@ -14229,7 +14230,7 @@ snapshots:
       get-intrinsic: 1.3.0
       is-array-buffer: 3.0.5
 
-  artplayer-plugin-danmuku@5.1.6: {}
+  artplayer-plugin-danmuku@5.1.8: {}
 
   artplayer@5.2.3:
     dependencies:
