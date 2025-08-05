@@ -404,8 +404,8 @@ importers:
   demo/md-enhance:
     devDependencies:
       '@vue/repl':
-        specifier: 4.6.1
-        version: 4.6.1
+        specifier: 4.6.3
+        version: 4.6.3
       '@vuepress/bundler-vite':
         specifier: catalog:vuepress
         version: 2.0.0-rc.24(@types/node@24.0.12)(jiti@2.4.2)(lightningcss@1.30.1)(sass-embedded@1.89.2)(sass@1.89.2)(terser@5.43.1)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0)
@@ -449,8 +449,8 @@ importers:
   demo/theme-blog:
     devDependencies:
       '@vue/repl':
-        specifier: 4.6.1
-        version: 4.6.1
+        specifier: 4.6.3
+        version: 4.6.3
       '@vuepress/bundler-vite':
         specifier: catalog:vuepress
         version: 2.0.0-rc.24(@types/node@24.0.12)(jiti@2.4.2)(lightningcss@1.30.1)(sass-embedded@1.89.2)(sass@1.89.2)(terser@5.43.1)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0)
@@ -521,8 +521,8 @@ importers:
   demo/theme-docs:
     devDependencies:
       '@vue/repl':
-        specifier: 4.6.1
-        version: 4.6.1
+        specifier: 4.6.3
+        version: 4.6.3
       '@vuepress/bundler-vite':
         specifier: catalog:vuepress
         version: 2.0.0-rc.24(@types/node@24.0.12)(jiti@2.4.2)(lightningcss@1.30.1)(sass-embedded@1.89.2)(sass@1.89.2)(terser@5.43.1)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0)
@@ -762,8 +762,8 @@ importers:
         specifier: 0.16.7
         version: 0.16.7
       '@vue/repl':
-        specifier: 4.6.1
-        version: 4.6.1
+        specifier: 4.6.3
+        version: 4.6.3
       '@vuepress/bundler-vite':
         specifier: catalog:vuepress
         version: 2.0.0-rc.24(@types/node@24.0.12)(jiti@2.4.2)(lightningcss@1.30.1)(sass-embedded@1.89.2)(sass@1.89.2)(terser@5.43.1)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0)
@@ -3873,6 +3873,9 @@ packages:
 
   '@vue/repl@4.6.1':
     resolution: {integrity: sha512-tgeEa+QXzqbFsAIbq/dCXzOJxIW2Nq1F79KXRjbKyPt1ODpCx86bDbFgNzFcBEK3In2/mjPTMpN7fSD6Ig0Qsw==}
+
+  '@vue/repl@4.6.3':
+    resolution: {integrity: sha512-2ckL15D67pOlnH0wtPHkGCoggCzZiPqWuZbNeYvLQTY24ey6P6GX1TY6b7uruAIC6etecCJQdrGSnc+XXsWDDA==}
 
   '@vue/runtime-core@3.5.17':
     resolution: {integrity: sha512-QQLXa20dHg1R0ri4bjKeGFKEkJA7MMBxrKo2G+gJikmumRS7PTD4BOU9FKrDQWMKowz7frJJGqBffYMgQYS96Q==}
@@ -8981,6 +8984,7 @@ packages:
   source-map@0.8.0-beta.0:
     resolution: {integrity: sha512-2ymg6oRBpebeZi9UUNsgQ89bhx01TcTkmNTGnNO88imTmbSgy4nfujrgVEFKWpMTEGA11EDkTt7mqObTPdigIA==}
     engines: {node: '>= 8'}
+    deprecated: The work that was done in this beta branch won't be included in future versions
 
   sourcemap-codec@1.4.8:
     resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
@@ -13296,6 +13300,8 @@ snapshots:
       '@vue/shared': 3.5.17
 
   '@vue/repl@4.6.1': {}
+
+  '@vue/repl@4.6.3': {}
 
   '@vue/runtime-core@3.5.17':
     dependencies:
