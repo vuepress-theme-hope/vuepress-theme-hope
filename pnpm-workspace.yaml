@@ -14,7 +14,7 @@ catalog:
   reveal.js: 5.2.1
   sass-embedded: 1.89.2
   sass-loader: 16.0.5
-  vue: 3.5.17
+  vue: 3.5.18
 
 catalogs:
   range:
