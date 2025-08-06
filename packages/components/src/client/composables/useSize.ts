@@ -45,7 +45,7 @@ export const useSize = <E extends HTMLElement>(
 
     return height
       ? getValue(height)
-      : `${Number(width) / ratio + unref(extraHeight)}px`;
+      : `${width / ratio + unref(extraHeight)}px`;
   };
 
   const updateHeight = (): void => {

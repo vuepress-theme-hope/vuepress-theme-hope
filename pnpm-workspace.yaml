@@ -10,11 +10,11 @@ catalog:
   markmap-toolbar: 0.18.12
   markmap-view: 0.18.12
   mathjax-full: 3.2.2
-  mermaid: 11.8.1
+  mermaid: 11.9.0
   reveal.js: 5.2.1
   sass-embedded: 1.89.2
   sass-loader: 16.0.5
-  vue: 3.5.17
+  vue: 3.5.18
 
 catalogs:
   range:
