@@ -56,9 +56,9 @@ You can also config your social media links with `blog.medias` option.
 - `"QQ"`
 - `"Qzone"`
 - `"Reddit"`
-- `"Skype"`
 - `"SnapChat"`
 - `"Soul"`
+- `"Teams"`
 - `"Telegram"`
 - `"Tieba"`
 - `"Tumblr"`

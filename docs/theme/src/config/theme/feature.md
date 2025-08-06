@@ -90,9 +90,9 @@ The following social medias has built-in icons:
 - `"QQ"`
 - `"Qzone"`
 - `"Reddit"`
-- `"Skype"`
 - `"SnapChat"`
 - `"Soul"`
+- `"Teams"`
 - `"Telegram"`
 - `"Tieba"`
 - `"Tumblr"`
