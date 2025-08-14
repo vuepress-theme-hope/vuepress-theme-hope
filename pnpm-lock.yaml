@@ -350,8 +350,8 @@ importers:
         specifier: 4.7.4
         version: 4.7.4
       hls.js:
-        specifier: 1.6.8
-        version: 1.6.8
+        specifier: 1.6.10
+        version: 1.6.10
       mpegts.js:
         specifier: 1.8.0
         version: 1.8.0
@@ -645,8 +645,8 @@ importers:
         specifier: workspace:*
         version: link:../../docs-shared
       hls.js:
-        specifier: 1.6.8
-        version: 1.6.8
+        specifier: 1.6.10
+        version: 1.6.10
       mpegts.js:
         specifier: 1.8.0
         version: 1.8.0
@@ -6279,6 +6279,9 @@ packages:
   highlight.js@11.11.1:
     resolution: {integrity: sha512-Xwwo44whKBVCYoliBQwaPvtd/2tYFkRQtXDWj1nackaV2JPXx3L0+Jvd8/qCJ2p+ML0/XVkJ2q+Mr+UVdpJK5w==}
     engines: {node: '>=12.0.0'}
+
+  hls.js@1.6.10:
+    resolution: {integrity: sha512-16XHorwFNh+hYazYxDNXBLEm5aRoU+oxMX6qVnkbGH3hJil4xLav3/M6NH92VkD1qSOGKXeSm+5unuawPXK6OQ==}
 
   hls.js@1.6.8:
     resolution: {integrity: sha512-oifhtMNYRpB1VmzH/hWd4NXziMJ1hCeA15XG1ET4jh6u4khXsYsqqvpEFWmNWS+8J6tbsv10wYq5ZiY21HG2Gg==}
@@ -16773,6 +16776,8 @@ snapshots:
   he@1.2.0: {}
 
   highlight.js@11.11.1: {}
+
+  hls.js@1.6.10: {}
 
   hls.js@1.6.8: {}
 
