@@ -18,12 +18,12 @@ catalog:
 
 catalogs:
   range:
-    "@vueuse/core": ^13.6.0
+    "@vueuse/core": ^13.7.0
     balloon-css: ^1.2.0
     sass: ^1.90.0
     sass-embedded: ^1.90.0
     sass-loader: ^16.0.5
-    vue: ^3.5.18
+    vue: ^3.5.19
   vuepress:
     "@vuepress/bundler-vite": 2.0.0-rc.24
     "@vuepress/bundler-webpack": 2.0.0-rc.24
