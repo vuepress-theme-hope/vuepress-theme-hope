@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@types/katex": "0.16.7",
-    "@vue/repl": "4.6.3",
+    "@vue/repl": "4.7.0",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/highlighter-helper": "catalog:vuepress",
