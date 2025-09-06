@@ -344,8 +344,8 @@ importers:
         specifier: 5.2.5
         version: 5.2.5
       artplayer-plugin-danmuku:
-        specifier: 5.1.8
-        version: 5.1.8
+        specifier: 5.2.0
+        version: 5.2.0
       dashjs:
         specifier: 4.7.4
         version: 4.7.4
@@ -636,8 +636,8 @@ importers:
         specifier: 5.2.5
         version: 5.2.5
       artplayer-plugin-danmuku:
-        specifier: 5.1.8
-        version: 5.1.8
+        specifier: 5.2.0
+        version: 5.2.0
       dashjs:
         specifier: 4.7.4
         version: 4.7.4
@@ -4494,8 +4494,8 @@ packages:
     resolution: {integrity: sha512-BNoCY6SXXPQ7gF2opIP4GBE+Xw7U+pHMYKuzjgCN3GwiaIR09UUeKfheyIry77QtrCBlC0KK0q5/TER/tYh3PQ==}
     engines: {node: '>= 0.4'}
 
-  artplayer-plugin-danmuku@5.1.8:
-    resolution: {integrity: sha512-J9kUtU46/07ZckvmfFDwfJRJDLD7UIfrWVutc7EqDCkUModArOISifXkD27/R2ruIpfAJk6HxOfB0cQfvjbZCQ==}
+  artplayer-plugin-danmuku@5.2.0:
+    resolution: {integrity: sha512-iHHSGEc0J+gl7imX4nmLqqC7LXmv8xeGf2lUevhhyUCoiCRZplecpKQICHjErVb1Yqyp1xCy6Sp8eYN+EpFWFw==}
 
   artplayer@5.2.5:
     resolution: {integrity: sha512-Ogym5rvkAJ4VLncM4Apl3TJ/a/ozM3csvY4IKuuMR++hUmEZgj/HaGsNonwx8r56nsqiZYE7O4vS1HFZl+NBSg==}
@@ -14837,7 +14837,7 @@ snapshots:
       get-intrinsic: 1.3.0
       is-array-buffer: 3.0.5
 
-  artplayer-plugin-danmuku@5.1.8: {}
+  artplayer-plugin-danmuku@5.2.0: {}
 
   artplayer@5.2.5:
     dependencies:
