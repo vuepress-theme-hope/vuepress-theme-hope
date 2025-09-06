@@ -18,7 +18,7 @@
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/helper": "catalog:vuepress",
     "@vuepress/theme-default": "catalog:vuepress",
-    "artplayer": "5.2.5",
+    "artplayer": "5.3.0",
     "artplayer-plugin-danmuku": "5.1.8",
     "dashjs": "4.7.4",
     "hls.js": "1.6.10",

@@ -22,7 +22,7 @@
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/helper": "catalog:vuepress",
-    "artplayer": "5.2.5",
+    "artplayer": "5.3.0",
     "artplayer-plugin-danmuku": "5.1.8",
     "dashjs": "4.7.4",
     "docs-shared": "workspace:*",
