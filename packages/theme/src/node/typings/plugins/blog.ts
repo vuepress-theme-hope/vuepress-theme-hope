@@ -1,5 +1,30 @@
 import type { BlogPluginOptions, BlogTypeOptions } from "@vuepress/plugin-blog";
 
+/**
+ * Timeline configuration options
+ *
+ * 时间线配置选项
+ */
+export interface TimelineOptions {
+  /**
+   * Timeline path
+   *
+   * 时间线路径
+   *
+   * @default "/timeline/"
+   */
+  path?: string;
+
+  /**
+   * Whether to use update time instead of create time in timeline
+   *
+   * 是否在时间线中使用更新时间而不是创建时间
+   *
+   * @default false
+   */
+  useUpdateTime?: boolean;
+}
+
 export interface BlogOptions
   extends Partial<
     Pick<
@@ -75,13 +100,13 @@ export interface BlogOptions
   star?: string;
 
   /**
-   * Path of timeline
+   * Path of timeline or timeline configuration
    *
-   * 时间线路径
+   * 时间线路径或时间线配置
    *
    * @default "/timeline/"
    */
-  timeline?: string;
+  timeline?: string | TimelineOptions;
 
   /**
    * Excerpt generation

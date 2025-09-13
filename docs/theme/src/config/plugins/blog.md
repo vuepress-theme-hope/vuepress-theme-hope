@@ -163,10 +163,36 @@ Star article list route path.
 
 ### plugins.blog.timeline
 
-- Type: `string`
+- Type: `string | TimelineOptions`
+
+  ```ts twoslash
+  interface TimelineOptions {
+    /**
+     * Timeline path
+     *
+     * @default "/timeline/"
+     */
+    path?: string;
+
+    /**
+     * Whether to use update time instead of create time in timeline
+     *
+     * @default false
+     */
+    useUpdateTime?: boolean;
+  }
+  ```
+
 - Default: `/timeline/`
 
-Timeline list route path.
+Timeline list route path or timeline configuration.
+
+When you set it as a string, it will be used as timeline route path.
+
+When you set it as an object, you can set:
+
+- `path`: timeline route path
+- `useUpdateTime`: whether to use update time instead of create time for sorting
 
 ### plugins.blog.hotReload
 

@@ -169,10 +169,36 @@ Slugify 函数，用于转换 key 在路由中注册的形式。
 
 ### plugins.blog.timeline
 
-- 类型: `string`
+- 类型: `string | TimelineOptions`
+
+  ```ts twoslash
+  interface TimelineOptions {
+    /**
+     * 时间线路径
+     *
+     * @default "/timeline/"
+     */
+    path?: string;
+
+    /**
+     * 是否在时间线中使用更新时间而不是创建时间
+     *
+     * @default false
+     */
+    useUpdateTime?: boolean;
+  }
+  ```
+
 - 默认值: `/timeline/`
 
-时间线列表路由路径。
+时间线列表路由路径或时间线配置。
+
+当你将其设置为字符串时，它将被作为时间线路由路径。
+
+当你将其设置为对象时，你可以设置：
+
+- `path`: 时间线路由路径
+- `useUpdateTime`: 是否使用更新时间而不是创建时间进行排序
 
 ### plugins.blog.hotReload
 
