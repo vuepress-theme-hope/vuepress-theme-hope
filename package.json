@@ -84,7 +84,7 @@
     "vitest": "3.2.4",
     "vuepress": "catalog:vuepress"
   },
-  "packageManager": "pnpm@10.15.0",
+  "packageManager": "pnpm@10.17.0",
   "engines": {
     "node": ">=20.6.0"
   }
