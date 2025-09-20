@@ -65,7 +65,7 @@
     "husky": "9.1.7",
     "markdownlint-cli2": "0.18.1",
     "nano-staged": "0.8.0",
-    "ora": "8.2.0",
+    "ora": "9.0.0",
     "prettier": "3.6.2",
     "rimraf": "6.0.1",
     "rollup": "4.46.4",
