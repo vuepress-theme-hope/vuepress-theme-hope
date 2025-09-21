@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@types/katex": "0.16.7",
-    "@vue/repl": "4.6.3",
+    "@vue/repl": "4.7.0",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/highlighter-helper": "catalog:vuepress",
@@ -30,7 +30,7 @@
     "@vuepress/plugin-revealjs": "catalog:vuepress",
     "@vuepress/shiki-twoslash": "catalog:vuepress",
     "@vueuse/core": "catalog:",
-    "artplayer": "5.2.5",
+    "artplayer": "5.3.0",
     "docs-shared": "workspace:*",
     "echarts-wordcloud": "2.1.0",
     "flowchart.ts": "3.0.1",
