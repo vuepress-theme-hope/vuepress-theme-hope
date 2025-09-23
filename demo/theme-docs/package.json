@@ -23,7 +23,7 @@
     "demo:webpack-dev": "cross-env BUNDLER=webpack vuepress dev src"
   },
   "devDependencies": {
-    "@vue/repl": "4.6.3",
+    "@vue/repl": "4.7.0",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/plugin-docsearch": "catalog:vuepress",

@@ -1,6 +1,6 @@
 import { LoadingIcon, keys } from "@vuepress/helper/client";
 import type Artplayer from "artplayer";
-import type { Option as ArtPlayerInitOptions } from "artplayer/types/option.js";
+import type { Option as ArtPlayerInitOptions } from "artplayer";
 import type { PropType, VNode } from "vue";
 import { camelize, defineComponent, h, onMounted, onUnmounted, ref } from "vue";
 import { useLang } from "vuepress/client";

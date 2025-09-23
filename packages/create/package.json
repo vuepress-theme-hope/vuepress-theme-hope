@@ -44,8 +44,8 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@inquirer/prompts": "^7.8.0",
-    "commander": "^14.0.0"
+    "@inquirer/prompts": "^7.8.6",
+    "commander": "^14.0.1"
   },
   "devDependencies": {
     "sass-embedded": "catalog:range",

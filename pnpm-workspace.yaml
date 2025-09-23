@@ -5,25 +5,25 @@ packages:
   - packages/*
 
 catalog:
-  "@vueuse/core": 13.6.0
+  "@vueuse/core": 13.9.0
   markmap-lib: 0.18.12
   markmap-toolbar: 0.18.12
   markmap-view: 0.18.12
   mathjax-full: 3.2.2
-  mermaid: 11.9.0
+  mermaid: 11.12.0
   reveal.js: 5.2.1
-  sass-embedded: 1.89.2
+  sass-embedded: 1.93.0
   sass-loader: 16.0.5
-  vue: 3.5.18
+  vue: 3.5.21
 
 catalogs:
   range:
-    "@vueuse/core": ^13.6.0
+    "@vueuse/core": ^13.9.0
     balloon-css: ^1.2.0
-    sass: ^1.90.0
-    sass-embedded: ^1.90.0
+    sass: ^1.93.0
+    sass-embedded: ^1.93.0
     sass-loader: ^16.0.5
-    vue: ^3.5.18
+    vue: ^3.5.21
   vuepress:
     "@vuepress/bundler-vite": 2.0.0-rc.24
     "@vuepress/bundler-webpack": 2.0.0-rc.24
