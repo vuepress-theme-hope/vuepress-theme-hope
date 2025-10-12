@@ -59,7 +59,7 @@
     "cross-env": "10.0.0",
     "eslint": "9.36.0",
     "eslint-config-mister-hope": "0.9.6",
-    "eslint-plugin-vue": "10.4.0",
+    "eslint-plugin-vue": "10.5.0",
     "gulp": "5.0.1",
     "http-server": "14.1.1",
     "husky": "9.1.7",
