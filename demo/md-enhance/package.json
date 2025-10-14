@@ -15,11 +15,11 @@
     "demo:webpack-dev": "cross-env BUNDLER=webpack vuepress dev src"
   },
   "devDependencies": {
-    "@vue/repl": "4.6.1",
+    "@vue/repl": "4.7.0",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/theme-default": "catalog:vuepress",
-    "katex": "0.16.22",
+    "katex": "0.16.24",
     "kotlin-playground": "1.30.0",
     "mathjax-full": "catalog:",
     "reveal.js": "catalog:",

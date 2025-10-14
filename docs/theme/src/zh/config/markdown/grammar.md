@@ -37,7 +37,7 @@ tag:
 - 类型: `boolean`
 - 默认值: `false`
 - 详情:
-  - [Markdown → 图片标记](../../guide/markdown/grammar/image.md#image-mark)
+  - [Markdown → 图片标记](../../guide/markdown/grammar/image.md#图片-ID-标记)
   - [@vuepress/plugin-markdown-image → mark][mark]
 
 是否启用图片标记。
@@ -47,7 +47,7 @@ tag:
 - 类型: `boolean`
 - 默认值: `false`
 - 详情:
-  - [Markdown → 图片大小](../../guide/markdown/grammar/image.md#image-size)
+  - [Markdown → 图片尺寸](../../guide/markdown/grammar/image.md#图片尺寸)
   - [@vuepress/plugin-markdown-image → size][size]
 
 是否启用图片大小。
@@ -57,7 +57,7 @@ tag:
 - 类型: `boolean`
 - 默认值: `false`
 - 详情:
-  - [Markdown → 图片大小](../../guide/markdown/grammar/image.md#image-size)
+  - [Markdown → 图片尺寸](../../guide/markdown/grammar/image.md#图片尺寸)
   - [@vuepress/plugin-markdown-image → obsidianSize][obsidianSize]
 
 是否启用 Obsidian 图片大小。
@@ -67,7 +67,7 @@ tag:
 - 类型: `boolean`
 - 默认值: `false`
 - 详情:
-  - [Markdown → 图片大小](../../guide/markdown/grammar/image.md#image-size)
+  - [Markdown → 图片尺寸](../../guide/markdown/grammar/image.md#图片尺寸)
   - [@vuepress/plugin-markdown-image → legacySize][legacySize]
 
 是否启用旧版图片大小。

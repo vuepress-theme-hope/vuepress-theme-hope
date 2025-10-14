@@ -78,6 +78,7 @@ export const optionDeclarations = [
       esnext: 99,
       node16: 100,
       node18: 101,
+      node20: 102,
       nodenext: 199,
       preserve: 200,
     },
@@ -90,9 +91,9 @@ export const optionDeclarations = [
     type: {
       preserve: 1,
       "react-native": 3,
-      react: 2,
       "react-jsx": 4,
       "react-jsxdev": 5,
+      react: 2,
     },
   },
   { name: "outFile", type: "string" },

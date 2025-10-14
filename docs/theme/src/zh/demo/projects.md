@@ -41,13 +41,6 @@ docs:
     repo: https://github.com/walinejs/waline
     preview: /assets/image/waline.jpg
 
-  - name: MaaAssistantArknights
-    desc: 一款明日方舟游戏小助手
-    logo: https://cdn.jsdelivr.net/gh/MaaAssistantArknights/design@main/logo/maa-logo_512x512.png
-    url: https://maa.plus/docs/
-    repo: https://github.com/MaaAssistantArknights/maa-website
-    preview: /assets/image/mma.jpg
-
   - name: mdit-plugins
     desc: MarkdownIt 的插件集合
     logo: https://mdit-plugins.github.io/logo.svg

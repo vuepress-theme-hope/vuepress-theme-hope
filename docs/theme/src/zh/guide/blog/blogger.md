@@ -56,9 +56,9 @@ tag:
 - `"QQ"`: QQ
 - `"Qzone"`: QQ 空间
 - `"Reddit"`: 红迪
-- `"Skype"`: Skype
 - `"SnapChat"`: 色拉布
 - `"Soul"`: Soul
+- `"Teams"`: 微软团队
 - `"Telegram"`: 电报
 - `"Tieba"`: 百度贴吧
 - `"Tumblr"`: 汤不热

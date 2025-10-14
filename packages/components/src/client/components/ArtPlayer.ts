@@ -1,6 +1,6 @@
 import { LoadingIcon, keys } from "@vuepress/helper/client";
 import type Artplayer from "artplayer";
-import type { Option as ArtPlayerInitOptions } from "artplayer/types/option.js";
+import type { Option as ArtPlayerInitOptions } from "artplayer";
 import type { PropType, VNode } from "vue";
 import { camelize, defineComponent, h, onMounted, onUnmounted, ref } from "vue";
 import { useLang } from "vuepress/client";
@@ -195,7 +195,7 @@ export default defineComponent({
         ...ART_PLAYER_OPTIONS,
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         container: el.value!,
-        poster: props.poster,
+        poster: props.poster ?? "",
         url: getLink(props.src),
         type: props.type ?? getTypeByUrl(props.src),
         lang: getLang(lang.value),
