@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.95](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.94...v2.0.0-rc.95) (2025-10-15)
+
+### ✨ Features
+
+- **theme:** replace skype with microsoft teams ([f5d46b5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f5d46b53aafe934aa57e3a65aa834a55b55aedb1))
+
+### 🐛 Bug Fixes
+
+- **components:** dont pass undefined to ArtPlayer constructor for poster ([#5009](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5009)) ([66596d9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/66596d96be2fe81d910ba17647c8e606cf8be51d))
+- **components:** fix artplayer types ([8d31433](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8d3143357ac57693a1cccfa7f40f3b4543fd56a9))
+- **components:** lazy load vidstack, close 4938 ([0b35193](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0b35193a621e0ce844d4dcd23d18db66041f4cde))
+- **deps:** update dependency @types/three to v0.178.1 ([#4982](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/4982)) ([8fcb0dd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8fcb0ddd0a5185c2e72f00b4700b12d395782d7f))
+- **theme:** fix wrong locale config, close [#5018](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5018) [#5055](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5055) ([b976e0e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b976e0e4107a336a44e398036e704732bee0eaa2))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.94](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.93...v2.0.0-rc.94) (2025-07-09)
 
 ### 🐛 Bug Fixes

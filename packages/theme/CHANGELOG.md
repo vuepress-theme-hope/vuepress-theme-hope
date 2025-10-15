@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.95](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.94...v2.0.0-rc.95) (2025-10-15)
+
+### ✨ Features
+
+- **theme:** replace skype with microsoft teams ([f5d46b5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f5d46b53aafe934aa57e3a65aa834a55b55aedb1))
+
+### 🐛 Bug Fixes
+
+- **theme:** fix wrong locale config, close [#5018](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5018) [#5055](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5055) ([b976e0e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b976e0e4107a336a44e398036e704732bee0eaa2))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.94](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.93...v2.0.0-rc.94) (2025-07-09)
 
 ### 🐛 Bug Fixes

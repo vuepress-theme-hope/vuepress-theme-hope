@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.95](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.94...v2.0.0-rc.95) (2025-10-15)
+
+### 🐛 Bug Fixes
+
+- **components:** dont pass undefined to ArtPlayer constructor for poster ([#5009](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5009)) ([66596d9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/66596d96be2fe81d910ba17647c8e606cf8be51d))
+- **components:** fix artplayer types ([8d31433](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8d3143357ac57693a1cccfa7f40f3b4543fd56a9))
+- **components:** lazy load vidstack, close 4938 ([0b35193](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0b35193a621e0ce844d4dcd23d18db66041f4cde))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.94](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.93...v2.0.0-rc.94) (2025-07-09)
 
 **Note:** Version bump only for package vuepress-plugin-components
