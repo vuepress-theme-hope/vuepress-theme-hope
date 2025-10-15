@@ -19,16 +19,11 @@
     "docs:webpack-dev": "cross-env BUNDLER=webpack vuepress dev src"
   },
   "dependencies": {
-    "@types/katex": "0.16.7",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/helper": "catalog:vuepress",
     "@vueuse/core": "catalog:",
     "docs-shared": "workspace:*",
-    "echarts-wordcloud": "2.1.0",
-    "flowchart.ts": "3.0.1",
-    "katex": "0.16.24",
-    "mermaid": "catalog:",
     "sandpack-vue3": "3.1.12",
     "sass-embedded": "catalog:",
     "sass-loader": "catalog:",
