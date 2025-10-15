@@ -1,6 +1,5 @@
 import type { DefaultLocaleInfo } from "@vuepress/helper";
 
-import { brLocale } from "./br.js";
 import { deLocale } from "./de.js";
 import { deATLocale } from "./deAT.js";
 import { enLocale } from "./en.js";
@@ -13,6 +12,7 @@ import { jaLocale } from "./ja.js";
 import { koLocale } from "./ko.js";
 import { nlLocale } from "./nl.js";
 import { plLocale } from "./pl.js";
+import { ptBRLocale } from "./ptBR.js";
 import { ruLocale } from "./ru.js";
 import { skLocale } from "./sk.js";
 import { trLocale } from "./tr.js";
@@ -25,13 +25,12 @@ import type { ThemeLocaleData } from "../../shared/index.js";
 export const themeLocaleInfo: DefaultLocaleInfo<ThemeLocaleData> = [
   [["en", "en-US"], enLocale],
   [["zh", "zh-CN", "zh-Hans"], zhLocale],
-  [["zh-tw", "zh-Hant"], zhTWLocale],
+  [["zh-TW", "zh-Hant"], zhTWLocale],
   [["de"], deLocale],
   [["de-AT"], deATLocale],
   [["vi"], viLocale],
   [["uk"], ukLocale],
   [["ru"], ruLocale],
-  [["br"], brLocale],
   [["pl"], plLocale],
   [["sk"], skLocale],
   [["fr"], frLocale],
@@ -43,4 +42,5 @@ export const themeLocaleInfo: DefaultLocaleInfo<ThemeLocaleData> = [
   [["hu"], huLocale],
   [["id"], idLocale],
   [["nl"], nlLocale],
+  [["pt-BR"], ptBRLocale],
 ];

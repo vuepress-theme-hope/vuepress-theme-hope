@@ -1,6 +1,6 @@
 import type { ThemeLocaleData } from "../../shared/index.js";
 
-export const brLocale: ThemeLocaleData = {
+export const ptBRLocale: ThemeLocaleData = {
   lang: "pt-BR",
 
   navbarLocales: {
