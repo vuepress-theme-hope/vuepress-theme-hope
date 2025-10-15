@@ -9,7 +9,6 @@ import type {
 } from "vidstack";
 import type { MediaPlayerElement } from "vidstack/elements";
 import type { VidstackPlayerConfig } from "vidstack/global/player";
-import { VidstackPlayer, VidstackPlayerLayout } from "vidstack/global/player";
 import type { PropType, VNode } from "vue";
 import {
   defineComponent,
@@ -96,6 +95,10 @@ export default defineComponent({
 
     onMounted(async () => {
       if (__VUEPRESS_SSR__) return;
+
+      const { VidstackPlayer, VidstackPlayerLayout } = await import(
+        "vidstack/global/player"
+      );
 
       const options: VidstackPlayerConfig = {
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
