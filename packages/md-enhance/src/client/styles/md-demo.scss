@@ -53,7 +53,7 @@
   padding: 8px;
 
   @media print {
-    page-break-inside: avoid;
+    break-inside: avoid;
   }
 }
 

@@ -50,7 +50,7 @@ export const setupTimeline = (): void => {
       if (result) {
         const year = result.getFullYear();
 
-        if (!timelineItems[0] || timelineItems[0].year !== year)
+        if (timelineItems[0]?.year !== year)
           timelineItems.unshift({ year, items: [] });
 
         timelineItems[0].items.push({

@@ -106,7 +106,7 @@
   border-bottom: 1px solid var(--vp-c-border);
 
   @media print {
-    page-break-inside: avoid;
+    break-inside: avoid;
   }
 }
 

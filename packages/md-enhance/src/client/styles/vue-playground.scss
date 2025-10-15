@@ -65,7 +65,7 @@
     transition: background var(--vp-t-color);
 
     @media print {
-      page-break-inside: avoid;
+      break-inside: avoid;
     }
 
     .vue-repl {
