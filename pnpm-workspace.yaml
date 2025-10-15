@@ -25,8 +25,8 @@ catalogs:
     sass-loader: ^16.0.5
     vue: ^3.5.22
   vuepress:
-    "@vuepress/bundler-vite": 2.0.0-rc.24
-    "@vuepress/bundler-webpack": 2.0.0-rc.24
+    "@vuepress/bundler-vite": 2.0.0-rc.26
+    "@vuepress/bundler-webpack": 2.0.0-rc.26
     "@vuepress/helper": 2.0.0-rc.112
     "@vuepress/highlighter-helper": 2.0.0-rc.112
     "@vuepress/plugin-active-header-links": 2.0.0-rc.112
@@ -70,7 +70,7 @@ catalogs:
     "@vuepress/plugin-watermark": 2.0.0-rc.112
     "@vuepress/shiki-twoslash": 2.0.0-rc.112
     "@vuepress/theme-default": 2.0.0-rc.112
-    vuepress: 2.0.0-rc.24
+    vuepress: 2.0.0-rc.26
 
 onlyBuiltDependencies:
   - "@parcel/watcher"
