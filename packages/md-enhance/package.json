@@ -62,8 +62,8 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mdit/plugin-container": "^0.22.1",
-    "@mdit/plugin-demo": "^0.22.2",
+    "@mdit/plugin-container": "^0.22.2",
+    "@mdit/plugin-demo": "^0.22.3",
     "@types/markdown-it": "^14.1.2",
     "@vuepress/helper": "catalog:vuepress",
     "@vuepress/plugin-sass-palette": "catalog:vuepress",
