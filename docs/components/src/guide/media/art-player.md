@@ -365,13 +365,7 @@ Here is a demo adding DanMuKu plugin:
         )
         .then((res) =>
           res
-            .filter(
-              (r) =>
-                r["code"] !== undefined &&
-                r["code"] === 0 &&
-                r["data"] !== undefined &&
-                r["data"].length > 0,
-            )
+            .filter((r) => r["code"] === 0 && r["data"]?.length > 0)
             .reduce((acc, cur) => acc.concat(cur["data"]), []),
         ),
   };
@@ -441,13 +435,7 @@ const danmukuOptions = {
       )
       .then((res) =>
         res
-          .filter(
-            (r) =>
-              r["code"] !== undefined &&
-              r["code"] === 0 &&
-              r["data"] !== undefined &&
-              r["data"].length > 0
-          )
+          .filter((r) => r["code"] === 0 && r["data"]?.length > 0)
           .reduce((acc, cur) => acc.concat(cur["data"]), [])
       ),
 };
