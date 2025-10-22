@@ -120,26 +120,18 @@ export const viewPDF = (
   { title, hint, options = {}, force }: ViewPDFOptions,
 ): HTMLElement | null => {
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-  if (typeof window === "undefined" || !window?.navigator?.userAgent)
-    return null;
+  if (!isDef(window) || !window.navigator?.userAgent) return null;
 
   const { navigator } = window;
   const { userAgent } = navigator;
 
   // Time to jump through hoops -- browser vendors do not make it easy to detect PDF support.
 
-  /*
-   * There is a coincidental correlation between implementation of window.promises and native PDF support in desktop browsers
-   * We use this to assume if the browser supports promises it supports embedded PDFs
-   * Is this fragile? Sort of. But browser vendors removed mimetype detection, so we're left to improvise
-   */
-  const isModernBrowser = isDef(window.Promise);
-
   // Quick test for mobile devices.
-  const isMobileDevice = isiPad(userAgent) || isMobile(userAgent);
+  const isMobileDevice = isiPad() || isMobile();
 
   // Safari desktop requires special handling
-  const isSafariDesktop = !isMobileDevice && isSafari(userAgent);
+  const isSafariDesktop = !isMobileDevice && isSafari();
 
   // Firefox started shipping PDF.js in Firefox 19. If this is Firefox 19 or greater, assume PDF.js is available
   const isFirefoxWithPDFJS =
@@ -150,13 +142,7 @@ export const viewPDF = (
       : false;
 
   // Determines whether PDF support is available
-  const supportsPDFs =
-    // As of Sept 2020 no mobile browsers properly support PDF embeds
-    !isMobileDevice &&
-    // We're moving into the age of MIME-less browsers. They mostly all support PDF rendering without plugins.
-    (isModernBrowser ||
-      // Modern versions of Firefox come bundled with PDFJS
-      isFirefoxWithPDFJS);
+  const supportsPDFs = navigator.pdfViewerEnabled || isFirefoxWithPDFJS;
 
   const targetNode = getTargetElement(targetSelector);
 
