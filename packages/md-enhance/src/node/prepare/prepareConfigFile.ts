@@ -3,7 +3,7 @@ import type { App } from "vuepress/core";
 import type { MarkdownEnhancePluginOptions } from "../options.js";
 import { CLIENT_FOLDER } from "../utils.js";
 
-export const prepareConfigFile = async (
+export const prepareConfigFile = (
   app: App,
   options: MarkdownEnhancePluginOptions,
   status: Record<string, boolean>,
@@ -61,8 +61,7 @@ ${Array.from(imports.values()).join("\n")}
 export default {
   enhance: ({ app }) => {
 ${Array.from(enhances.values())
-  .map((item) => item.split("\n").map((line) => `    ${line}`))
-  .flat()
+  .flatMap((item) => item.split("\n").map((line) => `    ${line}`))
   .join("\n")}
   },
 };

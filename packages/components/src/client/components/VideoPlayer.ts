@@ -42,7 +42,10 @@ export default defineComponent({
     /**
      * tracks
      */
-    tracks: { type: Array as PropType<TextTrackInit[]>, default: () => [] },
+    tracks: {
+      type: Array as PropType<TextTrackInit[]>,
+      default: () => [],
+    },
 
     /**
      * poster
@@ -106,7 +109,7 @@ export default defineComponent({
           ? props.src.map((src) => (isString(src) ? getLink(src) : src))
           : props.src;
 
-      if (props.tracks.length) options.tracks = props.tracks;
+      if (props.tracks.length > 0) options.tracks = props.tracks;
 
       player = await VidstackPlayer.create(options);
 

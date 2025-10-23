@@ -37,7 +37,7 @@ export default defineComponent({
     let id: number;
 
     const initLightGallery = async (): Promise<void> => {
-      const timeID = (id = new Date().getTime());
+      const timeID = (id = Date.now());
 
       const lightGalleryPlugins = await useLightGalleryPlugins();
 

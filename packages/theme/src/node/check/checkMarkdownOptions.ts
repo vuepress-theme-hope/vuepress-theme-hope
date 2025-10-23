@@ -2,7 +2,7 @@ import { keys } from "@vuepress/helper";
 import type { MarkdownOptions as VuePressMarkdownOptions } from "vuepress/markdown";
 import { colors } from "vuepress/utils";
 
-import type { ThemeMarkdownOptions as ThemeMarkdownOptions } from "../typings/index.js";
+import type { ThemeMarkdownOptions } from "../typings/index.js";
 import { logger } from "../utils.js";
 
 export const KNOWN_CORE_MARKDOWN_OPTIONS = [

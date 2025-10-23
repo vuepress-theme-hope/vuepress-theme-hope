@@ -98,7 +98,7 @@ export const createPackageJson = async ({
       message: locale.question.name,
       default: "vuepress-theme-hope-template",
       validate: (input: string): true | string =>
-        PACKAGE_NAME_REG.exec(input) ? true : locale.error.name,
+        PACKAGE_NAME_REG.test(input) ? true : locale.error.name,
     });
 
     const description = await input({
@@ -110,7 +110,7 @@ export const createPackageJson = async ({
       message: locale.question.version,
       default: "2.0.0",
       validate: (input: string): true | string =>
-        VERSION_REG.exec(input) ? true : locale.error.version,
+        VERSION_REG.test(input) ? true : locale.error.version,
     });
 
     const license = await input({

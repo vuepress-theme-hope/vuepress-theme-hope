@@ -112,7 +112,7 @@ export default defineComponent({
         ?.getAttribute("src");
       const tags = props.tag ?? frontmatter.value.tag ?? frontmatter.value.tags;
       const tag = isArray(tags)
-        ? tags.filter(isString).join(",")
+        ? tags.filter((item) => isString(item)).join(",")
         : isString(tags)
           ? tags
           : null;

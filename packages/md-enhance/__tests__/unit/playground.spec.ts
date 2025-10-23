@@ -9,6 +9,22 @@ import {
   playground,
 } from "../../src/node/markdown-it/playground/index.js";
 
+const getVueFiles = (content: string): Record<string, string> | null => {
+  const result = /link="(.*?)"/.exec(decodeURIComponent(content));
+
+  if (!result) return null;
+
+  const files = decodeURIComponent(result[1])
+    .split("#")[1]
+    .replace("__DEV__", "")
+    .replace("__SSR__", "");
+
+  return JSON.parse(Buffer.from(files, "base64").toString()) as Record<
+    string,
+    string
+  >;
+};
+
 describe("playground", () => {
   it("Should not throw", () => {
     const markdownIt = MarkdownIt({ linkify: true }).use(playground, {
@@ -190,22 +206,6 @@ speak(msg);
       playground,
       getVuePlaygroundPreset({}),
     );
-
-    const getVueFiles = (content: string): Record<string, string> | null => {
-      const result = /link="(.*?)"/.exec(decodeURIComponent(content));
-
-      if (!result) return null;
-
-      const files = decodeURIComponent(result[1])
-        .split("#")[1]
-        .replace("__DEV__", "")
-        .replace("__SSR__", "");
-
-      return JSON.parse(Buffer.from(files, "base64").toString()) as Record<
-        string,
-        string
-      >;
-    };
 
     it("Should work", () => {
       const result1 = markdownItWithVuePreset.render(`

@@ -20,7 +20,7 @@ export const getCode = (code: Record<string, string>): CodeType => {
       preProcessorConfig[type].types.includes(language),
     );
 
-    if (match.length) {
+    if (match.length > 0) {
       const language = match[0];
 
       result[type] = [
@@ -31,9 +31,9 @@ export const getCode = (code: Record<string, string>): CodeType => {
   });
 
   result.isLegal =
-    (!result.html.length || result.html[1] === "none") &&
-    (!result.js.length || result.js[1] === "none") &&
-    (!result.css.length || result.css[1] === "none");
+    (result.html.length === 0 || result.html[1] === "none") &&
+    (result.js.length === 0 || result.js[1] === "none") &&
+    (result.css.length === 0 || result.css[1] === "none");
 
   return result;
 };

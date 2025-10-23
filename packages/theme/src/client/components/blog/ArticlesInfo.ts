@@ -39,7 +39,7 @@ export default defineComponent({
             ],
           ),
           h("hr"),
-          starredArticles.value.length
+          starredArticles.value.length > 0
             ? h(
                 "ul",
                 { class: "vp-star-articles" },

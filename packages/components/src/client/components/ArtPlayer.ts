@@ -49,7 +49,7 @@ const BOOLEAN_FALSE_ATTRS = [
 ] as const;
 
 // Note: This should be updated with https://github.com/zhw2590582/ArtPlayer/blob/master/packages/artplayer/src/i18n/index.js
-const SUPPORTED_LANG_NAME = [
+const SUPPORTED_LANG_NAME = new Set([
   "en",
   "pl",
   "cs",
@@ -59,8 +59,8 @@ const SUPPORTED_LANG_NAME = [
   "id",
   "ru",
   "tr",
-];
-const SUPPORTED_LANG_CODE = ["zh-cn", "zh-tw"];
+]);
+const SUPPORTED_LANG_CODE = new Set(["zh-cn", "zh-tw"]);
 
 type KebabCaseToCamelCase<
   S extends string,
@@ -90,9 +90,9 @@ const getLang = (lang: string): string => {
   const langCode = lang.toLowerCase();
   const [langName] = langCode.split("-");
 
-  return SUPPORTED_LANG_CODE.includes(langCode)
+  return SUPPORTED_LANG_CODE.has(langCode)
     ? langCode
-    : SUPPORTED_LANG_NAME.includes(langName)
+    : SUPPORTED_LANG_NAME.has(langName)
       ? langName
       : langName === "zh"
         ? "zh-cn"

@@ -158,7 +158,7 @@ export default defineComponent({
                       }),
                     )
                   : null,
-                actions.value.length
+                actions.value.length > 0
                   ? h(DropTransition, { appear: true, delay: 0.12 }, () =>
                       h(
                         "p",
@@ -181,14 +181,15 @@ export default defineComponent({
 
           info.value.isFullScreen
             ? h(HeroSlideDownButton, {
-                onClick: () =>
+                onClick: () => {
                   window.scrollTo({
                     top:
                       window.innerHeight -
                       (document.querySelector("[vp-navbar]")?.clientHeight ??
                         0),
                     behavior: "smooth",
-                  }),
+                  });
+                },
               })
             : null,
         ],

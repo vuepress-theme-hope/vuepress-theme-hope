@@ -12,7 +12,7 @@ import { themeLocaleInfo } from "../locales/index.js";
 import type { ThemeOptions } from "../typings/index.js";
 import { logger } from "../utils.js";
 
-const ROOT_DISALLOW_CONFIG = [
+const ROOT_DISALLOW_CONFIG = new Set([
   "navbar",
   "sidebar",
   "rtl",
@@ -25,7 +25,7 @@ const ROOT_DISALLOW_CONFIG = [
   "blogLocales",
   "encryptLocales",
   "paginationLocales",
-];
+]);
 
 /**
  * @private
@@ -42,9 +42,7 @@ export const getThemeData = (
     encrypt: getEncryptConfig(encrypt),
     ...fromEntries(
       //remove root disallowed config
-      entries(themeOptions).filter(
-        ([key]) => !ROOT_DISALLOW_CONFIG.includes(key),
-      ),
+      entries(themeOptions).filter(([key]) => !ROOT_DISALLOW_CONFIG.has(key)),
     ),
     locales:
       // Assign locale data to `themeConfig`
@@ -85,7 +83,7 @@ export const getThemeData = (
               // Root config
               ...fromEntries(
                 entries(themeOptions).filter(([key]) =>
-                  ROOT_DISALLOW_CONFIG.includes(key),
+                  ROOT_DISALLOW_CONFIG.has(key),
                 ),
               ),
               // Locale options

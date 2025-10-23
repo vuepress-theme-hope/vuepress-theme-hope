@@ -19,7 +19,7 @@ export const getSEOPlugin = (
   const seoOptions = isPlainObject(seo) ? seo : {};
 
   // Disable seo if `hostname` is not set and no options for seo plugin
-  if (!keys(seoOptions).length && !hostname) return null;
+  if (keys(seoOptions).length === 0 && !hostname) return null;
 
   const author = themeData.author ?? themeData.locales["/"].author;
 

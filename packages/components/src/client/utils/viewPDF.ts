@@ -44,7 +44,7 @@ const logError = (msg: string): void => {
 };
 
 const emptyNodeContents = (node: HTMLElement): void => {
-  while (node.firstChild) node.removeChild(node.firstChild);
+  while (node.firstChild) node.firstChild.remove();
 };
 
 const getTargetElement = (
@@ -109,9 +109,10 @@ const addPDFViewer = (
   if (el instanceof HTMLIFrameElement) el.allow = "fullscreen";
 
   targetNode.classList.add("pdf-viewer-container");
-  targetNode.appendChild(el);
+  targetNode.append(el);
 
-  return targetNode.getElementsByTagName(elementType)[0];
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  return targetNode.querySelector(elementType)!;
 };
 
 export const viewPDF = (

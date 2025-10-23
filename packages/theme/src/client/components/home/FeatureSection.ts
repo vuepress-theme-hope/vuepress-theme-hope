@@ -86,7 +86,7 @@ const FeatureSection: FunctionalComponent<
                 })
               : null,
           ],
-          features.length
+          features.length > 0
             ? h(
                 "div",
                 { class: "vp-features" },

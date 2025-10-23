@@ -4,7 +4,7 @@ import type { PluginSimple } from "markdown-it";
 import type { PlaygroundData } from "../typings/index.js";
 import { playground } from "./playground/index.js";
 
-const VUE_SUPPORTED_EXTENSIONS = [
+const VUE_SUPPORTED_EXTENSIONS = new Set([
   "html",
   "js",
   "ts",
@@ -12,14 +12,14 @@ const VUE_SUPPORTED_EXTENSIONS = [
   "jsx",
   "tsx",
   "json",
-];
+]);
 
 const encodeFiles = (files: PlaygroundData["files"]): string =>
   Buffer.from(
     JSON.stringify(
       fromEntries(
         entries(files)
-          .filter(([, { ext }]) => VUE_SUPPORTED_EXTENSIONS.includes(ext))
+          .filter(([, { ext }]) => VUE_SUPPORTED_EXTENSIONS.has(ext))
           .map(([key, { content }]) => [key, content]),
       ),
     ),

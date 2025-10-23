@@ -52,7 +52,7 @@ export default defineComponent({
             : null,
           metaInfo.contributors.value &&
           metaInfo.contributors.value !== "content" &&
-          contributors.value.length
+          contributors.value.length > 0
             ? h("div", { class: "contributors" }, [
                 h(
                   "span",

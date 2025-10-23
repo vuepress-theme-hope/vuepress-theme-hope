@@ -6,6 +6,24 @@ import { useThemeLocale } from "@theme-hope/composables/useTheme";
 
 import "../../styles/base/skip-link.scss";
 
+const focusMainContent = ({ target }: Event): void => {
+  const el = document.querySelector<HTMLElement>(
+    (target as HTMLAnchorElement).hash,
+  );
+
+  if (el) {
+    const removeTabIndex = (): void => {
+      el.removeAttribute("tabindex");
+      el.removeEventListener("blur", removeTabIndex);
+    };
+
+    el.setAttribute("tabindex", "-1");
+    el.addEventListener("blur", removeTabIndex);
+    el.focus();
+    window.scrollTo(0, 0);
+  }
+};
+
 export default defineComponent({
   name: "SkipLink",
 
@@ -21,24 +39,6 @@ export default defineComponent({
     const themeLocale = useThemeLocale();
 
     const skipToMainContent = shallowRef<HTMLSpanElement>();
-
-    const focusMainContent = ({ target }: Event): void => {
-      const el = document.querySelector<HTMLElement>(
-        (target as HTMLAnchorElement).hash,
-      );
-
-      if (el) {
-        const removeTabIndex = (): void => {
-          el.removeAttribute("tabindex");
-          el.removeEventListener("blur", removeTabIndex);
-        };
-
-        el.setAttribute("tabindex", "-1");
-        el.addEventListener("blur", removeTabIndex);
-        el.focus();
-        window.scrollTo(0, 0);
-      }
-    };
 
     onContentUpdated(() => {
       skipToMainContent.value?.focus();

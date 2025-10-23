@@ -31,7 +31,7 @@ export default defineComponent({
     const isPure = usePure();
 
     return (): VNode | null =>
-      props.author.length
+      props.author.length > 0
         ? h(
             "span",
             {

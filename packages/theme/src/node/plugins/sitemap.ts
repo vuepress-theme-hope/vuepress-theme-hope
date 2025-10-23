@@ -17,7 +17,7 @@ export const getSitemapPlugin = (
   const sitemapOptions = isPlainObject(options) ? options : {};
 
   // Disable sitemap if `hostname` is not set and no options for sitemap plugin
-  if (!keys(sitemapOptions).length && !hostname) return null;
+  if (keys(sitemapOptions).length === 0 && !hostname) return null;
 
   return sitemapPlugin({ hostname, ...sitemapOptions } as SitemapPluginOptions);
 };

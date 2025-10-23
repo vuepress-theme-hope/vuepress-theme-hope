@@ -149,7 +149,7 @@ export default defineComponent({
       );
 
     const renderChildren = (headers: PageHeader[]): VNode | null =>
-      headers.length
+      headers.length > 0
         ? h(
             "ul",
             { class: "vp-toc-list" },

@@ -1,0 +1,66 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "ignorePatterns": [
+    "docs-shared/lib/**",
+    "packages/*/assets/**",
+    "packages/*/lib/**",
+    "**/ventors/lzstring.ts",
+  ],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn",
+    "pedantic": "warn",
+    "perf": "warn",
+    "style": "warn",
+    "restriction": "off",
+  },
+  "plugins": ["import", "unicorn", "oxc", "promise", "jsdoc"],
+  "rules": {
+    "max-dependencies": "off",
+    "max-lines": "off",
+    "max-lines-per-function": "off",
+    "no-warning-comments": "off",
+
+    "import/no-unassigned-import": [
+      "error",
+      { "allow": ["**/*.css", "**/*.scss"] },
+    ],
+    "jsdoc/check-tag-names": "off",
+    "jsdoc/require-param": "off",
+    "jsdoc/require-param-type": "off",
+    "jsdoc/require-returns": "off",
+    // replaceAll is not supported in earlier browsers
+    "unicorn/prefer-string-replace-all": "off",
+    // toReversed can introduce memory overhead
+    "unicorn/no-array-reverse": "off",
+    // toSorted can introduce memory overhead
+    "unicorn/no-array-sort": "off",
+    // "sort-keys": "off",
+    // "no-array-sort ": "off",
+    // "no-null": "off",
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts"],
+      "plugins": ["typescript"],
+      "rules": {
+        "typescript/no-unsafe-type-assertion": "off",
+      },
+    },
+    {
+      "files": ["**/node/**/*.ts"],
+      "plugins": ["node"],
+      "rules": {
+        "unicorn/prefer-string-replace-all": "error",
+      },
+    },
+    {
+      "files": ["**/client/**/*.ts"],
+      "plugins": ["vue"],
+    },
+    {
+      "files": ["**/__tests__/**"],
+      "plugins": ["vitest"],
+    },
+  ],
+}

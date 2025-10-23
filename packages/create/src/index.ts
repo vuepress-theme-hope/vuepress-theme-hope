@@ -55,7 +55,7 @@ const preAction = async (
   const targetDirPath = resolve(process.cwd(), targetDir);
 
   // Check if the user is trying to cover his files
-  if (existsSync(targetDirPath) && readdirSync(targetDirPath).length) {
+  if (existsSync(targetDirPath) && readdirSync(targetDirPath).length > 0) {
     program.error(locale.error.dirNotEmpty(targetDir));
   }
 

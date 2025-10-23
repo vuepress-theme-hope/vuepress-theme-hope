@@ -103,8 +103,9 @@ export const hopeTheme = (
         __VP_REPO__: status.hasRepo,
       }),
 
-      extendsBundlerOptions: (bundlerConfig, app) =>
-        extendsBundlerOptions(bundlerConfig, app, behavior.custom),
+      extendsBundlerOptions: (bundlerConfig, app): void => {
+        extendsBundlerOptions(bundlerConfig, app, behavior.custom);
+      },
 
       extendsMarkdownOptions: (markdownOptions): void => {
         checkThemeMarkdownOptions(markdownOptions, markdown);

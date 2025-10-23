@@ -99,21 +99,16 @@ export const setupDarkMode = (): void => {
   });
 
   useEventListener("beforeprint", () => {
-    if (isDarkMode.value)
-      document.documentElement.setAttribute("data-theme", "light");
+    if (isDarkMode.value) document.documentElement.dataset.theme = "light";
   });
 
   useEventListener("afterprint", () => {
-    if (isDarkMode.value)
-      document.documentElement.setAttribute("data-theme", "dark");
+    if (isDarkMode.value) document.documentElement.dataset.theme = "dark";
   });
 
   onMounted(() => {
     watchImmediate(isDarkMode, (isDarkMode) => {
-      document.documentElement.setAttribute(
-        "data-theme",
-        isDarkMode ? "dark" : "light",
-      );
+      document.documentElement.dataset.theme = isDarkMode ? "dark" : "light";
     });
   });
 };
