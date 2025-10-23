@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.96](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.95...v2.0.0-rc.96) (2025-10-23)
+
+### ✨ Features
+
+- **components:** improve pdf viewer support ([712a351](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/712a35184da54f0b0b20e552881f1979809ef844))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.95](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.94...v2.0.0-rc.95) (2025-10-15)
 
 ### ✨ Features
