@@ -20,7 +20,7 @@
     "lint": "prettier . --check --write && eslint . --fix && pnpm lint:stylelint --fix",
     "lint:check": "prettier . --check && eslint . && pnpm lint:stylelint",
     "lint:md": "markdownlint-cli2 '**/*.md'",
-    "lint:oxc": "oxclint --config .oxlintrc.jsonc",
+    "lint:ox": "oxlint --config .oxlintrc.jsonc --type-aware",
     "lint:stylelint": "stylelint \"**/*.{css,scss}\" \"**/.vuepress/**/*.{css,scss}\"",
     "packages:check-update": "pnpm dlx npm-check-updates -u --deep --timeout 600000",
     "packages:update": "pnpm up -r",

@@ -35,9 +35,27 @@
     "unicorn/no-array-reverse": "off",
     // toSorted can introduce memory overhead
     "unicorn/no-array-sort": "off",
-    // "sort-keys": "off",
+
+    "curly": ["off", "multi-line"],
+    "no-magic-numbers": "off",
+    "no-duplicate-imports": "off",
+    "no-ternary": "off",
+    "sort-imports": "off",
+    "sort-keys": "off",
+    "catch-error-name": [
+      "warn",
+      {
+        "name": "err",
+      },
+    ],
+    "group-exports": "off",
     // "no-array-sort ": "off",
-    // "no-null": "off",
+    "no-null": "off",
+    "unicorn/no-nested-ternary": "off",
+    "import/no-named-export": "off",
+    "import/prefer-default-export": "off",
+    "import/no-anonymous-default-export": "off",
+    "unicorn/prefer-global-this": "off",
   },
   "overrides": [
     {

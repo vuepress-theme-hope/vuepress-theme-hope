@@ -36,13 +36,13 @@ export default defineComponent({
         { OrbitControls },
         { STLLoader },
       ] = await Promise.all([
-        import(/* webpackChunkName: "hope-logo" */ "three").then((m) => m),
+        import(/* webpackChunkName: "hope-logo" */ "three"),
         import(
           /* webpackChunkName: "hope-logo" */ "three/examples/jsm/controls/OrbitControls.js"
-        ).then((m) => m),
+        ),
         import(
           /* webpackChunkName: "hope-logo" */ "three/examples/jsm/loaders/STLLoader.js"
-        ).then((m) => m),
+        ),
       ]);
 
       const { width, height } = isMobile.value
@@ -110,51 +110,44 @@ export default defineComponent({
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
       await Promise.all([
-        new Promise<void>((resolve) => {
-          stlLoader.load(`${ASSETS_SERVER}/model/logo1.stl`, (geometry) => {
-            const material = new MeshPhysicalMaterial({
-              color: 0x284c39,
-              metalness: 0.3,
-              roughness: 0.5,
-              roughnessMap: roughnessTexture,
-              displacementScale: 0.15,
-              emissiveIntensity: 0.4,
-            });
+        stlLoader.loadAsync(`${ASSETS_SERVER}/model/logo1.stl`),
+        stlLoader.loadAsync(`${ASSETS_SERVER}/model/logo2.stl`),
+      ]).then(([logo1Geometry, logo2Geometry]) => {
+        const commonMaterialParams = {
+          roughness: 0.5,
+          roughnessMap: roughnessTexture,
+          displacementScale: 0.15,
+          emissiveIntensity: 0.4,
+        };
 
-            logo1 = new Mesh(geometry, material);
-            logo1.castShadow = true;
-            logo1.receiveShadow = true;
-            logo1.rotation.z = 0;
-            logo1.scale.set(0.3, 0.3, 0.3);
+        const logo1Material = new MeshPhysicalMaterial({
+          color: 0x284c39,
+          metalness: 0.3,
+          ...commonMaterialParams,
+        });
 
-            scene.add(logo1);
+        logo1 = new Mesh(logo1Geometry, logo1Material);
+        logo1.castShadow = true;
+        logo1.receiveShadow = true;
+        logo1.rotation.z = 0;
+        logo1.scale.set(0.3, 0.3, 0.3);
 
-            resolve();
-          });
-        }),
-        new Promise<void>((resolve) => {
-          stlLoader.load(`${ASSETS_SERVER}/model/logo2.stl`, (geometry) => {
-            const material = new MeshPhysicalMaterial({
-              color: 0x35495e,
-              metalness: 0.7,
-              roughness: 0.5,
-              roughnessMap: roughnessTexture,
-              displacementScale: 0.15,
-              emissiveIntensity: 0.4,
-            });
+        scene.add(logo1);
 
-            logo2 = new Mesh(geometry, material);
-            logo2.castShadow = true;
-            logo2.receiveShadow = true;
-            logo2.rotation.z = 0;
-            logo2.scale.set(0.3, 0.3, 0.3);
+        const logo2Material = new MeshPhysicalMaterial({
+          color: 0x35495e,
+          metalness: 0.7,
+          ...commonMaterialParams,
+        });
 
-            scene.add(logo2);
+        logo2 = new Mesh(logo2Geometry, logo2Material);
+        logo2.castShadow = true;
+        logo2.receiveShadow = true;
+        logo2.rotation.z = 0;
+        logo2.scale.set(0.3, 0.3, 0.3);
 
-            resolve();
-          });
-        }),
-      ]);
+        scene.add(logo2);
+      });
 
       // Animations
       const clock = new Clock();
