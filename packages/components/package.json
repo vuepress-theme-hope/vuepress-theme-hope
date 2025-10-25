@@ -54,7 +54,7 @@
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@types/qrcode": "1.5.5",
+    "@types/qrcode": "1.5.6",
     "@vuepress/bundler-vite": "catalog:vuepress"
   },
   "peerDependencies": {
