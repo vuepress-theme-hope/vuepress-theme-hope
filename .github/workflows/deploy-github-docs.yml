@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0
 
       - name: Restore Build Result
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: build-result
 
