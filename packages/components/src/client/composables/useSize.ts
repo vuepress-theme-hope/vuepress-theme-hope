@@ -1,7 +1,6 @@
 import { isString } from "@vuepress/helper/client";
-import type { MaybeRef } from "@vueuse/core";
 import { useEventListener } from "@vueuse/core";
-import type { Ref, ShallowRef } from "vue";
+import type { MaybeRef, Ref, ShallowRef } from "vue";
 import { computed, isRef, onMounted, ref, shallowRef, unref, watch } from "vue";
 
 const getValue = (value: string | number): string =>
