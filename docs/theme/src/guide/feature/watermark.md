@@ -15,6 +15,30 @@ VuePress Theme Hope allows you to add watermark with [`@vuepress/plugin-watermar
 
 ## Introduction
 
+To use it, install `@vuepress/plugin-watermark`
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D @vuepress/plugin-watermark@next
+```
+
+@tab yarn
+
+```bash
+yarn add -D @vuepress/plugin-watermark@next
+```
+
+@tab npm
+
+```bash
+npm i -D @vuepress/plugin-watermark@next
+```
+
+:::
+
 You can customize the watermark behavior with `plugins.watermark` in theme options, or with `watermark` in page frontmatter.
 
 The simplest way is to set it to `true` to get a site name watermark:

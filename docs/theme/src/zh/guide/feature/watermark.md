@@ -15,6 +15,30 @@ VuePress Theme Hope 允许你通过 [`@vuepress/plugin-watermark`][watermark] �
 
 ## 介绍
 
+要使用它，先安装 `@vuepress/plugin-watermark`:
+
+::: code-tabs#shell
+
+@tab pnpm
+
+```bash
+pnpm add -D @vuepress/plugin-watermark@next
+```
+
+@tab yarn
+
+```bash
+yarn add -D @vuepress/plugin-watermark@next
+```
+
+@tab npm
+
+```bash
+npm i -D @vuepress/plugin-watermark@next
+```
+
+:::
+
 你可以通过在主题选项中设置 `plugins.watermark` 或在页面 Frontmatter 中设置 `watermark` 来自定义水印行为。
 
 最简单的方法是将其设置为 `true` 以获取站点名称水印：
