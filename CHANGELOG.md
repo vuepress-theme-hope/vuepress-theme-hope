@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.98](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.97...v2.0.0-rc.98) (2025-10-31)
+
+### 🐛 Bug Fixes
+
+- **theme:** correct types of sidebarSorter ([9a31c91](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9a31c91f4dbfad4227b49d066106e65d5228d543))
+- **theme:** fix last update time text ([a762960](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a762960a835751a853b998bb84bad284e044852d))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.97](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.96...v2.0.0-rc.97) (2025-10-31)
 
 **Note:** Version bump only for package vuepress-theme-hope-root
