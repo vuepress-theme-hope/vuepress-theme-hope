@@ -197,9 +197,8 @@ Sidebar Config.
 
   type SidebarSorter =
     | SidebarSorterFunction
-    | SidebarSorterFunction[]
     | SidebarSorterKeyword
-    | SidebarSorterKeyword[];
+    | (SidebarSorterKeyword | SidebarSorterFunction)[];
   ```
 
 - Default: `["readme", "order", "title", "filename"]`
