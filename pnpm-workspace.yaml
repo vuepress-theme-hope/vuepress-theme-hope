@@ -55,7 +55,7 @@ catalogs:
     "@vuepress/plugin-nprogress": 2.0.0-rc.118
     "@vuepress/plugin-photo-swipe": 2.0.0-rc.118
     "@vuepress/plugin-prismjs": 2.0.0-rc.118
-    "@vuepress/plugin-pwa": 2.0.0-rc.118
+    "@vuepress/plugin-pwa": 2.0.0-rc.119
     "@vuepress/plugin-reading-time": 2.0.0-rc.118
     "@vuepress/plugin-redirect": 2.0.0-rc.118
     "@vuepress/plugin-revealjs": 2.0.0-rc.118
