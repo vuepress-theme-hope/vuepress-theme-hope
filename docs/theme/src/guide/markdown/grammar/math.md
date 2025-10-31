@@ -14,7 +14,7 @@ Adds $\TeX$ support in your VuePress site.
 
 ## Settings
 
-Install related $\TeX$ package [katex](https://katex.org) or [mathjax-full](https://docs.mathjax.org/en/latest/) in your project:
+Install related $\TeX$ package [katex](https://katex.org) or [@mathjax/src](https://docs.mathjax.org/en/latest/) in your project:
 
 ::: code-tabs#shell
 
@@ -23,7 +23,7 @@ Install related $\TeX$ package [katex](https://katex.org) or [mathjax-full](http
 ```bash
 pnpm add -D katex
 # or
-pnpm add -D mathjax-full
+pnpm add -D @mathjax/src
 ```
 
 @tab yarn
@@ -31,7 +31,7 @@ pnpm add -D mathjax-full
 ```bash
 yarn add -D katex
 # or
-yarn add -D mathjax-full
+yarn add -D @mathjax/src
 ```
 
 @tab npm
@@ -39,7 +39,7 @@ yarn add -D mathjax-full
 ```bash
 npm i -D katex
 # or
-npm i -D mathjax-full
+npm i -D @mathjax/src
 ```
 
 :::

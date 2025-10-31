@@ -23,6 +23,7 @@
     "demo:webpack-dev": "cross-env BUNDLER=webpack vuepress dev src"
   },
   "devDependencies": {
+    "@mathjax/src": "catalog:",
     "@vue/repl": "4.7.0",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
@@ -35,7 +36,6 @@
     "markmap-lib": "catalog:",
     "markmap-toolbar": "catalog:",
     "markmap-view": "catalog:",
-    "mathjax-full": "catalog:",
     "mermaid": "catalog:",
     "reveal.js": "catalog:",
     "sandpack-vue3": "3.1.12",

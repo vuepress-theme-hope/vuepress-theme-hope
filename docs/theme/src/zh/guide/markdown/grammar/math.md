@@ -14,7 +14,7 @@ tag:
 
 ## 配置
 
-在你的项目中安装相关的 $\TeX$ 包 [katex](https://katex.org) 或 [mathjax-full](https://docs.mathjax.org/en/latest/):
+在你的项目中安装相关的 $\TeX$ 包 [katex](https://katex.org) 或 [@mathjax/src](https://docs.mathjax.org/en/latest/):
 
 ::: code-tabs#shell
 
@@ -23,7 +23,7 @@ tag:
 ```bash
 pnpm add -D katex
 # or
-pnpm add -D mathjax-full
+pnpm add -D @mathjax/src
 ```
 
 @tab yarn
@@ -31,7 +31,7 @@ pnpm add -D mathjax-full
 ```bash
 yarn add -D katex
 # or
-yarn add -D mathjax-full
+yarn add -D @mathjax/src
 ```
 
 @tab npm
@@ -39,7 +39,7 @@ yarn add -D mathjax-full
 ```bash
 npm i -D katex
 # or
-npm i -D mathjax-full
+npm i -D @mathjax/src
 ```
 
 :::
