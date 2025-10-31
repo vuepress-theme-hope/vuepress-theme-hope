@@ -38,7 +38,11 @@ export default defineComponent({
           (!metaInfo.changelog.value || !hasGlobalComponent("GitChangelog")) &&
           lastUpdated.value
             ? h("div", { class: "update-time" }, [
-                h("span", { class: "vp-meta-label" }, lastUpdated.value.locale),
+                h(
+                  "span",
+                  { class: "vp-meta-label" },
+                  `${lastUpdated.value.locale}: `,
+                ),
                 h(
                   "time",
                   {
