@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.97](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.96...v2.0.0-rc.97) (2025-10-31)
+
+**Note:** Version bump only for package vuepress-plugin-lightgallery
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.96](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.95...v2.0.0-rc.96) (2025-10-23)
 
 **Note:** Version bump only for package vuepress-plugin-lightgallery
