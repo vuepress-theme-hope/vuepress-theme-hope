@@ -1,9 +1,8 @@
 import { isPlainObject } from "@vuepress/helper";
 import type { RevealJsPluginOptions } from "@vuepress/plugin-revealjs";
 import type { Plugin } from "vuepress/core";
-import { colors } from "vuepress/utils";
 
-import { logger } from "../utils.js";
+import { logMissingPkg } from "./utils.js";
 
 let revealJsPlugin: ((options: RevealJsPluginOptions) => Plugin) | null = null;
 
@@ -24,9 +23,7 @@ export const getRevealJsPlugin = (
   if (!options) return null;
 
   if (!revealJsPlugin) {
-    logger.error(
-      `${colors.cyan("@vuepress/plugin-revealjs")} is not installed!`,
-    );
+    logMissingPkg("@vuepress/plugin-revealjs");
 
     return null;
   }

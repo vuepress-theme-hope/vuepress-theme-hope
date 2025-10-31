@@ -1,5 +1,5 @@
 import { Logger, ensureEndingSlash, isModuleAvailable } from "@vuepress/helper";
-import { getDirname, path } from "vuepress/utils";
+import { colors, getDirname, path } from "vuepress/utils";
 
 const __dirname = getDirname(import.meta.url);
 
@@ -16,7 +16,7 @@ export const isInstalled = (pkg: string, hint = true): boolean => {
 
   if (hint && !isInstalled)
     logger.error(
-      `Package ${pkg} is not installed, please install it manually!`,
+      `Package ${colors.cyan(pkg)} is not installed, please install it manually!`,
     );
 
   return isInstalled;
