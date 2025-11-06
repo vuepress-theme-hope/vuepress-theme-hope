@@ -26,7 +26,7 @@
     "artplayer-plugin-danmuku": "5.2.0",
     "dashjs": "4.7.4",
     "docs-shared": "workspace:*",
-    "hls.js": "1.6.13",
+    "hls.js": "1.6.14",
     "mpegts.js": "1.8.0",
     "sass-embedded": "catalog:",
     "sass-loader": "catalog:",
