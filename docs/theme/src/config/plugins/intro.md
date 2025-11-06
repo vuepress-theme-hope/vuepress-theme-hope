@@ -36,6 +36,8 @@ For example:
 
 The following plugins are used internally and can not be disabled:
 
+- [@vuepress/plugin-icon][icon]: Icon support
+
 - [@vuepress/plugin-sass-palette][sass-palette]: Sass plugin for plugins and themes
 
 - [@vuepress/plugin-theme-data][theme-data]: Composition API plugin for theme data
@@ -55,8 +57,6 @@ The following plugins are enabled by default, and you can disable them:
 - [@vuepress/plugin-copy-code][copy-code]: Provides copy button for code blocks.
 
 - [@vuepress/plugin-git][git]: Git-based info plugin
-
-- [@vuepress/plugin-icon][icon]: Icon support
 
 - [@vuepress/plugin-links-check][links-check]: check links in markdown files
 
