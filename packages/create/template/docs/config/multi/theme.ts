@@ -106,7 +106,7 @@ export default hopeTheme({
     // math: {
     //   // install katex before enabling it
     //   type: "katex",
-    //   // or install mathjax-full before enabling it
+    //   // or install @mathjax/src before enabling it
     //   type: "mathjax",
     // },
 

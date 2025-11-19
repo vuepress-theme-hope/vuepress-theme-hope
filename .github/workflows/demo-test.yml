@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Restore Build Result
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: build-result
 
@@ -55,7 +55,7 @@ jobs:
           fetch-depth: 0
 
       - name: Restore Build Result
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: build-result
 
@@ -99,7 +99,7 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Restore Build Result
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: build-result
 

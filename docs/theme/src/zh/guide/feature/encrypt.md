@@ -110,8 +110,6 @@ export default hopeTheme({
 PASSWORD=123456
 ```
 
-Then, load the env file with `dotenv/config` and set password using environment variables in `.vuepress/theme.ts` like this:
-
 然后，像这样通过 `dotenv/config` 加载 env 文件，并在 `.vuepress/theme.ts` 中使用环境变量设置密码：
 
 ```ts twoslash{2,8} title=".vuepress/theme.ts"

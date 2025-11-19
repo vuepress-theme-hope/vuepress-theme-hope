@@ -1,9 +1,8 @@
 import { isPlainObject } from "@vuepress/helper";
 import type { WatermarkPluginOptions } from "@vuepress/plugin-watermark";
 import type { Plugin, PluginObject } from "vuepress/core";
-import { colors } from "vuepress/utils";
 
-import { logger } from "../utils.js";
+import { logMissingPkg } from "./utils.js";
 
 let watermarkPlugin:
   | ((options: WatermarkPluginOptions, legacy?: boolean) => Plugin)
@@ -25,9 +24,7 @@ export const getWatermarkPlugin = (
   if (!options) return null;
 
   if (!watermarkPlugin) {
-    logger.error(
-      `${colors.cyan("@vuepress/plugin-watermark")} is not installed!`,
-    );
+    logMissingPkg("@vuepress/plugin-watermark");
 
     return null;
   }

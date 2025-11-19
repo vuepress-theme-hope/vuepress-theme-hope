@@ -50,9 +50,8 @@ export type SidebarSorterFunction = (
 
 export type SidebarSorter =
   | SidebarSorterFunction
-  | SidebarSorterFunction[]
   | SidebarSorterKeyword
-  | SidebarSorterKeyword[];
+  | (SidebarSorterKeyword | SidebarSorterFunction)[];
 
 export interface SidebarLocaleOptions {
   /**

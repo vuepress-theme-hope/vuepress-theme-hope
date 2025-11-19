@@ -29,7 +29,7 @@ jobs:
         run: pnpm run build
 
       - name: Upload build result
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: build-result
           path: |

@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-components",
-  "version": "2.0.0-rc.96",
+  "version": "2.0.0-rc.97",
   "description": "Components collection plugin for VuePress2",
   "keywords": [
     "vuepress",
@@ -54,7 +54,7 @@
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
-    "@types/qrcode": "1.5.5",
+    "@types/qrcode": "1.5.6",
     "@vuepress/bundler-vite": "catalog:vuepress"
   },
   "peerDependencies": {

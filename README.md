@@ -37,7 +37,7 @@ We recommend contacting us through [issues](https://github.com/vuepress-theme-ho
 
 ## Details
 
-V2 is based on [**VuePress2**](https://vuejs.press), with the power of [**Vite6**](https://vite.dev) / [**Webpack5**](https://webpack.js.org) and [**Vue3**](https://vuejs.org) to provide powerful features.
+V2 is based on [**VuePress2**](https://vuejs.press), with the power of [**Vite7**](https://vite.dev) / [**Webpack5**](https://webpack.js.org) and [**Vue3**](https://vuejs.org) to provide powerful features.
 
 V2 is a complete rewrite including:
 

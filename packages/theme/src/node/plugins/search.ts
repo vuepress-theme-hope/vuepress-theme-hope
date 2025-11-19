@@ -9,15 +9,14 @@ import type { MeiliSearchPluginOptions } from "@vuepress/plugin-meilisearch";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
 import type { SlimSearchPluginOptions } from "@vuepress/plugin-slimsearch";
 import type { App, Page, Plugin } from "vuepress/core";
-import { colors } from "vuepress/utils";
 
+import { logMissingPkg } from "./utils.js";
 import type {
   ThemeBasePageFrontmatter,
   ThemeData,
 } from "../../shared/index.js";
 import { themeLocaleInfo } from "../locales/index.js";
 import type { ThemePluginsOptions } from "../typings/index.js";
-import { logger } from "../utils.js";
 
 let docsearchPlugin: ((options: DocSearchPluginOptions) => Plugin) | null =
   null;
@@ -70,9 +69,7 @@ export const getSearchPlugin = (
 
   if (isPlainObject(plugins.docsearch)) {
     if (!docsearchPlugin) {
-      logger.error(
-        `${colors.cyan("@vuepress/plugin-docsearch")} is not installed!`,
-      );
+      logMissingPkg("@vuepress/plugin-docsearch");
 
       return null;
     }
@@ -82,9 +79,7 @@ export const getSearchPlugin = (
 
   if (isPlainObject(plugins.meilisearch)) {
     if (!meilisearchPlugin) {
-      logger.error(
-        `${colors.cyan("@vuepress/plugin-meilisearch")} is not installed!`,
-      );
+      logMissingPkg("@vuepress/plugin-meilisearch");
 
       return null;
     }
@@ -94,9 +89,7 @@ export const getSearchPlugin = (
 
   if (plugins.slimsearch) {
     if (!slimsearchPlugin) {
-      logger.error(
-        `${colors.cyan("@vuepress/plugin-slimsearch")} is not installed!`,
-      );
+      logMissingPkg("@vuepress/plugin-slimsearch");
 
       return null;
     }
@@ -160,9 +153,7 @@ export const getSearchPlugin = (
 
   if (plugins.search) {
     if (!searchPlugin) {
-      logger.error(
-        `${colors.cyan("@vuepress/plugin-search")} is not installed!`,
-      );
+      logMissingPkg("@vuepress/plugin-search");
 
       return null;
     }

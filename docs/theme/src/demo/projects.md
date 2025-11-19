@@ -28,11 +28,11 @@ docs:
     repo: https://github.com/subquery/documentation
     preview: /assets/image/subquery.jpg
 
-  - name: Event Store Resources
-    desc: Event-native database for storing immutable facts as events, complex event processing, and event-driven architectures.
-    logo: https://developers.eventstore.com/Kurrent%20Logo%20-%20White.svg
-    url: https://developers.eventstore.com/
-    repo: https://github.com/EventStore/documentation
+  - name: kurrent
+    desc: The platform for event-driven architectures
+    logo: https://docs.kurrent.io/Kurrent%20Logo%20-%20Plum.svg
+    url: https://docs.kurrent.io/
+    repo: https://github.com/kurrent-io/documentation
     preview: /assets/image/eventstore.jpg
 
   - name: ZLMediaKit

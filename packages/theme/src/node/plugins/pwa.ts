@@ -1,9 +1,8 @@
 import { isPlainObject } from "@vuepress/helper";
 import type { PwaPluginOptions } from "@vuepress/plugin-pwa";
 import type { Plugin } from "vuepress/core";
-import { colors } from "vuepress/utils";
 
-import { logger } from "../utils.js";
+import { logMissingPkg } from "./utils.js";
 
 let pwaPlugin:
   | ((options: PwaPluginOptions, legacy?: boolean) => Plugin)
@@ -26,7 +25,7 @@ export const getPwaPlugin = (
   if (!options) return null;
 
   if (!pwaPlugin) {
-    logger.error(`${colors.cyan("@vuepress/plugin-pwa")} is not installed!`);
+    logMissingPkg("@vuepress/plugin-pwa");
 
     return null;
   }

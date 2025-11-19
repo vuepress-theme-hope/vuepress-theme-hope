@@ -127,33 +127,33 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 
 当检测到新内容 (检测到新的 SW) 时，更新提示弹窗将会出现；当新内容就绪时，更新就绪弹窗将会出现。
 
-如果你对默认的弹窗不满意，你可以自行编写组件更换。从 `@vuepress/plugin-pwa/client` 中导入 `PWAFoundPopup` 或 `PWAReadyPopup` 并使用其 slot 来自定义弹窗内容，然后将组件路径传递给 `plugins.pwa.foundComponent` 或 `plugins.pwa.readyComponent` 选项。
+如果你对默认的弹窗不满意，你可以自行编写组件更换。从 `@vuepress/plugin-pwa/client` 中导入 `PwaFoundPopup` 或 `PwaReadyPopup` 并使用其 slot 来自定义弹窗内容，然后将组件路径传递给 `plugins.pwa.foundComponent` 或 `plugins.pwa.readyComponent` 选项。
 
 ```vue
 <script setup lang="ts">
-import { PWAFoundPopup } from "@vuepress/plugin-pwa/client";
+import { PwaFoundPopup } from "@vuepress/plugin-pwa/client";
 </script>
 <template>
-  <PWAFoundPopup v-slot="{ found, refresh }">
+  <PwaFoundPopup v-slot="{ found, refresh }">
     <div v-if="found">
       已找到新内容
       <button @click="refresh">刷新</button>
     </div>
-  </PWAFoundPopup>
+  </PwaFoundPopup>
 </template>
 ```
 
 ```vue
 <script setup lang="ts">
-import { PWAReadyPopup } from "@vuepress/plugin-pwa/client";
+import { PwaReadyPopup } from "@vuepress/plugin-pwa/client";
 </script>
 <template>
-  <PWAReadyPopup v-slot="{ isReady, reload }">
+  <PwaReadyPopup v-slot="{ isReady, reload }">
     <div v-if="isReady">
       新内容已就绪
       <button @click="reload">应用</button>
     </div>
-  </PWAReadyPopup>
+  </PwaReadyPopup>
 </template>
 ```
 

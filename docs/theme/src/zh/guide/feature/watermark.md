@@ -15,11 +15,29 @@ VuePress Theme Hope 允许你通过 [`@vuepress/plugin-watermark`][watermark] �
 
 ## 介绍
 
-You can customize the watermark behavior with `plugins.watermark` in theme options, or with `watermark` in page frontmatter.
+要使用它，先安装 `@vuepress/plugin-watermark`:
 
-The simplest way is to set it to `true` to get a site name watermark:
+::: code-tabs#shell
 
-- Enable globally:
+@tab pnpm
+
+```bash
+pnpm add -D @vuepress/plugin-watermark@next
+```
+
+@tab yarn
+
+```bash
+yarn add -D @vuepress/plugin-watermark@next
+```
+
+@tab npm
+
+```bash
+npm i -D @vuepress/plugin-watermark@next
+```
+
+:::
 
 你可以通过在主题选项中设置 `plugins.watermark` 或在页面 Frontmatter 中设置 `watermark` 来自定义水印行为。
 

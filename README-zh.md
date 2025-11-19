@@ -31,7 +31,7 @@
 
 ## 详情
 
-V2 基于 [**VuePress2**](https://vuejs.press/zh/)，通过 [**Vite6**](https://cn.vite.dev/) / [**Webpack5**](https://webpack.docschina.org/) 和 [**Vue3**](https://cn.vuejs.org/) 提供强大功能。
+V2 基于 [**VuePress2**](https://vuejs.press/zh/)，通过 [**Vite7**](https://cn.vite.dev/) / [**Webpack5**](https://webpack.docschina.org/) 和 [**Vue3**](https://cn.vuejs.org/) 提供强大功能。
 
 V2 完全重写，包括：
 

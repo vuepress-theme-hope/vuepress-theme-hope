@@ -1,9 +1,7 @@
 import type { PrismjsPluginOptions } from "@vuepress/plugin-prismjs";
 import type { App, Plugin } from "vuepress/core";
-import { colors } from "vuepress/utils";
 
-import { isHighlighterPlugin } from "./utils.js";
-import { logger } from "../utils.js";
+import { isHighlighterPlugin, logMissingPkg } from "./utils.js";
 
 let prismjsPlugin: ((options: PrismjsPluginOptions) => Plugin) | null = null;
 
@@ -25,9 +23,7 @@ export const usePrismjsPlugin = (
   const { plugins } = app.pluginApi;
 
   if (!prismjsPlugin) {
-    logger.error(
-      `${colors.cyan("@vuepress/plugin-prismjs")} is not installed!`,
-    );
+    logMissingPkg("@vuepress/plugin-prismjs");
 
     return;
   }
