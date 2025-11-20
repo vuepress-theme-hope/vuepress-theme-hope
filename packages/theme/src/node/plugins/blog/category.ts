@@ -26,7 +26,7 @@ export const getBlogCategoryCategory = (
   ({
     key: "category",
     getter: ({ routeMeta }) => {
-      const category = routeMeta.category;
+      const { category } = routeMeta;
 
       return isArray(category) ? category : [];
     },
@@ -61,7 +61,7 @@ export const getBlogTagCategory = (
   ({
     key: "tag",
     getter: ({ routeMeta }) => {
-      const tag = routeMeta.tag;
+      const { tag } = routeMeta;
 
       return isArray(tag) ? tag : [];
     },

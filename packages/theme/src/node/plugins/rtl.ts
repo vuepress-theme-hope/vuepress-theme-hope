@@ -14,5 +14,5 @@ export const getRtlPlugin = (themeData: ThemeData): Plugin | null => {
     .filter(([, { rtl }]) => rtl)
     .map(([localePath]) => localePath);
 
-  return rtlLocales.length ? rtlPlugin({ locales: rtlLocales }) : null;
+  return rtlLocales.length > 0 ? rtlPlugin({ locales: rtlLocales }) : null;
 };

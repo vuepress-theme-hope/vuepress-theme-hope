@@ -146,7 +146,7 @@ export const getSidebarSorter = (
       .map((item) => (isString(item) ? sortKeyMap[item] : item))
       .filter((item) => isFunction(item));
 
-    if (result.length) return result;
+    if (result.length > 0) return result;
   }
 
   return [

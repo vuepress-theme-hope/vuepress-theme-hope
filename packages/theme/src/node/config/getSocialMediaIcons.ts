@@ -24,7 +24,7 @@ export const getSocialMediaIcons = (
       const templatePath = `${TEMPLATE_FOLDER}/socialMediaIcons/${key.toLocaleLowerCase()}.svg`;
 
       if (fs.existsSync(templatePath)) {
-        iconData[key] = fs.readFileSync(templatePath, { encoding: "utf-8" });
+        iconData[key] = fs.readFileSync(templatePath, { encoding: "utf8" });
 
         return false;
       }

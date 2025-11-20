@@ -58,7 +58,7 @@ export const getFeedPlugin = (
     channel: {
       icon: favicon,
       image: themeData.locales["/"].logo,
-      ...(globalAuthor.length ? { author: globalAuthor[0] } : {}),
+      ...(globalAuthor.length > 0 ? { author: globalAuthor[0] } : {}),
     },
     locales: fromEntries(
       entries(themeData.locales).map(
@@ -71,7 +71,7 @@ export const getFeedPlugin = (
               channel: {
                 icon: favicon,
                 image: logo,
-                ...(localeAuthor.length ? { author: localeAuthor[0] } : {}),
+                ...(localeAuthor.length > 0 ? { author: localeAuthor[0] } : {}),
                 ...(typeof copyright === "string" ? { copyright } : {}),
               },
             },

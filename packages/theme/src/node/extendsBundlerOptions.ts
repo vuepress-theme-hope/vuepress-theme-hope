@@ -51,7 +51,7 @@ export const extendsBundlerOptions = (
     }
 
     chainWebpack(bundlerOptions, app, (config) => {
-      if (config.resolve.conditionNames.values().length)
+      if (config.resolve.conditionNames.values().length > 0)
         config.resolve.conditionNames.prepend("custom");
       else
         config.resolve.conditionNames.merge([

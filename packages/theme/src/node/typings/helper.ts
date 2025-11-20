@@ -30,7 +30,7 @@ import type {
   SidebarOptions,
 } from "../../shared/index.js";
 
-type Helper<T> = (options: T) => T;
+type Helper<Options> = (options: Options) => Options;
 
 export type ThemeNavbarHelper = Helper<NavbarOptions>;
 

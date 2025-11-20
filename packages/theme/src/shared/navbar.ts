@@ -3,7 +3,7 @@ import type { AutoLinkOptions, NavItemOptions } from "./nav.js";
 /**
  * Base nav group, has nav items children
  */
-export interface NavGroup<T> extends NavItemOptions {
+export interface NavGroup<Child> extends NavItemOptions {
   /**
    * Link prefix of current group
    *
@@ -23,7 +23,7 @@ export interface NavGroup<T> extends NavItemOptions {
    *
    * 当前分组的子项
    */
-  children: T[];
+  children: Child[];
 }
 
 // Navbar types
