@@ -102,7 +102,7 @@ import MarkdownIt from "markdown-it";
 import { include } from "@mdit/plugin-include";
 
 // #region snippet
-const mdIt = MarkdownIt().use(include, {
+const mdIt = new MarkdownIt().use(include, {
   // your options, currentPath is required
   currentPath: (env) => env.filePath,
 });
@@ -120,7 +120,7 @@ const MarkdownIt = require("markdown-it");
 const { include } = require("@mdit/plugin-include");
 
 // #region snippet
-const mdIt = MarkdownIt().use(include, {
+const mdIt = new MarkdownIt().use(include, {
   // your options, currentPath is required
   currentPath: (env) => env.filePath,
 });

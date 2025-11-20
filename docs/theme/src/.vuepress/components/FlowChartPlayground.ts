@@ -43,6 +43,9 @@ const locales = {
   },
 };
 
+const getFlowChartScale = (width: number): number =>
+  width < 419 ? 0.8 : width > 1280 ? 1 : 0.9;
+
 export default defineComponent({
   name: "FlowChartPlayground",
   setup() {
@@ -54,14 +57,11 @@ export default defineComponent({
     const preset = ref<"ant" | "pie" | "vue">("vue");
     const scale = ref(1);
 
-    const getScale = (width: number): number =>
-      width < 419 ? 0.8 : width > 1280 ? 1 : 0.9;
-
     useEventListener(
       "resize",
       useDebounceFn(() => {
         if (flowchart) {
-          const newScale = getScale(window.innerWidth);
+          const newScale = getFlowChartScale(window.innerWidth);
 
           if (scale.value !== newScale) {
             scale.value = newScale;
@@ -80,7 +80,7 @@ export default defineComponent({
         flowchart = parse(config.value);
 
         // Update scale
-        scale.value = getScale(window.innerWidth);
+        scale.value = getFlowChartScale(window.innerWidth);
 
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         element.value!.innerHTML = "";
