@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.build.base.json",
   "compilerOptions": {
-    "lib": ["DOM", "ESNext"],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
 
     "rootDir": "./src",
     "outDir": "./lib"

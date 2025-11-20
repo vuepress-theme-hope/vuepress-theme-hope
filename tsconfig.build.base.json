@@ -13,7 +13,6 @@
     "verbatimModuleSyntax": true,
 
     // Modules
-    "baseUrl": "./",
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "resolveJsonModule": true,
@@ -43,7 +42,7 @@
     "pretty": true,
 
     // lib
-    "lib": ["DOM", "ESNext"],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     // minimal node 18 support
     "target": "ES2022",
 

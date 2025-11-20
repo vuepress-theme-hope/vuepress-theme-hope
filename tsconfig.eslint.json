@@ -3,7 +3,6 @@
   "compilerOptions": {
     "allowJs": true,
     "checkJs": true,
-    "baseUrl": "./",
     "paths": {
       "@theme-hope/*": ["./packages/theme/src/client/*.js"]
     },
