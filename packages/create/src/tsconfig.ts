@@ -21,7 +21,7 @@ export const createTsConfig = ({
     console.log(locale.flow.updateTsConfig);
 
     const tsconfigContent = JSON.parse(
-      readFileSync(tsconfigPath, { encoding: "utf-8" }),
+      readFileSync(tsconfigPath, { encoding: "utf8" }),
     ) as Record<string, unknown> & { include?: string[] };
 
     deepAssign(tsconfigContent, {
@@ -39,7 +39,7 @@ export const createTsConfig = ({
     writeFileSync(
       tsconfigPath,
       `${JSON.stringify(tsconfigContent, null, 2)}\n`,
-      { encoding: "utf-8" },
+      { encoding: "utf8" },
     );
   } else {
     console.log(locale.flow.createTsConfig);
@@ -57,7 +57,7 @@ export const createTsConfig = ({
     writeFileSync(
       tsconfigPath,
       `${JSON.stringify(tsconfigContent, null, 2)}\n`,
-      { encoding: "utf-8" },
+      { encoding: "utf8" },
     );
   }
 };

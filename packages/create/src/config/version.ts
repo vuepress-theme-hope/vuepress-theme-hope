@@ -11,6 +11,6 @@ export const packageJSON = JSON.parse(
     fileURLToPath(
       import.meta.resolve("create-vuepress-theme-hope/package.json"),
     ),
-    "utf-8",
+    "utf8",
   ),
 ) as PackageJson;

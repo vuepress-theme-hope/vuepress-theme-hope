@@ -55,7 +55,7 @@ const preAction = async (
   const targetDirPath = resolve(process.cwd(), targetDir);
 
   // Check if the user is trying to cover his files
-  if (existsSync(targetDirPath) && readdirSync(targetDirPath).length) {
+  if (existsSync(targetDirPath) && readdirSync(targetDirPath).length > 0) {
     program.error(locale.error.dirNotEmpty(targetDir));
   }
 
@@ -122,7 +122,7 @@ const postAction = async ({
   ) {
     console.log(locale.flow.devServer);
 
-    await new Promise<void>((res, rej) => {
+    await new Promise<void>((resolve, reject) => {
       const child = spawn(`${packageManager} run docs:dev`, [], {
         cwd,
         stdio: "inherit",
@@ -131,14 +131,14 @@ const postAction = async ({
 
       child.on("close", (code) => {
         if (code === 0) {
-          res();
+          resolve();
         } else {
-          rej(new Error(`code: ${code}`));
+          reject(new Error(`code: ${code}`));
         }
       });
 
       child.on("error", (err) => {
-        rej(new Error(`commandError: ${err}`));
+        reject(new Error(`commandError: ${err}`));
       });
     });
   } else {

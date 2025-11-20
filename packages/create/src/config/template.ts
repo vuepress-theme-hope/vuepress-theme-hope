@@ -103,21 +103,20 @@ export const generateTemplate = async ({
 
   if (isGitRepo) {
     updateGitIgnore(targetDir, cwd);
-  } else if (checkGitInstalled()) {
-    if (
-      // enable git
-      await confirm({
-        message: locale.question.git,
-        default: true,
-      })
-    ) {
-      execSync("git init -b main", {
-        cwd,
-        stdio: "ignore",
-      });
-      updateGitIgnore(targetDir, cwd);
-      isGitRepo = true;
-    }
+  } else if (
+    checkGitInstalled() &&
+    // enable git
+    (await confirm({
+      message: locale.question.git,
+      default: true,
+    }))
+  ) {
+    execSync("git init -b main", {
+      cwd,
+      stdio: "ignore",
+    });
+    updateGitIgnore(targetDir, cwd);
+    isGitRepo = true;
   }
 
   if (
@@ -135,7 +134,7 @@ export const generateTemplate = async ({
     writeFileSync(
       resolve(workflowDir, "deploy-docs.yml"),
       getWorkflowContent(packageManager, cwd, targetDir, locale),
-      { encoding: "utf-8" },
+      { encoding: "utf8" },
     );
   }
 };

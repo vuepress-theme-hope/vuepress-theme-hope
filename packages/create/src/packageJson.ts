@@ -81,7 +81,7 @@ export const createPackageJson = async ({
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const packageContent: Record<string, unknown> = JSON.parse(
-      readFileSync(packageJsonPath, { encoding: "utf-8" }),
+      readFileSync(packageJsonPath, { encoding: "utf8" }),
     );
 
     deepAssign(packageContent, newContent);
@@ -89,7 +89,7 @@ export const createPackageJson = async ({
     writeFileSync(
       packageJsonPath,
       `${JSON.stringify(packageContent, null, 2)}\n`,
-      { encoding: "utf-8" },
+      { encoding: "utf8" },
     );
   } else {
     console.log(locale.flow.createPackage);
@@ -98,7 +98,7 @@ export const createPackageJson = async ({
       message: locale.question.name,
       default: "vuepress-theme-hope-template",
       validate: (input: string): true | string =>
-        PACKAGE_NAME_REG.exec(input) ? true : locale.error.name,
+        PACKAGE_NAME_REG.test(input) || locale.error.name,
     });
 
     const description = await input({
@@ -110,7 +110,7 @@ export const createPackageJson = async ({
       message: locale.question.version,
       default: "2.0.0",
       validate: (input: string): true | string =>
-        VERSION_REG.exec(input) ? true : locale.error.version,
+        VERSION_REG.test(input) || locale.error.version,
     });
 
     const license = await input({
@@ -130,7 +130,7 @@ export const createPackageJson = async ({
     writeFileSync(
       packageJsonPath,
       `${JSON.stringify(packageContent, null, 2)}\n`,
-      { encoding: "utf-8" },
+      { encoding: "utf8" },
     );
   }
 };

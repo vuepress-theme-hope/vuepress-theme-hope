@@ -4,21 +4,24 @@ type IAnyObject = Record<any, any>;
 const { isArray } = Array;
 
 // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-parameters
-const isPlainObject = <T extends IAnyObject = IAnyObject>(
+const isPlainObject = <InferredType extends IAnyObject = IAnyObject>(
   val: unknown,
-): val is T => Object.prototype.toString.call(val) === "[object Object]";
+): val is InferredType =>
+  Object.prototype.toString.call(val) === "[object Object]";
 
 /** Deep merge objects to the first one */
 export const deepAssign = <
-  T extends IAnyObject,
-  U extends IAnyObject = T,
+  TargetObject extends IAnyObject,
+  MergedObject extends IAnyObject = TargetObject,
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-parameters
-  V extends Partial<T> & Partial<U> = T & U,
+  FinalObject extends Partial<TargetObject> &
+    Partial<MergedObject> = TargetObject & MergedObject,
 >(
-  originObject: T,
-  ...overrideObjects: (U | null | undefined)[]
-): V => {
-  if (overrideObjects.length === 0) return originObject as unknown as V;
+  originObject: TargetObject,
+  ...overrideObjects: (MergedObject | null | undefined)[]
+): FinalObject => {
+  if (overrideObjects.length === 0)
+    return originObject as unknown as FinalObject;
 
   /** Object being merged */
   const assignObject = overrideObjects.shift();

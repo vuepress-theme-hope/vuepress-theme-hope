@@ -33,6 +33,7 @@ export const getVersion = async (
     });
 
   for (let times = 1; times <= 3; times++) {
+    // oxlint-disable-next-line no-await-in-loop
     const version = await getVersionInfo().catch(() => {
       console.log(`Get ${packageName} version failed, [${times}/3]`);
     });
