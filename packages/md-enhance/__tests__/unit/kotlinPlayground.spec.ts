@@ -24,7 +24,7 @@ const getSettings = (renderResult: string): Record<string, unknown> | null => {
 };
 
 describe("Kotlin Playground", () => {
-  const markdownIt = MarkdownIt({ linkify: true }).use(kotlinPlayground);
+  const markdownIt = new MarkdownIt({ linkify: true }).use(kotlinPlayground);
 
   it("Should resolve playground info", () => {
     const result = markdownIt.render(

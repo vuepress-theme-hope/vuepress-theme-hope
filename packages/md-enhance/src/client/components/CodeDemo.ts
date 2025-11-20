@@ -112,7 +112,7 @@ export default defineComponent({
       const appElement = document.createElement("div");
 
       appElement.classList.add("code-demo-app");
-      shadowRoot.appendChild(appElement);
+      shadowRoot.append(appElement);
 
       if (isLegal.value) {
         if (innerHTML) appElement.innerHTML = code.value.html;
@@ -127,23 +127,24 @@ export default defineComponent({
       loaded.value = true;
     };
 
-    const loadDemo = (): Promise<void> => {
+    const loadDemo = async (): Promise<void> => {
       switch (props.type) {
         case "react": {
-          return loadReact(code.value).then(() => {
-            initDom();
-          });
-        }
-        case "vue": {
-          return loadVue(code.value).then(() => {
-            initDom();
-          });
+          await loadReact(code.value);
+          initDom();
+          break;
         }
 
+        case "vue": {
+          await loadVue(code.value);
+          initDom();
+          break;
+        }
+
+        // default to normal
         default: {
-          return loadNormal(code.value).then(() => {
-            initDom(true);
-          });
+          await loadNormal(code.value);
+          initDom(true);
         }
       }
     };

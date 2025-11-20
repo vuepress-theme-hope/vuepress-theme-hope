@@ -8,7 +8,7 @@ import {
 } from "../../src/node/markdown-it/codeDemo.js";
 
 describe("demo", () => {
-  const markdownIt = MarkdownIt({ linkify: true })
+  const markdownIt = new MarkdownIt({ linkify: true })
     .use(normalDemo)
     .use(vueDemo)
     .use(reactDemo);

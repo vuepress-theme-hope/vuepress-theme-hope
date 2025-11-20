@@ -6,7 +6,7 @@ import type {
   VuePresetPlaygroundOptions,
 } from "../../typings/index.js";
 
-const VUE_SUPPORTED_EXTENSIONS = [
+const VUE_SUPPORTED_EXTENSIONS = new Set([
   "html",
   "js",
   "ts",
@@ -14,7 +14,7 @@ const VUE_SUPPORTED_EXTENSIONS = [
   "jsx",
   "tsx",
   "json",
-];
+]);
 
 const DEFAULT_VUE_CDN = "https://sfc.vuejs.org/vue.runtime.esm-browser.js";
 const DEFAULT_VUE_SERVER_RENDERER_CDN =
@@ -37,7 +37,7 @@ export const getVuePlaygroundPreset = (
 
     const fileInfo = fromEntries(
       entries(files)
-        .filter(([, { ext }]) => VUE_SUPPORTED_EXTENSIONS.includes(ext))
+        .filter(([, { ext }]) => VUE_SUPPORTED_EXTENSIONS.has(ext))
         .map(([key, { content }]) => {
           if (key === "import-map.json") {
             const importMap = JSON.parse(content) as {

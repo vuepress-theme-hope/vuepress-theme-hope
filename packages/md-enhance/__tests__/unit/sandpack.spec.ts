@@ -43,7 +43,7 @@ const getCustomSetup = (
 };
 
 describe("Sandpack", () => {
-  const markdownIt = MarkdownIt({ linkify: true }).use(sandpack);
+  const markdownIt = new MarkdownIt({ linkify: true }).use(sandpack);
 
   it("Should resolve sandpack info", () => {
     const result = markdownIt.render(

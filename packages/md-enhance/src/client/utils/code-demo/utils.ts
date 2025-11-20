@@ -65,15 +65,15 @@ export const h = (
         // @ts-expect-error: Type is not accurate
         node[key] = attrs[key];
       } else {
-        const k = key.replace("data", "");
+        const trippedKey = key.replace("data", "");
 
-        node.dataset[k] = attrs[key];
+        node.dataset[trippedKey] = attrs[key];
       }
     });
 
   if (children)
     children.forEach((child) => {
-      node.appendChild(child);
+      node.append(child);
     });
 
   return node;
@@ -84,8 +84,8 @@ export const getConfig = (
 ): CodeDemoOptions => ({
   ...options,
   ...config,
-  jsLib: Array.from(new Set([options.jsLib, config.jsLib ?? []].flat())),
-  cssLib: Array.from(new Set([options.cssLib, config.cssLib ?? []].flat())),
+  jsLib: [...new Set([options.jsLib, config.jsLib ?? []].flat())],
+  cssLib: [...new Set([options.cssLib, config.cssLib ?? []].flat())],
 });
 
 export const loadScript = (
@@ -98,11 +98,11 @@ export const loadScript = (
     const script = document.createElement("script");
 
     script.src = link;
-    document.querySelector("body")?.appendChild(script);
+    document.querySelector("body")?.append(script);
 
-    script.onload = (): void => {
+    script.addEventListener("load", (): void => {
       resolve();
-    };
+    });
   });
 
   state[link] = loadEvent;
@@ -114,13 +114,11 @@ export const injectCSS = (shadowRoot: ShadowRoot, code: Code): void => {
   if (
     code.css &&
     // Style not injected
-    Array.from(shadowRoot.childNodes).every(
-      (element) => element.nodeName !== "STYLE",
-    )
+    [...shadowRoot.childNodes].every((element) => element.nodeName !== "STYLE")
   ) {
     const style = h("style", { innerHTML: code.css });
 
-    shadowRoot.appendChild(style);
+    shadowRoot.append(style);
   }
 };
 
@@ -134,18 +132,16 @@ export const injectScript = (
   if (
     scriptText &&
     // Style not injected
-    Array.from(shadowRoot.childNodes).every(
-      (element) => element.nodeName !== "SCRIPT",
-    )
+    [...shadowRoot.childNodes].every((element) => element.nodeName !== "SCRIPT")
   ) {
     const script = document.createElement("script");
 
-    script.appendChild(
+    script.append(
       document.createTextNode(
         // Here we are fixing `document` variable back to shadowDOM
         `{const document=window.document.querySelector('#${id} .vp-code-demo-display').shadowRoot;\n${scriptText}}`,
       ),
     );
-    shadowRoot.appendChild(script);
+    shadowRoot.append(script);
   }
 };

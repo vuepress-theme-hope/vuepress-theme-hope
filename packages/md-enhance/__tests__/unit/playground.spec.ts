@@ -9,9 +9,25 @@ import {
   playground,
 } from "../../src/node/markdown-it/playground/index.js";
 
+const getVueFiles = (content: string): Record<string, string> | null => {
+  const result = /link="(.*?)"/.exec(decodeURIComponent(content));
+
+  if (!result) return null;
+
+  const files = decodeURIComponent(result[1])
+    .split("#")[1]
+    .replace("__DEV__", "")
+    .replace("__SSR__", "");
+
+  return JSON.parse(Buffer.from(files, "base64").toString()) as Record<
+    string,
+    string
+  >;
+};
+
 describe("playground", () => {
   it("Should not throw", () => {
-    const markdownIt = MarkdownIt({ linkify: true }).use(playground, {
+    const markdownIt = new MarkdownIt({ linkify: true }).use(playground, {
       name: "test",
     });
 
@@ -42,7 +58,7 @@ abc
   });
 
   describe("basic", () => {
-    const markdownIt = MarkdownIt({ linkify: true }).use(playground, {
+    const markdownIt = new MarkdownIt({ linkify: true }).use(playground, {
       name: "playground",
       component: "Playground",
       propsGetter: (data) =>
@@ -133,7 +149,7 @@ const msg = ref('Hello World!')
   });
 
   describe("ts preset", () => {
-    const markdownItWithTSPreset = MarkdownIt({ linkify: true }).use(
+    const markdownItWithTSPreset = new MarkdownIt({ linkify: true }).use(
       playground,
       getTSPlaygroundPreset({}),
     );
@@ -186,26 +202,10 @@ speak(msg);
   });
 
   describe("vue preset", () => {
-    const markdownItWithVuePreset = MarkdownIt({ linkify: true }).use(
+    const markdownItWithVuePreset = new MarkdownIt({ linkify: true }).use(
       playground,
       getVuePlaygroundPreset({}),
     );
-
-    const getVueFiles = (content: string): Record<string, string> | null => {
-      const result = /link="(.*?)"/.exec(decodeURIComponent(content));
-
-      if (!result) return null;
-
-      const files = decodeURIComponent(result[1])
-        .split("#")[1]
-        .replace("__DEV__", "")
-        .replace("__SSR__", "");
-
-      return JSON.parse(Buffer.from(files, "base64").toString()) as Record<
-        string,
-        string
-      >;
-    };
 
     it("Should work", () => {
       const result1 = markdownItWithVuePreset.render(`
@@ -415,7 +415,7 @@ const msg = ref("Hello Playground!");
   });
 
   describe("unocss preset", () => {
-    const markdownItWithUnoPreset = MarkdownIt({ linkify: true }).use(
+    const markdownItWithUnoPreset = new MarkdownIt({ linkify: true }).use(
       playground,
       getUnoPlaygroundPreset({}),
     );

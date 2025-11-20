@@ -5,19 +5,20 @@ export type ScriptLoadState = Record<string, Promise<void>>;
 
 const state: ScriptLoadState = {};
 
-export const loadReact = (code: Code): Promise<void[]> =>
-  Promise.all([
+export const loadReact = async (code: Code): Promise<void> => {
+  await Promise.all([
     loadScript(state, code.babel),
     loadScript(state, code.react),
     loadScript(state, code.reactDOM),
   ]);
+};
 
-export const loadVue = (code: Code): Promise<void[]> => {
+export const loadVue = async (code: Code): Promise<void> => {
   const promises = [loadScript(state, code.vue)];
 
   if (code.useBabel) promises.push(loadScript(state, code.babel));
 
-  return Promise.all(promises);
+  await Promise.all(promises);
 };
 
 export const loadNormal = (code: Code): Promise<void> =>

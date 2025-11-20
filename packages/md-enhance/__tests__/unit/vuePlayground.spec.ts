@@ -26,7 +26,7 @@ const getSettings = (renderResult: string): Record<string, unknown> | null => {
 };
 
 describe("Vue Playground", () => {
-  const markdownIt = MarkdownIt({ linkify: true }).use(vuePlayground);
+  const markdownIt = new MarkdownIt({ linkify: true }).use(vuePlayground);
 
   it("Should resolve playground info", () => {
     const result = markdownIt.render(
