@@ -10,20 +10,20 @@ catalog:
   markmap-lib: 0.18.12
   markmap-toolbar: 0.18.12
   markmap-view: 0.18.12
-  mermaid: 11.12.0
+  mermaid: 11.12.1
   reveal.js: 5.2.1
-  sass-embedded: 1.93.2
+  sass-embedded: 1.93.3
   sass-loader: 16.0.6
-  vue: 3.5.22
+  vue: 3.5.24
 
 catalogs:
   range:
     "@vueuse/core": 14.0.0
     balloon-css: ^1.2.0
-    sass: ^1.93.2
-    sass-embedded: ^1.93.2
+    sass: ^1.94.1
+    sass-embedded: ^1.93.3
     sass-loader: ^16.0.6
-    vue: ^3.5.22
+    vue: ^3.5.24
   vuepress:
     "@vuepress/bundler-vite": 2.0.0-rc.26
     "@vuepress/bundler-webpack": 2.0.0-rc.26
