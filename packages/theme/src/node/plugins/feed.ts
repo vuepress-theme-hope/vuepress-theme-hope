@@ -26,6 +26,7 @@ try {
  *
  * Resolve options for @vuepress/plugin-feed
  */
+// oxlint-disable-next-line max-params
 export const getFeedPlugin = (
   themeData: ThemeData,
   options?: Omit<FeedPluginOptions, "hostname"> | boolean,

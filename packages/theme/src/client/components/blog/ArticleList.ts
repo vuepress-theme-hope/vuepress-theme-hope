@@ -119,7 +119,7 @@ export default defineComponent({
       h(
         "div",
         { id: "article-list", class: "vp-article-list", role: "feed" },
-        currentArticles.value.length
+        currentArticles.value.length > 0
           ? [
               ...currentArticles.value.map(({ info, path }, index) =>
                 h(DropTransition, { appear: true, delay: index * 0.04 }, () =>

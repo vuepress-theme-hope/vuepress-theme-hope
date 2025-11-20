@@ -62,6 +62,7 @@ export const mdDemo: PluginSimple = (md) => {
         tokens[index].info,
       )}" id="md-demo-${index}">\n`;
     },
+    // oxlint-disable-next-line max-params
     codeRender: (tokens, index, options, _env, self) =>
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       `<template #code>\n${self.rules.fence!(

@@ -22,7 +22,9 @@ const HeroSlideDownButton: FunctionalComponent<
     {
       type: "button",
       class: "vp-hero-slide-down-button",
-      onClick: () => emit("click"),
+      onClick: () => {
+        emit("click");
+      },
     },
     [h(SlideDownIcon), h(SlideDownIcon)],
   );

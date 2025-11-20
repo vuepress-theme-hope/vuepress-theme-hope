@@ -49,11 +49,7 @@ export default defineComponent({
       const html = document.documentElement;
 
       watchImmediate(enableFocus, (value) => {
-        if (value) {
-          html.classList.add("is-focusing");
-        } else {
-          html.classList.remove("is-focusing");
-        }
+        html.classList.toggle("is-focusing", value);
       });
     });
 

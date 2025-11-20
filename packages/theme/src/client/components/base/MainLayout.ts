@@ -136,13 +136,13 @@ export default defineComponent({
     );
 
     const touchStart = { x: 0, y: 0 };
-    const onTouchStart = (e: TouchEvent): void => {
-      touchStart.x = e.changedTouches[0].clientX;
-      touchStart.y = e.changedTouches[0].clientY;
+    const onTouchStart = (event: TouchEvent): void => {
+      touchStart.x = event.changedTouches[0].clientX;
+      touchStart.y = event.changedTouches[0].clientY;
     };
-    const onTouchEnd = (e: TouchEvent): void => {
-      const dx = e.changedTouches[0].clientX - touchStart.x;
-      const dy = e.changedTouches[0].clientY - touchStart.y;
+    const onTouchEnd = (event: TouchEvent): void => {
+      const dx = event.changedTouches[0].clientX - touchStart.x;
+      const dy = event.changedTouches[0].clientY - touchStart.y;
 
       if (
         // Horizontal swipe

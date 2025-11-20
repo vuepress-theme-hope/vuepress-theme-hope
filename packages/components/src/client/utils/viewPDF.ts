@@ -64,15 +64,39 @@ const buildURLFragmentString = (
   return url;
 };
 
+export interface AddPDFViewerOptions {
+  /**
+   * URL of pdf
+   */
+  url: string;
+
+  /**
+   * Type of embed element
+   */
+  embedType: "iframe" | "embed" | "pdfjs";
+
+  /**
+   * Title of pdf
+   */
+  title?: string;
+
+  /**
+   * Options than will be appended to pdf url as fragment identifier
+   */
+  options?: Record<string, string | number | boolean>;
+}
+
 const addPDFViewer = (
-  embedType: "iframe" | "embed" | "pdfjs",
-  targetNode: HTMLElement,
-  url: string,
-  options: Record<string, string | number | boolean>,
-  title: string,
+  target: HTMLElement,
+  {
+    embedType,
+    url,
+    options = {},
+    title = /\/([^/]+).pdf/.exec(url)?.[1] ?? "PDF Viewer",
+  }: AddPDFViewerOptions,
 ): HTMLElement => {
   // Ensure target element is empty first
-  emptyNodeContents(targetNode);
+  emptyNodeContents(target);
 
   const source = `${
     embedType === "pdfjs"
@@ -95,30 +119,36 @@ const addPDFViewer = (
 
   if (el instanceof HTMLIFrameElement) el.allow = "fullscreen";
 
-  targetNode.classList.add("pdf-viewer-container");
-  targetNode.append(el);
+  target.classList.add("pdf-viewer-container");
+  target.append(el);
 
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  return targetNode.querySelector(elementType)!;
+  return target.querySelector(elementType)!;
 };
 
-export interface ViewPDFOptions {
-  /**
-   * Title of pdf
-   */
-  title?: string;
-  hint: string;
-  options: Record<string, string | number | boolean> | undefined;
+export interface ViewPDFOptions extends Omit<AddPDFViewerOptions, "embedType"> {
   /**
    * Force using PDFJS
    */
-  force?: boolean;
+  pdfjs?: boolean;
+
+  /**
+   * Hint message when PDF cannot be displayed
+   */
+  hint?: string;
 }
 
+const DEFAULT_PDF_JS_HINT = "pdfjs url is not defined";
+
 export const viewPDF = (
-  url: string,
   targetSelector: string | HTMLElement | null,
-  { title, hint, options = {}, force }: ViewPDFOptions,
+  {
+    url,
+    title,
+    hint = DEFAULT_PDF_JS_HINT,
+    options = {},
+    pdfjs,
+  }: ViewPDFOptions,
 ): HTMLElement | null => {
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (!isDef(window) || !window.navigator?.userAgent) return null;
@@ -153,28 +183,32 @@ export const viewPDF = (
     return null;
   }
 
-  const pdfLink = isLinkHttp(url)
+  const fullLink = isLinkHttp(url)
     ? url
     : __VUEPRESS_DEV__
       ? null
       : `${window.origin}${url}`;
-  const pdfTitle = title ?? /\/([^/]+).pdf/.exec(url)?.[1] ?? "PDF Viewer";
 
-  if (force) {
-    if (!pdfLink) {
-      logError("PDF link is not accessible.");
+  if (pdfjs) {
+    if (!fullLink) {
+      logError("PDF link is not accessible via internet.");
 
       return null;
     }
 
     if (!PDFJS_URL) {
-      targetNode.innerHTML = hint.replace(/\[url\]/g, pdfLink);
-      logError("PDFJS URL is not defined");
+      targetNode.innerHTML = hint.replaceAll(String.raw`\[url\]`, fullLink);
+      logError(DEFAULT_PDF_JS_HINT);
 
       return null;
     }
 
-    return addPDFViewer("pdfjs", targetNode, url, options, pdfTitle);
+    return addPDFViewer(targetNode, {
+      embedType: "pdfjs",
+      url: fullLink,
+      options,
+      title,
+    });
   }
 
   if (supportsPDFs || !isMobileDevice) {
@@ -185,13 +219,23 @@ export const viewPDF = (
      */
     const embedType = isSafariDesktop ? "iframe" : "embed";
 
-    return addPDFViewer(embedType, targetNode, url, options, pdfTitle);
+    return addPDFViewer(targetNode, {
+      embedType,
+      url,
+      options,
+      title,
+    });
   }
 
-  if (PDFJS_URL && pdfLink)
-    return addPDFViewer("pdfjs", targetNode, url, options, pdfTitle);
+  if (PDFJS_URL && fullLink)
+    return addPDFViewer(targetNode, {
+      embedType: "pdfjs",
+      url: fullLink,
+      options,
+      title,
+    });
 
-  targetNode.innerHTML = hint.replace(/\[url\]/g, url);
+  targetNode.innerHTML = hint.replaceAll(String.raw`\[url\]`, url);
 
   logError("This browser does not support embedded PDFs");
 

@@ -18,12 +18,27 @@ if (isMpegtsJsInstalled) SUPPORTED_VIDEO_TYPES.push("ts", "flv");
 
 export const getTypeByUrl = (url: string): string => url.split(".").pop() ?? "";
 
+export interface DashOptions {
+  /**
+   * Whether to auto play after initialization
+   *
+   * @default false
+   */
+  autoPlay?: boolean;
+
+  /**
+   * Starting time in seconds
+   *
+   * @default 0
+   */
+  startTime?: number;
+}
+
 export const registerMseDash = async (
   mediaElement: HTMLMediaElement,
   src: string,
   onDestroy: (destroy: () => void) => void,
-  autoPlay = false,
-  startTime = 0,
+  { autoPlay = false, startTime = 0 }: DashOptions = {},
 ): Promise<void> => {
   if (__VUEPRESS_SSR__) return;
 
@@ -33,6 +48,7 @@ export const registerMseDash = async (
     );
 
     if (dashjs.supportsMediaSource()) {
+      // oxlint-disable-next-line new-cap
       const dashPlayer = dashjs.MediaPlayer().create();
 
       dashPlayer.initialize(mediaElement, src, autoPlay, startTime);

@@ -23,6 +23,7 @@ export const useGlobalEncrypt = (): GlobalEncrypt => {
     const { global = false, admin } = encryptData.value;
 
     // Is globally encrypted
+    // oxlint-disable-next-line unicorn/explicit-length-check
     const isEncrypted = global && Boolean(admin?.tokens.length);
 
     const isLocked =

@@ -7,14 +7,16 @@ export class Popup {
   // Generate or make sure popup container element
   constructor() {
     const containerId = "popup-container";
-    const containerElement = document.getElementById(containerId);
+    const containerElement = document.querySelector<HTMLElement>(
+      `#${containerId}`,
+    );
 
     if (containerElement) {
       this.containerElement = containerElement;
     } else {
       this.containerElement = document.createElement("div");
       this.containerElement.id = containerId;
-      document.body.appendChild(this.containerElement);
+      document.body.append(this.containerElement);
     }
   }
 
@@ -23,10 +25,10 @@ export class Popup {
     const popupElement = document.createElement("div");
     const popupId = Date.now();
 
-    this.containerElement.appendChild(popupWrapperElement);
+    this.containerElement.append(popupWrapperElement);
     this.popupElements[popupId] = popupWrapperElement;
     popupWrapperElement.className = "popup-wrapper appear";
-    popupWrapperElement.appendChild(popupElement);
+    popupWrapperElement.append(popupElement);
     popupWrapperElement.addEventListener("click", () => {
       this.close(popupId);
     });
@@ -59,6 +61,6 @@ export class Popup {
   }
 
   destroy(): void {
-    document.body.removeChild(this.containerElement);
+    this.containerElement.remove();
   }
 }

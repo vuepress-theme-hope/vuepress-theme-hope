@@ -168,14 +168,15 @@ export default defineComponent({
                 ]),
               frontmatter.value.heroFullScreen
                 ? h(HeroSlideDownButton, {
-                    onClick: () =>
+                    onClick: () => {
                       window.scrollTo({
                         top:
                           window.innerHeight -
                           (document.querySelector("[vp-navbar]")
                             ?.clientHeight ?? 0),
                         behavior: "smooth",
-                      }),
+                      });
+                    },
                   })
                 : null,
             ],

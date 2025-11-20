@@ -133,7 +133,8 @@ export default defineComponent({
       body.value = document.body;
 
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      viewPDF(getLink(props.url), viewer.value!, {
+      viewPDF(viewer.value!, {
+        url: getLink(props.url),
         title: props.title,
         hint: locales.value.hint,
         options: {
@@ -143,7 +144,7 @@ export default defineComponent({
             ? { zoom: props.zoom }
             : {}),
         },
-        force: props.viewer,
+        pdfjs: props.viewer,
       });
       resize();
     });

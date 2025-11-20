@@ -5,4 +5,5 @@ if (__VP_CUSTOM__)
 VuePress Theme is running in  bundle mode, this import is not allowed.
 `);
 
+// oxlint-disable-next-line unicorn/require-module-specifiers
 export {};

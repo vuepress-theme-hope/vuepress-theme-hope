@@ -14,7 +14,7 @@ export default defineComponent({
     const navbarConfig = useNavbarItems();
 
     return (): VNode | null =>
-      navbarConfig.value.length
+      navbarConfig.value.length > 0
         ? h(
             "nav",
             { class: "vp-nav-links" },

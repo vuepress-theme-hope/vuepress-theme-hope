@@ -1,0 +1,150 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "ignorePatterns": [
+    "docs-shared/lib/**",
+    "packages/*/assets/**",
+    "packages/*/lib/**",
+    "**/ventors/lzstring.ts",
+  ],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn",
+    "pedantic": "warn",
+    "perf": "warn",
+    "style": "warn",
+    "restriction": "off",
+  },
+  "plugins": ["import", "unicorn", "oxc", "promise", "jsdoc"],
+  "rules": {
+    "catch-error-name": ["warn", { "name": "err" }],
+    "curly": ["off", "multi-line"],
+    "group-exports": "off",
+    "id-length": [
+      "warn",
+      { "exceptions": ["_", "a", "b", "d", "h", "i", "x", "y", "z"] },
+    ],
+    "init-declarations": "off",
+    "max-dependencies": "off",
+    "max-lines": "off",
+    "max-lines-per-function": "off",
+    "max-params": ["warn", 4],
+    "no-continue": "off",
+    "no-console": "warn",
+    "no-duplicate-imports": "off",
+    "no-nested-ternary": "off",
+    "no-null": "off",
+    "no-ternary": "off",
+    "no-warning-comments": "off",
+    "sort-imports": "off",
+    "sort-keys": "off",
+
+    "import/exports-last": "off",
+    // usually we just export vue components as default export without naming it
+    "import/no-anonymous-default-export": "off",
+    // a rule that shall not be enabled anyway
+    "import/no-named-export": "off",
+    "import/no-unassigned-import": [
+      "error",
+      { "allow": ["**/*.css", "**/*.scss"] },
+    ],
+    // named export is preferred in our codebase
+    "import/prefer-default-export": "off",
+    "jsdoc/check-tag-names": "off",
+    "jsdoc/require-param": "off",
+    "jsdoc/require-param-type": "off",
+    "jsdoc/require-returns": "off",
+    "promise/always-return": "off",
+    "promise/avoid-new": "off",
+    "promise/prefer-await-to-then": "off",
+    "unicorn/filename-case": "off",
+    // toReversed can introduce memory overhead
+    "unicorn/no-array-reverse": "off",
+    // toSorted can introduce memory overhead
+    "unicorn/no-array-sort": "off",
+    "unicorn/no-nested-ternary": "off",
+    // at is not supported by our target environments
+    "unicorn/prefer-at": "off",
+    "unicorn/prefer-global-this": "off",
+
+    "no-magic-numbers": "off",
+
+    // seems conflicts with prettier
+    "number-literal-case": "off",
+    "numeric-separators-style": "off",
+
+    // the following rules are still not supported by oxlint yet
+    // "import-x/no-restricted-paths": [
+    //   "error",
+    //   {
+    //     "zones": [
+    //       {
+    //         "target": "packages/*/src/client/**",
+    //         "from": "packages/*/src/node/**",
+    //       },
+    //       {
+    //         "target": "packages/*/src/node/**",
+    //         "from": "packages/*/src/client/**",
+    //       },
+    //     ],
+    //   },
+    // ],
+    // "vue/multi-word-component-names": [
+    //   "error",
+    //   { "ignores": ["Blog", "Layout", "Slides"] },
+    // ],
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts"],
+      "plugins": ["typescript"],
+      "rules": {
+        // we make type casts only when necessary
+        "typescript/no-unsafe-type-assertion": "off",
+        // skipping it for now, may enable it later
+        "typescript/switch-exhaustiveness-check": "off",
+        // a lot of time we are just want to check existence
+        "typescript/strict-boolean-expressions": "off",
+      },
+    },
+    {
+      "files": ["**/node/**/*.ts"],
+      "plugins": ["node"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          "@vuepress/helper/client",
+          "vuepress/client",
+        ],
+      },
+    },
+    {
+      "files": ["**/client/**/*.ts"],
+      "plugins": ["vue"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          "@vuepress/helper",
+          "@vuepress/helper/node",
+          "vuepress/core",
+          "vuepress/markdown",
+          "vuepress/utils",
+        ],
+        // the following rules are still not supported by oxlint yet
+        // "@typescript-eslint/prefer-nullish-coalescing": [
+        //   "warn",
+        //   { "ignoreConditionalTests": true },
+        // ],
+      },
+    },
+    {
+      "files": ["**/__tests__/**"],
+      "plugins": ["vitest"],
+    },
+    {
+      "files": ["**/create/src/**/*.ts"],
+      "rules": {
+        "no-console": "off",
+      },
+    },
+  ],
+}

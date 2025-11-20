@@ -28,7 +28,7 @@ export default defineComponent({
     );
 
     return (): VNode | null =>
-      mediaLinks.value.length
+      mediaLinks.value.length > 0
         ? h(
             "div",
             { class: "vp-social-medias" },

@@ -16,6 +16,9 @@ import type { AutoLinkOptions, NavGroup } from "../../../shared/index.js";
 
 import "../../styles/navbar/nav-screen-menu.scss";
 
+const isLastItemOfArray = <Item>(item: Item, arr: Item[]): boolean =>
+  arr[arr.length - 1] === item;
+
 export default defineComponent({
   name: "NavScreenMenu",
 
@@ -43,9 +46,6 @@ export default defineComponent({
     );
 
     const open = ref(false);
-
-    const isLastItemOfArray = <T>(item: T, arr: T[]): boolean =>
-      arr[arr.length - 1] === item;
 
     onContentUpdated(() => {
       open.value = false;

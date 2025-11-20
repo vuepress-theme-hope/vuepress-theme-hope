@@ -253,6 +253,5 @@ export default theme(
       },
     },
   },
-  "",
-  "theme-v2",
+  { base: "", indexName: "theme-v2" },
 );

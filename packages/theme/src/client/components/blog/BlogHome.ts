@@ -73,7 +73,7 @@ export default defineComponent({
         h("div", { class: "blog-page-wrapper" }, [
           h("main", { id: "main-content", class: "vp-blog-main" }, [
             slots.articlesBefore?.() ??
-              (projects.value.length
+              (projects.value.length > 0
                 ? h(DropTransition, { appear: true, delay: 0.16 }, () =>
                     h(ProjectPanel, { items: projects.value }),
                   )

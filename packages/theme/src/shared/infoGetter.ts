@@ -40,7 +40,7 @@ export const getStringArray = (
   optionName: string,
 ): string[] => {
   if (value) {
-    if (isArray(value) && value.every(isString)) return value;
+    if (isArray(value) && value.every((item) => isString(item))) return value;
     if (isString(value)) return [value];
 
     // eslint-disable-next-line no-console

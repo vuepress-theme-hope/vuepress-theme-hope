@@ -7,7 +7,6 @@ const HASH_REGEXP = /#.*$/u;
  * Get hash from path
  *
  * @param path link path
- * @returns hash
  */
 export const getHash = (path: string): string => {
   const match = HASH_REGEXP.exec(path);
@@ -29,7 +28,6 @@ export const normalizePath = (path: string): string =>
  *
  * @param route Current route
  * @param link link path
- * @returns Whether the lick is active
  */
 export const isActiveLink = (
   route: RouteLocationNormalizedLoaded,

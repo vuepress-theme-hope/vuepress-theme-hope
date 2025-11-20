@@ -48,13 +48,13 @@ export const usePathEncrypt = (): PathEncrypt => {
             (localTokenConfig.value[key]
               ? config[key].tokens.every(
                   (token) =>
-                    !isTokenMatched(localTokenConfig.value[key], token),
+                    !isTokenMatched(token, localTokenConfig.value[key]),
                 )
               : true) &&
             (sessionTokenConfig.value[key]
               ? config[key].tokens.every(
                   (token) =>
-                    !isTokenMatched(sessionTokenConfig.value[key], token),
+                    !isTokenMatched(token, sessionTokenConfig.value[key]),
                 )
               : true),
         ),
@@ -79,7 +79,7 @@ export const usePathEncrypt = (): PathEncrypt => {
     // Some of the tokens matches
     for (const hitKey of matchedKeys)
       if (
-        config[hitKey].tokens.some((token) => isTokenMatched(inputToken, token))
+        config[hitKey].tokens.some((token) => isTokenMatched(token, inputToken))
       ) {
         (keep ? localTokenConfig : sessionTokenConfig).value[hitKey] =
           inputToken;

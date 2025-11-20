@@ -2,6 +2,11 @@ import type { RequiredSlot } from "@vuepress/helper/client";
 import type { SlotsType, VNode } from "vue";
 import { Transition, TransitionGroup, defineComponent, h } from "vue";
 
+const unsetStyle = (el: Element): void => {
+  (el as HTMLElement).style.transform = "translateY(0)";
+  (el as HTMLElement).style.opacity = "1";
+};
+
 export default defineComponent({
   name: "DropTransition",
 
@@ -37,11 +42,6 @@ export default defineComponent({
         `transform ${props.duration}s ease-in-out ${props.delay}s, opacity ${props.duration}s ease-in-out ${props.delay}s`;
       (el as HTMLElement).style.transform = "translateY(-20px)";
       (el as HTMLElement).style.opacity = "0";
-    };
-
-    const unsetStyle = (el: Element): void => {
-      (el as HTMLElement).style.transform = "translateY(0)";
-      (el as HTMLElement).style.opacity = "1";
     };
 
     return (): VNode => {

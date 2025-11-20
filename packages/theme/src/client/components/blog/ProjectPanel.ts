@@ -44,9 +44,9 @@ export default defineComponent({
               ],
               ...(background ? { style: background } : {}),
               href: isLinkAbsolute(link) ? withBase(link) : link,
-              onClick: (e) => {
+              onClick: (event) => {
                 navigate(link);
-                e.preventDefault();
+                event.preventDefault();
               },
             },
             [

@@ -18,18 +18,24 @@ export default defineComponent({
     const { prevLink, nextLink } = useRelatedLinks();
 
     useEventListener("keydown", (event): void => {
-      if (event.altKey)
-        if (event.key === "ArrowRight") {
-          if (nextLink.value) {
-            navigate(nextLink.value.link);
-            event.preventDefault();
+      if (event.altKey) {
+        switch (event.key) {
+          case "ArrowRight": {
+            if (nextLink.value) {
+              navigate(nextLink.value.link);
+              event.preventDefault();
+            }
+            break;
           }
-        } else if (event.key === "ArrowLeft") {
-          if (prevLink.value) {
-            navigate(prevLink.value.link);
-            event.preventDefault();
+          case "ArrowLeft": {
+            if (prevLink.value) {
+              navigate(prevLink.value.link);
+              event.preventDefault();
+            }
+            break;
           }
         }
+      }
     });
 
     return (): VNode | null =>

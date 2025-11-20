@@ -1,3 +1,5 @@
+/* oxlint-disable promise/prefer-await-to-callbacks */
+
 import { dest, src } from "gulp";
 import through from "through2";
 

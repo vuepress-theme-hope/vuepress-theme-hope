@@ -111,8 +111,8 @@ export default defineComponent({
       if (pageNum <= totalPages.value && pageNum > 0) navigate(pageNum);
       else
         message.pop(
-          `${ERROR_SVG}${paginationLocale.value.errorText.replace(
-            /\$page/gu,
+          `${ERROR_SVG}${paginationLocale.value.errorText.replaceAll(
+            String.raw`\$page`,
             totalPages.value.toString(),
           )}`,
         );

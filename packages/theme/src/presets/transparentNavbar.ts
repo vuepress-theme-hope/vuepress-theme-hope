@@ -14,9 +14,7 @@ const BLOG_HOMEPAGE_STYLE = `\
 }
 `;
 
-const HOMEPAGE_STYLE =
-  BLOG_HOMEPAGE_STYLE +
-  `\
+const HOMEPAGE_STYLE = `${BLOG_HOMEPAGE_STYLE}\
 .theme-container .vp-project-home {
   padding-top: 0;
 }
@@ -52,13 +50,13 @@ const BACKGROUND_SELECTORS = [
 
 const encodeDataURI = (content: string): string =>
   content
-    .replace(/"/g, "'")
-    .replace(/%/g, "%25")
-    .replace(/#/g, "%23")
-    .replace(/{/g, "%7B")
-    .replace(/}/g, "%7D")
-    .replace(/</g, "%3C")
-    .replace(/>/g, "%3E");
+    .replaceAll('"', "'")
+    .replaceAll("%", "%25")
+    .replaceAll("#", "%23")
+    .replaceAll("{", "%7B")
+    .replaceAll("}", "%7D")
+    .replaceAll("<", "%3C")
+    .replaceAll(">", "%3E");
 
 const getStyle = (color: string, parentSelector = ""): string =>
   `\
@@ -134,11 +132,10 @@ export const setupTransparentNavbar = ({
   );
 
   const transparentNavbar = (): void => {
-    if (window.scrollY < threshold && shouldTransparent.value) {
-      document.body.classList.add("transparent-navbar");
-    } else {
-      document.body.classList.remove("transparent-navbar");
-    }
+    document.body.classList.toggle(
+      "transparent-navbar",
+      window.scrollY < threshold && shouldTransparent.value,
+    );
   };
 
   useStyleTag(

@@ -90,7 +90,7 @@ export const setupSnowFall = ({
   onMounted(() => {
     const canvas = document.createElement("canvas");
 
-    document.body.appendChild(canvas);
+    document.body.append(canvas);
 
     canvas.style.position = "fixed";
     canvas.style.top = "0";
@@ -112,7 +112,7 @@ export const setupSnowFall = ({
 
     const snowflakeImage = new Image();
 
-    snowflakeImage.onload = (): void => {
+    snowflakeImage.addEventListener("load", (): void => {
       const snowflakes: Snowflake[] = [];
 
       for (let i = 0; i < count; i++)
@@ -131,7 +131,7 @@ export const setupSnowFall = ({
       };
 
       drawSnowflakes();
-    };
+    });
 
     snowflakeImage.src = image;
   });

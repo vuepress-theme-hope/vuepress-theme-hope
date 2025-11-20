@@ -10,8 +10,10 @@ const IS_GITHUB = !IS_GITEE && !IS_NETLIFY;
 export const theme = (
   name: string,
   { markdown = {}, plugins = {}, ...options }: ThemeOptions,
-  base = name.replace(/\d+$/, ""),
-  indexName?: string,
+  {
+    base = name.replace(/\d+$/, ""),
+    indexName,
+  }: { base?: string; indexName?: string },
 ): ThemeFunction => {
   const subdomain =
     name === "theme"

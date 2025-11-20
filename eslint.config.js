@@ -85,7 +85,7 @@ export default hope(
       "import-x/no-unresolved": [
         "error",
         {
-          ignore: ["^@temp\\/"],
+          ignore: [String.raw`^@temp\/`],
         },
       ],
       "vue/multi-word-component-names": [

@@ -33,7 +33,7 @@ export const resolveEditLink = ({
 
   const repoType = resolveRepoType(docsRepo);
 
-  let pattern: string | undefined;
+  let pattern = "";
 
   if (editLinkPattern) pattern = editLinkPattern;
   else if (repoType !== null) pattern = editLinkPatterns[repoType];

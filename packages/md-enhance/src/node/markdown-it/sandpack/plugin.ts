@@ -168,11 +168,13 @@ const atMarkerRule =
      */
     if (state.src.charAt(start) !== "@") return false;
 
-    let index;
+    let index = 0;
 
     // Check out the rest of the marker string
-    for (index = 0; index < atMarker.length; index++)
+    while (index < atMarker.length) {
       if (atMarker[index] !== state.src[start + index]) return false;
+      index++;
+    }
 
     const markup = state.src.slice(start, start + index);
     const info = state.src.slice(start + index, max);
@@ -211,7 +213,7 @@ const atMarkerRule =
       ) {
         let openMakerMatched = true;
 
-        for (index = 0; index < atMarker.length; index++)
+        for (let index = 0; index < atMarker.length; index++)
           if (atMarker[index] !== state.src[start + index]) {
             openMakerMatched = false;
             break;

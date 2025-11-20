@@ -24,7 +24,7 @@ export const getCode = (code: Record<string, string>): CodeType => {
       const [language] = match;
 
       result[type] = [
-        code[language].replace(/^\n|\n$/g, ""),
+        code[language].replaceAll(/^\n|\n$/g, ""),
         preProcessorConfig[type].map[language] ?? language,
       ];
     }
@@ -40,8 +40,8 @@ export const getCode = (code: Record<string, string>): CodeType => {
 
 const handleHTML = (html: string): string =>
   html
-    .replace(/<br \/>/g, "<br>")
-    .replace(/<((\S+)[^<]*?)\s+\/>/g, "<$1></$2>");
+    .replaceAll(String.raw`<br \/>`, "<br>")
+    .replaceAll(/<((\S+)[^<]*?)\s+\/>/g, "<$1></$2>");
 
 const getHtmlTemplate = (html: string): string =>
   `<div id="app">\n${handleHTML(html)}\n</div>`;
@@ -104,12 +104,12 @@ export const getVueCode = (
   const htmlBlock = VUE_TEMPLATE_REG.exec(vueTemplate);
   const jsBlock = VUE_SCRIPT_REG.exec(vueTemplate);
   const cssBlock = VUE_STYLE_REG.exec(vueTemplate);
-  const html = htmlBlock?.[1].replace(/^\n|\n$/g, "") ?? "";
+  const html = htmlBlock?.[1].replaceAll(/^\n|\n$/g, "") ?? "";
   const [js = "", jsLang = ""] = jsBlock
-    ? [jsBlock[4].replace(/^\n|\n$/g, ""), jsBlock[3]]
+    ? [jsBlock[4].replaceAll(/^\n|\n$/g, ""), jsBlock[3]]
     : [];
   const [css = "", cssLang = ""] = cssBlock
-    ? [cssBlock[4].replace(/^\n|\n$/g, ""), cssBlock[3]]
+    ? [cssBlock[4].replaceAll(/^\n|\n$/g, ""), cssBlock[3]]
     : [];
 
   const isLegal = jsLang === "" && (cssLang === "" || cssLang === "css");

@@ -56,7 +56,7 @@ export default defineComponent({
             : null,
           metaInfo.contributors.value &&
           metaInfo.contributors.value !== "content" &&
-          contributors.value.length
+          contributors.value.length > 0
             ? h("div", { class: "contributors" }, [
                 h(
                   "span",
@@ -70,7 +70,7 @@ export default defineComponent({
                       { class: "vp-meta-info", title: `email: ${email}` },
                       name,
                     ),
-                    index !== contributors.length - 1 ? "," : "",
+                    index === contributors.length - 1 ? "" : ",",
                   ],
                 ),
               ])

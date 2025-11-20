@@ -20,6 +20,7 @@ import { TEMPLATE_FOLDER } from "../utils.js";
  *
  * Use plugins to ensure they apply first
  */
+// oxlint-disable-next-line max-params
 export const usePlugins = (
   app: App,
   themeData: ThemeData,

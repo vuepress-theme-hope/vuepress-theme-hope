@@ -20,27 +20,23 @@ export default defineComponent({
     const stars = useStars();
     const blogLocale = useBlogLocale();
 
-    const types = computed(() => {
-      return [
-        {
-          text: blogLocale.value.all,
-          path: articles.value.path,
-        },
-        { text: blogLocale.value.star, path: stars.value.path },
-        ...__VP_BLOG_TYPES__.map(({ key, path }) => {
-          const routePath = path.replace(/^\//, routeLocale.value);
+    const types = computed(() => [
+      {
+        text: blogLocale.value.all,
+        path: articles.value.path,
+      },
+      { text: blogLocale.value.star, path: stars.value.path },
+      ...__VP_BLOG_TYPES__.map(({ key, path }) => {
+        const routePath = path.replace(/^\//, routeLocale.value);
 
-          return {
-            text:
-              // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-              blogLocale.value[key] ??
-              resolveRoute(routePath).meta.title ??
-              key,
-            path: routePath,
-          };
-        }),
-      ];
-    });
+        return {
+          text:
+            // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+            blogLocale.value[key] ?? resolveRoute(routePath).meta.title ?? key,
+          path: routePath,
+        };
+      }),
+    ]);
 
     return (): VNode =>
       h(

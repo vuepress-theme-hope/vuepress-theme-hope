@@ -26,7 +26,7 @@ export const useArticleAuthor = (info: Ref<ArticleInfoData>): AuthorRef => {
   const themeLocale = useThemeLocale();
 
   return computed(() => {
-    const { ["author"]: author } = info.value;
+    const { author } = info.value;
 
     if (author) return getAuthor(author);
     if (author === false) return [];
@@ -64,11 +64,7 @@ export const useArticleTag = (info: Ref<ArticleInfoData>): TagRef => {
 export type DateRef = ComputedRef<Date | null>;
 
 export const useArticleDate = (info: Ref<ArticleInfoData>): DateRef =>
-  computed(() => {
-    const { ["date"]: timestamp } = info.value;
-
-    return getDate(timestamp);
-  });
+  computed(() => getDate(info.value.date));
 
 export const useArticleInfo = (props: {
   info: ArticleInfoData;

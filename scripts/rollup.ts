@@ -103,7 +103,7 @@ export const rollupBundle = (
           ".json": "json",
         },
       }),
-      copyOptions.length
+      copyOptions.length > 0
         ? copy({
             targets: copyOptions.map((item) =>
               typeof item === "string"

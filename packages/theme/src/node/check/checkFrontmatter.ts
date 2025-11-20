@@ -24,7 +24,7 @@ export const checkFrontmatter = (page: Page): void => {
       !(
         isString(frontmatter[key]) ||
         (isArray(frontmatter[key]) &&
-          (frontmatter[key] as unknown[]).every(isString))
+          (frontmatter[key] as unknown[]).every((value) => isString(value)))
       )
     ) {
       logger.warn(

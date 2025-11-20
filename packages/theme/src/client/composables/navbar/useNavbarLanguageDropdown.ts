@@ -26,7 +26,7 @@ export const useNavbarLanguageDropdown =
       const extraLocales = entries(theme.value.extraLocales ?? {});
 
       // Do not display language selection dropdown if there is only one language
-      if (localePaths.length < 2 && !extraLocales.length) return null;
+      if (localePaths.length < 2 && extraLocales.length === 0) return null;
 
       const { path, fullPath } = route;
       const { navbarLocales } = themeLocale.value;
@@ -43,7 +43,7 @@ export const useNavbarLanguageDropdown =
             const targetLang = targetSiteLocale.lang;
 
             const text = targetThemeLocale.navbarLocales.langName;
-            let link;
+            let link: string;
 
             // If the target language is current language
             if (targetLang === siteLocale.value.lang) {

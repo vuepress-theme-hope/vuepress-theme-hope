@@ -142,11 +142,13 @@ const atMarkerRule =
      */
     if (state.src.charAt(start) !== "@") return false;
 
-    let index;
+    let index = 0;
 
     // Check out the rest of the marker string
-    for (index = 0; index < atMarker.length; index++)
+    while (index < atMarker.length) {
       if (atMarker[index] !== state.src[start + index]) return false;
+      index++;
+    }
 
     const markup = state.src.slice(start, start + index);
     const info = state.src.slice(start + index, max);
@@ -242,16 +244,14 @@ const defaultPropsGetter = (
 
 export const playground: PluginWithOptions<PlaygroundOptions> = (
   md,
-  {
+  options,
+) => {
+  const {
     name = "playground",
     component = "Playground",
     propsGetter = defaultPropsGetter,
-  } = {
-    name: "playground",
-    component: "Playground",
-    propsGetter: defaultPropsGetter,
-  },
-) => {
+  } = options ?? {};
+
   md.block.ruler.before("fence", name, getPlaygroundRule(name), {
     alt: ["paragraph", "reference", "blockquote", "list"],
   });
@@ -291,7 +291,8 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
           if (!info) continue;
           currentKey = info;
         } else if (type === "import_open") {
-          playgroundData.importMap = currentKey = info || "import-map.json";
+          currentKey = info || "import-map.json";
+          playgroundData.importMap = currentKey;
         } else if (type === "setting_open") {
           foundSettings = true;
         } else if (

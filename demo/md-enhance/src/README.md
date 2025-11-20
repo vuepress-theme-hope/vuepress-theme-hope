@@ -16,13 +16,13 @@ actions:
 footer: MIT Licensed, Copyright © 2019-present Mr.Hope
 ---
 
-### Install
+## Install
 
 ```bash
 pnpm add -D vuepress-plugin-md-enhance
 ```
 
-### Usage
+## Usage
 
 ```ts title=".vuepress/config.ts"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";

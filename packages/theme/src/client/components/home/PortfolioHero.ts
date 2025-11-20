@@ -97,7 +97,7 @@ export default defineComponent({
               void typeNext();
             }, 150);
           } else {
-            const length = info.value.titles.length;
+            const { length } = info.value.titles;
 
             setTimeout(() => {
               index.value =
