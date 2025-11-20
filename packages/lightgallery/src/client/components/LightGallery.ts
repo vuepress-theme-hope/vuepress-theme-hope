@@ -1,6 +1,6 @@
 import type { GalleryItem } from "lightgallery/lg-utils.js";
-import lightGallery from "lightgallery/lightgallery.es5.js";
-import type { LightGallery } from "lightgallery/lightgallery.js";
+import LightGallery from "lightgallery/lightgallery.es5.js";
+import type { LightGallery as LightGalleryType } from "lightgallery/lightgallery.js";
 import type { VNode } from "vue";
 import { defineComponent, h, onUnmounted, shallowRef } from "vue";
 import { onContentUpdated } from "vuepress/client";
@@ -33,23 +33,23 @@ export default defineComponent({
 
     const container = shallowRef<HTMLElement>();
 
-    let instance: LightGallery | null = null;
+    let instance: LightGalleryType | null = null;
     let id: number;
 
     const initLightGallery = async (): Promise<void> => {
-      const timeID = (id = new Date().getTime());
+      const timeID = (id = Date.now());
 
       const lightGalleryPlugins = await useLightGalleryPlugins();
 
       if (timeID === id) {
         instance?.destroy();
 
-        const images = Array.from(
-          document.querySelectorAll<HTMLImageElement>(__LG_SELECTOR__),
-        );
+        const images = [
+          ...document.querySelectorAll<HTMLImageElement>(__LG_SELECTOR__),
+        ];
 
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        instance = new lightGallery(container.value!, {
+        instance = new LightGallery(container.value!, {
           ...lightGalleryOptions,
           dynamic: true,
           dynamicEl: getImages(images),
