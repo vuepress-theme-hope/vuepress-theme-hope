@@ -112,7 +112,7 @@ export default defineComponent({
         ?.getAttribute("src");
       const tags = props.tag ?? frontmatter.value.tag ?? frontmatter.value.tags;
       const tag = isArray(tags)
-        ? tags.filter(isString).join(",")
+        ? tags.filter((item) => isString(item)).join(",")
         : isString(tags)
           ? tags
           : null;
@@ -141,15 +141,17 @@ export default defineComponent({
       const link = getShareLink();
 
       switch (props.config.action) {
-        case "navigate":
+        case "navigate": {
           window.open(link);
           break;
+        }
 
-        case "open":
+        case "open": {
           window.open(link, "_blank");
           break;
+        }
 
-        case "qrcode":
+        case "qrcode": {
           void import(/* webpackChunkName: "qrcode" */ "qrcode")
             .then(({ toDataURL }) =>
               toDataURL(link, {
@@ -165,10 +167,12 @@ export default defineComponent({
               );
             });
           break;
+        }
 
         // "popup" shall be default action
-        default:
+        default: {
           openPopupWindow(link, "share");
+        }
       }
     };
 

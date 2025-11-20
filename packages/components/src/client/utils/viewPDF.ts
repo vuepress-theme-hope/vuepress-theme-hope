@@ -25,26 +25,13 @@ import { withBase } from "vuepress/client";
 
 declare const PDFJS_URL: string | null;
 
-export interface ViewPDFOptions {
-  /**
-   * Title of pdf
-   */
-  title?: string;
-  hint: string;
-  options: Record<string, string | number | boolean> | undefined;
-  /**
-   * Force using PDFJS
-   */
-  force?: boolean;
-}
-
 const logError = (msg: string): void => {
   // eslint-disable-next-line no-console
   console.error(`[PDF]: ${msg}`);
 };
 
 const emptyNodeContents = (node: HTMLElement): void => {
-  while (node.firstChild) node.removeChild(node.firstChild);
+  while (node.firstChild) node.firstChild.remove();
 };
 
 const getTargetElement = (
@@ -72,7 +59,7 @@ const buildURLFragmentString = (
    * The string will be empty if no PDF Params found
    * Remove last ampersand
    */
-  if (url) url = `#${url.slice(0, url.length - 1)}`;
+  if (url) url = `#${url.slice(0, -1)}`;
 
   return url;
 };
@@ -109,10 +96,24 @@ const addPDFViewer = (
   if (el instanceof HTMLIFrameElement) el.allow = "fullscreen";
 
   targetNode.classList.add("pdf-viewer-container");
-  targetNode.appendChild(el);
+  targetNode.append(el);
 
-  return targetNode.getElementsByTagName(elementType)[0];
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  return targetNode.querySelector(elementType)!;
 };
+
+export interface ViewPDFOptions {
+  /**
+   * Title of pdf
+   */
+  title?: string;
+  hint: string;
+  options: Record<string, string | number | boolean> | undefined;
+  /**
+   * Force using PDFJS
+   */
+  force?: boolean;
+}
 
 export const viewPDF = (
   url: string,
