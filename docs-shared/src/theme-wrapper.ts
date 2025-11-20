@@ -13,7 +13,7 @@ export const theme = (
   {
     base = name.replace(/\d+$/, ""),
     indexName,
-  }: { base?: string; indexName?: string },
+  }: { base?: string; indexName?: string } = {},
 ): ThemeFunction => {
   const subdomain =
     name === "theme"
