@@ -45,6 +45,8 @@ export default hopeTheme({
 
 We recommend you to omit the `.md` extension, and paths ending with `/` are inferred as `/README.md`.
 
+If you are not satisfied with the default behavior of displaying icons, we provide [related presets](../customize/presets.md#style-related) to hide them.
+
 :::
 
 ### Object Format

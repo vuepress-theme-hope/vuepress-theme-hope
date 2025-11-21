@@ -44,6 +44,8 @@ Each item of the array will be rendered as a sidebar item.
 
 You can omit the `.md` extension, and paths ending with `/` are inferred as `/README.md`.
 
+If you are not satisfied with the default behavior of displaying icons, we provide [related presets](../customize/presets.md#style-related) to hide them.
+
 :::
 
 ### Object Format

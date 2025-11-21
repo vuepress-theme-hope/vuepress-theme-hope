@@ -144,7 +144,7 @@ export default defineClientConfig({
 
 ### Running time
 
-Get the running time of the site in footer.
+Display running time of the site in footer.
 
 ```ts
 export declare const setupRunningTimeFooter: (

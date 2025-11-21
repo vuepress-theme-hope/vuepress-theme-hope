@@ -45,6 +45,8 @@ export default hopeTheme({
 
 我们推荐你省略 `.md` 扩展名，以 `/` 结尾的路径会被推断为 `/README.md`。
 
+如果你不喜欢默认显示图标的行为，我们提供了 [相关预设](../customize/presets.md#样式相关) 来隐藏它。
+
 :::
 
 ### 对象格式

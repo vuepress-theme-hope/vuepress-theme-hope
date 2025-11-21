@@ -148,7 +148,7 @@ export default defineClientConfig({
 
 ### 运行时间
 
-获取站点的运行时间。
+在页脚显示站点运行时间。
 
 ```ts
 export declare const setupRunningTimeFooter: (
@@ -308,7 +308,7 @@ export default defineClientConfig({
 
   :::
 
-- Slides:
+- 幻灯片:
 
   ```ts
   // vuepress-theme-hope/presets/getSlides.js
