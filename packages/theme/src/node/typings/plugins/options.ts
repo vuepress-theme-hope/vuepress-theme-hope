@@ -214,7 +214,7 @@ export interface ThemePluginsOptions extends DeprecatedThemePluginsOptions {
    *
    * 图标插件选项
    */
-  icon?: Omit<IconPluginOptions, "component">;
+  icon?: Omit<IconPluginOptions, "component"> | boolean;
 
   /**
    * MeiliSearch plugin options

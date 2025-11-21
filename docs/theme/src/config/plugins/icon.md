@@ -14,6 +14,8 @@ tag:
 
 The theme provides blog feature via `@vuepress/plugin-icon`. For instructions, please see [Icon Intro](../../guide/interface/icon.md).
 
+This plugin can be disabled by setting `plugins.icon` to `false`.
+
 ## Options
 
 ### plugins.icon.assets

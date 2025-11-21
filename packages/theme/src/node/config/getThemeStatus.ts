@@ -12,6 +12,7 @@ export interface ThemeStatus {
   enableBlog: boolean;
   enableCatalog: boolean;
   enableEncrypt: boolean;
+  enableIcon: boolean;
   enableReadingTime: boolean;
   blogTypes: BlogTypeInfo[];
   isI18nProject: boolean;
@@ -27,12 +28,13 @@ export const getThemeStatus = (
   const { locales: themeLocales = {}, plugins = {} } = themeOptions;
 
   return {
-    enableCatalog: plugins.catalog !== false,
     enableBlog: Boolean(plugins.blog),
+    enableCatalog: plugins.catalog !== false,
     enableEncrypt:
       isPlainObject(themeOptions.encrypt) &&
       (Boolean(themeOptions.encrypt.admin) ||
         Boolean(themeOptions.encrypt.config)),
+    enableIcon: plugins.icon !== false,
     enableReadingTime: plugins.readingTime !== false,
     blogTypes: isPlainObject(plugins.blog)
       ? (plugins.blog.type

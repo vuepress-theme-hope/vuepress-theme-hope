@@ -19,8 +19,7 @@ import { extendsBundlerOptions } from "./extendsBundlerOptions.js";
 import { addFavicon } from "./init/index.js";
 import { getPlugins, usePlugins } from "./plugins/index.js";
 import {
-  prepareBundleConfigFile,
-  prepareCustomConfigFile,
+  prepareConfigFile,
   prepareHighLighterScss,
   prepareSidebarData,
   prepareSocialMediaIcons,
@@ -184,11 +183,7 @@ export const hopeTheme = (
           .replace(TemplateRendererOutlet.Styles, styles)
           .replace(TemplateRendererOutlet.Version, version),
 
-      clientConfigFile: (app) =>
-        (behavior.custom ? prepareCustomConfigFile : prepareBundleConfigFile)(
-          app,
-          status,
-        ),
+      clientConfigFile: (app) => prepareConfigFile(app, status, behavior),
     };
   };
 };

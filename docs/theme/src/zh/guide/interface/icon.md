@@ -21,6 +21,8 @@ tag:
 - `fontawesome`
 - `iconfont`
 
+如果你不需要图标支持，可以将 `plugins.icon` 设置为 `false` 来禁用它。
+
 在使用任一类型图标时，你也可以使用任何图片链接（不支持相对链接）。
 
 要指定图标资源，请在主题选项中设置 `plugins.icon.assets`：

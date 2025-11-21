@@ -34,15 +34,11 @@ For example:
 
 ### Internal Plugins
 
-The following plugins are used internally and can not be disabled:
-
-- [@vuepress/plugin-icon][icon]: Icon support
+The following plugins are used internally with core functionality and can not be disabled:
 
 - [@vuepress/plugin-sass-palette][sass-palette]: Sass plugin for plugins and themes
 
 - [@vuepress/plugin-theme-data][theme-data]: Composition API plugin for theme data
-
-- <ProjectLink name="components">vuepress-plugin-components</ProjectLink>: Provides common components out of the box.
 
 ### Automatically Enabled Plugins
 
@@ -57,6 +53,8 @@ The following plugins are enabled by default, and you can disable them:
 - [@vuepress/plugin-copy-code][copy-code]: Provides copy button for code blocks.
 
 - [@vuepress/plugin-git][git]: Git-based info plugin
+
+- [@vuepress/plugin-icon][icon]: Icon support
 
 - [@vuepress/plugin-links-check][links-check]: check links in markdown files
 
@@ -77,6 +75,8 @@ The following plugins are enabled by default, and you can disable them:
 - [@vuepress/plugin-shiki][shiki]: Code highlighting plugin using Shiki
 
 - [@vuepress/plugin-sitemap][sitemap]: Sitemap plugin
+
+- <ProjectLink name="components">vuepress-plugin-components</ProjectLink>: Provides common components out of the box.
 
 - <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink>: Provides more Markdown syntax
 

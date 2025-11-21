@@ -34,15 +34,11 @@ tag:
 
 ### 内置插件
 
-下列插件被内部调用，不可禁用:
-
-- [@vuepress/plugin-icon][icon]: 提供图标
+下列插件在核心功能中被内部使用，且无法被禁用:
 
 - [@vuepress/plugin-sass-palette][sass-palette]: 面向插件和主题的 Sass 配置插件
 
 - [@vuepress/plugin-theme-data][theme-data]: 主题配置的 Composition API 插件
-
-- <ProjectLink name="components" path="/zh/">vuepress-plugin-components</ProjectLink>: 提供一些开箱即用的组件
 
 ### 自动启用的插件
 
@@ -57,6 +53,8 @@ tag:
 - [@vuepress/plugin-copy-code][copy-code]: 为代码块提供复制按钮。
 
 - [@vuepress/plugin-git][git]: 基于 Git 的信息插件
+
+- [@vuepress/plugin-icon][icon]: 提供图标
 
 - [@vuepress/plugin-links-check][links-check]: 检查 Markdown 链接
 
@@ -79,6 +77,8 @@ tag:
 - [@vuepress/plugin-sitemap][sitemap]: Sitemap 插件
 
 - <ProjectLink name="md-enhance" path="/zh/">vuepress-plugin-md-enhance</ProjectLink>: 提供更多 Markdown 语法
+
+- <ProjectLink name="components" path="/zh/">vuepress-plugin-components</ProjectLink>: 提供一些开箱即用的组件
 
 ### 需要手动启用的插件
 

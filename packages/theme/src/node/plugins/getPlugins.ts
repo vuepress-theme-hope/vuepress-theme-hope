@@ -65,7 +65,7 @@ export const getPlugins = (
     linksCheck,
     math,
   } = markdownOptions;
-  const { backToTop, copyCode, photoSwipe } = pluginsOptions;
+  const { backToTop, copyCode, icon, photoSwipe } = pluginsOptions;
 
   return [
     /*
@@ -114,11 +114,13 @@ export const getPlugins = (
       ? null
       : copyCodePlugin(isPlainObject(copyCode) ? copyCode : {}),
     // @vuepress/plugin-icon
-    iconPlugin({
-      ...pluginsOptions.icon,
-      // force to use VPIcon component
-      component: "VPIcon",
-    }),
+    icon !== false
+      ? iconPlugin({
+          ...(isPlainObject(icon) ? icon : {}),
+          // force to use VPIcon component
+          component: "VPIcon",
+        })
+      : null,
     // @vuepress/plugin-photo-swipe
     photoSwipe === false
       ? null

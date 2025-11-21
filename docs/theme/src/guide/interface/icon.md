@@ -21,6 +21,8 @@ We support multiple types of icons:
 - `fontawesome`
 - `iconfont`
 
+If you do not want icon support, set `plugins.icon` to `false` to disable it.
+
 When using any type of icon, you can also use any image link (relative links are NOT supported).
 
 To specify icon assets, set `plugins.icon.assets` in theme options:
