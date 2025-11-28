@@ -71,7 +71,7 @@
     "oxlint": "1.29.0",
     "oxlint-tsgolint": "0.7.1",
     "prettier": "3.6.2",
-    "rimraf": "6.1.0",
+    "rimraf": "6.1.2",
     "rollup": "4.53.3",
     "rollup-plugin-copy": "3.5.0",
     "rollup-plugin-dts": "6.2.3",
