@@ -69,7 +69,7 @@
     "nano-staged": "0.9.0",
     "ora": "9.0.0",
     "oxlint": "1.29.0",
-    "oxlint-tsgolint": "0.7.1",
+    "oxlint-tsgolint": "0.8.3",
     "prettier": "3.6.2",
     "rimraf": "6.1.0",
     "rollup": "4.53.3",
