@@ -6,6 +6,10 @@ on:
       NPM_TOKEN:
         required: true
 
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   publish:
     name: Publish packages
@@ -30,10 +34,6 @@ jobs:
 
       - name: Install deps
         run: pnpm install --frozen-lockfile
-
-      - name: Update npmrc
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
 
       - name: Publish packages
         run: pnpm publish -r --no-git-checks

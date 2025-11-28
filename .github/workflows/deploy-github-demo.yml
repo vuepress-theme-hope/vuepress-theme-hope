@@ -6,6 +6,9 @@ on:
       ACCESS_TOKEN:
         required: true
 
+permissions:
+  contents: read
+
 jobs:
   deploy-demo-to-gh-pages:
     name: Deploy demo to GitHub Pages

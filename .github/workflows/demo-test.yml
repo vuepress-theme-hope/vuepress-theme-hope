@@ -6,6 +6,10 @@ on:
       # controls whether to test demos in all environments
       strict-checking:
         type: boolean
+
+permissions:
+  contents: read
+
 jobs:
   test-demos:
     strategy:

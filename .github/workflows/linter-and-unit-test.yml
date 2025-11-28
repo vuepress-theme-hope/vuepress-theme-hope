@@ -3,6 +3,9 @@ name: Linter and Unit Test
 on:
   - workflow_call
 
+permissions:
+  contents: read
+
 jobs:
   linter-and-unit:
     name: Linter and Unit test

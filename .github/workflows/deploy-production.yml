@@ -6,6 +6,9 @@ on:
       ACCESS_TOKEN:
         required: true
 
+permissions:
+  contents: read
+
 jobs:
   deploy-netlify-docs:
     name: Deploy V2 docs to Netlify

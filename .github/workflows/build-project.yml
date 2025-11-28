@@ -3,6 +3,9 @@ name: Build Project
 on:
   workflow_call:
 
+permissions:
+  contents: read
+
 jobs:
   build-project:
     name: Build Project
