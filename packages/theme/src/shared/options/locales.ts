@@ -15,9 +15,7 @@ import type {
 } from "./layout/index.js";
 
 export interface ThemeLocaleData
-  extends AppearanceLocaleData,
-    FeatureLocaleData,
-    LayoutLocaleData {
+  extends AppearanceLocaleData, FeatureLocaleData, LayoutLocaleData {
   /**
    * Current lang code
    */
@@ -25,7 +23,8 @@ export interface ThemeLocaleData
 }
 
 export interface ThemeLocaleOptions
-  extends LocaleData,
+  extends
+    LocaleData,
     LocaleDataToOption<AppearanceLocaleData>,
     LocaleDataToOption<FeatureLocaleData>,
     FeatureLocaleOptions,
@@ -40,10 +39,7 @@ export interface ThemeLocaleOptions
 }
 
 export interface ThemeLocaleConfig
-  extends LocaleData,
-    ThemeLocaleData,
-    FeatureLocaleConfig,
-    LayoutLocaleConfig {
+  extends LocaleData, ThemeLocaleData, FeatureLocaleConfig, LayoutLocaleConfig {
   /**
    * Global default author
    *

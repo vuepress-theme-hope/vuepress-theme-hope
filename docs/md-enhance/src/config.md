@@ -289,8 +289,10 @@ Define config which you want to pass to `sandpack-vue3`.
 ### defineVuePlaygroundConfig
 
 ```ts
-export interface VuePlaygroundOptions
-  extends Omit<ReplProps, "store" | "editor"> {
+export interface VuePlaygroundOptions extends Omit<
+  ReplProps,
+  "store" | "editor"
+> {
   /**
    * Specify the version of vue
    */

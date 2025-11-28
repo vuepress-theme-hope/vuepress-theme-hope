@@ -72,9 +72,15 @@ If you can generate your chart data easily, you can just provide echarts config 
 
 ### With Scripts
 
-If you need to use script to get the data, you can use `js` or `javascript` code block.
+You should use `json` code block to provide your ECharts configuration whenever possible, however for dynamic data generation, you can also use script blocks.
 
-We will expose the echarts instance as `echarts` in the script, and you are expected to assign the echarts option object to `option` variable. Also, you can assign `width` and `height` variable to set the chart size.
+Both `js` or `javascript` code block are supported. We will expose the echarts lib as `echarts` and the instance as `myChart` in the script, and you are expected to assign the echarts option object to `option` variable. Also, you can assign `width` and `height` variable to set the chart size.
+
+::: warning
+
+For security reasons, you need to manually allow script blocks in certain files. Set `markdown.DANGEROUS_ALLOW_SCRIPT_EXECUTION: true` and `markdown.DANGEROUS_SCRIPT_EXECUTION_ALLOWLIST: ['your/file/path.md']` in theme options.
+
+:::
 
 ````md
 ::: echarts Title

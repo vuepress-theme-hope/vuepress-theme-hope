@@ -8,8 +8,7 @@ export interface DeprecatedComponentGlobalOptions {
   fontIcon?: never;
 }
 
-export interface ComponentGlobalOptions
-  extends DeprecatedComponentGlobalOptions {
+export interface ComponentGlobalOptions extends DeprecatedComponentGlobalOptions {
   /**
    * ArtPlayer config
    *

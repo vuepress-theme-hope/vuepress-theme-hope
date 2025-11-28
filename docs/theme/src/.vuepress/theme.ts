@@ -201,6 +201,12 @@ export default theme(
       },
       sandpack: true,
       vuePlayground: true,
+
+      DANGEROUS_ALLOW_SCRIPT_EXECUTION: true,
+      DANGEROUS_SCRIPT_EXECUTION_ALLOWLIST: [
+        "guide/markdown/chart/echarts.md",
+        "zh/guide/markdown/chart/echarts.md",
+      ],
     },
 
     plugins: {

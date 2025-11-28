@@ -173,8 +173,10 @@ tag:
     mhchem?: boolean;
   }
 
-  interface MarkdownMathjaxPluginOptions
-    extends Omit<MarkdownItMathjaxOptions, "transformer"> {
+  interface MarkdownMathjaxPluginOptions extends Omit<
+    MarkdownItMathjaxOptions,
+    "transformer"
+  > {
     type?: "mathjax";
 
     /**

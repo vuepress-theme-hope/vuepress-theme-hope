@@ -14,8 +14,8 @@ export const deepAssign = <
   TargetObject extends IAnyObject,
   MergedObject extends IAnyObject = TargetObject,
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-parameters
-  FinalObject extends Partial<TargetObject> &
-    Partial<MergedObject> = TargetObject & MergedObject,
+  FinalObject extends Partial<TargetObject> & Partial<MergedObject> =
+    TargetObject & MergedObject,
 >(
   originObject: TargetObject,
   ...overrideObjects: (MergedObject | null | undefined)[]

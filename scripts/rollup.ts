@@ -87,11 +87,7 @@ export const rollupBundle = (
             ...replaceOptions,
           })
         : null,
-      entries
-        ? alias({
-            entries,
-          })
-        : null,
+      entries ? alias({ entries }) : null,
       preserveShebang ? shebang() : null,
       ...(resolve ? [nodeResolve({ preferBuiltins: true }), commonjs()] : []),
       esbuild({

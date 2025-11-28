@@ -217,8 +217,7 @@ export interface ThemeProjectHomeFeatureOptions {
   features: ThemeProjectHomeFeatureItem[];
 }
 
-export interface ThemeProjectHomePageFrontmatter
-  extends ThemeHomePageFrontmatter {
+export interface ThemeProjectHomePageFrontmatter extends ThemeHomePageFrontmatter {
   actions?: ThemeProjectHomeActionOptions[];
   features?: ThemeProjectHomeFeatureItem[];
   highlights?: (

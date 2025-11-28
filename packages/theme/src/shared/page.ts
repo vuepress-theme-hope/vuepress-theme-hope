@@ -4,7 +4,8 @@ import type { ReadingTimePluginPageData } from "@vuepress/plugin-reading-time";
 import type { SeoPluginPageData } from "@vuepress/plugin-seo";
 
 export interface ThemePageData
-  extends BlogPluginPageData,
+  extends
+    BlogPluginPageData,
     Partial<GitPluginPageData>,
     Partial<ReadingTimePluginPageData>,
     Partial<SeoPluginPageData> {

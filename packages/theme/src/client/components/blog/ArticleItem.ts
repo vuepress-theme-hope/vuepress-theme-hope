@@ -14,7 +14,7 @@ import type {
   ArticleTitleSlotData,
 } from "@theme-hope/typings/slots";
 
-import type { ArticleInfoData, PageInfoData } from "../../../shared/index.js";
+import type { ArticleInfoData } from "../../../shared/index.js";
 
 import "../../styles/blog/article-item.scss";
 
@@ -28,7 +28,7 @@ export default defineComponent({
      * 文章信息
      */
     info: {
-      type: Object as PropType<PageInfoData & ArticleInfoData>,
+      type: Object as PropType<ArticleInfoData>,
       required: true,
     },
 

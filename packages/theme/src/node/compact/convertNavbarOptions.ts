@@ -44,8 +44,7 @@ const handleNavbarOptions = (
       return null;
     })
     .filter(
-      (item): item is NavbarLinkOptions | NavbarGroupOptions | string =>
-        item !== null,
+      (item): item is NavbarLinkOptions | NavbarGroupOptions => item !== null,
     );
 
 /**

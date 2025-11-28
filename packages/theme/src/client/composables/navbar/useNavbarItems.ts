@@ -17,7 +17,7 @@ import type {
 } from "../../../shared/index.js";
 
 export const resolveNavbarItem = (
-  item: NavbarLinkOptions | NavbarGroupOptions | string,
+  item: NavbarLinkOptions | NavbarGroupOptions,
   prefix = "",
 ): NavbarItem => {
   if (isString(item)) return resolveLinkInfo(resolvePrefix(prefix, item));

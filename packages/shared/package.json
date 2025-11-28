@@ -62,7 +62,7 @@
     "vuepress": "catalog:vuepress"
   },
   "engines": {
-    "node": ">= 20.9.0",
+    "node": ">= 20.19.0",
     "npm": ">=8",
     "pnpm": ">=7",
     "yarn": ">=2"

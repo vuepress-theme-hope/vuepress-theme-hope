@@ -122,7 +122,7 @@
     "@vueuse/core": "catalog:range",
     "balloon-css": "catalog:range",
     "bcrypt-ts": "^7.1.0",
-    "chokidar": "^4.0.3",
+    "chokidar": "^5.0.0",
     "vue": "catalog:range",
     "vuepress-plugin-components": "workspace:*",
     "vuepress-plugin-md-enhance": "workspace:*",
@@ -143,7 +143,6 @@
     "@vuepress/plugin-slimsearch": "catalog:vuepress",
     "@vuepress/plugin-watermark": "catalog:vuepress",
     "@vuepress/shiki-twoslash": "catalog:vuepress",
-    "nodejs-jieba": "^0.2.1 || ^0.3.0",
     "sass": "catalog:range",
     "sass-embedded": "catalog:range",
     "sass-loader": "catalog:range",
@@ -180,9 +179,6 @@
     "@vuepress/shiki-twoslash": {
       "optional": true
     },
-    "nodejs-jieba": {
-      "optional": true
-    },
     "sass": {
       "optional": true
     },
@@ -194,7 +190,7 @@
     }
   },
   "engines": {
-    "node": ">= 20.9.0",
+    "node": ">= 20.19.0",
     "npm": ">=8",
     "pnpm": ">=7",
     "yarn": ">=2"

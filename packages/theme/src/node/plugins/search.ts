@@ -25,7 +25,6 @@ let meilisearchPlugin: ((options: MeiliSearchPluginOptions) => Plugin) | null =
 let searchPlugin: ((options: SearchPluginOptions) => Plugin) | null = null;
 let slimsearchPlugin: ((options: SlimSearchPluginOptions) => Plugin) | null =
   null;
-let cut: ((content: string, strict?: boolean) => string[]) | null = null;
 
 try {
   ({ docsearchPlugin } = await import("@vuepress/plugin-docsearch"));
@@ -47,7 +46,6 @@ try {
 
 try {
   ({ slimsearchPlugin } = await import("@vuepress/plugin-slimsearch"));
-  ({ cut } = await import("nodejs-jieba"));
 } catch {
   // Do nothing
 }
@@ -65,7 +63,6 @@ export const getSearchPlugin = (
   const encryptedPaths = keys(themeData.encrypt.config ?? {});
   const isPageEncrypted = ({ path }: Page): boolean =>
     encryptedPaths.some((key) => startsWith(decodeURI(path), key));
-  const { locales } = app.options;
 
   if (isPlainObject(plugins.docsearch)) {
     if (!docsearchPlugin) {
@@ -93,9 +90,6 @@ export const getSearchPlugin = (
 
       return null;
     }
-
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-    const rootLang = app.siteData.locales["/"]?.lang ?? app.siteData.lang;
 
     return slimsearchPlugin({
       indexContent: true,
@@ -127,26 +121,6 @@ export const getSearchPlugin = (
         },
       ],
       filter: (page) => !isPageEncrypted(page),
-      ...(cut
-        ? {
-            // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-            indexLocaleOptions: locales["/zh/"]
-              ? {
-                  "/zh/": {
-                    tokenize: (text, fieldName) =>
-                      fieldName === "id" ? [text] : cut(text, true),
-                  },
-                }
-              : rootLang.startsWith("zh")
-                ? {
-                    "/": {
-                      tokenize: (text, fieldName) =>
-                        fieldName === "id" ? [text] : cut(text, true),
-                    },
-                  }
-                : {},
-          }
-        : {}),
       ...(isPlainObject(plugins.slimsearch) ? plugins.slimsearch : {}),
     });
   }

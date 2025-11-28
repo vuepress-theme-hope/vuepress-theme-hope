@@ -99,9 +99,8 @@ export default defineComponent({
     onMounted(async () => {
       if (__VUEPRESS_SSR__) return;
 
-      const { VidstackPlayer, VidstackPlayerLayout } = await import(
-        "vidstack/global/player"
-      );
+      const { VidstackPlayer, VidstackPlayerLayout } =
+        await import("vidstack/global/player");
 
       const options: VidstackPlayerConfig = {
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion

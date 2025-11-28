@@ -61,8 +61,8 @@ If your site has a lot of articles, you may consider this option to reduce feed 
   ({ frontmatter, filePathRelative }) =>
     Boolean(
       frontmatter.feed ??
-        frontmatter.article ??
-        (filePathRelative && !frontmatter.home),
+      frontmatter.article ??
+      (filePathRelative && !frontmatter.home),
     );
   ```
 

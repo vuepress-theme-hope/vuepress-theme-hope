@@ -18,22 +18,22 @@ export interface Data<
   PageFrontmatter extends Record<string, unknown> = ThemeNormalPageFrontmatter,
   PageData extends Record<string, unknown> = ThemePageData,
 > extends Pick<
-    ClientData<PageFrontmatter, PageData>,
-    | "frontmatter"
-    | "head"
-    | "headTitle"
-    | "lang"
-    | "layouts"
-    | "page"
-    | "pageComponent"
-    | "pageLayout"
-    | "redirects"
-    | "routeLocale"
-    | "routePath"
-    | "routes"
-    | "site"
-    | "siteLocale"
-  > {
+  ClientData<PageFrontmatter, PageData>,
+  | "frontmatter"
+  | "head"
+  | "headTitle"
+  | "lang"
+  | "layouts"
+  | "page"
+  | "pageComponent"
+  | "pageLayout"
+  | "redirects"
+  | "routeLocale"
+  | "routePath"
+  | "routes"
+  | "site"
+  | "siteLocale"
+> {
   theme: ThemeDataRef<ThemeData>;
   themeLocale: ThemeLocaleDataRef<ThemeLocaleConfig>;
 }

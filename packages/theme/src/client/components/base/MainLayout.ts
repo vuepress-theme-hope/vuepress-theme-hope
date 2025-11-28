@@ -115,8 +115,8 @@ export default defineComponent({
 
       return Boolean(
         themeLocale.value.logo ??
-          themeLocale.value.repo ??
-          themeLocale.value.navbar,
+        themeLocale.value.repo ??
+        themeLocale.value.navbar,
       );
     });
 

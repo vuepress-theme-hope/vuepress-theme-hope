@@ -65,7 +65,7 @@ const handleArraySidebarOptions = (
 export const convertSidebarOptions = (
   config: unknown,
   localePath = "",
-): SidebarOptions | false => {
+): SidebarOptions => {
   if (config === false || config === "structure") return config;
 
   if (isArray(config))

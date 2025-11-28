@@ -12,7 +12,7 @@ category:
 
 | Environment | Version Requirement | Ways to Check Version | Additional Requirement                        |
 | ----------- | ------------------- | --------------------- | --------------------------------------------- |
-| Node.js     | `>= 20.9.0`         | `node -v`             |                                               |
+| Node.js     | `>= 20.19.0`        | `node -v`             |                                               |
 | pnpm        | `>= 7`              | `pnpm -v`             |                                               |
 | npm         | `>= 8`              | `npm -v`              |                                               |
 | yarn        | `>= 2`              | `yarn -v`             | `nodeLinker: 'node-modules'` in `.yarnrc.yml` |

@@ -6,7 +6,7 @@ const __dirname = getDirname(import.meta.url);
 
 export default [
   ...rollupBundle("node/index", {
-    external: ["bcrypt-ts/node", "chokidar", "nodejs-jieba", "vuepress-shared"],
+    external: ["bcrypt-ts/node", "chokidar", "vuepress-shared"],
     moduleSideEffects: () => false,
   }),
   ...rollupBundle(

@@ -17,7 +17,8 @@ export type MarkdownHighlighterOptions =
   | ({ type: "shiki" } & ShikiPluginOptions);
 
 export interface ThemeMarkdownOptions
-  extends MarkdownChartPluginOptions,
+  extends
+    MarkdownChartPluginOptions,
     MarkdownExtPluginOptions,
     Pick<MarkdownHintPluginOptions, "alert" | "hint">,
     Pick<MarkdownImagePluginOptions, "figure">,

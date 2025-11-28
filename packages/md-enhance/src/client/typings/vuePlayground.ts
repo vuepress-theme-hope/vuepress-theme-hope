@@ -9,8 +9,10 @@ import type { ReplProps } from "@vue/repl";
  *
  * @description Vue playground 使用 [`@vue/repl`](https://github.com/vuejs/repl)
  */
-export interface VuePlaygroundOptions
-  extends Omit<ReplProps, "store" | "editor"> {
+export interface VuePlaygroundOptions extends Omit<
+  ReplProps,
+  "store" | "editor"
+> {
   /**
    * Specify the version of vue
    *

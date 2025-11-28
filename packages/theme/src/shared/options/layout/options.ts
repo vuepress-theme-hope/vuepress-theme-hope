@@ -34,7 +34,8 @@ export interface DeprecatedLayoutOptions {
 }
 
 export interface LayoutLocaleOptions
-  extends NavbarLocaleOptions,
+  extends
+    NavbarLocaleOptions,
     SidebarLocaleOptions,
     DocsRepoLocaleOptions,
     MetaLocaleOptions,

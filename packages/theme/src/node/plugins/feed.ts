@@ -53,8 +53,8 @@ export const getFeedPlugin = (
     filter: ({ frontmatter, filePathRelative }) =>
       Boolean(
         frontmatter.feed ??
-          frontmatter.article ??
-          (filePathRelative && !frontmatter.home),
+        frontmatter.article ??
+        (filePathRelative && !frontmatter.home),
       ),
     channel: {
       icon: favicon,

@@ -70,9 +70,15 @@ export default hopeTheme({
 
 ### 使用脚本
 
-如果你需要通过脚本来获取数据，你可以使用 `js` 和 `javascript` 的代码块。
+你应该尽可能使用 `json` 代码块来提供你的 ECharts 配置，但如果需要动态生成数据，你也可以使用脚本块。
 
-我们将通过 `echarts` 变量暴露 ECharts 实例，并且你应该将 Echart 配置赋值给 `option` 变量。同时，你也可以赋值 `width` 和 `height` 来设置图表大小。
+`js` 或 `javascript` 代码块均受支持。在脚本中，我们会将 echarts 库作为 `echarts`，实例作为 `myChart` 暴露给你，你需要将 echarts 配置对象赋值给 `option` 变量。同时，你也可以通过设置 `width` 和 `height` 变量来设置图表大小。
+
+::: warning
+
+出于安全考虑，你需要手动允许特定文件中的脚本块。请在主题选项中设置 `markdown.DANGEROUS_ALLOW_SCRIPT_EXECUTION: true` 和 `markdown.DANGEROUS_SCRIPT_EXECUTION_ALLOWLIST: ['your/file/path.md']`。
+
+:::
 
 ````md
 ::: echarts Title

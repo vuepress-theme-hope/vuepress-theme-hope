@@ -179,8 +179,7 @@ export interface DeprecatedMarkdownEnhancePluginOptions {
 /**
  * md-enhance plugin configuration
  */
-export interface MarkdownEnhancePluginOptions
-  extends DeprecatedMarkdownEnhancePluginOptions {
+export interface MarkdownEnhancePluginOptions extends DeprecatedMarkdownEnhancePluginOptions {
   /**
    * Whether to enable code-demo support
    *

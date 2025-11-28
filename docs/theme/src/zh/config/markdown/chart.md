@@ -66,3 +66,14 @@ tag:
   - [Markdown → PlantUML](../../guide/markdown/chart/plantuml.md)
 
 是否启用 [plantuml](https://plantuml.com/zh/) 支持。
+
+## markdown.DANGEROUS_ALLOW_SCRIPT_EXECUTION
+
+- 类型：`boolean`
+- 详情：是否允许在图表中执行脚本。这可能会带来安全风险，请谨慎使用。
+
+## markdown.DANGEROUS_SCRIPT_EXECUTION_ALLOWLIST
+
+- 类型：`string[] | '*'`
+- 默认：`[]`
+- 详情：当启用脚本执行时，允许执行图表脚本的文件路径列表。使用 `'*'` 允许所有文件。

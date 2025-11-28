@@ -11,7 +11,8 @@ import type {
 } from "../../shared/index.js";
 
 export interface ThemeOptions
-  extends CommonThemeData<ThemeLocaleOptions>,
+  extends
+    CommonThemeData<ThemeLocaleOptions>,
     AppearanceOptions,
     FeatureOptions,
     InfoOptions,

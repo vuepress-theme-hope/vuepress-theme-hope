@@ -66,3 +66,16 @@ Whether to enable [Mermaid](https://mermaid.js.org/) support.
   - [Markdown → PlantUML](../../guide/markdown/chart/plantuml.md)
 
 Whether to enable [plantuml](https://plantuml.com/) support.
+
+## markdown.DANGEROUS_ALLOW_SCRIPT_EXECUTION
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to allow script execution in charts.
+
+## markdown.DANGEROUS_SCRIPT_EXECUTION_ALLOWLIST
+
+- Type: `string[] | '*'`
+- Default: `[]`
+- Details: Only effective when `DANGEROUS_ALLOW_SCRIPT_EXECUTION` is enabled. A list of file paths allowed to execute chart scripts. Use `'*'` to allow all files.
