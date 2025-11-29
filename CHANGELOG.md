@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.99](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.98...v2.0.0-rc.99) (2025-11-29)
+
+### ✨ Features
+
+- support new plugins ([7d39006](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7d39006fe4c900458a7deba9b4baff7f71a9bf9f))
+- **theme:** make components and icon plugins optional ([b3c0302](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b3c0302b1a609e3b8b4a73af25a090a4fd86858a))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.98](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.97...v2.0.0-rc.98) (2025-10-31)
 
 ### 🐛 Bug Fixes
