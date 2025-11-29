@@ -212,8 +212,8 @@ importers:
         specifier: 4.9.4
         version: 4.9.4(@types/node@24.10.1)(conventional-commits-filter@5.0.0)
       '@prettier/plugin-oxc':
-        specifier: 0.1.1
-        version: 0.1.1
+        specifier: 0.1.2
+        version: 0.1.2
       '@rollup/plugin-alias':
         specifier: 6.0.0
         version: 6.0.0(rollup@4.53.3)
@@ -3301,8 +3301,8 @@ packages:
     resolution: {integrity: sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
-  '@prettier/plugin-oxc@0.1.1':
-    resolution: {integrity: sha512-gXqHoTpdHOE0WcbE25gDrBVJ09uGb+u29q73HoyA/o05SxCBT0XtTxocOzVTMo+vCBsXt74yf3XNSzeczbfiVQ==}
+  '@prettier/plugin-oxc@0.1.2':
+    resolution: {integrity: sha512-tlaxCcK3j+v/BK/ovjaNgcO2AWnLlEUDd3iSfwOvvlxBJq4xcbj4oV2uoSj+ybF9ZgxRPZrrgyDx2Eq+2hdXkw==}
     engines: {node: '>=14'}
 
   '@rolldown/pluginutils@1.0.0-beta.50':
@@ -12858,7 +12858,7 @@ snapshots:
 
   '@pkgr/core@0.2.9': {}
 
-  '@prettier/plugin-oxc@0.1.1':
+  '@prettier/plugin-oxc@0.1.2':
     dependencies:
       oxc-parser: 0.99.0
 
