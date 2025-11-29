@@ -23,7 +23,7 @@ jobs:
     if: inputs.strict-checking == false
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Restore Build Result
         uses: actions/download-artifact@v6
@@ -54,7 +54,7 @@ jobs:
     if: inputs.strict-checking == true
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -100,7 +100,7 @@ jobs:
     if: inputs.strict-checking == true
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Restore Build Result
         uses: actions/download-artifact@v6
