@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@mathjax/src": "catalog:",
-    "@vue/repl": "4.7.0",
+    "@vue/repl": "4.7.1",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/helper": "catalog:vuepress",
