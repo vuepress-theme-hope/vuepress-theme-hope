@@ -121,7 +121,7 @@
     "@vuepress/plugin-theme-data": "catalog:vuepress",
     "@vueuse/core": "catalog:range",
     "balloon-css": "catalog:range",
-    "bcrypt-ts": "^7.1.0",
+    "bcrypt-ts": "^8.0.0",
     "chokidar": "^5.0.0",
     "vue": "catalog:range",
     "vuepress-plugin-components": "workspace:*",
