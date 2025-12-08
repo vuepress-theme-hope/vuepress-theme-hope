@@ -1189,8 +1189,8 @@ importers:
         specifier: catalog:range
         version: 1.2.0
       bcrypt-ts:
-        specifier: ^7.1.0
-        version: 7.1.0
+        specifier: ^8.0.0
+        version: 8.0.0
       chokidar:
         specifier: ^5.0.0
         version: 5.0.0
@@ -4850,8 +4850,8 @@ packages:
   bcp-47@1.0.8:
     resolution: {integrity: sha512-Y9y1QNBBtYtv7hcmoX0tR+tUNSFZGZ6OL6vKPObq8BbOhkCoyayF6ogfLTgAli/KuAEbsYHYUNq2AQuY6IuLag==}
 
-  bcrypt-ts@7.1.0:
-    resolution: {integrity: sha512-t/Dqr9YzYmn/+oPQBgotBPUuezpZD5CPBwapM5Ep1p3zsLmEycMdXOfZpWbztSBWJ41DlB7EluJBUDsAGSiUeQ==}
+  bcrypt-ts@8.0.0:
+    resolution: {integrity: sha512-v4X8KKKQfBQY5XHxrErsImUtDDGt53N6nKHgK9M72EN3GgJfxUimKCOGV9FTOPxVZzUdcyJEnmnpWMs3MgZq3w==}
     engines: {node: '>=20'}
 
   before-after-hook@4.0.0:
@@ -14877,7 +14877,7 @@ snapshots:
       is-alphanumerical: 1.0.4
       is-decimal: 1.0.4
 
-  bcrypt-ts@7.1.0: {}
+  bcrypt-ts@8.0.0: {}
 
   before-after-hook@4.0.0: {}
 
