@@ -6,6 +6,13 @@ category:
   - 案例
 
 docs:
+  - name: FortiGate中文一本通
+    desc: 面向 FortiGate 的系统化中文手册
+    logo: https://handbook.fortinet.com.cn/images/fortinet-logo.svg
+    url: https://handbook.fortinet.com.cn/
+    repo: https://github.com/Cyndice/fortigate_docs_fortios7_vue
+    preview: /images/preview.png
+    
   - name: Fast Request
     desc: 为简化调试API而生
     logo: https://api-buddy.cn/img/fastRequest.svg
