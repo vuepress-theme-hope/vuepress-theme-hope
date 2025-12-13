@@ -593,8 +593,8 @@ importers:
   docs-shared:
     dependencies:
       '@types/three':
-        specifier: 0.181.0
-        version: 0.181.0
+        specifier: 0.182.0
+        version: 0.182.0
       '@vuepress/bundler-vite':
         specifier: catalog:vuepress
         version: 2.0.0-rc.26(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.93.3)(sass@1.94.2)(terser@5.44.1)(tsx@4.20.6)(typescript@5.9.3)(yaml@2.8.1)
@@ -611,8 +611,8 @@ importers:
         specifier: 'catalog:'
         version: 14.1.0(vue@3.5.25(typescript@5.9.3))
       three:
-        specifier: 0.181.2
-        version: 0.181.2
+        specifier: 0.182.0
+        version: 0.182.0
       vue:
         specifier: 'catalog:'
         version: 3.5.25(typescript@5.9.3)
@@ -3882,8 +3882,8 @@ packages:
   '@types/stats.js@0.17.4':
     resolution: {integrity: sha512-jIBvWWShCvlBqBNIZt0KAshWpvSjhkwkEu4ZUcASoAvhmrgAUI2t1dXrjSL4xXVLB4FznPrIsX3nKXFl/Dt4vA==}
 
-  '@types/three@0.181.0':
-    resolution: {integrity: sha512-MLF1ks8yRM2k71D7RprFpDb9DOX0p22DbdPqT/uAkc6AtQXjxWCVDjCy23G9t1o8HcQPk7woD2NIyiaWcWPYmA==}
+  '@types/three@0.182.0':
+    resolution: {integrity: sha512-WByN9V3Sbwbe2OkWuSGyoqQO8Du6yhYaXtXLoA5FkKTUJorZ+yOHBZ35zUUPQXlAKABZmbYp5oAqpA4RBjtJ/Q==}
 
   '@types/trusted-types@2.0.7':
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
@@ -9613,8 +9613,8 @@ packages:
     peerDependencies:
       tslib: ^2
 
-  three@0.181.2:
-    resolution: {integrity: sha512-k/CjiZ80bYss6Qs7/ex1TBlPD11whT9oKfT8oTGiHa34W4JRd1NiH/Tr1DbHWQ2/vMUypxksLnF2CfmlmM5XFQ==}
+  three@0.182.0:
+    resolution: {integrity: sha512-GbHabT+Irv+ihI1/f5kIIsZ+Ef9Sl5A1Y7imvS5RQjWgtTPfPnZ43JmlYI7NtCRDK9zir20lQpfg8/9Yd02OvQ==}
 
   throttleit@2.1.0:
     resolution: {integrity: sha512-nt6AMGKW1p/70DF/hGBdJB57B8Tspmbp5gfJ8ilhLnt7kkr2ye7hzD6NVG8GGErk2HWF34igrL2CXmNIkzKqKw==}
@@ -13488,7 +13488,7 @@ snapshots:
 
   '@types/stats.js@0.17.4': {}
 
-  '@types/three@0.181.0':
+  '@types/three@0.182.0':
     dependencies:
       '@dimforge/rapier3d-compat': 0.12.0
       '@tweenjs/tween.js': 23.1.3
@@ -20273,7 +20273,7 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  three@0.181.2: {}
+  three@0.182.0: {}
 
   throttleit@2.1.0: {}
 
