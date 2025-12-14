@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@types/katex": "0.16.7",
-    "@vue/repl": "4.7.0",
+    "@vue/repl": "4.7.1",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/highlighter-helper": "catalog:vuepress",
@@ -34,7 +34,7 @@
     "docs-shared": "workspace:*",
     "echarts-wordcloud": "2.1.0",
     "flowchart.ts": "3.0.1",
-    "katex": "0.16.25",
+    "katex": "0.16.27",
     "kotlin-playground": "1.30.0",
     "markmap-lib": "catalog:",
     "markmap-toolbar": "catalog:",

@@ -1,7 +1,7 @@
 declare module "artplayer-plugin-danmuku" {
   import type Artplayer from "artplayer";
 
-  export interface Danmu {
+  interface Danmu {
     /**
      * 弹幕文本
      */
@@ -32,7 +32,7 @@ declare module "artplayer-plugin-danmuku" {
     border?: boolean;
   }
 
-  export interface ArtPlayerDanmukuOptions {
+  interface ArtPlayerDanmukuOptions {
     /**
      * 弹幕源，可以是弹幕数组，xml 地址或者一个返回 Promise 的函数
      */
@@ -124,7 +124,7 @@ declare module "artplayer-plugin-danmuku" {
     beforeEmit?: (danmu: Danmu) => boolean;
   }
 
-  export interface ArtPlayerDanmukuPlugin {
+  interface ArtPlayerDanmukuPlugin {
     name: "artplayerPluginDanmuku";
 
     /**

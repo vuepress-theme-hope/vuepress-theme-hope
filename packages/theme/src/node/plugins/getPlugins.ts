@@ -114,13 +114,13 @@ export const getPlugins = (
       ? null
       : copyCodePlugin(isPlainObject(copyCode) ? copyCode : {}),
     // @vuepress/plugin-icon
-    icon !== false
-      ? iconPlugin({
+    icon === false
+      ? false
+      : iconPlugin({
           ...(isPlainObject(icon) ? icon : {}),
           // force to use VPIcon component
           component: "VPIcon",
-        })
-      : null,
+        }),
     // @vuepress/plugin-photo-swipe
     photoSwipe === false
       ? null
