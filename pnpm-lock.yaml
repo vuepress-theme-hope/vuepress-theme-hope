@@ -281,7 +281,7 @@ importers:
         specifier: 0.9.0
         version: 0.9.0
       npm-check-updates:
-        specifier: ^19.2.0
+        specifier: 19.2.0
         version: 19.2.0
       ora:
         specifier: 9.0.0
