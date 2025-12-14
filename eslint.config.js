@@ -146,7 +146,7 @@ export default hope(
   },
 
   {
-    files: ["scripts/**.ts", "**/gulpfile.js"],
+    files: ["scripts/**.ts", "**/gulpfile.js", ".ncurc.cjs"],
     languageOptions: {
       globals: globals.node,
     },

@@ -58,8 +58,6 @@ export default {
     MD046: false,
     MD049: false,
     MD059: false,
-    // See https://github.com/DavidAnson/markdownlint/issues/1869
-    MD060: false,
   },
   ignores: [
     "**/node_modules/**",

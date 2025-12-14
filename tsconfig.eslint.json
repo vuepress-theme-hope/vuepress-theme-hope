@@ -14,6 +14,7 @@
     "**/*.vue",
     "**/.vuepress/**/*.ts",
     "**/.vuepress/**/*.vue",
+    ".ncurc.cjs",
     ".markdownlint-cli2.mjs"
   ]
 }

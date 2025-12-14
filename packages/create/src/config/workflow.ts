@@ -66,13 +66,13 @@ ${
           NODE_OPTIONS: --max_old_space_size=8192
         run: |-
           ${packageManager} run docs:build
-          > ${join(dir, ".vuepress/dist/.nojekyll").replaceAll("\\\\", "/")}
+          > ${join(dir, ".vuepress/dist/.nojekyll").replaceAll(String.raw`\\`, "/")}
 
       - name: ${workflow.deploy}
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           # ${workflow.deploy}
           branch: gh-pages
-          folder: ${join(dir, ".vuepress/dist").replaceAll("\\\\", "/")}
+          folder: ${join(dir, ".vuepress/dist").replaceAll(String.raw`\\`, "/")}
 `;
 };

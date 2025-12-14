@@ -152,5 +152,10 @@
   },
   "prettier.prettierPath": "./node_modules/prettier",
   "stylelint.validate": ["css", "scss"],
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/raineorshine/npm-check-updates/main/src/types/RunOptions.json": [
+      ".ncurc.yml"
+    ]
+  }
 }
