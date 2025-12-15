@@ -13,8 +13,6 @@ jobs:
   deploy-demo-to-gh-pages:
     name: Deploy demo to GitHub Pages
     runs-on: ubuntu-latest
-    # only deploy in main repo
-    if: github.repository == 'vuepress-theme-hope/vuepress-theme-hope'
     strategy:
       fail-fast: false
       matrix:
@@ -24,6 +22,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          persist-credentials: false
 
       - name: Restore Build Result
         uses: actions/download-artifact@v7

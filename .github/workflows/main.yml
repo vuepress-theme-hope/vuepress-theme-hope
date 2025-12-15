@@ -21,8 +21,8 @@ jobs:
       - build-project
     uses: ./.github/workflows/demo-test.yml
     with:
-      # Check demos in all environments when pull request is made to main or work branch
-      strict-checking: ${{ github.base_ref == 'main' || github.base_ref == 'work' }}
+      # Check demos in all environments when pull request is made to main branch
+      strict-checking: ${{ github.base_ref == 'main' }}
 
   linter-and-unit:
     needs:
@@ -31,8 +31,8 @@ jobs:
 
   deploy-github-demo:
     name: Deploy GitHub Demo
-    # Only triggered on main or work branch
-    if: github.ref_name == 'main' || github.ref_name == 'work'
+    # Only triggered in main repo with main branch
+    if: github.repository == 'vuepress-theme-hope/vuepress-theme-hope' && github.ref_name == 'main'
     needs:
       - build-project
       - test-demos
@@ -43,8 +43,8 @@ jobs:
 
   deploy-github-docs:
     name: Deploy GitHub Docs
-    # Only triggered on main or work branch
-    if: github.ref_name == 'main' || github.ref_name == 'work'
+    # Only triggered in main repo with main branch
+    if: github.repository == 'vuepress-theme-hope/vuepress-theme-hope' && github.ref_name == 'main'
     needs:
       - build-project
       - test-demos
