@@ -325,6 +325,13 @@ docs:
     repo: https://github.com/TASA-Ed/MakerFrameDocs
     preview: /assets/image/docs-makerf.png
 
+  - name: FortiGate中文一本通
+    desc: 面向 FortiGate 的系统化中文手册
+    logo: https://handbook.fortinet.com.cn/images/fortinet-logo.svg
+    url: https://handbook.fortinet.com.cn/
+    repo: https://github.com/Cyndice/fortigate_docs_fortios7_vue
+    preview: /images/preview.png
+
 portfolios:
   - name: 尚程
     url: https://cheng-shang.me/zh/
