@@ -5,7 +5,7 @@ packages:
   - packages/*
 
 catalog:
-  "@mathjax/src": 4.0.0
+  "@mathjax/src": 4.1.0
   "@vueuse/core": 14.1.0
   markmap-lib: 0.18.12
   markmap-toolbar: 0.18.12

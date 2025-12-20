@@ -7,8 +7,8 @@ settings:
 catalogs:
   default:
     '@mathjax/src':
-      specifier: 4.0.0
-      version: 4.0.0
+      specifier: 4.1.0
+      version: 4.1.0
     '@vueuse/core':
       specifier: 14.1.0
       version: 14.1.0
@@ -423,7 +423,7 @@ importers:
     devDependencies:
       '@mathjax/src':
         specifier: 'catalog:'
-        version: 4.0.0
+        version: 4.1.0
       '@vue/repl':
         specifier: 4.7.1
         version: 4.7.1
@@ -468,7 +468,7 @@ importers:
     devDependencies:
       '@mathjax/src':
         specifier: 'catalog:'
-        version: 4.0.0
+        version: 4.1.0
       '@vue/repl':
         specifier: 4.7.1
         version: 4.7.1
@@ -540,7 +540,7 @@ importers:
     devDependencies:
       '@mathjax/src':
         specifier: 'catalog:'
-        version: 4.0.0
+        version: 4.1.0
       '@vue/repl':
         specifier: 4.7.1
         version: 4.7.1
@@ -1127,7 +1127,7 @@ importers:
         version: 2.0.0-rc.121(markdown-it@14.1.0)(typescript@5.9.3)(vuepress@2.0.0-rc.26(@vuepress/bundler-vite@2.0.0-rc.26(@types/node@25.0.2)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.96.0)(sass@1.96.0)(terser@5.44.1)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))(@vuepress/bundler-webpack@2.0.0-rc.26(esbuild@0.27.1)(typescript@5.9.3))(typescript@5.9.3)(vue@3.5.25(typescript@5.9.3)))
       '@vuepress/plugin-markdown-math':
         specifier: catalog:vuepress
-        version: 2.0.0-rc.121(@mathjax/src@4.0.0)(katex@0.16.27)(markdown-it@14.1.0)(typescript@5.9.3)(vuepress@2.0.0-rc.26(@vuepress/bundler-vite@2.0.0-rc.26(@types/node@25.0.2)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.96.0)(sass@1.96.0)(terser@5.44.1)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))(@vuepress/bundler-webpack@2.0.0-rc.26(esbuild@0.27.1)(typescript@5.9.3))(typescript@5.9.3)(vue@3.5.25(typescript@5.9.3)))
+        version: 2.0.0-rc.121(@mathjax/src@4.1.0)(katex@0.16.27)(markdown-it@14.1.0)(typescript@5.9.3)(vuepress@2.0.0-rc.26(@vuepress/bundler-vite@2.0.0-rc.26(@types/node@25.0.2)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.96.0)(sass@1.96.0)(terser@5.44.1)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))(@vuepress/bundler-webpack@2.0.0-rc.26(esbuild@0.27.1)(typescript@5.9.3))(typescript@5.9.3)(vue@3.5.25(typescript@5.9.3)))
       '@vuepress/plugin-markdown-preview':
         specifier: catalog:vuepress
         version: 2.0.0-rc.121(markdown-it@14.1.0)(typescript@5.9.3)(vuepress@2.0.0-rc.26(@vuepress/bundler-vite@2.0.0-rc.26(@types/node@25.0.2)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.96.0)(sass@1.96.0)(terser@5.44.1)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))(@vuepress/bundler-webpack@2.0.0-rc.26(esbuild@0.27.1)(typescript@5.9.3))(typescript@5.9.3)(vue@3.5.25(typescript@5.9.3)))
@@ -2672,11 +2672,11 @@ packages:
   '@marijn/find-cluster-break@1.0.2':
     resolution: {integrity: sha512-l0h88YhZFyKdXIFNfSWpyjStDjGHwZ/U7iobcK1cQQD8sejsONdQtTVU+1wVN1PBw40PiiHB1vA5S7VTfQiP9g==}
 
-  '@mathjax/mathjax-newcm-font@4.0.0':
-    resolution: {integrity: sha512-kpsJgIF4FpWiwIkFgOPmWwy5GXfL25spmJJNg27HQxPddmEL8Blx0jn2BuU/nlwjM/9SnYpEfDrWiAMgLPlB8Q==}
+  '@mathjax/mathjax-newcm-font@4.1.0':
+    resolution: {integrity: sha512-n10AwYubUa2hyOzxSRzkwRrgCVns083zkentryXICMPKaWT/watfvK2sUk5D9Bow9mpDfoqb5EWApuUvqnlzaw==}
 
-  '@mathjax/src@4.0.0':
-    resolution: {integrity: sha512-i7oYVLkHTskfTqxBzrbvcJN8ptGChWb6bx2LZsCySk7QWf61JqaMYX5N7M0qr8tnYqRmN5DDedkRda7wDuTdBA==}
+  '@mathjax/src@4.1.0':
+    resolution: {integrity: sha512-xnBL2E5uNHR82iLiUVJXYicKh/Jbq2I1+8yCpcBfJqLEM6CrAR9zBpYYkAFtC/Myvykd5U5uMmRrtr49AKk0TA==}
 
   '@mdit-vue/plugin-component@3.0.2':
     resolution: {integrity: sha512-Fu53MajrZMOAjOIPGMTdTXgHLgGU9KwTqKtYc6WNYtFZNKw04euSfJ/zFg8eBY/2MlciVngkF7Gyc2IL7e8Bsw==}
@@ -5142,10 +5142,6 @@ packages:
   commander@11.1.0:
     resolution: {integrity: sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==}
     engines: {node: '>=16'}
-
-  commander@14.0.0:
-    resolution: {integrity: sha512-2uM9rYjPvyq39NwLRqaiLtWHyDC1FvryJDa2ATTVims5YAS4PupsEQsDvP14FqhFr0P49CYDugi59xaxJlTXRA==}
-    engines: {node: '>=20'}
 
   commander@14.0.2:
     resolution: {integrity: sha512-TywoWNNRbhoD0BXs1P3ZEScW8W5iKrnbithIl0YH+uCmBd0QpPOA8yc82DS3BIE5Ma6FnBVUsJ7wVUDz4dvOWQ==}
@@ -7854,8 +7850,8 @@ packages:
   mitt@3.0.1:
     resolution: {integrity: sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==}
 
-  mj-context-menu@0.9.1:
-    resolution: {integrity: sha512-ECPcVXZFRfeYOxb1MWGzctAtnQcZ6nRucE3orfkKX7t/KE2mlXO2K/bq4BcCGOuhdz3Wg2BZDy2S8ECK73/iIw==}
+  mj-context-menu@1.0.0:
+    resolution: {integrity: sha512-OSgBFQRCVhrZwRa9lhqnKcJU92dd/YXgBjup0uyeuj9bOaVsf4myOyrjU4PfhYkdDk6AqVUTov7v5uFMvIbduA==}
 
   mlly@1.8.0:
     resolution: {integrity: sha512-l8D9ODSRWLe2KHJSifWGwBqpTZXIXTeo8mlKjY+E2HAakaTeNpqAyBZ8GSqLzHgw4XmHmC8whvpjJNMbFZN7/g==}
@@ -9322,8 +9318,8 @@ packages:
     resolution: {integrity: sha512-1POYv7uv2gXoyGFpBCmpDVSNV74IfsWlDW216UPjbWufNf+bSU6GdbDsxdcxtfwb4xlI3yxzOTKClUosxARYrQ==}
     engines: {node: '>=0.10.0'}
 
-  speech-rule-engine@5.0.0-beta.1:
-    resolution: {integrity: sha512-arqcJpXEYRG9mQMxRCNd2xFERGvIvwvuhcnoXDw/SyeYNyJ5I9SUU5ft+BPw0M1rPpwl3Q+6ZeeYAcwGXTa6oQ==}
+  speech-rule-engine@5.0.0-beta.3:
+    resolution: {integrity: sha512-wSrjCo8h4SJmGtjicD0OrTuCNH/wEaMsV+ktA1D9C2IPnensiP4pfPv+DnEZDMbauC5SCSE1prP5KA0z/W8bLg==}
     hasBin: true
 
   split2@4.2.0:
@@ -12256,14 +12252,14 @@ snapshots:
 
   '@marijn/find-cluster-break@1.0.2': {}
 
-  '@mathjax/mathjax-newcm-font@4.0.0': {}
+  '@mathjax/mathjax-newcm-font@4.1.0': {}
 
-  '@mathjax/src@4.0.0':
+  '@mathjax/src@4.1.0':
     dependencies:
-      '@mathjax/mathjax-newcm-font': 4.0.0
+      '@mathjax/mathjax-newcm-font': 4.1.0
       mhchemparser: 4.2.1
-      mj-context-menu: 0.9.1
-      speech-rule-engine: 5.0.0-beta.1
+      mj-context-menu: 1.0.0
+      speech-rule-engine: 5.0.0-beta.3
 
   '@mdit-vue/plugin-component@3.0.2':
     dependencies:
@@ -12409,12 +12405,12 @@ snapshots:
     optionalDependencies:
       markdown-it: 14.1.0
 
-  '@mdit/plugin-mathjax-slim@0.24.1(@mathjax/src@4.0.0)(markdown-it@14.1.0)':
+  '@mdit/plugin-mathjax-slim@0.24.1(@mathjax/src@4.1.0)(markdown-it@14.1.0)':
     dependencies:
       '@mdit/plugin-tex': 0.23.0(markdown-it@14.1.0)
       '@types/markdown-it': 14.1.2
     optionalDependencies:
-      '@mathjax/src': 4.0.0
+      '@mathjax/src': 4.1.0
       markdown-it: 14.1.0
 
   '@mdit/plugin-plantuml@0.23.0(markdown-it@14.1.0)':
@@ -14188,16 +14184,16 @@ snapshots:
       - markdown-it
       - typescript
 
-  '@vuepress/plugin-markdown-math@2.0.0-rc.121(@mathjax/src@4.0.0)(katex@0.16.27)(markdown-it@14.1.0)(typescript@5.9.3)(vuepress@2.0.0-rc.26(@vuepress/bundler-vite@2.0.0-rc.26(@types/node@25.0.2)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.96.0)(sass@1.96.0)(terser@5.44.1)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))(@vuepress/bundler-webpack@2.0.0-rc.26(esbuild@0.27.1)(typescript@5.9.3))(typescript@5.9.3)(vue@3.5.25(typescript@5.9.3)))':
+  '@vuepress/plugin-markdown-math@2.0.0-rc.121(@mathjax/src@4.1.0)(katex@0.16.27)(markdown-it@14.1.0)(typescript@5.9.3)(vuepress@2.0.0-rc.26(@vuepress/bundler-vite@2.0.0-rc.26(@types/node@25.0.2)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.96.0)(sass@1.96.0)(terser@5.44.1)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))(@vuepress/bundler-webpack@2.0.0-rc.26(esbuild@0.27.1)(typescript@5.9.3))(typescript@5.9.3)(vue@3.5.25(typescript@5.9.3)))':
     dependencies:
       '@mdit/plugin-katex-slim': 0.25.1(katex@0.16.27)(markdown-it@14.1.0)
-      '@mdit/plugin-mathjax-slim': 0.24.1(@mathjax/src@4.0.0)(markdown-it@14.1.0)
+      '@mdit/plugin-mathjax-slim': 0.24.1(@mathjax/src@4.1.0)(markdown-it@14.1.0)
       '@types/markdown-it': 14.1.2
       '@vuepress/helper': 2.0.0-rc.121(typescript@5.9.3)(vuepress@2.0.0-rc.26(@vuepress/bundler-vite@2.0.0-rc.26(@types/node@25.0.2)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.96.0)(sass@1.96.0)(terser@5.44.1)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))(@vuepress/bundler-webpack@2.0.0-rc.26(esbuild@0.27.1)(typescript@5.9.3))(typescript@5.9.3)(vue@3.5.25(typescript@5.9.3)))
       vue: 3.5.25(typescript@5.9.3)
       vuepress: 2.0.0-rc.26(@vuepress/bundler-vite@2.0.0-rc.26(@types/node@25.0.2)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.96.0)(sass@1.96.0)(terser@5.44.1)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))(@vuepress/bundler-webpack@2.0.0-rc.26(esbuild@0.27.1)(typescript@5.9.3))(typescript@5.9.3)(vue@3.5.25(typescript@5.9.3))
     optionalDependencies:
-      '@mathjax/src': 4.0.0
+      '@mathjax/src': 4.1.0
       katex: 0.16.27
     transitivePeerDependencies:
       - markdown-it
@@ -15187,8 +15183,6 @@ snapshots:
   comma-separated-tokens@2.0.3: {}
 
   commander@11.1.0: {}
-
-  commander@14.0.0: {}
 
   commander@14.0.2: {}
 
@@ -18325,7 +18319,9 @@ snapshots:
 
   mitt@3.0.1: {}
 
-  mj-context-menu@0.9.1: {}
+  mj-context-menu@1.0.0:
+    dependencies:
+      rimraf: 6.1.2
 
   mlly@1.8.0:
     dependencies:
@@ -19884,10 +19880,10 @@ snapshots:
 
   speakingurl@14.0.1: {}
 
-  speech-rule-engine@5.0.0-beta.1:
+  speech-rule-engine@5.0.0-beta.3:
     dependencies:
       '@xmldom/xmldom': 0.9.8
-      commander: 14.0.0
+      commander: 14.0.2
       wicked-good-xpath: 1.3.0
 
   split2@4.2.0: {}
