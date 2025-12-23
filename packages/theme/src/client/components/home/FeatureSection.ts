@@ -29,7 +29,7 @@ const FeatureSection: FunctionalComponent<
     image,
     imageDark,
     header,
-    features = [],
+    features,
   } = props;
 
   return h(

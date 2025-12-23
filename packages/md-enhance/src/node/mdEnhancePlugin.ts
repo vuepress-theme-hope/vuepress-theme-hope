@@ -121,7 +121,7 @@ export const mdEnhancePlugin =
           }
         }
         if (isPlainObject(options.playground)) {
-          const { presets = [], config = {} } = options.playground;
+          const { presets, config = {} } = options.playground;
 
           presets.forEach((preset) => {
             if (preset === "ts")

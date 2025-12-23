@@ -58,7 +58,7 @@ export default defineComponent({
         type,
         isEncrypted = false,
         cover = null,
-        excerpt = null,
+        excerpt,
         sticky,
       } = articleInfo.value;
       const info = pageInfo.value;

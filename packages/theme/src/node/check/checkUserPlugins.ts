@@ -11,7 +11,7 @@ import { logger } from "../utils.js";
  * Check user plugin options for noob users
  */
 export const checkUserPlugins = (app: App): void => {
-  PLUGIN_CHECKLIST.forEach(([pluginName, optionName = "", hint = ""]) => {
+  PLUGIN_CHECKLIST.forEach(([pluginName, optionName, hint = ""]) => {
     const themeIndex = app.pluginApi.plugins.findIndex(
       (item) => item.name === "vuepress-theme-hope",
     );

@@ -26,7 +26,7 @@ export const getAttrs = (str: string): Record<string, string> => {
       arrAttrs
         .filter((attr) => attr.trim().length > 0)
         .map((attr) => {
-          const [key, value = ""] = attr.trim().split("=", 2);
+          const [key, value] = attr.trim().split("=", 2);
 
           return [key, value];
         }),

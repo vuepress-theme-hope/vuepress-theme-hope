@@ -51,14 +51,7 @@ export default defineComponent({
     );
 
     return (): VNode => {
-      const {
-        collapsible,
-        children = [],
-        icon,
-        prefix,
-        link,
-        text,
-      } = props.config;
+      const { collapsible, children, icon, prefix, link, text } = props.config;
 
       return h("section", { class: "vp-sidebar-group" }, [
         h(

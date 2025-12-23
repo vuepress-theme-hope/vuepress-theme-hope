@@ -10,7 +10,8 @@ module.exports = defineConfig({
     )
       return "@next";
 
-    if (["dashjs", "vite"].includes(name)) return "minor";
+    if (["dashjs"].includes(name)) return "minor";
+    if (["vite"].includes(name)) return "patch";
 
     return "latest";
   },

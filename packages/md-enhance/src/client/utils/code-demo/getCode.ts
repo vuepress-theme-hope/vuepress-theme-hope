@@ -105,13 +105,10 @@ export const getVueCode = (
   const jsBlock = VUE_SCRIPT_REG.exec(vueTemplate);
   const cssBlock = VUE_STYLE_REG.exec(vueTemplate);
   const html = htmlBlock?.[1].replaceAll(/^\n|\n$/g, "") ?? "";
-  const [js = "", jsLang = ""] = jsBlock
-    ? [jsBlock[4].replaceAll(/^\n|\n$/g, ""), jsBlock[3]]
-    : [];
-  const [css = "", cssLang = ""] = cssBlock
-    ? [cssBlock[4].replaceAll(/^\n|\n$/g, ""), cssBlock[3]]
-    : [];
-
+  const js = jsBlock?.[4].replaceAll(/^\n|\n$/g, "") ?? "";
+  const jsLang = jsBlock?.[3] ?? "";
+  const css = cssBlock?.[4].replaceAll(/^\n|\n$/g, "") ?? "";
+  const cssLang = cssBlock?.[3] ?? "";
   const isLegal = jsLang === "" && (cssLang === "" || cssLang === "css");
 
   return {

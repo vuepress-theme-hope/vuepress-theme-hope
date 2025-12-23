@@ -5,25 +5,25 @@ packages:
   - packages/*
 
 catalog:
-  "@mathjax/src": 4.0.0
+  "@mathjax/src": 4.1.0
   "@vueuse/core": 14.1.0
   markmap-lib: 0.18.12
   markmap-toolbar: 0.18.12
   markmap-view: 0.18.12
   mermaid: 11.12.2
   reveal.js: 5.2.1
-  sass-embedded: 1.96.0
+  sass-embedded: 1.97.1
   sass-loader: 16.0.6
-  vue: 3.5.25
+  vue: 3.5.26
 
 catalogs:
   range:
     "@vueuse/core": ^14.1.0
     balloon-css: ^1.2.0
-    sass: ^1.96.0
-    sass-embedded: ^1.96.0
+    sass: ^1.97.1
+    sass-embedded: ^1.97.1
     sass-loader: ^16.0.6
-    vue: ^3.5.25
+    vue: ^3.5.26
   vuepress:
     "@vuepress/bundler-vite": 2.0.0-rc.26
     "@vuepress/bundler-webpack": 2.0.0-rc.26
@@ -86,4 +86,4 @@ patchedDependencies:
 
 peerDependencyRules:
   allowedVersions:
-    echarts-wordcloud@2>echarts: "6"
+    echarts-wordcloud@2>echarts: ^6.0.0
