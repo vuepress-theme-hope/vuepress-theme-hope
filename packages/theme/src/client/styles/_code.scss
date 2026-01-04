@@ -63,8 +63,8 @@ div[class*="language-"] {
   --code-c-bg: #{$code-bg-color};
   --code-c-highlight-bg: #{color.scale(
       $code-bg-color,
-      $saturation: if(whiteness($code-bg-color) < 50%, 5%, 10%),
-      $lightness: if(whiteness($code-bg-color) < 50%, 5%, -5%)
+      $saturation: if(sass(whiteness($code-bg-color) < 50%), 5%, 10%),
+      $lightness: if(sass(whiteness($code-bg-color) < 50%), 5%, -5%)
     )};
   --code-c-line-number: #{color.scale($code-color, $alpha: -33%)};
 }
