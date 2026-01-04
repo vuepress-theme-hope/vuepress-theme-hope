@@ -22,7 +22,6 @@
     "jsdoc",
     "vitest",
     "node",
-    "promise",
     "vue",
   ],
   "rules": {
