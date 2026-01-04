@@ -182,7 +182,8 @@ export default theme(
         twoslash: {
           twoslashOptions: {
             compilerOptions: {
-              moduleResolution: /* bundler */ 100,
+              /* bundler */
+              moduleResolution: 100,
             },
           },
         },

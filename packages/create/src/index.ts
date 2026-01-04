@@ -22,7 +22,7 @@ import type { CreateLocale, SupportedLang } from "./i18n/index.js";
 import { getLanguage } from "./i18n/index.js";
 import { createPackageJson } from "./packageJson.js";
 import { createTsConfig } from "./tsconfig.js";
-import { ensureDirExistSync, getRegistry } from "./utils/index.js"; // Assuming utils use execSync if needed
+import { ensureDirExistSync, getRegistry } from "./utils/index.js";
 
 const program = createCommand("create-vuepress-theme-hope");
 

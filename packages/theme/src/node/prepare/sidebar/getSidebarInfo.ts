@@ -105,8 +105,8 @@ const getSidebarInfoFromStructure = (
       children: getSidebarChildrenInfo(
         { pages: relatedPages, scope, sorters },
         dirOptions?.link
-          ? // filter README.md
-            info.children.filter(
+          ? info.children.filter(
+              // filter README.md
               (item) =>
                 item.type !== "file" ||
                 item.filename.toLowerCase() !== "readme.md",
@@ -168,8 +168,7 @@ export const getSidebarInfo = ({
   pages,
   sorters,
   scope,
-}: ThemeSidebarInfoOptions): // base = ""
-SidebarInfo[] =>
+}: ThemeSidebarInfoOptions): SidebarInfo[] =>
   getStructureInfo(pages, scope)
     .map((info) => getSidebarInfoFromStructure({ scope, pages, sorters }, info))
     .filter((item): item is SidebarInfo => item !== null)

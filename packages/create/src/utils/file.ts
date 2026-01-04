@@ -24,10 +24,10 @@ export const copyFile = (srcFile: string, targetFile: string): void => {
 
   ensureDirExistSync(targetDir);
 
-  const rs = createReadStream(srcFile); // Create read stream
-  const ws = createWriteStream(targetFile); // Create write stream
+  const readStream = createReadStream(srcFile);
+  const writeStream = createWriteStream(targetFile);
 
-  rs.pipe(ws);
+  readStream.pipe(writeStream);
 };
 
 export const copyDir = (srcDir: string, targetDir: string): void => {

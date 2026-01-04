@@ -14,7 +14,17 @@
     "style": "warn",
     "restriction": "off",
   },
-  "plugins": ["import", "unicorn", "oxc", "promise", "jsdoc"],
+  "plugins": [
+    "import",
+    "unicorn",
+    "oxc",
+    "promise",
+    "jsdoc",
+    "vitest",
+    "node",
+    "promise",
+    "vue",
+  ],
   "rules": {
     "catch-error-name": ["warn", { "name": "err" }],
     "curly": ["off", "multi-line"],
@@ -71,6 +81,11 @@
     // seems conflicts with prettier
     "number-literal-case": "off",
     "numeric-separators-style": "off",
+
+    // style rules
+    "capitalized-comments": "off",
+    "max-statements": ["warn", { "max": 30 }],
+    "no-inline-comments": ["error", { "ignorePattern": "webpackChunkName" }],
 
     // the following rules are still not supported by oxlint yet
     // "import-x/no-restricted-paths": [

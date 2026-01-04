@@ -11,6 +11,7 @@ const VALID_MARKERS = ["file", "import", "setting"] as const;
 
 const getPlaygroundRule =
   (name: string): RuleBlock =>
+  // oxlint-disable-next-line max-statements
   (state, startLine, endLine, silent) => {
     let start = state.bMarks[startLine] + state.tShift[startLine];
     let max = state.eMarks[startLine];
@@ -130,6 +131,7 @@ const getPlaygroundRule =
 
 const atMarkerRule =
   (markerName: string): RuleBlock =>
+  // oxlint-disable-next-line max-statements
   (state, startLine, endLine, silent) => {
     let start = state.bMarks[startLine] + state.tShift[startLine];
     let max = state.eMarks[startLine];

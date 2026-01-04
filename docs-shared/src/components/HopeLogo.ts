@@ -16,6 +16,7 @@ export default defineComponent({
 
     const ready = ref(false);
 
+    // oxlint-disable-next-line max-statements
     const renderLogo = async (): Promise<void> => {
       if (__VUEPRESS_SSR__) return;
 
