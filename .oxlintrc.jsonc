@@ -85,7 +85,7 @@
     // style rules
     "capitalized-comments": "off",
     "max-statements": ["warn", { "max": 30 }],
-    "no-inline-comments": ["error", { "ignorePattern": "webpackChunkName" }],
+    "no-inline-comments": "off",
 
     // the following rules are still not supported by oxlint yet
     // "import-x/no-restricted-paths": [
