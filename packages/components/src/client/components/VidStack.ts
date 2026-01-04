@@ -109,6 +109,11 @@ export default defineComponent({
         poster: props.poster,
         title: props.title,
         ...props.player,
+        src: isString(props.src)
+          ? getLink(props.src)
+          : isArray(props.src)
+            ? props.src.map((src) => (isString(src) ? getLink(src) : src))
+            : props.src,
         layout: new VidstackPlayerLayout({
           colorScheme: props.darkmode ? "dark" : "light",
           thumbnails: props.thumbnails,
@@ -116,12 +121,6 @@ export default defineComponent({
           ...props.layout,
         }),
       };
-
-      options.src = isString(props.src)
-        ? getLink(props.src)
-        : isArray(props.src)
-          ? props.src.map((src) => (isString(src) ? getLink(src) : src))
-          : props.src;
 
       if (props.tracks.length > 0) options.tracks = props.tracks;
 

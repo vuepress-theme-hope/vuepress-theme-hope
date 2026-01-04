@@ -103,6 +103,7 @@ const convertFooterOptions = (
 /**
  * @deprecated You should use V2 standard options and avoid using it
  */
+// oxlint-disable-next-line max-statements
 const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
   const { deprecatedLogger } = createConverter("theme plugin options");
 

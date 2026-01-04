@@ -52,21 +52,32 @@ export const injectDarkMode = (app: App): void => {
   const isDarkMode = computed(() => {
     const darkModeConfig = config.value;
 
-    // Disable darkmode
-    return darkModeConfig === "disable"
-      ? false
-      : // Force darkmode
-        darkModeConfig === "enable"
-        ? true
-        : // Auto
-          darkModeConfig === "auto"
-          ? isDarkPreferred.value
-          : // Toggle
-            darkModeConfig === "toggle"
-            ? status.value === "dark"
-            : // Switch
-              status.value === "dark" ||
-              (status.value === "auto" && isDarkPreferred.value);
+    switch (darkModeConfig) {
+      case "disable": {
+        return false;
+      }
+      case "enable": {
+        return true;
+      }
+      case "auto": {
+        return isDarkPreferred.value;
+      }
+      case "switch": {
+        return (
+          status.value === "dark" ||
+          (status.value === "auto" && isDarkPreferred.value)
+        );
+      }
+      case "toggle": {
+        return status.value === "dark";
+      }
+      default: {
+        return (
+          status.value === "dark" ||
+          (status.value === "auto" && isDarkPreferred.value)
+        );
+      }
+    }
   });
 
   const canToggle = computed(() => {

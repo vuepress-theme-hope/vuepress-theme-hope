@@ -27,6 +27,7 @@ const jsRunner = (jsCode: string): unknown =>
   // eslint-disable-next-line @typescript-eslint/no-implied-eval
   (new Function(`return ${jsCode};`) as () => unknown)();
 
+// oxlint-disable-next-line max-statements
 const sandpackRule: RuleBlock = (state, startLine, endLine, silent) => {
   let start = state.bMarks[startLine] + state.tShift[startLine];
   let max = state.eMarks[startLine];
@@ -156,6 +157,7 @@ const sandpackRule: RuleBlock = (state, startLine, endLine, silent) => {
 
 const atMarkerRule =
   (markerName: string): RuleBlock =>
+  // oxlint-disable-next-line max-statements
   (state, startLine, endLine, silent) => {
     let start = state.bMarks[startLine] + state.tShift[startLine];
     let max = state.eMarks[startLine];
@@ -274,6 +276,7 @@ export const sandpack: PluginSimple = (md) => {
       });
   });
 
+  // oxlint-disable-next-line max-statements
   md.renderer.rules.sandpack_open = (tokens, index): string => {
     const { content, info } = tokens[index];
 

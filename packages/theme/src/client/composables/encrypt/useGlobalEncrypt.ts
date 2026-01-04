@@ -30,14 +30,14 @@ export const useGlobalEncrypt = (): GlobalEncrypt => {
       // Valid token exists
       isEncrypted
         ? storageToken.value
-          ? // None of the token matches
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          ? // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             encryptData.value.admin!.tokens.every(
+              // None of the token matches
               (hash) => !compareSync(storageToken.value, hash),
             )
-          : // None of the token matches
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          : // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             encryptData.value.admin!.tokens.every(
+              // None of the token matches
               (hash) => !compareSync(sessionToken.value, hash),
             )
         : false;

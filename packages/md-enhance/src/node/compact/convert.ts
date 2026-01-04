@@ -6,6 +6,7 @@ import type { MarkdownEnhancePluginOptions } from "../options.js";
 import { logger } from "../utils.js";
 
 /** @deprecated */
+// oxlint-disable-next-line max-statements
 export const convertOptions = (
   options: MarkdownEnhancePluginOptions & Record<string, unknown>,
 ): void => {

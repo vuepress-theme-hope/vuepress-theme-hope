@@ -62,7 +62,7 @@ export const useNavbarLanguageDropdown =
                 ? isMounted.value
                   ? // try to keep current hash and query across languages
                     fullPath.replace(path, targetLocalePage)
-                  : // avoid ssr mismatch
+                  : // avoid SSR mismatch
                     targetLocalePage
                 : // Or fallback to homepage
                   (targetThemeLocale.home ?? targetLocalePath);
