@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.102](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.101...v2.0.0-rc.102) (2026-01-04)
+
+### 🐛 Bug Fixes
+
+- **theme:** fix deprecated sass if ([b9a7b98](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b9a7b9816617b965832fb9d6dfc47daa622c8b00))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.101](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.100...v2.0.0-rc.101) (2025-12-23)
 
 **Note:** Version bump only for package vuepress-theme-hope-root

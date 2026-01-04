@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.102](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.101...v2.0.0-rc.102) (2026-01-04)
+
+**Note:** Version bump only for package vuepress-plugin-components
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.99](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.98...v2.0.0-rc.99) (2025-11-29)
 
 ### ✨ Features
