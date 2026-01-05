@@ -281,8 +281,8 @@ importers:
         specifier: 0.9.0
         version: 0.9.0
       npm-check-updates:
-        specifier: 19.2.1
-        version: 19.2.1
+        specifier: 19.3.1
+        version: 19.3.1
       ora:
         specifier: 9.0.0
         version: 9.0.0
@@ -7963,8 +7963,8 @@ packages:
     resolution: {integrity: sha512-JLSpbzh6UUXIEoqPsYBvVNVmyrjVZ1fzEFbqxKkTJQkWBO3xFzFT+KDnSKQWwOQNbuWRwt5LSD6HOTLGIWzfrw==}
     engines: {node: ^20.17.0 || >=22.9.0}
 
-  npm-check-updates@19.2.1:
-    resolution: {integrity: sha512-jWIMuE6K+DSDXfjXpM3SlJ+Gg07ZV57dlFKPr2EZTpimFk9y+gt138+kmP3Uocdqk1PZlOKpTpFvAx7Z1QCeog==}
+  npm-check-updates@19.3.1:
+    resolution: {integrity: sha512-v92fHH8fmf9VVmQwwL5JWpX8GDEe8BDyrz4w3GF6D6JBUZKpQNcTfBBgxVkCcAPzVUjCHSZEXYmZAAKfLTsDBA==}
     engines: {node: '>=20.0.0', npm: '>=8.12.1'}
     hasBin: true
 
@@ -18400,7 +18400,7 @@ snapshots:
     dependencies:
       npm-normalize-package-bin: 5.0.0
 
-  npm-check-updates@19.2.1: {}
+  npm-check-updates@19.3.1: {}
 
   npm-install-checks@8.0.0:
     dependencies:
