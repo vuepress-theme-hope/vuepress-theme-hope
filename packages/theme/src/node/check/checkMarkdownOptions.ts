@@ -74,13 +74,17 @@ export const KNOWN_THEME_MARKDOWN_OPTIONS = [
   // plugin-revealjs
   "revealjs",
 
-  // vuepress-plugin-md-enhance
+  // plugin-markdown-chart
   "chartjs",
   "echarts",
   "flowchart",
   "markmap",
   "mermaid",
   "plantuml",
+  "DANGEROUS_ALLOW_SCRIPT_EXECUTION",
+  "DANGEROUS_SCRIPT_EXECUTION_ALLOWLIST",
+
+  // vuepress-plugin-md-enhance
   "demo",
   "playground",
   "kotlinPlayground",
