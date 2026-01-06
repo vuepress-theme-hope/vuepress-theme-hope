@@ -8,7 +8,14 @@ import type {
 } from "../../typings/index.js";
 import { logger } from "../../utils.js";
 
-/** Gets a query string representation (hash + queries) */
+/**
+ * Gets a query string representation (hash + queries)
+ *
+ * @param key - query key
+ * @param value - query value
+ * @param sign - join sign
+ * @returns query string
+ */
 const getUrlJoinParam = (key: string, value: string, sign = "&"): string => {
   if (value) return `${sign}${key}=${encode(value)}`;
 

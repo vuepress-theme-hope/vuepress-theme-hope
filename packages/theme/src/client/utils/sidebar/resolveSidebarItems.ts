@@ -107,8 +107,17 @@ export const resolveMultiSidebarItems = ({
 };
 
 export interface ResolveSidebarOptions {
+  /**
+   * Sidebar config
+   */
   config: SidebarOptions;
+  /**
+   * Current route locale
+   */
   routeLocale: string;
+  /**
+   * Current route path
+   */
   routePath: string;
 }
 
@@ -116,6 +125,9 @@ export interface ResolveSidebarOptions {
  * Resolve sidebar items global computed
  *
  * It should only be resolved and provided once
+ *
+ * @param options - resolve sidebar options
+ * @returns resolved sidebar items
  */
 export const resolveSidebarItems = ({
   config,

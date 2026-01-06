@@ -6,7 +6,7 @@ import type { Plugin } from "vuepress/core";
 /**
  * @private
  *
- * Resolve options for @vuepress/plugin-catalog
+ * Resolve options for `@vuepress/plugin-catalog`
  */
 export const getCatalogPlugin = (
   catalog?: CatalogPluginOptions | boolean,

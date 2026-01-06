@@ -9,6 +9,7 @@ import type { MeiliSearchPluginOptions } from "@vuepress/plugin-meilisearch";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
 import type { SlimSearchPluginOptions } from "@vuepress/plugin-slimsearch";
 import type { App, Page, Plugin } from "vuepress/core";
+import { colors } from "vuepress/utils";
 
 import { logMissingPkg } from "./utils.js";
 import type {
@@ -17,6 +18,7 @@ import type {
 } from "../../shared/index.js";
 import { themeLocaleInfo } from "../locales/index.js";
 import type { ThemePluginsOptions } from "../typings/index.js";
+import { logger } from "../utils.js";
 
 let docsearchPlugin: ((options: DocSearchPluginOptions) => Plugin) | null =
   null;
@@ -53,7 +55,7 @@ try {
 /**
  * @private
  *
- * Resolve options for @vuepress/plugin-docsearch, @vuepress/plugin-search and @vuepress/plugin-slimsearch
+ * Resolve options for `@vuepress/plugin-docsearch`, `@vuepress/plugin-search` and `@vuepress/plugin-slimsearch`
  */
 export const getSearchPlugin = (
   app: App,
@@ -125,7 +127,12 @@ export const getSearchPlugin = (
     });
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-deprecated
   if (plugins.search) {
+    logger.warn(
+      `${colors.cyan("search")} option is deprecated. Please use ${colors.cyan("slimsearch")} to move to powerful slimsearch instead.`,
+    );
+
     if (!searchPlugin) {
       logMissingPkg("@vuepress/plugin-search");
 
@@ -134,6 +141,7 @@ export const getSearchPlugin = (
 
     return searchPlugin({
       isSearchable: (page) => !isPageEncrypted(page),
+      // eslint-disable-next-line @typescript-eslint/no-deprecated
       ...(isPlainObject(plugins.search) ? plugins.search : {}),
     });
   }

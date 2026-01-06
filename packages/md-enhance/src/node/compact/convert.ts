@@ -5,7 +5,10 @@ import { createConverter } from "vuepress-shared/node";
 import type { MarkdownEnhancePluginOptions } from "../options.js";
 import { logger } from "../utils.js";
 
-/** @deprecated */
+/**
+ * @param options - old markdown enhance plugin options
+ * @deprecated
+ */
 // oxlint-disable-next-line max-statements
 export const convertOptions = (
   options: MarkdownEnhancePluginOptions & Record<string, unknown>,

@@ -5,7 +5,11 @@ import { createConverter } from "vuepress-shared/node";
 import type { ComponentPluginOptions } from "../options/index.js";
 import { logger } from "../utils.js";
 
-/** @deprecated */
+/**
+ * @param options - old component plugin options
+ *
+ * @deprecated
+ */
 export const convertOptions = (
   options: ComponentPluginOptions & Record<string, unknown>,
 ): void => {

@@ -4,7 +4,7 @@ import { computed, defineComponent, h, ref } from "vue";
 import { useLang } from "vuepress/client";
 
 import { useSize } from "../composables/index.js";
-import { videoIframeAllow } from "../utils/index.js";
+import { DEFAULT_RATIO, videoIframeAllow } from "../utils/index.js";
 
 import "../styles/youtube.scss";
 
@@ -53,7 +53,7 @@ export default defineComponent({
      */
     ratio: {
       type: [String, Number],
-      default: 16 / 9,
+      default: DEFAULT_RATIO,
     },
 
     /**

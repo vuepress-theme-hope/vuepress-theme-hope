@@ -1,5 +1,7 @@
 import { spawnSync } from "node:child_process";
 
+import { SUCCESS_STATUS } from "../utils/index.js";
+
 export type SupportedBundler = "vite" | "webpack";
 export const supportedBundlers: SupportedBundler[] = ["vite", "webpack"];
 
@@ -14,7 +16,7 @@ const checkPnpmInstalled = (): boolean => {
       spawnSync("pnpm --version", [], {
         stdio: "ignore",
         shell: true,
-      }).status === 0
+      }).status === SUCCESS_STATUS
     );
   } catch {
     return false;
@@ -27,7 +29,7 @@ const checkYarnInstalled = (): boolean => {
       spawnSync("yarn --version", [], {
         stdio: "ignore",
         shell: true,
-      }).status === 0
+      }).status === SUCCESS_STATUS
     );
   } catch {
     return false;

@@ -1,3 +1,5 @@
+/* oxlint-disable no-magic-numbers */
+
 export const cyrb53 = (content: string, seed = 0): number => {
   let h1 = 0xdeadbeef ^ seed,
     h2 = 0x41c6ce57 ^ seed;

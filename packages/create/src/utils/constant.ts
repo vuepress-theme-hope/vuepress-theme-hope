@@ -1,3 +1,5 @@
+export const SUCCESS_STATUS = 0;
+
 export const PACKAGE_NAME_REG =
   /^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/u;
 

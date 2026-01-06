@@ -8,6 +8,7 @@ import { useLang } from "vuepress/client";
 import type { ArtPlayerOptions } from "../../shared/index.js";
 import { useSize } from "../composables/index.js";
 import { getLink } from "../utils/getLink.js";
+import { DEFAULT_RATIO } from "../utils/index.js";
 import {
   SUPPORTED_VIDEO_TYPES,
   getTypeByUrl,
@@ -162,7 +163,7 @@ export default defineComponent({
      */
     ratio: {
       type: [String, Number],
-      default: 16 / 9,
+      default: DEFAULT_RATIO,
     },
 
     /**

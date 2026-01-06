@@ -3,6 +3,8 @@ import { useEventListener } from "@vueuse/core";
 import type { MaybeRef, Ref, ShallowRef } from "vue";
 import { computed, isRef, onMounted, ref, shallowRef, unref, watch } from "vue";
 
+import { DEFAULT_RATIO } from "../utils/index.js";
+
 const getValue = (value: string | number): string =>
   isString(value) ? value : `${value}px`;
 
@@ -35,7 +37,7 @@ export const useSize = <Element extends HTMLElement>(
       if (!Number.isNaN(parsedRadio)) return parsedRadio;
     }
 
-    return typeof ratio === "number" ? ratio : 16 / 9;
+    return typeof ratio === "number" ? ratio : DEFAULT_RATIO;
   };
 
   const getHeight = (width: number): string => {

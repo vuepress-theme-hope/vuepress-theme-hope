@@ -177,7 +177,7 @@ export interface ThemePluginsOptions extends DeprecatedThemePluginsOptions {
    *
    * @see https://ecosystem.vuejs.press/plugins/search/docsearch.html
    *
-   * @vuepress/docsearch 选项
+   * DocSearch 插件选项
    *
    * @see https://ecosystem.vuejs.press/zh/plugins/search/docsearch.html
    */
@@ -300,9 +300,13 @@ export interface ThemePluginsOptions extends DeprecatedThemePluginsOptions {
    *
    * @see https://ecosystem.vuejs.press/plugins/search/search.html
    *
-   * @vuepress/search 插件配置
+   * @deprecated Use `slimsearch` instead
+   *
+   * Search 插件配置
    *
    * @see https://ecosystem.vuejs.press/zh/plugins/search/search.html
+   *
+   * @deprecated 使用 `slimsearch` 代替
    */
   search?: SearchPluginOptions | boolean;
 

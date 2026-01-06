@@ -29,11 +29,11 @@ export interface ThemeMarkdownOptions
       "demo" | "playground" | "kotlinPlayground" | "vuePlayground" | "sandpack"
     > {
   /**
-   * Options for @vuepress/links-check
+   * Link check plugin options
    *
    * @see https://ecosystem.vuejs.press/plugins/markdown/links-check.html
    *
-   * @vuepress/links-check 插件配置
+   * 链接检查插件选项
    *
    * @see https://ecosystem.vuejs.press/zh/plugins/markdown/links-check.html
    */

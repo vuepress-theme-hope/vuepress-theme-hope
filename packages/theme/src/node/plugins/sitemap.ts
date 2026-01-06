@@ -6,7 +6,7 @@ import type { Plugin } from "vuepress/core";
 /**
  * @private
  *
- * Resolve options for @vuepress/plugin-sitemap
+ * Resolve options for `@vuepress/plugin-sitemap`
  */
 export const getSitemapPlugin = (
   options?: Omit<SitemapPluginOptions, "hostname"> | boolean,

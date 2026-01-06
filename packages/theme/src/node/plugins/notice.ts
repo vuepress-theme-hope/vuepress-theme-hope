@@ -9,7 +9,7 @@ import type { Plugin } from "vuepress";
 /**
  * @private
  *
- * resolve options for @vuepress/plugin-notice
+ * resolve options for `@vuepress/plugin-notice`
  */
 export const getNoticePlugin = (
   options?: NoticePluginOptions | NoticeOptions[],

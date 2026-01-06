@@ -7,7 +7,7 @@ import type { ThemeData } from "../../shared/index.js";
 /**
  * @private
  *
- * Resolve options for @vuepress/plugin-rt
+ * Resolve options for `@vuepress/plugin-rtl`
  */
 export const getRtlPlugin = (themeData: ThemeData): Plugin | null => {
   const rtlLocales = entries(themeData.locales)

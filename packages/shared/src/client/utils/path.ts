@@ -28,6 +28,8 @@ export const normalizePath = (path: string): string =>
  *
  * @param route Current route
  * @param link link path
+ *
+ * @returns Whether the link is active
  */
 export const isActiveLink = (
   route: RouteLocationNormalizedLoaded,

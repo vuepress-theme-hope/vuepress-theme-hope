@@ -15,7 +15,7 @@ try {
 /**
  * @private
  *
- * Resolve options for @vuepress/plugin-revealjs
+ * Resolve options for `@vuepress/plugin-revealjs`
  */
 export const getRevealJsPlugin = (
   options?: Omit<RevealJsPluginOptions, "layout"> | boolean,

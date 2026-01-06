@@ -7,7 +7,7 @@ import { VERSION } from "../utils.js";
 /**
  * @private
  *
- * Resolve options for @vuepress/plugin-comment
+ * Resolve options for `@vuepress/plugin-comment`
  */
 export const getCommentPlugin = (
   options?: Partial<CommentPluginOptions> | false,

@@ -16,7 +16,7 @@ try {
 /**
  * @private
  *
- * Resolve options for @vuepress/plugin-pwa
+ * Resolve options for `@vuepress/plugin-pwa`
  */
 export const getPwaPlugin = (
   options?: PwaPluginOptions | boolean,

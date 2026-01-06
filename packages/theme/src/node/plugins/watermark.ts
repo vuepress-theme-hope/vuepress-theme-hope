@@ -16,7 +16,7 @@ try {
 /**
  * @private
  *
- * Resolve options for @vuepress/plugin-watermark
+ * Resolve options for `@vuepress/plugin-watermark`
  */
 export const getWatermarkPlugin = (
   options?: WatermarkPluginOptions | boolean,

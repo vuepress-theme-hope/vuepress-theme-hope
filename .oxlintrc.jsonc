@@ -40,6 +40,8 @@
     "no-continue": "off",
     "no-console": "warn",
     "no-duplicate-imports": "off",
+    "no-magic-numbers": "off",
+    // "no-magic-numbers": ["warn", { "ignore": [-1, 0, 1, 2] }],
     "no-nested-ternary": "off",
     "no-null": "off",
     "no-ternary": "off",
@@ -58,10 +60,10 @@
     ],
     // named export is preferred in our codebase
     "import/prefer-default-export": "off",
-    "jsdoc/check-tag-names": "off",
     "jsdoc/require-param": "off",
     "jsdoc/require-param-type": "off",
     "jsdoc/require-returns": "off",
+    "jsdoc/require-returns-type": "off",
     "promise/always-return": "off",
     "promise/avoid-new": "off",
     "promise/prefer-await-to-then": "off",
@@ -74,8 +76,6 @@
     // at is not supported by our target environments
     "unicorn/prefer-at": "off",
     "unicorn/prefer-global-this": "off",
-
-    "no-magic-numbers": "off",
 
     // seems conflicts with prettier
     "number-literal-case": "off",
@@ -143,11 +143,10 @@
           "vuepress/markdown",
           "vuepress/utils",
         ],
-        // the following rules are still not supported by oxlint yet
-        // "@typescript-eslint/prefer-nullish-coalescing": [
-        //   "warn",
-        //   { "ignoreConditionalTests": true },
-        // ],
+        "typescript/prefer-nullish-coalescing": [
+          "warn",
+          { "ignoreConditionalTests": true },
+        ],
       },
     },
     {

@@ -18,7 +18,7 @@ import {
 
 import type { PDFLocaleData } from "../../shared/locales.js";
 import { useSize } from "../composables/index.js";
-import { getLink, viewPDF } from "../utils/index.js";
+import { DEFAULT_RATIO, getLink, viewPDF } from "../utils/index.js";
 
 import "../styles/pdf.scss";
 
@@ -69,7 +69,7 @@ export default defineComponent({
      */
     ratio: {
       type: [String, Number],
-      default: 16 / 9,
+      default: DEFAULT_RATIO,
     },
 
     /**

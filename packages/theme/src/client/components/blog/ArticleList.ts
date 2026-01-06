@@ -28,6 +28,8 @@ import type { ArticleInfoData } from "../../../shared/index.js";
 
 import "../../styles/blog/article-list.scss";
 
+const DEFAULT_ARTICLES_PER_PAGE = 10;
+
 export default defineComponent({
   name: "ArticleList",
 
@@ -61,7 +63,7 @@ export default defineComponent({
     const currentPage = ref(1);
 
     const articlePerPage = computed(
-      () => blogOptions.value.articlePerPage ?? 10,
+      () => blogOptions.value.articlePerPage ?? DEFAULT_ARTICLES_PER_PAGE,
     );
 
     const currentArticles = computed(() =>

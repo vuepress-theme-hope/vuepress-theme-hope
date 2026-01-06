@@ -8,6 +8,8 @@ import { EyeIcon, FireIcon } from "@theme-hope/components/info/icons";
 import { useMetaLocale } from "@theme-hope/composables/info/useMetaLocale";
 import { usePure } from "@theme-hope/composables/usePure";
 
+const HOT_VIEW_THRESHOLD = 1000;
+
 export default defineComponent({
   name: "PageViewInfo",
 
@@ -53,7 +55,7 @@ export default defineComponent({
               ...(isPure.value ? {} : { "data-balloon-pos": "up" }),
             },
             [
-              h(pageViews.value < 1000 ? EyeIcon : FireIcon),
+              h(pageViews.value < HOT_VIEW_THRESHOLD ? EyeIcon : FireIcon),
               h(
                 "span",
                 {

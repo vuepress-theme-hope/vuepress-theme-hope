@@ -6,6 +6,7 @@
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "davidanson.vscode-markdownlint",
+    "oxc.oxc-vscode",
     "stylelint.vscode-stylelint",
     "bierner.markdown-yaml-preamble",
     "streetsidesoftware.code-spell-checker"

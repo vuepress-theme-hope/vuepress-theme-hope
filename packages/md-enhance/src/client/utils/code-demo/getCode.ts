@@ -24,7 +24,7 @@ export const getCode = (code: Record<string, string>): CodeType => {
       const [language] = match;
 
       result[type] = [
-        code[language].replaceAll(/^\n|\n$/g, ""),
+        code[language].trim(),
         preProcessorConfig[type].map[language] ?? language,
       ];
     }
@@ -90,9 +90,9 @@ export const getNormalCode = (
 };
 
 const VUE_TEMPLATE_REG = /<template>([\s\S]+)<\/template>/u;
-const VUE_SCRIPT_REG = /<script(\s*lang=(['"])(.*?)\2)?>([\s\S]+)<\/script>/u;
+const VUE_SCRIPT_REG = /<script(?:\s*lang=(['"])(.*?)\1)?>([\s\S]+)<\/script>/u;
 const VUE_STYLE_REG =
-  /<style(\s*lang=(['"])(.*?)\2)?\s*(?:scoped)?>([\s\S]+)<\/style>/u;
+  /<style(?:\s*lang=(['"])(.*?)\1)?\s*(?:scoped)?>([\s\S]+)<\/style>/u;
 
 export const getVueCode = (
   code: CodeType,
@@ -101,14 +101,13 @@ export const getVueCode = (
   const codeConfig = getConfig(config);
 
   const vueTemplate = code.html[0] ?? "";
-  const htmlBlock = VUE_TEMPLATE_REG.exec(vueTemplate);
   const jsBlock = VUE_SCRIPT_REG.exec(vueTemplate);
   const cssBlock = VUE_STYLE_REG.exec(vueTemplate);
-  const html = htmlBlock?.[1].replaceAll(/^\n|\n$/g, "") ?? "";
-  const js = jsBlock?.[4].replaceAll(/^\n|\n$/g, "") ?? "";
-  const jsLang = jsBlock?.[3] ?? "";
-  const css = cssBlock?.[4].replaceAll(/^\n|\n$/g, "") ?? "";
-  const cssLang = cssBlock?.[3] ?? "";
+  const html = VUE_TEMPLATE_REG.exec(vueTemplate)?.[1].trim() ?? "";
+  const js = jsBlock?.[3].trim() ?? "";
+  const jsLang = jsBlock?.[2] ?? "";
+  const css = cssBlock?.[3].trim() ?? "";
+  const cssLang = cssBlock?.[2] ?? "";
   const isLegal = jsLang === "" && (cssLang === "" || cssLang === "css");
 
   return {

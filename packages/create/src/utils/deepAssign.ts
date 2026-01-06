@@ -9,7 +9,11 @@ const isPlainObject = <InferredType extends IAnyObject = IAnyObject>(
 ): val is InferredType =>
   Object.prototype.toString.call(val) === "[object Object]";
 
-/** Deep merge objects to the first one */
+/**
+ * Deep merge objects to the first one
+ *
+ * @returns Merged object
+ */
 export const deepAssign = <
   TargetObject extends IAnyObject,
   MergedObject extends IAnyObject = TargetObject,

@@ -17,8 +17,15 @@ import type {
 } from "../../typings/index.js";
 import { logger } from "../../utils.js";
 
-/** Gets a query string representation (hash + queries) */
-export const getURL = (
+/**
+ * Gets a query string representation (hash + queries)
+ *
+ * @param code - TS code
+ * @param compilerOptions - TS compiler options
+ *
+ * @returns URL string
+ */
+export const getTypescriptPlaygroundHash = (
   code: string,
   compilerOptions: CompilerOptions = {},
 ): string => {
@@ -61,7 +68,7 @@ export const getTSPlaygroundPreset = ({
     if (tsFiles.length !== 1)
       logger.error("TS playground only support 1 ts file");
 
-    const link = `${service}${getURL(
+    const link = `${service}${getTypescriptPlaygroundHash(
       files[tsFiles[0]].content,
       deepAssign(
         {},

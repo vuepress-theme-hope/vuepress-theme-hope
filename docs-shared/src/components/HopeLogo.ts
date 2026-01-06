@@ -1,3 +1,5 @@
+/* oxlint-disable no-magic-numbers */
+
 import { watchImmediate } from "@vueuse/core";
 import type { VNode } from "vue";
 import { defineComponent, h, onMounted, ref } from "vue";

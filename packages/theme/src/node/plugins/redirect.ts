@@ -6,7 +6,7 @@ import type { Plugin } from "vuepress/core";
 /**
  * @private
  *
- * Resolve options for @vuepress/plugin-redirect
+ * Resolve options for `@vuepress/plugin-redirect`
  */
 export const getRedirectPlugin = (
   options?: RedirectPluginOptions | boolean,

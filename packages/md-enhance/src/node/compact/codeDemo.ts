@@ -7,7 +7,10 @@ import type Token from "markdown-it/lib/token.mjs";
 import { escapeHtml } from "../markdown-it/utils.js";
 import { logger } from "../utils.js";
 
-/** @deprecated */
+/**
+ * @param md - Markdown-it instance
+ * @deprecated
+ */
 export const legacyCodeDemo: PluginSimple = (md) => {
   md.use(container, {
     name: "demo",
@@ -49,7 +52,10 @@ export const legacyCodeDemo: PluginSimple = (md) => {
   });
 };
 
-/** @deprecated */
+/**
+ * @param md - Markdown-it instance
+ * @deprecated
+ */
 export const mdDemo: PluginSimple = (md) => {
   md.use(demo, {
     name: "md-demo",

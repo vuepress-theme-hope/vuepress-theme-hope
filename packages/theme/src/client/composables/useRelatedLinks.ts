@@ -27,6 +27,12 @@ const resolveFromFrontmatterConfig = (
 
 /**
  * Resolve `prev` or `next` config from sidebar items
+ *
+ * @param sidebarItems - sidebar items
+ * @param currentPath - current route path
+ * @param offset - offset to the target link
+ *
+ * @returns resolved link config or null
  */
 const resolveFromSidebarItems = (
   sidebarItems: SidebarItem[],

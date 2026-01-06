@@ -3,7 +3,7 @@ import type { VNode } from "vue";
 import { computed, defineComponent, h, ref } from "vue";
 
 import { useSize } from "../composables/index.js";
-import { videoIframeAllow } from "../utils/index.js";
+import { DEFAULT_RATIO, videoIframeAllow } from "../utils/index.js";
 
 import "../styles/bili-bili.scss";
 
@@ -78,7 +78,7 @@ export default defineComponent({
      */
     ratio: {
       type: [String, Number],
-      default: 16 / 9,
+      default: DEFAULT_RATIO,
     },
 
     /**

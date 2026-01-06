@@ -7,6 +7,7 @@ import type { PropType, VNode } from "vue";
 import { computed, defineComponent, h, onMounted } from "vue";
 
 import { useSize } from "../composables/index.js";
+import { DEFAULT_RATIO } from "../utils/index.js";
 
 import "../styles/stack-blitz.scss";
 
@@ -62,7 +63,7 @@ export default defineComponent({
      */
     ratio: {
       type: [String, Number],
-      default: 16 / 9,
+      default: DEFAULT_RATIO,
     },
 
     /**
