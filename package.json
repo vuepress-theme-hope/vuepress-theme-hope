@@ -71,7 +71,7 @@
     "ora": "9.0.0",
     "oxlint": "1.37.0",
     "oxlint-tsgolint": "0.10.1",
-    "prettier": "3.7.4",
+    "prettier": "3.8.1",
     "rimraf": "6.1.2",
     "rollup": "4.56.0",
     "rollup-plugin-copy": "3.5.0",
