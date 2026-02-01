@@ -80,7 +80,7 @@
     "rollup-plugin-resolve-shebang": "1.0.1",
     "sort-package-json": "3.6.0",
     "stylelint": "16.26.1",
-    "stylelint-config-hope": "10.0.0",
+    "stylelint-config-hope": "11.0.0",
     "through2": "4.0.2",
     "tslib": "2.8.1",
     "tsx": "4.21.0",
