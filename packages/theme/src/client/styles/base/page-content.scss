@@ -16,11 +16,8 @@
 
 .page-cover {
   width: var(--content-width);
+  max-width: 100%;
   margin-inline: auto;
-
-  @media (max-width: hope-config.$tablet) {
-    width: 100%;
-  }
 
   img {
     object-fit: cover;
