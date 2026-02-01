@@ -18,6 +18,16 @@
   width: var(--content-width);
   margin-inline: auto;
 
+  @media (max-width: hope-config.$laptop) {
+    max-width: calc(100% - 5rem);
+    padding-inline: 2.5rem;
+  }
+
+  @media (max-width: hope-config.$pad) {
+    max-width: calc(100% - 3rem);
+    padding-inline: 1.5rem;
+  }
+
   @media (max-width: hope-config.$tablet) {
     width: 100%;
   }
