@@ -1,5 +1,6 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "extends": ["./.oxlintrc.base.jsonc"],
   "ignorePatterns": [
     "docs-shared/lib/**",
     "packages/*/assets/**",
@@ -14,78 +15,8 @@
     "style": "warn",
     "restriction": "off",
   },
-  "plugins": [
-    "import",
-    "unicorn",
-    "oxc",
-    "promise",
-    "jsdoc",
-    "vitest",
-    "node",
-    "vue",
-  ],
+  "plugins": ["import", "unicorn", "oxc", "promise", "jsdoc", "vitest", "vue"],
   "rules": {
-    "catch-error-name": ["warn", { "name": "err" }],
-    "curly": ["off", "multi-line"],
-    "group-exports": "off",
-    "id-length": [
-      "warn",
-      { "exceptions": ["_", "a", "b", "d", "h", "i", "x", "y", "z"] },
-    ],
-    "init-declarations": "off",
-    "max-dependencies": "off",
-    "max-lines": "off",
-    "max-lines-per-function": "off",
-    "max-params": ["warn", 4],
-    "no-continue": "off",
-    "no-console": "warn",
-    "no-duplicate-imports": "off",
-    "no-magic-numbers": "off",
-    // "no-magic-numbers": ["warn", { "ignore": [-1, 0, 1, 2] }],
-    "no-nested-ternary": "off",
-    "no-null": "off",
-    "no-ternary": "off",
-    "no-warning-comments": "off",
-    "sort-imports": "off",
-    "sort-keys": "off",
-
-    "import/exports-last": "off",
-    // usually we just export vue components as default export without naming it
-    "import/no-anonymous-default-export": "off",
-    // a rule that shall not be enabled anyway
-    "import/no-named-export": "off",
-    "import/no-unassigned-import": [
-      "error",
-      { "allow": ["**/*.css", "**/*.scss"] },
-    ],
-    // named export is preferred in our codebase
-    "import/prefer-default-export": "off",
-    "jsdoc/require-param": "off",
-    "jsdoc/require-param-type": "off",
-    "jsdoc/require-returns": "off",
-    "jsdoc/require-returns-type": "off",
-    "promise/always-return": "off",
-    "promise/avoid-new": "off",
-    "promise/prefer-await-to-then": "off",
-    "unicorn/filename-case": "off",
-    // toReversed can introduce memory overhead
-    "unicorn/no-array-reverse": "off",
-    // toSorted can introduce memory overhead
-    "unicorn/no-array-sort": "off",
-    "unicorn/no-nested-ternary": "off",
-    // at is not supported by our target environments
-    "unicorn/prefer-at": "off",
-    "unicorn/prefer-global-this": "off",
-
-    // seems conflicts with prettier
-    "number-literal-case": "off",
-    "numeric-separators-style": "off",
-
-    // style rules
-    "capitalized-comments": "off",
-    "max-statements": ["warn", { "max": 30 }],
-    "no-inline-comments": "off",
-
     // the following rules are still not supported by oxlint yet
     // "import-x/no-restricted-paths": [
     //   "error",
@@ -148,10 +79,6 @@
           { "ignoreConditionalTests": true },
         ],
       },
-    },
-    {
-      "files": ["**/__tests__/**"],
-      "plugins": ["vitest"],
     },
     {
       "files": ["**/create/src/**/*.ts"],

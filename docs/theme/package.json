@@ -19,7 +19,7 @@
     "docs:webpack-dev": "cross-env BUNDLER=webpack vuepress dev src"
   },
   "dependencies": {
-    "@types/katex": "0.16.7",
+    "@types/katex": "0.16.8",
     "@vue/repl": "4.7.1",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
@@ -34,7 +34,7 @@
     "docs-shared": "workspace:*",
     "echarts-wordcloud": "2.1.0",
     "flowchart.ts": "3.0.1",
-    "katex": "0.16.27",
+    "katex": "0.16.28",
     "kotlin-playground": "1.30.0",
     "markmap-lib": "catalog:",
     "markmap-toolbar": "catalog:",
