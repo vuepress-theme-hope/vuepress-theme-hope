@@ -34,7 +34,7 @@
     "docs-shared": "workspace:*",
     "echarts-wordcloud": "2.1.0",
     "flowchart.ts": "3.0.1",
-    "katex": "0.16.28",
+    "katex": "0.16.33",
     "kotlin-playground": "1.30.0",
     "markmap-lib": "catalog:",
     "markmap-toolbar": "catalog:",
