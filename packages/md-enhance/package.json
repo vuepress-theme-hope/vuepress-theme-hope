@@ -76,7 +76,7 @@
   "devDependencies": {
     "@types/babel__core": "7.20.5",
     "@vuepress/bundler-vite": "catalog:vuepress",
-    "markdown-it": "14.1.0",
+    "markdown-it": "14.1.1",
     "typescript": "5.9.3"
   },
   "peerDependencies": {
