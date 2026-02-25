@@ -43,7 +43,7 @@
     "package.json": "sort-package-json"
   },
   "dependencies": {
-    "oxfmt": "^0.27.0"
+    "oxfmt": "^0.35.0"
   },
   "devDependencies": {
     "@commitlint/cli": "20.4.0",
@@ -72,7 +72,7 @@
     "nano-staged": "0.9.0",
     "npm-check-updates": "19.5.0",
     "ora": "9.1.0",
-    "oxlint": "1.42.0",
+    "oxlint": "1.50.0",
     "oxlint-tsgolint": "0.11.4",
     "prettier": "3.8.1",
     "rimraf": "6.1.2",
