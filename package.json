@@ -46,8 +46,8 @@
     "oxfmt": "^0.27.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "20.4.0",
-    "@commitlint/config-conventional": "20.4.0",
+    "@commitlint/cli": "20.4.2",
+    "@commitlint/config-conventional": "20.4.2",
     "@lerna-lite/cli": "4.11.0",
     "@lerna-lite/publish": "4.11.1",
     "@prettier/plugin-oxc": "0.1.3",
