@@ -73,7 +73,7 @@
     "npm-check-updates": "19.5.0",
     "ora": "9.1.0",
     "oxlint": "1.42.0",
-    "oxlint-tsgolint": "0.11.4",
+    "oxlint-tsgolint": "0.15.0",
     "prettier": "3.8.1",
     "rimraf": "6.1.2",
     "rollup": "4.59.0",
