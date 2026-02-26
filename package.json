@@ -55,7 +55,7 @@
     "@rollup/plugin-commonjs": "29.0.0",
     "@rollup/plugin-node-resolve": "16.0.3",
     "@rollup/plugin-replace": "6.0.3",
-    "@types/node": "25.1.0",
+    "@types/node": "25.3.2",
     "@types/webpack-env": "1.18.8",
     "@vitest/coverage-istanbul": "4.0.18",
     "concurrently": "9.2.1",
