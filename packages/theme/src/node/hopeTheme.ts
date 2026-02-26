@@ -34,7 +34,10 @@ const BEHAVIOR_DEFAULTS = {
  *
  * @param themeOptions - theme options
  * @param behaviorOptions - theme behavior options
+ *
+ * @returns VuePress theme instance
  */
+// oxlint-disable-next-line max-lines-per-function
 export const hopeTheme = (
   themeOptions: ThemeOptions,
   // TODO: Change default value in v2 stable
@@ -95,12 +98,12 @@ export const hopeTheme = (
         checkThemeMarkdownOptions(markdownOptions, markdown);
       },
 
-      onInitialized: (app): void => {
+      onInitialized: (): void => {
         if (favicon) addFavicon(app, favicon);
         if (behavior.check) checkUserPlugins(app);
       },
 
-      onPrepared: async (app): Promise<void> => {
+      onPrepared: async (): Promise<void> => {
         await Promise.all([
           prepareSidebarData(app, themeData, sidebarSorter),
           prepareHighLighterScss(app),
@@ -164,7 +167,7 @@ export const hopeTheme = (
           .replace(TemplateRendererOutlet.Styles, styles)
           .replace(TemplateRendererOutlet.Version, version),
 
-      clientConfigFile: (app) => prepareConfigFile(app, status, behavior),
+      clientConfigFile: () => prepareConfigFile(app, status, behavior),
     };
   };
 };

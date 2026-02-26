@@ -1,3 +1,4 @@
+// oxlint-disable import/max-dependencies
 import { isPlainObject } from "@vuepress/helper";
 import { backToTopPlugin } from "@vuepress/plugin-back-to-top";
 import { copyCodePlugin } from "@vuepress/plugin-copy-code";
@@ -39,10 +40,16 @@ import { checkPluginsOptions } from "../check/index.js";
 import type { ThemeOptions } from "../typings/index.js";
 
 /**
- * @private
- *
  * Get theme plugins
+ *
+ * @param app - VuePress app
+ * @param themeData - theme data
+ * @param options - theme options
+ * @param compact - whether to use compact mode
+ *
+ * @returns theme plugins
  */
+// oxlint-disable-next-line complexity
 export const getPlugins = (
   app: App,
   themeData: ThemeData,
@@ -120,5 +127,5 @@ export const getPlugins = (
     getRtlPlugin(themeData),
     getRedirectPlugin(pluginsOptions.redirect),
     getWatermarkPlugin(pluginsOptions.watermark),
-  ].filter((item) => item !== null);
+  ].filter((item) => item != null);
 };

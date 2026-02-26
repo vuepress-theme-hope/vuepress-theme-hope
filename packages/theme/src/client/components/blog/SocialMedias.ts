@@ -23,7 +23,7 @@ export default defineComponent({
               icon: icons[media],
               link: config,
             }
-          : (Object.assign({name:media}, config)),
+          : Object.assign({ name: media }, config),
       ),
     );
 

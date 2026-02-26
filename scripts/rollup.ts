@@ -32,6 +32,7 @@ export interface BundleOptions {
   moduleSideEffects?: ModuleSideEffectsOption;
 }
 
+// oxlint-disable-next-line complexity, max-lines-per-function
 export const rollupBundle = (
   filePath: string | FileInfo,
   {

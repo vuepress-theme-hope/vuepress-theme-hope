@@ -29,6 +29,8 @@
     //   "error",
     //   { "ignores": ["Blog", "Layout", "Slides"] },
     // ],
+    "no-warning-comments": "off",
+    "prefer-object-spread": "off"
   },
   "overrides": [
     {
@@ -40,15 +42,13 @@
       }
     },
     {
-      "files": ["**/node/**/*.ts", "**/create/src/**/*.ts"],
-      "plugins": ["node"],
+      "files": ["**/node/**/*.ts"],
       "rules": {
-        "no-restricted-imports": ["error", "@vuepress/helper/client", "vuepress/client"],
-        "import/no-nodejs-modules": "off"
+        "no-restricted-imports": ["error", "@vuepress/helper/client", "vuepress/client"]
       }
     },
     {
-      "files": ["**/client/**/*.ts"],
+      "files": ["**/client/**/*.ts", "docs-shared/src/components/**/*.ts"],
       "plugins": ["vue"],
       "rules": {
         "no-restricted-imports": [
@@ -59,12 +59,15 @@
           "vuepress/markdown",
           "vuepress/utils"
         ],
-        "typescript/prefer-nullish-coalescing": ["warn", { "ignoreConditionalTests": true }]
+        "typescript/prefer-nullish-coalescing": ["warn", { "ignoreConditionalTests": true }],
+        "unicorn/prefer-global-this": "off"
       }
     },
     {
       "files": ["**/create/src/**/*.ts"],
+      "plugins": ["node"],
       "rules": {
+        "import/no-nodejs-modules": "off",
         "no-console": "off"
       }
     }
