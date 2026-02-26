@@ -8,9 +8,7 @@ import type { ThemeMarkdownOptions } from "../typings/index.js";
  *
  * Resolve options for `@vuepress/plugin-markdown-image`
  */
-export const getMarkdownImagePlugin = (
-  options: ThemeMarkdownOptions,
-): Plugin | null =>
+export const getMarkdownImagePlugin = (options: ThemeMarkdownOptions): Plugin | null =>
   markdownImagePlugin({
     figure: options.figure ?? false,
     lazyload: options.imgLazyload ?? false,

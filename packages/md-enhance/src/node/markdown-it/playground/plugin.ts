@@ -78,8 +78,7 @@ const getPlaygroundRule =
         state.sCount[nextLine] - state.blkIndent < 4
       ) {
         // Check rest of marker
-        for (pos = start + 1; pos <= max; pos++)
-          if (state.src[pos] !== ":") break;
+        for (pos = start + 1; pos <= max; pos++) if (state.src[pos] !== ":") break;
 
         // Closing code fence must be at least as long as the opening one
         if (pos - start >= markerCount) {
@@ -111,11 +110,7 @@ const getPlaygroundRule =
     openToken.info = title;
     openToken.map = [startLine, nextLine - (autoClosed ? 1 : 0)];
 
-    state.md.block.tokenize(
-      state,
-      startLine + 1,
-      nextLine - (autoClosed ? 1 : 0),
-    );
+    state.md.block.tokenize(state, startLine + 1, nextLine - (autoClosed ? 1 : 0));
 
     const closeToken = state.push(`${name}_close`, "template", -1);
 
@@ -235,19 +230,14 @@ const atMarkerRule =
     return true;
   };
 
-const defaultPropsGetter = (
-  playgroundData: PlaygroundData,
-): Record<string, string> => ({
+const defaultPropsGetter = (playgroundData: PlaygroundData): Record<string, string> => ({
   key: playgroundData.key,
   title: playgroundData.title ?? "",
   files: encodeURIComponent(JSON.stringify(playgroundData.files)),
   settings: encodeURIComponent(JSON.stringify(playgroundData.settings)),
 });
 
-export const playground: PluginWithOptions<PlaygroundOptions> = (
-  md,
-  options,
-) => {
+export const playground: PluginWithOptions<PlaygroundOptions> = (md, options) => {
   const {
     name = "playground",
     component = "Playground",
@@ -313,10 +303,7 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
         if (foundSettings) {
           // Handle json blocks
           if (type === "fence" && info === "json")
-            playgroundData.settings = JSON.parse(content.trim()) as Record<
-              string,
-              unknown
-            >;
+            playgroundData.settings = JSON.parse(content.trim()) as Record<string, unknown>;
         }
         // Add code block content
         else if (type === "fence" && currentKey) {

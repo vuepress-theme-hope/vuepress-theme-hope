@@ -60,17 +60,15 @@ Here are some examples:
   <body>
     <!-- region snippet -->
     <p>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi,
-      repellendus. Voluptatibus alias cupiditate at, fuga tenetur error officiis
-      provident quisquam autem, porro facere! Neque quibusdam animi quaerat
-      eligendi recusandae eaque.
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi, repellendus. Voluptatibus
+      alias cupiditate at, fuga tenetur error officiis provident quisquam autem, porro facere! Neque
+      quibusdam animi quaerat eligendi recusandae eaque.
     </p>
     <!-- endregion snippet -->
     <p>
-      Veniam harum illum natus omnis necessitatibus numquam architecto eum
-      dignissimos, quos a adipisci et non quam maxime repellendus alias ipsum,
-      vero praesentium laborum commodi perferendis velit repellat? Vero,
-      cupiditate sequi.
+      Veniam harum illum natus omnis necessitatibus numquam architecto eum dignissimos, quos a
+      adipisci et non quam maxime repellendus alias ipsum, vero praesentium laborum commodi
+      perferendis velit repellat? Vero, cupiditate sequi.
     </p>
   </body>
 </html>
@@ -381,8 +379,7 @@ export default defineUserConfig({
       // Add `@src` alias support
       include: {
         resolvePath: (file) => {
-          if (file.startsWith("@src"))
-            return file.replace("@src", path.resolve(__dirname, ".."));
+          if (file.startsWith("@src")) return file.replace("@src", path.resolve(__dirname, ".."));
 
           return file;
         },

@@ -38,10 +38,7 @@ export default defineComponent({
                   ],
                   to: path,
                 },
-                () => [
-                  category,
-                  h("span", { class: "vp-category-count" }, items.length),
-                ],
+                () => [category, h("span", { class: "vp-category-count" }, items.length)],
               ),
             ),
           ),

@@ -16,17 +16,12 @@ export const getCode = (code: Record<string, string>): CodeType => {
   };
 
   AVAILABLE_LANGUAGES.forEach((type) => {
-    const match = languages.filter((language) =>
-      preProcessorConfig[type].types.includes(language),
-    );
+    const match = languages.filter((language) => preProcessorConfig[type].types.includes(language));
 
     if (match.length > 0) {
       const [language] = match;
 
-      result[type] = [
-        code[language].trim(),
-        preProcessorConfig[type].map[language] ?? language,
-      ];
+      result[type] = [code[language].trim(), preProcessorConfig[type].map[language] ?? language];
     }
   });
 
@@ -39,12 +34,9 @@ export const getCode = (code: Record<string, string>): CodeType => {
 };
 
 const handleHTML = (html: string): string =>
-  html
-    .replaceAll(String.raw`<br \/>`, "<br>")
-    .replaceAll(/<((\S+)[^<]*?)\s+\/>/g, "<$1></$2>");
+  html.replaceAll(String.raw`<br \/>`, "<br>").replaceAll(/<((\S+)[^<]*?)\s+\/>/g, "<$1></$2>");
 
-const getHtmlTemplate = (html: string): string =>
-  `<div id="app">\n${handleHTML(html)}\n</div>`;
+const getHtmlTemplate = (html: string): string => `<div id="app">\n${handleHTML(html)}\n</div>`;
 
 const getReactTemplate = (code: string): string =>
   `${code
@@ -56,10 +48,7 @@ const getReactTemplate = (code: string): string =>
 
 const getVueJsTemplate = (js: string): string =>
   js
-    .replace(
-      /export\s+default\s*\{(\n*[\s\S]*)\n*\}\s*;?$/u,
-      "Vue.createApp({$1}).mount('#app')",
-    )
+    .replace(/export\s+default\s*\{(\n*[\s\S]*)\n*\}\s*;?$/u, "Vue.createApp({$1}).mount('#app')")
     .replace(
       /export\s+default\s*define(Async)?Component\s*\(\s*\{(\n*[\s\S]*)\n*\}\s*\)\s*;?$/u,
       "Vue.createApp({$1}).mount('#app')",
@@ -69,10 +58,7 @@ const getVueJsTemplate = (js: string): string =>
 export const wrapper = (scriptStr: string): string =>
   `(function(exports){var module={};module.exports=exports;${scriptStr};return module.exports.__esModule?exports.default:module.exports;})({})`;
 
-export const getNormalCode = (
-  code: CodeType,
-  config: Partial<CodeDemoOptions>,
-): Code => {
+export const getNormalCode = (code: CodeType, config: Partial<CodeDemoOptions>): Code => {
   const codeConfig = getConfig(config);
   const js = code.js[0] ?? "";
 
@@ -83,21 +69,15 @@ export const getNormalCode = (
     css: code.css[0] ?? "",
     isLegal: code.isLegal,
     getScript: (): string =>
-      codeConfig.useBabel
-        ? (window.Babel?.transform(js, { presets: ["es2015"] })?.code ?? "")
-        : js,
+      codeConfig.useBabel ? (window.Babel?.transform(js, { presets: ["es2015"] })?.code ?? "") : js,
   };
 };
 
 const VUE_TEMPLATE_REG = /<template>([\s\S]+)<\/template>/u;
 const VUE_SCRIPT_REG = /<script(?:\s*lang=(['"])(.*?)\1)?>([\s\S]+)<\/script>/u;
-const VUE_STYLE_REG =
-  /<style(?:\s*lang=(['"])(.*?)\1)?\s*(?:scoped)?>([\s\S]+)<\/style>/u;
+const VUE_STYLE_REG = /<style(?:\s*lang=(['"])(.*?)\1)?\s*(?:scoped)?>([\s\S]+)<\/style>/u;
 
-export const getVueCode = (
-  code: CodeType,
-  config: Partial<CodeDemoOptions>,
-): Code => {
+export const getVueCode = (code: CodeType, config: Partial<CodeDemoOptions>): Code => {
   const codeConfig = getConfig(config);
 
   const vueTemplate = code.html[0] ?? "";
@@ -132,10 +112,7 @@ export const getVueCode = (
   };
 };
 
-export const getReactCode = (
-  code: CodeType,
-  config: Partial<CodeDemoOptions>,
-): Code => {
+export const getReactCode = (code: CodeType, config: Partial<CodeDemoOptions>): Code => {
   const codeConfig = getConfig(config);
   const js = code.js[0] ?? "";
 
@@ -145,9 +122,7 @@ export const getReactCode = (
     js: getReactTemplate(js),
     css:
       code.css[0] ??
-      code.js[0]
-        ?.replace(/App\.__style__(?:\s*)=(?:\s*)`([\s\S]*)?`/, "$1")
-        .trim() ??
+      code.js[0]?.replace(/App\.__style__(?:\s*)=(?:\s*)`([\s\S]*)?`/, "$1").trim() ??
       "",
     isLegal: code.isLegal,
     jsLib: [codeConfig.react, codeConfig.reactDOM, ...codeConfig.jsLib],

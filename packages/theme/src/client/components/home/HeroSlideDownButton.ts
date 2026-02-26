@@ -13,10 +13,10 @@ const SlideDownIcon: FunctionalComponent = () =>
 
 SlideDownIcon.displayName = "SlideDownIcon";
 
-const HeroSlideDownButton: FunctionalComponent<
-  Record<never, never>,
-  { click: () => void }
-> = (_props, { emit }) =>
+const HeroSlideDownButton: FunctionalComponent<Record<never, never>, { click: () => void }> = (
+  _props,
+  { emit },
+) =>
   h(
     "button",
     {

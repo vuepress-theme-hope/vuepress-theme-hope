@@ -1,17 +1,10 @@
 import MarkdownIt from "markdown-it";
 import { describe, expect, it } from "vitest";
 
-import {
-  normalDemo,
-  reactDemo,
-  vueDemo,
-} from "../../src/node/markdown-it/codeDemo.js";
+import { normalDemo, reactDemo, vueDemo } from "../../src/node/markdown-it/codeDemo.js";
 
 describe("demo", () => {
-  const markdownIt = new MarkdownIt({ linkify: true })
-    .use(normalDemo)
-    .use(vueDemo)
-    .use(reactDemo);
+  const markdownIt = new MarkdownIt({ linkify: true }).use(normalDemo).use(vueDemo).use(reactDemo);
 
   it("Should resolve demo info", () => {
     expect(

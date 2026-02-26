@@ -18,9 +18,7 @@ export const componentsPlugin =
     // TODO: Remove this in v2 stable
     if (legacy)
       // eslint-disable-next-line @typescript-eslint/no-deprecated
-      convertOptions(
-        options as ComponentPluginOptions & Record<string, unknown>,
-      );
+      convertOptions(options as ComponentPluginOptions & Record<string, unknown>);
 
     if (app.env.isDebug) logger.info("Options:", options);
 
@@ -37,10 +35,7 @@ export const componentsPlugin =
         if (options.components?.includes("VidStack"))
           addCustomElement(bundlerOptions, app, /^media-/);
 
-        addViteSsrNoExternal(bundlerOptions, app, [
-          "@vuepress/helper",
-          "vuepress-shared",
-        ]);
+        addViteSsrNoExternal(bundlerOptions, app, ["@vuepress/helper", "vuepress-shared"]);
       },
 
       clientConfigFile: (app) => prepareConfigFile(app, options),

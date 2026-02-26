@@ -10,11 +10,7 @@ import {
   checkVuePressVersion,
 } from "./check/index.js";
 import { checkLegacyStyle, convertThemeOptions } from "./compact/index.js";
-import {
-  getSocialMediaIcons,
-  getThemeData,
-  getThemeStatus,
-} from "./config/index.js";
+import { getSocialMediaIcons, getThemeData, getThemeStatus } from "./config/index.js";
 import { extendsBundlerOptions } from "./extendsBundlerOptions.js";
 import { addFavicon } from "./init/index.js";
 import { getPlugins, usePlugins } from "./plugins/index.js";
@@ -65,9 +61,7 @@ export const hopeTheme = (
       ...mainThemeOptions
     } = behavior.compact
       ? // eslint-disable-next-line @typescript-eslint/no-deprecated
-        convertThemeOptions(
-          themeOptions as ThemeOptions & Record<string, unknown>,
-        )
+        convertThemeOptions(themeOptions as ThemeOptions & Record<string, unknown>)
       : themeOptions;
 
     // eslint-disable-next-line @typescript-eslint/no-deprecated
@@ -85,9 +79,7 @@ export const hopeTheme = (
     return {
       name: "vuepress-theme-hope",
 
-      alias: behavior.custom
-        ? { "@theme-hope": path.resolve(CLIENT_FOLDER) }
-        : undefined,
+      alias: behavior.custom ? { "@theme-hope": path.resolve(CLIENT_FOLDER) } : undefined,
 
       define: () => ({
         // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -130,8 +122,7 @@ export const hopeTheme = (
             cwd: app.dir.temp(),
             ignoreInitial: true,
             // only watch vue files
-            ignored: (path, stats) =>
-              Boolean(stats?.isFile() && !path.endsWith(".vue")),
+            ignored: (path, stats) => Boolean(stats?.isFile() && !path.endsWith(".vue")),
           });
 
           structureSidebarWatcher.on("add", () => {
@@ -172,10 +163,7 @@ export const hopeTheme = (
           .replace(TemplateRendererOutlet.Content, () => content)
           .replace(TemplateRendererOutlet.Head, head)
           .replace("{{ themeVersion }}", VERSION)
-          .replace(
-            "{{ themeMode }}",
-            mainThemeOptions.darkmode === "enable" ? "dark" : "light",
-          )
+          .replace("{{ themeMode }}", mainThemeOptions.darkmode === "enable" ? "dark" : "light")
           .replace(TemplateRendererOutlet.Lang, lang)
           .replace(TemplateRendererOutlet.Prefetch, prefetch)
           .replace(TemplateRendererOutlet.Preload, preload)

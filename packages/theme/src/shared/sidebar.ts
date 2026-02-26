@@ -87,13 +87,6 @@ export type SidebarItemOptions =
 
 export type SidebarArrayOptions = SidebarItemOptions[];
 
-export type SidebarObjectOptions = Record<
-  string,
-  SidebarArrayOptions | "structure" | false
->;
+export type SidebarObjectOptions = Record<string, SidebarArrayOptions | "structure" | false>;
 
-export type SidebarOptions =
-  | SidebarArrayOptions
-  | SidebarObjectOptions
-  | "structure"
-  | false;
+export type SidebarOptions = SidebarArrayOptions | SidebarObjectOptions | "structure" | false;

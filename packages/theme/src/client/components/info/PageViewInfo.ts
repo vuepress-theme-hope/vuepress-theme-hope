@@ -49,9 +49,7 @@ export default defineComponent({
             "span",
             {
               class: "page-pageview-info",
-              "aria-label": `${metaLocale.value.views}${
-                isPure.value ? "" : "🔢"
-              }`,
+              "aria-label": `${metaLocale.value.views}${isPure.value ? "" : "🔢"}`,
               ...(isPure.value ? {} : { "data-balloon-pos": "up" }),
             },
             [
@@ -62,12 +60,8 @@ export default defineComponent({
                   ref: pageviewElement,
                   id: "ArtalkPV",
                   class: "vp-pageview waline-pageview-count",
-                  "data-path": isString(props.pageview)
-                    ? props.pageview
-                    : routePath.value,
-                  "data-page-key": isString(props.pageview)
-                    ? props.pageview
-                    : routePath.value,
+                  "data-path": isString(props.pageview) ? props.pageview : routePath.value,
+                  "data-page-key": isString(props.pageview) ? props.pageview : routePath.value,
                 },
                 "...",
               ),

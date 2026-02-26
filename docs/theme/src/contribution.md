@@ -116,7 +116,7 @@ For better performance, all plugins are packed and minified using rollup when th
 
 1. Format project: `pnpm lint`
 
-   It will format the project using prettier, eslint and stylelint.
+   It will format the project using oxlint, oxfmt and stylelint.
 
    If you modify Markdown, you also need to run the `pnpm lint:md` command.
 

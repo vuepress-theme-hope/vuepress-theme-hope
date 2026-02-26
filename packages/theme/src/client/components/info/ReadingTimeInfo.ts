@@ -1,7 +1,4 @@
-import type {
-  ReadingTime,
-  ReadingTimeLocale,
-} from "@vuepress/plugin-reading-time/client";
+import type { ReadingTime, ReadingTimeLocale } from "@vuepress/plugin-reading-time/client";
 import type { PropType, VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 
@@ -48,9 +45,7 @@ export default defineComponent({
             "span",
             {
               class: "page-reading-time-info",
-              "aria-label": `${metaLocale.value.readingTime}${
-                isPure.value ? "" : "⌛"
-              }`,
+              "aria-label": `${metaLocale.value.readingTime}${isPure.value ? "" : "⌛"}`,
               ...(isPure.value ? {} : { "data-balloon-pos": "up" }),
             },
             [

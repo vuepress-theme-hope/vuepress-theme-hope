@@ -61,34 +61,15 @@
     &.color#{$index} {
       background: color.scale($color, $lightness: 90%);
       background:
-        linear-gradient(
-            135deg,
-            transparent 0.75em,
-            color.scale($color, $lightness: 90%) 0
-          )
-          top,
-        linear-gradient(
-            45deg,
-            transparent 0.75em,
-            color.scale($color, $lightness: 90%) 0
-          )
-          bottom;
+        linear-gradient(135deg, transparent 0.75em, color.scale($color, $lightness: 90%) 0) top,
+        linear-gradient(45deg, transparent 0.75em, color.scale($color, $lightness: 90%) 0) bottom;
       color: color.scale($color, $lightness: 20%);
 
       [data-theme="dark"] & {
         background: color.scale($color, $lightness: -75%);
         background:
-          linear-gradient(
-              135deg,
-              transparent 0.75em,
-              color.scale($color, $lightness: -75%) 0
-            )
-            top,
-          linear-gradient(
-              45deg,
-              transparent 0.75em,
-              color.scale($color, $lightness: -75%) 0
-            )
+          linear-gradient(135deg, transparent 0.75em, color.scale($color, $lightness: -75%) 0) top,
+          linear-gradient(45deg, transparent 0.75em, color.scale($color, $lightness: -75%) 0)
             bottom;
         color: color.scale($color, $lightness: -10%);
       }
@@ -96,33 +77,15 @@
       &.clickable:hover {
         background: color.scale($color, $lightness: 75%);
         background:
-          linear-gradient(
-              135deg,
-              transparent 0.75em,
-              color.scale($color, $lightness: 75%) 0
-            )
-            top,
-          linear-gradient(
-              45deg,
-              transparent 0.75em,
-              color.scale($color, $lightness: 75%) 0
-            )
-            bottom;
+          linear-gradient(135deg, transparent 0.75em, color.scale($color, $lightness: 75%) 0) top,
+          linear-gradient(45deg, transparent 0.75em, color.scale($color, $lightness: 75%) 0) bottom;
 
         [data-theme="dark"] & {
           background: color.scale($color, $lightness: -60%);
           background:
-            linear-gradient(
-                135deg,
-                transparent 0.75em,
-                color.scale($color, $lightness: -60%) 0
-              )
+            linear-gradient(135deg, transparent 0.75em, color.scale($color, $lightness: -60%) 0)
               top,
-            linear-gradient(
-                45deg,
-                transparent 0.75em,
-                color.scale($color, $lightness: -60%) 0
-              )
+            linear-gradient(45deg, transparent 0.75em, color.scale($color, $lightness: -60%) 0)
               bottom;
         }
       }

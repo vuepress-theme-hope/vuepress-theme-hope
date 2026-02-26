@@ -18,10 +18,7 @@ type LegacyNavbarOptions = (
 
 const { deprecatedLogger } = createConverter("theme navbar");
 
-const handleNavbarOptions = (
-  config: LegacyNavbarOptions,
-  localePath: string,
-): NavbarOptions =>
+const handleNavbarOptions = (config: LegacyNavbarOptions, localePath: string): NavbarOptions =>
   config
     .map((item) => {
       if (isString(item)) return item;
@@ -43,20 +40,14 @@ const handleNavbarOptions = (
 
       return null;
     })
-    .filter(
-      (item): item is NavbarLinkOptions | NavbarGroupOptions => item !== null,
-    );
+    .filter((item): item is NavbarLinkOptions | NavbarGroupOptions => item !== null);
 
 /**
  * @deprecated You should use V2 standard navbar config and avoid using it
  */
-export const convertNavbarOptions = (
-  config: unknown,
-  localePath = "",
-): NavbarOptions | false => {
+export const convertNavbarOptions = (config: unknown, localePath = ""): NavbarOptions | false => {
   if (config === false) return false;
-  if (isArray(config))
-    return handleNavbarOptions(config as NavbarOptions, localePath);
+  if (isArray(config)) return handleNavbarOptions(config as NavbarOptions, localePath);
 
   logger.error(`${colors.magenta("navbar")} config should be an array`);
 
@@ -66,18 +57,14 @@ export const convertNavbarOptions = (
 /**
  * @deprecated You should use V2 standard navbar config and avoid using it
  */
-export const convertNavbarLayoutOptions = (
-  options: Record<string, unknown>,
-): void => {
+export const convertNavbarLayoutOptions = (options: Record<string, unknown>): void => {
   // Handle navbar layout
   if (isPlainObject(options.navbarLayout)) {
     if ("left" in options.navbarLayout) {
       logger.warn(
         `To have better meaning under RTL layout, ${colors.magenta(
           "navbarLayout.left",
-        )}" option is deprecated, please use ${colors.magenta(
-          "navbarLayout.start",
-        )} instead`,
+        )}" option is deprecated, please use ${colors.magenta("navbarLayout.start")} instead`,
       );
       options.navbarLayout.start = options.navbarLayout.left as string[];
     }
@@ -86,9 +73,7 @@ export const convertNavbarLayoutOptions = (
       logger.warn(
         `To have better meaning under RTL layout, ${colors.magenta(
           "navbarLayout.right",
-        )}" option is deprecated, please use ${colors.magenta(
-          "navbarLayout.end",
-        )} instead`,
+        )}" option is deprecated, please use ${colors.magenta("navbarLayout.end")} instead`,
       );
       options.navbarLayout.end = options.navbarLayout.right as string[];
     }

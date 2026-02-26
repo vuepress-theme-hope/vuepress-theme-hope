@@ -3,8 +3,7 @@ import { hopeTheme } from "vuepress-theme-hope";
 import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
-const hostname =
-  process.env.HOSTNAME ?? "https://theme-hope-docs-demo.vuejs.press";
+const hostname = process.env.HOSTNAME ?? "https://theme-hope-docs-demo.vuejs.press";
 
 export default hopeTheme(
   {

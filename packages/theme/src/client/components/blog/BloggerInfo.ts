@@ -92,11 +92,7 @@ export default defineComponent({
                   })
                 : null,
               bloggerInfo.value.name
-                ? h(
-                    "div",
-                    { class: "vp-blogger-name", property: "name" },
-                    bloggerInfo.value.name,
-                  )
+                ? h("div", { class: "vp-blogger-name", property: "name" }, bloggerInfo.value.name)
                 : null,
               bloggerInfo.value.description
                 ? h("div", {
@@ -104,9 +100,7 @@ export default defineComponent({
                     innerHTML: bloggerInfo.value.description,
                   })
                 : null,
-              intro.value
-                ? h("meta", { property: "url", content: withBase(intro.value) })
-                : null,
+              intro.value ? h("meta", { property: "url", content: withBase(intro.value) }) : null,
             ],
           ),
           h(

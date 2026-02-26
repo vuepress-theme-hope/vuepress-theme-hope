@@ -25,9 +25,7 @@ export default defineComponent({
 
     const open = ref(false);
 
-    const enableFullScreen = computed(
-      () => !isPure.value && theme.value.fullscreen && isSupported,
-    );
+    const enableFullScreen = computed(() => !isPure.value && theme.value.fullscreen && isSupported);
 
     const enabled = computed(
       () => hasMultipleThemeColors || canToggle.value || enableFullScreen.value,
@@ -43,14 +41,10 @@ export default defineComponent({
             "div",
             { class: "vp-nav-item hide-in-mobile" },
             // Only ColorModeSwitch is enabled
-            canToggle.value &&
-              !enableFullScreen.value &&
-              !hasMultipleThemeColors
+            canToggle.value && !enableFullScreen.value && !hasMultipleThemeColors
               ? h(ColorModeSwitch)
               : // Only FullScreen is enabled
-                enableFullScreen.value &&
-                  !canToggle.value &&
-                  !hasMultipleThemeColors
+                enableFullScreen.value && !canToggle.value && !hasMultipleThemeColors
                 ? h(ToggleFullScreenButton)
                 : h(
                     "button",
@@ -62,11 +56,7 @@ export default defineComponent({
                     },
                     [
                       h(AppearanceIcon),
-                      h(
-                        "div",
-                        { class: "vp-appearance-dropdown" },
-                        h(AppearanceSettings),
-                      ),
+                      h("div", { class: "vp-appearance-dropdown" }, h(AppearanceSettings)),
                     ],
                   ),
           )

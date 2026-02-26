@@ -1,9 +1,4 @@
-import {
-  useEventListener,
-  usePreferredDark,
-  useStorage,
-  watchImmediate,
-} from "@vueuse/core";
+import { useEventListener, usePreferredDark, useStorage, watchImmediate } from "@vueuse/core";
 import type { App, ComputedRef, InjectionKey, Ref } from "vue";
 import { computed, inject, onMounted, watchEffect } from "vue";
 
@@ -24,9 +19,7 @@ export interface DarkMode {
   canToggle: ComputedRef<boolean>;
 }
 
-export const darkModeSymbol: InjectionKey<DarkMode> = Symbol(
-  __VUEPRESS_DEV__ ? "darkMode" : "",
-);
+export const darkModeSymbol: InjectionKey<DarkMode> = Symbol(__VUEPRESS_DEV__ ? "darkMode" : "");
 
 /**
  * Inject dark mode global computed
@@ -44,10 +37,7 @@ export const injectDarkMode = (app: App): void => {
   const theme = useTheme();
   const config = computed(() => theme.value.darkmode ?? "switch");
 
-  const status = useStorage<DarkmodeStatus>(
-    "vuepress-theme-hope-scheme",
-    "auto",
-  );
+  const status = useStorage<DarkmodeStatus>("vuepress-theme-hope-scheme", "auto");
 
   const isDarkMode = computed(() => {
     const darkModeConfig = config.value;
@@ -63,19 +53,13 @@ export const injectDarkMode = (app: App): void => {
         return isDarkPreferred.value;
       }
       case "switch": {
-        return (
-          status.value === "dark" ||
-          (status.value === "auto" && isDarkPreferred.value)
-        );
+        return status.value === "dark" || (status.value === "auto" && isDarkPreferred.value);
       }
       case "toggle": {
         return status.value === "dark";
       }
       default: {
-        return (
-          status.value === "dark" ||
-          (status.value === "auto" && isDarkPreferred.value)
-        );
+        return status.value === "dark" || (status.value === "auto" && isDarkPreferred.value);
       }
     }
   });
@@ -105,8 +89,7 @@ export const setupDarkMode = (): void => {
   watchEffect(() => {
     if (config.value === "disable") status.value = "light";
     else if (config.value === "enable") status.value = "dark";
-    else if (config.value === "toggle" && status.value === "auto")
-      status.value = "light";
+    else if (config.value === "toggle" && status.value === "auto") status.value = "light";
   });
 
   useEventListener("beforeprint", () => {

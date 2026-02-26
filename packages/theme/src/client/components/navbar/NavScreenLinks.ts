@@ -22,9 +22,7 @@ export default defineComponent({
               h(
                 "div",
                 { class: "navbar-links-item" },
-                "children" in config
-                  ? h(NavScreenMenu, { config })
-                  : h(AutoLink, { config }),
+                "children" in config ? h(NavScreenMenu, { config }) : h(AutoLink, { config }),
               ),
             ),
           )

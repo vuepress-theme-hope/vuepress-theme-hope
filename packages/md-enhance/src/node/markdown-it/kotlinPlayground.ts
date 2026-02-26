@@ -12,9 +12,7 @@ export const kotlinPlayground: PluginSimple = (md) => {
       title,
       key,
       settings: encodeURIComponent(JSON.stringify(settings)),
-      files: encodeData(
-        JSON.stringify(entries(files).map(([, { content }]) => content)),
-      ),
+      files: encodeData(JSON.stringify(entries(files).map(([, { content }]) => content))),
     }),
   });
 };

@@ -7,9 +7,7 @@ import { useThemeLocale } from "@theme-hope/composables/useTheme";
 import "../../styles/base/skip-link.scss";
 
 const focusMainContent = ({ target }: Event): void => {
-  const el = document.querySelector<HTMLElement>(
-    (target as HTMLAnchorElement).hash,
-  );
+  const el = document.querySelector<HTMLElement>((target as HTMLAnchorElement).hash);
 
   if (el) {
     const removeTabIndex = (): void => {

@@ -96,9 +96,7 @@ export default defineComponent({
               slots.articlesAfter?.(),
             ],
           ),
-          h(DropTransition, { delay: 0.16 }, () =>
-            h(InfoPanel, { key: "blog" }, slots),
-          ),
+          h(DropTransition, { delay: 0.16 }, () => h(InfoPanel, { key: "blog" }, slots)),
         ]),
       );
   },

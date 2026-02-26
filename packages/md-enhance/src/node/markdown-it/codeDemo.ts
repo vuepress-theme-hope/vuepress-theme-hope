@@ -31,8 +31,7 @@ const getPlugin =
         for (let i = index; i < tokens.length; i++) {
           const { type, content, info } = tokens[i];
           const language = info
-            ? (/^([^ :[{]+)/.exec(md.utils.unescapeAll(info).trim())?.[1] ??
-              "text")
+            ? (/^([^ :[{]+)/.exec(md.utils.unescapeAll(info).trim())?.[1] ?? "text")
             : "";
 
           if (type === `container_${name}_close`) break;
@@ -44,9 +43,7 @@ const getPlugin =
 
         return `<CodeDemo id="code-demo-${index}" type="${name.split("-")[0]}"${
           title ? ` title="${encodeURIComponent(title)}"` : ""
-        }${config ? ` config="${config}"` : ""} code="${encodeData(
-          JSON.stringify(code),
-        )}">\n`;
+        }${config ? ` config="${config}"` : ""} code="${encodeData(JSON.stringify(code))}">\n`;
       },
       closeRender: () => `</CodeDemo>\n`,
     });

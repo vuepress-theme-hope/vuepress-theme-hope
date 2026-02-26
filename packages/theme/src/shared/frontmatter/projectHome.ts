@@ -220,8 +220,5 @@ export interface ThemeProjectHomeFeatureOptions {
 export interface ThemeProjectHomePageFrontmatter extends ThemeHomePageFrontmatter {
   actions?: ThemeProjectHomeActionOptions[];
   features?: ThemeProjectHomeFeatureItem[];
-  highlights?: (
-    | ThemeProjectHomeFeatureOptions
-    | ThemeProjectHomeHighlightOptions
-  )[];
+  highlights?: (ThemeProjectHomeFeatureOptions | ThemeProjectHomeHighlightOptions)[];
 }

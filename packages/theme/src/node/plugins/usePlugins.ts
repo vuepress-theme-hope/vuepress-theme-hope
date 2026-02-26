@@ -35,10 +35,7 @@ export const usePlugins = (
   else if (hotReload || app.env.isBuild) useGitPlugin(app, true, themeData);
 
   if (plugins.readingTime ?? true)
-    useReadingTimePlugin(
-      app,
-      isPlainObject(plugins.readingTime) ? plugins.readingTime : {},
-    );
+    useReadingTimePlugin(app, isPlainObject(plugins.readingTime) ? plugins.readingTime : {});
 
   if (isPlainObject(highlighter)) {
     if (highlighter.type === "prismjs") usePrismjsPlugin(app, highlighter);

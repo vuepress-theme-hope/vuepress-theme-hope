@@ -20,9 +20,7 @@ export const checkPluginsOptions = (plugins: ThemePluginsOptions): void => {
   keys(plugins).forEach((key) => {
     if (!KNOWN_THEME_PLUGIN_KEYS.has(key))
       logger.warn(
-        `You are setting "${colors.magenta(
-          `plugins.${key}`,
-        )}" option in ${colors.cyan(
+        `You are setting "${colors.magenta(`plugins.${key}`)}" option in ${colors.cyan(
           "theme options",
         )}, but it's not supported by theme. You need to install the plugin yourself, import it in ${colors.cyan(
           "vuepress config file",

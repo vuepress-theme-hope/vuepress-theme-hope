@@ -29,9 +29,7 @@ export const setupRunningTimeFooter = (
 
   let prevTimeText = "";
 
-  const initialTimeStamp = (
-    date instanceof Date ? date : new Date(date)
-  ).getTime();
+  const initialTimeStamp = (date instanceof Date ? date : new Date(date)).getTime();
 
   const pastedTime = computed(() => {
     const passedTime = now.value.getTime() - initialTimeStamp;
@@ -60,9 +58,7 @@ export const setupRunningTimeFooter = (
             .replace(":second", second.toString());
 
           footer.innerHTML = `${
-            preserveContent
-              ? `${footer.innerHTML.replace(`<br>${prevTimeText}`, "")}<br>`
-              : ""
+            preserveContent ? `${footer.innerHTML.replace(`<br>${prevTimeText}`, "")}<br>` : ""
           }${localeText}`;
           prevTimeText = localeText;
         }

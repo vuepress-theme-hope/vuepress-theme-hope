@@ -55,11 +55,7 @@ ${
       - name: ${workflow.install}
         run: |
           corepack enable
-          ${
-            packageManager === "npm"
-              ? "npm ci"
-              : `${packageManager} install --frozen-lockfile`
-          }
+          ${packageManager === "npm" ? "npm ci" : `${packageManager} install --frozen-lockfile`}
 
       - name: ${workflow.build}
         env:

@@ -1,9 +1,4 @@
-import {
-  getFullLocaleConfig,
-  isPlainObject,
-  keys,
-  startsWith,
-} from "@vuepress/helper";
+import { getFullLocaleConfig, isPlainObject, keys, startsWith } from "@vuepress/helper";
 import type { DocSearchPluginOptions } from "@vuepress/plugin-docsearch";
 import type { MeiliSearchPluginOptions } from "@vuepress/plugin-meilisearch";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
@@ -12,21 +7,15 @@ import type { App, Page, Plugin } from "vuepress/core";
 import { colors } from "vuepress/utils";
 
 import { logMissingPkg } from "./utils.js";
-import type {
-  ThemeBasePageFrontmatter,
-  ThemeData,
-} from "../../shared/index.js";
+import type { ThemeBasePageFrontmatter, ThemeData } from "../../shared/index.js";
 import { themeLocaleInfo } from "../locales/index.js";
 import type { ThemePluginsOptions } from "../typings/index.js";
 import { logger } from "../utils.js";
 
-let docsearchPlugin: ((options: DocSearchPluginOptions) => Plugin) | null =
-  null;
-let meilisearchPlugin: ((options: MeiliSearchPluginOptions) => Plugin) | null =
-  null;
+let docsearchPlugin: ((options: DocSearchPluginOptions) => Plugin) | null = null;
+let meilisearchPlugin: ((options: MeiliSearchPluginOptions) => Plugin) | null = null;
 let searchPlugin: ((options: SearchPluginOptions) => Plugin) | null = null;
-let slimsearchPlugin: ((options: SlimSearchPluginOptions) => Plugin) | null =
-  null;
+let slimsearchPlugin: ((options: SlimSearchPluginOptions) => Plugin) | null = null;
 
 try {
   ({ docsearchPlugin } = await import("@vuepress/plugin-docsearch"));
@@ -98,9 +87,8 @@ export const getSearchPlugin = (
       // Add supports for category and tags
       customFields: [
         {
-          getter: (
-            page: Page<Record<never, never>, ThemeBasePageFrontmatter>,
-          ) => page.frontmatter.category,
+          getter: (page: Page<Record<never, never>, ThemeBasePageFrontmatter>) =>
+            page.frontmatter.category,
           formatter: getFullLocaleConfig({
             app,
             default: themeLocaleInfo.map(([langs, { blogLocales }]) => [
@@ -110,9 +98,8 @@ export const getSearchPlugin = (
           }),
         },
         {
-          getter: (
-            page: Page<Record<never, never>, ThemeBasePageFrontmatter>,
-          ) => page.frontmatter.tag,
+          getter: (page: Page<Record<never, never>, ThemeBasePageFrontmatter>) =>
+            page.frontmatter.tag,
           formatter: getFullLocaleConfig({
             app,
             default: themeLocaleInfo.map(([langs, { blogLocales }]) => [

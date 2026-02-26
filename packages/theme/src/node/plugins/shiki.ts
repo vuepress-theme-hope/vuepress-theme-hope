@@ -9,10 +9,7 @@ import { isHighlighterPlugin } from "./utils.js";
  *
  * Composition Api to use `@vuepress/plugin-shiki`
  */
-export const useShikiPlugin = (
-  app: App,
-  options: ShikiPluginOptions = {},
-): void => {
+export const useShikiPlugin = (app: App, options: ShikiPluginOptions = {}): void => {
   const { plugins } = app.pluginApi;
 
   // Ensure highlighter plugin is not enabled
@@ -40,9 +37,7 @@ export const useShikiPlugin = (
 export const removeShikiPlugin = (app: App): void => {
   const { plugins } = app.pluginApi;
 
-  const index = plugins.findIndex(
-    (plugin) => plugin.name === "@vuepress/plugin-shiki",
-  );
+  const index = plugins.findIndex((plugin) => plugin.name === "@vuepress/plugin-shiki");
 
   if (index !== -1) app.pluginApi.plugins.splice(index, 1);
 };

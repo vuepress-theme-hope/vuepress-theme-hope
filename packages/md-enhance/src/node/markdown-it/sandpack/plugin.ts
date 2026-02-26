@@ -103,8 +103,7 @@ const sandpackRule: RuleBlock = (state, startLine, endLine, silent) => {
       state.sCount[nextLine] - state.blkIndent < 4
     ) {
       // Check rest of marker
-      for (pos = start + 1; pos <= max; pos++)
-        if (state.src[pos] !== ":") break;
+      for (pos = start + 1; pos <= max; pos++) if (state.src[pos] !== ":") break;
 
       // Closing code fence must be at least as long as the opening one
       if (pos - start >= markerCount) {
@@ -137,11 +136,7 @@ const sandpackRule: RuleBlock = (state, startLine, endLine, silent) => {
   openToken.info = title;
   openToken.map = [startLine, nextLine - (autoClosed ? 1 : 0)];
 
-  state.md.block.tokenize(
-    state,
-    startLine + 1,
-    nextLine - (autoClosed ? 1 : 0),
-  );
+  state.md.block.tokenize(state, startLine + 1, nextLine - (autoClosed ? 1 : 0));
 
   const closeToken = state.push("sandpack_close", "template", -1);
 
@@ -292,8 +287,7 @@ export const sandpack: PluginSimple = (md) => {
     const containerName = content.split(" ", 2)[0].trim();
     const arr = containerName.split("#");
 
-    if (arr.length > 1)
-      sandpackData.template = arr[1] as SandpackPredefinedTemplate;
+    if (arr.length > 1) sandpackData.template = arr[1] as SandpackPredefinedTemplate;
 
     let currentKey: string | null = null;
     let foundOptions = false;
@@ -318,11 +312,7 @@ export const sandpack: PluginSimple = (md) => {
             hidden: "hidden" in fileAttrs,
             readOnly: "readOnly" in fileAttrs,
           };
-        } else if (
-          type === "file_close" ||
-          type === "setup_open" ||
-          type === "options_open"
-        ) {
+        } else if (type === "file_close" || type === "setup_open" || type === "options_open") {
           currentKey = null;
         }
 
@@ -353,9 +343,7 @@ export const sandpack: PluginSimple = (md) => {
         // Parse setup
         if (foundSetup) {
           if (type === "fence" && (info === "js" || info === "javascript"))
-            sandpackData.customSetup = jsRunner(
-              content.trim(),
-            ) as SandpackSetup;
+            sandpackData.customSetup = jsRunner(content.trim()) as SandpackSetup;
 
           foundSetup = false;
         }
@@ -374,9 +362,7 @@ export const sandpack: PluginSimple = (md) => {
     return `<SandPack ${
       keys(attrs).length > 0
         ? `${entries(attrs)
-            .map(([attr, value]) =>
-              value ? `${attr}="${escapeHtml(value)}"` : attr,
-            )
+            .map(([attr, value]) => (value ? `${attr}="${escapeHtml(value)}"` : attr))
             .join(" ")} `
         : ""
     }${entries(props)

@@ -46,10 +46,7 @@ export default defineComponent({
           h(
             "li",
             {
-              class: [
-                "vp-article-type",
-                { active: type.path === page.value.path },
-              ],
+              class: ["vp-article-type", { active: type.path === page.value.path }],
             },
             h(RouteLink, { to: type.path }, () => type.text),
           ),

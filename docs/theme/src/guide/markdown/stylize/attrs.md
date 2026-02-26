@@ -73,14 +73,7 @@ will be
 You can pass options to `attrs` to customize plugin behavior.
 
 ```ts
-type MarkdownItAttrRuleName =
-  | "fence"
-  | "inline"
-  | "table"
-  | "list"
-  | "hr"
-  | "softbreak"
-  | "block";
+type MarkdownItAttrRuleName = "fence" | "inline" | "table" | "list" | "hr" | "softbreak" | "block";
 
 interface MarkdownItAttrsOptions {
   /**

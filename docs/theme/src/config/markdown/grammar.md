@@ -171,10 +171,7 @@ Whether to enable tasklist format support. You can pass an object to config task
     mhchem?: boolean;
   }
 
-  interface MarkdownMathjaxPluginOptions extends Omit<
-    MarkdownItMathjaxOptions,
-    "transformer"
-  > {
+  interface MarkdownMathjaxPluginOptions extends Omit<MarkdownItMathjaxOptions, "transformer"> {
     type?: "mathjax";
 
     /**
@@ -216,9 +213,7 @@ Whether to enable tasklist format support. You can pass an object to config task
     svg?: MathjaxSVGOutputOptions;
   }
 
-  type MarkdownMathPluginOptions =
-    | MarkdownKatexPluginOptions
-    | MarkdownMathjaxPluginOptions;
+  type MarkdownMathPluginOptions = MarkdownKatexPluginOptions | MarkdownMathjaxPluginOptions;
   ```
 
 - Default: `false`

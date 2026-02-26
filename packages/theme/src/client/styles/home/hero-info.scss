@@ -117,8 +117,7 @@
       120deg,
       var(--vp-c-accent-hover),
       var(--vp-c-accent) 30%,
-      color.adjust(helper.get-color(hope-palette.$vp-c-accent), $hue: 60deg)
-        100%
+      color.adjust(helper.get-color(hope-palette.$vp-c-accent), $hue: 60deg) 100%
     );
     background-clip: text;
 
@@ -153,11 +152,7 @@
         120deg,
         var(--vp-c-accent-hover),
         var(--vp-c-accent) 30%,
-        color.adjust(
-            helper.get-dark-color(hope-palette.$vp-c-accent),
-            $hue: 60deg
-          )
-          100%
+        color.adjust(helper.get-dark-color(hope-palette.$vp-c-accent), $hue: 60deg) 100%
       );
     }
   }

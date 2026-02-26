@@ -24,14 +24,7 @@ export const enSidebarConfig = sidebar({
       text: "Config",
       icon: "gears",
       prefix: "config/",
-      children: [
-        "intro",
-        "i18n",
-        "theme/",
-        "plugins/",
-        "frontmatter/",
-        "style",
-      ],
+      children: ["intro", "i18n", "theme/", "plugins/", "frontmatter/", "style"],
     },
     {
       text: "Cookbook",

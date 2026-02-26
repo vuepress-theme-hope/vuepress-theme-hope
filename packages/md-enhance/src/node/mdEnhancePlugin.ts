@@ -33,18 +33,12 @@ export const mdEnhancePlugin =
     // TODO: Remove this in v2 stable
     if (legacy)
       // eslint-disable-next-line @typescript-eslint/no-deprecated
-      convertOptions(
-        options as MarkdownEnhancePluginOptions & Record<string, unknown>,
-      );
+      convertOptions(options as MarkdownEnhancePluginOptions & Record<string, unknown>);
 
     if (app.env.isDebug) logger.info("Options:", options);
 
-    const getStatus = (
-      key: keyof MarkdownEnhancePluginOptions,
-      pkgs: string[] = [],
-    ): boolean =>
-      Boolean(options[key]) &&
-      pkgs.every((pkg) => isInstalled(pkg, Boolean(options[key])));
+    const getStatus = (key: keyof MarkdownEnhancePluginOptions, pkgs: string[] = []): boolean =>
+      Boolean(options[key]) && pkgs.every((pkg) => isInstalled(pkg, Boolean(options[key])));
 
     const status = {
       kotlinPlayground: getStatus("kotlinPlayground", ["kotlin-playground"]),
@@ -63,8 +57,7 @@ export const mdEnhancePlugin =
           ...(isPlainObject(options.demo) ? options.demo : {}),
         },
         VUE_PLAYGROUND_MONACO:
-          isPlainObject(options.vuePlayground) &&
-          options.vuePlayground.editor === "monaco",
+          isPlainObject(options.vuePlayground) && options.vuePlayground.editor === "monaco",
       }),
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
@@ -76,11 +69,7 @@ export const mdEnhancePlugin =
 
         if (status.kotlinPlayground) {
           addViteOptimizeDepsInclude(bundlerOptions, app, "kotlin-playground");
-          addViteOptimizeDepsNeedsInterop(
-            bundlerOptions,
-            app,
-            "kotlin-playground",
-          );
+          addViteOptimizeDepsNeedsInterop(bundlerOptions, app, "kotlin-playground");
           addViteSsrExternal(bundlerOptions, app, "kotlin-playground");
         }
 
@@ -96,11 +85,7 @@ export const mdEnhancePlugin =
           // Hide webpack warnings
           chainWebpack(bundlerOptions, app, (config) => {
             // TODO: Probably need to fix upstream
-            config.resolve.set("conditionNames", [
-              "browser",
-              "import",
-              "module",
-            ]);
+            config.resolve.set("conditionNames", ["browser", "import", "module"]);
             config.module.set("exprContextCritical", false);
             config.module.set("unknownContextCritical", false);
           });
@@ -124,10 +109,8 @@ export const mdEnhancePlugin =
           const { presets, config = {} } = options.playground;
 
           presets.forEach((preset) => {
-            if (preset === "ts")
-              md.use(playground, getTSPlaygroundPreset(config.ts ?? {}));
-            else if (preset === "vue")
-              md.use(playground, getVuePlaygroundPreset(config.vue ?? {}));
+            if (preset === "ts") md.use(playground, getTSPlaygroundPreset(config.ts ?? {}));
+            else if (preset === "vue") md.use(playground, getVuePlaygroundPreset(config.vue ?? {}));
             else if (preset === "unocss")
               md.use(playground, getUnoPlaygroundPreset(config.unocss ?? {}));
             else if (isPlainObject(preset)) md.use(playground, preset);
@@ -138,7 +121,6 @@ export const mdEnhancePlugin =
         if (status.sandpack) md.use(sandpack);
       },
 
-      clientConfigFile: (app) =>
-        prepareConfigFile(app, options, status, legacy),
+      clientConfigFile: (app) => prepareConfigFile(app, options, status, legacy),
     };
   };

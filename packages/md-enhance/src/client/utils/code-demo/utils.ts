@@ -25,16 +25,7 @@ export const preProcessorConfig: Record<
     },
   },
   js: {
-    types: [
-      "js",
-      "javascript",
-      "coffee",
-      "coffeescript",
-      "ts",
-      "typescript",
-      "ls",
-      "livescript",
-    ],
+    types: ["js", "javascript", "coffee", "coffeescript", "ts", "typescript", "ls", "livescript"],
     map: {
       js: "none",
       javascript: "none",
@@ -79,19 +70,14 @@ export const h = (
   return node;
 };
 
-export const getConfig = (
-  config: Partial<CodeDemoOptions>,
-): CodeDemoOptions => ({
+export const getConfig = (config: Partial<CodeDemoOptions>): CodeDemoOptions => ({
   ...options,
   ...config,
   jsLib: [...new Set([options.jsLib, config.jsLib ?? []].flat())],
   cssLib: [...new Set([options.cssLib, config.cssLib ?? []].flat())],
 });
 
-export const loadScript = (
-  state: Record<string, Promise<void>>,
-  link: string,
-): Promise<void> => {
+export const loadScript = (state: Record<string, Promise<void>>, link: string): Promise<void> => {
   if (isDef(state[link])) return state[link];
 
   const loadEvent = new Promise<void>((resolve) => {
@@ -122,11 +108,7 @@ export const injectCSS = (shadowRoot: ShadowRoot, code: Code): void => {
   }
 };
 
-export const injectScript = (
-  id: string,
-  shadowRoot: ShadowRoot,
-  code: Code,
-): void => {
+export const injectScript = (id: string, shadowRoot: ShadowRoot, code: Code): void => {
   const scriptText = code.getScript();
 
   if (

@@ -5,18 +5,13 @@
   "keywords": [
     "create",
     "vuepress",
-    "vuepress2",
     "vuepress-theme",
-    "vuepress-theme-hope"
+    "vuepress-theme-hope",
+    "vuepress2"
   ],
   "homepage": "https://theme-hope.vuejs.press/",
   "bugs": {
     "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
-    "directory": "packages/create"
   },
   "license": "MIT",
   "author": {
@@ -24,12 +19,11 @@
     "email": "mister-hope@outlook.com",
     "url": "https://mister-hope.com"
   },
-  "type": "module",
-  "exports": {
-    "./package.json": "./package.json"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+    "directory": "packages/create"
   },
-  "main": "./lib/node/index.js",
-  "types": "./lib/node/index.d.ts",
   "bin": {
     "create-vuepress-theme-hope": "./lib/index.js"
   },
@@ -37,6 +31,12 @@
     "lib",
     "template"
   ],
+  "type": "module",
+  "main": "./lib/node/index.js",
+  "types": "./lib/node/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "build": "rollup -c rollup.config.ts --configPlugin esbuild",
     "clean": "rimraf --glob ./lib ./*.tsbuildinfo",
@@ -44,7 +44,7 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@inquirer/prompts": "^8.2.0",
+    "@inquirer/prompts": "^8.3.0",
     "commander": "^14.0.3"
   },
   "devDependencies": {

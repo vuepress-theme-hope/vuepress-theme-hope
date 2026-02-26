@@ -7,10 +7,7 @@ import SkipLink from "@theme-hope/components/base/SkipLink";
 import BloggerInfo from "@theme-hope/components/blog/BloggerInfo";
 import InfoList from "@theme-hope/components/blog/InfoList";
 import { useWindowSize } from "@theme-hope/composables/useWindowSize";
-import type {
-  BloggerInfoSlotData,
-  SidebarItemsSlotData,
-} from "@theme-hope/typings/slots";
+import type { BloggerInfoSlotData, SidebarItemsSlotData } from "@theme-hope/typings/slots";
 
 import "../../styles/blog/blog-main-layout.scss";
 
@@ -42,11 +39,9 @@ export default defineComponent({
         { noSidebar: !isMobile.value, noToc: true },
         {
           ...slots,
-          navScreenBottom: () =>
-            slots.navScreenBottom?.() ?? h(BloggerInfo, {}, slots),
+          navScreenBottom: () => slots.navScreenBottom?.() ?? h(BloggerInfo, {}, slots),
           sidebarItems: (sidebarItems: SidebarItemsSlotData) =>
-            slots.sidebarItems?.(sidebarItems) ??
-            (isMobile.value ? h(InfoList) : null),
+            slots.sidebarItems?.(sidebarItems) ?? (isMobile.value ? h(InfoList) : null),
         },
       ),
     ];

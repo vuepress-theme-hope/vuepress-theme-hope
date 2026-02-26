@@ -20,8 +20,7 @@ export const getTitleFromFilename = (filename: string): string => {
     .replaceAll(/[-_]/gu, " ")
     .replaceAll(
       /(^|[^A-Z])([A-Z])/gu,
-      (_all, match1: string, match2: string) =>
-        `${match1} ${match2.toLowerCase()}`,
+      (_all, match1: string, match2: string) => `${match1} ${match2.toLowerCase()}`,
     )
     .replaceAll(/ +/gu, " ")
     .trim()
@@ -29,9 +28,7 @@ export const getTitleFromFilename = (filename: string): string => {
 
   return words
     .map((word, index) =>
-      EN_PREPOSITION.has(word) && index !== 0
-        ? word
-        : word.charAt(0).toUpperCase() + word.slice(1),
+      EN_PREPOSITION.has(word) && index !== 0 ? word : word.charAt(0).toUpperCase() + word.slice(1),
     )
     .join(" ");
 };

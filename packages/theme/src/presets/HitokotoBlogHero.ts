@@ -1,13 +1,5 @@
 import type { CSSProperties, PropType, VNode } from "vue";
-import {
-  defineComponent,
-  h,
-  nextTick,
-  onMounted,
-  onUnmounted,
-  ref,
-  watch,
-} from "vue";
+import { defineComponent, h, nextTick, onMounted, onUnmounted, ref, watch } from "vue";
 
 import { DropTransition } from "vuepress-theme-hope/client";
 
@@ -126,9 +118,7 @@ export default defineComponent({
           : null,
       ]),
       h(DropTransition, { appear: true, delay: 0.08 }, () =>
-        props.text
-          ? h("h1", { class: "vp-blog-hero-title" }, props.text)
-          : null,
+        props.text ? h("h1", { class: "vp-blog-hero-title" }, props.text) : null,
       ),
       h("div", { class: "hitokoto" }, [
         h("p", { class: "hitokoto-text" }, h("span", display.value)),

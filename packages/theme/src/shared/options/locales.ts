@@ -8,14 +8,9 @@ import type {
   FeatureLocaleOptions,
 } from "./feature/index.js";
 import type { LocaleDataToOption } from "./helpers.js";
-import type {
-  LayoutLocaleConfig,
-  LayoutLocaleData,
-  LayoutLocaleOptions,
-} from "./layout/index.js";
+import type { LayoutLocaleConfig, LayoutLocaleData, LayoutLocaleOptions } from "./layout/index.js";
 
-export interface ThemeLocaleData
-  extends AppearanceLocaleData, FeatureLocaleData, LayoutLocaleData {
+export interface ThemeLocaleData extends AppearanceLocaleData, FeatureLocaleData, LayoutLocaleData {
   /**
    * Current lang code
    */

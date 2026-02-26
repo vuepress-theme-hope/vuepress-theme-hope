@@ -23,16 +23,9 @@ tag:
 - 类型：`IconAsset`
 
   ```ts
-  export type BuiltInIcon =
-    | "fontawesome-with-brands"
-    | "fontawesome"
-    | "iconify";
+  export type BuiltInIcon = "fontawesome-with-brands" | "fontawesome" | "iconify";
 
-  export type IconLink =
-    | `//${string}`
-    | `/${string}`
-    | `http://${string}`
-    | `https://${string}`;
+  export type IconLink = `//${string}` | `/${string}` | `http://${string}` | `https://${string}`;
 
   export type IconAsset = (BuiltInIcon | IconLink)[] | BuiltInIcon | IconLink;
   ```

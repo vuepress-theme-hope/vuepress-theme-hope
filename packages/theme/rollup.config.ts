@@ -13,14 +13,7 @@ export default [
     {
       base: "client",
       target: "bundle",
-      files: [
-        "exports/base",
-        "exports/blog",
-        "exports/encrypt",
-        "exports/noop",
-        "blog",
-        "index",
-      ],
+      files: ["exports/base", "exports/blog", "exports/encrypt", "exports/noop", "blog", "index"],
     },
     {
       alias: [
@@ -42,8 +35,7 @@ export default [
         "@vuepress/plugin-theme-data/client",
         "bcrypt-ts/browser",
       ],
-      moduleSideEffects: (id) =>
-        id.endsWith(".css") || id.includes("runTimeCheck"),
+      moduleSideEffects: (id) => id.endsWith(".css") || id.includes("runTimeCheck"),
     },
   ),
 ];

@@ -7,9 +7,7 @@ import type { ArticleInfoData } from "../../../shared/index.js";
 
 export type StarsRef = ComputedRef<BlogTypeData<ArticleInfoData>>;
 
-export const starsSymbol: InjectionKey<StarsRef> = Symbol(
-  __VUEPRESS_DEV__ ? "stars" : "",
-);
+export const starsSymbol: InjectionKey<StarsRef> = Symbol(__VUEPRESS_DEV__ ? "stars" : "");
 
 /**
  * Inject stars

@@ -21,13 +21,7 @@ export interface NavbarLocaleData {
  *
  * 导航栏组件
  */
-export type NavbarComponent =
-  | "Brand"
-  | "Links"
-  | "Language"
-  | "Search"
-  | "Outlook"
-  | "Repo";
+export type NavbarComponent = "Brand" | "Links" | "Language" | "Search" | "Outlook" | "Repo";
 
 /**
  * Navbar layout options

@@ -18,9 +18,7 @@ export default defineComponent({
     const isMounted = ref(false);
 
     const expectedRouterLocale = computed(
-      () =>
-        theme.value.locales[isMounted.value ? routeLocale.value : "/"]
-          .routerLocales,
+      () => theme.value.locales[isMounted.value ? routeLocale.value : "/"].routerLocales,
     );
 
     const getMsg = (): string => {
@@ -45,11 +43,7 @@ export default defineComponent({
           xmlns: "http://www.w3.org/2000/svg",
           innerHTML: NotFoundIcon,
         }),
-        h(
-          "h1",
-          { class: "error-title" },
-          expectedRouterLocale.value.notFoundTitle,
-        ),
+        h("h1", { class: "error-title" }, expectedRouterLocale.value.notFoundTitle),
         h("p", { class: "error-hint" }, getMsg()),
       ]),
       h("div", { class: "actions" }, [

@@ -1,10 +1,6 @@
 import type { LocaleConfig } from "vuepress/shared";
 
-import type {
-  PDFLocaleData,
-  SiteInfoLocaleData,
-  VidstackLocaleData,
-} from "../../shared/index.js";
+import type { PDFLocaleData, SiteInfoLocaleData, VidstackLocaleData } from "../../shared/index.js";
 
 export interface ComponentLocaleOptions {
   /**

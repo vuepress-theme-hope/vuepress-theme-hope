@@ -3,22 +3,18 @@
 
 :root {
   --bg-2: url("https://theme-hope-assets.vuejs.press/bg/2-light.svg");
-  --bg-9: url("https://theme-hope-assets.vuejs.press/bg/9-light.svg") no-repeat
+  --bg-9: url("https://theme-hope-assets.vuejs.press/bg/9-light.svg") no-repeat center/cover;
+  --bg-10: url("https://theme-hope-assets.vuejs.press/bg/10-light.svg") no-repeat center/cover;
+  --bg-10-inverse: url("https://theme-hope-assets.vuejs.press/bg/10-dark.svg") no-repeat
     center/cover;
-  --bg-10: url("https://theme-hope-assets.vuejs.press/bg/10-light.svg")
-    no-repeat center/cover;
-  --bg-10-inverse: url("https://theme-hope-assets.vuejs.press/bg/10-dark.svg")
-    no-repeat center/cover;
 }
 
 [data-theme="dark"] {
   --bg-2: url("https://theme-hope-assets.vuejs.press/bg/2-dark.svg");
-  --bg-9: url("https://theme-hope-assets.vuejs.press/bg/9-dark.svg") no-repeat
+  --bg-9: url("https://theme-hope-assets.vuejs.press/bg/9-dark.svg") no-repeat center/cover;
+  --bg-10: url("https://theme-hope-assets.vuejs.press/bg/10-dark.svg") no-repeat center/cover;
+  --bg-10-inverse: url("https://theme-hope-assets.vuejs.press/bg/10-light.svg") no-repeat
     center/cover;
-  --bg-10: url("https://theme-hope-assets.vuejs.press/bg/10-dark.svg") no-repeat
-    center/cover;
-  --bg-10-inverse: url("https://theme-hope-assets.vuejs.press/bg/10-light.svg")
-    no-repeat center/cover;
 }
 
 .catalog-display-container {

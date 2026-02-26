@@ -7,6 +7,4 @@ export const PLUGIN_NAME = "vuepress-plugin-lightgallery";
 
 export const logger = new Logger(PLUGIN_NAME);
 
-export const CLIENT_FOLDER = ensureEndingSlash(
-  path.resolve(__dirname, "../client"),
-);
+export const CLIENT_FOLDER = ensureEndingSlash(path.resolve(__dirname, "../client"));

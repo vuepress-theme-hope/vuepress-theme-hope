@@ -20,10 +20,7 @@ export interface ThemeStatus {
 }
 
 /** @private */
-export const getThemeStatus = (
-  app: App,
-  themeOptions: ThemeOptions,
-): ThemeStatus => {
+export const getThemeStatus = (app: App, themeOptions: ThemeOptions): ThemeStatus => {
   const { locales } = app.options;
   const { locales: themeLocales = {}, plugins = {} } = themeOptions;
 
@@ -32,8 +29,7 @@ export const getThemeStatus = (
     enableCatalog: plugins.catalog !== false,
     enableEncrypt:
       isPlainObject(themeOptions.encrypt) &&
-      (Boolean(themeOptions.encrypt.admin) ||
-        Boolean(themeOptions.encrypt.config)),
+      (Boolean(themeOptions.encrypt.admin) || Boolean(themeOptions.encrypt.config)),
     enableIcon: plugins.icon !== false,
     enableReadingTime: plugins.readingTime !== false,
     blogTypes: isPlainObject(plugins.blog)
@@ -42,13 +38,9 @@ export const getThemeStatus = (
             key,
             path,
           }))
-          .filter<BlogTypeInfo>((item): item is BlogTypeInfo =>
-            isString(item.path),
-          ) ?? [])
+          .filter<BlogTypeInfo>((item): item is BlogTypeInfo => isString(item.path)) ?? [])
       : [],
     isI18nProject: keys(locales).length > 1,
-    hasRepo:
-      Boolean(themeOptions.repo) ||
-      values(themeLocales).some(({ repo }) => Boolean(repo)),
+    hasRepo: Boolean(themeOptions.repo) || values(themeLocales).some(({ repo }) => Boolean(repo)),
   };
 };

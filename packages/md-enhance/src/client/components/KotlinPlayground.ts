@@ -39,16 +39,11 @@ export default defineComponent({
 
     const kotlinPlayground = shallowRef<HTMLDivElement>();
 
-    const files = computed(
-      () => JSON.parse(decodeData(props.files)) as string[],
-    );
+    const files = computed(() => JSON.parse(decodeData(props.files)) as string[]);
 
     const settings = computed(() => ({
       theme: isDarkMode.value ? "darcula" : "default",
-      ...(JSON.parse(decodeURIComponent(props.settings ?? "{}")) as Record<
-        string,
-        string
-      >),
+      ...(JSON.parse(decodeURIComponent(props.settings ?? "{}")) as Record<string, string>),
     }));
 
     const renderPlayground = async (): Promise<void> => {
@@ -70,9 +65,7 @@ export default defineComponent({
 
     return (): VNode =>
       h("div", { class: "kotlin-playground-wrapper" }, [
-        props.title
-          ? h("div", { class: "header" }, decodeURIComponent(props.title))
-          : null,
+        props.title ? h("div", { class: "header" }, decodeURIComponent(props.title)) : null,
         h(
           "div",
           {
@@ -94,11 +87,7 @@ export default defineComponent({
                 ? files.value.map((content, index) =>
                     index === 0
                       ? null
-                      : h(
-                          "textarea",
-                          { class: "hidden-dependency", readonly: "" },
-                          content,
-                        ),
+                      : h("textarea", { class: "hidden-dependency", readonly: "" }, content),
                   )
                 : null,
             ],

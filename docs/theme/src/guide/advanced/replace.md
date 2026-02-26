@@ -34,10 +34,7 @@ export default {
   alias: {
     // Replace theme components with custom implementations
     // For example, here we change the theme's home page component to HomePage.vue under user .vuepress/components
-    "@theme-hope/components/home/HomePage": path.resolve(
-      __dirname,
-      "./components/HomePage.vue",
-    ),
+    "@theme-hope/components/home/HomePage": path.resolve(__dirname, "./components/HomePage.vue"),
   },
 };
 ```

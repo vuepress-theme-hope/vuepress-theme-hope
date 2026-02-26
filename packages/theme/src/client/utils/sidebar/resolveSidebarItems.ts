@@ -1,18 +1,8 @@
-import {
-  isArray,
-  isPlainObject,
-  isString,
-  keys,
-  startsWith,
-} from "@vuepress/helper/client";
+import { isArray, isPlainObject, isString, keys, startsWith } from "@vuepress/helper/client";
 import { resolveRoute } from "vuepress/client";
 
 import { sidebarData } from "@temp/theme-hope/sidebar.js";
-import type {
-  SidebarGroupItem,
-  SidebarItem,
-  SidebarLinkItem,
-} from "@theme-hope/typings/sidebar";
+import type { SidebarGroupItem, SidebarItem, SidebarLinkItem } from "@theme-hope/typings/sidebar";
 import { isLinkInternal } from "@theme-hope/utils/isLinkInternal";
 import { resolveLinkInfo } from "@theme-hope/utils/resolveLinkInfo";
 import { resolvePrefix } from "@theme-hope/utils/resolvePrefix";
@@ -51,8 +41,7 @@ export const resolveSidebarItem = (
   if ("children" in config) {
     const prefix = resolvePrefix(pathPrefix, config.prefix);
 
-    const children =
-      config.children === "structure" ? sidebarData[prefix] : config.children;
+    const children = config.children === "structure" ? sidebarData[prefix] : config.children;
 
     return {
       ...config,
@@ -72,8 +61,7 @@ export const resolveSidebarItem = (
 export const resolveArraySidebarItems = ({
   config,
   prefix = "",
-}: SidebarArrayItem): SidebarItem[] =>
-  config.map((item) => resolveSidebarItem(item, prefix));
+}: SidebarArrayItem): SidebarItem[] => config.map((item) => resolveSidebarItem(item, prefix));
 
 export interface ResolveMultiSidebarOptions {
   config: SidebarObjectOptions;

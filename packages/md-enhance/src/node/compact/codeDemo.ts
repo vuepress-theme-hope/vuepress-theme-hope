@@ -29,8 +29,7 @@ export const legacyCodeDemo: PluginSimple = (md) => {
       for (let i = index; i < tokens.length; i++) {
         const { type, content, info } = tokens[i];
         const language = info
-          ? (/^([^ :[{]+)/.exec(md.utils.unescapeAll(info).trim())?.[1] ??
-            "text")
+          ? (/^([^ :[{]+)/.exec(md.utils.unescapeAll(info).trim())?.[1] ?? "text")
           : "";
 
         if (type === `container_demo_close`) break;
@@ -43,9 +42,7 @@ export const legacyCodeDemo: PluginSimple = (md) => {
       return `
 <CodeDemo id="code-demo-${index}" type="${type?.[1] ?? "normal"}"${
         title ? ` title="${encodeURIComponent(title[1])}"` : ""
-      }${config ? ` config="${config}"` : ""} code="${encodeData(
-        JSON.stringify(code),
-      )}">
+      }${config ? ` config="${config}"` : ""} code="${encodeData(JSON.stringify(code))}">
 `;
     },
     closeRender: () => `</CodeDemo>`,
@@ -60,24 +57,14 @@ export const mdDemo: PluginSimple = (md) => {
   md.use(demo, {
     name: "md-demo",
     openRender: (tokens, index) => {
-      logger.warn(
-        "md-demo container is deprecated, you should use preview container instead.",
-      );
+      logger.warn("md-demo container is deprecated, you should use preview container instead.");
 
-      return `<MdDemo title="${escapeHtml(
-        tokens[index].info,
-      )}" id="md-demo-${index}">\n`;
+      return `<MdDemo title="${escapeHtml(tokens[index].info)}" id="md-demo-${index}">\n`;
     },
     // oxlint-disable-next-line max-params
     codeRender: (tokens, index, options, _env, self) =>
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      `<template #code>\n${self.rules.fence!(
-        tokens,
-        index,
-        options,
-        _env,
-        self,
-      )}</template>\n`,
+      `<template #code>\n${self.rules.fence!(tokens, index, options, _env, self)}</template>\n`,
     contentOpenRender: () => `<template #default>\n`,
     contentCloseRender: () => `</template>\n`,
     closeRender: () => "</MdDemo>\n",

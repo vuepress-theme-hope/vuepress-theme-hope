@@ -9,6 +9,8 @@
     "url": "https://mister-hope.com"
   },
   "type": "module",
+  "module": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
   "exports": {
     ".": {
       "types": "./lib/index.d.ts",
@@ -19,8 +21,6 @@
       "default": "./lib/*"
     }
   },
-  "module": "./lib/index.js",
-  "typings": "./lib/index.d.ts",
   "scripts": {
     "build": "pnpm build:ts && pnpm copy",
     "build:ts": "tsc --build tsconfig.release.json",
@@ -31,13 +31,13 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@types/three": "0.182.0",
-    "@vueuse/core": "catalog:",
+    "@types/three": "0.183.1",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/helper": "catalog:vuepress",
     "@vuepress/plugin-docsearch": "catalog:vuepress",
-    "three": "0.182.0",
+    "@vueuse/core": "catalog:",
+    "three": "0.183.1",
     "vue": "catalog:",
     "vuepress": "catalog:vuepress",
     "vuepress-theme-hope": "workspace:*"

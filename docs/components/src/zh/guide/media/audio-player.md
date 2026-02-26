@@ -66,14 +66,7 @@ npm i -D vidstack@next
 
   ```ts
   type PlayerSrc = MediaSrc | MediaSrc[];
-  type MediaSrc =
-    | string
-    | AudioSrc
-    | VideoSrc
-    | HLSSrc
-    | DASHSrc
-    | YouTubeSrc
-    | VimeoSrc;
+  type MediaSrc = string | AudioSrc | VideoSrc | HLSSrc | DASHSrc | YouTubeSrc | VimeoSrc;
   ```
 
 - 必填: 是

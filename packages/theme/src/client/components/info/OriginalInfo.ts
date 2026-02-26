@@ -23,8 +23,6 @@ export default defineComponent({
     const metaLocale = useMetaLocale();
 
     return (): VNode | null =>
-      props.isOriginal
-        ? h("span", { class: "page-original-info" }, metaLocale.value.origin)
-        : null;
+      props.isOriginal ? h("span", { class: "page-original-info" }, metaLocale.value.origin) : null;
   },
 });

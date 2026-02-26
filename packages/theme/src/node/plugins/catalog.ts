@@ -8,9 +8,7 @@ import type { Plugin } from "vuepress/core";
  *
  * Resolve options for `@vuepress/plugin-catalog`
  */
-export const getCatalogPlugin = (
-  catalog?: CatalogPluginOptions | boolean,
-): Plugin | null => {
+export const getCatalogPlugin = (catalog?: CatalogPluginOptions | boolean): Plugin | null => {
   if (catalog === false) return null;
 
   return catalogPlugin({

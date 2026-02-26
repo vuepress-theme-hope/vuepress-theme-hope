@@ -6,11 +6,7 @@ import { resolve } from "node:path";
 import { confirm, select } from "@inquirer/prompts";
 import { createCommand } from "commander";
 
-import type {
-  PackageManager,
-  SupportedBundler,
-  SupportedPreset,
-} from "./config/index.js";
+import type { PackageManager, SupportedBundler, SupportedPreset } from "./config/index.js";
 import {
   availablePackageManagers,
   generateTemplate,
@@ -70,9 +66,7 @@ const preAction = async (
 
   // Check if the user is a noob and warn him 🤪
   if (targetDir.startsWith("<") && targetDir.endsWith(">")) {
-    program.error(
-      locale.error[add ? "addDirHint" : "outputDirHint"](packageManager),
-    );
+    program.error(locale.error[add ? "addDirHint" : "outputDirHint"](packageManager));
   }
 
   ensureDirExistSync(targetDirPath);
@@ -97,16 +91,15 @@ const postAction = async ({
   /*
    * Install deps
    */
-  const registry =
-    packageManager === "pnpm" ? "" : await getRegistry(packageManager, lang);
+  const registry = packageManager === "pnpm" ? "" : await getRegistry(packageManager, lang);
 
   console.log(locale.flow.install);
   console.warn(locale.hint.install);
 
-  execSync(
-    `${packageManager} install ${registry ? `--registry ${registry}` : ""}`,
-    { cwd, stdio: "inherit" },
-  );
+  execSync(`${packageManager} install ${registry ? `--registry ${registry}` : ""}`, {
+    cwd,
+    stdio: "inherit",
+  });
 
   console.log(locale.hint.finish);
 

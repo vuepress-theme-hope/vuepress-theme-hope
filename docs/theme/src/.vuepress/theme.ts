@@ -98,22 +98,13 @@ export default theme(
         deep: true,
         resolvePath: (file) => {
           if (file.startsWith("@components/"))
-            return file.replace(
-              "@components",
-              path.resolve(__dirname, "../../../components/src"),
-            );
+            return file.replace("@components", path.resolve(__dirname, "../../../components/src"));
 
           if (file.startsWith("@echarts/"))
-            return file.replace(
-              "@echarts",
-              path.resolve(__dirname, "../echarts"),
-            );
+            return file.replace("@echarts", path.resolve(__dirname, "../echarts"));
 
           if (file.startsWith("@md-enhance/"))
-            return file.replace(
-              "@md-enhance",
-              path.resolve(__dirname, "../../../md-enhance/src"),
-            );
+            return file.replace("@md-enhance", path.resolve(__dirname, "../../../md-enhance/src"));
 
           return file;
         },

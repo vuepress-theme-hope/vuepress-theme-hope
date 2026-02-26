@@ -1,25 +1,14 @@
-import {
-  entries,
-  isLinkHttp,
-  isPlainObject,
-  isString,
-  startsWith,
-} from "@vuepress/helper";
+import { entries, isLinkHttp, isPlainObject, isString, startsWith } from "@vuepress/helper";
 import { fs } from "vuepress/utils";
 
 import type { ThemeData } from "../../shared/index.js";
 import { TEMPLATE_FOLDER, logger } from "../utils.js";
 
 /** @private */
-export const getSocialMediaIcons = (
-  themeData: ThemeData,
-): Record<string, string> => {
+export const getSocialMediaIcons = (themeData: ThemeData): Record<string, string> => {
   const iconData: Record<string, string> = {};
 
-  const isIconInvalid = (
-    key: string,
-    value: string | { icon: string; link: string },
-  ): boolean => {
+  const isIconInvalid = (key: string, value: string | { icon: string; link: string }): boolean => {
     if (isString(value)) {
       const templatePath = `${TEMPLATE_FOLDER}/socialMediaIcons/${key.toLocaleLowerCase()}.svg`;
 
@@ -29,9 +18,7 @@ export const getSocialMediaIcons = (
         return false;
       }
 
-      logger.warn(
-        `${key} is not a built-in media, you should provide an icon for it!`,
-      );
+      logger.warn(`${key} is not a built-in media, you should provide an icon for it!`);
 
       return true;
     }
@@ -45,9 +32,7 @@ export const getSocialMediaIcons = (
       )
         return false;
 
-      logger.warn(
-        `${key}'s icon ${value.icon} in blog media config is invalid!`,
-      );
+      logger.warn(`${key}'s icon ${value.icon} in blog media config is invalid!`);
 
       return true;
     }
@@ -63,8 +48,7 @@ export const getSocialMediaIcons = (
 
   entries(themeData.locales).forEach(([path, { blog }]) => {
     entries(blog?.medias ?? {}).forEach(([key, value]) => {
-      if (isIconInvalid(key, value))
-        delete themeData.locales[path].blog?.medias?.[key];
+      if (isIconInvalid(key, value)) delete themeData.locales[path].blog?.medias?.[key];
     });
   });
 

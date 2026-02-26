@@ -6,10 +6,5 @@
     },
     "types": ["vuepress/client-types", "vite/client", "webpack-env"]
   },
-  "include": [
-    "**/*.ts",
-    "**/*.vue",
-    "**/.vuepress/**/*.ts",
-    "**/.vuepress/**/*.vue"
-  ]
+  "include": ["**/*.ts", "**/*.vue", "**/.vuepress/**/*.ts", "**/.vuepress/**/*.vue"]
 }

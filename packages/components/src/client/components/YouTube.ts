@@ -198,9 +198,7 @@ export default defineComponent({
     });
 
     const videoLink = computed(() =>
-      coreURL.value
-        ? `https://www.youtube.com/embed/${coreURL.value}${params.value}`
-        : null,
+      coreURL.value ? `https://www.youtube.com/embed/${coreURL.value}${params.value}` : null,
     );
 
     return (): (VNode | null)[] =>

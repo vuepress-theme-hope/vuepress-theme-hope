@@ -10,13 +10,7 @@ import type { MediaPlayerElement } from "vidstack/elements";
 import type { VidstackPlayerConfig } from "vidstack/global/player";
 import { PlyrLayout, VidstackPlayer } from "vidstack/global/player";
 import type { PropType, VNode } from "vue";
-import {
-  defineComponent,
-  h,
-  onBeforeUnmount,
-  onMounted,
-  shallowRef,
-} from "vue";
+import { defineComponent, h, onBeforeUnmount, onMounted, shallowRef } from "vue";
 
 import { getLink } from "../utils/index.js";
 
@@ -67,10 +61,7 @@ export default defineComponent({
      */
     player: {
       type: Object as PropType<
-        Omit<
-          VidstackPlayerConfig,
-          "target" | "src" | "sources" | "tracks" | "title" | "poster"
-        >
+        Omit<VidstackPlayerConfig, "target" | "src" | "sources" | "tracks" | "title" | "poster">
       >,
     },
 
@@ -117,16 +108,12 @@ export default defineComponent({
         if (player!.provider?.type === "hls" && HLS_JS_INSTALLED)
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           player!.provider.library = (() =>
-            import(
-              /* webpackChunkName: "hls" */ "hls.js/dist/hls.min.js"
-            )) as HLSConstructorLoader;
+            import(/* webpackChunkName: "hls" */ "hls.js/dist/hls.min.js")) as HLSConstructorLoader;
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         else if (player!.provider?.type === "dash" && DASHJS_INSTALLED)
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           player!.provider.library = (() =>
-            import(
-              /* webpackChunkName: "dashjs" */ "dashjs"
-            )) as DASHNamespaceLoader;
+            import(/* webpackChunkName: "dashjs" */ "dashjs")) as DASHNamespaceLoader;
       });
     });
 

@@ -1,9 +1,4 @@
-import {
-  deepAssign,
-  entries,
-  fromEntries,
-  isPlainObject,
-} from "@vuepress/helper";
+import { deepAssign, entries, fromEntries, isPlainObject } from "@vuepress/helper";
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { Plugin } from "vuepress/core";
 
@@ -11,9 +6,7 @@ import { logMissingPkg } from "./utils.js";
 import type { ThemeData } from "../../shared/index.js";
 import { getAuthor } from "../../shared/index.js";
 
-let feedPlugin:
-  | ((options: FeedPluginOptions, legacy?: boolean) => Plugin)
-  | null = null;
+let feedPlugin: ((options: FeedPluginOptions, legacy?: boolean) => Plugin) | null = null;
 
 try {
   ({ feedPlugin } = await import("@vuepress/plugin-feed"));
@@ -43,50 +36,39 @@ export const getFeedPlugin = (
     return null;
   }
 
-  const globalAuthor = getAuthor(
-    themeData.author ?? themeData.locales["/"].author,
-  );
+  const globalAuthor = getAuthor(themeData.author ?? themeData.locales["/"].author);
 
   const defaultOptions: FeedPluginOptions = {
     // @ts-expect-error: hostname may not exist here
     hostname,
     filter: ({ frontmatter, filePathRelative }) =>
-      Boolean(
-        frontmatter.feed ??
-        frontmatter.article ??
-        (filePathRelative && !frontmatter.home),
-      ),
+      Boolean(frontmatter.feed ?? frontmatter.article ?? (filePathRelative && !frontmatter.home)),
     channel: {
       icon: favicon,
       image: themeData.locales["/"].logo,
       ...(globalAuthor.length > 0 ? { author: globalAuthor[0] } : {}),
     },
     locales: fromEntries(
-      entries(themeData.locales).map(
-        ([localePath, { logo, author, copyright }]) => {
-          const localeAuthor = getAuthor(author);
+      entries(themeData.locales).map(([localePath, { logo, author, copyright }]) => {
+        const localeAuthor = getAuthor(author);
 
-          return [
-            localePath,
-            {
-              channel: {
-                icon: favicon,
-                image: logo,
-                ...(localeAuthor.length > 0 ? { author: localeAuthor[0] } : {}),
-                ...(typeof copyright === "string" ? { copyright } : {}),
-              },
+        return [
+          localePath,
+          {
+            channel: {
+              icon: favicon,
+              image: logo,
+              ...(localeAuthor.length > 0 ? { author: localeAuthor[0] } : {}),
+              ...(typeof copyright === "string" ? { copyright } : {}),
             },
-          ];
-        },
-      ),
+          },
+        ];
+      }),
     ),
   };
 
   return feedPlugin(
-    deepAssign(
-      defaultOptions,
-      isPlainObject(options) ? options : { rss: true },
-    ),
+    deepAssign(defaultOptions, isPlainObject(options) ? options : { rss: true }),
     compact,
   );
 };

@@ -50,40 +50,25 @@ const BOOLEAN_FALSE_ATTRS = [
 ] as const;
 
 // Note: This should be updated with https://github.com/zhw2590582/ArtPlayer/blob/master/packages/artplayer/src/i18n/index.js
-const SUPPORTED_LANG_NAME = new Set([
-  "en",
-  "pl",
-  "cs",
-  "es",
-  "fa",
-  "fr",
-  "id",
-  "ru",
-  "tr",
-]);
+const SUPPORTED_LANG_NAME = new Set(["en", "pl", "cs", "es", "fa", "fr", "id", "ru", "tr"]);
 const SUPPORTED_LANG_CODE = new Set(["zh-cn", "zh-tw"]);
 
 type KebabCaseToCamelCase<
   Str extends string,
   Cap extends boolean = false,
 > = Str extends `${infer Head}-${infer Tail}`
-  ? `${Cap extends true ? Capitalize<Head> : Head}${KebabCaseToCamelCase<
-      Tail,
-      true
-    >}`
+  ? `${Cap extends true ? Capitalize<Head> : Head}${KebabCaseToCamelCase<Tail, true>}`
   : Cap extends true
     ? Capitalize<Str>
     : Str;
 
 type ArtPlayerBooleanOptionKey =
-  | (typeof BOOLEAN_TRUE_ATTRS extends readonly (infer BooleanKey extends
-      string)[]
+  | (typeof BOOLEAN_TRUE_ATTRS extends readonly (infer BooleanKey extends string)[]
       ? BooleanKey extends `no-${infer Key}`
         ? KebabCaseToCamelCase<Key>
         : never
       : never)
-  | (typeof BOOLEAN_FALSE_ATTRS extends readonly (infer BooleanKey extends
-      string)[]
+  | (typeof BOOLEAN_FALSE_ATTRS extends readonly (infer BooleanKey extends string)[]
       ? KebabCaseToCamelCase<BooleanKey>
       : never);
 
@@ -179,9 +164,7 @@ export default defineComponent({
      * 对 Artplayer 进行自定义
      */
     customPlayer: Function as PropType<
-      (
-        player: Artplayer,
-      ) => Artplayer | void | Promise<Artplayer> | Promise<void>
+      (player: Artplayer) => Artplayer | void | Promise<Artplayer> | Promise<void>
     >,
   },
 
@@ -211,9 +194,7 @@ export default defineComponent({
 
       BOOLEAN_TRUE_ATTRS.forEach((config) => {
         if (attrsKeys.includes(config))
-          initOptions[
-            camelize(config.replace(/^no-/, "")) as ArtPlayerBooleanOptionKey
-          ] = false;
+          initOptions[camelize(config.replace(/^no-/, "")) as ArtPlayerBooleanOptionKey] = false;
       });
       BOOLEAN_FALSE_ATTRS.forEach((config) => {
         if (attrsKeys.includes(config))
@@ -281,9 +262,7 @@ export default defineComponent({
     onMounted(async () => {
       if (__VUEPRESS_SSR__) return;
 
-      const { default: Artplayer } = await import(
-        /* webpackChunkName: "artplayer" */ "artplayer"
-      );
+      const { default: Artplayer } = await import(/* webpackChunkName: "artplayer" */ "artplayer");
       const player = new Artplayer(getInitOptions());
 
       artPlayerInstance = (await props.customPlayer?.(player)) ?? player;

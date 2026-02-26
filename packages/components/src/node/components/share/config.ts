@@ -24,10 +24,7 @@ import { vk } from "./vk.js";
 import { weibo } from "./weibo.js";
 import { whatsapp } from "./whatsapp.js";
 import { wordpress } from "./wordpress.js";
-import type {
-  BuiltInShareService,
-  ShareServiceConfig,
-} from "../../../shared/index.js";
+import type { BuiltInShareService, ShareServiceConfig } from "../../../shared/index.js";
 
 export const SHARE_CONFIG: Record<BuiltInShareService, ShareServiceConfig> = {
   buffer,

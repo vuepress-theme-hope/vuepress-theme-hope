@@ -3,12 +3,7 @@ import type { BlogPluginOptions, BlogTypeOptions } from "@vuepress/plugin-blog";
 export interface BlogOptions extends Partial<
   Pick<
     BlogPluginOptions,
-    | "excerptFilter"
-    | "excerptLength"
-    | "excerptSeparator"
-    | "filter"
-    | "slugify"
-    | "hotReload"
+    "excerptFilter" | "excerptLength" | "excerptSeparator" | "filter" | "slugify" | "hotReload"
   >
 > {
   /**

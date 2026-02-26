@@ -1,28 +1,16 @@
 import { isArray, isFunction, isString, keys } from "@vuepress/helper";
 
-import type {
-  SidebarInfo,
-  SidebarSorter,
-  SidebarSorterFunction,
-} from "../../../shared/index.js";
+import type { SidebarInfo, SidebarSorter, SidebarSorterFunction } from "../../../shared/index.js";
 
-export const sidebarReadmeSorter = (
-  infoA: SidebarInfo,
-  infoB: SidebarInfo,
-): number => {
-  if (infoA.type === "file" && infoA.filename.toLowerCase() === "readme.md")
-    return -1;
+export const sidebarReadmeSorter = (infoA: SidebarInfo, infoB: SidebarInfo): number => {
+  if (infoA.type === "file" && infoA.filename.toLowerCase() === "readme.md") return -1;
 
-  if (infoB.type === "file" && infoB.filename.toLowerCase() === "readme.md")
-    return 1;
+  if (infoB.type === "file" && infoB.filename.toLowerCase() === "readme.md") return 1;
 
   return 0;
 };
 
-export const sidebarOrderSorter = (
-  infoA: SidebarInfo,
-  infoB: SidebarInfo,
-): number => {
+export const sidebarOrderSorter = (infoA: SidebarInfo, infoB: SidebarInfo): number => {
   // itemA order is absent
   if (infoA.order === null) {
     // both item do not have orders
@@ -53,15 +41,10 @@ export const sidebarOrderSorter = (
   return 1;
 };
 
-export const sidebarDateSorter = (
-  infoA: SidebarInfo,
-  infoB: SidebarInfo,
-): number => {
+export const sidebarDateSorter = (infoA: SidebarInfo, infoB: SidebarInfo): number => {
   if (infoA.frontmatter?.date instanceof Date) {
     if (infoB.frontmatter?.date instanceof Date)
-      return (
-        infoA.frontmatter.date.getTime() - infoB.frontmatter.date.getTime()
-      );
+      return infoA.frontmatter.date.getTime() - infoB.frontmatter.date.getTime();
 
     return -1;
   }
@@ -71,15 +54,10 @@ export const sidebarDateSorter = (
   return 0;
 };
 
-export const sidebarDateDescSorter = (
-  infoA: SidebarInfo,
-  infoB: SidebarInfo,
-): number => {
+export const sidebarDateDescSorter = (infoA: SidebarInfo, infoB: SidebarInfo): number => {
   if (infoA.frontmatter?.date instanceof Date) {
     if (infoB.frontmatter?.date instanceof Date)
-      return (
-        infoB.frontmatter.date.getTime() - infoA.frontmatter.date.getTime()
-      );
+      return infoB.frontmatter.date.getTime() - infoA.frontmatter.date.getTime();
 
     return -1;
   }
@@ -92,18 +70,11 @@ export const sidebarDateDescSorter = (
 const getFilename = (info: SidebarInfo): string =>
   info.type === "file" ? info.filename.replace(/\.md$/u, "") : info.dirname;
 
-export const sidebarFilenameSorter = (
-  infoA: SidebarInfo,
-  infoB: SidebarInfo,
-): number => {
-  const result = getFilename(infoA).localeCompare(
-    getFilename(infoB),
-    undefined,
-    {
-      numeric: true,
-      sensitivity: "accent",
-    },
-  );
+export const sidebarFilenameSorter = (infoA: SidebarInfo, infoB: SidebarInfo): number => {
+  const result = getFilename(infoA).localeCompare(getFilename(infoB), undefined, {
+    numeric: true,
+    sensitivity: "accent",
+  });
 
   if (result !== 0) return result;
 
@@ -113,10 +84,7 @@ export const sidebarFilenameSorter = (
   return 0;
 };
 
-export const sidebarTitleSorter = (
-  infoA: SidebarInfo,
-  infoB: SidebarInfo,
-): number =>
+export const sidebarTitleSorter = (infoA: SidebarInfo, infoB: SidebarInfo): number =>
   infoA.title.localeCompare(infoB.title, undefined, {
     numeric: true,
   });
@@ -133,11 +101,8 @@ const sortKeyMap: Record<string, SidebarSorterFunction> = {
 const availableKeywords = keys(sortKeyMap);
 
 /** @private */
-export const getSidebarSorter = (
-  sorter?: SidebarSorter,
-): SidebarSorterFunction[] => {
-  if (isString(sorter) && availableKeywords.includes(sorter))
-    return [sortKeyMap[sorter]];
+export const getSidebarSorter = (sorter?: SidebarSorter): SidebarSorterFunction[] => {
+  if (isString(sorter) && availableKeywords.includes(sorter)) return [sortKeyMap[sorter]];
 
   if (isFunction(sorter)) return [sorter];
 
@@ -149,10 +114,5 @@ export const getSidebarSorter = (
     if (result.length > 0) return result;
   }
 
-  return [
-    sidebarReadmeSorter,
-    sidebarOrderSorter,
-    sidebarTitleSorter,
-    sidebarFilenameSorter,
-  ];
+  return [sidebarReadmeSorter, sidebarOrderSorter, sidebarTitleSorter, sidebarFilenameSorter];
 };

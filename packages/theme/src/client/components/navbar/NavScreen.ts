@@ -1,15 +1,7 @@
 import type { Slot } from "@vuepress/helper/client";
 import { useScrollLock } from "@vueuse/core";
 import type { SlotsType, VNode } from "vue";
-import {
-  Transition,
-  defineComponent,
-  h,
-  onMounted,
-  onUnmounted,
-  shallowRef,
-  watch,
-} from "vue";
+import { Transition, defineComponent, h, onMounted, onUnmounted, shallowRef, watch } from "vue";
 import { onContentUpdated } from "vuepress/client";
 
 import AppearanceSettings from "@theme-hope/components/appearance/AppearanceSettings";
@@ -77,11 +69,7 @@ export default defineComponent({
                 h("div", { class: "vp-nav-screen-container" }, [
                   slots.navScreenTop?.(),
                   h(NavScreenLinks),
-                  h(
-                    "div",
-                    { class: "vp-appearance-wrapper" },
-                    h(AppearanceSettings),
-                  ),
+                  h("div", { class: "vp-appearance-wrapper" }, h(AppearanceSettings)),
                   slots.navScreenBottom?.(),
                 ]),
               )

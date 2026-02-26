@@ -79,17 +79,11 @@ export default defineComponent({
     const loaded = ref(false);
 
     const config = computed(
-      () =>
-        JSON.parse(
-          props.config ? decodeData(props.config) : "{}",
-        ) as Partial<CodeDemoOptions>,
+      () => JSON.parse(props.config ? decodeData(props.config) : "{}") as Partial<CodeDemoOptions>,
     );
 
     const codeType = computed(() => {
-      const codeConfig = JSON.parse(decodeData(props.code)) as Record<
-        string,
-        string
-      >;
+      const codeConfig = JSON.parse(decodeData(props.code)) as Record<string, string>;
 
       return getCode(codeConfig);
     });
@@ -181,10 +175,7 @@ export default defineComponent({
             ? h("button", {
                 type: "button",
                 title: "toggle",
-                class: [
-                  "vp-code-demo-toggle-button",
-                  isExpanded.value ? "down" : "end",
-                ],
+                class: ["vp-code-demo-toggle-button", isExpanded.value ? "down" : "end"],
                 onClick: () => {
                   height.value = isExpanded.value
                     ? "0"
@@ -195,11 +186,7 @@ export default defineComponent({
               })
             : null,
           props.title
-            ? h(
-                "span",
-                { class: "vp-container-title" },
-                decodeURIComponent(props.title),
-              )
+            ? h("span", { class: "vp-container-title" }, decodeURIComponent(props.title))
             : null,
 
           code.value.isLegal && (code.value.jsfiddle ?? true)
@@ -232,9 +219,7 @@ export default defineComponent({
                   h("input", {
                     type: "hidden",
                     name: "resources",
-                    value: [...code.value.cssLib, ...code.value.jsLib].join(
-                      ",",
-                    ),
+                    value: [...code.value.cssLib, ...code.value.jsLib].join(","),
                   }),
                   h("button", {
                     type: "submit",
@@ -272,9 +257,7 @@ export default defineComponent({
                       // eslint-disable-next-line @typescript-eslint/naming-convention
                       html_pre_processor: codeType.value.html[1] ?? "none",
                       // eslint-disable-next-line @typescript-eslint/naming-convention
-                      js_pre_processor:
-                        codeType.value.js[1] ??
-                        (code.value.jsx ? "babel" : "none"),
+                      js_pre_processor: codeType.value.js[1] ?? (code.value.jsx ? "babel" : "none"),
                       // eslint-disable-next-line @typescript-eslint/naming-convention
                       css_pre_processor: codeType.value.css[1] ?? "none",
                       editors: code.value.codepenEditors,

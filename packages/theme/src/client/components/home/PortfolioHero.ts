@@ -2,15 +2,7 @@ import type { Slot } from "@vuepress/helper/client";
 import { hasGlobalComponent, isString } from "@vuepress/helper/client";
 import { watchImmediate } from "@vueuse/core";
 import type { SlotsType, VNode } from "vue";
-import {
-  computed,
-  defineComponent,
-  h,
-  nextTick,
-  onMounted,
-  ref,
-  resolveComponent,
-} from "vue";
+import { computed, defineComponent, h, nextTick, onMounted, ref, resolveComponent } from "vue";
 import { useFrontmatter, withBase } from "vuepress/client";
 
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
@@ -39,14 +31,11 @@ export default defineComponent({
     const frontmatter = useFrontmatter<ThemePortfolioFrontmatter>();
 
     const index = ref(0);
-    const currentTitle = computed(
-      () => frontmatter.value.titles?.[index.value] ?? "",
-    );
+    const currentTitle = computed(() => frontmatter.value.titles?.[index.value] ?? "");
     const title = ref("");
 
     const avatar = computed(() => {
-      const { name, avatar, avatarDark, avatarAlt, avatarStyle } =
-        frontmatter.value;
+      const { name, avatar, avatarDark, avatarAlt, avatarStyle } = frontmatter.value;
 
       return {
         name: name ?? authorInfo.value.name,
@@ -101,9 +90,7 @@ export default defineComponent({
 
             setTimeout(() => {
               index.value =
-                length <= 1 || index.value === info.value.titles.length - 1
-                  ? 0
-                  : index.value + 1;
+                length <= 1 || index.value === info.value.titles.length - 1 ? 0 : index.value + 1;
             }, 1000);
           }
         }
@@ -160,13 +147,7 @@ export default defineComponent({
           slots.portfolioAvatar?.(avatar.value) ??
             h("div", { class: "vp-portfolio-avatar" }, [
               h(DropTransition, { delay: 0.04 }, () => {
-                const {
-                  avatar: avatarLight,
-                  avatarDark,
-                  name: title,
-                  alt,
-                  style,
-                } = avatar.value;
+                const { avatar: avatarLight, avatarDark, name: title, alt, style } = avatar.value;
 
                 return [
                   avatarLight
@@ -198,18 +179,10 @@ export default defineComponent({
             slots.portfolioInfo?.(info.value) ??
               h("div", { class: "vp-portfolio-info" }, [
                 h(DropTransition, { appear: true, delay: 0.08 }, () =>
-                  h(
-                    "h6",
-                    { class: "vp-portfolio-welcome" },
-                    info.value.welcome,
-                  ),
+                  h("h6", { class: "vp-portfolio-welcome" }, info.value.welcome),
                 ),
                 h(DropTransition, { appear: true, delay: 0.12 }, () =>
-                  h(
-                    "h1",
-                    { class: "vp-portfolio-name", id: "main-title" },
-                    info.value.name,
-                  ),
+                  h("h1", { class: "vp-portfolio-name", id: "main-title" }, info.value.name),
                 ),
                 h(DropTransition, { appear: true, delay: 0.16 }, () =>
                   h("h2", { class: "vp-portfolio-title" }, title.value),

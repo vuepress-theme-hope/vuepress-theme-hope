@@ -30,8 +30,7 @@ span {
 ```vue
 <template>
   <div class="box">
-    <code>vuepress-theme-hope</code> is
-    <span @click="handler">{{ message }}</span
+    <code>vuepress-theme-hope</code> is <span @click="handler">{{ message }}</span
     >!
   </div>
 </template>
@@ -67,8 +66,7 @@ export default {
 ```vue
 <template>
   <div class="box">
-    <code>vuepress-theme-hope</code> is
-    <span @click="handler">{{ message }}</span
+    <code>vuepress-theme-hope</code> is <span @click="handler">{{ message }}</span
     >!
   </div>
 </template>

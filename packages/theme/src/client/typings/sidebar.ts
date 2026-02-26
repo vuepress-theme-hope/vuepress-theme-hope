@@ -1,7 +1,4 @@
-import type {
-  SidebarGroupOptions,
-  SidebarLinkOptions,
-} from "../../shared/index.js";
+import type { SidebarGroupOptions, SidebarLinkOptions } from "../../shared/index.js";
 
 export type SidebarLinkItem = SidebarLinkOptions;
 

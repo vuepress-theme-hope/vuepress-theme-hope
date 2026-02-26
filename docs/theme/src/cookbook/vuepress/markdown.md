@@ -80,14 +80,10 @@ Converted to:
 <template>
   <RouterLink to="/v2/">Home</RouterLink>
   <RouterLink to="/v2/contribution.html">Contribution Guide</RouterLink>
-  <RouterLink to="/v2/cookbook/vuepress/config.html"
-    >VuePress Config</RouterLink
-  >
+  <RouterLink to="/v2/cookbook/vuepress/config.html">VuePress Config</RouterLink>
   <RouterLink to="/v2/guide/">Guide</RouterLink>
   <RouterLink to="/v2/config/i18n.html">Config &gt; I18n</RouterLink>
-  <a href="https://github.com" target="_blank" rel="noopener noreferrer"
-    >GitHub</a
-  >
+  <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
 </template>
 ```
 

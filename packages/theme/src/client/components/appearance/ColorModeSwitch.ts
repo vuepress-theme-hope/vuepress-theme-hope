@@ -71,10 +71,7 @@ export default defineComponent({
       const x = event.clientX;
       const y = event.clientY;
 
-      const endRadius = Math.hypot(
-        Math.max(x, innerWidth - x),
-        Math.max(y, innerHeight - y),
-      );
+      const endRadius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
 
       const oldStatus = isDarkMode.value;
 
@@ -89,14 +86,8 @@ export default defineComponent({
         document.documentElement.animate(
           {
             clipPath: isDarkMode.value
-              ? [
-                  `circle(${endRadius}px at ${x}px ${y}px)`,
-                  `circle(0px at ${x}px ${y}px)`,
-                ]
-              : [
-                  `circle(0px at ${x}px ${y}px)`,
-                  `circle(${endRadius}px at ${x}px ${y}px)`,
-                ],
+              ? [`circle(${endRadius}px at ${x}px ${y}px)`, `circle(0px at ${x}px ${y}px)`]
+              : [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`],
           },
           {
             duration: 400,

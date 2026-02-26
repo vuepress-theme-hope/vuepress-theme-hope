@@ -1,13 +1,6 @@
 import { watchImmediate } from "@vueuse/core";
 import type { VNode } from "vue";
-import {
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-  resolveComponent,
-  shallowRef,
-} from "vue";
+import { computed, defineComponent, h, onMounted, resolveComponent, shallowRef } from "vue";
 import { RouteLink, resolveRoute } from "vuepress/client";
 
 import { useData } from "@theme-hope/composables/useData";
@@ -27,31 +20,22 @@ export default defineComponent({
   name: "BreadCrumb",
 
   setup() {
-    const { frontmatter, page, routeLocale, routePath, themeLocale } =
-      useData();
+    const { frontmatter, page, routeLocale, routePath, themeLocale } = useData();
 
     const config = shallowRef<BreadCrumbConfig[]>([]);
 
     const enable = computed(
       () =>
-        (frontmatter.value.breadcrumb ??
-          themeLocale.value.breadcrumb ??
-          true) &&
+        (frontmatter.value.breadcrumb ?? themeLocale.value.breadcrumb ?? true) &&
         config.value.length > 1,
     );
 
     const enableIcon = computed(
-      () =>
-        frontmatter.value.breadcrumbIcon ??
-        themeLocale.value.breadcrumbIcon ??
-        true,
+      () => frontmatter.value.breadcrumbIcon ?? themeLocale.value.breadcrumbIcon ?? true,
     );
 
     const getBreadCrumbConfig = (): void => {
-      const breadcrumbConfig = getAncestorLinks(
-        page.value.path,
-        routeLocale.value,
-      )
+      const breadcrumbConfig = getAncestorLinks(page.value.path, routeLocale.value)
         .map<BreadCrumbConfig | null>(({ link, name }) => {
           const { path, meta, notFound } = resolveRoute<PageInfoData>(link);
 
@@ -105,11 +89,7 @@ export default defineComponent({
                           ? h(resolveComponent("VPIcon"), { icon: item.icon })
                           : null,
                         // Text
-                        h(
-                          "span",
-                          { property: "name" },
-                          item.title || "Unknown",
-                        ),
+                        h("span", { property: "name" }, item.title || "Unknown"),
                       ],
                     ),
                     // Meta

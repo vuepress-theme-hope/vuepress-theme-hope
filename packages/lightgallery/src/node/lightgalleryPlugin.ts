@@ -1,8 +1,4 @@
-import {
-  addViteConfig,
-  addViteOptimizeDepsExclude,
-  chainWebpack,
-} from "@vuepress/helper";
+import { addViteConfig, addViteOptimizeDepsExclude, chainWebpack } from "@vuepress/helper";
 import { useSassPalettePlugin } from "@vuepress/plugin-sass-palette";
 import type { PluginFunction } from "vuepress/core";
 
@@ -28,16 +24,13 @@ export const lightgalleryPlugin =
 
       define: (): Record<string, unknown> => ({
         // eslint-disable-next-line @typescript-eslint/naming-convention
-        __LG_SELECTOR__:
-          options.selector ?? "[vp-content] :not(a) > img:not([no-view])",
+        __LG_SELECTOR__: options.selector ?? "[vp-content] :not(a) > img:not([no-view])",
       }),
 
       extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
         addViteOptimizeDepsExclude(bundlerOptions, app, [
           "lightgallery/lightgallery.es5.js",
-          ...plugins.map(
-            (name) => `lightgallery/plugins/${name}/lg-${name}.es5.js`,
-          ),
+          ...plugins.map((name) => `lightgallery/plugins/${name}/lg-${name}.es5.js`),
         ]);
         addViteOptimizeDepsExclude(bundlerOptions, app, ["lightgallery"]);
 
@@ -66,8 +59,7 @@ export const lightgalleryPlugin =
         });
       },
 
-      onPrepared: (app): Promise<void> =>
-        prepareLightGalleryPlugins(app, options.plugins),
+      onPrepared: (app): Promise<void> => prepareLightGalleryPlugins(app, options.plugins),
 
       clientConfigFile: `${CLIENT_FOLDER}config.js`,
     };

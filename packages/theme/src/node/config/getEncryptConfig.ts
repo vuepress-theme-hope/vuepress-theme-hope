@@ -1,18 +1,8 @@
-import {
-  entries,
-  fromEntries,
-  isArray,
-  isPlainObject,
-  isString,
-} from "@vuepress/helper";
+import { entries, fromEntries, isArray, isPlainObject, isString } from "@vuepress/helper";
 import { hashSync } from "bcrypt-ts/node";
 import { colors } from "vuepress/utils";
 
-import type {
-  EncryptConfig,
-  EncryptOptions,
-  PasswordConfig,
-} from "../../shared/index.js";
+import type { EncryptConfig, EncryptOptions, PasswordConfig } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
 const hashPasswords = (passwords: unknown, key: string): string[] | null => {
@@ -43,11 +33,7 @@ All password MUST be string. But we found a ${JSON.stringify(passwords)}. Please
 };
 
 /** @private */
-export const getEncryptConfig = ({
-  admin,
-  config,
-  global,
-}: EncryptOptions = {}): EncryptConfig => {
+export const getEncryptConfig = ({ admin, config, global }: EncryptOptions = {}): EncryptConfig => {
   const result: EncryptConfig = {};
 
   // Handle global token
@@ -74,10 +60,7 @@ export const getEncryptConfig = ({
       entries(config)
         .map<[string, PasswordConfig] | null>(([key, options]) => {
           if (isPlainObject<{ hint: string; password: string[] }>(options)) {
-            const tokens = hashPasswords(
-              options.password,
-              `encrypt.config[${key}].password`,
-            );
+            const tokens = hashPasswords(options.password, `encrypt.config[${key}].password`);
 
             return tokens ? [key, { tokens, hint: options.hint }] : null;
           }

@@ -39,30 +39,26 @@ export default defineComponent({
         h(
           "div",
           { class: "vp-blog-type-switcher" },
-          (entries(buttons) as [InfoType, FunctionalComponent][]).map(
-            ([key, Icon]) =>
-              h(
-                "button",
-                {
-                  type: "button",
-                  class: "vp-blog-type-button",
-                  onClick: () => {
-                    activeType.value = key;
-                  },
+          (entries(buttons) as [InfoType, FunctionalComponent][]).map(([key, Icon]) =>
+            h(
+              "button",
+              {
+                type: "button",
+                class: "vp-blog-type-button",
+                onClick: () => {
+                  activeType.value = key;
                 },
-                h(
-                  "div",
-                  {
-                    class: [
-                      "vp-blog-type-icon-wrapper",
-                      { active: activeType.value === key },
-                    ],
-                    "aria-label": blogLocale.value[key],
-                    "data-balloon-pos": "down",
-                  },
-                  h(Icon),
-                ),
+              },
+              h(
+                "div",
+                {
+                  class: ["vp-blog-type-icon-wrapper", { active: activeType.value === key }],
+                  "aria-label": blogLocale.value[key],
+                  "data-balloon-pos": "down",
+                },
+                h(Icon),
               ),
+            ),
           ),
         ),
 

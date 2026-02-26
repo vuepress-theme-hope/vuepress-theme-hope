@@ -11,10 +11,7 @@ const randomData = () => {
   value = value + Math.random() * 21 - 10;
   return {
     name: now.toString(),
-    value: [
-      [now.getFullYear(), now.getMonth() + 1, now.getDate()].join("/"),
-      Math.round(value),
-    ],
+    value: [[now.getFullYear(), now.getMonth() + 1, now.getDate()].join("/"), Math.round(value)],
   };
 };
 

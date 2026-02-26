@@ -15,16 +15,10 @@ const sync = async (): Promise<void> => {
       import(`../packages/${packageName}/package.json`, {
         assert: { type: "json" },
       }).then(
-        ({
-          default: content,
-        }: {
-          default: Record<string, unknown> & { name: string };
-        }) =>
+        ({ default: content }: { default: Record<string, unknown> & { name: string } }) =>
           new Promise<void>((resolve) => {
             const req = request(
-              new URL(
-                `https://registry-direct.npmmirror.com/-/package/${content.name}/syncs`,
-              ),
+              new URL(`https://registry-direct.npmmirror.com/-/package/${content.name}/syncs`),
               {
                 method: "PUT",
                 headers: {

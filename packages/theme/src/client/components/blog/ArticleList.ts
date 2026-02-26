@@ -1,15 +1,7 @@
 import type { Slot } from "@vuepress/helper/client";
 import { isSupported, usePageview } from "@vuepress/plugin-comment/pageview";
 import type { PropType, SlotsType, VNode } from "vue";
-import {
-  computed,
-  defineComponent,
-  h,
-  nextTick,
-  onMounted,
-  ref,
-  watch,
-} from "vue";
+import { computed, defineComponent, h, nextTick, onMounted, ref, watch } from "vue";
 import { useRoute, useRouter } from "vuepress/client";
 
 import ArticleItem from "@theme-hope/components/blog/ArticleItem";
@@ -106,8 +98,7 @@ export default defineComponent({
         // List top border distance
         const distance =
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          document.querySelector("#article-list")!.getBoundingClientRect().top +
-          window.scrollY;
+          document.querySelector("#article-list")!.getBoundingClientRect().top + window.scrollY;
 
         setTimeout(() => {
           window.scrollTo(0, distance);
@@ -136,10 +127,7 @@ export default defineComponent({
           : h(
               "h2",
               { class: "vp-empty-hint" },
-              blogLocale.value.empty.replace(
-                "$text",
-                blogLocale.value.article.toLocaleLowerCase(),
-              ),
+              blogLocale.value.empty.replace("$text", blogLocale.value.article.toLocaleLowerCase()),
             ),
       );
   },

@@ -49,10 +49,7 @@ const HighlightSection: FunctionalComponent<
       bgImageDark
         ? h("div", {
             class: "vp-highlight-bg dark",
-            style: [
-              { "background-image": `url(${bgImageDark})` },
-              bgImageStyle,
-            ],
+            style: [{ "background-image": `url(${bgImageDark})` }, bgImageStyle],
           })
         : null,
 
@@ -97,19 +94,15 @@ const HighlightSection: FunctionalComponent<
                   { class: "vp-highlights" },
                   highlights.map(({ icon, title, details, link }) => {
                     const children = [
-                      h(
-                        type === "no-order" ? "dt" : "h3",
-                        { class: "vp-highlight-title" },
-                        [
-                          icon
-                            ? h(resolveComponent("VPIcon"), {
-                                class: "vp-highlight-icon",
-                                icon,
-                              })
-                            : null,
-                          h("span", { innerHTML: title }),
-                        ],
-                      ),
+                      h(type === "no-order" ? "dt" : "h3", { class: "vp-highlight-title" }, [
+                        icon
+                          ? h(resolveComponent("VPIcon"), {
+                              class: "vp-highlight-icon",
+                              icon,
+                            })
+                          : null,
+                        h("span", { innerHTML: title }),
+                      ]),
                       details
                         ? h(type === "no-order" ? "dd" : "div", {
                             class: "vp-highlight-details",

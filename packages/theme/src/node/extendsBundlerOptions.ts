@@ -15,11 +15,7 @@ const WEBPACK_DEFAULT_CONDITION_NAMES = ["browser", "import", "default"];
 /**
  * @private
  */
-export const extendsBundlerOptions = (
-  bundlerOptions: unknown,
-  app: App,
-  custom = false,
-): void => {
+export const extendsBundlerOptions = (bundlerOptions: unknown, app: App, custom = false): void => {
   addViteConfig(bundlerOptions, app, {
     build: {
       chunkSizeWarningLimit: 1024,
@@ -31,20 +27,20 @@ export const extendsBundlerOptions = (
 
     if (bundlerName === "vite") {
       const defaultConditions =
-        (((bundlerOptions as ViteBundlerOptions).viteOptions ??= {}).resolve ??=
-          {}).conditions ?? VITE_DEFAULT_CONDITIONS;
+        (((bundlerOptions as ViteBundlerOptions).viteOptions ??= {}).resolve ??= {}).conditions ??
+        VITE_DEFAULT_CONDITIONS;
       const defaultSSRConditions =
-        ((((bundlerOptions as ViteBundlerOptions).viteOptions ??= {}).ssr ??=
-          {}).resolve ??= {}).conditions ?? VITE_DEFAULT_CONDITIONS;
+        ((((bundlerOptions as ViteBundlerOptions).viteOptions ??= {}).ssr ??= {}).resolve ??= {})
+          .conditions ?? VITE_DEFAULT_CONDITIONS;
 
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      (bundlerOptions as ViteBundlerOptions).viteOptions!.resolve!.conditions =
-        ["custom", ...defaultConditions];
+      (bundlerOptions as ViteBundlerOptions).viteOptions!.resolve!.conditions = [
+        "custom",
+        ...defaultConditions,
+      ];
 
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      (
-        bundlerOptions as ViteBundlerOptions
-      ).viteOptions!.ssr!.resolve!.conditions = [
+      (bundlerOptions as ViteBundlerOptions).viteOptions!.ssr!.resolve!.conditions = [
         "custom",
         ...defaultSSRConditions,
       ];
@@ -53,18 +49,11 @@ export const extendsBundlerOptions = (
     chainWebpack(bundlerOptions, app, (config) => {
       if (config.resolve.conditionNames.values().length > 0)
         config.resolve.conditionNames.prepend("custom");
-      else
-        config.resolve.conditionNames.merge([
-          "custom",
-          ...WEBPACK_DEFAULT_CONDITION_NAMES,
-        ]);
+      else config.resolve.conditionNames.merge(["custom", ...WEBPACK_DEFAULT_CONDITION_NAMES]);
     });
   }
 
   addViteOptimizeDepsInclude(bundlerOptions, app, "@vueuse/core", true);
   addViteOptimizeDepsExclude(bundlerOptions, app, "@theme-hope");
-  addViteSsrNoExternal(bundlerOptions, app, [
-    "@vuepress/helper",
-    "vuepress-shared",
-  ]);
+  addViteSsrNoExternal(bundlerOptions, app, ["@vuepress/helper", "vuepress-shared"]);
 };

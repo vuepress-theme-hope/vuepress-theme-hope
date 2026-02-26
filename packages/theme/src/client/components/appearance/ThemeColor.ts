@@ -8,13 +8,10 @@ import { useAppearanceLocale } from "@theme-hope/composables/appearance/useAppea
 import cssVariables from "../../styles/variables.module.scss";
 import "../../styles/appearance/theme-color.scss";
 
-export const hasMultipleThemeColors =
-  cssVariables.hasMultipleThemeColors === "true";
+export const hasMultipleThemeColors = cssVariables.hasMultipleThemeColors === "true";
 
 const themeColors = hasMultipleThemeColors
-  ? fromEntries(
-      entries(cssVariables).filter(([key]) => key.startsWith("theme-")),
-    )
+  ? fromEntries(entries(cssVariables).filter(([key]) => key.startsWith("theme-")))
   : {};
 
 export default defineComponent({

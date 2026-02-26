@@ -55,11 +55,7 @@
       "files": ["**/node/**/*.ts"],
       "plugins": ["node"],
       "rules": {
-        "no-restricted-imports": [
-          "error",
-          "@vuepress/helper/client",
-          "vuepress/client",
-        ],
+        "no-restricted-imports": ["error", "@vuepress/helper/client", "vuepress/client"],
       },
     },
     {
@@ -74,10 +70,7 @@
           "vuepress/markdown",
           "vuepress/utils",
         ],
-        "typescript/prefer-nullish-coalescing": [
-          "warn",
-          { "ignoreConditionalTests": true },
-        ],
+        "typescript/prefer-nullish-coalescing": ["warn", { "ignoreConditionalTests": true }],
       },
     },
     {

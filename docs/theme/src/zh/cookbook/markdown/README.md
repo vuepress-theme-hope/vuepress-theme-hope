@@ -349,17 +349,14 @@ Markdown 支持两种形式的链接语法: *行内*和*参考*两种形式。
 要建立一个行内形式的链接，只要在方块括号后面马上接着括号并插入网址链接即可，如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可，例如:
 
 ```html
-This is [an example](http://example.com/ "Title") inline link. [This
-link](http://example.net/) has no title attribute.
+This is [an example](http://example.com/ "Title") inline link. [This link](http://example.net/) has
+no title attribute.
 ```
 
 会产生:
 
 ```html
-<p>
-  This is <a href="http://example.com/" title="Title"> an example</a> inline
-  link.
-</p>
+<p>This is <a href="http://example.com/" title="Title"> an example</a> inline link.</p>
 
 <p><a href="http://example.net/">This link</a> has no title attribute.</p>
 ```
@@ -597,10 +594,7 @@ Please don't use any `<blink>` tags.
 以产生:
 
 ```html
-<p>
-  <code>&amp;#8212;</code> is the decimal-encoded equivalent of
-  <code>&amp;mdash;</code>.
-</p>
+<p><code>&amp;#8212;</code> is the decimal-encoded equivalent of <code>&amp;mdash;</code>.</p>
 ```
 
 ### 图片

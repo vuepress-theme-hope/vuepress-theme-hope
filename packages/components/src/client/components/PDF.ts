@@ -2,19 +2,8 @@ import type { ExactLocaleConfig } from "@vuepress/helper/client";
 import { useLocaleConfig } from "@vuepress/helper/client";
 import { useScrollLock } from "@vueuse/core";
 import type { VNode } from "vue";
-import {
-  defineComponent,
-  h,
-  onMounted,
-  onUnmounted,
-  ref,
-  shallowRef,
-  watch,
-} from "vue";
-import {
-  CancelFullScreenIcon,
-  EnterFullScreenIcon,
-} from "vuepress-shared/client";
+import { defineComponent, h, onMounted, onUnmounted, ref, shallowRef, watch } from "vue";
+import { CancelFullScreenIcon, EnterFullScreenIcon } from "vuepress-shared/client";
 
 import type { PDFLocaleData } from "../../shared/locales.js";
 import { useSize } from "../composables/index.js";
@@ -140,9 +129,7 @@ export default defineComponent({
         options: {
           page: props.page,
           noToolbar: props.noToolbar,
-          ...(props.zoom && props.zoom.toString() !== "100"
-            ? { zoom: props.zoom }
-            : {}),
+          ...(props.zoom && props.zoom.toString() !== "100" ? { zoom: props.zoom } : {}),
         },
         pdfjs: props.viewer,
       });
@@ -178,12 +165,9 @@ export default defineComponent({
                     isFullscreen.value = !isFullscreen.value;
                   },
                 },
-                h(
-                  isFullscreen.value
-                    ? CancelFullScreenIcon
-                    : EnterFullScreenIcon,
-                  { class: "pdf-fullscreen-icon" },
-                ),
+                h(isFullscreen.value ? CancelFullScreenIcon : EnterFullScreenIcon, {
+                  class: "pdf-fullscreen-icon",
+                }),
               ),
         ],
       );

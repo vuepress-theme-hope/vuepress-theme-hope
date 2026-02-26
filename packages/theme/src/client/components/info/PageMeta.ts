@@ -35,14 +35,9 @@ export default defineComponent({
             )
           : null,
         h("div", { class: "vp-meta-item git-info" }, [
-          (!metaInfo.changelog.value || !hasGlobalComponent("GitChangelog")) &&
-          lastUpdated.value
+          (!metaInfo.changelog.value || !hasGlobalComponent("GitChangelog")) && lastUpdated.value
             ? h("div", { class: "update-time" }, [
-                h(
-                  "span",
-                  { class: "vp-meta-label" },
-                  `${lastUpdated.value.locale}: `,
-                ),
+                h("span", { class: "vp-meta-label" }, `${lastUpdated.value.locale}: `),
                 h(
                   "time",
                   {
@@ -58,21 +53,11 @@ export default defineComponent({
           metaInfo.contributors.value !== "content" &&
           contributors.value.length > 0
             ? h("div", { class: "contributors" }, [
-                h(
-                  "span",
-                  { class: "vp-meta-label" },
-                  `${metaLocale.value.contributors}: `,
-                ),
-                contributors.value.map(
-                  ({ email, name }, index, contributors) => [
-                    h(
-                      "span",
-                      { class: "vp-meta-info", title: `email: ${email}` },
-                      name,
-                    ),
-                    index === contributors.length - 1 ? "" : ",",
-                  ],
-                ),
+                h("span", { class: "vp-meta-label" }, `${metaLocale.value.contributors}: `),
+                contributors.value.map(({ email, name }, index, contributors) => [
+                  h("span", { class: "vp-meta-info", title: `email: ${email}` }, name),
+                  index === contributors.length - 1 ? "" : ",",
+                ]),
               ])
             : null,
         ]),

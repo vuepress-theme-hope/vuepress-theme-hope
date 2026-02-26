@@ -11,9 +11,7 @@ export const getVersion = async (
     new Promise((resolve, reject) => {
       get(
         `${
-          packageManager === "yarn"
-            ? "https://registry.yarnpkg.com"
-            : "https://registry.npmjs.org"
+          packageManager === "yarn" ? "https://registry.yarnpkg.com" : "https://registry.npmjs.org"
         }/-/package/${packageName}/dist-tags`,
         (res) => {
           if (res.statusCode === 200) {

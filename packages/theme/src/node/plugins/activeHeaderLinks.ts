@@ -6,9 +6,7 @@ import type { Plugin } from "vuepress/core";
  *
  * Resolve options for `@vuepress/plugin-active-header-links`
  */
-export const getActiveHeaderLinksPlugin = (
-  activeHeaderLinks?: boolean,
-): Plugin | null =>
+export const getActiveHeaderLinksPlugin = (activeHeaderLinks?: boolean): Plugin | null =>
   activeHeaderLinks === false
     ? null
     : activeHeaderLinksPlugin({

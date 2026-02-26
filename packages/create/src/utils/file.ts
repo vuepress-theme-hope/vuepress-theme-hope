@@ -1,10 +1,4 @@
-import {
-  createReadStream,
-  createWriteStream,
-  mkdirSync,
-  readdirSync,
-  statSync,
-} from "node:fs";
+import { createReadStream, createWriteStream, mkdirSync, readdirSync, statSync } from "node:fs";
 import { dirname } from "node:path";
 
 export const ensureDirExistSync = (dirPath: string): void => {
@@ -36,10 +30,8 @@ export const copyDir = (srcDir: string, targetDir: string): void => {
   const files = readdirSync(srcDir, { withFileTypes: true });
 
   files.forEach((file) => {
-    if (file.isFile())
-      copyFile(`${srcDir}/${file.name}`, `${targetDir}/${file.name}`);
-    else if (file.isDirectory())
-      copyDir(`${srcDir}/${file.name}`, `${targetDir}/${file.name}`);
+    if (file.isFile()) copyFile(`${srcDir}/${file.name}`, `${targetDir}/${file.name}`);
+    else if (file.isDirectory()) copyDir(`${srcDir}/${file.name}`, `${targetDir}/${file.name}`);
   });
 };
 

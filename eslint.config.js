@@ -1,8 +1,4 @@
-import {
-  defaultNamingConventionRules,
-  globals,
-  hope,
-} from "eslint-config-mister-hope";
+import { defaultNamingConventionRules, globals, hope } from "eslint-config-mister-hope";
 import { vue } from "eslint-config-mister-hope/vue";
 
 export default hope(
@@ -48,10 +44,7 @@ export default hope(
 
   ...vue({
     all: {
-      "@typescript-eslint/prefer-nullish-coalescing": [
-        "warn",
-        { ignoreConditionalTests: true },
-      ],
+      "@typescript-eslint/prefer-nullish-coalescing": ["warn", { ignoreConditionalTests: true }],
       "@typescript-eslint/naming-convention": [
         "warn",
 
@@ -88,21 +81,14 @@ export default hope(
           ignore: [String.raw`^@temp\/`],
         },
       ],
-      "vue/multi-word-component-names": [
-        "error",
-        { ignores: ["Blog", "Layout", "Slides"] },
-      ],
+      "vue/multi-word-component-names": ["error", { ignores: ["Blog", "Layout", "Slides"] }],
     },
   }),
 
   {
     files: ["packages/*/src/node/**/*.ts"],
     rules: {
-      "no-restricted-imports": [
-        "error",
-        "@vuepress/helper/client",
-        "vuepress/client",
-      ],
+      "no-restricted-imports": ["error", "@vuepress/helper/client", "vuepress/client"],
     },
   },
 

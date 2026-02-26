@@ -78,21 +78,18 @@ const getSidebarInfoFromStructure = (
     startsWith(filePathRelative, `${scope}${info.path}/`),
   );
   const READMEFile = info.children.find(
-    (info) =>
-      info.type === "file" && info.filename.toLowerCase() === "readme.md",
+    (info) => info.type === "file" && info.filename.toLowerCase() === "readme.md",
   );
 
   if (READMEFile) {
     const readmePage = relatedPages.find(
-      ({ filePathRelative }) =>
-        filePathRelative === `${scope}${READMEFile.path}`,
+      ({ filePathRelative }) => filePathRelative === `${scope}${READMEFile.path}`,
     ) as Page<ThemePageData, ThemeNormalPageFrontmatter>;
 
     // get dir information
     const dirOptions = readmePage.frontmatter.dir;
 
-    const title =
-      dirOptions?.text ?? readmePage.frontmatter.shortTitle ?? readmePage.title;
+    const title = dirOptions?.text ?? readmePage.frontmatter.shortTitle ?? readmePage.title;
     const icon = dirOptions?.icon ?? readmePage.frontmatter.icon;
     const collapsible = dirOptions?.collapsible ?? true;
     const expanded = collapsible && dirOptions?.expanded === true;
@@ -107,9 +104,7 @@ const getSidebarInfoFromStructure = (
         dirOptions?.link
           ? info.children.filter(
               // filter README.md
-              (item) =>
-                item.type !== "file" ||
-                item.filename.toLowerCase() !== "readme.md",
+              (item) => item.type !== "file" || item.filename.toLowerCase() !== "readme.md",
             )
           : info.children,
       ),
@@ -141,10 +136,7 @@ const getSidebarInfoFromStructure = (
   const dirInfo: SidebarDirInfo = {
     type: "dir",
     dirname: info.dirname,
-    children: getSidebarChildrenInfo(
-      { pages: relatedPages, scope, sorters },
-      info.children,
-    ),
+    children: getSidebarChildrenInfo({ pages: relatedPages, scope, sorters }, info.children),
 
     title: getTitleFromFilename(info.dirname),
     order: null,
@@ -164,11 +156,7 @@ const getSidebarInfoFromStructure = (
 /**
  * @private
  */
-export const getSidebarInfo = ({
-  pages,
-  sorters,
-  scope,
-}: ThemeSidebarInfoOptions): SidebarInfo[] =>
+export const getSidebarInfo = ({ pages, sorters, scope }: ThemeSidebarInfoOptions): SidebarInfo[] =>
   getStructureInfo(pages, scope)
     .map((info) => getSidebarInfoFromStructure({ scope, pages, sorters }, info))
     .filter((item): item is SidebarInfo => item !== null)

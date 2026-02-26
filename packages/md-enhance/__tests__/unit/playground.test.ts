@@ -19,10 +19,7 @@ const getVueFiles = (content: string): Record<string, string> | null => {
     .replace("__DEV__", "")
     .replace("__SSR__", "");
 
-  return JSON.parse(Buffer.from(files, "base64").toString()) as Record<
-    string,
-    string
-  >;
+  return JSON.parse(Buffer.from(files, "base64").toString()) as Record<string, string>;
 };
 
 describe("playground", () => {
@@ -63,10 +60,7 @@ abc
       component: "Playground",
       propsGetter: (data) =>
         Object.fromEntries(
-          Object.entries(data).map(([key, value]) => [
-            key,
-            JSON.stringify(value),
-          ]),
+          Object.entries(data).map(([key, value]) => [key, JSON.stringify(value)]),
         ),
     });
 

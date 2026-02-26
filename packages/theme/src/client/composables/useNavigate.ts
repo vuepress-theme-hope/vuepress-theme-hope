@@ -25,8 +25,6 @@ export const useNavigate = (): ((url: string) => void) => {
     // Inner relative path
     const loc = route.path.slice(0, route.path.lastIndexOf("/"));
 
-    return void router.push(
-      new URL(`${loc}/${encodeURI(url)}`, FAKE_HOST).pathname,
-    );
+    return void router.push(new URL(`${loc}/${encodeURI(url)}`, FAKE_HOST).pathname);
   };
 };

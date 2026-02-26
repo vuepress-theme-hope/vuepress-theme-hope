@@ -53,15 +53,11 @@ export default defineComponent({
 
     const input = ref("");
 
-    const paginationLocale = computed(
-      () => themeLocale.value.paginationLocales,
-    );
+    const paginationLocale = computed(() => themeLocale.value.paginationLocales);
 
     const totalPages = computed(() => Math.ceil(props.total / props.perPage));
 
-    const enable = computed(
-      () => Boolean(totalPages.value) && totalPages.value !== 1,
-    );
+    const enable = computed(() => Boolean(totalPages.value) && totalPages.value !== 1);
 
     const displayLeftEllipsis = computed(() => {
       if (totalPages.value < 7) return false;
@@ -206,11 +202,7 @@ export default defineComponent({
                   : null,
               ]),
               h("div", { class: "vp-pagination-nav" }, [
-                h(
-                  "label",
-                  { for: "navigation-text" },
-                  `${paginationLocale.value.navigate}: `,
-                ),
+                h("label", { for: "navigation-text" }, `${paginationLocale.value.navigate}: `),
                 h("input", {
                   id: "navigation-text",
                   value: input.value,

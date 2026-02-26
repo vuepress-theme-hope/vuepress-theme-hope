@@ -1,13 +1,6 @@
 import type { Slot } from "@vuepress/helper/client";
 import type { PropType, SlotsType, VNode } from "vue";
-import {
-  computed,
-  defineComponent,
-  h,
-  ref,
-  resolveComponent,
-  toRef,
-} from "vue";
+import { computed, defineComponent, h, ref, resolveComponent, toRef } from "vue";
 import { onContentUpdated } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/base/AutoLink";
@@ -26,9 +19,7 @@ export default defineComponent({
      * 下拉列表配置
      */
     config: {
-      type: Object as PropType<
-        NavGroup<AutoLinkOptions | NavGroup<AutoLinkOptions>>
-      >,
+      type: Object as PropType<NavGroup<AutoLinkOptions | NavGroup<AutoLinkOptions>>>,
 
       required: true,
     },
@@ -41,9 +32,7 @@ export default defineComponent({
   setup(props, { slots }) {
     const config = toRef(props, "config");
 
-    const dropdownAriaLabel = computed(
-      () => config.value.ariaLabel ?? config.value.text,
-    );
+    const dropdownAriaLabel = computed(() => config.value.ariaLabel ?? config.value.text);
 
     const open = ref(false);
 

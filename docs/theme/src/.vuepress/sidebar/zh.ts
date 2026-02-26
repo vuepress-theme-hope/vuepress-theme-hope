@@ -24,14 +24,7 @@ export const zhSidebarConfig = sidebar({
       text: "配置",
       icon: "gears",
       prefix: "config/",
-      children: [
-        "intro",
-        "i18n",
-        "theme/",
-        "plugins/",
-        "frontmatter/",
-        "style",
-      ],
+      children: ["intro", "i18n", "theme/", "plugins/", "frontmatter/", "style"],
     },
     {
       text: "教程",

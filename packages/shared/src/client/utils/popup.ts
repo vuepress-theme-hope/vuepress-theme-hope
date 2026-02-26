@@ -7,9 +7,7 @@ export class Popup {
   // Generate or make sure popup container element
   constructor() {
     const containerId = "popup-container";
-    const containerElement = document.querySelector<HTMLElement>(
-      `#${containerId}`,
-    );
+    const containerElement = document.querySelector<HTMLElement>(`#${containerId}`);
 
     if (containerElement) {
       this.containerElement = containerElement;

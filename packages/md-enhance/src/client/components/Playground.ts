@@ -20,15 +20,10 @@ export interface PlaygroundProps {
   link: string;
 }
 
-const Playground: FunctionalComponent<PlaygroundProps> = ({
-  title = "",
-  link,
-}) =>
+const Playground: FunctionalComponent<PlaygroundProps> = ({ title = "", link }) =>
   h("div", { class: "vp-container vp-playground" }, [
     h("div", { class: "vp-container-header" }, [
-      title
-        ? h("div", { class: "vp-container-title" }, decodeURIComponent(title))
-        : null,
+      title ? h("div", { class: "vp-container-title" }, decodeURIComponent(title)) : null,
       h("div", { class: "vp-playground-actions" }, [
         h("a", {
           class: "vp-playground-action no-external-link-icon",

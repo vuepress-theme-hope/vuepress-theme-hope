@@ -15,12 +15,7 @@
       "matchPackageNames": ["vuepress", "@vuepress/**", "vuepress-**"]
     },
     {
-      "matchPackageNames": [
-        "!vite",
-        "!vuepress",
-        "!@vuepress/**",
-        "!vuepress-**"
-      ]
+      "matchPackageNames": ["!vite", "!vuepress", "!@vuepress/**", "!vuepress-**"]
     },
     {
       "matchPackageNames": ["vite"],
@@ -34,12 +29,7 @@
     "extends": ["group:allNonMajor", "schedule:weekly"],
     "packageRules": [
       {
-        "matchPackageNames": [
-          "!vite",
-          "!vuepress",
-          "!@vuepress/**",
-          "!vuepress-**"
-        ]
+        "matchPackageNames": ["!vite", "!vuepress", "!@vuepress/**", "!vuepress-**"]
       },
       {
         "matchPackageNames": ["vite"],

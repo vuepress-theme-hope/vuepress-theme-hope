@@ -31,20 +31,14 @@ export const normalizePath = (path: string): string =>
  *
  * @returns Whether the link is active
  */
-export const isActiveLink = (
-  route: RouteLocationNormalizedLoaded,
-  link?: string,
-): boolean => {
+export const isActiveLink = (route: RouteLocationNormalizedLoaded, link?: string): boolean => {
   if (!isDef(link)) return false;
 
   const currentPath = normalizePath(route.path);
   const targetPath = normalizePath(link);
   const linkHash = getHash(link);
 
-  if (linkHash)
-    return (
-      linkHash === route.hash && (!targetPath || currentPath === targetPath)
-    );
+  if (linkHash) return linkHash === route.hash && (!targetPath || currentPath === targetPath);
 
   return currentPath === targetPath;
 };

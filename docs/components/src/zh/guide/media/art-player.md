@@ -358,9 +358,7 @@ npm i -D dashjs hls.js mpegts.js
         fetch(BILIBILI_DANMAKU).then((res) => res.json()),
         fetch(`${DANMAKU_API}/${DANMAKU_ID}.json`).then((res) => res.json()),
       ])
-        .then((res) =>
-          res.filter((r) => r.status === "fulfilled").map((r) => r.value),
-        )
+        .then((res) => res.filter((r) => r.status === "fulfilled").map((r) => r.value))
         .then((res) =>
           res
             .filter((r) => r["code"] === 0 && r["data"]?.length > 0)

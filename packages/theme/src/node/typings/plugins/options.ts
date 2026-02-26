@@ -8,10 +8,7 @@ import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
 import type { IconPluginOptions } from "@vuepress/plugin-icon";
 import type { MeiliSearchPluginOptions } from "@vuepress/plugin-meilisearch";
-import type {
-  NoticeOptions,
-  NoticePluginOptions,
-} from "@vuepress/plugin-notice";
+import type { NoticeOptions, NoticePluginOptions } from "@vuepress/plugin-notice";
 import type { PhotoSwipePluginOptions } from "@vuepress/plugin-photo-swipe";
 import type { PwaPluginOptions } from "@vuepress/plugin-pwa";
 import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";

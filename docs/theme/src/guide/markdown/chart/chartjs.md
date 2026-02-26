@@ -213,15 +213,7 @@ For security reasons, you need to manually allow script blocks in certain files.
 {
   "type": "radar",
   "data": {
-    "labels": [
-      "Eating",
-      "Drinking",
-      "Sleeping",
-      "Designing",
-      "Coding",
-      "Cycling",
-      "Running"
-    ],
+    "labels": ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
     "datasets": [
       {
         "label": "My First Dataset",

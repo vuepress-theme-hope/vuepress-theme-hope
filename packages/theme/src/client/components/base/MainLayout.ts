@@ -1,15 +1,6 @@
 import type { Slot } from "@vuepress/helper/client";
-import {
-  RenderDefault,
-  hasGlobalComponent,
-  isSlotContentEmpty,
-} from "@vuepress/helper/client";
-import {
-  useEventListener,
-  useScrollLock,
-  useThrottleFn,
-  useToggle,
-} from "@vueuse/core";
+import { RenderDefault, hasGlobalComponent, isSlotContentEmpty } from "@vuepress/helper/client";
+import { useEventListener, useScrollLock, useThrottleFn, useToggle } from "@vueuse/core";
 import type { ComponentOptions, SlotsType, VNode } from "vue";
 import {
   Transition,
@@ -107,25 +98,14 @@ export default defineComponent({
     const enableNavbar = computed(() => {
       if (props.noNavbar) return false;
 
-      if (
-        frontmatter.value.navbar === false ||
-        themeLocale.value.navbar === false
-      )
-        return false;
+      if (frontmatter.value.navbar === false || themeLocale.value.navbar === false) return false;
 
-      return Boolean(
-        themeLocale.value.logo ??
-        themeLocale.value.repo ??
-        themeLocale.value.navbar,
-      );
+      return Boolean(themeLocale.value.logo ?? themeLocale.value.repo ?? themeLocale.value.navbar);
     });
 
     // external-link-icon
     const enableExternalLinkIcon = computed(
-      () =>
-        frontmatter.value.externalLinkIcon ??
-        theme.value.externalLinkIcon ??
-        true,
+      () => frontmatter.value.externalLinkIcon ?? theme.value.externalLinkIcon ?? true,
     );
 
     const enableToc = computed(
@@ -163,8 +143,7 @@ export default defineComponent({
           const distance = window.scrollY;
 
           // At top or scroll up
-          if (distance <= 58 || distance < lastDistance)
-            hideNavbar.value = false;
+          if (distance <= 58 || distance < lastDistance) hideNavbar.value = false;
           // Scroll down > 200px and sidebar is not opened
           else if (lastDistance + 200 < distance && !isMobileSidebarOpen.value)
             hideNavbar.value = true;
@@ -213,8 +192,7 @@ export default defineComponent({
         frontmatter.value.sidebar === false ||
         // (is home page / no sidebar items) && no contents in sidebar slots
         // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-        ((frontmatter.value.home || sidebarItems.value.length === 0) &&
-          isSidebarEmpty);
+        ((frontmatter.value.home || sidebarItems.value.length === 0) && isSidebarEmpty);
 
       return h(
         hasGlobalComponent("GlobalEncrypt")
@@ -234,9 +212,7 @@ export default defineComponent({
 
                   // sidebar
                   "sidebar-collapsed":
-                    !isMobile.value &&
-                    !isPC.value &&
-                    isDesktopSidebarCollapsed.value,
+                    !isMobile.value && !isPC.value && isDesktopSidebarCollapsed.value,
                   "sidebar-open": isMobile.value && isMobileSidebarOpen.value,
                   "no-sidebar": noSidebar,
 
@@ -259,11 +235,7 @@ export default defineComponent({
             [
               // Navbar
               enableNavbar.value
-                ? h(
-                    Navbar,
-                    { onToggleSidebar: () => toggleMobileSidebar() },
-                    slots,
-                  )
+                ? h(Navbar, { onToggleSidebar: () => toggleMobileSidebar() }, slots)
                 : null,
               // Sidebar mask
               h(Transition, { name: "fade-in" }, () =>
@@ -285,10 +257,7 @@ export default defineComponent({
                         onClick: () => toggleDesktopSidebar(),
                       },
                       h("span", {
-                        class: [
-                          "arrow",
-                          isDesktopSidebarCollapsed.value ? "end" : "start",
-                        ],
+                        class: ["arrow", isDesktopSidebarCollapsed.value ? "end" : "start"],
                       }),
                     ),
               ),

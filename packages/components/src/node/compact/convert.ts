@@ -10,9 +10,7 @@ import { logger } from "../utils.js";
  *
  * @deprecated
  */
-export const convertOptions = (
-  options: ComponentPluginOptions & Record<string, unknown>,
-): void => {
+export const convertOptions = (options: ComponentPluginOptions & Record<string, unknown>): void => {
   const { deprecatedLogger, droppedLogger } = createConverter("components");
 
   droppedLogger({
@@ -68,9 +66,7 @@ export const convertOptions = (
   if (isArray(options.components)) {
     if ((options.components as unknown[]).includes("Catalog"))
       logger.warn(
-        `${colors.cyan(
-          "Catalog",
-        )} component is no longer supported, please use ${colors.magenta(
+        `${colors.cyan("Catalog")} component is no longer supported, please use ${colors.magenta(
           "@vuepress/plugin-catalog",
         )} instead.`,
       );
@@ -87,9 +83,7 @@ export const convertOptions = (
 
     if ((options.components as unknown[]).includes("FontIcon"))
       logger.warn(
-        `${colors.cyan(
-          "FontIcon",
-        )} component is no longer supported, please use ${colors.magenta(
+        `${colors.cyan("FontIcon")} component is no longer supported, please use ${colors.magenta(
           "@vuepress/plugin-icon",
         )} instead.`,
       );
@@ -97,9 +91,7 @@ export const convertOptions = (
     ["VideoPlayer", "AudioPlayer", "YouTube"].forEach((component) => {
       if ((options.components as unknown[]).includes(component))
         logger.warn(
-          `${colors.cyan(
-            component,
-          )} component is deprecated, please use ${colors.cyan(
+          `${colors.cyan(component)} component is deprecated, please use ${colors.cyan(
             "VidStack",
           )} component instead.`,
         );

@@ -50,21 +50,12 @@ export const getPlugins = (
     markdown: markdownOptions = {},
     plugins: pluginsOptions = {},
     ...options
-  }: Pick<
-    ThemeOptions,
-    "hostname" | "hotReload" | "favicon" | "plugins" | "markdown"
-  >,
+  }: Pick<ThemeOptions, "hostname" | "hotReload" | "favicon" | "plugins" | "markdown">,
   compact = false,
 ): PluginConfig => {
   checkPluginsOptions(pluginsOptions);
 
-  const {
-    alert = false,
-    hint = true,
-    include = true,
-    linksCheck,
-    math,
-  } = markdownOptions;
+  const { alert = false, hint = true, include = true, linksCheck, math } = markdownOptions;
   const { backToTop, copyCode, icon, photoSwipe } = pluginsOptions;
 
   return [
@@ -72,9 +63,7 @@ export const getPlugins = (
      * markdown plugins
      */
     // @vuepress/plugin-links-check
-    linksCheck === false
-      ? null
-      : linksCheckPlugin(isPlainObject(linksCheck) ? linksCheck : {}),
+    linksCheck === false ? null : linksCheckPlugin(isPlainObject(linksCheck) ? linksCheck : {}),
     // @vuepress/plugin-markdown-chart
     markdownChartPlugin(markdownOptions),
     // @vuepress/plugin-markdown-ext
@@ -82,15 +71,9 @@ export const getPlugins = (
     // @vuepress/plugin-markdown-hint
     alert || hint ? markdownHintPlugin({ alert, hint }) : null,
     // @vuepress/plugin-markdown-include
-    include
-      ? markdownIncludePlugin(isPlainObject(include) ? include : {})
-      : null,
+    include ? markdownIncludePlugin(isPlainObject(include) ? include : {}) : null,
     // @vuepress/plugin-markdown-math
-    isPlainObject(math)
-      ? markdownMathPlugin(math)
-      : math
-        ? markdownMathPlugin()
-        : null,
+    isPlainObject(math) ? markdownMathPlugin(math) : math ? markdownMathPlugin() : null,
     // @vuepress/plugin-preview
     markdownOptions.preview ? markdownPreviewPlugin() : null,
     // @vuepress/plugin-markdown-tab
@@ -106,13 +89,9 @@ export const getPlugins = (
      * feature plugins
      */
     // @vuepress/plugin-back-to-top
-    backToTop === false
-      ? null
-      : backToTopPlugin(isPlainObject(backToTop) ? backToTop : {}),
+    backToTop === false ? null : backToTopPlugin(isPlainObject(backToTop) ? backToTop : {}),
     // @vuepress/plugin-copy-code
-    copyCode === false
-      ? null
-      : copyCodePlugin(isPlainObject(copyCode) ? copyCode : {}),
+    copyCode === false ? null : copyCodePlugin(isPlainObject(copyCode) ? copyCode : {}),
     // @vuepress/plugin-icon
     icon === false
       ? false
@@ -122,9 +101,7 @@ export const getPlugins = (
           component: "VPIcon",
         }),
     // @vuepress/plugin-photo-swipe
-    photoSwipe === false
-      ? null
-      : photoSwipePlugin(isPlainObject(photoSwipe) ? photoSwipe : {}),
+    photoSwipe === false ? null : photoSwipePlugin(isPlainObject(photoSwipe) ? photoSwipe : {}),
 
     getComponentsPlugin(pluginsOptions.components, compact),
     getActiveHeaderLinksPlugin(pluginsOptions.activeHeaderLinks),
@@ -135,13 +112,7 @@ export const getPlugins = (
     getCopyrightPlugin(themeData, pluginsOptions.copyright, options.hostname),
     // Seo should work before feed
     getSEOPlugin(themeData, pluginsOptions.seo, options.hostname),
-    getFeedPlugin(
-      themeData,
-      pluginsOptions.feed,
-      options.hostname,
-      options.favicon,
-      compact,
-    ),
+    getFeedPlugin(themeData, pluginsOptions.feed, options.hostname, options.favicon, compact),
     getNoticePlugin(pluginsOptions.notice),
     getPwaPlugin(pluginsOptions.pwa, options.favicon),
     getSearchPlugin(app, themeData, pluginsOptions),

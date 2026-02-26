@@ -28,8 +28,7 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
   page.routeMeta.title = page.title;
 
   // Set short title
-  if (frontmatter.shortTitle)
-    page.routeMeta.shortTitle = frontmatter.shortTitle;
+  if (frontmatter.shortTitle) page.routeMeta.shortTitle = frontmatter.shortTitle;
 
   // Set icon
   if (frontmatter.icon) page.routeMeta.icon = frontmatter.icon;
@@ -38,9 +37,7 @@ export const injectPageInfo = (page: Page<ThemePageData>): void => {
   if (endsWith(page.path, "/")) {
     if (isPlainObject(frontmatter.dir)) {
       if ("order" in frontmatter.dir)
-        page.routeMeta.order = (
-          frontmatter.dir as StructureSidebarDirOptions
-        ).order;
+        page.routeMeta.order = (frontmatter.dir as StructureSidebarDirOptions).order;
 
       if (frontmatter.dir.index === false) page.routeMeta.index = false;
     }
@@ -69,10 +66,7 @@ export const extendsPagePlugin = (
 
       if (behavior.compact)
         // eslint-disable-next-line @typescript-eslint/no-deprecated
-        page.frontmatter = convertFrontmatter(
-          page.frontmatter,
-          filePathRelative ?? "",
-        );
+        page.frontmatter = convertFrontmatter(page.frontmatter, filePathRelative ?? "");
       if (behavior.check) checkFrontmatter(page);
 
       const isEncrypted = isPageEncrypted(page);

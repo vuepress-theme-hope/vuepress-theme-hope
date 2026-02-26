@@ -40,9 +40,7 @@ export default defineComponent({
               ariaPressed: isFullscreen.value,
               onClick: () => toggle(),
             },
-            isFullscreen.value
-              ? h(CancelFullScreenIcon)
-              : h(EnterFullScreenIcon),
+            isFullscreen.value ? h(CancelFullScreenIcon) : h(EnterFullScreenIcon),
           )
         : null;
   },

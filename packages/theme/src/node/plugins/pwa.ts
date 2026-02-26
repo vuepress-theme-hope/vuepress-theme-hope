@@ -4,9 +4,7 @@ import type { Plugin } from "vuepress/core";
 
 import { logMissingPkg } from "./utils.js";
 
-let pwaPlugin:
-  | ((options: PwaPluginOptions, legacy?: boolean) => Plugin)
-  | null = null;
+let pwaPlugin: ((options: PwaPluginOptions, legacy?: boolean) => Plugin) | null = null;
 
 try {
   ({ pwaPlugin } = await import("@vuepress/plugin-pwa"));

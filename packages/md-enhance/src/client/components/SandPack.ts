@@ -1,9 +1,4 @@
-import {
-  LoadingIcon,
-  decodeData,
-  deepAssign,
-  useDarkMode,
-} from "@vuepress/helper/client";
+import { LoadingIcon, decodeData, deepAssign, useDarkMode } from "@vuepress/helper/client";
 import NoopComponent from "@vuepress/helper/noopComponent";
 import type {
   SandpackFiles,
@@ -98,22 +93,12 @@ export default defineComponent({
     const sandpackConfig = useSandpackConfig();
 
     const options = computed(() =>
-      deepAssign(
-        {},
-        sandpackConfig.options,
-        getSandpackOptions(props.options ?? "{}"),
-      ),
+      deepAssign({}, sandpackConfig.options, getSandpackOptions(props.options ?? "{}")),
     );
     const template = computed(() => props.template ?? sandpackConfig.template);
-    const theme = computed(
-      () => props.theme ?? (isDarkMode.value ? "dark" : "light"),
-    );
+    const theme = computed(() => props.theme ?? (isDarkMode.value ? "dark" : "light"));
     const customSetup = computed(() =>
-      deepAssign(
-        {},
-        sandpackConfig.customSetup,
-        getSandpackCustomSetup(props.customSetup ?? "{}"),
-      ),
+      deepAssign({}, sandpackConfig.customSetup, getSandpackCustomSetup(props.customSetup ?? "{}")),
     );
 
     return (): (VNode | null)[] => [
@@ -122,11 +107,7 @@ export default defineComponent({
           ? h(
               "div",
               { class: "vp-container-header" },
-              h(
-                "div",
-                { class: "vp-container-title" },
-                decodeURIComponent(props.title),
-              ),
+              h("div", { class: "vp-container-title" }, decodeURIComponent(props.title)),
             )
           : null,
         h(

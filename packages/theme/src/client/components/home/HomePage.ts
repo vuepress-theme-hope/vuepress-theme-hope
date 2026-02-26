@@ -46,8 +46,7 @@ export default defineComponent({
         {
           id: "main-content",
           class: "vp-page vp-project-home",
-          "aria-labelledby":
-            frontmatter.value.heroText === "" ? "" : "main-title",
+          "aria-labelledby": frontmatter.value.heroText === "" ? "" : "main-title",
         },
         [
           slots.heroBefore?.(),
@@ -65,9 +64,7 @@ export default defineComponent({
                 )
               : null,
           slots.content?.() ??
-            h(DropTransition, { appear: true, delay: 0.32 }, () =>
-              h(MarkdownContent, null, slots),
-            ),
+            h(DropTransition, { appear: true, delay: 0.32 }, () => h(MarkdownContent, null, slots)),
         ],
       );
     };

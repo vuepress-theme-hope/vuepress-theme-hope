@@ -71,11 +71,7 @@ tag:
 
   ```js
   ({ frontmatter, filePathRelative }) =>
-    Boolean(
-      frontmatter.feed ??
-      frontmatter.article ??
-      (filePathRelative && !frontmatter.home),
-    );
+    Boolean(frontmatter.feed ?? frontmatter.article ?? (filePathRelative && !frontmatter.home));
   ```
 
 自定义的过滤函数，用于过滤哪些项目在 feed 中显示。

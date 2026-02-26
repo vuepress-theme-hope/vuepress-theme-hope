@@ -33,10 +33,7 @@ export default defineComponent({
       isString(props.config.link)
         ? // If the item has link, render it as `<AutoLink>`
           h(AutoLink, {
-            class: [
-              "vp-sidebar-link",
-              { active: isActiveItem(route, props.config) },
-            ],
+            class: ["vp-sidebar-link", { active: isActiveItem(route, props.config) }],
             config: {
               ...props.config,
               exact: true,

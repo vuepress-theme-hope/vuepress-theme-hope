@@ -1,11 +1,4 @@
-import {
-  deepAssign,
-  endsWith,
-  entries,
-  isDef,
-  isPlainObject,
-  keys,
-} from "@vuepress/helper";
+import { deepAssign, endsWith, entries, isDef, isPlainObject, keys } from "@vuepress/helper";
 import type { CompilerOptions } from "typescript";
 
 import { compressToEncodedURIComponent } from "./ventors/lzstring.js";
@@ -58,23 +51,14 @@ export const getTSPlaygroundPreset = ({
   ...compilerOptions
 }: TSPresetPlaygroundOptions = {}): PlaygroundOptions => ({
   name: "playground#ts",
-  propsGetter: ({
-    title = "",
-    files,
-    settings,
-  }: PlaygroundData): Record<string, string> => {
+  propsGetter: ({ title = "", files, settings }: PlaygroundData): Record<string, string> => {
     const tsFiles = keys(files).filter((key) => endsWith(key, ".ts"));
 
-    if (tsFiles.length !== 1)
-      logger.error("TS playground only support 1 ts file");
+    if (tsFiles.length !== 1) logger.error("TS playground only support 1 ts file");
 
     const link = `${service}${getTypescriptPlaygroundHash(
       files[tsFiles[0]].content,
-      deepAssign(
-        {},
-        settings as CompilerOptions,
-        compilerOptions as CompilerOptions,
-      ),
+      deepAssign({}, settings as CompilerOptions, compilerOptions as CompilerOptions),
     )}`;
 
     return {

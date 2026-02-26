@@ -44,15 +44,12 @@ export default defineComponent({
                 "ul",
                 { class: "vp-star-articles" },
                 starredArticles.value.map(({ info, path }, index) =>
-                  h(
-                    DropTransition,
-                    { appear: true, delay: 0.08 * (index + 1) },
-                    () =>
-                      h(
-                        "li",
-                        { class: "vp-star-article" },
-                        h(RouteLink, { to: path }, () => info.title),
-                      ),
+                  h(DropTransition, { appear: true, delay: 0.08 * (index + 1) }, () =>
+                    h(
+                      "li",
+                      { class: "vp-star-article" },
+                      h(RouteLink, { to: path }, () => info.title),
+                    ),
                   ),
                 ),
               )

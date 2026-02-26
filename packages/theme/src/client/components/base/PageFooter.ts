@@ -31,9 +31,7 @@ export default defineComponent({
       return isString(footer) ? footer : (themeLocale.value.footer ?? "");
     });
 
-    const authorText = computed(() =>
-      author.value.map(({ name }) => name).join(", "),
-    );
+    const authorText = computed(() => author.value.map(({ name }) => name).join(", "));
 
     const getCopyrightText = (license?: string): string =>
       `Copyright © ${new Date().getFullYear()} ${authorText.value} ${
@@ -50,18 +48,14 @@ export default defineComponent({
         (license
           ? getCopyrightText(license)
           : (globalCopyright ??
-            (authorText.value || globalLicense
-              ? getCopyrightText(globalLicense)
-              : false)))
+            (authorText.value || globalLicense ? getCopyrightText(globalLicense) : false)))
       );
     });
 
     return (): VNode | null =>
       enabled.value
         ? h("footer", { class: "vp-footer-wrapper", "vp-footer": "" }, [
-            footer.value
-              ? h("div", { class: "vp-footer", innerHTML: footer.value })
-              : null,
+            footer.value ? h("div", { class: "vp-footer", innerHTML: footer.value }) : null,
             copyright.value
               ? h("div", {
                   class: "vp-copyright",

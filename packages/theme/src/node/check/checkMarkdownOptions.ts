@@ -105,9 +105,7 @@ export const checkVuePressMarkdownOptions = (
     if (!KNOWN_CORE_MARKDOWN_OPTIONS.includes(key)) {
       if (KNOWN_THEME_MARKDOWN_OPTIONS.includes(key)) {
         logger.warn(
-          `You are setting "${colors.magenta(
-            `markdown.${key}`,
-          )}" option in ${colors.cyan(
+          `You are setting "${colors.magenta(`markdown.${key}`)}" option in ${colors.cyan(
             "vuepress config file",
           )}, but it's not supported by VuePress. You need to set the option in ${colors.cyan("theme options")}.`,
         );
@@ -117,9 +115,7 @@ export const checkVuePressMarkdownOptions = (
         themeMarkdownOptions[key] = vuepressMarkdownOptions[key];
       } else {
         logger.warn(
-          `You are setting "${colors.magenta(
-            `markdown.${key}`,
-          )}" option in ${colors.cyan(
+          `You are setting "${colors.magenta(`markdown.${key}`)}" option in ${colors.cyan(
             "vuepress config file",
           )}, but it's not supported by VuePress.`,
         );
@@ -141,9 +137,7 @@ export const checkThemeMarkdownOptions = (
     if (!KNOWN_THEME_MARKDOWN_OPTIONS.includes(key)) {
       if (KNOWN_CORE_MARKDOWN_OPTIONS.includes(key)) {
         logger.warn(
-          `You are setting "${colors.magenta(
-            `markdown.${key}`,
-          )}" option in ${colors.cyan(
+          `You are setting "${colors.magenta(`markdown.${key}`)}" option in ${colors.cyan(
             "theme options",
           )}, but it's not supported by theme. You need to set the option in ${colors.cyan("vuepress config file")}.`,
         );
@@ -152,9 +146,7 @@ export const checkThemeMarkdownOptions = (
         vuepressMarkdownOptions[key] = themeMarkdownOptions[key];
       } else {
         logger.warn(
-          `You are setting "${colors.magenta(
-            `markdown.${key}`,
-          )}" option in ${colors.cyan(
+          `You are setting "${colors.magenta(`markdown.${key}`)}" option in ${colors.cyan(
             "theme options",
           )}, but it's not supported by theme.`,
         );

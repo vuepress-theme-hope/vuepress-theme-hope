@@ -1,9 +1,6 @@
 import noopComponent from "@vuepress/helper/noopComponent";
 import { isSupported } from "@vuepress/plugin-comment/pageview";
-import type {
-  ReadingTime,
-  ReadingTimeLocale,
-} from "@vuepress/plugin-reading-time/client";
+import type { ReadingTime, ReadingTimeLocale } from "@vuepress/plugin-reading-time/client";
 import type { PropType, VNode } from "vue";
 import { defineComponent, h, resolveComponent } from "vue";
 
@@ -18,10 +15,7 @@ import WordInfo from "@theme-hope/components/info/WordInfo";
 import { usePure } from "@theme-hope/composables/usePure";
 import type { PageCategory, PageTag } from "@theme-hope/utils/info/typings";
 
-import type {
-  AuthorInfo as AuthorInfoType,
-  PageInfoType,
-} from "../../../shared/index.js";
+import type { AuthorInfo as AuthorInfoType, PageInfoType } from "../../../shared/index.js";
 
 import "balloon-css/balloon.css";
 import "../../styles/info/page-info.scss";
@@ -110,9 +104,7 @@ export default defineComponent({
      *
      * 待展示的文章信息
      */
-    items: [Boolean, Array] as PropType<
-      PageInfoType[] | false | undefined | null
-    >,
+    items: [Boolean, Array] as PropType<PageInfoType[] | false | undefined | null>,
 
     /**
      * Article information

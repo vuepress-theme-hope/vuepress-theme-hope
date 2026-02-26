@@ -18,8 +18,7 @@ export default defineComponent({
     const frontmatter = useFrontmatter<BlogPluginCategoryFrontmatter>();
     const tagMap = useTagMap();
 
-    const isActive = (name: string): boolean =>
-      name === frontmatter.value.blog?.name;
+    const isActive = (name: string): boolean => name === frontmatter.value.blog?.name;
 
     return (): VNode =>
       h(

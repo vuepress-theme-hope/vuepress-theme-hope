@@ -24,10 +24,7 @@ import { logger } from "../../utils.js";
 const removeExtension = (path: string): string =>
   path.replace(/^(README|index)\.md$/iu, "").replace(/\.md$/u, "");
 
-const getGeneratePaths = (
-  sidebarConfig: SidebarArrayOptions,
-  prefix = "",
-): string[] => {
+const getGeneratePaths = (sidebarConfig: SidebarArrayOptions, prefix = ""): string[] => {
   const result: string[] = [];
 
   if (!isArray(sidebarConfig)) {
@@ -54,12 +51,9 @@ const getGeneratePaths = (
   return result;
 };
 
-const getSidebarItems = (
-  infos: SidebarInfo[],
-): (SidebarGroupOptions | string)[] =>
+const getSidebarItems = (infos: SidebarInfo[]): (SidebarGroupOptions | string)[] =>
   infos.map((info) => {
-    if (info.type === "file")
-      return info.path ?? removeExtension(sanitizeFileName(info.filename));
+    if (info.type === "file") return info.path ?? removeExtension(sanitizeFileName(info.filename));
 
     return {
       text: info.title,
@@ -81,20 +75,16 @@ export const getSidebarData = (
   const sorters = getSidebarSorter(sorter);
 
   // Exact generate sidebar paths
-  entries(themeData.locales).forEach(
-    ([localePath, { sidebar = "structure" }]) => {
-      if (isArray(sidebar)) generatePaths.push(...getGeneratePaths(sidebar));
-      else if (isPlainObject(sidebar))
-        entries(sidebar).forEach(([prefix, config]) => {
-          if (config === "structure") generatePaths.push(prefix);
-          else if (isArray(config))
-            generatePaths.push(
-              ...getGeneratePaths(config).map((item) => `${prefix}${item}`),
-            );
-        });
-      else if (sidebar === "structure") generatePaths.push(localePath);
-    },
-  );
+  entries(themeData.locales).forEach(([localePath, { sidebar = "structure" }]) => {
+    if (isArray(sidebar)) generatePaths.push(...getGeneratePaths(sidebar));
+    else if (isPlainObject(sidebar))
+      entries(sidebar).forEach(([prefix, config]) => {
+        if (config === "structure") generatePaths.push(prefix);
+        else if (isArray(config))
+          generatePaths.push(...getGeneratePaths(config).map((item) => `${prefix}${item}`));
+      });
+    else if (sidebar === "structure") generatePaths.push(localePath);
+  });
 
   const sidebarData = fromEntries(
     generatePaths.map((path) => [
@@ -110,9 +100,7 @@ export const getSidebarData = (
   );
 
   if (app.env.isDebug)
-    logger.info(
-      `Sidebar structure data: ${JSON.stringify(sidebarData, null, 2)}`,
-    );
+    logger.info(`Sidebar structure data: ${JSON.stringify(sidebarData, null, 2)}`);
 
   return sidebarData;
 };

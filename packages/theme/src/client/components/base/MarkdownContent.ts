@@ -2,14 +2,7 @@ import type { Slot } from "@vuepress/helper/client";
 import { hasGlobalComponent, isNumber } from "@vuepress/helper/client";
 import { useElementHover, watchImmediate } from "@vueuse/core";
 import type { SlotsType, VNode } from "vue";
-import {
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  resolveComponent,
-} from "vue";
+import { computed, defineComponent, h, onMounted, ref, resolveComponent } from "vue";
 import { Content } from "vuepress/client";
 
 import { useMetaInfo } from "@theme-hope/composables/useMetaInfo";
@@ -64,8 +57,7 @@ export default defineComponent({
         changelog.value && hasGlobalComponent("GitChangelog")
           ? h(resolveComponent("GitChangelog"))
           : null,
-        contributors.value === "content" &&
-        hasGlobalComponent("GitContributors")
+        contributors.value === "content" && hasGlobalComponent("GitContributors")
           ? h(resolveComponent("GitContributors"))
           : null,
       ]);

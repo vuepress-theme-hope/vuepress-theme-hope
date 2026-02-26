@@ -235,9 +235,7 @@ import { defineUserConfig } from "vuepress";
 export default defineUserConfig({
   extendsBundlerOptions: (config, app) => {
     configWebpack(config, app, (config) => {
-      (((config.postcss ??= {}).postcssOptions ??= {}).plugins ??= []).push(
-        postcssPresetEnv(),
-      );
+      (((config.postcss ??= {}).postcssOptions ??= {}).plugins ??= []).push(postcssPresetEnv());
     });
   },
 });

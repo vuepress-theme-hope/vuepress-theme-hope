@@ -28,9 +28,7 @@ export const checkFrontmatter = (page: Page): void => {
       )
     ) {
       logger.warn(
-        `${colors.magenta(
-          key,
-        )} property in Page FrontMatter should be ${colors.cyan(
+        `${colors.magenta(key)} property in Page FrontMatter should be ${colors.cyan(
           "string",
         )} or ${colors.cyan(" string[]")}${
           filePathRelative ? `, found in ${filePathRelative}` : ""

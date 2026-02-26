@@ -89,9 +89,7 @@ export default defineComponent({
           ? h("div", {
               class: "vp-site-info-preview",
               style: {
-                background: `url(${withBase(
-                  props.preview,
-                )}) center/cover no-repeat`,
+                background: `url(${withBase(props.preview)}) center/cover no-repeat`,
               },
             })
           : null,
@@ -106,9 +104,7 @@ export default defineComponent({
               })
             : null,
           h("div", { class: "vp-site-info-name" }, props.name),
-          props.desc
-            ? h("div", { class: "vp-site-info-desc" }, props.desc)
-            : null,
+          props.desc ? h("div", { class: "vp-site-info-desc" }, props.desc) : null,
         ]),
         repo.value
           ? h(

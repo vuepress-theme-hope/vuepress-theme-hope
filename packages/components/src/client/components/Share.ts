@@ -22,9 +22,7 @@ export default defineComponent({
      * PDF 文件链接，应为完整链接
      */
     services: {
-      type: [String, Array] as PropType<
-        string | (ShareServiceOptions | string)[]
-      >,
+      type: [String, Array] as PropType<string | (ShareServiceOptions | string)[]>,
 
       default: () => shareServices.map(({ name }) => name),
     },
@@ -65,16 +63,12 @@ export default defineComponent({
      * Getter for page summary
      */
     tagGetter: {
-      type: Function as PropType<
-        (page: PageData) => string | string[] | undefined | null
-      >,
+      type: Function as PropType<(page: PageData) => string | string[] | undefined | null>,
 
       default: ({
         frontmatter,
-      }: PageData<
-        Record<never, never>,
-        { tag?: string | string[]; tags?: string | string[] }
-      >) => frontmatter.tag ?? frontmatter.tags,
+      }: PageData<Record<never, never>, { tag?: string | string[]; tags?: string | string[] }>) =>
+        frontmatter.tag ?? frontmatter.tags,
     },
 
     /**
@@ -92,9 +86,7 @@ export default defineComponent({
     const page = usePage();
 
     const services = computed(() => {
-      const serviceOptions = isString(props.services)
-        ? props.services.split(",")
-        : props.services;
+      const serviceOptions = isString(props.services) ? props.services.split(",") : props.services;
 
       return serviceOptions
         .map((item) =>
@@ -111,13 +103,7 @@ export default defineComponent({
       const result: Record<string, string | string[]> = {};
 
       (
-        [
-          "titleGetter",
-          "descriptionGetter",
-          "summaryGetter",
-          "coverGetter",
-          "tagGetter",
-        ] as const
+        ["titleGetter", "descriptionGetter", "summaryGetter", "coverGetter", "tagGetter"] as const
       ).forEach((item) => {
         if (isFunction(props[item])) {
           const value = props[item](page.value);

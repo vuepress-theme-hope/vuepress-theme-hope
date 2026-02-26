@@ -57,18 +57,14 @@ export const convertFrontmatter = (
 
   if ("meta" in frontmatter) {
     logger.warn(
-      `${colors.magenta(
-        "meta",
-      )} in frontmatter is deprecated in V2, please use ${colors.magenta(
+      `${colors.magenta("meta")} in frontmatter is deprecated in V2, please use ${colors.magenta(
         "head",
       )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`,
     );
 
     frontmatter.head = [
       ...(frontmatter.head ?? []),
-      ...(frontmatter.meta as Record<string, string>[]).map<HeadConfig>(
-        (item) => ["meta", item],
-      ),
+      ...(frontmatter.meta as Record<string, string>[]).map<HeadConfig>((item) => ["meta", item]),
     ];
 
     delete frontmatter.meta;
@@ -76,9 +72,7 @@ export const convertFrontmatter = (
 
   if ("canonicalUrl" in frontmatter && isString(frontmatter.canonicalUrl)) {
     logger.warn(
-      `${colors.magenta(
-        "canonicalUrl",
-      )} in frontmatter is deprecated, please use ${colors.magenta(
+      `${colors.magenta("canonicalUrl")} in frontmatter is deprecated, please use ${colors.magenta(
         "head",
       )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`,
     );
@@ -130,9 +124,7 @@ export const convertFrontmatter = (
 
   if (typeof frontmatter.sidebarDepth === "number") {
     logger.warn(
-      `${colors.magenta(
-        "sidebarDepth",
-      )} in frontmatter is deprecated, please use ${colors.magenta(
+      `${colors.magenta("sidebarDepth")} in frontmatter is deprecated, please use ${colors.magenta(
         "toc.levels",
       )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`,
     );
@@ -145,9 +137,7 @@ export const convertFrontmatter = (
 
   if (typeof frontmatter.headerDepth === "number") {
     logger.warn(
-      `${colors.magenta(
-        "headerDepth",
-      )} in frontmatter is deprecated, please use ${colors.magenta(
+      `${colors.magenta("headerDepth")} in frontmatter is deprecated, please use ${colors.magenta(
         "toc.levels",
       )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`,
     );

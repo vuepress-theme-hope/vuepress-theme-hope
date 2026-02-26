@@ -2,11 +2,7 @@ import { isArray } from "@vuepress/helper";
 import type { BlogCategoryOptions } from "@vuepress/plugin-blog";
 import type { GitData } from "@vuepress/plugin-git";
 
-import {
-  BLOG_LAYOUT,
-  DEFAULT_BLOG_FRONTMATTER,
-  defaultPageSorter,
-} from "./utils.js";
+import { BLOG_LAYOUT, DEFAULT_BLOG_FRONTMATTER, defaultPageSorter } from "./utils.js";
 import type {
   ArticleInfoData,
   ThemeData,

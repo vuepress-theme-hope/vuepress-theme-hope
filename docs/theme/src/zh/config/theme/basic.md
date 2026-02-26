@@ -162,11 +162,7 @@ tag:
     NavbarLinkOptions | NavGroup<NavbarLinkOptions> | string
   >;
   // types for navbar options
-  export type NavbarOptions = (
-    | NavbarLinkOptions
-    | NavbarGroupOptions
-    | string
-  )[];
+  export type NavbarOptions = (NavbarLinkOptions | NavbarGroupOptions | string)[];
   ```
 
 - 详情: [布局 → 导航栏](../../guide/layout/navbar.md)
@@ -297,16 +293,9 @@ tag:
 
   export type SidebarArrayOptions = SidebarItemOptions[];
 
-  export type SidebarObjectOptions = Record<
-    string,
-    SidebarArrayOptions | "structure" | false
-  >;
+  export type SidebarObjectOptions = Record<string, SidebarArrayOptions | "structure" | false>;
 
-  export type SidebarOptions =
-    | SidebarArrayOptions
-    | SidebarObjectOptions
-    | "structure"
-    | false;
+  export type SidebarOptions = SidebarArrayOptions | SidebarObjectOptions | "structure" | false;
   ```
 
 - 详情: [布局 → 侧边栏](../../guide/layout/sidebar.md)

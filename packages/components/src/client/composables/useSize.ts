@@ -5,8 +5,7 @@ import { computed, isRef, onMounted, ref, shallowRef, unref, watch } from "vue";
 
 import { DEFAULT_RATIO } from "../utils/index.js";
 
-const getValue = (value: string | number): string =>
-  isString(value) ? value : `${value}px`;
+const getValue = (value: string | number): string => (isString(value) ? value : `${value}px`);
 
 export interface SizeOptions {
   width: string | number | undefined;
@@ -44,9 +43,7 @@ export const useSize = <Element extends HTMLElement>(
     const height = unref(options.height);
     const ratio = getRadio(unref(options.ratio));
 
-    return height
-      ? getValue(height)
-      : `${width / ratio + unref(extraHeight)}px`;
+    return height ? getValue(height) : `${width / ratio + unref(extraHeight)}px`;
   };
 
   const updateHeight = (): void => {

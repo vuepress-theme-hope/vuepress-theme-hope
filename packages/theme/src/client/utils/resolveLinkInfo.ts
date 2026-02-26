@@ -11,16 +11,12 @@ export const resolveLinkInfo = (
   preferFull = false,
   currentPath?: string,
 ): AutoLinkOptions => {
-  const { meta, path, notFound } = resolveRoute<PageInfoData>(
-    item,
-    currentPath,
-  );
+  const { meta, path, notFound } = resolveRoute<PageInfoData>(item, currentPath);
 
   return notFound
     ? { text: path, link: path }
     : {
-        text:
-          !preferFull && meta.shortTitle ? meta.shortTitle : meta.title || path,
+        text: !preferFull && meta.shortTitle ? meta.shortTitle : meta.title || path,
         link: path,
         icon: meta.icon,
       };

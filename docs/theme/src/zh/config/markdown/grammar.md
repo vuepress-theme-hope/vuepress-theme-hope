@@ -173,10 +173,7 @@ tag:
     mhchem?: boolean;
   }
 
-  interface MarkdownMathjaxPluginOptions extends Omit<
-    MarkdownItMathjaxOptions,
-    "transformer"
-  > {
+  interface MarkdownMathjaxPluginOptions extends Omit<MarkdownItMathjaxOptions, "transformer"> {
     type?: "mathjax";
 
     /**
@@ -218,9 +215,7 @@ tag:
     svg?: MathjaxSVGOutputOptions;
   }
 
-  type MarkdownMathPluginOptions =
-    | MarkdownKatexPluginOptions
-    | MarkdownMathjaxPluginOptions;
+  type MarkdownMathPluginOptions = MarkdownKatexPluginOptions | MarkdownMathjaxPluginOptions;
   ```
 
 - 默认值: `false`

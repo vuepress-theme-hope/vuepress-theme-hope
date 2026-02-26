@@ -4,8 +4,7 @@ import { hopeTheme } from "vuepress-theme-hope";
 import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
-const hostname =
-  process.env.HOSTNAME ?? "https://theme-hope-blog-demo.vuejs.press";
+const hostname = process.env.HOSTNAME ?? "https://theme-hope-blog-demo.vuejs.press";
 
 export default hopeTheme(
   {
@@ -194,8 +193,7 @@ export default hopeTheme(
         type: [
           {
             key: "tutorial",
-            filter: (page): boolean =>
-              Boolean(page.filePathRelative?.includes("demo/")),
+            filter: (page): boolean => Boolean(page.filePathRelative?.includes("demo/")),
             sorter: (pageA, pageB): number =>
               dateSorter(pageA.frontmatter.date, pageB.frontmatter.date),
             layout: "Blog",

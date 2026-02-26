@@ -3,10 +3,7 @@
 
 [vp-content].vp-portfolio-content {
   --content-width: min(84%, 1200px);
-  --header-underline: #{color.change(
-      helper.get-color(hope-palette.$vp-c-accent),
-      $alpha: 0.4
-    )};
+  --header-underline: #{color.change(helper.get-color(hope-palette.$vp-c-accent), $alpha: 0.4)};
 
   display: flex;
   flex-flow: column;
@@ -60,11 +57,7 @@
   }
 
   .header-anchor > span {
-    background: linear-gradient(
-        var(--header-underline),
-        var(--header-underline)
-      )
-      no-repeat;
+    background: linear-gradient(var(--header-underline), var(--header-underline)) no-repeat;
     background-position: -0.1em calc(100% - 0.05em);
     background-size: calc(100% + 0.1em) 0.2em;
     text-shadow:

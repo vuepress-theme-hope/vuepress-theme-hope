@@ -108,9 +108,7 @@ export default defineComponent({
       const { aid, bvid, cid, autoplay, time, page } = props;
 
       return aid && cid
-        ? `${VIDEO_LINK}?aid=${aid}&cid=${cid}&t=${time}&autoplay=${
-            autoplay ? 1 : 0
-          }&p=${page}`
+        ? `${VIDEO_LINK}?aid=${aid}&cid=${cid}&t=${time}&autoplay=${autoplay ? 1 : 0}&p=${page}`
         : bvid
           ? `${VIDEO_LINK}?bvid=${bvid}&t=${time}&autoplay=${autoplay ? 1 : 0}`
           : null;

@@ -1,21 +1,8 @@
 import type { Slot } from "@vuepress/helper/client";
 import { hasGlobalComponent } from "@vuepress/helper/client";
 import noopComponent from "@vuepress/helper/noopComponent";
-import type {
-  Component,
-  ComponentOptions,
-  FunctionalComponent,
-  SlotsType,
-  VNode,
-} from "vue";
-import {
-  computed,
-  defineComponent,
-  h,
-  ref,
-  resolveComponent,
-  watch,
-} from "vue";
+import type { Component, ComponentOptions, FunctionalComponent, SlotsType, VNode } from "vue";
+import { computed, defineComponent, h, ref, resolveComponent, watch } from "vue";
 import { onContentUpdated } from "vuepress/client";
 
 import AppearanceButton from "@theme-hope/components/appearance/AppearanceButton";
@@ -55,10 +42,7 @@ export default defineComponent({
     const autoHide = computed(() => {
       const { navbarAutoHide = "mobile" } = themeLocale.value;
 
-      return (
-        navbarAutoHide !== "none" &&
-        (navbarAutoHide === "always" || isMobile.value)
-      );
+      return navbarAutoHide !== "none" && (navbarAutoHide === "always" || isMobile.value);
     });
 
     const navbarLayout = computed(
@@ -77,16 +61,12 @@ export default defineComponent({
       Links: NavbarLinks,
       Repo: RepoLink,
       Outlook: AppearanceButton,
-      Search: hasGlobalComponent("SearchBox")
-        ? resolveComponent("SearchBox")
-        : noopComponent,
+      Search: hasGlobalComponent("SearchBox") ? resolveComponent("SearchBox") : noopComponent,
     };
 
     const getNavbarComponent = (component: string): Component | string =>
       navbarComponentMap[component] ??
-      (hasGlobalComponent(component)
-        ? resolveComponent(component)
-        : noopComponent);
+      (hasGlobalComponent(component) ? resolveComponent(component) : noopComponent);
 
     onContentUpdated(() => {
       showScreen.value = false;
@@ -114,31 +94,19 @@ export default defineComponent({
               },
             }),
             navbarLayout.value.start?.map((item) =>
-              h(
-                getNavbarComponent(item) as
-                  | ComponentOptions
-                  | FunctionalComponent,
-              ),
+              h(getNavbarComponent(item) as ComponentOptions | FunctionalComponent),
             ),
           ]),
 
           h("div", { class: "vp-navbar-center" }, [
             navbarLayout.value.center?.map((item) =>
-              h(
-                getNavbarComponent(item) as
-                  | ComponentOptions
-                  | FunctionalComponent,
-              ),
+              h(getNavbarComponent(item) as ComponentOptions | FunctionalComponent),
             ),
           ]),
 
           h("div", { class: "vp-navbar-end" }, [
             navbarLayout.value.end?.map((item) =>
-              h(
-                getNavbarComponent(item) as
-                  | ComponentOptions
-                  | FunctionalComponent,
-              ),
+              h(getNavbarComponent(item) as ComponentOptions | FunctionalComponent),
             ),
             h(ToggleNavbarButton, {
               active: showScreen.value,

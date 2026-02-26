@@ -6,16 +6,8 @@ import type { Page, Plugin } from "vuepress/core";
 import { getBlogCategoryCategory, getBlogTagCategory } from "./category.js";
 import { blogFilter } from "./filter.js";
 import { injectBlogBasicInfo } from "./info.js";
-import {
-  getBlogArticleType,
-  getBlogStarType,
-  getBlogTimelineType,
-} from "./type.js";
-import type {
-  ArticleInfoData,
-  ThemeData,
-  ThemePageData,
-} from "../../../shared/index.js";
+import { getBlogArticleType, getBlogStarType, getBlogTimelineType } from "./type.js";
+import type { ArticleInfoData, ThemeData, ThemePageData } from "../../../shared/index.js";
 import type { BlogOptions } from "../../typings/index.js";
 
 /** @private */

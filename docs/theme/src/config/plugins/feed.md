@@ -59,11 +59,7 @@ If your site has a lot of articles, you may consider this option to reduce feed 
 
   ```js
   ({ frontmatter, filePathRelative }) =>
-    Boolean(
-      frontmatter.feed ??
-      frontmatter.article ??
-      (filePathRelative && !frontmatter.home),
-    );
+    Boolean(frontmatter.feed ?? frontmatter.article ?? (filePathRelative && !frontmatter.home));
   ```
 
 A custom filter function, used to filter feed items.

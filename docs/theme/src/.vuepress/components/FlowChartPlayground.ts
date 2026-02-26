@@ -43,8 +43,7 @@ const locales = {
   },
 };
 
-const getFlowChartScale = (width: number): number =>
-  width < 419 ? 0.8 : width > 1280 ? 1 : 0.9;
+const getFlowChartScale = (width: number): number => (width < 419 ? 0.8 : width > 1280 ? 1 : 0.9);
 
 export default defineComponent({
   name: "FlowChartPlayground",
@@ -113,11 +112,7 @@ export default defineComponent({
 
     return (): VNode =>
       h("div", { class: "flowchart-playground" }, [
-        h(
-          "label",
-          { for: "flowchart-playground-config" },
-          `${locale.value.config}:`,
-        ),
+        h("label", { for: "flowchart-playground-config" }, `${locale.value.config}:`),
         h("textarea", {
           id: "flowchart-playground-config",
           value: config.value,
@@ -126,26 +121,17 @@ export default defineComponent({
           },
         }),
         h("div", [
-          h(
-            "label",
-            { for: "flowchart-playground-preset" },
-            `${locale.value.preset}:`,
-          ),
+          h("label", { for: "flowchart-playground-preset" }, `${locale.value.preset}:`),
           h(
             "select",
             {
               id: "flowchart-playground-preset",
               value: preset.value,
               onChange: ({ target }: Event) => {
-                preset.value = (target as HTMLSelectElement).value as
-                  | "ant"
-                  | "pie"
-                  | "vue";
+                preset.value = (target as HTMLSelectElement).value as "ant" | "pie" | "vue";
               },
             },
-            ["ant", "pie", "vue"].map((preset) =>
-              h("option", { value: preset }, preset),
-            ),
+            ["ant", "pie", "vue"].map((preset) => h("option", { value: preset }, preset)),
           ),
         ]),
         h("label", { for: CONTAINER_ID }, `${locale.value.result}:`),

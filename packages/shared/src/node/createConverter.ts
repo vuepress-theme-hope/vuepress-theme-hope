@@ -61,9 +61,7 @@ export const createConverter = (name: string): Converter => {
         logger.warn(
           `${colors.magenta(old)} is ${colors.yellow("deprecated")}${
             scope ? ` in ${scope}` : ""
-          }, please use ${colors.magenta(newOption)} instead.${
-            msg ? ` ${msg}` : ""
-          }`,
+          }, please use ${colors.magenta(newOption)} instead.${msg ? ` ${msg}` : ""}`,
         );
 
         if (newOption.includes(".")) {
@@ -86,13 +84,7 @@ export const createConverter = (name: string): Converter => {
       }
     },
 
-    droppedLogger: ({
-      options,
-      old,
-      msg,
-      new: newOption,
-      scope,
-    }: DroppedLoggerOptions): void => {
+    droppedLogger: ({ options, old, msg, new: newOption, scope }: DroppedLoggerOptions): void => {
       let hasDroppedOption = false;
 
       if (old.includes(".")) {
@@ -119,9 +111,7 @@ export const createConverter = (name: string): Converter => {
           `${colors.magenta(old)}${
             scope ? ` in ${scope}` : ""
           } is ${colors.red("no longer supported")}${
-            newOption
-              ? `, please use ${colors.magenta(newOption)} instead.`
-              : ""
+            newOption ? `, please use ${colors.magenta(newOption)} instead.` : ""
           }${msg ? `\n${msg}` : ""}`,
         );
       }

@@ -2,11 +2,7 @@ import { getFullLocaleConfig } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
 import { getShareServiceConfig } from "./components/index.js";
-import {
-  pdfLocaleInfo,
-  siteInfoLocaleInfo,
-  vidstackLocaleInfo,
-} from "./locales/index.js";
+import { pdfLocaleInfo, siteInfoLocaleInfo, vidstackLocaleInfo } from "./locales/index.js";
 import type { ComponentPluginOptions } from "./options/index.js";
 import { isInstalled } from "./utils.js";
 

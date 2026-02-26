@@ -18,9 +18,7 @@ export type TimelineRef = ComputedRef<{
   items: Article<ArticleInfoData>[];
 }>;
 
-export const timelineSymbol: InjectionKey<TimelineRef> = Symbol(
-  __VUEPRESS_DEV__ ? "timeline" : "",
-);
+export const timelineSymbol: InjectionKey<TimelineRef> = Symbol(__VUEPRESS_DEV__ ? "timeline" : "");
 
 /**
  * Inject timeline
@@ -50,8 +48,7 @@ export const setupTimeline = (): void => {
       if (result) {
         const year = result.getFullYear();
 
-        if (timelineItems[0]?.year !== year)
-          timelineItems.unshift({ year, items: [] });
+        if (timelineItems[0]?.year !== year) timelineItems.unshift({ year, items: [] });
 
         timelineItems[0].items.push({
           date: result.toLocaleDateString(pageLang.value, {

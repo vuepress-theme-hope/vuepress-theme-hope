@@ -20,9 +20,7 @@ const getScript = (
   // eslint-disable-next-line @typescript-eslint/naming-convention
   "docs:dev": `vuepress-${bundler} dev ${dir}`,
   // eslint-disable-next-line @typescript-eslint/naming-convention
-  "docs:update-package": `${
-    packageManager === "npm" ? "npx" : `${packageManager} dlx`
-  } vp-update`,
+  "docs:update-package": `${packageManager === "npm" ? "npx" : `${packageManager} dlx`} vp-update`,
 });
 
 interface CreatePackageJsonOptions {
@@ -56,9 +54,7 @@ export const createPackageJson = async ({
   const devDependencies = {
     [`@vuepress/bundler-${bundler}`]: packageJSON.devDependencies.vuepress,
     "sass-embedded": packageJSON.devDependencies["sass-embedded"],
-    ...(bundler === "webpack"
-      ? { "sass-loader": packageJSON.devDependencies["sass-loader"] }
-      : {}),
+    ...(bundler === "webpack" ? { "sass-loader": packageJSON.devDependencies["sass-loader"] } : {}),
     vue: packageJSON.devDependencies.vue,
     vuepress: packageJSON.devDependencies.vuepress,
     "vuepress-theme-hope": packageJSON.devDependencies["vuepress-theme-hope"],
@@ -86,19 +82,16 @@ export const createPackageJson = async ({
 
     deepAssign(packageContent, newContent);
 
-    writeFileSync(
-      packageJsonPath,
-      `${JSON.stringify(packageContent, null, 2)}\n`,
-      { encoding: "utf8" },
-    );
+    writeFileSync(packageJsonPath, `${JSON.stringify(packageContent, null, 2)}\n`, {
+      encoding: "utf8",
+    });
   } else {
     console.log(locale.flow.createPackage);
 
     const name = await input({
       message: locale.question.name,
       default: "vuepress-theme-hope-template",
-      validate: (input: string): true | string =>
-        PACKAGE_NAME_REG.test(input) || locale.error.name,
+      validate: (input: string): true | string => PACKAGE_NAME_REG.test(input) || locale.error.name,
     });
 
     const description = await input({
@@ -109,8 +102,7 @@ export const createPackageJson = async ({
     const version = await input({
       message: locale.question.version,
       default: "2.0.0",
-      validate: (input: string): true | string =>
-        VERSION_REG.test(input) || locale.error.version,
+      validate: (input: string): true | string => VERSION_REG.test(input) || locale.error.version,
     });
 
     const license = await input({
@@ -127,10 +119,8 @@ export const createPackageJson = async ({
       ...newContent,
     };
 
-    writeFileSync(
-      packageJsonPath,
-      `${JSON.stringify(packageContent, null, 2)}\n`,
-      { encoding: "utf8" },
-    );
+    writeFileSync(packageJsonPath, `${JSON.stringify(packageContent, null, 2)}\n`, {
+      encoding: "utf8",
+    });
   }
 };

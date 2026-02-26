@@ -55,11 +55,7 @@ $has-multiple-theme-colors: meta.type-of(
       :root.theme-#{$index} {
         --vp-c-accent: #{color.change($color, $lightness: 35%, $alpha: 1)};
         --vp-c-accent-bg: #{color.change($color, $lightness: 45%, $alpha: 1)};
-        --vp-c-accent-hover: #{color.change(
-            $color,
-            $lightness: 50%,
-            $alpha: 1
-          )};
+        --vp-c-accent-hover: #{color.change($color, $lightness: 50%, $alpha: 1)};
         --vp-c-accent-soft: #{color.change(
             $color,
             $lightness: 40%,
@@ -74,21 +70,9 @@ $has-multiple-theme-colors: meta.type-of(
       @if $light-color and $dark-color {
         @if $light-color == $dark-color {
           :root.theme-#{$index} {
-            --vp-c-accent: #{color.change(
-                $light-color,
-                $lightness: 35%,
-                $alpha: 1
-              )};
-            --vp-c-accent-bg: #{color.change(
-                $light-color,
-                $lightness: 45%,
-                $alpha: 1
-              )};
-            --vp-c-accent-hover: #{color.change(
-                $light-color,
-                $lightness: 50%,
-                $alpha: 1
-              )};
+            --vp-c-accent: #{color.change($light-color, $lightness: 35%, $alpha: 1)};
+            --vp-c-accent-bg: #{color.change($light-color, $lightness: 45%, $alpha: 1)};
+            --vp-c-accent-hover: #{color.change($light-color, $lightness: 50%, $alpha: 1)};
             --vp-c-accent-soft: #{color.change(
                 $light-color,
                 $lightness: 40%,
@@ -98,39 +82,15 @@ $has-multiple-theme-colors: meta.type-of(
           }
 
           [data-theme="dark"].theme-#{$index} {
-            --vp-c-accent: #{color.change(
-                $light-color,
-                $lightness: 55%,
-                $alpha: 1
-              )};
-            --vp-c-accent-bg: #{color.change(
-                $light-color,
-                $lightness: 47.5%,
-                $alpha: 1
-              )};
-            --vp-c-accent-hover: #{color.change(
-                $light-color,
-                $lightness: 45%,
-                $alpha: 1
-              )};
+            --vp-c-accent: #{color.change($light-color, $lightness: 55%, $alpha: 1)};
+            --vp-c-accent-bg: #{color.change($light-color, $lightness: 47.5%, $alpha: 1)};
+            --vp-c-accent-hover: #{color.change($light-color, $lightness: 45%, $alpha: 1)};
           }
         } @else {
           :root.theme-#{$index} {
-            --vp-c-accent: #{color.change(
-                $light-color,
-                $lightness: 35%,
-                $alpha: 1
-              )};
-            --vp-c-accent-bg: #{color.change(
-                $light-color,
-                $lightness: 45%,
-                $alpha: 1
-              )};
-            --vp-c-accent-hover: #{color.change(
-                $light-color,
-                $lightness: 50%,
-                $alpha: 1
-              )};
+            --vp-c-accent: #{color.change($light-color, $lightness: 35%, $alpha: 1)};
+            --vp-c-accent-bg: #{color.change($light-color, $lightness: 45%, $alpha: 1)};
+            --vp-c-accent-hover: #{color.change($light-color, $lightness: 50%, $alpha: 1)};
             --vp-c-accent-soft: #{color.change(
                 $light-color,
                 $lightness: 40%,
@@ -140,21 +100,9 @@ $has-multiple-theme-colors: meta.type-of(
           }
 
           [data-theme="dark"].theme-#{$index} {
-            --vp-c-accent: #{color.change(
-                $dark-color,
-                $lightness: 55%,
-                $alpha: 1
-              )};
-            --vp-c-accent-bg: #{color.change(
-                $dark-color,
-                $lightness: 47.5%,
-                $alpha: 1
-              )};
-            --vp-c-accent-hover: #{color.change(
-                $dark-color,
-                $lightness: 45%,
-                $alpha: 1
-              )};
+            --vp-c-accent: #{color.change($dark-color, $lightness: 55%, $alpha: 1)};
+            --vp-c-accent-bg: #{color.change($dark-color, $lightness: 47.5%, $alpha: 1)};
+            --vp-c-accent-hover: #{color.change($dark-color, $lightness: 45%, $alpha: 1)};
           }
         }
       }

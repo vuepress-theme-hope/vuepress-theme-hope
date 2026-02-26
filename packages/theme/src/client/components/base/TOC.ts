@@ -1,9 +1,5 @@
 import type { GetHeadersOptions, Slot } from "@vuepress/helper/client";
-import {
-  isPlainObject,
-  isSlotContentEmpty,
-  useHeaders,
-} from "@vuepress/helper/client";
+import { isPlainObject, isSlotContentEmpty, useHeaders } from "@vuepress/helper/client";
 import { useToggle, watchImmediate } from "@vueuse/core";
 import type { PropType, SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
@@ -95,15 +91,12 @@ export default defineComponent({
         (hash): void => {
           if (toc.value) {
             // Get the active toc item DOM, whose href equals to the current route
-            const activeTocItem = document.querySelector(
-              `#toc a.vp-toc-link[href$="${hash}"]`,
-            );
+            const activeTocItem = document.querySelector(`#toc a.vp-toc-link[href$="${hash}"]`);
 
             if (!activeTocItem) return;
 
             // Get the top and height of the toc
-            const { top: tocTop, height: tocHeight } =
-              toc.value.getBoundingClientRect();
+            const { top: tocTop, height: tocHeight } = toc.value.getBoundingClientRect();
             // Get the top and height of the active toc item
             const { top: activeTocItemTop, height: activeTocItemHeight } =
               activeTocItem.getBoundingClientRect();
@@ -113,17 +106,10 @@ export default defineComponent({
               // Scroll to the top edge of toc
               scrollTo(toc.value.scrollTop + activeTocItemTop - tocTop);
             // When the active toc item overflows the bottom edge of toc
-            else if (
-              activeTocItemTop + activeTocItemHeight >
-              tocTop + tocHeight
-            )
+            else if (activeTocItemTop + activeTocItemHeight > tocTop + tocHeight)
               // Scroll to the bottom edge of toc
               scrollTo(
-                toc.value.scrollTop +
-                  activeTocItemTop +
-                  activeTocItemHeight -
-                  tocTop -
-                  tocHeight,
+                toc.value.scrollTop + activeTocItemTop + activeTocItemHeight - tocTop - tocHeight,
               );
           }
         },
@@ -160,10 +146,7 @@ export default defineComponent({
                 h(
                   "li",
                   {
-                    class: [
-                      "vp-toc-item",
-                      { active: route.hash === `#${header.slug}` },
-                    ],
+                    class: ["vp-toc-item", { active: route.hash === `#${header.slug}` }],
                   },
                   renderHeader(header),
                 ),
@@ -203,10 +186,7 @@ export default defineComponent({
                     h(
                       "div",
                       {
-                        class: [
-                          "vp-toc-wrapper",
-                          isExpanded.value ? "open" : "",
-                        ],
+                        class: ["vp-toc-wrapper", isExpanded.value ? "open" : ""],
                         ref: toc,
                       },
                       [

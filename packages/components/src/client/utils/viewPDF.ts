@@ -34,9 +34,7 @@ const emptyNodeContents = (node: HTMLElement): void => {
   while (node.firstChild) node.firstChild.remove();
 };
 
-const getTargetElement = (
-  targetSelector: string | HTMLElement | null,
-): HTMLElement | null =>
+const getTargetElement = (targetSelector: string | HTMLElement | null): HTMLElement | null =>
   targetSelector instanceof HTMLElement
     ? targetSelector
     : targetSelector === "string"
@@ -44,9 +42,7 @@ const getTargetElement = (
       : document.body;
 
 // Create a fragment identifier for using PDF Open parameters when embedding PDF
-const buildURLFragmentString = (
-  options: Record<string, string | number | boolean>,
-): string => {
+const buildURLFragmentString = (options: Record<string, string | number | boolean>): string => {
   let url = entries(options)
     .map(([key, value]) =>
       key === "noToolbar"
@@ -107,8 +103,7 @@ const addPDFViewer = (
       : url
   }${buildURLFragmentString(options)}`;
 
-  const elementType =
-    embedType === "pdfjs" || embedType === "iframe" ? "iframe" : "embed";
+  const elementType = embedType === "pdfjs" || embedType === "iframe" ? "iframe" : "embed";
   const el = document.createElement(elementType);
 
   el.className = "pdf-viewer";
@@ -142,13 +137,7 @@ const DEFAULT_PDF_JS_HINT = "pdfjs url is not defined";
 
 export const viewPDF = (
   targetSelector: string | HTMLElement | null,
-  {
-    url,
-    title,
-    hint = DEFAULT_PDF_JS_HINT,
-    options = {},
-    pdfjs,
-  }: ViewPDFOptions,
+  { url, title, hint = DEFAULT_PDF_JS_HINT, options = {}, pdfjs }: ViewPDFOptions,
 ): HTMLElement | null => {
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (!isDef(window) || !window.navigator?.userAgent) return null;
@@ -166,9 +155,7 @@ export const viewPDF = (
 
   // Firefox started shipping PDF.js in Firefox 19. If this is Firefox 19 or greater, assume PDF.js is available
   const isFirefoxWithPDFJS =
-    !isMobileDevice &&
-    /firefox/iu.test(userAgent) &&
-    userAgent.split("rv:").length > 1
+    !isMobileDevice && /firefox/iu.test(userAgent) && userAgent.split("rv:").length > 1
       ? parseInt(userAgent.split("rv:")[1].split(".")[0], 10) > 18
       : false;
 
@@ -183,11 +170,7 @@ export const viewPDF = (
     return null;
   }
 
-  const fullLink = isLinkHttp(url)
-    ? url
-    : __VUEPRESS_DEV__
-      ? null
-      : `${window.origin}${url}`;
+  const fullLink = isLinkHttp(url) ? url : __VUEPRESS_DEV__ ? null : `${window.origin}${url}`;
 
   if (pdfjs) {
     if (!fullLink) {

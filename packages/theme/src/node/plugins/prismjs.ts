@@ -16,10 +16,7 @@ try {
  *
  * Composition Api to use `@vuepress/plugin-prismjs`
  */
-export const usePrismjsPlugin = (
-  app: App,
-  options: PrismjsPluginOptions = {},
-): void => {
+export const usePrismjsPlugin = (app: App, options: PrismjsPluginOptions = {}): void => {
   const { plugins } = app.pluginApi;
 
   if (!prismjsPlugin) {
@@ -29,8 +26,7 @@ export const usePrismjsPlugin = (
   }
 
   // Ensure highlighter plugin is not enabled
-  if (plugins.every((plugin) => !isHighlighterPlugin(plugin)))
-    app.use(prismjsPlugin(options));
+  if (plugins.every((plugin) => !isHighlighterPlugin(plugin))) app.use(prismjsPlugin(options));
 };
 
 /**
@@ -41,9 +37,7 @@ export const usePrismjsPlugin = (
 export const removePrismjsPlugin = (app: App): void => {
   const { plugins } = app.pluginApi;
 
-  const index = plugins.findIndex(
-    (plugin) => plugin.name === "@vuepress/plugin-prismjs",
-  );
+  const index = plugins.findIndex((plugin) => plugin.name === "@vuepress/plugin-prismjs");
 
   if (index !== -1) app.pluginApi.plugins.splice(index, 1);
 };

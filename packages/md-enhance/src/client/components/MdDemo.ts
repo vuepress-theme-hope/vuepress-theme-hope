@@ -63,10 +63,7 @@ export default defineComponent({
           h("button", {
             type: "button",
             title: "toggle",
-            class: [
-              "vp-md-demo-toggle-button",
-              isExpanded.value ? "down" : "end",
-            ],
+            class: ["vp-md-demo-toggle-button", isExpanded.value ? "down" : "end"],
             onClick: () => {
               height.value = isExpanded.value
                 ? "0"
@@ -76,11 +73,7 @@ export default defineComponent({
             },
           }),
           props.title
-            ? h(
-                "div",
-                { class: "vp-container-title" },
-                decodeURIComponent(props.title),
-              )
+            ? h("div", { class: "vp-container-title" }, decodeURIComponent(props.title))
             : null,
         ]),
 

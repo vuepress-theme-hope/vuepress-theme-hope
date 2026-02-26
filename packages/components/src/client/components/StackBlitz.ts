@@ -205,11 +205,10 @@ export default defineComponent({
                 type: "button",
                 class: "stackblitz-button",
                 onClick: () => {
-                  sdk[
-                    props.type === "github"
-                      ? "openGithubProject"
-                      : "openProjectId"
-                  ](props.id, options.value);
+                  sdk[props.type === "github" ? "openGithubProject" : "openProjectId"](
+                    props.id,
+                    options.value,
+                  );
                 },
               },
               props.text,

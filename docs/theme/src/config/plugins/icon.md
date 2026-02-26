@@ -23,16 +23,9 @@ This plugin can be disabled by setting `plugins.icon` to `false`.
 - Type: `IconAsset`
 
   ```ts
-  export type BuiltInIcon =
-    | "fontawesome-with-brands"
-    | "fontawesome"
-    | "iconify";
+  export type BuiltInIcon = "fontawesome-with-brands" | "fontawesome" | "iconify";
 
-  export type IconLink =
-    | `//${string}`
-    | `/${string}`
-    | `http://${string}`
-    | `https://${string}`;
+  export type IconLink = `//${string}` | `/${string}` | `http://${string}` | `https://${string}`;
 
   export type IconAsset = (BuiltInIcon | IconLink)[] | BuiltInIcon | IconLink;
   ```

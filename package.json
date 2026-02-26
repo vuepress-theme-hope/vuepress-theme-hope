@@ -2,12 +2,12 @@
   "name": "vuepress-theme-hope-root",
   "private": true,
   "description": "A VuePress theme with tons of features",
-  "type": "module",
   "workspaces": [
     "demo/*",
     "docs/*",
     "packages/*"
   ],
+  "type": "module",
   "scripts": {
     "build": "cross-env NODE_ENV=production pnpm run --stream -r build",
     "build:no-bundle": "concurrently \"tsc -b tsconfig.build.json\" \"pnpm run copy\"",
@@ -16,9 +16,9 @@
     "dev": "concurrently \"tsc -b tsconfig.build.json --watch\" \"pnpm run dev:copy\"",
     "dev:copy": "pnpm run --parallel -r dev:copy",
     "docs:vite-build": "pnpm run -r docs:vite-build",
-    "docs:webpack-build": "pnpm run -r docs:vite-build",
-    "lint": "prettier --check --write . && eslint . --fix && pnpm lint:stylelint --fix",
-    "lint:check": "prettier --check . && eslint . && pnpm lint:stylelint",
+    "docs:webpack-build": "pnpm run -r docs:webpack-build",
+    "lint": "pnpm lint:ox --fix && oxfmt . & pnpm lint:stylelint --fix",
+    "lint:check": "pnpm lint:ox && oxfmt --check . && pnpm lint:stylelint",
     "lint:md": "markdownlint-cli2 '**/*.md'",
     "lint:ox": "oxlint --type-aware --type-check --report-unused-disable-directives --deny-warnings",
     "lint:stylelint": "stylelint \"**/*.{css,scss}\" \"**/.vuepress/**/*.{css,scss}\"",
@@ -31,58 +31,42 @@
     "release:version": "lerna version",
     "test": "vitest --coverage"
   },
-  "nano-staged": {
-    "**/*": "prettier --write -u",
-    "*.vue": "eslint --fix",
-    "*.{cjs,mjs,js,ts}": [
-      "eslint --fix",
-      "vitest related --run"
-    ],
-    "*.md": "markdownlint-cli2 --fix",
-    "*.s?css": "stylelint --fix",
-    "package.json": "sort-package-json"
-  },
-  "dependencies": {
-    "oxfmt": "^0.27.0"
-  },
   "devDependencies": {
-    "@commitlint/cli": "20.4.0",
-    "@commitlint/config-conventional": "20.4.0",
-    "@lerna-lite/cli": "4.11.0",
-    "@lerna-lite/publish": "4.11.1",
-    "@prettier/plugin-oxc": "0.1.3",
+    "@commitlint/cli": "20.4.2",
+    "@commitlint/config-conventional": "20.4.2",
+    "@lerna-lite/cli": "4.11.3",
+    "@lerna-lite/publish": "4.11.3",
     "@rollup/plugin-alias": "6.0.0",
     "@rollup/plugin-commonjs": "29.0.0",
     "@rollup/plugin-node-resolve": "16.0.3",
     "@rollup/plugin-replace": "6.0.3",
-    "@types/node": "25.1.0",
+    "@types/node": "25.3.1",
     "@types/webpack-env": "1.18.8",
     "@vitest/coverage-istanbul": "4.0.18",
     "concurrently": "9.2.1",
     "conventional-changelog-conventionalcommits": "9.1.0",
     "cpx2": "8.0.0",
     "cross-env": "10.1.0",
-    "eslint": "9.39.2",
+    "eslint": "10.0.2",
     "eslint-config-mister-hope": "0.9.6",
-    "eslint-plugin-vue": "10.7.0",
+    "eslint-plugin-vue": "10.8.0",
     "gulp": "5.0.1",
     "http-server": "14.1.1",
     "husky": "9.1.7",
     "markdownlint-cli2": "0.21.0",
     "nano-staged": "0.9.0",
     "npm-check-updates": "19.5.0",
-    "ora": "9.1.0",
-    "oxlint": "1.42.0",
-    "oxlint-tsgolint": "0.11.4",
-    "prettier": "3.8.1",
-    "rimraf": "6.1.2",
+    "ora": "9.3.0",
+    "oxfmt": "^0.35.0",
+    "oxlint": "1.50.0",
+    "oxlint-tsgolint": "0.15.0",
+    "rimraf": "6.1.3",
     "rollup": "4.59.0",
     "rollup-plugin-copy": "3.5.0",
     "rollup-plugin-dts": "6.3.0",
     "rollup-plugin-esbuild": "6.2.1",
     "rollup-plugin-resolve-shebang": "1.0.1",
-    "sort-package-json": "3.6.1",
-    "stylelint": "17.1.0",
+    "stylelint": "17.4.0",
     "stylelint-config-hope": "11.0.0",
     "through2": "4.0.2",
     "tslib": "2.8.1",
@@ -92,8 +76,18 @@
     "vitest": "4.0.18",
     "vuepress": "catalog:vuepress"
   },
-  "packageManager": "pnpm@10.28.2",
+  "nano-staged": {
+    "**/*": "oxfmt --no-error-on-unmatched-pattern",
+    "*.vue": "eslint --fix",
+    "*.{cjs,mjs,js,ts}": [
+      "eslint --fix",
+      "vitest related --run"
+    ],
+    "*.md": "markdownlint-cli2 --fix",
+    "*.s?css": "stylelint --fix"
+  },
   "engines": {
     "node": ">=20.19.0"
-  }
+  },
+  "packageManager": "pnpm@10.30.2"
 }

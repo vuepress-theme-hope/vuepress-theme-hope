@@ -50,10 +50,7 @@ export default defineComponent({
             // Scroll to the top edge of sidebar
             activeSidebarItem.scrollIntoView(true);
           // When the active sidebar item overflows the bottom edge of sidebar
-          else if (
-            activeSidebarItemTop + activeSidebarItemHeight >
-            sidebarTop + sidebarHeight
-          )
+          else if (activeSidebarItemTop + activeSidebarItemHeight > sidebarTop + sidebarHeight)
             // Scroll to the bottom edge of sidebar
             activeSidebarItem.scrollIntoView(false);
         },
