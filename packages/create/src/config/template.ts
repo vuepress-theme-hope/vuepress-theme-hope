@@ -114,7 +114,7 @@ export const generateTemplate = async ({
     writeFileSync(
       resolve(workflowDir, "deploy-docs.yml"),
       getWorkflowContent(packageManager, cwd, targetDir, locale),
-      { encoding: "utf8" },
+      { encoding: "utf-8" },
     );
   }
 };

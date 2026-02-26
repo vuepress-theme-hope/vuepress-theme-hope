@@ -7,10 +7,11 @@ const isAuthorInfo = (author: unknown): author is AuthorInfo =>
 
 export const getAuthor = (author: Author | false | undefined, canDisable = false): AuthorInfo[] => {
   if (author) {
-    if (isArray(author))
+    if (isArray(author)) {
       return author
         .map((item) => (isString(item) ? { name: item } : isAuthorInfo(item) ? item : null))
         .filter((item): item is AuthorInfo => item !== null);
+    }
 
     if (isString(author)) return [{ name: author }];
 

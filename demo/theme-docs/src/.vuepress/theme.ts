@@ -98,12 +98,13 @@ export default hopeTheme(
             attrs: Record<string, string>;
             content: string;
           } | void => {
-            if (tag === "em")
+            if (tag === "em") {
               return {
                 tag: "Badge",
                 attrs: { type: "tip" },
                 content: "Recommended",
               };
+            }
           },
         },
       ],
@@ -182,7 +183,6 @@ export default hopeTheme(
           shortcuts: [
             {
               name: "Demo",
-              // eslint-disable-next-line @typescript-eslint/naming-convention
               short_name: "Demo",
               url: "/demo/",
               icons: [

@@ -3,7 +3,6 @@ import { computed, onMounted } from "vue";
 
 import { useData } from "vuepress-theme-hope/client";
 
-// oxlint-disable-next-line no-magic-numbers
 const millisecondPerDay = 1000 * 60 * 60 * 24;
 
 /**

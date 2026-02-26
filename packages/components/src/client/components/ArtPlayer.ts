@@ -179,7 +179,6 @@ export default defineComponent({
       const initOptions: ArtPlayerInitOptions = {
         theme: "#3eaf7c",
         ...ART_PLAYER_OPTIONS,
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         container: el.value!,
         poster: props.poster ?? "",
         url: getLink(props.src),
@@ -205,7 +204,7 @@ export default defineComponent({
       if (initOptions.type) {
         const customType = (initOptions.customType ??= {});
 
-        if (SUPPORTED_VIDEO_TYPES.includes(initOptions.type.toLowerCase()))
+        if (SUPPORTED_VIDEO_TYPES.includes(initOptions.type.toLowerCase())) {
           switch (initOptions.type.toLowerCase()) {
             case "m3u8":
             case "hls": {
@@ -248,7 +247,7 @@ export default defineComponent({
 
             default:
           }
-        else {
+        } else {
           // eslint-disable-next-line no-console
           console.warn(
             `[components]: ArtPlayer does not support current file type ${initOptions.type}!`,

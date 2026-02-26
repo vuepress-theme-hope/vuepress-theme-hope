@@ -47,7 +47,6 @@ export const getVuePlaygroundPreset = (
                       // Insure vue/server-renderer exists
                       ...(settings.ssr
                         ? {
-                            // eslint-disable-next-line @typescript-eslint/naming-convention
                             "vue/server-renderer": DEFAULT_VUE_SERVER_RENDERER_CDN,
                           }
                         : {}),
@@ -65,18 +64,18 @@ export const getVuePlaygroundPreset = (
         }),
     );
 
-    if (settings.ssr && !fileInfo["import-map.json"])
+    if (settings.ssr && !fileInfo["import-map.json"]) {
       fileInfo["import-map.json"] = JSON.stringify(
         {
           imports: {
             vue: DEFAULT_VUE_CDN,
-            // eslint-disable-next-line @typescript-eslint/naming-convention
             "vue/server-renderer": DEFAULT_VUE_SERVER_RENDERER_CDN,
           },
         },
         null,
         2,
       );
+    }
 
     return {
       title,

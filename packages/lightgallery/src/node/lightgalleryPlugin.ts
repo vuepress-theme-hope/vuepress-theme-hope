@@ -10,7 +10,6 @@ import { CLIENT_FOLDER, PLUGIN_NAME, logger } from "./utils.js";
 export const lightgalleryPlugin =
   (options: LightGalleryPluginOptions = {}, legacy = true): PluginFunction =>
   (app) => {
-    // eslint-disable-next-line @typescript-eslint/no-deprecated
     if (legacy) convertOptions(options as Record<string, unknown>);
 
     if (app.env.isDebug) logger.info("Options:", options);
@@ -23,7 +22,6 @@ export const lightgalleryPlugin =
       name: PLUGIN_NAME,
 
       define: (): Record<string, unknown> => ({
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         __LG_SELECTOR__: options.selector ?? "[vp-content] :not(a) > img:not([no-view])",
       }),
 
@@ -50,7 +48,6 @@ export const lightgalleryPlugin =
             .use("sass-loader")
             .tap((options) => ({
               ...options,
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
               sassOptions: {
                 quietDeps: true,
                 ...options.sassOptions,
@@ -59,7 +56,7 @@ export const lightgalleryPlugin =
         });
       },
 
-      onPrepared: (app): Promise<void> => prepareLightGalleryPlugins(app, options.plugins),
+      onPrepared: (): Promise<void> => prepareLightGalleryPlugins(app, options.plugins),
 
       clientConfigFile: `${CLIENT_FOLDER}config.js`,
     };

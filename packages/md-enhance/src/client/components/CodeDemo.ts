@@ -101,7 +101,6 @@ export default defineComponent({
     const initDom = (innerHTML = false): void => {
       // Attach a shadow root to demo
 
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const shadowRoot = demoWrapper.value!.attachShadow({ mode: "open" });
       const appElement = document.createElement("div");
 
@@ -150,18 +149,13 @@ export default defineComponent({
     });
 
     useEventListener("afterprint", () => {
-      if (previousState !== null) {
-        toggleIsExpand(previousState);
-      }
+      if (previousState !== null) toggleIsExpand(previousState);
 
       previousState = null;
     });
 
     useResizeObserver(codeContainer, () => {
-      if (isExpanded.value) {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        height.value = `${codeContainer.value!.clientHeight + 14}px`;
-      }
+      if (isExpanded.value) height.value = `${codeContainer.value!.clientHeight + 14}px`;
     });
 
     onMounted(async () => {
@@ -179,8 +173,7 @@ export default defineComponent({
                 onClick: () => {
                   height.value = isExpanded.value
                     ? "0"
-                    : // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                      `${codeContainer.value!.clientHeight + 14}px`;
+                    : `${codeContainer.value!.clientHeight + 14}px`;
                   toggleIsExpand();
                 },
               })
@@ -249,16 +242,11 @@ export default defineComponent({
                       html: code.value.html,
                       js: code.value.js,
                       css: code.value.css,
-                      // eslint-disable-next-line @typescript-eslint/naming-convention
                       js_external: code.value.jsLib.join(";"),
-                      // eslint-disable-next-line @typescript-eslint/naming-convention
                       css_external: code.value.cssLib.join(";"),
                       layout: code.value.codepenLayout,
-                      // eslint-disable-next-line @typescript-eslint/naming-convention
                       html_pre_processor: codeType.value.html[1] ?? "none",
-                      // eslint-disable-next-line @typescript-eslint/naming-convention
                       js_pre_processor: codeType.value.js[1] ?? (code.value.jsx ? "babel" : "none"),
-                      // eslint-disable-next-line @typescript-eslint/naming-convention
                       css_pre_processor: codeType.value.css[1] ?? "none",
                       editors: code.value.codepenEditors,
                     }),

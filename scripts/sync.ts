@@ -22,7 +22,6 @@ const sync = async (): Promise<void> => {
               {
                 method: "PUT",
                 headers: {
-                  // eslint-disable-next-line @typescript-eslint/naming-convention
                   "Content-Length": 0,
                 },
               },

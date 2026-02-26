@@ -100,11 +100,12 @@ export const checkFrontmatter = (page: Page): void => {
 
   // check dot values
   Object.keys(frontmatter).forEach((key) => {
-    if (key.includes("."))
+    if (key.includes(".")) {
       logger.warn(
         `${colors.magenta(key)} in frontMatter should not contain ${colors.cyan(
           ".",
         )}${filePathRelative ? `, found in ${filePathRelative}` : ""}.`,
       );
+    }
   });
 };

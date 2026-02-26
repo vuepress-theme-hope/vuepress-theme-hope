@@ -19,9 +19,7 @@ export default defineComponent({
 
       return (
         // footer is not disabled
-        footer !== false &&
-        // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-        Boolean(copyright || footer || themeLocale.value.displayFooter)
+        footer !== false && Boolean(copyright || footer || themeLocale.value.displayFooter)
       );
     });
 

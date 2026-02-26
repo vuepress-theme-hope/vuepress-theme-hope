@@ -107,7 +107,6 @@ export const setupSnowFall = ({
       canvas.height = window.innerHeight;
     });
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const context = canvas.getContext("2d")!;
 
     const snowflakeImage = new Image();

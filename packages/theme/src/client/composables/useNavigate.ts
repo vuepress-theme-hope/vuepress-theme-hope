@@ -11,9 +11,7 @@ export const useNavigate = (): ((url: string) => void) => {
     if (!url) return;
 
     // Outer url
-    if (isLinkWithProtocol(url)) {
-      return window.open(url);
-    }
+    if (isLinkWithProtocol(url)) return window.open(url);
 
     // Inner absolute path
     if (isLinkAbsolute(url)) {

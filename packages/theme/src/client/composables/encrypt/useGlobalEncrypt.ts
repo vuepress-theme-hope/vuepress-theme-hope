@@ -23,20 +23,17 @@ export const useGlobalEncrypt = (): GlobalEncrypt => {
     const { global = false, admin } = encryptData.value;
 
     // Is globally encrypted
-    // oxlint-disable-next-line unicorn/explicit-length-check
     const isEncrypted = global && Boolean(admin?.tokens.length);
 
     const isLocked =
       // Valid token exists
       isEncrypted
         ? storageToken.value
-          ? // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            encryptData.value.admin!.tokens.every(
+          ? encryptData.value.admin!.tokens.every(
               // None of the token matches
               (hash) => !compareSync(storageToken.value, hash),
             )
-          : // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            encryptData.value.admin!.tokens.every(
+          : encryptData.value.admin!.tokens.every(
               // None of the token matches
               (hash) => !compareSync(sessionToken.value, hash),
             )

@@ -31,9 +31,7 @@ export const mdEnhancePlugin =
   (options: MarkdownEnhancePluginOptions = {}, legacy = true): PluginFunction =>
   (app) => {
     // TODO: Remove this in v2 stable
-    if (legacy)
-      // eslint-disable-next-line @typescript-eslint/no-deprecated
-      convertOptions(options as MarkdownEnhancePluginOptions & Record<string, unknown>);
+    if (legacy) convertOptions(options as MarkdownEnhancePluginOptions & Record<string, unknown>);
 
     if (app.env.isDebug) logger.info("Options:", options);
 
@@ -99,9 +97,7 @@ export const mdEnhancePlugin =
           md.use(reactDemo);
           // TODO: Remove this in v2 stable
           if (legacy) {
-            // eslint-disable-next-line @typescript-eslint/no-deprecated
             md.use(legacyCodeDemo);
-            // eslint-disable-next-line @typescript-eslint/no-deprecated
             md.use(mdDemo);
           }
         }

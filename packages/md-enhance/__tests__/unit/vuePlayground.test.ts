@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import MarkdownIt from "markdown-it";
 import { describe, expect, it } from "vitest";
 

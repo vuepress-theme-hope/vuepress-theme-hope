@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import MarkdownIt from "markdown-it";
 import { describe, expect, it } from "vitest";
 
@@ -22,7 +21,7 @@ const getVueFiles = (content: string): Record<string, string> | null => {
   return JSON.parse(Buffer.from(files, "base64").toString()) as Record<string, string>;
 };
 
-describe("playground", () => {
+describe(playground, () => {
   it("Should not throw", () => {
     const markdownIt = new MarkdownIt({ linkify: true }).use(playground, {
       name: "test",

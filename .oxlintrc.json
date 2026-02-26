@@ -1,20 +1,12 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "extends": ["./.oxlintrc.base.jsonc"],
+  "extends": ["./.oxlintrc.base.json"],
   "ignorePatterns": [
     "docs-shared/lib/**",
     "packages/*/assets/**",
     "packages/*/lib/**",
-    "**/ventors/lzstring.ts",
+    "**/ventors/lzstring.ts"
   ],
-  "categories": {
-    "correctness": "error",
-    "suspicious": "warn",
-    "pedantic": "warn",
-    "perf": "warn",
-    "style": "warn",
-    "restriction": "off",
-  },
   "plugins": ["import", "unicorn", "oxc", "promise", "jsdoc", "vitest", "vue"],
   "rules": {
     // the following rules are still not supported by oxlint yet
@@ -41,22 +33,19 @@
   "overrides": [
     {
       "files": ["**/*.ts"],
-      "plugins": ["typescript"],
       "rules": {
-        // we make type casts only when necessary
-        "typescript/no-unsafe-type-assertion": "off",
-        // skipping it for now, may enable it later
-        "typescript/switch-exhaustiveness-check": "off",
+        "typescript/promise-function-async": "off",
         // a lot of time we are just want to check existence
-        "typescript/strict-boolean-expressions": "off",
-      },
+        "typescript/strict-boolean-expressions": "off"
+      }
     },
     {
-      "files": ["**/node/**/*.ts"],
+      "files": ["**/node/**/*.ts", "**/create/src/**/*.ts"],
       "plugins": ["node"],
       "rules": {
         "no-restricted-imports": ["error", "@vuepress/helper/client", "vuepress/client"],
-      },
+        "import/no-nodejs-modules": "off"
+      }
     },
     {
       "files": ["**/client/**/*.ts"],
@@ -68,16 +57,16 @@
           "@vuepress/helper/node",
           "vuepress/core",
           "vuepress/markdown",
-          "vuepress/utils",
+          "vuepress/utils"
         ],
-        "typescript/prefer-nullish-coalescing": ["warn", { "ignoreConditionalTests": true }],
-      },
+        "typescript/prefer-nullish-coalescing": ["warn", { "ignoreConditionalTests": true }]
+      }
     },
     {
       "files": ["**/create/src/**/*.ts"],
       "rules": {
-        "no-console": "off",
-      },
-    },
-  ],
+        "no-console": "off"
+      }
+    }
+  ]
 }

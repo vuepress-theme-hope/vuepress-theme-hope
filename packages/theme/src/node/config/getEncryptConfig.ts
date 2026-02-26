@@ -8,7 +8,7 @@ import { logger } from "../utils.js";
 const hashPasswords = (passwords: unknown, key: string): string[] | null => {
   if (isString(passwords)) return [hashSync(passwords)];
 
-  if (isArray(passwords))
+  if (isArray(passwords)) {
     return passwords
       .map((password) => {
         if (isString(password)) return hashSync(password);
@@ -22,6 +22,7 @@ All password MUST be string. But we found one’s type is ${typeof password}. Pl
         return null;
       })
       .filter((item): item is string => item !== null);
+  }
 
   logger.error(`\
 ${colors.magenta(key)} config is invalid. 
@@ -43,11 +44,12 @@ export const getEncryptConfig = ({ admin, config, global }: EncryptOptions = {})
     if (isPlainObject<{ hint: string; password: string[] }>(admin)) {
       const tokens = hashPasswords(admin.password, "encrypt.admin.password");
 
-      if (tokens)
+      if (tokens) {
         result.admin = {
           tokens,
           hint: admin.hint,
         };
+      }
     } else {
       const tokens = hashPasswords(admin, "encrypt.admin");
 
@@ -55,7 +57,7 @@ export const getEncryptConfig = ({ admin, config, global }: EncryptOptions = {})
     }
   }
 
-  if (config)
+  if (config) {
     result.config = fromEntries(
       entries(config)
         .map<[string, PasswordConfig] | null>(([key, options]) => {
@@ -71,6 +73,7 @@ export const getEncryptConfig = ({ admin, config, global }: EncryptOptions = {})
         })
         .filter((item): item is [string, PasswordConfig] => item !== null),
     );
+  }
 
   return result;
 };

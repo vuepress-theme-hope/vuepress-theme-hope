@@ -41,7 +41,6 @@ export default defineComponent({
         name: name ?? authorInfo.value.name,
         avatar: avatar ? withBase(avatar) : null,
         avatarDark: avatarDark ? withBase(avatarDark) : null,
-        // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
         alt: (avatarAlt || name) ?? "",
         style: avatarStyle ?? null,
       };

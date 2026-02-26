@@ -78,7 +78,7 @@ export const resolveMultiSidebarItems = ({
   const sidebarRoutes = keys(config).sort((x, y) => y.length - x.length);
 
   // Find matching config
-  for (const base of sidebarRoutes)
+  for (const base of sidebarRoutes) {
     if (startsWith(decodeURI(routePath), base)) {
       const matched = config[base];
 
@@ -87,6 +87,7 @@ export const resolveMultiSidebarItems = ({
         prefix: base,
       });
     }
+  }
 
   // eslint-disable-next-line no-console
   console.warn(`${decodeURI(routePath)} is missing it's sidebar config.`);

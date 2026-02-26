@@ -128,9 +128,10 @@ export default defineComponent({
         // Horizontal swipe
         Math.abs(dx) > Math.abs(dy) * 1.5 &&
         Math.abs(dx) > 40
-      )
+      ) {
         if (dx > 0 && touchStart.x <= 80) toggleMobileSidebar(true);
         else toggleMobileSidebar(false);
+      }
     };
 
     // Close sidebar after navigation
@@ -191,7 +192,6 @@ export default defineComponent({
         // sidebar is disabled via frontmatter
         frontmatter.value.sidebar === false ||
         // (is home page / no sidebar items) && no contents in sidebar slots
-        // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
         ((frontmatter.value.home || sidebarItems.value.length === 0) && isSidebarEmpty);
 
       return h(

@@ -38,9 +38,7 @@ export default defineComponent({
           if (!activeSidebarItem) return;
 
           // Get the top and height of the sidebar
-          const { top: sidebarTop, height: sidebarHeight } =
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            sidebar.value!.getBoundingClientRect();
+          const { top: sidebarTop, height: sidebarHeight } = sidebar.value!.getBoundingClientRect();
           // Get the top and height of the active sidebar item
           const { top: activeSidebarItemTop, height: activeSidebarItemHeight } =
             activeSidebarItem.getBoundingClientRect();

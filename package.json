@@ -47,9 +47,6 @@
     "conventional-changelog-conventionalcommits": "9.1.0",
     "cpx2": "8.0.0",
     "cross-env": "10.1.0",
-    "eslint": "10.0.2",
-    "eslint-config-mister-hope": "0.9.6",
-    "eslint-plugin-vue": "10.8.0",
     "gulp": "5.0.1",
     "http-server": "14.1.1",
     "husky": "9.1.7",
@@ -78,9 +75,9 @@
   },
   "nano-staged": {
     "**/*": "oxfmt --no-error-on-unmatched-pattern",
-    "*.vue": "eslint --fix",
+    "*.vue": "oxlint --fix",
     "*.{cjs,mjs,js,ts}": [
-      "eslint --fix",
+      "oxlint --fix",
       "vitest related --run"
     ],
     "*.md": "markdownlint-cli2 --fix",

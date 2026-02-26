@@ -1,5 +1,3 @@
-/* oxlint-disable no-magic-numbers */
-
 import { watchImmediate } from "@vueuse/core";
 import type { VNode } from "vue";
 import { defineComponent, h, onMounted, ref } from "vue";
@@ -48,9 +46,7 @@ export default defineComponent({
         : { width: 300, height: 300 };
 
       // Canvas
-      const canvas =
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        document.querySelector<HTMLCanvasElement>("canvas#hero-logo")!;
+      const canvas = document.querySelector<HTMLCanvasElement>("canvas#hero-logo")!;
       // Scene
       const scene = new Scene();
       const stlLoader = new STLLoader();

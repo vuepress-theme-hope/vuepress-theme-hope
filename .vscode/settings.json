@@ -151,6 +151,7 @@
     "packages/*/lib/**": true
   },
   "oxc.typeAware": true,
+  "oxc.unusedDisableDirectives": "deny",
   "stylelint.validate": ["css", "scss"],
   "typescript.tsdk": "node_modules/typescript/lib",
   "yaml.schemas": {

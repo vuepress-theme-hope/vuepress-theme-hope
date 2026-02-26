@@ -16,7 +16,6 @@ export const prepareConfigFile = (
   components.forEach((item) => {
     if (
       AVAILABLE_COMPONENTS.includes(item) &&
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       (!COMPONENT_PKG[item] || COMPONENT_PKG[item].every((pkg) => isInstalled(pkg)))
     ) {
       imports.push(`import ${item} from "${CLIENT_FOLDER}components/${item}.js";`);

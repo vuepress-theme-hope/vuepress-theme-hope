@@ -53,7 +53,6 @@ export const usePathEncrypt = (): PathEncrypt => {
                 )
               : true),
         ),
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         hint: firstKeyWithHint ? config[firstKeyWithHint].hint! : "",
       };
     }
@@ -72,12 +71,13 @@ export const usePathEncrypt = (): PathEncrypt => {
     const matchedKeys = getPathMatchedKeys(page.value.path);
 
     // Some of the tokens matches
-    for (const hitKey of matchedKeys)
+    for (const hitKey of matchedKeys) {
       if (config[hitKey].tokens.some((token) => isTokenMatched(token, inputToken))) {
         (keep ? localTokenConfig : sessionTokenConfig).value[hitKey] = inputToken;
 
         break;
       }
+    }
   };
 
   return {

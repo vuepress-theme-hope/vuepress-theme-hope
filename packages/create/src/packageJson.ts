@@ -13,13 +13,9 @@ const getScript = (
   bundler: "webpack" | "vite",
   dir: string,
 ): Record<string, string> => ({
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   "docs:build": `vuepress-${bundler} build ${dir}`,
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   "docs:clean-dev": `vuepress-${bundler} dev ${dir} --clean-cache`,
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   "docs:dev": `vuepress-${bundler} dev ${dir}`,
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   "docs:update-package": `${packageManager === "npm" ? "npx" : `${packageManager} dlx`} vp-update`,
 });
 
@@ -75,15 +71,14 @@ export const createPackageJson = async ({
   if (existsSync(packageJsonPath)) {
     console.log(locale.flow.updatePackage);
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const packageContent: Record<string, unknown> = JSON.parse(
-      readFileSync(packageJsonPath, { encoding: "utf8" }),
+      readFileSync(packageJsonPath, { encoding: "utf-8" }),
     );
 
     deepAssign(packageContent, newContent);
 
     writeFileSync(packageJsonPath, `${JSON.stringify(packageContent, null, 2)}\n`, {
-      encoding: "utf8",
+      encoding: "utf-8",
     });
   } else {
     console.log(locale.flow.createPackage);
@@ -120,7 +115,7 @@ export const createPackageJson = async ({
     };
 
     writeFileSync(packageJsonPath, `${JSON.stringify(packageContent, null, 2)}\n`, {
-      encoding: "utf8",
+      encoding: "utf-8",
     });
   }
 };

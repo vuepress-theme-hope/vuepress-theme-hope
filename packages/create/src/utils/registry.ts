@@ -9,7 +9,7 @@ const NPM_MIRROR_REGISTRY = "https://registry.npmmirror.com/";
 
 const getUserRegistry = (packageManager: PackageManager, isYarnModern: boolean): string =>
   execSync(`${packageManager} config get ${isYarnModern ? "npmRegistryServer" : "registry"}`, {
-    encoding: "utf8",
+    encoding: "utf-8",
   }).trim();
 
 export const getRegistry = async (

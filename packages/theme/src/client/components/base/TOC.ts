@@ -69,7 +69,7 @@ export default defineComponent({
       if (toc.value) {
         const activeTocItem = document.querySelector(".vp-toc-item.active");
 
-        if (activeTocItem)
+        if (activeTocItem) {
           tocMarkerTop.value = `${
             // Active toc item top
             activeTocItem.getBoundingClientRect().top -
@@ -78,7 +78,9 @@ export default defineComponent({
             // Toc scroll top
             toc.value.scrollTop
           }px`;
-        else tocMarkerTop.value = "-2rem";
+        } else {
+          tocMarkerTop.value = "-2rem";
+        }
       } else {
         tocMarkerTop.value = "-2rem";
       }
@@ -102,15 +104,17 @@ export default defineComponent({
               activeTocItem.getBoundingClientRect();
 
             // When the active toc item overflows the top edge of toc
-            if (activeTocItemTop < tocTop)
+            if (activeTocItemTop < tocTop) {
               // Scroll to the top edge of toc
               scrollTo(toc.value.scrollTop + activeTocItemTop - tocTop);
+            }
             // When the active toc item overflows the bottom edge of toc
-            else if (activeTocItemTop + activeTocItemHeight > tocTop + tocHeight)
+            else if (activeTocItemTop + activeTocItemHeight > tocTop + tocHeight) {
               // Scroll to the bottom edge of toc
               scrollTo(
                 toc.value.scrollTop + activeTocItemTop + activeTocItemHeight - tocTop - tocHeight,
               );
+            }
           }
         },
         { flush: "post" },

@@ -3,13 +3,11 @@ import { useLocale } from "@vuepress/helper/client";
 import { Layout } from "vuepress-theme-hope/client";
 
 const locale = useLocale({
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   "/": {
     slot: "Slot",
     sidebar: "This replace the default sidebar items",
     toc: "This replace the default toc content",
   },
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   "/zh/": {
     slot: "插槽",
     sidebar: "这替换了默认的侧边栏内容",

@@ -96,10 +96,7 @@ const addPDFViewer = (
 
   const source = `${
     embedType === "pdfjs"
-      ? `${ensureEndingSlash(
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          withBase(PDFJS_URL!),
-        )}web/viewer.html?file=${encodeURIComponent(url)}`
+      ? `${ensureEndingSlash(withBase(PDFJS_URL!))}web/viewer.html?file=${encodeURIComponent(url)}`
       : url
   }${buildURLFragmentString(options)}`;
 
@@ -117,7 +114,6 @@ const addPDFViewer = (
   target.classList.add("pdf-viewer-container");
   target.append(el);
 
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   return target.querySelector(elementType)!;
 };
 
@@ -139,7 +135,6 @@ export const viewPDF = (
   targetSelector: string | HTMLElement | null,
   { url, title, hint = DEFAULT_PDF_JS_HINT, options = {}, pdfjs }: ViewPDFOptions,
 ): HTMLElement | null => {
-  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (!isDef(window) || !window.navigator?.userAgent) return null;
 
   const { navigator } = window;
@@ -156,7 +151,7 @@ export const viewPDF = (
   // Firefox started shipping PDF.js in Firefox 19. If this is Firefox 19 or greater, assume PDF.js is available
   const isFirefoxWithPDFJS =
     !isMobileDevice && /firefox/iu.test(userAgent) && userAgent.split("rv:").length > 1
-      ? parseInt(userAgent.split("rv:")[1].split(".")[0], 10) > 18
+      ? Number.parseInt(userAgent.split("rv:")[1].split(".")[0], 10) > 18
       : false;
 
   // Determines whether PDF support is available
@@ -210,13 +205,14 @@ export const viewPDF = (
     });
   }
 
-  if (PDFJS_URL && fullLink)
+  if (PDFJS_URL && fullLink) {
     return addPDFViewer(targetNode, {
       embedType: "pdfjs",
       url: fullLink,
       options,
       title,
     });
+  }
 
   targetNode.innerHTML = hint.replaceAll(String.raw`\[url\]`, url);
 

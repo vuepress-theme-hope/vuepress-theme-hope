@@ -16,9 +16,7 @@ export const componentsPlugin =
   (options: ComponentPluginOptions, legacy = true): PluginFunction =>
   (app) => {
     // TODO: Remove this in v2 stable
-    if (legacy)
-      // eslint-disable-next-line @typescript-eslint/no-deprecated
-      convertOptions(options as ComponentPluginOptions & Record<string, unknown>);
+    if (legacy) convertOptions(options as ComponentPluginOptions & Record<string, unknown>);
 
     if (app.env.isDebug) logger.info("Options:", options);
 

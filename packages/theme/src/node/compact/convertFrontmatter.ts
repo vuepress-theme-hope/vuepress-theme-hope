@@ -99,7 +99,7 @@ export const convertFrontmatter = (
     }
 
     // Check project homepage
-    if (!("layout" in frontmatter))
+    if (!("layout" in frontmatter)) {
       DEPRECATED_HOME_FRONTMATTER_OPTIONS.forEach(([oldOption, newOption]) => {
         deprecatedLogger({
           options: frontmatter,
@@ -108,6 +108,7 @@ export const convertFrontmatter = (
           scope: filePathRelative,
         });
       });
+    }
   }
 
   if (frontmatter.layout === "SlidePage") {
@@ -129,10 +130,11 @@ export const convertFrontmatter = (
       )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`,
     );
 
-    if (frontmatter.toc !== false)
+    if (frontmatter.toc !== false) {
       frontmatter.toc = {
         levels: [2, frontmatter.sidebarDepth + 2],
       };
+    }
   }
 
   if (typeof frontmatter.headerDepth === "number") {
@@ -142,10 +144,11 @@ export const convertFrontmatter = (
       )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`,
     );
 
-    if (frontmatter.toc !== false)
+    if (frontmatter.toc !== false) {
       frontmatter.toc = {
         levels: [2, frontmatter.headerDepth + 2],
       };
+    }
   }
 
   return frontmatter;

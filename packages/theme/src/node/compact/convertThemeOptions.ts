@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-deprecated */
 import { entries, isArray, isPlainObject } from "@vuepress/helper";
 import { colors } from "vuepress/utils";
 import { createConverter } from "vuepress-shared";
@@ -50,12 +49,13 @@ const convertBlogOptions = (
       delete blogOptions.autoExcerpt;
     }
 
-    if (!plugins.blog)
+    if (!plugins.blog) {
       logger.warn(
         `Blog feature is tree-shakable in v2, you should set ${colors.magenta(
           "plugins.blog: true",
         )} in theme options to enable it.`,
       );
+    }
   }
 };
 
@@ -641,19 +641,21 @@ export const convertThemeOptions = (themeOptions: Record<string, unknown>): Them
     new: "plugins.icon.prefix",
   });
   // handle addThis
-  if (themeOptions.addThis)
+  if (themeOptions.addThis) {
     droppedLogger({
       options: themeOptions,
       old: "addThis",
     });
+  }
 
   // Handle copyright plugin
-  if (isPlainObject(themeOptions.copyright) || themeOptions.copyright === true)
+  if (isPlainObject(themeOptions.copyright) || themeOptions.copyright === true) {
     logger.warn(
       `${colors.magenta("copyright")} is deprecated in V2, please use ${colors.magenta(
         "plugins.copyright",
       )} instead.`,
     );
+  }
 
   // Handle encrypt
   if (isPlainObject(themeOptions.encrypt)) {
@@ -682,7 +684,7 @@ export const convertThemeOptions = (themeOptions: Record<string, unknown>): Them
   }
 
   // Handle each locale
-  if ("locales" in themeOptions && isPlainObject(themeOptions.locales))
+  if ("locales" in themeOptions && isPlainObject(themeOptions.locales)) {
     entries(themeOptions.locales).forEach(
       ([localePath, localeConfig]: [string, Record<string, unknown>]) => {
         DEPRECATED_THEME_OPTIONS.forEach(([oldOption, newOption]) => {
@@ -709,10 +711,11 @@ export const convertThemeOptions = (themeOptions: Record<string, unknown>): Them
             )} instead.`,
           );
 
-          if (localeConfig.toc !== false)
+          if (localeConfig.toc !== false) {
             localeConfig.toc = {
               levels: [2, localeConfig.headingDepth + 2],
             };
+          }
         }
 
         if (typeof localeConfig.headerDepth === "number") {
@@ -722,10 +725,11 @@ export const convertThemeOptions = (themeOptions: Record<string, unknown>): Them
             )} instead.`,
           );
 
-          if (localeConfig.toc !== false)
+          if (localeConfig.toc !== false) {
             localeConfig.toc = {
               levels: [2, localeConfig.headerDepth + 2],
             };
+          }
         }
 
         convertNavbarLayoutOptions(localeConfig);
@@ -733,6 +737,7 @@ export const convertThemeOptions = (themeOptions: Record<string, unknown>): Them
         convertFooterOptions(localeConfig);
       },
     );
+  }
 
   return themeOptions;
 };

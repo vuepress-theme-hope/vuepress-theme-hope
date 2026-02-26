@@ -10,16 +10,12 @@ interface HitokotoResult {
   hitokoto: string;
   type: "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l";
   from: string;
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   front_who: string;
   creator: string;
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   creator_uid: string;
   reviewer: string;
   uid: string;
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   commit_from: string;
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   created_at: string;
   length: string;
 }
@@ -75,14 +71,15 @@ export default defineComponent({
           index += 1;
 
           return nextTick().then(() => {
-            if (index < text.value.length)
+            if (index < text.value.length) {
               setTimeout(() => {
                 void renderNextWord();
               }, 150);
-            else if (isMounted)
+            } else if (isMounted) {
               setTimeout(() => {
                 void getHitokoto();
               }, 3000);
+            }
           });
         };
 

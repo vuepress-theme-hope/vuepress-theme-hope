@@ -141,12 +141,13 @@ export default theme(
             attrs: Record<string, string>;
             content: string;
           } | void => {
-            if (tag === "em")
+            if (tag === "em") {
               return {
                 tag: "Badge",
                 attrs: { type: "tip" },
                 content: "Recommended",
               };
+            }
           },
         },
       ],

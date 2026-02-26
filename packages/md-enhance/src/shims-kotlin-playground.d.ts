@@ -1,5 +1,4 @@
 declare module "kotlin-playground" {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   export type KotlinPlaygroundInstance = any;
 
   export interface KotlinPlaygroundOptions {

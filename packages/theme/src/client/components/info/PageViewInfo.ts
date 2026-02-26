@@ -35,7 +35,6 @@ export default defineComponent({
     useMutationObserver(
       pageviewElement,
       () => {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         const count = pageviewElement.value!.textContent;
 
         if (count && !isNaN(Number(count))) pageViews.value = Number(count);

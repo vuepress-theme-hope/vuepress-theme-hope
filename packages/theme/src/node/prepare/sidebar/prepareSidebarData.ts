@@ -76,14 +76,17 @@ export const getSidebarData = (
 
   // Exact generate sidebar paths
   entries(themeData.locales).forEach(([localePath, { sidebar = "structure" }]) => {
-    if (isArray(sidebar)) generatePaths.push(...getGeneratePaths(sidebar));
-    else if (isPlainObject(sidebar))
+    if (isArray(sidebar)) {
+      generatePaths.push(...getGeneratePaths(sidebar));
+    } else if (isPlainObject(sidebar)) {
       entries(sidebar).forEach(([prefix, config]) => {
         if (config === "structure") generatePaths.push(prefix);
         else if (isArray(config))
           generatePaths.push(...getGeneratePaths(config).map((item) => `${prefix}${item}`));
       });
-    else if (sidebar === "structure") generatePaths.push(localePath);
+    } else if (sidebar === "structure") {
+      generatePaths.push(localePath);
+    }
   });
 
   const sidebarData = fromEntries(

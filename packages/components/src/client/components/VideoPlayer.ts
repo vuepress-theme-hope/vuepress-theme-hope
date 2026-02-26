@@ -82,7 +82,6 @@ export default defineComponent({
       if (__VUEPRESS_SSR__) return;
 
       const options: VidstackPlayerConfig = {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         target: video.value!,
         crossOrigin: true,
         poster: props.poster,
@@ -104,16 +103,13 @@ export default defineComponent({
       player = await VidstackPlayer.create(options);
 
       player.addEventListener("provider-change", () => {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        if (player!.provider?.type === "hls" && HLS_JS_INSTALLED)
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        if (player!.provider?.type === "hls" && HLS_JS_INSTALLED) {
           player!.provider.library = (() =>
             import(/* webpackChunkName: "hls" */ "hls.js/dist/hls.min.js")) as HLSConstructorLoader;
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        else if (player!.provider?.type === "dash" && DASHJS_INSTALLED)
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        } else if (player!.provider?.type === "dash" && DASHJS_INSTALLED) {
           player!.provider.library = (() =>
             import(/* webpackChunkName: "dashjs" */ "dashjs")) as DASHNamespaceLoader;
+        }
       });
     });
 

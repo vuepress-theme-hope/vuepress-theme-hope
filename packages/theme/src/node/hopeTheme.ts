@@ -60,11 +60,9 @@ export const hopeTheme = (
       sidebarSorter,
       ...mainThemeOptions
     } = behavior.compact
-      ? // eslint-disable-next-line @typescript-eslint/no-deprecated
-        convertThemeOptions(themeOptions as ThemeOptions & Record<string, unknown>)
+      ? convertThemeOptions(themeOptions as ThemeOptions & Record<string, unknown>)
       : themeOptions;
 
-    // eslint-disable-next-line @typescript-eslint/no-deprecated
     if (behavior.compact) checkLegacyStyle(app);
 
     const status = getThemeStatus(app, themeOptions);
@@ -82,15 +80,10 @@ export const hopeTheme = (
       alias: behavior.custom ? { "@theme-hope": path.resolve(CLIENT_FOLDER) } : undefined,
 
       define: () => ({
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         __VP_CUSTOM__: behavior.custom ?? false,
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         __VP_BLOG_TYPES__: status.blogTypes,
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         __VP_I18N__: status.isI18nProject,
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         __VP_READING_TIME__: status.enableReadingTime,
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         __VP_REPO__: status.hasRepo,
       }),
 

@@ -36,9 +36,10 @@ const getPlugin =
 
           if (type === `container_${name}_close`) break;
           if (!content) continue;
-          if (type === "fence")
+          if (type === "fence") {
             if (language === "json") config = encodeData(content);
             else code[language] = content;
+          }
         }
 
         return `<CodeDemo id="code-demo-${index}" type="${name.split("-")[0]}"${

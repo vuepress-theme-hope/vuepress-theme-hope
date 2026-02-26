@@ -43,9 +43,7 @@ export const injectBlogBasicInfo = (
   if (frontmatter.date) {
     const date = getDate(page.frontmatter.date);
 
-    if (date) {
-      info.date = date.getTime();
-    }
+    if (date) info.date = date.getTime();
   } else if (createdTime) {
     info.date = createdTime;
   }

@@ -33,10 +33,11 @@ export class Popup {
     popupElement.className = "popup-container";
     popupElement.innerHTML = html;
 
-    if (typeof duration === "number")
+    if (typeof duration === "number") {
       setTimeout(() => {
         this.close(popupId);
       }, duration);
+    }
 
     return popupId;
   }

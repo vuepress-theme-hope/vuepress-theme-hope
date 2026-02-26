@@ -13,9 +13,7 @@ export const getMdEnhancePlugin = (
   }: ThemeMarkdownOptions,
   compact: boolean,
 ): Plugin | null => {
-  if (!demo && !playground && !sandpack && !vuePlayground && !kotlinPlayground) {
-    return null;
-  }
+  if (!demo && !playground && !sandpack && !vuePlayground && !kotlinPlayground) return null;
 
   return mdEnhancePlugin(
     {

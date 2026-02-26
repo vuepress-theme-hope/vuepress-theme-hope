@@ -23,7 +23,6 @@ export default [
         },
       ],
       replace: {
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         __IS_BUNDLED__: "true",
       },
       external: [

@@ -33,13 +33,11 @@ export const extendsBundlerOptions = (bundlerOptions: unknown, app: App, custom 
         ((((bundlerOptions as ViteBundlerOptions).viteOptions ??= {}).ssr ??= {}).resolve ??= {})
           .conditions ?? VITE_DEFAULT_CONDITIONS;
 
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       (bundlerOptions as ViteBundlerOptions).viteOptions!.resolve!.conditions = [
         "custom",
         ...defaultConditions,
       ];
 
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       (bundlerOptions as ViteBundlerOptions).viteOptions!.ssr!.resolve!.conditions = [
         "custom",
         ...defaultSSRConditions,

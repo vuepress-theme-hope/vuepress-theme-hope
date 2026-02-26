@@ -65,7 +65,6 @@ export const extendsPagePlugin = (
       const { filePathRelative } = page;
 
       if (behavior.compact)
-        // eslint-disable-next-line @typescript-eslint/no-deprecated
         page.frontmatter = convertFrontmatter(page.frontmatter, filePathRelative ?? "");
       if (behavior.check) checkFrontmatter(page);
 
@@ -77,9 +76,7 @@ export const extendsPagePlugin = (
         page.frontmatter.seo = false;
       }
 
-      const enableEditLink =
-        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-        themeData.locales[page.pathLocale]?.editLink ?? true;
+      const enableEditLink = themeData.locales[page.pathLocale]?.editLink ?? true;
 
       // Set edit link
       if (enableEditLink)

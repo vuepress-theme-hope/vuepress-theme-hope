@@ -22,13 +22,14 @@ const renderIcon = (content: string, contentClass = ""): VNode => {
   const className = ["vp-share-icon", contentClass];
 
   // is a link
-  if (isLinkHttp(content) || isLinkAbsolute(content))
+  if (isLinkHttp(content) || isLinkAbsolute(content)) {
     return h("img", {
       class: className,
       src: content,
       loading: "lazy",
       "no-view": "",
     });
+  }
 
   // is html content
   if (startsWith(content, "<") && endsWith(content, ">"))

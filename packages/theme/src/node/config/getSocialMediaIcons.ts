@@ -13,7 +13,7 @@ export const getSocialMediaIcons = (themeData: ThemeData): Record<string, string
       const templatePath = `${TEMPLATE_FOLDER}/socialMediaIcons/${key.toLocaleLowerCase()}.svg`;
 
       if (fs.existsSync(templatePath)) {
-        iconData[key] = fs.readFileSync(templatePath, { encoding: "utf8" });
+        iconData[key] = fs.readFileSync(templatePath, { encoding: "utf-8" });
 
         return false;
       }

@@ -41,11 +41,8 @@ export const usePlugins = (
     if (highlighter.type === "prismjs") usePrismjsPlugin(app, highlighter);
     else useShikiPlugin(app, highlighter);
   } else if (highlighter ?? true) {
-    if (highlighter === "prismjs") {
-      usePrismjsPlugin(app);
-    } else {
-      useShikiPlugin(app);
-    }
+    if (highlighter === "prismjs") usePrismjsPlugin(app);
+    else useShikiPlugin(app);
   }
 
   useSassPalettePlugin(app, {

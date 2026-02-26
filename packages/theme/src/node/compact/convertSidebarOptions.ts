@@ -61,14 +61,14 @@ export const convertSidebarOptions = (config: unknown, localePath = ""): Sidebar
 
   if (isArray(config)) return handleArraySidebarOptions(config as SidebarArrayOptions, localePath);
 
-  if (isPlainObject(config))
+  if (isPlainObject(config)) {
     return fromEntries(
       entries(config).map<[string, SidebarArrayOptions | "structure" | false]>(([key, value]) => {
         if (isArray(value))
-          return [
+          {return [
             key,
             handleArraySidebarOptions(value as SidebarArrayOptions, `${localePath} > ${key}`),
-          ];
+          ];}
 
         if (value === "structure" || value === false) return [key, value as "structure" | false];
 
@@ -79,6 +79,7 @@ export const convertSidebarOptions = (config: unknown, localePath = ""): Sidebar
         return [key, false];
       }),
     );
+  }
 
   logger.error(
     `${colors.magenta("sidebar")} config should be: an array, an object, "structure" or false`,

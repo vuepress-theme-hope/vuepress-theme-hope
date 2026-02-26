@@ -17,7 +17,7 @@ export const getShareServiceConfig = (shareOptions?: ShareOptions): ShareService
 
   services.forEach((service) => {
     if (isString(service)) {
-      if (service === "twitter")
+      if (service === "twitter") {
         content.push({
           name: service,
           ...SHARE_CONFIG[service],
@@ -27,9 +27,11 @@ export const getShareServiceConfig = (shareOptions?: ShareOptions): ShareService
             shareOptions?.twitterUserName ?? "",
           ),
         });
+      }
       // A built-in service
-      else if (AVAILABLE_SERVICES.includes(service))
+      else if (AVAILABLE_SERVICES.includes(service)) {
         content.push({ name: service, ...SHARE_CONFIG[service] });
+      }
     }
     // A custom service
     else if (isPlainObject(service) && service.name && service.link && service.shape) {

@@ -5,11 +5,7 @@ import type { AvailableComponent, DeprecatedComponent } from "./options/index.js
 
 const __dirname = getDirname(import.meta.url);
 
-export const AVAILABLE_COMPONENTS: (
-  | AvailableComponent
-  // eslint-disable-next-line @typescript-eslint/no-deprecated
-  | DeprecatedComponent
-)[] = [
+export const AVAILABLE_COMPONENTS: (AvailableComponent | DeprecatedComponent)[] = [
   "ArtPlayer",
   "Badge",
   "BiliBili",

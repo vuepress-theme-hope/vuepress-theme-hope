@@ -18,7 +18,7 @@ const KNOWN_THEME_PLUGIN_KEYS = new Set(
  */
 export const checkPluginsOptions = (plugins: ThemePluginsOptions): void => {
   keys(plugins).forEach((key) => {
-    if (!KNOWN_THEME_PLUGIN_KEYS.has(key))
+    if (!KNOWN_THEME_PLUGIN_KEYS.has(key)) {
       logger.warn(
         `You are setting "${colors.magenta(`plugins.${key}`)}" option in ${colors.cyan(
           "theme options",
@@ -26,5 +26,6 @@ export const checkPluginsOptions = (plugins: ThemePluginsOptions): void => {
           "vuepress config file",
         )} and call it manually in "${colors.magenta("plugins")}" options.`,
       );
+    }
   });
 };

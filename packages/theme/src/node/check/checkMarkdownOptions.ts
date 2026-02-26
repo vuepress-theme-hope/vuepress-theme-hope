@@ -111,7 +111,6 @@ export const checkVuePressMarkdownOptions = (
         );
 
         // @ts-expect-error: we are sure that the key exists in themeMarkdownOptions
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         themeMarkdownOptions[key] = vuepressMarkdownOptions[key];
       } else {
         logger.warn(
@@ -142,7 +141,6 @@ export const checkThemeMarkdownOptions = (
           )}, but it's not supported by theme. You need to set the option in ${colors.cyan("vuepress config file")}.`,
         );
         // @ts-expect-error: we are sure that the key exists in vuepressMarkdownOptions
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         vuepressMarkdownOptions[key] = themeMarkdownOptions[key];
       } else {
         logger.warn(

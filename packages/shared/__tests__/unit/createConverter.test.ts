@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import { createConverter } from "../../src/node/createConverter.js";
 
-describe("createConverter", () => {
+describe(createConverter, () => {
   const converter = createConverter("test");
 
   describe("deprecatedLogger", () => {

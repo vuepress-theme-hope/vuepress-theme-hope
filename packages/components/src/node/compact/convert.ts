@@ -64,37 +64,42 @@ export const convertOptions = (options: ComponentPluginOptions & Record<string, 
   }
 
   if (isArray(options.components)) {
-    if ((options.components as unknown[]).includes("Catalog"))
+    if ((options.components as unknown[]).includes("Catalog")) {
       logger.warn(
         `${colors.cyan("Catalog")} component is no longer supported, please use ${colors.magenta(
           "@vuepress/plugin-catalog",
         )} instead.`,
       );
+    }
 
-    if ((options.components as unknown[]).includes("Replit"))
+    if ((options.components as unknown[]).includes("Replit")) {
       logger.error(
         `${colors.cyan("Replit")} component is no longer supported because it no longer supports embed mode.`,
       );
+    }
 
-    if ((options.components as unknown[]).includes("XiGua"))
+    if ((options.components as unknown[]).includes("XiGua")) {
       logger.error(
         `Since XiGua is merging in to DouYin (TikTok in China), ${colors.cyan("XiGua")} component is no longer supported.`,
       );
+    }
 
-    if ((options.components as unknown[]).includes("FontIcon"))
+    if ((options.components as unknown[]).includes("FontIcon")) {
       logger.warn(
         `${colors.cyan("FontIcon")} component is no longer supported, please use ${colors.magenta(
           "@vuepress/plugin-icon",
         )} instead.`,
       );
+    }
 
     ["VideoPlayer", "AudioPlayer", "YouTube"].forEach((component) => {
-      if ((options.components as unknown[]).includes(component))
+      if ((options.components as unknown[]).includes(component)) {
         logger.warn(
           `${colors.cyan(component)} component is deprecated, please use ${colors.cyan(
             "VidStack",
           )} component instead.`,
         );
+      }
     });
   }
 };

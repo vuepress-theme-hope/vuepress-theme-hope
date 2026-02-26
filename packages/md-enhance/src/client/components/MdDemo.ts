@@ -43,18 +43,13 @@ export default defineComponent({
     });
 
     useEventListener("afterprint", () => {
-      if (previousState !== null) {
-        toggleIsExpand(previousState);
-      }
+      if (previousState !== null) toggleIsExpand(previousState);
 
       previousState = null;
     });
 
     useResizeObserver(codeContainer, () => {
-      if (isExpanded.value) {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        height.value = `${codeContainer.value!.clientHeight + 14}px`;
-      }
+      if (isExpanded.value) height.value = `${codeContainer.value!.clientHeight + 14}px`;
     });
 
     return (): VNode =>
@@ -65,10 +60,7 @@ export default defineComponent({
             title: "toggle",
             class: ["vp-md-demo-toggle-button", isExpanded.value ? "down" : "end"],
             onClick: () => {
-              height.value = isExpanded.value
-                ? "0"
-                : // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                  `${codeContainer.value!.clientHeight + 14}px`;
+              height.value = isExpanded.value ? "0" : `${codeContainer.value!.clientHeight + 14}px`;
               toggleIsExpand();
             },
           }),

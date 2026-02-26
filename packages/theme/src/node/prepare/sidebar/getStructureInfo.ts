@@ -32,7 +32,6 @@ export const getStructureInfo = (pages: Page[], scope: string): StructureInfo[] 
   const sortedPages = relatedPages
     // Sort pages
     .sort(({ filePathRelative: filePathRelative1 }, { filePathRelative: filePathRelative2 }) =>
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       filePathRelative1!.localeCompare(filePathRelative2!, undefined, {
         numeric: true,
         sensitivity: "accent",
@@ -42,7 +41,6 @@ export const getStructureInfo = (pages: Page[], scope: string): StructureInfo[] 
   const structure: StructureInfo[] = [];
 
   sortedPages.forEach((page) => {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const relativePath = path.relative(scope, page.filePathRelative!);
     const filename = path.basename(relativePath);
 

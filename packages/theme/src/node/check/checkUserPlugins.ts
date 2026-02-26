@@ -17,7 +17,7 @@ export const checkUserPlugins = (app: App): void => {
     );
     const pluginsAfterTheme = app.pluginApi.plugins.slice(themeIndex + 1);
 
-    if (pluginsAfterTheme.some(({ name }) => name === pluginName))
+    if (pluginsAfterTheme.some(({ name }) => name === pluginName)) {
       logger.error(
         `You are not allowed to use plugin "${colors.magenta(
           pluginName,
@@ -30,5 +30,6 @@ export const checkUserPlugins = (app: App): void => {
             : "")
         }`,
       );
+    }
   });
 };

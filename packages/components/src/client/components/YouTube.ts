@@ -182,9 +182,7 @@ export default defineComponent({
       if (props.start) params.set("start", props.start.toString());
       if (props.end) params.set("end", props.end.toString());
 
-      // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
       params.set("hl", props.uiLang || lang.value);
-      // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
       params.set("cc_lang_pref", props.defaultCcLang || lang.value);
       params.set("color", "white");
 

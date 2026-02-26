@@ -60,7 +60,6 @@ export default defineComponent({
             class: [
               "vp-sidebar-header",
               {
-                // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
                 clickable: collapsible || link,
                 exact: exact.value,
                 active: active.value,

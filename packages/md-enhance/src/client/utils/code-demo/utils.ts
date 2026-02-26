@@ -50,7 +50,7 @@ export const h = (
 ): HTMLElement => {
   const node = document.createElement(tag);
 
-  if (isPlainObject(attrs))
+  if (isPlainObject(attrs)) {
     keys(attrs).forEach((key) => {
       if (key.indexOf("data")) {
         // @ts-expect-error: Type is not accurate
@@ -61,11 +61,13 @@ export const h = (
         node.dataset[trippedKey] = attrs[key];
       }
     });
+  }
 
-  if (children)
+  if (children) {
     children.forEach((child) => {
       node.append(child);
     });
+  }
 
   return node;
 };

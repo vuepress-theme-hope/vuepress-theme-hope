@@ -86,7 +86,6 @@ export default defineComponent({
                       ArticleList,
                       {
                         key: page.value.path,
-                        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                         items: blogData.value!.items!,
                       },
                       slots,

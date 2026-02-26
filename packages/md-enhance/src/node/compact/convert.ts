@@ -245,12 +245,13 @@ export const convertOptions = (
     msg: "Please use custom option in @vuepress/plugin-markdown-stylize instead.",
   });
 
-  if (options.card)
+  if (options.card) {
     logger.error(
       `${colors.magenta("card")} is deprecated, please import  ${colors.magenta(
         "VPCard",
       )} from "vuepress-plugin-components" and use it instead.`,
     );
+  }
 
   droppedLogger({
     options,

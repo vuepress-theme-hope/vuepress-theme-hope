@@ -6,7 +6,7 @@
     "pedantic": "warn",
     "perf": "warn",
     "style": "warn",
-    "restriction": "warn",
+    "restriction": "warn"
   },
   "rules": {
     // oxlint core rules
@@ -130,42 +130,42 @@
         {
           "selector": "variable",
           "filter": { "regex": "^__(?:dirname|filename)$", "match": true },
-          "format": null,
+          "format": null
         },
         {
           "selector": "variable",
           "filter": {
             "regex": "^(?:_{0,2})[A-Z][A-z0-9]*(?:_[A-Z][A-z0-9]*)*$",
-            "match": true,
+            "match": true
           },
-          "format": null,
+          "format": null
         },
         {
           "selector": ["variable"],
           "format": ["camelCase", "PascalCase", "UPPER_CASE"],
-          "leadingUnderscore": "allow",
+          "leadingUnderscore": "allow"
         },
         {
           "selector": ["parameter"],
           "format": ["camelCase", "PascalCase"],
-          "leadingUnderscore": "allow",
+          "leadingUnderscore": "allow"
         },
         {
           "selector": ["property"],
           "format": ["camelCase", "PascalCase", "UPPER_CASE"],
           "leadingUnderscore": "allow",
-          "trailingUnderscore": "allow",
+          "trailingUnderscore": "allow"
         },
         { "selector": "import", "format": ["PascalCase", "camelCase"] },
         { "selector": "typeLike", "format": ["PascalCase"] },
-        { "selector": "enumMember", "format": ["PascalCase"] },
-      ],
+        { "selector": "enumMember", "format": ["PascalCase"] }
+      ]
     ],
     "typescript/parameter-properties": ["warn", { "prefer": "parameter-property" }],
     // allow non-null assertions in some cases
     "typescript/strict-boolean-expressions": [
       "warn",
-      { "allowNullableString": true, "allowNullableBoolean": true },
+      { "allowNullableString": true, "allowNullableBoolean": true }
     ],
     // missing async with await will be reported by typescript itself
     "typescript/promise-function-async": "off",
@@ -225,18 +225,18 @@
           // Type parameter
           "T",
           // parameter name for unused variables
-          "_",
-        ],
-      },
+          "_"
+        ]
+      }
     ],
     "max-dependencies": ["warn", { "ignoreTypeImports": true, "max": 15 }],
     "max-lines": ["warn", { "max": 500, "skipBlankLines": true, "skipComments": true }],
     "max-lines-per-function": [
       "warn",
-      { "max": 100, "skipBlankLines": true, "skipComments": true },
+      { "max": 100, "skipBlankLines": true, "skipComments": true }
     ],
     "max-params": ["warn", 4],
-    "max-statements": ["warn", { "max": 30 }],
+    "max-statements": ["warn", { "max": 30 }]
   },
   "overrides": [
     {
@@ -248,21 +248,21 @@
         // allow importing node built-in modules in config files and scripts
         "import/no-nodejs-modules": "off",
         // config files shall be allowed to access process.env
-        "node/no-process-env": "off",
-      },
+        "node/no-process-env": "off"
+      }
     },
     {
       "files": ["**/{cli,node}/**/*.{js,ts}", "**/{cli,node}.{js,ts}"],
       "rules": {
         // allow importing node built-in modules in node files
-        "import/no-nodejs-modules": "off",
-      },
+        "import/no-nodejs-modules": "off"
+      }
     },
     {
       "files": ["**/worker/**/*.{js,ts}", "*.worker.{js,ts}", "worker.{js,ts}"],
       "rules": {
-        "unicorn/require-post-message-target-origin": "off",
-      },
+        "unicorn/require-post-message-target-origin": "off"
+      }
     },
     {
       "files": ["*.{jsx,tsx}"],
@@ -272,8 +272,8 @@
         // disable jsdoc rules in react components
         "jsdoc/require-returns": "off",
         // allow loose boolean expressions in react components
-        "typescript/strict-boolean-expressions": "off",
-      },
+        "typescript/strict-boolean-expressions": "off"
+      }
     },
     {
       "files": ["**/components/**/*.{ts,vue}"],
@@ -281,13 +281,13 @@
         // loose max lines for components setup blocks
         "max-lines-per-function": [
           "warn",
-          { "max": 300, "skipBlankLines": true, "skipComments": true },
-        ],
+          { "max": 300, "skipBlankLines": true, "skipComments": true }
+        ]
 
         // FIXME: This does not work unless plugin vue is enabled
         // increase max props for vue components to 5
         // "vue/max-props": ["warn", { "maxProps": 5 }]
-      },
+      }
     },
     {
       "files": ["*.d.ts"],
@@ -295,8 +295,8 @@
         // to extend existing modules, import/export must not appear in declaration files at top level
         "import/unambiguous": "off",
         // we need `export {}` to convert a file to a module
-        "unicorn/require-module-specifiers": "off",
-      },
+        "unicorn/require-module-specifiers": "off"
+      }
     },
     {
       "files": ["*.{bench,spec,test}.{js,ts}", "*.{spec,test}.{js,ts}", "*.{spec,test}-d.ts"],
@@ -320,23 +320,23 @@
           "warn",
           {
             "allTestPattern": "(^|\\/)__tests__\\/",
-            "pattern": ".*\\.((bench|spec)\\.[tj]sx?|spec-d\\.ts)$",
-          },
+            "pattern": ".*\\.((bench|spec)\\.[tj]sx?|spec-d\\.ts)$"
+          }
         ],
         "vitest/no-importing-vitest-globals": "off",
         "vitest/prefer-called-once": "off",
         "vitest/prefer-to-be-falsy": "off",
         "vitest/prefer-to-be-truthy": "off",
-        "unicorn/consistent-function-scoping": "off",
-      },
+        "unicorn/consistent-function-scoping": "off"
+      }
     },
     // for playwright e2e tests
     {
       "files": ["e2e/**/*.{spec,test}.{js,ts}"],
       "rules": {
         // e2e tests navigation and locators are async
-        "no-await-in-loop": "off",
-      },
-    },
-  ],
+        "no-await-in-loop": "off"
+      }
+    }
+  ]
 }

@@ -184,11 +184,12 @@ const atMarkerRule =
       ) {
         let openMakerMatched = true;
 
-        for (index = 0; index < atMarker.length; index++)
+        for (index = 0; index < atMarker.length; index++) {
           if (atMarker[index] !== state.src[start + index]) {
             openMakerMatched = false;
             break;
           }
+        }
 
         if (openMakerMatched) {
           // Found!
@@ -251,11 +252,11 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (md, options) =>
   VALID_MARKERS.forEach((marker) => {
     // Note: Here we use an internal variable to make sure tab rule is not registered
     // @ts-expect-error: __rules__ is a private property
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-    if (!md.block.ruler.__rules__.some(({ name }) => name === `at-${marker}`))
+    if (!md.block.ruler.__rules__.some(({ name }) => name === `at-${marker}`)) {
       md.block.ruler.before("fence", `at-${marker}`, atMarkerRule(marker), {
         alt: ["paragraph", "reference", "blockquote", "list"],
       });
+    }
   });
 
   md.renderer.rules[`${name}_open`] = (tokens, index): string => {

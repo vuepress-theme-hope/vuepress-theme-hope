@@ -12,7 +12,7 @@ export const getWorkflowContent = (
 ): string => {
   const currentBranch = execSync("git branch --show-current", {
     cwd,
-    encoding: "utf8",
+    encoding: "utf-8",
   }).trim();
 
   return `

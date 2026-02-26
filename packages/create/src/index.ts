@@ -39,21 +39,16 @@ const preAction = async (
   const { lang, locale } = await getLanguage();
 
   // Check bundler
-  if (bundler && !supportedBundlers.includes(bundler)) {
-    program.error(locale.error.bundler);
-  }
+  if (bundler && !supportedBundlers.includes(bundler)) program.error(locale.error.bundler);
 
   // Check presets
-  if (preset && !supportedPresets.includes(preset)) {
-    program.error(locale.error.preset);
-  }
+  if (preset && !supportedPresets.includes(preset)) program.error(locale.error.preset);
 
   const targetDirPath = resolve(process.cwd(), targetDir);
 
   // Check if the user is trying to cover his files
-  if (existsSync(targetDirPath) && readdirSync(targetDirPath).length > 0) {
+  if (existsSync(targetDirPath) && readdirSync(targetDirPath).length > 0)
     program.error(locale.error.dirNotEmpty(targetDir));
-  }
 
   // Get packageManager
   const packageManager = await select({
@@ -65,9 +60,8 @@ const preAction = async (
   });
 
   // Check if the user is a noob and warn him 🤪
-  if (targetDir.startsWith("<") && targetDir.endsWith(">")) {
+  if (targetDir.startsWith("<") && targetDir.endsWith(">"))
     program.error(locale.error[add ? "addDirHint" : "outputDirHint"](packageManager));
-  }
 
   ensureDirExistSync(targetDirPath);
 
@@ -123,11 +117,8 @@ const postAction = async ({
       });
 
       child.on("close", (code) => {
-        if (code === 0) {
-          resolve();
-        } else {
-          reject(new Error(`code: ${code}`));
-        }
+        if (code === 0) resolve();
+        else reject(new Error(`code: ${code}`));
       });
 
       child.on("error", (err) => {

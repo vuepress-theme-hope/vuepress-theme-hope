@@ -46,7 +46,6 @@ export default defineComponent({
 
         const images = [...document.querySelectorAll<HTMLImageElement>(__LG_SELECTOR__)];
 
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         instance = new LightGallery(container.value!, {
           ...lightGalleryOptions,
           dynamic: true,

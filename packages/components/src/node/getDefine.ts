@@ -45,25 +45,26 @@ export const getDefine =
             : "https://theme-hope-assets.vuejs.press/pdfjs/";
     }
 
-    if (components.includes("Share")) {
+    if (components.includes("Share"))
       result.SHARE_SERVICES = getShareServiceConfig(componentOptions.share);
-    }
 
-    if (components.includes("SiteInfo"))
+    if (components.includes("SiteInfo")) {
       result.SITE_INFO_LOCALES = getFullLocaleConfig({
         app,
         name: "siteInfo",
         default: siteInfoLocaleInfo,
         config: locales.siteInfo,
       });
+    }
 
-    if (components.includes("VidStack"))
+    if (components.includes("VidStack")) {
       result.VIDSTACK_LOCALES = getFullLocaleConfig({
         app,
         name: "vidstack",
         default: vidstackLocaleInfo,
         config: locales.vidstack,
       });
+    }
 
     return result;
   };

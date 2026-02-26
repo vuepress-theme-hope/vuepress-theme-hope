@@ -121,7 +121,6 @@ export default defineComponent({
     onMounted(() => {
       body.value = document.body;
 
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       viewPDF(viewer.value!, {
         url: getLink(props.url),
         title: props.title,

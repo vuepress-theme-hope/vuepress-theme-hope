@@ -13,7 +13,7 @@ export const useShikiPlugin = (app: App, options: ShikiPluginOptions = {}): void
   const { plugins } = app.pluginApi;
 
   // Ensure highlighter plugin is not enabled
-  if (plugins.every((plugin) => !isHighlighterPlugin(plugin)))
+  if (plugins.every((plugin) => !isHighlighterPlugin(plugin))) {
     app.use(
       shikiPlugin({
         ...("theme" in options
@@ -27,6 +27,7 @@ export const useShikiPlugin = (app: App, options: ShikiPluginOptions = {}): void
         ...options,
       }),
     );
+  }
 };
 
 /**

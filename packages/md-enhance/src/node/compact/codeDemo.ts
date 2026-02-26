@@ -34,9 +34,10 @@ export const legacyCodeDemo: PluginSimple = (md) => {
 
         if (type === `container_demo_close`) break;
         if (!content) continue;
-        if (type === "fence")
+        if (type === "fence") {
           if (language === "json") config = encodeData(content);
           else code[language] = content;
+        }
       }
 
       return `
@@ -63,7 +64,6 @@ export const mdDemo: PluginSimple = (md) => {
     },
     // oxlint-disable-next-line max-params
     codeRender: (tokens, index, options, _env, self) =>
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       `<template #code>\n${self.rules.fence!(tokens, index, options, _env, self)}</template>\n`,
     contentOpenRender: () => `<template #default>\n`,
     contentCloseRender: () => `</template>\n`,
