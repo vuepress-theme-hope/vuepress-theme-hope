@@ -975,8 +975,8 @@ importers:
   packages/md-enhance:
     dependencies:
       '@mdit/plugin-container':
-        specifier: ^0.22.3
-        version: 0.22.3(markdown-it@14.1.0)
+        specifier: ^0.23.0
+        version: 0.23.0(markdown-it@14.1.0)
       '@mdit/plugin-demo':
         specifier: ^0.22.4
         version: 0.22.4(markdown-it@14.1.0)
@@ -2763,6 +2763,15 @@ packages:
   '@mdit/plugin-container@0.22.3':
     resolution: {integrity: sha512-kf6TGFO/5Z4grQij+lCkogXx3jfC1OFjD8a1YgMD9aZQzDuCWCRLagMFxqCObzPq9NPQKuGw677asFVkrQdTQg==}
     engines: {node: '>= 18'}
+    peerDependencies:
+      markdown-it: ^14.1.0
+    peerDependenciesMeta:
+      markdown-it:
+        optional: true
+
+  '@mdit/plugin-container@0.23.0':
+    resolution: {integrity: sha512-ufaQDtApytcUoR1MtkbMjZZe4AlqvvbzivDDUC9552SubFhPVTpKHHn09dPEl+OBvtMPfSOXcKGssQX8xVZaNA==}
+    engines: {node: '>= 20'}
     peerDependencies:
       markdown-it: ^14.1.0
     peerDependenciesMeta:
@@ -12446,6 +12455,12 @@ snapshots:
       '@types/markdown-it': 14.1.2
     optionalDependencies:
       markdown-it: 14.1.1
+
+  '@mdit/plugin-container@0.23.0(markdown-it@14.1.0)':
+    dependencies:
+      '@types/markdown-it': 14.1.2
+    optionalDependencies:
+      markdown-it: 14.1.0
 
   '@mdit/plugin-demo@0.22.4(markdown-it@14.1.0)':
     dependencies:
