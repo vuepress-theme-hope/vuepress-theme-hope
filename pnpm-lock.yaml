@@ -978,8 +978,8 @@ importers:
         specifier: ^0.22.3
         version: 0.22.3(markdown-it@14.1.0)
       '@mdit/plugin-demo':
-        specifier: ^0.22.4
-        version: 0.22.4(markdown-it@14.1.0)
+        specifier: ^0.23.0
+        version: 0.23.0(markdown-it@14.1.0)
       '@types/markdown-it':
         specifier: ^14.1.2
         version: 14.1.2
@@ -2771,6 +2771,15 @@ packages:
 
   '@mdit/plugin-demo@0.22.4':
     resolution: {integrity: sha512-bMTCsqr6Lh6eaDvs7ZsMGdnrT5X/TwTGnCkx/jccGGNGYJEsLqGa05eLYtgrik/KOH2e42zt+pUdeZrzA8zpKQ==}
+    peerDependencies:
+      markdown-it: ^14.1.0
+    peerDependenciesMeta:
+      markdown-it:
+        optional: true
+
+  '@mdit/plugin-demo@0.23.0':
+    resolution: {integrity: sha512-bnf1baNOHFisHdunkCNRbtOQjOdbfjbbodOVwBCxsxQ0AUGqYKA9m5F1nj2LBSP1mxYyzkx591Xi6458Z9y7Pg==}
+    engines: {node: '>= 20'}
     peerDependencies:
       markdown-it: ^14.1.0
     peerDependenciesMeta:
@@ -12447,17 +12456,17 @@ snapshots:
     optionalDependencies:
       markdown-it: 14.1.1
 
-  '@mdit/plugin-demo@0.22.4(markdown-it@14.1.0)':
-    dependencies:
-      '@types/markdown-it': 14.1.2
-    optionalDependencies:
-      markdown-it: 14.1.0
-
   '@mdit/plugin-demo@0.22.4(markdown-it@14.1.1)':
     dependencies:
       '@types/markdown-it': 14.1.2
     optionalDependencies:
       markdown-it: 14.1.1
+
+  '@mdit/plugin-demo@0.23.0(markdown-it@14.1.0)':
+    dependencies:
+      '@types/markdown-it': 14.1.2
+    optionalDependencies:
+      markdown-it: 14.1.0
 
   '@mdit/plugin-figure@0.22.2(markdown-it@14.1.1)':
     dependencies:
