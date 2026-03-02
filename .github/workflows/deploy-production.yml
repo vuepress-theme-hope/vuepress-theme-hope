@@ -21,7 +21,7 @@ jobs:
           persist-credentials: false
 
       - name: Restore Build Result
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: build-result
 
@@ -90,7 +90,7 @@ jobs:
           persist-credentials: false
 
       - name: Restore Build Result
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: build-result
 
@@ -143,7 +143,7 @@ jobs:
           persist-credentials: false
 
       - name: Restore Build Result
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: build-result
 
@@ -211,7 +211,7 @@ jobs:
           persist-credentials: false
 
       - name: Restore Build Result
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: build-result
 
