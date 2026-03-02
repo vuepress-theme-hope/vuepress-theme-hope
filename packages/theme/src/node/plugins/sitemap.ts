@@ -4,9 +4,11 @@ import { sitemapPlugin } from "@vuepress/plugin-sitemap";
 import type { Plugin } from "vuepress/core";
 
 /**
- * @private
- *
  * Resolve options for `@vuepress/plugin-sitemap`
+ *
+ * @param options Sitemap plugin options or a boolean to enable it with default options
+ * @param hostname Hostname for sitemap plugin
+ * @returns Sitemap plugin instance or null
  */
 export const getSitemapPlugin = (
   options?: Omit<SitemapPluginOptions, "hostname"> | boolean,

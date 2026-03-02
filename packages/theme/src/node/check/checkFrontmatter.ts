@@ -9,7 +9,6 @@ import type {
 } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
-/** @private */
 export const checkFrontmatter = (page: Page): void => {
   const frontmatter = page.frontmatter as
     | ThemeProjectHomePageFrontmatter

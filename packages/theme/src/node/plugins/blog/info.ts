@@ -9,7 +9,7 @@ import type {
   ThemeProjectHomePageFrontmatter,
 } from "../../../shared/index.js";
 
-/** @private */
+// oxlint-disable-next-line complexity
 export const injectBlogBasicInfo = (
   page: Page<ThemePageData>,
   info: Partial<ArticleInfoData>,

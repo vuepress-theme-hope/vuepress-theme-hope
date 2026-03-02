@@ -13,7 +13,6 @@ export const DEFAULT_BLOG_FRONTMATTER = {
   sitemap: false,
 };
 
-/** @private */
 export const defaultPageSorter = (
   pageA: Page<{ git: GitData }, ThemeNormalPageFrontmatter, { routeMeta: ArticleInfoData }>,
   pageB: Page<{ git: GitData }, ThemeNormalPageFrontmatter, { routeMeta: ArticleInfoData }>,

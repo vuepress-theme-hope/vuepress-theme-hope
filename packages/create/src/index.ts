@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { execSync, spawn } from "node:child_process";
 import { existsSync, readdirSync } from "node:fs";
-import { resolve } from "node:path";
+import path from "node:path";
 
 import { confirm, select } from "@inquirer/prompts";
 import { createCommand } from "commander";
@@ -44,7 +44,7 @@ const preAction = async (
   // Check presets
   if (preset && !supportedPresets.includes(preset)) program.error(locale.error.preset);
 
-  const targetDirPath = resolve(process.cwd(), targetDir);
+  const targetDirPath = path.resolve(process.cwd(), targetDir);
 
   // Check if the user is trying to cover his files
   if (existsSync(targetDirPath) && readdirSync(targetDirPath).length > 0)
@@ -144,7 +144,7 @@ Generate a new vuepress-theme-hope template
   .option("-p, --preset [preset]", "Preset to use, docs or blog only")
   .argument("<dir>", "Dir to create the template in")
   .action(async (targetDir: string, { bundler, preset }: CreateOptions) => {
-    const workingCWD = resolve(process.cwd(), targetDir);
+    const workingCWD = path.resolve(process.cwd(), targetDir);
 
     const { lang, locale, packageManager } = await preAction(targetDir, {
       bundler,

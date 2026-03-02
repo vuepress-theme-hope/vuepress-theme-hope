@@ -95,12 +95,20 @@ export default defineComponent({
       return arr;
     });
 
-    /** Navigate to certain page */
-    const navigate = (page: number): void => {
-      emit("updateCurrentPage", page);
+    /**
+     * Navigate to certain page
+     *
+     * @param index - Page index
+     */
+    const navigate = (index: number): void => {
+      emit("updateCurrentPage", index);
     };
 
-    /** Check and navigate to certain page */
+    /**
+     * Check and navigate to certain page
+     *
+     * @param index - Page index
+     */
     const jumpPage = (index: string): void => {
       const pageNum = Number.parseInt(index, 10);
 

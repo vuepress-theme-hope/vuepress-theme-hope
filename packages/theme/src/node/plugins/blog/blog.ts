@@ -10,7 +10,15 @@ import { getBlogArticleType, getBlogStarType, getBlogTimelineType } from "./type
 import type { ArticleInfoData, ThemeData, ThemePageData } from "../../../shared/index.js";
 import type { BlogOptions } from "../../typings/index.js";
 
-/** @private */
+/**
+ * Resolves `@vuepress/plugin-blog`
+ *
+ * @param themeData - theme data
+ * @param options - blog plugin options
+ * @param hotReload - whether enable hot reload
+ *
+ * @returns blog plugin instance or null
+ */
 export const getBlogPlugin = (
   themeData: ThemeData,
   options?: BlogOptions | boolean,

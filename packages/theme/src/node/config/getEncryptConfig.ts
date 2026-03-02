@@ -21,7 +21,7 @@ All password MUST be string. But we found one’s type is ${typeof password}. Pl
 
         return null;
       })
-      .filter((item): item is string => item !== null);
+      .filter((item): item is string => item != null);
   }
 
   logger.error(`\
@@ -33,7 +33,6 @@ All password MUST be string. But we found a ${JSON.stringify(passwords)}. Please
   return null;
 };
 
-/** @private */
 export const getEncryptConfig = ({ admin, config, global }: EncryptOptions = {}): EncryptConfig => {
   const result: EncryptConfig = {};
 
@@ -71,7 +70,7 @@ export const getEncryptConfig = ({ admin, config, global }: EncryptOptions = {})
 
           return tokens ? [key, { tokens }] : null;
         })
-        .filter((item): item is [string, PasswordConfig] => item !== null),
+        .filter((item): item is [string, PasswordConfig] => item != null),
     );
   }
 

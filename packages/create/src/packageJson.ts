@@ -34,11 +34,12 @@ export const createPackageJson = async ({
   bundler,
   cwd = process.cwd(),
 }: CreatePackageJsonOptions): Promise<void> => {
+  // oxlint-disable-next-line no-param-reassign
   bundler ??= await select<SupportedBundler>({
     message: locale.question.bundler,
-    choices: supportedBundlers.map((bundler) => ({
-      name: bundler,
-      value: bundler,
+    choices: supportedBundlers.map((item) => ({
+      name: item,
+      value: item,
     })),
   });
 
@@ -86,7 +87,8 @@ export const createPackageJson = async ({
     const name = await input({
       message: locale.question.name,
       default: "vuepress-theme-hope-template",
-      validate: (input: string): true | string => PACKAGE_NAME_REG.test(input) || locale.error.name,
+      validate: (userInput: string): true | string =>
+        PACKAGE_NAME_REG.test(userInput) || locale.error.name,
     });
 
     const description = await input({
@@ -97,7 +99,8 @@ export const createPackageJson = async ({
     const version = await input({
       message: locale.question.version,
       default: "2.0.0",
-      validate: (input: string): true | string => VERSION_REG.test(input) || locale.error.version,
+      validate: (userInput: string): true | string =>
+        VERSION_REG.test(userInput) || locale.error.version,
     });
 
     const license = await input({

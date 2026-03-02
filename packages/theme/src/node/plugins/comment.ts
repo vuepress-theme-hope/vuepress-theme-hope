@@ -5,9 +5,10 @@ import type { PluginObject } from "vuepress/core";
 import { VERSION } from "../utils.js";
 
 /**
- * @private
- *
  * Resolve options for `@vuepress/plugin-comment`
+ *
+ * @param options - User options
+ * @returns Comment plugin instance or `null`
  */
 export const getCommentPlugin = (
   options?: Partial<CommentPluginOptions> | false,

@@ -197,6 +197,8 @@
     // support starts with chrome71, firefox68. safari12.1, node12
     // leaving it to warn for edge cases
     "unicorn/prefer-global-this": "warn",
+    // ternary with multiple lines is usually less readable than if-else statement
+    "unicorn/prefer-ternary": ["warn", "only-single-line"],
     // prefer utf-8 over utf8
     "unicorn/text-encoding-identifier-case": ["error", { "withDash": true }],
 

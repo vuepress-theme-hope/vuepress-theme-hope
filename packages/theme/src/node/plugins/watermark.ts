@@ -12,9 +12,10 @@ try {
   // Do nothing
 }
 /**
- * @private
- *
  * Resolve options for `@vuepress/plugin-watermark`
+ *
+ * @param options - User options
+ * @returns Watermark plugin instance or `null`
  */
 export const getWatermarkPlugin = (
   options?: WatermarkPluginOptions | boolean,

@@ -63,9 +63,6 @@ const getSidebarItems = (infos: SidebarInfo[]): (SidebarGroupOptions | string)[]
     };
   });
 
-/**
- * @private
- */
 export const getSidebarData = (
   app: App,
   themeData: ThemeData,
@@ -108,9 +105,6 @@ export const getSidebarData = (
   return sidebarData;
 };
 
-/**
- * @private
- */
 export const prepareSidebarData = async (
   app: App,
   themeData: ThemeData,

@@ -16,9 +16,14 @@ import type {
 import { TEMPLATE_FOLDER } from "../utils.js";
 
 /**
- * @private
- *
  * Use plugins to ensure they apply first
+ *
+ * @param app - VuePress app instance
+ * @param themeData - Theme data
+ * @param highlighter - Highlighter options
+ * @param plugins - User plugins options
+ * @param hotReload - Is hot reload mode
+ * @param behavior - Theme behavior options
  */
 // oxlint-disable-next-line max-params
 export const usePlugins = (

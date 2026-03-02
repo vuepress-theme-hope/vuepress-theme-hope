@@ -54,9 +54,9 @@ export default defineComponent({
           contributors.value.length > 0
             ? h("div", { class: "contributors" }, [
                 h("span", { class: "vp-meta-label" }, `${metaLocale.value.contributors}: `),
-                contributors.value.map(({ email, name }, index, contributors) => [
+                contributors.value.map(({ email, name }, index, items) => [
                   h("span", { class: "vp-meta-info", title: `email: ${email}` }, name),
-                  index === contributors.length - 1 ? "" : ",",
+                  index === items.length - 1 ? "" : ",",
                 ]),
               ])
             : null,

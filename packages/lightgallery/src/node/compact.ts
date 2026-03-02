@@ -1,7 +1,11 @@
 import { colors } from "vuepress/utils";
 import { createConverter } from "vuepress-shared/node";
 
-/** @deprecated */
+/**
+ * @deprecated You should use `defineLightGalleryConfig` from `vuepress-plugin-lightgallery/client` instead
+ *
+ * @param options - User options
+ */
 export const convertOptions = (options: Record<string, unknown>): void => {
   const { droppedLogger } = createConverter("lightgallery");
 

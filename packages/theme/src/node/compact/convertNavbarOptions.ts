@@ -40,10 +40,14 @@ const handleNavbarOptions = (config: LegacyNavbarOptions, localePath: string): N
 
       return null;
     })
-    .filter((item): item is NavbarLinkOptions | NavbarGroupOptions => item !== null);
+    .filter((item): item is NavbarLinkOptions | NavbarGroupOptions => item != null);
 
 /**
  * @deprecated You should use V2 standard navbar config and avoid using it
+ *
+ * @param config - Legacy navbar config
+ * @param localePath - Current locale path, used for logger
+ * @returns Converted navbar config or false if the config is invalid
  */
 export const convertNavbarOptions = (config: unknown, localePath = ""): NavbarOptions | false => {
   if (config === false) return false;
@@ -56,6 +60,8 @@ export const convertNavbarOptions = (config: unknown, localePath = ""): NavbarOp
 
 /**
  * @deprecated You should use V2 standard navbar config and avoid using it
+ *
+ * @param options - Legacy navbar layout options
  */
 export const convertNavbarLayoutOptions = (options: Record<string, unknown>): void => {
   // Handle navbar layout

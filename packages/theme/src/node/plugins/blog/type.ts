@@ -10,7 +10,6 @@ import type {
 } from "../../../shared/index.js";
 import type { BlogOptions } from "../../typings/index.js";
 
-/** @private */
 export const getBlogArticleType = (
   options: BlogOptions,
   themeData: ThemeData,
@@ -39,7 +38,6 @@ export const getBlogArticleType = (
     { routeMeta: ArticleInfoData }
   >;
 
-/** @private */
 export const getBlogStarType = (
   options: BlogOptions,
   themeData: ThemeData,
@@ -73,7 +71,6 @@ export const getBlogStarType = (
     { routeMeta: ArticleInfoData }
   >;
 
-/** @private */
 export const getBlogTimelineType = (
   options: BlogOptions,
   themeData: ThemeData,

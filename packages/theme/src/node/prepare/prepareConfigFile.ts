@@ -5,9 +5,6 @@ import type { ThemeStatus } from "../config/index.js";
 import type { ThemeBehaviorOptions } from "../typings/index.js";
 import { BUNDLE_FOLDER, CLIENT_FOLDER } from "../utils.js";
 
-/**
- * @private
- */
 export const prepareConfigFile = (
   app: App,
   { enableCatalog, enableBlog, enableEncrypt, enableIcon }: ThemeStatus,

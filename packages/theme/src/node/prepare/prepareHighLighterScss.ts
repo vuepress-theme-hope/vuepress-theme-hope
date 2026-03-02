@@ -1,8 +1,5 @@
 import type { App } from "vuepress/core";
 
-/**
- * @private
- */
 export const prepareHighLighterScss = async (app: App): Promise<void> => {
   const { plugins } = app.pluginApi;
 

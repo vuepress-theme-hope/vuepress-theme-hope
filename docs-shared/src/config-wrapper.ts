@@ -13,7 +13,7 @@ const IS_GITEE = "GITEE" in process.env;
 const IS_NETLIFY = "NETLIFY" in process.env;
 const IS_GITHUB = !IS_GITEE && !IS_NETLIFY;
 
-export const config = (name: string, config: UserConfig): UserConfig => {
+export const config = (name: string, userConfig: UserConfig): UserConfig => {
   const base = name.replace(/\d+$/, "");
   const docsBase = IS_NETLIFY ? "/" : base ? (`/v2/${base}/` as `/${string}/`) : "/v2/";
 
@@ -32,7 +32,7 @@ export const config = (name: string, config: UserConfig): UserConfig => {
       IS_NETLIFY,
     }),
 
-    extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
+    extendsBundlerOptions: (bundlerOptions, app): void => {
       addViteOptimizeDepsInclude(bundlerOptions, app, [
         "three",
         "three/examples/jsm/controls/OrbitControls",
@@ -66,6 +66,6 @@ Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme
 
     clientConfigFile: path.resolve(__dirname, "./client.js"),
 
-    ...config,
+    ...userConfig,
   });
 };

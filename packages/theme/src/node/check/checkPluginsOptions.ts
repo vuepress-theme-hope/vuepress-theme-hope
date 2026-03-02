@@ -12,9 +12,9 @@ const KNOWN_THEME_PLUGIN_KEYS = new Set(
 );
 
 /**
- * @private
- *
  * Check theme plugin options for noob users
+ *
+ * @param plugins - Theme plugin options
  */
 export const checkPluginsOptions = (plugins: ThemePluginsOptions): void => {
   keys(plugins).forEach((key) => {

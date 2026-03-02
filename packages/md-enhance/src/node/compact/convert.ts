@@ -9,7 +9,7 @@ import { logger } from "../utils.js";
  * @param options - old markdown enhance plugin options
  * @deprecated
  */
-// oxlint-disable-next-line max-statements
+// oxlint-disable-next-line max-lines-per-function, max-statements
 export const convertOptions = (
   options: MarkdownEnhancePluginOptions & Record<string, unknown>,
 ): void => {

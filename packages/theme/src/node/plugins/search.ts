@@ -42,9 +42,12 @@ try {
 }
 
 /**
- * @private
- *
  * Resolve options for `@vuepress/plugin-docsearch`, `@vuepress/plugin-search` and `@vuepress/plugin-slimsearch`
+ *
+ * @param app VuePress app instance
+ * @param themeData Theme data
+ * @param plugins Theme plugins options
+ * @returns Search plugin instance or null
  */
 export const getSearchPlugin = (
   app: App,

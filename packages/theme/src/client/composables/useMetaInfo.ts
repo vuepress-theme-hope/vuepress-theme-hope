@@ -24,13 +24,13 @@ export const useMetaInfo = (): MetaInfo => {
   );
 
   const contributors = computed(() => {
-    const { contributors, home } = frontmatter.value;
+    const { contributors: frontmatterConfig, home } = frontmatter.value;
 
-    return isArray(contributors)
+    return isArray(frontmatterConfig)
       ? (home as boolean | undefined)
         ? false
         : (themeLocale.value.contributors ?? true)
-      : (contributors ??
+      : (frontmatterConfig ??
           ((home as boolean | undefined) ? false : (themeLocale.value.contributors ?? true)));
   });
 

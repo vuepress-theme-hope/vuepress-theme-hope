@@ -23,6 +23,8 @@ export const darkModeSymbol: InjectionKey<DarkMode> = Symbol(__VUEPRESS_DEV__ ? 
 
 /**
  * Inject dark mode global computed
+ *
+ * @returns Dark mode global computed
  */
 export const useDarkMode = (): DarkMode => {
   const darkMode = inject(darkModeSymbol);
@@ -101,8 +103,8 @@ export const setupDarkMode = (): void => {
   });
 
   onMounted(() => {
-    watchImmediate(isDarkMode, (isDarkMode) => {
-      document.documentElement.dataset.theme = isDarkMode ? "dark" : "light";
+    watchImmediate(isDarkMode, (value) => {
+      document.documentElement.dataset.theme = value ? "dark" : "light";
     });
   });
 };

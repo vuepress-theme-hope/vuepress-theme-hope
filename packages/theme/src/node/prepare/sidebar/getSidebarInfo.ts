@@ -20,16 +20,14 @@ export interface ThemeSidebarInfoOptions {
   scope: string;
 }
 
-/**
- * @private
- */
 const getSidebarChildrenInfo = (
   { scope, pages, sorters }: ThemeSidebarInfoOptions,
   children: StructureInfo[],
 ): SidebarInfo[] =>
   children
+    // oxlint-disable-next-line no-use-before-define
     .map((item) => getSidebarInfoFromStructure({ pages, scope, sorters }, item))
-    .filter((item): item is SidebarInfo => item !== null)
+    .filter((item): item is SidebarInfo => item != null)
     // sort items
     .sort((infoA, infoB) => {
       for (const sorter of sorters) {
@@ -41,9 +39,7 @@ const getSidebarChildrenInfo = (
       return 0;
     });
 
-/**
- * @private
- */
+// oxlint-disable-next-line complexity
 const getSidebarInfoFromStructure = (
   { scope, pages, sorters }: ThemeSidebarInfoOptions,
   info: StructureInfo,
@@ -78,7 +74,7 @@ const getSidebarInfoFromStructure = (
     startsWith(filePathRelative, `${scope}${info.path}/`),
   );
   const READMEFile = info.children.find(
-    (info) => info.type === "file" && info.filename.toLowerCase() === "readme.md",
+    (child) => child.type === "file" && child.filename.toLowerCase() === "readme.md",
   );
 
   if (READMEFile) {
@@ -153,13 +149,10 @@ const getSidebarInfoFromStructure = (
   return dirInfo;
 };
 
-/**
- * @private
- */
 export const getSidebarInfo = ({ pages, sorters, scope }: ThemeSidebarInfoOptions): SidebarInfo[] =>
   getStructureInfo(pages, scope)
     .map((info) => getSidebarInfoFromStructure({ scope, pages, sorters }, info))
-    .filter((item): item is SidebarInfo => item !== null)
+    .filter((item): item is SidebarInfo => item != null)
     // sort items
     .sort((infoA, infoB) => {
       for (const sorter of sorters) {

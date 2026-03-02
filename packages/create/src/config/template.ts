@@ -33,11 +33,12 @@ export const generateTemplate = async ({
   preset,
   packageManager,
 }: TemplateOptions): Promise<void> => {
+  // oxlint-disable-next-line no-param-reassign
   preset ??= await select<SupportedPreset>({
     message: locale.question.preset,
-    choices: supportedPresets.map((preset) => ({
-      name: preset,
-      value: preset,
+    choices: supportedPresets.map((item) => ({
+      name: item,
+      value: item,
     })),
   });
 

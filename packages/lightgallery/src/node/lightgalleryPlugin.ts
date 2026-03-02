@@ -25,7 +25,7 @@ export const lightgalleryPlugin =
         __LG_SELECTOR__: options.selector ?? "[vp-content] :not(a) > img:not([no-view])",
       }),
 
-      extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
+      extendsBundlerOptions: (bundlerOptions): void => {
         addViteOptimizeDepsExclude(bundlerOptions, app, [
           "lightgallery/lightgallery.es5.js",
           ...plugins.map((name) => `lightgallery/plugins/${name}/lg-${name}.es5.js`),
@@ -46,11 +46,11 @@ export const lightgalleryPlugin =
           config.module
             .rule("scss")
             .use("sass-loader")
-            .tap((options) => ({
-              ...options,
+            .tap((loaderOptions) => ({
+              ...loaderOptions,
               sassOptions: {
                 quietDeps: true,
-                ...options.sassOptions,
+                ...loaderOptions.sassOptions,
               },
             }));
         });

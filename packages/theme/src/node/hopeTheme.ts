@@ -80,7 +80,7 @@ export const hopeTheme = (
     return {
       name: "vuepress-theme-hope",
 
-      alias: behavior.custom ? { "@theme-hope": path.resolve(CLIENT_FOLDER) } : undefined,
+      ...(behavior.custom ? { alias: { "@theme-hope": path.resolve(CLIENT_FOLDER) } } : {}),
 
       define: () => ({
         __VP_CUSTOM__: behavior.custom ?? false,
@@ -90,7 +90,7 @@ export const hopeTheme = (
         __VP_REPO__: status.hasRepo,
       }),
 
-      extendsBundlerOptions: (bundlerConfig, app): void => {
+      extendsBundlerOptions: (bundlerConfig): void => {
         extendsBundlerOptions(bundlerConfig, app, behavior.custom);
       },
 
@@ -111,14 +111,14 @@ export const hopeTheme = (
         ]);
       },
 
-      onWatched: (app, watchers): void => {
+      onWatched: (_, watchers): void => {
         if (hotReload) {
           // This ensure the page is generated or updated
           const structureSidebarWatcher = watch("pages", {
             cwd: app.dir.temp(),
             ignoreInitial: true,
             // only watch vue files
-            ignored: (path, stats) => Boolean(stats?.isFile() && !path.endsWith(".vue")),
+            ignored: (filePath, stats) => Boolean(stats?.isFile() && !filePath.endsWith(".vue")),
           });
 
           structureSidebarWatcher.on("add", () => {

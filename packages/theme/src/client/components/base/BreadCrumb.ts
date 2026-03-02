@@ -47,7 +47,7 @@ export default defineComponent({
             path,
           };
         })
-        .filter((item): item is BreadCrumbConfig => item !== null);
+        .filter((item): item is BreadCrumbConfig => item != null);
 
       if (breadcrumbConfig.length > 1) config.value = breadcrumbConfig;
     };

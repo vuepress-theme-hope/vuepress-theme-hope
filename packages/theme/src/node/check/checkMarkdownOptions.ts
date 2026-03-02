@@ -93,9 +93,10 @@ export const KNOWN_THEME_MARKDOWN_OPTIONS = [
 ];
 
 /**
- * @private
- *
  * Check vuepress markdown options for noob users
+ *
+ * @param vuepressMarkdownOptions - VuePress markdown options
+ * @param themeMarkdownOptions - Theme markdown options
  */
 export const checkVuePressMarkdownOptions = (
   vuepressMarkdownOptions: VuePressMarkdownOptions,
@@ -124,9 +125,10 @@ export const checkVuePressMarkdownOptions = (
 };
 
 /**
- * @private
- *
  * Check theme plugin options for noob users
+ *
+ * @param vuepressMarkdownOptions - VuePress markdown options
+ * @param themeMarkdownOptions - Theme markdown options
  */
 export const checkThemeMarkdownOptions = (
   vuepressMarkdownOptions: VuePressMarkdownOptions,

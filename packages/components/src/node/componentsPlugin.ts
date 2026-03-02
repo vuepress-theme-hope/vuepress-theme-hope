@@ -27,7 +27,7 @@ export const componentsPlugin =
 
       define: getDefine(options),
 
-      extendsBundlerOptions: (bundlerOptions, app): void => {
+      extendsBundlerOptions: (bundlerOptions): void => {
         if (options.components?.includes("ArtPlayer"))
           addViteOptimizeDepsInclude(bundlerOptions, app, "artplayer");
         if (options.components?.includes("VidStack"))
@@ -36,6 +36,6 @@ export const componentsPlugin =
         addViteSsrNoExternal(bundlerOptions, app, ["@vuepress/helper", "vuepress-shared"]);
       },
 
-      clientConfigFile: (app) => prepareConfigFile(app, options),
+      clientConfigFile: () => prepareConfigFile(app, options),
     };
   };

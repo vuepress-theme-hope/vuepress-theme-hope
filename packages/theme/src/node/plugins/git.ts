@@ -6,9 +6,11 @@ import type { App } from "vuepress/core";
 import type { ThemeData } from "../../shared/index.js";
 
 /**
- * @private
- *
  * Composition Api to use `@vuepress/plugin-git`
+ *
+ * @param app - VuePress app instance
+ * @param options - User options
+ * @param themeData - Theme data
  */
 export const useGitPlugin = (
   app: App,
@@ -35,9 +37,9 @@ export const useGitPlugin = (
 };
 
 /**
- * @private
- *
  * Composition Api to remove `@vuepress/plugin-git`
+ *
+ * @param app - VuePress app instance
  */
 export const removeGitPlugin = (app: App): void => {
   const { plugins } = app.pluginApi;

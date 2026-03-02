@@ -72,9 +72,9 @@ export default defineComponent({
     const locale = useLocaleConfig(SITE_INFO_LOCALES);
 
     const repo = computed(() => {
-      const { repo } = props;
+      const value = props.repo;
 
-      return isArray(repo) ? repo : repo ? [repo] : null;
+      return isArray(value) ? value : value ? [value] : null;
     });
 
     return (): VNode =>

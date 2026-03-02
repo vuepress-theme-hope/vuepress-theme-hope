@@ -7,6 +7,7 @@ const HASH_REGEXP = /#.*$/u;
  * Get hash from path
  *
  * @param path link path
+ * @returns hash
  */
 export const getHash = (path: string): string => {
   const match = HASH_REGEXP.exec(path);

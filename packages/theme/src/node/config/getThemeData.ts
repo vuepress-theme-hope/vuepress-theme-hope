@@ -24,9 +24,12 @@ const ROOT_DISALLOW_CONFIG = new Set([
 ]);
 
 /**
- * @private
- *
  * Get client-side `themeData`
+ *
+ * @param app - VuePress app instance
+ * @param themeOptions - Theme options
+ * @param themeStatus - Theme status
+ * @returns Theme data for client
  */
 export const getThemeData = (
   app: App,

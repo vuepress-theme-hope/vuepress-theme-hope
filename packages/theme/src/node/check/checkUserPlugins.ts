@@ -6,9 +6,9 @@ import { PLUGIN_CHECKLIST } from "./utils.js";
 import { logger } from "../utils.js";
 
 /**
- * @private
- *
  * Check user plugin options for noob users
+ *
+ * @param app - VuePress app instance
  */
 export const checkUserPlugins = (app: App): void => {
   PLUGIN_CHECKLIST.forEach(([pluginName, optionName, hint = ""]) => {

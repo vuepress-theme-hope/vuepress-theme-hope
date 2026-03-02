@@ -43,6 +43,7 @@ export const preProcessorConfig: Record<
   },
 };
 
+// oxlint-disable-next-line id-length
 export const h = (
   tag: string,
   attrs?: Record<string, string>,

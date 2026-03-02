@@ -9,6 +9,8 @@ const isPlainObject = <InferredType extends IAnyObject = IAnyObject>(
 /**
  * Deep merge objects to the first one
  *
+ * @param originObject Object to be merged into
+ * @param overrideObjects Objects to merge into the first one
  * @returns Merged object
  */
 export const deepAssign = <

@@ -34,6 +34,8 @@ export default defineComponent({
             }
             break;
           }
+          // do nothing for other keys
+          default:
         }
       }
     });

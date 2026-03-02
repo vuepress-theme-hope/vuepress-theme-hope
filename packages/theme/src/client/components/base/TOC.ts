@@ -50,7 +50,8 @@ export default defineComponent({
         ? { ...DEFAULT_TOC_OPTIONS, ...config }
         : (config ?? true)
           ? DEFAULT_TOC_OPTIONS
-          : undefined;
+          : // oxlint-disable-next-line no-undefined
+            undefined;
     });
 
     const headers = useHeaders(tocOptions);
@@ -138,12 +139,12 @@ export default defineComponent({
         () => title,
       );
 
-    const renderChildren = (headers: PageHeader[]): VNode | null =>
-      headers.length > 0
+    const renderChildren = (pageHeaders: PageHeader[]): VNode | null =>
+      pageHeaders.length > 0
         ? h(
             "ul",
             { class: "vp-toc-list" },
-            headers.map((header) => {
+            pageHeaders.map((header) => {
               const children = renderChildren(header.children);
 
               return [

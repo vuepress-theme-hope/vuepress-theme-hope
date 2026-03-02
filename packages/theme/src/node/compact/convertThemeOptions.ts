@@ -1,3 +1,4 @@
+// oxlint-disable max-lines
 import { entries, isArray, isPlainObject } from "@vuepress/helper";
 import { colors } from "vuepress/utils";
 import { createConverter } from "vuepress-shared";
@@ -16,6 +17,10 @@ const DEPRECATED_THEME_OPTIONS: [string, string][] = [
 
 /**
  * @deprecated You should use V2 standard options and avoid using it
+ *
+ * @param options - Theme options
+ * @param plugins - Theme plugins options
+ * @param localePath - Locale path
  */
 const convertBlogOptions = (
   options: Record<string, unknown>,
@@ -61,6 +66,9 @@ const convertBlogOptions = (
 
 /**
  * @deprecated You should use V2 standard options and avoid using it
+ *
+ * @param themeLocaleOptions - Theme locale options
+ * @param localePath - Locale path
  */
 const convertFooterOptions = (
   themeLocaleOptions: Record<string, unknown>,
@@ -99,8 +107,10 @@ const convertFooterOptions = (
 
 /**
  * @deprecated You should use V2 standard options and avoid using it
+ *
+ * @param themeOptions - Theme options
  */
-// oxlint-disable-next-line max-statements
+// oxlint-disable-next-line complexity, max-lines-per-function, max-statements
 const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
   const { deprecatedLogger } = createConverter("theme plugin options");
 
@@ -603,7 +613,11 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
 
 /**
  * @deprecated You should use V2 standard options and avoid using it
+ *
+ * @param themeOptions - Theme options
+ * @returns Converted theme options
  */
+// oxlint-disable-next-line max-lines-per-function
 export const convertThemeOptions = (themeOptions: Record<string, unknown>): ThemeOptions => {
   const { deprecatedLogger, droppedLogger } = createConverter("theme options");
 

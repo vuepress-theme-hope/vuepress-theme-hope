@@ -14,9 +14,9 @@ import { convertFrontmatter } from "../compact/index.js";
 import type { ThemeBehaviorOptions } from "../typings/index.js";
 
 /**
- * @private
+ * Inject basic page info to routeMeta
  *
- * Inject basic page info
+ * @param page - page to inject info
  */
 export const injectPageInfo = (page: Page<ThemePageData>): void => {
   const frontmatter = page.frontmatter as

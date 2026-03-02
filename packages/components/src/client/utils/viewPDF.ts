@@ -131,6 +131,7 @@ export interface ViewPDFOptions extends Omit<AddPDFViewerOptions, "embedType"> {
 
 const DEFAULT_PDF_JS_HINT = "pdfjs url is not defined";
 
+// oxlint-disable-next-line complexity
 export const viewPDF = (
   targetSelector: string | HTMLElement | null,
   { url, title, hint = DEFAULT_PDF_JS_HINT, options = {}, pdfjs }: ViewPDFOptions,

@@ -12,9 +12,6 @@ import type { App } from "vuepress/core";
 const VITE_DEFAULT_CONDITIONS = ["module", "browser", "development|production"];
 const WEBPACK_DEFAULT_CONDITION_NAMES = ["browser", "import", "default"];
 
-/**
- * @private
- */
 export const extendsBundlerOptions = (bundlerOptions: unknown, app: App, custom = false): void => {
   addViteConfig(bundlerOptions, app, {
     build: {

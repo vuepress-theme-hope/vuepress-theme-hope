@@ -4,9 +4,11 @@ import type { Plugin } from "vuepress/core";
 import type { ThemeMarkdownOptions } from "../typings/index.js";
 
 /**
- * @private
- *
  * Resolve options for `@vuepress/plugin-markdown-image`
+ *
+ * @param options - theme markdown options
+ *
+ * @returns markdown image plugin instance or null
  */
 export const getMarkdownImagePlugin = (options: ThemeMarkdownOptions): Plugin | null =>
   markdownImagePlugin({

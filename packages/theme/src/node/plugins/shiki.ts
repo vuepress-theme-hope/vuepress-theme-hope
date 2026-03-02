@@ -5,9 +5,10 @@ import type { App } from "vuepress/core";
 import { isHighlighterPlugin } from "./utils.js";
 
 /**
- * @private
- *
  * Composition Api to use `@vuepress/plugin-shiki`
+ *
+ * @param app - VuePress app
+ * @param options - Shiki plugin options
  */
 export const useShikiPlugin = (app: App, options: ShikiPluginOptions = {}): void => {
   const { plugins } = app.pluginApi;
@@ -31,9 +32,9 @@ export const useShikiPlugin = (app: App, options: ShikiPluginOptions = {}): void
 };
 
 /**
- * @private
- *
  * Composition Api to remove `@vuepress/plugin-shiki`
+ *
+ * @param app - VuePress app
  */
 export const removeShikiPlugin = (app: App): void => {
   const { plugins } = app.pluginApi;

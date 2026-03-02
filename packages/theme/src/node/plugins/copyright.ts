@@ -7,9 +7,12 @@ import type { ThemeData, ThemeNormalPageFrontmatter } from "../../shared/index.j
 import { getAuthor } from "../../shared/index.js";
 
 /**
- * @private
+ * Resolve options for `@vuepress/plugin-copyright`
  *
- * Resolve options for vuepress-plugin-copyright
+ * @param themeData - Theme data
+ * @param options - User options
+ * @param hostname - Hostname
+ * @returns Copyright plugin instance or `null`
  */
 export const getCopyrightPlugin = (
   themeData: ThemeData,

@@ -4,7 +4,6 @@ import { fs } from "vuepress/utils";
 import type { ThemeData } from "../../shared/index.js";
 import { TEMPLATE_FOLDER, logger } from "../utils.js";
 
-/** @private */
 export const getSocialMediaIcons = (themeData: ThemeData): Record<string, string> => {
   const iconData: Record<string, string> = {};
 

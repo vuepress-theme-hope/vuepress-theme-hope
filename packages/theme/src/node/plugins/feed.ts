@@ -15,9 +15,15 @@ try {
 }
 
 /**
- * @private
- *
  * Resolve options for `@vuepress/plugin-feed`
+ *
+ * @param themeData Theme data
+ * @param options Feed plugin options or a boolean to enable it with default options
+ * @param hostname Hostname for feed plugin
+ * @param favicon Favicon for feed plugin
+ * @param compact Whether to use compact mode for feed plugin
+ *
+ * @returns Feed plugin instance or null
  */
 // oxlint-disable-next-line max-params
 export const getFeedPlugin = (

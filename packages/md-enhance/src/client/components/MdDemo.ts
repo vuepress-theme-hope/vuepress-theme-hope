@@ -43,7 +43,7 @@ export default defineComponent({
     });
 
     useEventListener("afterprint", () => {
-      if (previousState !== null) toggleIsExpand(previousState);
+      if (previousState != null) toggleIsExpand(previousState);
 
       previousState = null;
     });

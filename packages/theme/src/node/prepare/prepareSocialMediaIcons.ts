@@ -1,8 +1,5 @@
 import type { App } from "vuepress/core";
 
-/**
- * @private
- */
 export const prepareSocialMediaIcons = async (
   app: App,
   icons?: Record<string, string> | null,

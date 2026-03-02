@@ -17,9 +17,6 @@ export interface DirInfo {
 
 export type StructureInfo = DirInfo | FileInfo;
 
-/**
- * @private
- */
 export const getStructureInfo = (pages: Page[], scope: string): StructureInfo[] => {
   const relatedPages = pages.filter(
     ({ filePathRelative, pathLocale }) =>

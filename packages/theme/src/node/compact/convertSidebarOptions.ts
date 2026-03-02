@@ -51,10 +51,14 @@ const handleArraySidebarOptions = (
 
       return null;
     })
-    .filter((item): item is SidebarItemOptions => item !== null);
+    .filter((item): item is SidebarItemOptions => item != null);
 
 /**
  * @deprecated You should use V2 standard sidebar config and avoid using it
+ *
+ * @param config - Original sidebar config
+ * @param localePath - Current locale path, used for logger
+ * @returns Converted sidebar config
  */
 export const convertSidebarOptions = (config: unknown, localePath = ""): SidebarOptions => {
   if (config === false || config === "structure") return config;
@@ -64,11 +68,12 @@ export const convertSidebarOptions = (config: unknown, localePath = ""): Sidebar
   if (isPlainObject(config)) {
     return fromEntries(
       entries(config).map<[string, SidebarArrayOptions | "structure" | false]>(([key, value]) => {
-        if (isArray(value))
-          {return [
+        if (isArray(value)) {
+          return [
             key,
             handleArraySidebarOptions(value as SidebarArrayOptions, `${localePath} > ${key}`),
-          ];}
+          ];
+        }
 
         if (value === "structure" || value === false) return [key, value as "structure" | false];
 

@@ -27,6 +27,7 @@ export const legacyCodeDemo: PluginSimple = (md) => {
       const code: Record<string, string> = {};
 
       for (let i = index; i < tokens.length; i++) {
+        // oxlint-disable-next-line no-shadow
         const { type, content, info } = tokens[i];
         const language = info
           ? (/^([^ :[{]+)/.exec(md.utils.unescapeAll(info).trim())?.[1] ?? "text")

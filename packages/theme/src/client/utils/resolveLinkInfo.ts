@@ -5,6 +5,10 @@ import type { AutoLinkOptions, PageInfoData } from "../../shared/index.js";
 /**
  * Resolve AutoLink props from string
  *
+ * @param item - The string to resolve
+ * @param preferFull - Whether to prefer full title
+ * @param currentPath - The current page path
+ * @returns AutoLink props
  */
 export const resolveLinkInfo = (
   item: string,

@@ -1,4 +1,5 @@
-/* eslint-disable no-console */
+// oxlint-disable no-console
+// oxlint-disable import/no-dynamic-require
 import { createRequire } from "node:module";
 
 import { keys } from "@vuepress/helper";

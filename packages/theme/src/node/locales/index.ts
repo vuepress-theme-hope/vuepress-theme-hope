@@ -1,3 +1,4 @@
+// oxlint-disable import/max-dependencies
 import type { DefaultLocaleInfo } from "@vuepress/helper";
 
 import { deLocale } from "./de.js";

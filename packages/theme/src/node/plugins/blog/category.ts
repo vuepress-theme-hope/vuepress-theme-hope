@@ -10,7 +10,6 @@ import type {
 } from "../../../shared/index.js";
 import type { BlogOptions } from "../../typings/index.js";
 
-/** @private */
 export const getBlogCategoryCategory = (
   options: BlogOptions,
   themeData: ThemeData,
@@ -45,7 +44,6 @@ export const getBlogCategoryCategory = (
     { routeMeta: ArticleInfoData }
   >;
 
-/** @private */
 export const getBlogTagCategory = (
   options: BlogOptions,
   themeData: ThemeData,

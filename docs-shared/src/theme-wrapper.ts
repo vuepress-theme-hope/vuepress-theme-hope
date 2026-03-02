@@ -7,6 +7,7 @@ const IS_GITEE = "GITEE" in process.env;
 const IS_NETLIFY = "NETLIFY" in process.env;
 const IS_GITHUB = !IS_GITEE && !IS_NETLIFY;
 
+// oxlint-disable-next-line max-lines-per-function
 export const theme = (
   name: string,
   { markdown = {}, plugins = {}, ...options }: ThemeOptions,

@@ -12,9 +12,10 @@ try {
 }
 
 /**
- * @private
- *
  * Composition Api to use `@vuepress/plugin-prismjs`
+ *
+ * @param app - VuePress app instance
+ * @param options - User options
  */
 export const usePrismjsPlugin = (app: App, options: PrismjsPluginOptions = {}): void => {
   const { plugins } = app.pluginApi;
@@ -30,9 +31,9 @@ export const usePrismjsPlugin = (app: App, options: PrismjsPluginOptions = {}): 
 };
 
 /**
- * @private
- *
  * Composition Api to remove `@vuepress/plugin-prismjs`
+ *
+ * @param app - VuePress app instance
  */
 export const removePrismjsPlugin = (app: App): void => {
   const { plugins } = app.pluginApi;

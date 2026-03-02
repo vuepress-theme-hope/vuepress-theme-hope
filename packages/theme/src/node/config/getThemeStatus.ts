@@ -19,7 +19,6 @@ export interface ThemeStatus {
   hasRepo: boolean;
 }
 
-/** @private */
 export const getThemeStatus = (app: App, themeOptions: ThemeOptions): ThemeStatus => {
   const { locales } = app.options;
   const { locales: themeLocales = {}, plugins = {} } = themeOptions;

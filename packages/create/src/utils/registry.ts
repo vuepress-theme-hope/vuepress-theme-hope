@@ -29,9 +29,9 @@ export const getRegistry = async (
   if (lang === "zh") {
     const registry = await select({
       message: "选择你想使用的源",
-      choices: ["国内镜像源", "当前源"].map((registry) => ({
-        name: registry,
-        value: registry,
+      choices: ["国内镜像源", "当前源"].map((item) => ({
+        name: item,
+        value: item,
       })),
     });
 

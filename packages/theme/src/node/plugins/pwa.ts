@@ -11,10 +11,13 @@ try {
 } catch {
   // Do nothing
 }
+
 /**
- * @private
- *
  * Resolve options for `@vuepress/plugin-pwa`
+ *
+ * @param options PWA plugin options or a boolean to enable it with default options
+ * @param favicon Favicon for PWA plugin
+ * @returns PWA plugin instance or null
  */
 export const getPwaPlugin = (
   options?: PwaPluginOptions | boolean,

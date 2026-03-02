@@ -29,6 +29,31 @@
     //   "error",
     //   { "ignores": ["Blog", "Layout", "Slides"] },
     // ],
+    "id-length": [
+      "warn",
+      {
+        "min": 2,
+        "exceptions": [
+          // sorting
+          "a",
+          "b",
+          // svg path
+          "d",
+          // loops
+          "i",
+          "j",
+          "k",
+          // position
+          "x",
+          "y",
+          "z",
+          // Type parameter
+          "T",
+          // parameter name for unused variables
+          "_"
+        ]
+      }
+    ],
     "no-warning-comments": "off",
     "prefer-object-spread": "off"
   },
@@ -69,6 +94,19 @@
       "rules": {
         "import/no-nodejs-modules": "off",
         "no-console": "off"
+      }
+    },
+    {
+      "files": ["*.cjs", "*.cts"],
+      "rules": {
+        "import/no-commonjs": "off",
+        "import/unambiguous": "off"
+      }
+    },
+    {
+      "files": ["**/node/**/locales/*.ts", "**/node/**/locales.ts"],
+      "rules": {
+        "max-lines": "off"
       }
     }
   ]

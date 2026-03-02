@@ -58,7 +58,7 @@ export const mdEnhancePlugin =
           isPlainObject(options.vuePlayground) && options.vuePlayground.editor === "monaco",
       }),
 
-      extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
+      extendsBundlerOptions: (bundlerOptions): void => {
         addViteSsrNoExternal(bundlerOptions, app, [
           "@vuepress/helper",
           "fflate",
@@ -117,6 +117,6 @@ export const mdEnhancePlugin =
         if (status.sandpack) md.use(sandpack);
       },
 
-      clientConfigFile: (app) => prepareConfigFile(app, options, status, legacy),
+      clientConfigFile: () => prepareConfigFile(app, options, status, legacy),
     };
   };
