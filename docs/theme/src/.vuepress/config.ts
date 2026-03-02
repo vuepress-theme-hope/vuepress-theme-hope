@@ -36,18 +36,9 @@ export default config("", {
   pagePatterns: ["**/*.md", "!**/*.snippet.md", "!.vuepress", "!node_modules"],
 
   alias: {
-    "@FlowChartPlayground": path.resolve(
-      __dirname,
-      "./components/FlowChartPlayground.js",
-    ),
-    "@KatexPlayground": path.resolve(
-      __dirname,
-      "./components/KatexPlayground.js",
-    ),
-    "@ToggleRTLButton": path.resolve(
-      __dirname,
-      "./components/ToggleRTLButton.js",
-    ),
+    "@FlowChartPlayground": path.resolve(__dirname, "./components/FlowChartPlayground.js"),
+    "@KatexPlayground": path.resolve(__dirname, "./components/KatexPlayground.js"),
+    "@ToggleRTLButton": path.resolve(__dirname, "./components/ToggleRTLButton.js"),
   },
 
   clientConfigFile: path.resolve(__dirname, "./client.ts"),

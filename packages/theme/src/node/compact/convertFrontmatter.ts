@@ -31,7 +31,12 @@ const DROPPED_FRONTMATTER_OPTIONS: [string, string][] = [
 
 /**
  * @deprecated You should use V2 standard frontmatter and avoid using it
+ *
+ * @param frontmatter - Page frontmatter
+ * @param filePathRelative - Page file path relative to source directory
+ * @returns Converted frontmatter
  */
+// oxlint-disable-next-line max-lines-per-function
 export const convertFrontmatter = (
   frontmatter: PageFrontmatter & Record<string, unknown>,
   filePathRelative: string,
@@ -57,18 +62,14 @@ export const convertFrontmatter = (
 
   if ("meta" in frontmatter) {
     logger.warn(
-      `${colors.magenta(
-        "meta",
-      )} in frontmatter is deprecated in V2, please use ${colors.magenta(
+      `${colors.magenta("meta")} in frontmatter is deprecated in V2, please use ${colors.magenta(
         "head",
       )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`,
     );
 
     frontmatter.head = [
       ...(frontmatter.head ?? []),
-      ...(frontmatter.meta as Record<string, string>[]).map<HeadConfig>(
-        (item) => ["meta", item],
-      ),
+      ...(frontmatter.meta as Record<string, string>[]).map<HeadConfig>((item) => ["meta", item]),
     ];
 
     delete frontmatter.meta;
@@ -76,9 +77,7 @@ export const convertFrontmatter = (
 
   if ("canonicalUrl" in frontmatter && isString(frontmatter.canonicalUrl)) {
     logger.warn(
-      `${colors.magenta(
-        "canonicalUrl",
-      )} in frontmatter is deprecated, please use ${colors.magenta(
+      `${colors.magenta("canonicalUrl")} in frontmatter is deprecated, please use ${colors.magenta(
         "head",
       )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`,
     );
@@ -105,7 +104,7 @@ export const convertFrontmatter = (
     }
 
     // Check project homepage
-    if (!("layout" in frontmatter))
+    if (!("layout" in frontmatter)) {
       DEPRECATED_HOME_FRONTMATTER_OPTIONS.forEach(([oldOption, newOption]) => {
         deprecatedLogger({
           options: frontmatter,
@@ -114,6 +113,7 @@ export const convertFrontmatter = (
           scope: filePathRelative,
         });
       });
+    }
   }
 
   if (frontmatter.layout === "SlidePage") {
@@ -130,32 +130,30 @@ export const convertFrontmatter = (
 
   if (typeof frontmatter.sidebarDepth === "number") {
     logger.warn(
-      `${colors.magenta(
-        "sidebarDepth",
-      )} in frontmatter is deprecated, please use ${colors.magenta(
+      `${colors.magenta("sidebarDepth")} in frontmatter is deprecated, please use ${colors.magenta(
         "toc.levels",
       )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`,
     );
 
-    if (frontmatter.toc !== false)
+    if (frontmatter.toc !== false) {
       frontmatter.toc = {
         levels: [2, frontmatter.sidebarDepth + 2],
       };
+    }
   }
 
   if (typeof frontmatter.headerDepth === "number") {
     logger.warn(
-      `${colors.magenta(
-        "headerDepth",
-      )} in frontmatter is deprecated, please use ${colors.magenta(
+      `${colors.magenta("headerDepth")} in frontmatter is deprecated, please use ${colors.magenta(
         "toc.levels",
       )} instead.${filePathRelative ? `Found in ${filePathRelative}` : ""}`,
     );
 
-    if (frontmatter.toc !== false)
+    if (frontmatter.toc !== false) {
       frontmatter.toc = {
         levels: [2, frontmatter.headerDepth + 2],
       };
+    }
   }
 
   return frontmatter;

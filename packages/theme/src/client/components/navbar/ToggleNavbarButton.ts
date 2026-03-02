@@ -7,10 +7,10 @@ export interface ToggleNavbarButtonProps {
   active?: boolean;
 }
 
-const ToggleNavbarButton: FunctionalComponent<
-  ToggleNavbarButtonProps,
-  { toggle: () => void }
-> = ({ active = false }, { emit }): VNode =>
+const ToggleNavbarButton: FunctionalComponent<ToggleNavbarButtonProps, { toggle: () => void }> = (
+  { active = false },
+  { emit },
+): VNode =>
   h(
     "button",
     {

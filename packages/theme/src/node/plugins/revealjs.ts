@@ -13,9 +13,10 @@ try {
 }
 
 /**
- * @private
- *
  * Resolve options for `@vuepress/plugin-revealjs`
+ *
+ * @param options Reveal.js plugin options or a boolean to enable it with default options
+ * @returns Reveal.js plugin instance or null
  */
 export const getRevealJsPlugin = (
   options?: Omit<RevealJsPluginOptions, "layout"> | boolean,

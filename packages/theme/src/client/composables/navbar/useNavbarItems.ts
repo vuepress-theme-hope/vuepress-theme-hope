@@ -22,7 +22,7 @@ export const resolveNavbarItem = (
 ): NavbarItem => {
   if (isString(item)) return resolveLinkInfo(resolvePrefix(prefix, item));
 
-  if ("children" in item)
+  if ("children" in item) {
     return {
       ...item,
       ...(item.link && isLinkInternal(item.link)
@@ -35,6 +35,7 @@ export const resolveNavbarItem = (
             | AutoLinkOptions,
       ),
     };
+  }
 
   return {
     ...item,
@@ -48,7 +49,6 @@ export const useNavbarItems = (): ComputedRef<NavbarItem[]> => {
   const themeLocaleData = useThemeLocale();
 
   return computed(() =>
-    // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
     (themeLocaleData.value.navbar || []).map((item) => resolveNavbarItem(item)),
   );
 };

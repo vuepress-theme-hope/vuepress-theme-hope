@@ -298,10 +298,7 @@ const defineSandpackConfig = (config: SandpackConfig)=> void
 ### defineVuePlaygroundConfig
 
 ```ts
-export interface VuePlaygroundOptions extends Omit<
-  ReplProps,
-  "store" | "editor"
-> {
+export interface VuePlaygroundOptions extends Omit<ReplProps, "store" | "editor"> {
   /**
    * 指定 vue 版本
    */

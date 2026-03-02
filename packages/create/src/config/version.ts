@@ -8,9 +8,7 @@ interface PackageJson extends Record<string, unknown> {
 
 export const packageJSON = JSON.parse(
   readFileSync(
-    fileURLToPath(
-      import.meta.resolve("create-vuepress-theme-hope/package.json"),
-    ),
-    "utf8",
+    fileURLToPath(import.meta.resolve("create-vuepress-theme-hope/package.json")),
+    "utf-8",
   ),
 ) as PackageJson;

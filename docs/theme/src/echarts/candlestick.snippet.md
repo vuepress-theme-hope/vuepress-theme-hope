@@ -187,8 +187,7 @@ const option = {
       },
       markPoint: {
         label: {
-          formatter: (param) =>
-            param == null ? "" : Math.round(param.value).toString(),
+          formatter: (param) => (param == null ? "" : Math.round(param.value).toString()),
         },
         data: [
           {

@@ -93,9 +93,10 @@ export const KNOWN_THEME_MARKDOWN_OPTIONS = [
 ];
 
 /**
- * @private
- *
  * Check vuepress markdown options for noob users
+ *
+ * @param vuepressMarkdownOptions - VuePress markdown options
+ * @param themeMarkdownOptions - Theme markdown options
  */
 export const checkVuePressMarkdownOptions = (
   vuepressMarkdownOptions: VuePressMarkdownOptions,
@@ -105,21 +106,16 @@ export const checkVuePressMarkdownOptions = (
     if (!KNOWN_CORE_MARKDOWN_OPTIONS.includes(key)) {
       if (KNOWN_THEME_MARKDOWN_OPTIONS.includes(key)) {
         logger.warn(
-          `You are setting "${colors.magenta(
-            `markdown.${key}`,
-          )}" option in ${colors.cyan(
+          `You are setting "${colors.magenta(`markdown.${key}`)}" option in ${colors.cyan(
             "vuepress config file",
           )}, but it's not supported by VuePress. You need to set the option in ${colors.cyan("theme options")}.`,
         );
 
         // @ts-expect-error: we are sure that the key exists in themeMarkdownOptions
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         themeMarkdownOptions[key] = vuepressMarkdownOptions[key];
       } else {
         logger.warn(
-          `You are setting "${colors.magenta(
-            `markdown.${key}`,
-          )}" option in ${colors.cyan(
+          `You are setting "${colors.magenta(`markdown.${key}`)}" option in ${colors.cyan(
             "vuepress config file",
           )}, but it's not supported by VuePress.`,
         );
@@ -129,9 +125,10 @@ export const checkVuePressMarkdownOptions = (
 };
 
 /**
- * @private
- *
  * Check theme plugin options for noob users
+ *
+ * @param vuepressMarkdownOptions - VuePress markdown options
+ * @param themeMarkdownOptions - Theme markdown options
  */
 export const checkThemeMarkdownOptions = (
   vuepressMarkdownOptions: VuePressMarkdownOptions,
@@ -141,20 +138,15 @@ export const checkThemeMarkdownOptions = (
     if (!KNOWN_THEME_MARKDOWN_OPTIONS.includes(key)) {
       if (KNOWN_CORE_MARKDOWN_OPTIONS.includes(key)) {
         logger.warn(
-          `You are setting "${colors.magenta(
-            `markdown.${key}`,
-          )}" option in ${colors.cyan(
+          `You are setting "${colors.magenta(`markdown.${key}`)}" option in ${colors.cyan(
             "theme options",
           )}, but it's not supported by theme. You need to set the option in ${colors.cyan("vuepress config file")}.`,
         );
         // @ts-expect-error: we are sure that the key exists in vuepressMarkdownOptions
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         vuepressMarkdownOptions[key] = themeMarkdownOptions[key];
       } else {
         logger.warn(
-          `You are setting "${colors.magenta(
-            `markdown.${key}`,
-          )}" option in ${colors.cyan(
+          `You are setting "${colors.magenta(`markdown.${key}`)}" option in ${colors.cyan(
             "theme options",
           )}, but it's not supported by theme.`,
         );

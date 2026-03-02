@@ -85,15 +85,9 @@ describe("should generate themeData correctly", () => {
 
     expect(result).not.toHaveProperty("navbar");
     expect(result.locales).toBeTypeOf("object");
-    expect(new Set(Object.keys(result.locales))).toEqual(
-      new Set(["/", "/zh/"]),
-    );
+    expect(new Set(Object.keys(result.locales))).toEqual(new Set(["/", "/zh/"]));
     expect(result.locales["/"].navbar).toEqual(["/", "/guide", "/about"]);
-    expect(result.locales["/zh/"].navbar).toEqual([
-      "/zh/",
-      "/zh/guide",
-      "/zh/about",
-    ]);
+    expect(result.locales["/zh/"].navbar).toEqual(["/zh/", "/zh/guide", "/zh/about"]);
   });
 
   it("should fallback to root if locale config is missing", () => {
@@ -124,11 +118,7 @@ describe("should generate themeData correctly", () => {
     const result = getThemeData(app, themeOptions, getThemeStatus(app, {}));
 
     expect(result.locales["/"].navbar).toEqual(["/", "/guide", "/about"]);
-    expect(result.locales["/zh/"].navbar).toEqual([
-      "/zh/",
-      "/zh/guide",
-      "/zh/about",
-    ]);
+    expect(result.locales["/zh/"].navbar).toEqual(["/zh/", "/zh/guide", "/zh/about"]);
   });
 
   it("root only option should not appear in locales", () => {

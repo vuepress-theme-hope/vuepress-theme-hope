@@ -3,18 +3,13 @@
   "version": "2.0.0-rc.99",
   "description": "Shared files for vuepress2",
   "keywords": [
+    "utils",
     "vuepress",
-    "vuepress2",
-    "utils"
+    "vuepress2"
   ],
   "homepage": "https://shared.vuejs.press",
   "bugs": {
     "url": "https://github.comvuepress-theme-hope/vuepress-theme-hope/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/vuepress-theme-hope/vuepress-theme-hope.git",
-    "directory": "packages/shared"
   },
   "license": "MIT",
   "author": {
@@ -22,7 +17,18 @@
     "email": "mister-hope@outlook.com",
     "url": "https://mister-hope.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+    "directory": "packages/shared"
+  },
+  "files": [
+    "lib",
+    "styles"
+  ],
   "type": "module",
+  "main": "./lib/node/index.js",
+  "types": "./lib/node/index.d.ts",
   "exports": {
     ".": "./lib/node/index.js",
     "./client": "./lib/client/index.js",
@@ -31,12 +37,6 @@
     "./styles/*": "./styles/*",
     "./package.json": "./package.json"
   },
-  "main": "./lib/node/index.js",
-  "types": "./lib/node/index.d.ts",
-  "files": [
-    "lib",
-    "styles"
-  ],
   "scripts": {
     "build": "rollup -c rollup.config.ts --configPlugin esbuild",
     "clean": "rimraf --glob ./lib ./*.tsbuildinfo",
@@ -55,7 +55,7 @@
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/plugin-git": "catalog:vuepress",
-    "ora": "9.1.0",
+    "ora": "9.3.0",
     "vite": "7.1.12"
   },
   "peerDependencies": {

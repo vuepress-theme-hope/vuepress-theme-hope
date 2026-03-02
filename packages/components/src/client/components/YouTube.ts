@@ -172,35 +172,31 @@ export default defineComponent({
     );
 
     const params = computed(() => {
-      const params = new URLSearchParams();
+      const searchParams = new URLSearchParams();
 
-      if (props.autoplay) params.set("autoplay", "1");
-      if (props.loop) params.set("loop", "1");
-      if (props.showCc) params.set("cc_load_policy", "1");
-      if (props.showAnnotations) params.set("iv_load_policy", "3");
+      if (props.autoplay) searchParams.set("autoplay", "1");
+      if (props.loop) searchParams.set("loop", "1");
+      if (props.showCc) searchParams.set("cc_load_policy", "1");
+      if (props.showAnnotations) searchParams.set("iv_load_policy", "3");
 
-      if (props.start) params.set("start", props.start.toString());
-      if (props.end) params.set("end", props.end.toString());
+      if (props.start) searchParams.set("start", props.start.toString());
+      if (props.end) searchParams.set("end", props.end.toString());
 
-      // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-      params.set("hl", props.uiLang || lang.value);
-      // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-      params.set("cc_lang_pref", props.defaultCcLang || lang.value);
-      params.set("color", "white");
+      searchParams.set("hl", props.uiLang || lang.value);
+      searchParams.set("cc_lang_pref", props.defaultCcLang || lang.value);
+      searchParams.set("color", "white");
 
-      if (props.disableControls) params.set("controls", "0");
-      if (props.disableFullscreen) params.set("fs", "0");
-      if (props.disableKeyboard) params.set("disablekb", "1");
+      if (props.disableControls) searchParams.set("controls", "0");
+      if (props.disableFullscreen) searchParams.set("fs", "0");
+      if (props.disableKeyboard) searchParams.set("disablekb", "1");
 
-      if (props.playlist) params.set("playlist", props.playlist);
+      if (props.playlist) searchParams.set("playlist", props.playlist);
 
-      return params.toString();
+      return searchParams.toString();
     });
 
     const videoLink = computed(() =>
-      coreURL.value
-        ? `https://www.youtube.com/embed/${coreURL.value}${params.value}`
-        : null,
+      coreURL.value ? `https://www.youtube.com/embed/${coreURL.value}${params.value}` : null,
     );
 
     return (): (VNode | null)[] =>

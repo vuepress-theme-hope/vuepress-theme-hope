@@ -4,11 +4,8 @@ export type LightGalleryOptions = LightGallerySettings;
 
 let lightGalleryOptions: LightGalleryOptions = {};
 
-export const defineLightGalleryConfig = (
-  options: LightGalleryOptions,
-): void => {
+export const defineLightGalleryConfig = (options: LightGalleryOptions): void => {
   lightGalleryOptions = options;
 };
 
-export const useLightGalleryOptions = (): LightGalleryOptions =>
-  lightGalleryOptions;
+export const useLightGalleryOptions = (): LightGalleryOptions => lightGalleryOptions;

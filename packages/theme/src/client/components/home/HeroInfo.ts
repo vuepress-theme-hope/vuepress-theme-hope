@@ -30,16 +30,10 @@ export default defineComponent({
   }>,
 
   setup(_props, { slots }) {
-    const { frontmatter, siteLocale } =
-      useData<ThemeProjectHomePageFrontmatter>();
+    const { frontmatter, siteLocale } = useData<ThemeProjectHomePageFrontmatter>();
 
     const info = computed(() => {
-      const {
-        heroText,
-        tagline,
-        heroStyle,
-        heroFullScreen = false,
-      } = frontmatter.value;
+      const { heroText, tagline, heroStyle, heroFullScreen = false } = frontmatter.value;
 
       return {
         text: heroText ?? (siteLocale.value.title || "Hello"),
@@ -50,8 +44,7 @@ export default defineComponent({
     });
 
     const image = computed(() => {
-      const { heroImage, heroImageDark, heroAlt, heroImageStyle } =
-        frontmatter.value;
+      const { heroImage, heroImageDark, heroAlt, heroImageStyle } = frontmatter.value;
 
       return {
         image: heroImage ? withBase(heroImage) : null,
@@ -77,10 +70,7 @@ export default defineComponent({
       h(
         "header",
         {
-          class: [
-            "vp-hero-info-wrapper",
-            { "hero-fullscreen": info.value.isFullScreen },
-          ],
+          class: ["vp-hero-info-wrapper", { "hero-fullscreen": info.value.isFullScreen }],
           style: info.value.style,
         },
         [
@@ -88,10 +78,7 @@ export default defineComponent({
             bg.value.image
               ? h("div", {
                   class: ["vp-hero-mask", { light: bg.value.imageDark }],
-                  style: [
-                    { "background-image": `url(${bg.value.image})` },
-                    bg.value.style,
-                  ],
+                  style: [{ "background-image": `url(${bg.value.image})` }, bg.value.style],
                 })
               : null,
             bg.value.imageDark
@@ -110,12 +97,7 @@ export default defineComponent({
           h("div", { class: "vp-hero-info" }, [
             slots.heroLogo?.(image.value) ??
               h(DropTransition, { appear: true, group: true }, () => {
-                const {
-                  image: imageLight,
-                  imageDark,
-                  style: imageStyle,
-                  alt,
-                } = image.value;
+                const { image: imageLight, imageDark, style: imageStyle, alt } = image.value;
 
                 return [
                   imageLight
@@ -185,8 +167,7 @@ export default defineComponent({
                   window.scrollTo({
                     top:
                       window.innerHeight -
-                      (document.querySelector("[vp-navbar]")?.clientHeight ??
-                        0),
+                      (document.querySelector("[vp-navbar]")?.clientHeight ?? 0),
                     behavior: "smooth",
                   });
                 },

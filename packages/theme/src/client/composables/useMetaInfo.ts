@@ -24,6 +24,7 @@ export const useMetaInfo = (): MetaInfo => {
   );
 
   const contributors = computed(() => {
+    // oxlint-disable-next-line no-shadow
     const { contributors, home } = frontmatter.value;
 
     return isArray(contributors)
@@ -31,14 +32,11 @@ export const useMetaInfo = (): MetaInfo => {
         ? false
         : (themeLocale.value.contributors ?? true)
       : (contributors ??
-          ((home as boolean | undefined)
-            ? false
-            : (themeLocale.value.contributors ?? true)));
+          ((home as boolean | undefined) ? false : (themeLocale.value.contributors ?? true)));
   });
 
   const lastUpdated = computed(
-    () =>
-      frontmatter.value.lastUpdated ?? themeLocale.value.lastUpdated ?? true,
+    () => frontmatter.value.lastUpdated ?? themeLocale.value.lastUpdated ?? true,
   );
 
   return {

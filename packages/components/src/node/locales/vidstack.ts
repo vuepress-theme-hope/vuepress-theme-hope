@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import type { DefaultLocaleInfo } from "@vuepress/helper";
 
 import type { VidstackLocaleData } from "../../shared/index.js";

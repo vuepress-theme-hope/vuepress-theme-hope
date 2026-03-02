@@ -3,10 +3,10 @@ import { h } from "vue";
 
 import "../../styles/navbar/toggle-sidebar-button.scss";
 
-const ToggleSidebarButton: FunctionalComponent<
-  { onToggle: () => void },
-  { toggle: () => void }
-> = (_, { emit }): VNode =>
+const ToggleSidebarButton: FunctionalComponent<{ onToggle: () => void }, { toggle: () => void }> = (
+  _,
+  { emit },
+): VNode =>
   h(
     "button",
     {

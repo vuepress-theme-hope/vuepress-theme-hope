@@ -22,10 +22,7 @@ const terms = [term, "Mrs.Hope"];
 
 it("getAuthor()", () => {
   expect(getAuthor(authorName)).toEqual([{ name: "Mr.Hope" }]);
-  expect(getAuthor(authorNames)).toEqual([
-    { name: "Mr.Hope" },
-    { name: "Mrs.Hope" },
-  ]);
+  expect(getAuthor(authorNames)).toEqual([{ name: "Mr.Hope" }, { name: "Mrs.Hope" }]);
   expect(getAuthor(author)).toEqual([author]);
   expect(getAuthor(authors)).toEqual(authors);
   // oxlint-disable-next-line unicorn/no-useless-undefined

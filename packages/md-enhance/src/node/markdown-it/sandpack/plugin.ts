@@ -24,10 +24,10 @@ const propsGetter = (sandpackData: SandpackData): Record<string, string> => ({
 });
 
 const jsRunner = (jsCode: string): unknown =>
-  // eslint-disable-next-line @typescript-eslint/no-implied-eval
+  // oxlint-disable-next-line no-new-func
   (new Function(`return ${jsCode};`) as () => unknown)();
 
-// oxlint-disable-next-line max-statements
+// oxlint-disable-next-line complexity, max-statements
 const sandpackRule: RuleBlock = (state, startLine, endLine, silent) => {
   let start = state.bMarks[startLine] + state.tShift[startLine];
   let max = state.eMarks[startLine];
@@ -103,8 +103,7 @@ const sandpackRule: RuleBlock = (state, startLine, endLine, silent) => {
       state.sCount[nextLine] - state.blkIndent < 4
     ) {
       // Check rest of marker
-      for (pos = start + 1; pos <= max; pos++)
-        if (state.src[pos] !== ":") break;
+      for (pos = start + 1; pos <= max; pos++) if (state.src[pos] !== ":") break;
 
       // Closing code fence must be at least as long as the opening one
       if (pos - start >= markerCount) {
@@ -137,11 +136,7 @@ const sandpackRule: RuleBlock = (state, startLine, endLine, silent) => {
   openToken.info = title;
   openToken.map = [startLine, nextLine - (autoClosed ? 1 : 0)];
 
-  state.md.block.tokenize(
-    state,
-    startLine + 1,
-    nextLine - (autoClosed ? 1 : 0),
-  );
+  state.md.block.tokenize(state, startLine + 1, nextLine - (autoClosed ? 1 : 0));
 
   const closeToken = state.push("sandpack_close", "template", -1);
 
@@ -215,11 +210,12 @@ const atMarkerRule =
       ) {
         let openMakerMatched = true;
 
-        for (let index = 0; index < atMarker.length; index++)
+        for (index = 0; index < atMarker.length; index++) {
           if (atMarker[index] !== state.src[start + index]) {
             openMakerMatched = false;
             break;
           }
+        }
 
         if (openMakerMatched) {
           // Found!
@@ -269,14 +265,14 @@ export const sandpack: PluginSimple = (md) => {
   VALID_MARKERS.forEach((marker) => {
     // Note: Here we use an internal variable to make sure tab rule is not registered
     // @ts-expect-error: __rules__ is a private property
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-    if (!md.block.ruler.__rules__.some(({ name }) => name === `at-${marker}`))
+    if (!md.block.ruler.__rules__.some(({ name }) => name === `at-${marker}`)) {
       md.block.ruler.before("fence", `at-${marker}`, atMarkerRule(marker), {
         alt: ["paragraph", "reference", "blockquote", "list"],
       });
+    }
   });
 
-  // oxlint-disable-next-line max-statements
+  // oxlint-disable-next-line complexity, max-statements
   md.renderer.rules.sandpack_open = (tokens, index): string => {
     const { content, info } = tokens[index];
 
@@ -292,14 +288,14 @@ export const sandpack: PluginSimple = (md) => {
     const containerName = content.split(" ", 2)[0].trim();
     const arr = containerName.split("#");
 
-    if (arr.length > 1)
-      sandpackData.template = arr[1] as SandpackPredefinedTemplate;
+    if (arr.length > 1) sandpackData.template = arr[1] as SandpackPredefinedTemplate;
 
     let currentKey: string | null = null;
     let foundOptions = false;
     let foundSetup = false;
 
     for (let i = index; i < tokens.length; i++) {
+      // oxlint-disable-next-line no-shadow
       const { block, type, info, content } = tokens[i];
 
       if (block) {
@@ -318,11 +314,7 @@ export const sandpack: PluginSimple = (md) => {
             hidden: "hidden" in fileAttrs,
             readOnly: "readOnly" in fileAttrs,
           };
-        } else if (
-          type === "file_close" ||
-          type === "setup_open" ||
-          type === "options_open"
-        ) {
+        } else if (type === "file_close" || type === "setup_open" || type === "options_open") {
           currentKey = null;
         }
 
@@ -353,9 +345,7 @@ export const sandpack: PluginSimple = (md) => {
         // Parse setup
         if (foundSetup) {
           if (type === "fence" && (info === "js" || info === "javascript"))
-            sandpackData.customSetup = jsRunner(
-              content.trim(),
-            ) as SandpackSetup;
+            sandpackData.customSetup = jsRunner(content.trim()) as SandpackSetup;
 
           foundSetup = false;
         }
@@ -374,9 +364,7 @@ export const sandpack: PluginSimple = (md) => {
     return `<SandPack ${
       keys(attrs).length > 0
         ? `${entries(attrs)
-            .map(([attr, value]) =>
-              value ? `${attr}="${escapeHtml(value)}"` : attr,
-            )
+            .map(([attr, value]) => (value ? `${attr}="${escapeHtml(value)}"` : attr))
             .join(" ")} `
         : ""
     }${entries(props)

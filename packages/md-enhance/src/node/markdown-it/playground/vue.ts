@@ -6,19 +6,10 @@ import type {
   VuePresetPlaygroundOptions,
 } from "../../typings/index.js";
 
-const VUE_SUPPORTED_EXTENSIONS = new Set([
-  "html",
-  "js",
-  "ts",
-  "vue",
-  "jsx",
-  "tsx",
-  "json",
-]);
+const VUE_SUPPORTED_EXTENSIONS = new Set(["html", "js", "ts", "vue", "jsx", "tsx", "json"]);
 
 const DEFAULT_VUE_CDN = "https://sfc.vuejs.org/vue.runtime.esm-browser.js";
-const DEFAULT_VUE_SERVER_RENDERER_CDN =
-  "https://sfc.vuejs.org/server-renderer.esm-browser.js";
+const DEFAULT_VUE_SERVER_RENDERER_CDN = "https://sfc.vuejs.org/server-renderer.esm-browser.js";
 
 export const getVuePlaygroundPreset = (
   options: VuePresetPlaygroundOptions = {},
@@ -56,9 +47,7 @@ export const getVuePlaygroundPreset = (
                       // Insure vue/server-renderer exists
                       ...(settings.ssr
                         ? {
-                            // eslint-disable-next-line @typescript-eslint/naming-convention
-                            "vue/server-renderer":
-                              DEFAULT_VUE_SERVER_RENDERER_CDN,
+                            "vue/server-renderer": DEFAULT_VUE_SERVER_RENDERER_CDN,
                           }
                         : {}),
                     },
@@ -75,18 +64,18 @@ export const getVuePlaygroundPreset = (
         }),
     );
 
-    if (settings.ssr && !fileInfo["import-map.json"])
+    if (settings.ssr && !fileInfo["import-map.json"]) {
       fileInfo["import-map.json"] = JSON.stringify(
         {
           imports: {
             vue: DEFAULT_VUE_CDN,
-            // eslint-disable-next-line @typescript-eslint/naming-convention
             "vue/server-renderer": DEFAULT_VUE_SERVER_RENDERER_CDN,
           },
         },
         null,
         2,
       );
+    }
 
     return {
       title,

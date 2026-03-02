@@ -38,7 +38,6 @@ export default defineComponent({
 
     const bloggerInfo = computed(() => ({
       name:
-        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         blogOptions.value.name ??
         getAuthor(themeLocale.value.author)[0]?.name ??
         siteLocale.value.title,
@@ -75,7 +74,6 @@ export default defineComponent({
                     "data-balloon-pos": "down",
                     role: "link",
                     onClick: (): void => {
-                      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                       navigate(intro.value!);
                     },
                   }
@@ -92,11 +90,7 @@ export default defineComponent({
                   })
                 : null,
               bloggerInfo.value.name
-                ? h(
-                    "div",
-                    { class: "vp-blogger-name", property: "name" },
-                    bloggerInfo.value.name,
-                  )
+                ? h("div", { class: "vp-blogger-name", property: "name" }, bloggerInfo.value.name)
                 : null,
               bloggerInfo.value.description
                 ? h("div", {
@@ -104,9 +98,7 @@ export default defineComponent({
                     innerHTML: bloggerInfo.value.description,
                   })
                 : null,
-              intro.value
-                ? h("meta", { property: "url", content: withBase(intro.value) })
-                : null,
+              intro.value ? h("meta", { property: "url", content: withBase(intro.value) }) : null,
             ],
           ),
           h(

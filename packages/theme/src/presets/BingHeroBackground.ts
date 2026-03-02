@@ -1,14 +1,6 @@
 import { onClickOutside, useStorage } from "@vueuse/core";
 import type { VNode } from "vue";
-import {
-  Transition,
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  shallowRef,
-} from "vue";
+import { Transition, computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
 import { ClientOnly, useLang } from "vuepress/client";
 
 import "@vuepress/helper/transition/fade-in.css";
@@ -56,7 +48,6 @@ export default defineComponent({
     const currentWallpaper = computed(() => {
       const { index, data } = bingStorage.value;
 
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const langCode = lang.value.toLowerCase().split("-").shift()!;
 
       if (data[index]) {
@@ -152,9 +143,7 @@ export default defineComponent({
                     class: "bing-switch-next",
                     title: "next image",
                     type: "button",
-                    disabled:
-                      bingStorage.value.index ===
-                      bingStorage.value.data.length - 1,
+                    disabled: bingStorage.value.index === bingStorage.value.data.length - 1,
                     onClick: () => {
                       next();
                     },

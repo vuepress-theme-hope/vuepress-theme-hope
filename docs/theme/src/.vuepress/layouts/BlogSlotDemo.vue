@@ -3,11 +3,9 @@ import { useLocale } from "@vuepress/helper/client";
 import { Blog } from "vuepress-theme-hope/blog";
 
 const locale = useLocale({
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   "/": {
     slot: "Slot",
   },
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   "/zh/": {
     slot: "插槽",
   },

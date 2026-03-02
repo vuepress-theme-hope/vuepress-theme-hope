@@ -163,11 +163,7 @@ Site favicon.
     NavbarLinkOptions | NavGroup<NavbarLinkOptions> | string
   >;
   // types for navbar options
-  export type NavbarOptions = (
-    | NavbarLinkOptions
-    | NavbarGroupOptions
-    | string
-  )[];
+  export type NavbarOptions = (NavbarLinkOptions | NavbarGroupOptions | string)[];
   ```
 
 - Details: [Layout → Navbar](../../guide/layout/navbar.md)
@@ -298,16 +294,9 @@ Navbar config
 
   export type SidebarArrayOptions = SidebarItemOptions[];
 
-  export type SidebarObjectOptions = Record<
-    string,
-    SidebarArrayOptions | "structure" | false
-  >;
+  export type SidebarObjectOptions = Record<string, SidebarArrayOptions | "structure" | false>;
 
-  export type SidebarOptions =
-    | SidebarArrayOptions
-    | SidebarObjectOptions
-    | "structure"
-    | false;
+  export type SidebarOptions = SidebarArrayOptions | SidebarObjectOptions | "structure" | false;
   ```
 
 - Details: [Layout → Sidebar](../../guide/layout/sidebar.md)

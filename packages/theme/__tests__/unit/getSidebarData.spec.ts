@@ -23,11 +23,7 @@ describe("should generate sidebarData correctly", () => {
       sidebar: "structure",
     };
 
-    const themeData = getThemeData(
-      app,
-      themeOptions,
-      getThemeStatus(app, themeOptions),
-    );
+    const themeData = getThemeData(app, themeOptions, getThemeStatus(app, themeOptions));
 
     expect(getSidebarData(app, themeData)).toMatchSnapshot();
   });
@@ -45,11 +41,7 @@ describe("should generate sidebarData correctly", () => {
       },
     };
 
-    const themeData = getThemeData(
-      app,
-      themeOptions,
-      getThemeStatus(app, themeOptions),
-    );
+    const themeData = getThemeData(app, themeOptions, getThemeStatus(app, themeOptions));
 
     expect(getSidebarData(app, themeData)).toMatchSnapshot();
   });
@@ -69,11 +61,7 @@ describe("should generate sidebarData correctly", () => {
       },
     };
 
-    const themeData = getThemeData(
-      app,
-      themeOptions,
-      getThemeStatus(app, themeOptions),
-    );
+    const themeData = getThemeData(app, themeOptions, getThemeStatus(app, themeOptions));
 
     expect(getSidebarData(app, themeData)).toMatchSnapshot();
   });

@@ -39,22 +39,17 @@ export default defineComponent({
     let previousState: boolean | null = null;
 
     useEventListener("beforeprint", () => {
-      toggleIsExpand(true);
+      previousState = isExpanded.value;
+      if (!isExpanded.value) toggleIsExpand(true);
     });
 
     useEventListener("afterprint", () => {
-      if (previousState !== null) {
-        toggleIsExpand(previousState);
-      }
-
+      if (previousState === false) toggleIsExpand(false);
       previousState = null;
     });
 
     useResizeObserver(codeContainer, () => {
-      if (isExpanded.value) {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        height.value = `${codeContainer.value!.clientHeight + 14}px`;
-      }
+      if (isExpanded.value) height.value = `${codeContainer.value!.clientHeight + 14}px`;
     });
 
     return (): VNode =>
@@ -63,24 +58,14 @@ export default defineComponent({
           h("button", {
             type: "button",
             title: "toggle",
-            class: [
-              "vp-md-demo-toggle-button",
-              isExpanded.value ? "down" : "end",
-            ],
+            class: ["vp-md-demo-toggle-button", isExpanded.value ? "down" : "end"],
             onClick: () => {
-              height.value = isExpanded.value
-                ? "0"
-                : // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                  `${codeContainer.value!.clientHeight + 14}px`;
+              height.value = isExpanded.value ? "0" : `${codeContainer.value!.clientHeight + 14}px`;
               toggleIsExpand();
             },
           }),
           props.title
-            ? h(
-                "div",
-                { class: "vp-container-title" },
-                decodeURIComponent(props.title),
-              )
+            ? h("div", { class: "vp-container-title" }, decodeURIComponent(props.title))
             : null,
         ]),
 

@@ -1,7 +1,4 @@
-export const getSize = (): Record<
-  "width" | "height" | "left" | "top",
-  number
-> => {
+export const getSize = (): Record<"width" | "height" | "left" | "top", number> => {
   const { availWidth, availHeight } = screen;
   const { screenLeft, screenTop, innerWidth, innerHeight } = window;
   const width = Math.max(availWidth / 2, 600);
@@ -26,9 +23,7 @@ export const openPopupWindow = (
     .open(
       link,
       target,
-      `width=${width},height=${height},left=${left},top=${top},${features.join(
-        ",",
-      )}`,
+      `width=${width},height=${height},left=${left},top=${top},${features.join(",")}`,
     )
     ?.focus();
 };

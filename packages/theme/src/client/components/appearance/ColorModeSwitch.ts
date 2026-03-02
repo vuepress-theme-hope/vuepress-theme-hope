@@ -43,7 +43,7 @@ export default defineComponent({
     const isPure = usePure();
 
     const updateDarkmodeStatus = (): void => {
-      if (config.value === "switch")
+      if (config.value === "switch") {
         status.value = (
           {
             light: "dark",
@@ -51,13 +51,14 @@ export default defineComponent({
             auto: "light",
           } as Record<DarkmodeStatus, DarkmodeStatus>
         )[status.value];
-      else status.value = status.value === "light" ? "dark" : "light";
+      } else {
+        status.value = status.value === "light" ? "dark" : "light";
+      }
     };
 
     const toggleDarkmode = async (event: MouseEvent): Promise<void> => {
       const useViewTransition =
         // @ts-expect-error: Providing backward compatibility
-        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         document.startViewTransition &&
         !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
         !isPure.value;
@@ -71,10 +72,7 @@ export default defineComponent({
       const x = event.clientX;
       const y = event.clientY;
 
-      const endRadius = Math.hypot(
-        Math.max(x, innerWidth - x),
-        Math.max(y, innerHeight - y),
-      );
+      const endRadius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
 
       const oldStatus = isDarkMode.value;
 
@@ -85,18 +83,12 @@ export default defineComponent({
 
       await transition.ready;
 
-      if (isDarkMode.value !== oldStatus)
+      if (isDarkMode.value !== oldStatus) {
         document.documentElement.animate(
           {
             clipPath: isDarkMode.value
-              ? [
-                  `circle(${endRadius}px at ${x}px ${y}px)`,
-                  `circle(0px at ${x}px ${y}px)`,
-                ]
-              : [
-                  `circle(0px at ${x}px ${y}px)`,
-                  `circle(${endRadius}px at ${x}px ${y}px)`,
-                ],
+              ? [`circle(${endRadius}px at ${x}px ${y}px)`, `circle(0px at ${x}px ${y}px)`]
+              : [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`],
           },
           {
             duration: 400,
@@ -105,6 +97,7 @@ export default defineComponent({
               : "::view-transition-new(root)",
           },
         );
+      }
     };
 
     return (): VNode =>

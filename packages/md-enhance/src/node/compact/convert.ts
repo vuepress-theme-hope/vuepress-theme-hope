@@ -9,7 +9,7 @@ import { logger } from "../utils.js";
  * @param options - old markdown enhance plugin options
  * @deprecated
  */
-// oxlint-disable-next-line max-statements
+// oxlint-disable-next-line max-lines-per-function, max-statements
 export const convertOptions = (
   options: MarkdownEnhancePluginOptions & Record<string, unknown>,
 ): void => {
@@ -245,12 +245,13 @@ export const convertOptions = (
     msg: "Please use custom option in @vuepress/plugin-markdown-stylize instead.",
   });
 
-  if (options.card)
+  if (options.card) {
     logger.error(
       `${colors.magenta("card")} is deprecated, please import  ${colors.magenta(
         "VPCard",
       )} from "vuepress-plugin-components" and use it instead.`,
     );
+  }
 
   droppedLogger({
     options,

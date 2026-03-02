@@ -35,10 +35,9 @@ export default defineComponent({
     useMutationObserver(
       pageviewElement,
       () => {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         const count = pageviewElement.value!.textContent;
 
-        if (count && !isNaN(Number(count))) pageViews.value = Number(count);
+        if (count && !Number.isNaN(Number(count))) pageViews.value = Number(count);
       },
       { childList: true },
     );
@@ -49,9 +48,7 @@ export default defineComponent({
             "span",
             {
               class: "page-pageview-info",
-              "aria-label": `${metaLocale.value.views}${
-                isPure.value ? "" : "🔢"
-              }`,
+              "aria-label": `${metaLocale.value.views}${isPure.value ? "" : "🔢"}`,
               ...(isPure.value ? {} : { "data-balloon-pos": "up" }),
             },
             [
@@ -62,12 +59,8 @@ export default defineComponent({
                   ref: pageviewElement,
                   id: "ArtalkPV",
                   class: "vp-pageview waline-pageview-count",
-                  "data-path": isString(props.pageview)
-                    ? props.pageview
-                    : routePath.value,
-                  "data-page-key": isString(props.pageview)
-                    ? props.pageview
-                    : routePath.value,
+                  "data-path": isString(props.pageview) ? props.pageview : routePath.value,
+                  "data-page-key": isString(props.pageview) ? props.pageview : routePath.value,
                 },
                 "...",
               ),

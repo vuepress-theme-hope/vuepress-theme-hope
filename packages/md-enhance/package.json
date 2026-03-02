@@ -3,9 +3,6 @@
   "version": "2.0.0-rc.102",
   "description": "Markdown enhancement plugin for vuepress",
   "keywords": [
-    "vuepress",
-    "vuepress2",
-    "vuepress-plugin",
     "align",
     "attrs",
     "chart",
@@ -24,16 +21,14 @@
     "stylize",
     "subscript",
     "superscript",
-    "tasklist"
+    "tasklist",
+    "vuepress",
+    "vuepress-plugin",
+    "vuepress2"
   ],
   "homepage": "https://plugin-md-enhance.vuejs.press/",
   "bugs": {
     "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
-    "directory": "packages/md-enhance"
   },
   "license": "MIT",
   "author": {
@@ -41,18 +36,23 @@
     "email": "mister-hope@outlook.com",
     "url": "https://mister-hope.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+    "directory": "packages/md-enhance"
+  },
+  "files": [
+    "lib"
+  ],
   "type": "module",
+  "main": "./lib/node/index.js",
+  "types": "./lib/node/index.d.ts",
   "exports": {
     ".": "./lib/node/index.js",
     "./client": "./lib/client/index.js",
     "./client/*": "./lib/client/*",
     "./package.json": "./package.json"
   },
-  "main": "./lib/node/index.js",
-  "types": "./lib/node/index.d.ts",
-  "files": [
-    "lib"
-  ],
   "scripts": {
     "build": "rollup -c rollup.config.ts --configPlugin esbuild",
     "clean": "rimraf --glob ./lib ./*.tsbuildinfo",
@@ -62,8 +62,8 @@
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
-    "@mdit/plugin-container": "^0.22.3",
-    "@mdit/plugin-demo": "^0.22.4",
+    "@mdit/plugin-container": "^0.23.0",
+    "@mdit/plugin-demo": "^0.23.0",
     "@types/markdown-it": "^14.1.2",
     "@vuepress/helper": "catalog:vuepress",
     "@vuepress/plugin-sass-palette": "catalog:vuepress",
@@ -76,7 +76,7 @@
   "devDependencies": {
     "@types/babel__core": "7.20.5",
     "@vuepress/bundler-vite": "catalog:vuepress",
-    "markdown-it": "14.1.0",
+    "markdown-it": "14.1.1",
     "typescript": "5.9.3"
   },
   "peerDependencies": {

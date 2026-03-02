@@ -1,9 +1,4 @@
-export type DarkModeOptions =
-  | "switch"
-  | "auto"
-  | "toggle"
-  | "enable"
-  | "disable";
+export type DarkModeOptions = "switch" | "auto" | "toggle" | "enable" | "disable";
 
 export interface OutlookLocaleData {
   /**

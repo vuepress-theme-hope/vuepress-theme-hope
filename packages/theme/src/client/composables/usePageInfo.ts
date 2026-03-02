@@ -1,9 +1,6 @@
 import { getDate } from "@vuepress/helper/client";
 import type { GitData } from "@vuepress/plugin-git";
-import {
-  useReadingTimeData,
-  useReadingTimeLocale,
-} from "@vuepress/plugin-reading-time/client";
+import { useReadingTimeData, useReadingTimeLocale } from "@vuepress/plugin-reading-time/client";
 import type { ComputedRef } from "vue";
 import { computed, inject } from "vue";
 import { useFrontmatter } from "vuepress/client";
@@ -15,11 +12,7 @@ import { useData } from "@theme-hope/composables/useData";
 import type { PageCategory, PageTag } from "@theme-hope/utils/info/typings";
 
 import { useAuthorInfo } from "./useAuthorInfo.js";
-import type {
-  AuthorInfo,
-  PageInfoType,
-  ThemeBasePageFrontmatter,
-} from "../../shared/index.js";
+import type { AuthorInfo, PageInfoType, ThemeBasePageFrontmatter } from "../../shared/index.js";
 import { getAuthor, getCategory, getTag } from "../../shared/index.js";
 
 export const usePageAuthor = (): ComputedRef<AuthorInfo[]> => {
@@ -38,18 +31,13 @@ export const usePageAuthor = (): ComputedRef<AuthorInfo[]> => {
 
 export const usePageCategory = (): ComputedRef<PageCategory[]> => {
   const frontmatter = useFrontmatter<ThemeBasePageFrontmatter>();
-  const categoryMap = inject<CategoryMapRef | null>(
-    Symbol.for("categoryMap"),
-    null,
-  );
+  const categoryMap = inject<CategoryMapRef | null>(Symbol.for("categoryMap"), null);
 
   return computed(() =>
-    getCategory(frontmatter.value.category ?? frontmatter.value.categories).map(
-      (name) => ({
-        name,
-        path: categoryMap?.value.map[name]?.path ?? "",
-      }),
-    ),
+    getCategory(frontmatter.value.category ?? frontmatter.value.categories).map((name) => ({
+      name,
+      path: categoryMap?.value.map[name]?.path ?? "",
+    })),
   );
 };
 
@@ -66,10 +54,7 @@ export const usePageTag = (): ComputedRef<PageTag[]> => {
 };
 
 export const usePageDate = (): ComputedRef<Date | null> => {
-  const { frontmatter, page } = useData<
-    ThemeBasePageFrontmatter,
-    { git?: GitData }
-  >();
+  const { frontmatter, page } = useData<ThemeBasePageFrontmatter, { git?: GitData }>();
 
   return computed(() => {
     const date = getDate(frontmatter.value.date);
@@ -110,9 +95,7 @@ export const usePageInfo = (): {
       }) as PageInfoProps,
   );
 
-  const items = computed(
-    () => frontmatter.value.pageInfo ?? themeLocale.value.pageInfo ?? null,
-  );
+  const items = computed(() => frontmatter.value.pageInfo ?? themeLocale.value.pageInfo ?? null);
 
   return { info, items };
 };

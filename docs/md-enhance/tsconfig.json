@@ -3,9 +3,5 @@
   "compilerOptions": {
     "rootDir": "./src"
   },
-  "include": [
-    "./src/.vuepress/**/*.ts",
-    "./src/.vuepress/**/*.d.ts",
-    "./src/.vuepress/**/*.vue"
-  ]
+  "include": ["./src/.vuepress/**/*.ts", "./src/.vuepress/**/*.d.ts", "./src/.vuepress/**/*.vue"]
 }

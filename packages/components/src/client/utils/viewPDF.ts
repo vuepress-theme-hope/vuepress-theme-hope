@@ -26,7 +26,7 @@ import { withBase } from "vuepress/client";
 declare const PDFJS_URL: string | null;
 
 const logError = (msg: string): void => {
-  // eslint-disable-next-line no-console
+  // oxlint-disable-next-line no-console
   console.error(`[PDF]: ${msg}`);
 };
 
@@ -34,9 +34,7 @@ const emptyNodeContents = (node: HTMLElement): void => {
   while (node.firstChild) node.firstChild.remove();
 };
 
-const getTargetElement = (
-  targetSelector: string | HTMLElement | null,
-): HTMLElement | null =>
+const getTargetElement = (targetSelector: string | HTMLElement | null): HTMLElement | null =>
   targetSelector instanceof HTMLElement
     ? targetSelector
     : targetSelector === "string"
@@ -44,9 +42,7 @@ const getTargetElement = (
       : document.body;
 
 // Create a fragment identifier for using PDF Open parameters when embedding PDF
-const buildURLFragmentString = (
-  options: Record<string, string | number | boolean>,
-): string => {
+const buildURLFragmentString = (options: Record<string, string | number | boolean>): string => {
   let url = entries(options)
     .map(([key, value]) =>
       key === "noToolbar"
@@ -100,15 +96,11 @@ const addPDFViewer = (
 
   const source = `${
     embedType === "pdfjs"
-      ? `${ensureEndingSlash(
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          withBase(PDFJS_URL!),
-        )}web/viewer.html?file=${encodeURIComponent(url)}`
+      ? `${ensureEndingSlash(withBase(PDFJS_URL!))}web/viewer.html?file=${encodeURIComponent(url)}`
       : url
   }${buildURLFragmentString(options)}`;
 
-  const elementType =
-    embedType === "pdfjs" || embedType === "iframe" ? "iframe" : "embed";
+  const elementType = embedType === "pdfjs" || embedType === "iframe" ? "iframe" : "embed";
   const el = document.createElement(elementType);
 
   el.className = "pdf-viewer";
@@ -122,7 +114,6 @@ const addPDFViewer = (
   target.classList.add("pdf-viewer-container");
   target.append(el);
 
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   return target.querySelector(elementType)!;
 };
 
@@ -140,17 +131,11 @@ export interface ViewPDFOptions extends Omit<AddPDFViewerOptions, "embedType"> {
 
 const DEFAULT_PDF_JS_HINT = "pdfjs url is not defined";
 
+// oxlint-disable-next-line complexity
 export const viewPDF = (
   targetSelector: string | HTMLElement | null,
-  {
-    url,
-    title,
-    hint = DEFAULT_PDF_JS_HINT,
-    options = {},
-    pdfjs,
-  }: ViewPDFOptions,
+  { url, title, hint = DEFAULT_PDF_JS_HINT, options = {}, pdfjs }: ViewPDFOptions,
 ): HTMLElement | null => {
-  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (!isDef(window) || !window.navigator?.userAgent) return null;
 
   const { navigator } = window;
@@ -166,10 +151,8 @@ export const viewPDF = (
 
   // Firefox started shipping PDF.js in Firefox 19. If this is Firefox 19 or greater, assume PDF.js is available
   const isFirefoxWithPDFJS =
-    !isMobileDevice &&
-    /firefox/iu.test(userAgent) &&
-    userAgent.split("rv:").length > 1
-      ? parseInt(userAgent.split("rv:")[1].split(".")[0], 10) > 18
+    !isMobileDevice && /firefox/iu.test(userAgent) && userAgent.split("rv:").length > 1
+      ? Number.parseInt(userAgent.split("rv:")[1].split(".")[0], 10) > 18
       : false;
 
   // Determines whether PDF support is available
@@ -183,11 +166,7 @@ export const viewPDF = (
     return null;
   }
 
-  const fullLink = isLinkHttp(url)
-    ? url
-    : __VUEPRESS_DEV__
-      ? null
-      : `${window.origin}${url}`;
+  const fullLink = isLinkHttp(url) ? url : __VUEPRESS_DEV__ ? null : `${window.origin}${url}`;
 
   if (pdfjs) {
     if (!fullLink) {
@@ -227,13 +206,14 @@ export const viewPDF = (
     });
   }
 
-  if (PDFJS_URL && fullLink)
+  if (PDFJS_URL && fullLink) {
     return addPDFViewer(targetNode, {
       embedType: "pdfjs",
       url: fullLink,
       options,
       title,
     });
+  }
 
   targetNode.innerHTML = hint.replaceAll(String.raw`\[url\]`, url);
 

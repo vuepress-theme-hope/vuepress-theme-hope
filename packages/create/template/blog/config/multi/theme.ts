@@ -140,12 +140,13 @@ export default hopeTheme({
       {
         matcher: "Recommended",
         replacer: ({ tag }) => {
-          if (tag === "em")
+          if (tag === "em") {
             return {
               tag: "Badge",
               attrs: { type: "tip" },
               content: "Recommended",
             };
+          }
         },
       },
     ],

@@ -31,11 +31,7 @@ export default defineComponent({
                     navigate(tagMap.value.path);
                   },
                 },
-                [
-                  h(TagIcon),
-                  h("span", { class: "num" }, tagNumber.value),
-                  blogLocale.value.tag,
-                ],
+                [h(TagIcon), h("span", { class: "num" }, tagNumber.value), blogLocale.value.tag],
               ),
               h("hr"),
               h(DropTransition, { delay: 0.04 }, () => h(TagList)),

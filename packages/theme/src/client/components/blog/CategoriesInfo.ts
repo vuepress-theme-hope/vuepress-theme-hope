@@ -43,10 +43,7 @@ export default defineComponent({
           : h(
               "div",
               { class: "vp-category-empty" },
-              blogLocale.value.empty.replace(
-                "$text",
-                blogLocale.value.category,
-              ),
+              blogLocale.value.empty.replace("$text", blogLocale.value.category),
             ),
       ]);
   },

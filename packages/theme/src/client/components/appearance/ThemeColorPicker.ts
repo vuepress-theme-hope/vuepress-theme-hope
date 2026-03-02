@@ -56,6 +56,7 @@ export default defineComponent({
 
     const setThemeColor = (name = ""): void => {
       const classes = document.documentElement.classList;
+      // oxlint-disable-next-line no-shadow
       const colorNames = activeThemeColors.value.map(({ name }) => name);
 
       if (!name) {
@@ -65,9 +66,7 @@ export default defineComponent({
         return;
       }
 
-      classes.remove(
-        ...colorNames.filter((themeColorClass) => themeColorClass !== name),
-      );
+      classes.remove(...colorNames.filter((themeColorClass) => themeColorClass !== name));
 
       classes.add(name);
       localStorage.setItem(THEME_COLOR_KEY, name);

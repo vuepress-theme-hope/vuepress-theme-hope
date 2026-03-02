@@ -10,12 +10,7 @@ import { supportedPresets } from "./config.js";
 import { updateGitIgnore } from "./gitignore.js";
 import { getWorkflowContent } from "./workflow.js";
 import type { CreateLocale, SupportedLang } from "../i18n/index.js";
-import {
-  checkGitInstalled,
-  checkGitRepo,
-  copy,
-  ensureDirExistSync,
-} from "../utils/index.js";
+import { checkGitInstalled, checkGitRepo, copy, ensureDirExistSync } from "../utils/index.js";
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -38,11 +33,12 @@ export const generateTemplate = async ({
   preset,
   packageManager,
 }: TemplateOptions): Promise<void> => {
+  // oxlint-disable-next-line no-param-reassign
   preset ??= await select<SupportedPreset>({
     message: locale.question.preset,
-    choices: supportedPresets.map((preset) => ({
-      name: preset,
-      value: preset,
+    choices: supportedPresets.map((item) => ({
+      name: item,
+      value: item,
     })),
   });
 
@@ -56,42 +52,27 @@ export const generateTemplate = async ({
   const templateFolder = preset;
 
   // Copy public assets
-  copy(
-    resolve(__dirname, "../template/public"),
-    resolve(cwd, targetDir, "./.vuepress/public"),
-  );
+  copy(resolve(__dirname, "../template/public"), resolve(cwd, targetDir, "./.vuepress/public"));
   copy(
     resolve(__dirname, "../template", templateFolder, "config/base"),
     resolve(cwd, targetDir, ".vuepress"),
   );
 
   if (enableI18n) {
-    copy(
-      resolve(__dirname, "../template", templateFolder, "en"),
-      resolve(cwd, targetDir),
-    );
-    copy(
-      resolve(__dirname, "../template", templateFolder, "zh"),
-      resolve(cwd, targetDir, "zh"),
-    );
+    copy(resolve(__dirname, "../template", templateFolder, "en"), resolve(cwd, targetDir));
+    copy(resolve(__dirname, "../template", templateFolder, "zh"), resolve(cwd, targetDir, "zh"));
     copy(
       resolve(__dirname, "../template", templateFolder, "config/multi"),
       resolve(cwd, targetDir, ".vuepress"),
     );
   } else if (lang === "zh") {
-    copy(
-      resolve(__dirname, "../template", templateFolder, "zh"),
-      resolve(cwd, targetDir),
-    );
+    copy(resolve(__dirname, "../template", templateFolder, "zh"), resolve(cwd, targetDir));
     copy(
       resolve(__dirname, "../template", templateFolder, "config/zh"),
       resolve(cwd, targetDir, ".vuepress"),
     );
   } else {
-    copy(
-      resolve(__dirname, "../template", templateFolder, "en"),
-      resolve(cwd, targetDir),
-    );
+    copy(resolve(__dirname, "../template", templateFolder, "en"), resolve(cwd, targetDir));
     copy(
       resolve(__dirname, "../template", templateFolder, "config/en"),
       resolve(cwd, targetDir, ".vuepress"),
@@ -134,7 +115,7 @@ export const generateTemplate = async ({
     writeFileSync(
       resolve(workflowDir, "deploy-docs.yml"),
       getWorkflowContent(packageManager, cwd, targetDir, locale),
-      { encoding: "utf8" },
+      { encoding: "utf-8" },
     );
   }
 };

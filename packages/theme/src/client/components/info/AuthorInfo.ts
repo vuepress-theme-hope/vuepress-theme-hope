@@ -36,9 +36,7 @@ export default defineComponent({
             "span",
             {
               class: "page-author-info",
-              "aria-label": `${metaLocale.value.author}${
-                isPure.value ? "" : "🖊"
-              }`,
+              "aria-label": `${metaLocale.value.author}${isPure.value ? "" : "🖊"}`,
               ...(isPure.value ? {} : { "data-balloon-pos": "up" }),
             },
             [

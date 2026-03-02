@@ -7,12 +7,12 @@ import type { ArticleInfoData } from "../../../shared/index.js";
 
 export type ArticlesRef = ComputedRef<BlogTypeData<ArticleInfoData>>;
 
-export const articlesSymbol: InjectionKey<ArticlesRef> = Symbol(
-  __VUEPRESS_DEV__ ? "articles" : "",
-);
+export const articlesSymbol: InjectionKey<ArticlesRef> = Symbol(__VUEPRESS_DEV__ ? "articles" : "");
 
 /**
  * Inject articles
+ *
+ * @returns articles global computed
  */
 export const useArticles = (): ArticlesRef => {
   const articles = inject(articlesSymbol);

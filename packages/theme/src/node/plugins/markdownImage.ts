@@ -4,19 +4,18 @@ import type { Plugin } from "vuepress/core";
 import type { ThemeMarkdownOptions } from "../typings/index.js";
 
 /**
- * @private
- *
  * Resolve options for `@vuepress/plugin-markdown-image`
+ *
+ * @param options - theme markdown options
+ *
+ * @returns markdown image plugin instance or null
  */
-export const getMarkdownImagePlugin = (
-  options: ThemeMarkdownOptions,
-): Plugin | null =>
+export const getMarkdownImagePlugin = (options: ThemeMarkdownOptions): Plugin | null =>
   markdownImagePlugin({
     figure: options.figure ?? false,
     lazyload: options.imgLazyload ?? false,
     mark: options.imgMark ?? false,
     size: options.imgSize ?? false,
     obsidianSize: options.obsidianImgSize ?? false,
-    // eslint-disable-next-line @typescript-eslint/no-deprecated
     legacySize: options.legacyImgSize ?? false,
   });

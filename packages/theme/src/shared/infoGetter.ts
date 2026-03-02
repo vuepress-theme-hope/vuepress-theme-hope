@@ -5,23 +5,19 @@ import type { Author, AuthorInfo } from "./author.js";
 const isAuthorInfo = (author: unknown): author is AuthorInfo =>
   isPlainObject(author) && isString(author.name);
 
-export const getAuthor = (
-  author: Author | false | undefined,
-  canDisable = false,
-): AuthorInfo[] => {
+export const getAuthor = (author: Author | false | undefined, canDisable = false): AuthorInfo[] => {
   if (author) {
-    if (isArray(author))
+    if (isArray(author)) {
       return author
-        .map((item) =>
-          isString(item) ? { name: item } : isAuthorInfo(item) ? item : null,
-        )
-        .filter((item): item is AuthorInfo => item !== null);
+        .map((item) => (isString(item) ? { name: item } : isAuthorInfo(item) ? item : null))
+        .filter((item): item is AuthorInfo => item != null);
+    }
 
     if (isString(author)) return [{ name: author }];
 
     if (isAuthorInfo(author)) return [author];
 
-    // eslint-disable-next-line no-console
+    // oxlint-disable-next-line no-console
     console.error(
       `Expect "author" to be \`AuthorInfo[] | AuthorInfo | string[] | string ${
         canDisable ? "" : "| false"
@@ -43,19 +39,14 @@ export const getStringArray = (
     if (isArray(value) && value.every((item) => isString(item))) return value;
     if (isString(value)) return [value];
 
-    // eslint-disable-next-line no-console
-    console.error(
-      `Expect ${optionName} to be \`string[] | string | undefined\`, but got`,
-      value,
-    );
+    // oxlint-disable-next-line no-console
+    console.error(`Expect ${optionName} to be \`string[] | string | undefined\`, but got`, value);
   }
 
   return [];
 };
 
-export const getCategory = (
-  category: string[] | string | undefined,
-): string[] => getStringArray(category, "category");
+export const getCategory = (category: string[] | string | undefined): string[] =>
+  getStringArray(category, "category");
 
-export const getTag = (tag: string[] | string | undefined): string[] =>
-  getStringArray(tag, "tag");
+export const getTag = (tag: string[] | string | undefined): string[] => getStringArray(tag, "tag");

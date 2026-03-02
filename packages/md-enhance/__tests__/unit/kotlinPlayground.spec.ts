@@ -4,8 +4,7 @@ import { describe, expect, it } from "vitest";
 
 import { kotlinPlayground } from "../../src/node/markdown-it/kotlinPlayground.js";
 
-const decodeFiles = (content: string): string[] =>
-  JSON.parse(decodeData(content)) as string[];
+const decodeFiles = (content: string): string[] => JSON.parse(decodeData(content)) as string[];
 
 const getFiles = (renderResult: string): string[] | null => {
   const result = /files="(.*?)"/s.exec(renderResult);

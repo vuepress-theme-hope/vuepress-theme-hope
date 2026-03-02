@@ -4,9 +4,10 @@ import type { Plugin } from "vuepress/core";
 import type { ThemeMarkdownOptions } from "../typings/index.js";
 
 /**
- * @private
- *
  * Resolve options for `@vuepress/plugin-markdown-stylize`
+ *
+ * @param options - Theme markdown options
+ * @returns markdown stylize plugin instance
  */
 export const getMarkdownStylizePlugin = ({
   stylize = [],

@@ -1,12 +1,9 @@
-/* eslint-disable @typescript-eslint/no-deprecated */
+// oxlint-disable max-lines
 import { entries, isArray, isPlainObject } from "@vuepress/helper";
 import { colors } from "vuepress/utils";
 import { createConverter } from "vuepress-shared";
 
-import {
-  convertNavbarLayoutOptions,
-  convertNavbarOptions,
-} from "./convertNavbarOptions.js";
+import { convertNavbarLayoutOptions, convertNavbarOptions } from "./convertNavbarOptions.js";
 import { convertSidebarOptions } from "./convertSidebarOptions.js";
 import type { ThemeOptions } from "../typings/index.js";
 import { logger } from "../utils.js";
@@ -20,6 +17,10 @@ const DEPRECATED_THEME_OPTIONS: [string, string][] = [
 
 /**
  * @deprecated You should use V2 standard options and avoid using it
+ *
+ * @param options - Theme options
+ * @param plugins - Theme plugins options
+ * @param localePath - Locale path
  */
 const convertBlogOptions = (
   options: Record<string, unknown>,
@@ -53,17 +54,21 @@ const convertBlogOptions = (
       delete blogOptions.autoExcerpt;
     }
 
-    if (!plugins.blog)
+    if (!plugins.blog) {
       logger.warn(
         `Blog feature is tree-shakable in v2, you should set ${colors.magenta(
           "plugins.blog: true",
         )} in theme options to enable it.`,
       );
+    }
   }
 };
 
 /**
  * @deprecated You should use V2 standard options and avoid using it
+ *
+ * @param themeLocaleOptions - Theme locale options
+ * @param localePath - Locale path
  */
 const convertFooterOptions = (
   themeLocaleOptions: Record<string, unknown>,
@@ -102,15 +107,14 @@ const convertFooterOptions = (
 
 /**
  * @deprecated You should use V2 standard options and avoid using it
+ *
+ * @param themeOptions - Theme options
  */
-// oxlint-disable-next-line max-statements
+// oxlint-disable-next-line complexity, max-lines-per-function, max-statements
 const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
   const { deprecatedLogger } = createConverter("theme plugin options");
 
-  const markdownOptions = (themeOptions.markdown ??= {}) as Record<
-    string,
-    unknown
-  >;
+  const markdownOptions = (themeOptions.markdown ??= {}) as Record<string, unknown>;
   const pluginOptions = themeOptions.plugins as Record<string, unknown>;
 
   // Handle component
@@ -202,9 +206,7 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
 
       pluginOptions.markdownMath = {
         type: "katex",
-        ...(isPlainObject(mdEnhanceOptions.katex)
-          ? mdEnhanceOptions.katex
-          : {}),
+        ...(isPlainObject(mdEnhanceOptions.katex) ? mdEnhanceOptions.katex : {}),
       };
     }
 
@@ -215,9 +217,7 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
 
       pluginOptions.markdownMath = {
         type: "mathjax",
-        ...(isPlainObject(mdEnhanceOptions.mathjax)
-          ? mdEnhanceOptions.mathjax
-          : {}),
+        ...(isPlainObject(mdEnhanceOptions.mathjax) ? mdEnhanceOptions.mathjax : {}),
       };
     }
 
@@ -462,10 +462,7 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
     );
 
     if (isPlainObject(pluginOptions.markdownHint)) {
-      const markdownHint = pluginOptions.markdownHint as Record<
-        string,
-        unknown
-      >;
+      const markdownHint = pluginOptions.markdownHint as Record<string, unknown>;
 
       if ("alert" in markdownHint) {
         deprecatedLogger({
@@ -616,10 +613,12 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
 
 /**
  * @deprecated You should use V2 standard options and avoid using it
+ *
+ * @param themeOptions - Theme options
+ * @returns Converted theme options
  */
-export const convertThemeOptions = (
-  themeOptions: Record<string, unknown>,
-): ThemeOptions => {
+// oxlint-disable-next-line max-lines-per-function
+export const convertThemeOptions = (themeOptions: Record<string, unknown>): ThemeOptions => {
   const { deprecatedLogger, droppedLogger } = createConverter("theme options");
 
   // Ensure plugins
@@ -636,11 +635,9 @@ export const convertThemeOptions = (
   });
 
   // Handle navbar
-  if ("navbar" in themeOptions)
-    themeOptions.navbar = convertNavbarOptions(themeOptions.navbar);
+  if ("navbar" in themeOptions) themeOptions.navbar = convertNavbarOptions(themeOptions.navbar);
 
-  if ("sidebar" in themeOptions)
-    themeOptions.sidebar = convertSidebarOptions(themeOptions.sidebar);
+  if ("sidebar" in themeOptions) themeOptions.sidebar = convertSidebarOptions(themeOptions.sidebar);
 
   convertNavbarLayoutOptions(themeOptions);
   convertBlogOptions(themeOptions, plugins);
@@ -658,21 +655,21 @@ export const convertThemeOptions = (
     new: "plugins.icon.prefix",
   });
   // handle addThis
-  if (themeOptions.addThis)
+  if (themeOptions.addThis) {
     droppedLogger({
       options: themeOptions,
       old: "addThis",
     });
+  }
 
   // Handle copyright plugin
-  if (isPlainObject(themeOptions.copyright) || themeOptions.copyright === true)
+  if (isPlainObject(themeOptions.copyright) || themeOptions.copyright === true) {
     logger.warn(
-      `${colors.magenta(
-        "copyright",
-      )} is deprecated in V2, please use ${colors.magenta(
+      `${colors.magenta("copyright")} is deprecated in V2, please use ${colors.magenta(
         "plugins.copyright",
       )} instead.`,
     );
+  }
 
   // Handle encrypt
   if (isPlainObject(themeOptions.encrypt)) {
@@ -680,9 +677,7 @@ export const convertThemeOptions = (
 
     if ("global" in encrypt && typeof encrypt.global !== "boolean") {
       logger.warn(
-        `${colors.magenta(
-          "encrypt.global",
-        )} is deprecated in V2, please use ${colors.magenta(
+        `${colors.magenta("encrypt.global")} is deprecated in V2, please use ${colors.magenta(
           "encrypt.admin",
         )} instead.`,
       );
@@ -692,9 +687,7 @@ export const convertThemeOptions = (
 
     if ("status" in encrypt) {
       logger.warn(
-        `${colors.magenta(
-          "encrypt.status",
-        )} is deprecated, please use ${colors.magenta(
+        `${colors.magenta("encrypt.status")} is deprecated, please use ${colors.magenta(
           "encrypt.global",
         )} instead.`,
       );
@@ -705,7 +698,7 @@ export const convertThemeOptions = (
   }
 
   // Handle each locale
-  if ("locales" in themeOptions && isPlainObject(themeOptions.locales))
+  if ("locales" in themeOptions && isPlainObject(themeOptions.locales)) {
     entries(themeOptions.locales).forEach(
       ([localePath, localeConfig]: [string, Record<string, unknown>]) => {
         DEPRECATED_THEME_OPTIONS.forEach(([oldOption, newOption]) => {
@@ -719,46 +712,38 @@ export const convertThemeOptions = (
 
         // Handle navbar
         if ("navbar" in localeConfig)
-          localeConfig.navbar = convertNavbarOptions(
-            localeConfig.navbar,
-            localePath,
-          );
+          localeConfig.navbar = convertNavbarOptions(localeConfig.navbar, localePath);
 
         // Handle sidebar
         if ("sidebar" in localeConfig)
-          localeConfig.sidebar = convertSidebarOptions(
-            localeConfig.sidebar,
-            localePath,
-          );
+          localeConfig.sidebar = convertSidebarOptions(localeConfig.sidebar, localePath);
 
         if (typeof localeConfig.headingDepth === "number") {
           logger.warn(
-            `${colors.magenta(
-              "headingDepth",
-            )} is deprecated, please use ${colors.magenta(
+            `${colors.magenta("headingDepth")} is deprecated, please use ${colors.magenta(
               "toc.levels",
             )} instead.`,
           );
 
-          if (localeConfig.toc !== false)
+          if (localeConfig.toc !== false) {
             localeConfig.toc = {
               levels: [2, localeConfig.headingDepth + 2],
             };
+          }
         }
 
         if (typeof localeConfig.headerDepth === "number") {
           logger.warn(
-            `${colors.magenta(
-              "headerDepth",
-            )} is deprecated, please use ${colors.magenta(
+            `${colors.magenta("headerDepth")} is deprecated, please use ${colors.magenta(
               "toc.levels",
             )} instead.`,
           );
 
-          if (localeConfig.toc !== false)
+          if (localeConfig.toc !== false) {
             localeConfig.toc = {
               levels: [2, localeConfig.headerDepth + 2],
             };
+          }
         }
 
         convertNavbarLayoutOptions(localeConfig);
@@ -766,6 +751,7 @@ export const convertThemeOptions = (
         convertFooterOptions(localeConfig);
       },
     );
+  }
 
   return themeOptions;
 };

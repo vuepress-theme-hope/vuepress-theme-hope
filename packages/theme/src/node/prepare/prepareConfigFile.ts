@@ -5,9 +5,6 @@ import type { ThemeStatus } from "../config/index.js";
 import type { ThemeBehaviorOptions } from "../typings/index.js";
 import { BUNDLE_FOLDER, CLIENT_FOLDER } from "../utils.js";
 
-/**
- * @private
- */
 export const prepareConfigFile = (
   app: App,
   { enableCatalog, enableBlog, enableEncrypt, enableIcon }: ThemeStatus,
@@ -63,8 +60,7 @@ defineCatalogInfoGetter((meta) => {
       `import { GlobalEncrypt, LocalEncrypt } from "${targetFolder}/exports/encrypt.js";`,
     );
 
-    if (!custom)
-      imports.push(`import "${targetFolder}/styles/encrypt/bundle.scss"`);
+    if (!custom) imports.push(`import "${targetFolder}/styles/encrypt/bundle.scss"`);
 
     enhances.push(
       `app.component("GlobalEncrypt", GlobalEncrypt);`,
@@ -74,10 +70,7 @@ defineCatalogInfoGetter((meta) => {
 
   if (!enableIcon) {
     imports.push(
-      `import noopComponent from "${getModulePath(
-        "@vuepress/helper/noopComponent",
-        import.meta,
-      )}"`,
+      `import noopComponent from "${getModulePath("@vuepress/helper/noopComponent", import.meta)}"`,
     );
     enhances.push(`app.component("VPIcon", noopComponent);`);
   }

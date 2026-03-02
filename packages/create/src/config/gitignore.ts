@@ -13,11 +13,11 @@ export const updateGitIgnore = (dir: string, cwd = process.cwd()): void => {
 
   const gitignoreContent = existsSync(gitignorePath)
     ? readFileSync(gitignorePath, {
-        encoding: "utf8",
+        encoding: "utf-8",
       })
     : "";
 
   writeFileSync(gitignorePath, `${gitignoreContent}${getGitIgnorePath(dir)}`, {
-    encoding: "utf8",
+    encoding: "utf-8",
   });
 };

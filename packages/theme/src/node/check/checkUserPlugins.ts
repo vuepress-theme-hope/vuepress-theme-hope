@@ -6,9 +6,9 @@ import { PLUGIN_CHECKLIST } from "./utils.js";
 import { logger } from "../utils.js";
 
 /**
- * @private
- *
  * Check user plugin options for noob users
+ *
+ * @param app - VuePress app instance
  */
 export const checkUserPlugins = (app: App): void => {
   PLUGIN_CHECKLIST.forEach(([pluginName, optionName, hint = ""]) => {
@@ -17,7 +17,7 @@ export const checkUserPlugins = (app: App): void => {
     );
     const pluginsAfterTheme = app.pluginApi.plugins.slice(themeIndex + 1);
 
-    if (pluginsAfterTheme.some(({ name }) => name === pluginName))
+    if (pluginsAfterTheme.some(({ name }) => name === pluginName)) {
       logger.error(
         `You are not allowed to use plugin "${colors.magenta(
           pluginName,
@@ -30,5 +30,6 @@ export const checkUserPlugins = (app: App): void => {
             : "")
         }`,
       );
+    }
   });
 };

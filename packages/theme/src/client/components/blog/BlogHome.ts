@@ -88,9 +88,7 @@ export default defineComponent({
           ),
         ]),
         slots.content?.() ??
-          h(DropTransition, { appear: true, delay: 0.28 }, () =>
-            h(MarkdownContent, {}, slots),
-          ),
+          h(DropTransition, { appear: true, delay: 0.28 }, () => h(MarkdownContent, {}, slots)),
       ]);
   },
 });

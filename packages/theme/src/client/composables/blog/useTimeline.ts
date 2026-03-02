@@ -18,12 +18,12 @@ export type TimelineRef = ComputedRef<{
   items: Article<ArticleInfoData>[];
 }>;
 
-export const timelineSymbol: InjectionKey<TimelineRef> = Symbol(
-  __VUEPRESS_DEV__ ? "timeline" : "",
-);
+export const timelineSymbol: InjectionKey<TimelineRef> = Symbol(__VUEPRESS_DEV__ ? "timeline" : "");
 
 /**
  * Inject timeline
+ *
+ * @returns Timeline global computed
  */
 export const useTimeline = (): TimelineRef => {
   const timeline = inject(timelineSymbol);
@@ -41,7 +41,7 @@ export const setupTimeline = (): void => {
   const pageLang = useLang();
 
   const timelineItems = computed(() => {
-    const timelineItems: TimelineItem[] = [];
+    const results: TimelineItem[] = [];
 
     // Filter before sort
     timeline.value.items.forEach(({ info, path }) => {
@@ -50,10 +50,9 @@ export const setupTimeline = (): void => {
       if (result) {
         const year = result.getFullYear();
 
-        if (timelineItems[0]?.year !== year)
-          timelineItems.unshift({ year, items: [] });
+        if (results[0]?.year !== year) results.unshift({ year, items: [] });
 
-        timelineItems[0].items.push({
+        results[0].items.push({
           date: result.toLocaleDateString(pageLang.value, {
             month: "numeric",
             day: "numeric",
@@ -66,7 +65,7 @@ export const setupTimeline = (): void => {
 
     return {
       ...timeline.value,
-      config: timelineItems.reverse(),
+      config: results.reverse(),
     };
   });
 

@@ -1,5 +1,3 @@
-/* oxlint-disable no-magic-numbers */
-
 import { watchImmediate } from "@vueuse/core";
 import type { VNode } from "vue";
 import { defineComponent, h, onMounted, ref } from "vue";
@@ -39,12 +37,8 @@ export default defineComponent({
         { STLLoader },
       ] = await Promise.all([
         import(/* webpackChunkName: "hope-logo" */ "three"),
-        import(
-          /* webpackChunkName: "hope-logo" */ "three/examples/jsm/controls/OrbitControls.js"
-        ),
-        import(
-          /* webpackChunkName: "hope-logo" */ "three/examples/jsm/loaders/STLLoader.js"
-        ),
+        import(/* webpackChunkName: "hope-logo" */ "three/examples/jsm/controls/OrbitControls.js"),
+        import(/* webpackChunkName: "hope-logo" */ "three/examples/jsm/loaders/STLLoader.js"),
       ]);
 
       const { width, height } = isMobile.value
@@ -52,22 +46,15 @@ export default defineComponent({
         : { width: 300, height: 300 };
 
       // Canvas
-      const canvas =
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        document.querySelector<HTMLCanvasElement>("canvas#hero-logo")!;
+      const canvas = document.querySelector<HTMLCanvasElement>("canvas#hero-logo")!;
       // Scene
       const scene = new Scene();
       const stlLoader = new STLLoader();
       const textureLoader = new TextureLoader();
-      const roughnessTexture = textureLoader.load(
-        `${ASSETS_SERVER}/model/roughness.jpeg`,
-      );
+      const roughnessTexture = textureLoader.load(`${ASSETS_SERVER}/model/roughness.jpeg`);
 
       // Lights
-      const ambientLight = new AmbientLight(
-        0xffffff,
-        isDarkMode.value ? 5 : 15,
-      );
+      const ambientLight = new AmbientLight(0xffffff, isDarkMode.value ? 5 : 15);
       const directionalLight = new DirectionalLight(0xffffff, 3);
       const directionalLight2 = new DirectionalLight(0xffffff, 3);
 

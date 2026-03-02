@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { decodeData } from "@vuepress/helper";
 import MarkdownIt from "markdown-it";
 import { describe, expect, it } from "vitest";
@@ -32,9 +31,7 @@ const getOptions = (renderResult: string): Record<string, unknown> | null => {
   return JSON.parse(decodeData(result[1])) as Record<string, unknown>;
 };
 
-const getCustomSetup = (
-  renderResult: string,
-): Record<string, unknown> | null => {
+const getCustomSetup = (renderResult: string): Record<string, unknown> | null => {
   const result = /customSetup="(.*?)"/s.exec(renderResult);
 
   if (!result) return null;

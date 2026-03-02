@@ -1,10 +1,10 @@
 import { readdirSync } from "node:fs";
 import { request } from "node:https";
-import { resolve } from "node:path";
+import path from "node:path";
 
 import ora from "ora";
 
-const packagesDir = resolve(process.cwd(), "packages");
+const packagesDir = path.resolve(process.cwd(), "packages");
 const packages = readdirSync(packagesDir);
 
 const sync = async (): Promise<void> => {
@@ -15,20 +15,13 @@ const sync = async (): Promise<void> => {
       import(`../packages/${packageName}/package.json`, {
         assert: { type: "json" },
       }).then(
-        ({
-          default: content,
-        }: {
-          default: Record<string, unknown> & { name: string };
-        }) =>
+        ({ default: content }: { default: Record<string, unknown> & { name: string } }) =>
           new Promise<void>((resolve) => {
             const req = request(
-              new URL(
-                `https://registry-direct.npmmirror.com/-/package/${content.name}/syncs`,
-              ),
+              new URL(`https://registry-direct.npmmirror.com/-/package/${content.name}/syncs`),
               {
                 method: "PUT",
                 headers: {
-                  // eslint-disable-next-line @typescript-eslint/naming-convention
                   "Content-Length": 0,
                 },
               },

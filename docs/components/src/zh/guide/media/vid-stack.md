@@ -201,14 +201,7 @@ VideoStack 支持流式视频，默认通过 jsdelivr CDN 加载 `hls.js` 和 `d
 
   ```ts
   type PlayerSrc = MediaSrc | MediaSrc[];
-  type MediaSrc =
-    | string
-    | AudioSrc
-    | VideoSrc
-    | HLSSrc
-    | DASHSrc
-    | YouTubeSrc
-    | VimeoSrc;
+  type MediaSrc = string | AudioSrc | VideoSrc | HLSSrc | DASHSrc | YouTubeSrc | VimeoSrc;
   ```
 
 - 必填: 是

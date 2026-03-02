@@ -2,11 +2,7 @@ import { dateSorter } from "@vuepress/helper";
 import type { BlogTypeOptions } from "@vuepress/plugin-blog";
 import type { GitData } from "@vuepress/plugin-git";
 
-import {
-  BLOG_LAYOUT,
-  DEFAULT_BLOG_FRONTMATTER,
-  defaultPageSorter,
-} from "./utils.js";
+import { BLOG_LAYOUT, DEFAULT_BLOG_FRONTMATTER, defaultPageSorter } from "./utils.js";
 import type {
   ArticleInfoData,
   ThemeData,
@@ -14,15 +10,10 @@ import type {
 } from "../../../shared/index.js";
 import type { BlogOptions } from "../../typings/index.js";
 
-/** @private */
 export const getBlogArticleType = (
   options: BlogOptions,
   themeData: ThemeData,
-): BlogTypeOptions<
-  { git: GitData },
-  ThemeNormalPageFrontmatter,
-  { routeMeta: ArticleInfoData }
-> =>
+): BlogTypeOptions<{ git: GitData }, ThemeNormalPageFrontmatter, { routeMeta: ArticleInfoData }> =>
   ({
     key: "article",
 
@@ -47,15 +38,10 @@ export const getBlogArticleType = (
     { routeMeta: ArticleInfoData }
   >;
 
-/** @private */
 export const getBlogStarType = (
   options: BlogOptions,
   themeData: ThemeData,
-): BlogTypeOptions<
-  { git: GitData },
-  ThemeNormalPageFrontmatter,
-  { routeMeta: ArticleInfoData }
-> =>
+): BlogTypeOptions<{ git: GitData }, ThemeNormalPageFrontmatter, { routeMeta: ArticleInfoData }> =>
   ({
     key: "star",
 
@@ -65,8 +51,7 @@ export const getBlogStarType = (
       const prevKey = pageA.frontmatter.star;
       const nextKey = pageB.frontmatter.star;
 
-      if (prevKey && nextKey && prevKey !== nextKey)
-        return Number(nextKey) - Number(prevKey);
+      if (prevKey && nextKey && prevKey !== nextKey) return Number(nextKey) - Number(prevKey);
       if (prevKey && !nextKey) return -1;
       if (!prevKey && nextKey) return 1;
 
@@ -86,23 +71,16 @@ export const getBlogStarType = (
     { routeMeta: ArticleInfoData }
   >;
 
-/** @private */
 export const getBlogTimelineType = (
   options: BlogOptions,
   themeData: ThemeData,
-): BlogTypeOptions<
-  { git: GitData },
-  ThemeNormalPageFrontmatter,
-  { routeMeta: ArticleInfoData }
-> =>
+): BlogTypeOptions<{ git: GitData }, ThemeNormalPageFrontmatter, { routeMeta: ArticleInfoData }> =>
   ({
     key: "timeline",
 
-    filter: ({ frontmatter, routeMeta }) =>
-      "date" in routeMeta && (frontmatter.timeline ?? true),
+    filter: ({ frontmatter, routeMeta }) => "date" in routeMeta && (frontmatter.timeline ?? true),
 
-    sorter: (pageA, pageB) =>
-      dateSorter(pageA.routeMeta.date, pageB.routeMeta.date),
+    sorter: (pageA, pageB) => dateSorter(pageA.routeMeta.date, pageB.routeMeta.date),
 
     path: options.timeline,
     layout: BLOG_LAYOUT,

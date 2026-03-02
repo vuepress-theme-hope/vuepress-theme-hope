@@ -5,18 +5,16 @@ import type { App } from "vuepress/core";
 import { isHighlighterPlugin } from "./utils.js";
 
 /**
- * @private
- *
  * Composition Api to use `@vuepress/plugin-shiki`
+ *
+ * @param app - VuePress app
+ * @param options - Shiki plugin options
  */
-export const useShikiPlugin = (
-  app: App,
-  options: ShikiPluginOptions = {},
-): void => {
+export const useShikiPlugin = (app: App, options: ShikiPluginOptions = {}): void => {
   const { plugins } = app.pluginApi;
 
   // Ensure highlighter plugin is not enabled
-  if (plugins.every((plugin) => !isHighlighterPlugin(plugin)))
+  if (plugins.every((plugin) => !isHighlighterPlugin(plugin))) {
     app.use(
       shikiPlugin({
         ...("theme" in options
@@ -30,19 +28,18 @@ export const useShikiPlugin = (
         ...options,
       }),
     );
+  }
 };
 
 /**
- * @private
- *
  * Composition Api to remove `@vuepress/plugin-shiki`
+ *
+ * @param app - VuePress app
  */
 export const removeShikiPlugin = (app: App): void => {
   const { plugins } = app.pluginApi;
 
-  const index = plugins.findIndex(
-    (plugin) => plugin.name === "@vuepress/plugin-shiki",
-  );
+  const index = plugins.findIndex((plugin) => plugin.name === "@vuepress/plugin-shiki");
 
   if (index !== -1) app.pluginApi.plugins.splice(index, 1);
 };

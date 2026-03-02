@@ -44,12 +44,13 @@ export const setupSidebarItems = (): void => {
 
 /**
  * Inject sidebar items global computed
+ *
+ * @returns Sidebar items global computed
  */
 export const useSidebarItems = (): SidebarItemsRef => {
   const sidebarItems = inject(sidebarItemsSymbol);
 
-  if (!sidebarItems)
-    throw new Error("useSidebarItems() is called without provider.");
+  if (!sidebarItems) throw new Error("useSidebarItems() is called without provider.");
 
   return sidebarItems;
 };

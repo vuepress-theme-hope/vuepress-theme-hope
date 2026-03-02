@@ -1,10 +1,4 @@
-import {
-  entries,
-  fromEntries,
-  isArray,
-  isPlainObject,
-  isString,
-} from "@vuepress/helper";
+import { entries, fromEntries, isArray, isPlainObject, isString } from "@vuepress/helper";
 import { colors } from "vuepress/utils";
 import { createConverter } from "vuepress-shared";
 
@@ -57,49 +51,43 @@ const handleArraySidebarOptions = (
 
       return null;
     })
-    .filter((item): item is SidebarItemOptions => item !== null);
+    .filter((item): item is SidebarItemOptions => item != null);
 
 /**
  * @deprecated You should use V2 standard sidebar config and avoid using it
+ *
+ * @param config - Original sidebar config
+ * @param localePath - Current locale path, used for logger
+ * @returns Converted sidebar config
  */
-export const convertSidebarOptions = (
-  config: unknown,
-  localePath = "",
-): SidebarOptions => {
+export const convertSidebarOptions = (config: unknown, localePath = ""): SidebarOptions => {
   if (config === false || config === "structure") return config;
 
-  if (isArray(config))
-    return handleArraySidebarOptions(config as SidebarArrayOptions, localePath);
+  if (isArray(config)) return handleArraySidebarOptions(config as SidebarArrayOptions, localePath);
 
-  if (isPlainObject(config))
+  if (isPlainObject(config)) {
     return fromEntries(
-      entries(config).map<[string, SidebarArrayOptions | "structure" | false]>(
-        ([key, value]) => {
-          if (isArray(value))
-            return [
-              key,
-              handleArraySidebarOptions(
-                value as SidebarArrayOptions,
-                `${localePath} > ${key}`,
-              ),
-            ];
+      entries(config).map<[string, SidebarArrayOptions | "structure" | false]>(([key, value]) => {
+        if (isArray(value)) {
+          return [
+            key,
+            handleArraySidebarOptions(value as SidebarArrayOptions, `${localePath} > ${key}`),
+          ];
+        }
 
-          if (value === "structure" || value === false)
-            return [key, value as "structure" | false];
+        if (value === "structure" || value === false) return [key, value as "structure" | false];
 
-          logger.error(
-            '"sidebar" value should be an array, "structure" or false when setting as an object',
-          );
+        logger.error(
+          '"sidebar" value should be an array, "structure" or false when setting as an object',
+        );
 
-          return [key, false];
-        },
-      ),
+        return [key, false];
+      }),
     );
+  }
 
   logger.error(
-    `${colors.magenta(
-      "sidebar",
-    )} config should be: an array, an object, "structure" or false`,
+    `${colors.magenta("sidebar")} config should be: an array, an object, "structure" or false`,
   );
 
   return false;

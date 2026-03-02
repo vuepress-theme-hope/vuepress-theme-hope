@@ -107,7 +107,6 @@ export const setupSnowFall = ({
       canvas.height = window.innerHeight;
     });
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const context = canvas.getContext("2d")!;
 
     const snowflakeImage = new Image();
@@ -116,9 +115,7 @@ export const setupSnowFall = ({
       const snowflakes: Snowflake[] = [];
 
       for (let i = 0; i < count; i++)
-        snowflakes.push(
-          new Snowflake(snowflakeImage, context, { maxSize, minSize, speed }),
-        );
+        snowflakes.push(new Snowflake(snowflakeImage, context, { maxSize, minSize, speed }));
 
       const drawSnowflakes = (): void => {
         context.clearRect(0, 0, canvas.width, canvas.height);

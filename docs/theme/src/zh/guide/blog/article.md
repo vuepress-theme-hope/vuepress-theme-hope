@@ -137,8 +137,7 @@ export default hopeTheme({
         {
           key: "original",
           filter: (page) => !!page.frontmatter.original,
-          sorter: (pageA, pageB) =>
-            dateSorter(pageA.frontmatter.date, pageB.frontmatter.date),
+          sorter: (pageA, pageB) => dateSorter(pageA.frontmatter.date, pageB.frontmatter.date),
         },
       ],
     },

@@ -4,11 +4,7 @@ import type {
   BlogLocaleOptions,
   PaginationLocaleData,
 } from "./blog.js";
-import type {
-  EncryptConfig,
-  EncryptLocaleData,
-  EncryptOptions,
-} from "./encrypt.js";
+import type { EncryptConfig, EncryptLocaleData, EncryptOptions } from "./encrypt.js";
 
 export interface FeatureLocaleData {
   /**

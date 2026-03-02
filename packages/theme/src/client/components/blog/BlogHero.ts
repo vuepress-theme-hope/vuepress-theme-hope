@@ -32,12 +32,7 @@ export default defineComponent({
     const { frontmatter, siteLocale } = useData<ThemeBlogHomePageFrontmatter>();
 
     const info = computed(() => {
-      const {
-        heroText,
-        heroStyle,
-        tagline,
-        heroFullScreen = false,
-      } = frontmatter.value;
+      const { heroText, heroStyle, tagline, heroFullScreen = false } = frontmatter.value;
 
       return {
         text: heroText ?? (siteLocale.value.title || "Hello"),
@@ -48,8 +43,7 @@ export default defineComponent({
     });
 
     const image = computed(() => {
-      const { heroImage, heroImageDark, heroAlt, heroImageStyle } =
-        frontmatter.value;
+      const { heroImage, heroImageDark, heroAlt, heroImageStyle } = frontmatter.value;
 
       return {
         image: heroImage ? withBase(heroImage) : null,
@@ -63,11 +57,7 @@ export default defineComponent({
       const { bgImage, bgImageDark, bgImageStyle } = frontmatter.value;
 
       return {
-        image: isString(bgImage)
-          ? withBase(bgImage)
-          : bgImage === false
-            ? null
-            : DEFAULT_HERO,
+        image: isString(bgImage) ? withBase(bgImage) : bgImage === false ? null : DEFAULT_HERO,
         imageDark: isString(bgImageDark) ? withBase(bgImageDark) : null,
         style: bgImageStyle ?? null,
       };
@@ -113,48 +103,35 @@ export default defineComponent({
                   : null,
               ],
               slots.heroLogo?.(image.value) ??
-                h(
-                  DropTransition,
-                  { appear: true, group: true, delay: 0.04 },
-                  () => {
-                    const {
-                      image: imageLight,
-                      imageDark,
-                      style: imageStyle,
-                      alt,
-                    } = image.value;
+                h(DropTransition, { appear: true, group: true, delay: 0.04 }, () => {
+                  const { image: imageLight, imageDark, style: imageStyle, alt } = image.value;
 
-                    return [
-                      imageLight
-                        ? h("img", {
-                            key: "light",
-                            class: ["vp-blog-hero-image", { light: imageDark }],
-                            style: imageStyle,
-                            src: imageLight,
-                            alt: alt,
-                          })
-                        : null,
-                      imageDark
-                        ? h("img", {
-                            key: "dark",
-                            class: "vp-blog-hero-image dark",
-                            style: imageStyle,
-                            src: imageDark,
-                            alt: alt,
-                          })
-                        : null,
-                    ];
-                  },
-                ),
+                  return [
+                    imageLight
+                      ? h("img", {
+                          key: "light",
+                          class: ["vp-blog-hero-image", { light: imageDark }],
+                          style: imageStyle,
+                          src: imageLight,
+                          alt: alt,
+                        })
+                      : null,
+                    imageDark
+                      ? h("img", {
+                          key: "dark",
+                          class: "vp-blog-hero-image dark",
+                          style: imageStyle,
+                          src: imageDark,
+                          alt: alt,
+                        })
+                      : null,
+                  ];
+                }),
               slots.heroInfo?.(info.value) ??
                 h("div", { class: "vp-blog-hero-info" }, [
                   h(DropTransition, { appear: true, delay: 0.08 }, () =>
                     info.value.text
-                      ? h(
-                          "h1",
-                          { class: "vp-blog-hero-title" },
-                          info.value.text,
-                        )
+                      ? h("h1", { class: "vp-blog-hero-title" }, info.value.text)
                       : null,
                   ),
                   h(DropTransition, { appear: true, delay: 0.12 }, () =>
@@ -172,8 +149,7 @@ export default defineComponent({
                       window.scrollTo({
                         top:
                           window.innerHeight -
-                          (document.querySelector("[vp-navbar]")
-                            ?.clientHeight ?? 0),
+                          (document.querySelector("[vp-navbar]")?.clientHeight ?? 0),
                         behavior: "smooth",
                       });
                     },

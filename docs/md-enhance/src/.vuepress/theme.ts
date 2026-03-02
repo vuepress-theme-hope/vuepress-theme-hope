@@ -27,10 +27,7 @@ export default theme("md-enhance", {
     include: {
       resolvePath: (file) => {
         if (file.startsWith("@echarts"))
-          return file.replace(
-            "@echarts",
-            path.resolve(__dirname, "../echarts"),
-          );
+          return file.replace("@echarts", path.resolve(__dirname, "../echarts"));
 
         return file;
       },

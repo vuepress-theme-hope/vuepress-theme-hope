@@ -3,7 +3,6 @@ import { computed, onMounted } from "vue";
 
 import { useData } from "vuepress-theme-hope/client";
 
-// oxlint-disable-next-line no-magic-numbers
 const millisecondPerDay = 1000 * 60 * 60 * 24;
 
 /**
@@ -29,9 +28,7 @@ export const setupRunningTimeFooter = (
 
   let prevTimeText = "";
 
-  const initialTimeStamp = (
-    date instanceof Date ? date : new Date(date)
-  ).getTime();
+  const initialTimeStamp = (date instanceof Date ? date : new Date(date)).getTime();
 
   const pastedTime = computed(() => {
     const passedTime = now.value.getTime() - initialTimeStamp;
@@ -60,9 +57,7 @@ export const setupRunningTimeFooter = (
             .replace(":second", second.toString());
 
           footer.innerHTML = `${
-            preserveContent
-              ? `${footer.innerHTML.replace(`<br>${prevTimeText}`, "")}<br>`
-              : ""
+            preserveContent ? `${footer.innerHTML.replace(`<br>${prevTimeText}`, "")}<br>` : ""
           }${localeText}`;
           prevTimeText = localeText;
         }

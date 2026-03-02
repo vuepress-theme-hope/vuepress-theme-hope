@@ -113,8 +113,7 @@ export default defineComponent({
     );
 
     onMounted(() => {
-      if (props.status !== "clicktorun")
-        renderCodePen(options.value, `.codepen-${slugHash.value}`);
+      if (props.status !== "clicktorun") renderCodePen(options.value, `.codepen-${slugHash.value}`);
     });
 
     return (): VNode =>

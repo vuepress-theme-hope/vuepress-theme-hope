@@ -32,6 +32,7 @@ export interface BundleOptions {
   moduleSideEffects?: ModuleSideEffectsOption;
 }
 
+// oxlint-disable-next-line complexity, max-lines-per-function
 export const rollupBundle = (
   filePath: string | FileInfo,
   {
@@ -49,18 +50,14 @@ export const rollupBundle = (
       : filePath.startsWith("cli/"),
     alias: entries,
     replace: replaceOptions,
-    moduleSideEffects = (id): boolean =>
-      id.endsWith(".css") || id.endsWith(".scss"),
+    moduleSideEffects = (id): boolean => id.endsWith(".css") || id.endsWith(".scss"),
   }: BundleOptions = {},
 ): RollupOptions[] => [
   {
     input:
       typeof filePath === "object"
         ? Object.fromEntries(
-            filePath.files.map((item) => [
-              item,
-              `./src/${filePath.base}/${item}.ts`,
-            ]),
+            filePath.files.map((item) => [item, `./src/${filePath.base}/${item}.ts`]),
           )
         : `./src/${filePath}.ts`,
 
@@ -91,11 +88,11 @@ export const rollupBundle = (
       preserveShebang ? shebang() : null,
       ...(resolve ? [nodeResolve({ preferBuiltins: true }), commonjs()] : []),
       esbuild({
+        // oxlint-disable-next-line unicorn/text-encoding-identifier-case
         charset: "utf8",
         minify: isProduction,
         target: "node18",
         loaders: {
-          // eslint-disable-next-line @typescript-eslint/naming-convention
           ".json": "json",
         },
       }),
@@ -131,8 +128,7 @@ export const rollupBundle = (
             ]
           : (
                 typeof filePath === "object"
-                  ? filePath.base.startsWith("node") ||
-                    filePath.base.startsWith("cli")
+                  ? filePath.base.startsWith("node") || filePath.base.startsWith("cli")
                   : filePath.startsWith("node/") || filePath.startsWith("cli/")
               )
             ? [
@@ -162,10 +158,7 @@ export const rollupBundle = (
           input:
             typeof filePath === "object"
               ? Object.fromEntries(
-                  filePath.files.map((item) => [
-                    item,
-                    `./src/${filePath.base}/${item}.ts`,
-                  ]),
+                  filePath.files.map((item) => [item, `./src/${filePath.base}/${item}.ts`]),
                 )
               : `./src/${filePath}.ts`,
           output: [

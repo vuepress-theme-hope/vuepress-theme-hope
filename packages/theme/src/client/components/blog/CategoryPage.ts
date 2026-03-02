@@ -86,7 +86,6 @@ export default defineComponent({
                       ArticleList,
                       {
                         key: page.value.path,
-                        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                         items: blogData.value!.items!,
                       },
                       slots,
@@ -96,9 +95,7 @@ export default defineComponent({
               slots.articlesAfter?.(),
             ],
           ),
-          h(DropTransition, { delay: 0.16 }, () =>
-            h(InfoPanel, { key: "blog" }, slots),
-          ),
+          h(DropTransition, { delay: 0.16 }, () => h(InfoPanel, { key: "blog" }, slots)),
         ]),
       );
   },

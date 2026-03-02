@@ -40,9 +40,7 @@ export default defineComponent({
             "span",
             {
               class: "page-category-info",
-              "aria-label": `${metaLocale.value.category}${
-                isPure.value ? "" : "🌈"
-              }`,
+              "aria-label": `${metaLocale.value.category}${isPure.value ? "" : "🌈"}`,
               ...(isPure.value ? {} : { "data-balloon-pos": "up" }),
             },
             [

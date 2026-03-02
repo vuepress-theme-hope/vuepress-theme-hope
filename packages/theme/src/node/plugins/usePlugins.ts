@@ -16,9 +16,14 @@ import type {
 import { TEMPLATE_FOLDER } from "../utils.js";
 
 /**
- * @private
- *
  * Use plugins to ensure they apply first
+ *
+ * @param app - VuePress app instance
+ * @param themeData - Theme data
+ * @param highlighter - Highlighter options
+ * @param plugins - User plugins options
+ * @param hotReload - Is hot reload mode
+ * @param behavior - Theme behavior options
  */
 // oxlint-disable-next-line max-params
 export const usePlugins = (
@@ -35,20 +40,14 @@ export const usePlugins = (
   else if (hotReload || app.env.isBuild) useGitPlugin(app, true, themeData);
 
   if (plugins.readingTime ?? true)
-    useReadingTimePlugin(
-      app,
-      isPlainObject(plugins.readingTime) ? plugins.readingTime : {},
-    );
+    useReadingTimePlugin(app, isPlainObject(plugins.readingTime) ? plugins.readingTime : {});
 
   if (isPlainObject(highlighter)) {
     if (highlighter.type === "prismjs") usePrismjsPlugin(app, highlighter);
     else useShikiPlugin(app, highlighter);
   } else if (highlighter ?? true) {
-    if (highlighter === "prismjs") {
-      usePrismjsPlugin(app);
-    } else {
-      useShikiPlugin(app);
-    }
+    if (highlighter === "prismjs") usePrismjsPlugin(app);
+    else useShikiPlugin(app);
   }
 
   useSassPalettePlugin(app, {

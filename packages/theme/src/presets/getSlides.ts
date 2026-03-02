@@ -3,10 +3,7 @@ import type { BlogTypeOptions } from "@vuepress/plugin-blog";
 import type { GitData } from "@vuepress/plugin-git";
 import type { Page } from "vuepress";
 
-import type {
-  ArticleInfoData,
-  ThemeNormalPageFrontmatter,
-} from "../shared/index.js";
+import type { ArticleInfoData, ThemeNormalPageFrontmatter } from "../shared/index.js";
 
 export interface SlidesOptions {
   /**
@@ -31,32 +28,20 @@ export interface SlidesOptions {
   locales?: Record<string, string>;
 }
 
-export const getSlides = ({
-  path = "/slides/",
-  locales = {},
-}: SlidesOptions): BlogTypeOptions =>
+export const getSlides = ({ path = "/slides/", locales = {} }: SlidesOptions): BlogTypeOptions =>
   ({
     key: "slides",
 
     filter: ({ frontmatter }: Page): boolean => frontmatter.layout === "Slides",
 
     sorter: (
-      pageA: Page<
-        { git: GitData },
-        ThemeNormalPageFrontmatter,
-        { routeMeta: ArticleInfoData }
-      >,
-      pageB: Page<
-        { git: GitData },
-        ThemeNormalPageFrontmatter,
-        { routeMeta: ArticleInfoData }
-      >,
+      pageA: Page<{ git: GitData }, ThemeNormalPageFrontmatter, { routeMeta: ArticleInfoData }>,
+      pageB: Page<{ git: GitData }, ThemeNormalPageFrontmatter, { routeMeta: ArticleInfoData }>,
     ): number => {
       const prevKey = pageA.frontmatter.sticky;
       const nextKey = pageB.frontmatter.sticky;
 
-      if (prevKey && nextKey && prevKey !== nextKey)
-        return Number(nextKey) - Number(prevKey);
+      if (prevKey && nextKey && prevKey !== nextKey) return Number(nextKey) - Number(prevKey);
       if (prevKey && !nextKey) return -1;
       if (!prevKey && nextKey) return 1;
 

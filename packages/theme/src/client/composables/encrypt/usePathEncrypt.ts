@@ -21,10 +21,7 @@ export const usePathEncrypt = (): PathEncrypt => {
   const encryptData = useEncryptConfig();
 
   const localTokenConfig = useStorage<Record<string, string>>(STORAGE_KEY, {});
-  const sessionTokenConfig = useSessionStorage<Record<string, string>>(
-    STORAGE_KEY,
-    {},
-  );
+  const sessionTokenConfig = useSessionStorage<Record<string, string>>(STORAGE_KEY, {});
 
   const getPathMatchedKeys = (path: string): string[] =>
     isPlainObject(encryptData.value.config)
@@ -47,18 +44,15 @@ export const usePathEncrypt = (): PathEncrypt => {
           (key) =>
             (localTokenConfig.value[key]
               ? config[key].tokens.every(
-                  (token) =>
-                    !isTokenMatched(token, localTokenConfig.value[key]),
+                  (token) => !isTokenMatched(token, localTokenConfig.value[key]),
                 )
               : true) &&
             (sessionTokenConfig.value[key]
               ? config[key].tokens.every(
-                  (token) =>
-                    !isTokenMatched(token, sessionTokenConfig.value[key]),
+                  (token) => !isTokenMatched(token, sessionTokenConfig.value[key]),
                 )
               : true),
         ),
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         hint: firstKeyWithHint ? config[firstKeyWithHint].hint! : "",
       };
     }
@@ -77,15 +71,13 @@ export const usePathEncrypt = (): PathEncrypt => {
     const matchedKeys = getPathMatchedKeys(page.value.path);
 
     // Some of the tokens matches
-    for (const hitKey of matchedKeys)
-      if (
-        config[hitKey].tokens.some((token) => isTokenMatched(token, inputToken))
-      ) {
-        (keep ? localTokenConfig : sessionTokenConfig).value[hitKey] =
-          inputToken;
+    for (const hitKey of matchedKeys) {
+      if (config[hitKey].tokens.some((token) => isTokenMatched(token, inputToken))) {
+        (keep ? localTokenConfig : sessionTokenConfig).value[hitKey] = inputToken;
 
         break;
       }
+    }
   };
 
   return {

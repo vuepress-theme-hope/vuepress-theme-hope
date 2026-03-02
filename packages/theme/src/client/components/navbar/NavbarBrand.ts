@@ -12,14 +12,10 @@ export default defineComponent({
   setup() {
     const { routeLocale, siteLocale, themeLocale } = useData();
 
-    const siteBrandLink = computed(
-      () => themeLocale.value.home ?? routeLocale.value,
-    );
+    const siteBrandLink = computed(() => themeLocale.value.home ?? routeLocale.value);
 
     const siteTitle = computed(() => siteLocale.value.title);
-    const siteBrandTitle = computed(
-      () => themeLocale.value.navbarTitle ?? siteTitle.value,
-    );
+    const siteBrandTitle = computed(() => themeLocale.value.navbarTitle ?? siteTitle.value);
 
     const siteBrandLogo = computed(() =>
       themeLocale.value.logo ? withBase(themeLocale.value.logo) : null,
@@ -40,10 +36,7 @@ export default defineComponent({
         () => [
           siteBrandLogo.value
             ? h("img", {
-                class: [
-                  "vp-nav-logo",
-                  { light: Boolean(siteBrandLogoDark.value) },
-                ],
+                class: ["vp-nav-logo", { light: Boolean(siteBrandLogoDark.value) }],
                 src: siteBrandLogo.value,
                 alt: "",
               })
@@ -63,8 +56,7 @@ export default defineComponent({
                     "vp-site-name",
                     {
                       "hide-in-pad":
-                        siteBrandLogo.value &&
-                        (themeLocale.value.hideSiteNameOnMobile ?? true),
+                        siteBrandLogo.value && (themeLocale.value.hideSiteNameOnMobile ?? true),
                     },
                   ],
                 },

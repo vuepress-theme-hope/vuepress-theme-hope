@@ -40,15 +40,10 @@ export const getUnoPlaygroundPreset = ({
   service = "https://unocss.dev/play",
 }: UnoPresetPlaygroundOptions = {}): PlaygroundOptions => ({
   name: "playground#unocss",
-  propsGetter: ({
-    title = "",
-    files,
-  }: PlaygroundData): Record<string, string> => {
+  propsGetter: ({ title = "", files }: PlaygroundData): Record<string, string> => {
     const htmlFiles = keys(files).filter((key) => endsWith(key, ".html"));
     const cssFiles = keys(files).filter((key) => endsWith(key, ".css"));
-    const configFiles = keys(files).filter(
-      (key) => endsWith(key, ".js") || endsWith(key, ".ts"),
-    );
+    const configFiles = keys(files).filter((key) => endsWith(key, ".js") || endsWith(key, ".ts"));
 
     if (htmlFiles.length > 1 || cssFiles.length > 1 || configFiles.length > 1)
       logger.error("UnoCSS playground only support 1 html/css/config file");

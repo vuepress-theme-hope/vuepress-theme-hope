@@ -30,14 +30,11 @@ export const navbar: ThemeNavbarHelper = (options) => options;
 
 export const sidebar: ThemeSidebarHelper = (options) => options;
 
-export const arraySidebar: ThemeSidebarArrayHelper = (sidebarConfig) =>
-  sidebarConfig;
+export const arraySidebar: ThemeSidebarArrayHelper = (sidebarConfig) => sidebarConfig;
 
-export const objectSidebar: ThemeSidebarObjectHelper = (sidebarConfig) =>
-  sidebarConfig;
+export const objectSidebar: ThemeSidebarObjectHelper = (sidebarConfig) => sidebarConfig;
 
-export const backToTop: ThemeBackToTopPluginHelper = (backToTopConfig) =>
-  backToTopConfig;
+export const backToTop: ThemeBackToTopPluginHelper = (backToTopConfig) => backToTopConfig;
 export const blog: ThemeBlogPluginHelper = (options) => options;
 export const catalog: ThemeCatalogPluginHelper = (options) => options;
 export const comment: ThemeCommentPluginHelper = (options) => options;

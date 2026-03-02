@@ -12,7 +12,7 @@ export const getWorkflowContent = (
 ): string => {
   const currentBranch = execSync("git branch --show-current", {
     cwd,
-    encoding: "utf8",
+    encoding: "utf-8",
   }).trim();
 
   return `
@@ -55,11 +55,7 @@ ${
       - name: ${workflow.install}
         run: |
           corepack enable
-          ${
-            packageManager === "npm"
-              ? "npm ci"
-              : `${packageManager} install --frozen-lockfile`
-          }
+          ${packageManager === "npm" ? "npm ci" : `${packageManager} install --frozen-lockfile`}
 
       - name: ${workflow.build}
         env:

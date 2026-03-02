@@ -48,12 +48,7 @@ export default defineComponent({
             },
             [
               h(CalendarIcon),
-              h(
-                "span",
-                { "data-allow-mismatch": "text" },
-                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                formattedDate.value!,
-              ),
+              h("span", { "data-allow-mismatch": "text" }, formattedDate.value!),
               h("meta", {
                 property: "datePublished",
                 // ISO Format Date string

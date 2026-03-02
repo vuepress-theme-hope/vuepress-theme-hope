@@ -3,8 +3,7 @@ import { hopeTheme } from "vuepress-theme-hope";
 import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
-const hostname =
-  process.env.HOSTNAME ?? "https://theme-hope-docs-demo.vuejs.press";
+const hostname = process.env.HOSTNAME ?? "https://theme-hope-docs-demo.vuejs.press";
 
 export default hopeTheme(
   {
@@ -99,12 +98,13 @@ export default hopeTheme(
             attrs: Record<string, string>;
             content: string;
           } | void => {
-            if (tag === "em")
+            if (tag === "em") {
               return {
                 tag: "Badge",
                 attrs: { type: "tip" },
                 content: "Recommended",
               };
+            }
           },
         },
       ],
@@ -183,7 +183,6 @@ export default hopeTheme(
           shortcuts: [
             {
               name: "Demo",
-              // eslint-disable-next-line @typescript-eslint/naming-convention
               short_name: "Demo",
               url: "/demo/",
               icons: [

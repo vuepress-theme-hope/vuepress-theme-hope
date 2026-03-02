@@ -1,18 +1,8 @@
-import {
-  isArray,
-  isPlainObject,
-  isString,
-  keys,
-  startsWith,
-} from "@vuepress/helper/client";
+import { isArray, isPlainObject, isString, keys, startsWith } from "@vuepress/helper/client";
 import { resolveRoute } from "vuepress/client";
 
 import { sidebarData } from "@temp/theme-hope/sidebar.js";
-import type {
-  SidebarGroupItem,
-  SidebarItem,
-  SidebarLinkItem,
-} from "@theme-hope/typings/sidebar";
+import type { SidebarGroupItem, SidebarItem, SidebarLinkItem } from "@theme-hope/typings/sidebar";
 import { isLinkInternal } from "@theme-hope/utils/isLinkInternal";
 import { resolveLinkInfo } from "@theme-hope/utils/resolveLinkInfo";
 import { resolvePrefix } from "@theme-hope/utils/resolvePrefix";
@@ -31,28 +21,31 @@ export interface SidebarArrayItem {
 
 /**
  * Resolve sidebar item
+ *
+ * @param options - sidebar item config
+ * @param pathPrefix - current path prefix
+ * @returns resolved sidebar item
  */
 export const resolveSidebarItem = (
-  item: SidebarItemOptions,
+  options: SidebarItemOptions,
   pathPrefix: string,
 ): SidebarLinkItem | SidebarGroupItem => {
-  const config = isString(item)
-    ? resolveLinkInfo(resolvePrefix(pathPrefix, item))
-    : isString(item.link)
+  const config = isString(options)
+    ? resolveLinkInfo(resolvePrefix(pathPrefix, options))
+    : isString(options.link)
       ? {
-          ...item,
-          link: isLinkInternal(item.link)
-            ? resolveRoute(resolvePrefix(pathPrefix, item.link)).path
-            : item.link,
+          ...options,
+          link: isLinkInternal(options.link)
+            ? resolveRoute(resolvePrefix(pathPrefix, options.link)).path
+            : options.link,
         }
-      : item;
+      : options;
 
   // Resolved group item
   if ("children" in config) {
     const prefix = resolvePrefix(pathPrefix, config.prefix);
 
-    const children =
-      config.children === "structure" ? sidebarData[prefix] : config.children;
+    const children = config.children === "structure" ? sidebarData[prefix] : config.children;
 
     return {
       ...config,
@@ -68,12 +61,14 @@ export const resolveSidebarItem = (
 
 /**
  * Resolve sidebar items if the config is an array
+ *
+ * @param options - resolve sidebar array item options
+ * @returns resolved sidebar items
  */
 export const resolveArraySidebarItems = ({
   config,
   prefix = "",
-}: SidebarArrayItem): SidebarItem[] =>
-  config.map((item) => resolveSidebarItem(item, prefix));
+}: SidebarArrayItem): SidebarItem[] => config.map((item) => resolveSidebarItem(item, prefix));
 
 export interface ResolveMultiSidebarOptions {
   config: SidebarObjectOptions;
@@ -82,6 +77,9 @@ export interface ResolveMultiSidebarOptions {
 
 /**
  * Resolve sidebar items if the config is a key -> value (path-prefix -> array) object
+ *
+ * @param options - resolve multi sidebar options
+ * @returns resolved sidebar items
  */
 export const resolveMultiSidebarItems = ({
   config,
@@ -90,7 +88,7 @@ export const resolveMultiSidebarItems = ({
   const sidebarRoutes = keys(config).sort((x, y) => y.length - x.length);
 
   // Find matching config
-  for (const base of sidebarRoutes)
+  for (const base of sidebarRoutes) {
     if (startsWith(decodeURI(routePath), base)) {
       const matched = config[base];
 
@@ -99,8 +97,9 @@ export const resolveMultiSidebarItems = ({
         prefix: base,
       });
     }
+  }
 
-  // eslint-disable-next-line no-console
+  // oxlint-disable-next-line no-console
   console.warn(`${decodeURI(routePath)} is missing it's sidebar config.`);
 
   return [];

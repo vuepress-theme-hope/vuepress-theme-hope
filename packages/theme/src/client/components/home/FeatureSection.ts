@@ -47,10 +47,7 @@ const FeatureSection: FunctionalComponent<
       bgImageDark
         ? h("div", {
             class: "vp-feature-bg dark",
-            style: [
-              { "background-image": `url(${bgImageDark})` },
-              bgImageStyle,
-            ],
+            style: [{ "background-image": `url(${bgImageDark})` }, bgImageStyle],
           })
         : null,
       h(

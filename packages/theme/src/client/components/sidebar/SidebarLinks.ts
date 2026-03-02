@@ -37,9 +37,7 @@ export default defineComponent({
     watchImmediate(
       routePath,
       (): void => {
-        const index = props.config.findIndex((item) =>
-          isActiveSidebarItem(route, item),
-        );
+        const index = props.config.findIndex((item) => isActiveSidebarItem(route, item));
 
         openGroupIndex.value = index;
       },

@@ -7,17 +7,17 @@ import type { ArticleInfoData } from "../../../shared/index.js";
 
 export type CategoryMapRef = ComputedRef<BlogCategoryData<ArticleInfoData>>;
 
-export const categoryMapSymbol: InjectionKey<CategoryMapRef> =
-  Symbol.for("categoryMap");
+export const categoryMapSymbol: InjectionKey<CategoryMapRef> = Symbol.for("categoryMap");
 
 /**
  * Inject categoryMap
+ *
+ * @returns categoryMap global computed
  */
 export const useCategoryMap = (): CategoryMapRef => {
   const categoryMap = inject(categoryMapSymbol);
 
-  if (!categoryMap)
-    throw new Error("useCategoryMap() is called without provider.");
+  if (!categoryMap) throw new Error("useCategoryMap() is called without provider.");
 
   return categoryMap;
 };

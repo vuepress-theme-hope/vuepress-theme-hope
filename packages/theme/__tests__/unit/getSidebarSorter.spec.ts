@@ -97,17 +97,17 @@ describe("should handle order", () => {
     expect(
       (
         [
-          { label: "1", order: null },
-          { label: "2", order: null },
-          { label: "3", order: null },
-          { label: "4", order: null },
+          { title: "1", order: null },
+          { title: "2", order: null },
+          { title: "3", order: null },
+          { title: "4", order: null },
         ] as SidebarInfo[]
       ).sort(sidebarOrderSorter),
     ).toEqual([
-      { label: "1", order: null },
-      { label: "2", order: null },
-      { label: "3", order: null },
-      { label: "4", order: null },
+      { title: "1", order: null },
+      { title: "2", order: null },
+      { title: "3", order: null },
+      { title: "4", order: null },
     ]);
   });
 
@@ -115,65 +115,65 @@ describe("should handle order", () => {
     expect(
       (
         [
-          { label: "1", order: null },
-          { label: "2", order: null },
-          { label: "3", order: 1 },
-          { label: "4", order: null },
+          { title: "1", order: null },
+          { title: "2", order: null },
+          { title: "3", order: 1 },
+          { title: "4", order: null },
         ] as SidebarInfo[]
       ).sort(sidebarOrderSorter),
     ).toEqual([
-      { label: "3", order: 1 },
-      { label: "1", order: null },
-      { label: "2", order: null },
-      { label: "4", order: null },
+      { title: "3", order: 1 },
+      { title: "1", order: null },
+      { title: "2", order: null },
+      { title: "4", order: null },
     ]);
 
     expect(
       (
         [
-          { label: "1", order: null },
-          { label: "2", order: 1 },
-          { label: "3", order: 1 },
-          { label: "4", order: null },
+          { title: "1", order: null },
+          { title: "2", order: 1 },
+          { title: "3", order: 1 },
+          { title: "4", order: null },
         ] as SidebarInfo[]
       ).sort(sidebarOrderSorter),
     ).toEqual([
-      { label: "2", order: 1 },
-      { label: "3", order: 1 },
-      { label: "1", order: null },
-      { label: "4", order: null },
+      { title: "2", order: 1 },
+      { title: "3", order: 1 },
+      { title: "1", order: null },
+      { title: "4", order: null },
     ]);
 
     expect(
       (
         [
-          { label: "1", order: null },
-          { label: "2", order: 2 },
-          { label: "3", order: 1 },
-          { label: "4", order: null },
+          { title: "1", order: null },
+          { title: "2", order: 2 },
+          { title: "3", order: 1 },
+          { title: "4", order: null },
         ] as SidebarInfo[]
       ).sort(sidebarOrderSorter),
     ).toEqual([
-      { label: "3", order: 1 },
-      { label: "2", order: 2 },
-      { label: "1", order: null },
-      { label: "4", order: null },
+      { title: "3", order: 1 },
+      { title: "2", order: 2 },
+      { title: "1", order: null },
+      { title: "4", order: null },
     ]);
 
     expect(
       (
         [
-          { label: "1", order: 4 },
-          { label: "2", order: 3 },
-          { label: "3", order: 2 },
-          { label: "4", order: 1 },
+          { title: "1", order: 4 },
+          { title: "2", order: 3 },
+          { title: "3", order: 2 },
+          { title: "4", order: 1 },
         ] as SidebarInfo[]
       ).sort(sidebarOrderSorter),
     ).toEqual([
-      { label: "4", order: 1 },
-      { label: "3", order: 2 },
-      { label: "2", order: 3 },
-      { label: "1", order: 4 },
+      { title: "4", order: 1 },
+      { title: "3", order: 2 },
+      { title: "2", order: 3 },
+      { title: "1", order: 4 },
     ]);
   });
 
@@ -181,65 +181,65 @@ describe("should handle order", () => {
     expect(
       (
         [
-          { label: "1", order: null },
-          { label: "2", order: null },
-          { label: "3", order: -1 },
-          { label: "4", order: null },
+          { title: "1", order: null },
+          { title: "2", order: null },
+          { title: "3", order: -1 },
+          { title: "4", order: null },
         ] as SidebarInfo[]
       ).sort(sidebarOrderSorter),
     ).toEqual([
-      { label: "1", order: null },
-      { label: "2", order: null },
-      { label: "4", order: null },
-      { label: "3", order: -1 },
+      { title: "1", order: null },
+      { title: "2", order: null },
+      { title: "4", order: null },
+      { title: "3", order: -1 },
     ]);
 
     expect(
       (
         [
-          { label: "1", order: null },
-          { label: "2", order: -1 },
-          { label: "3", order: -1 },
-          { label: "4", order: null },
+          { title: "1", order: null },
+          { title: "2", order: -1 },
+          { title: "3", order: -1 },
+          { title: "4", order: null },
         ] as SidebarInfo[]
       ).sort(sidebarOrderSorter),
     ).toEqual([
-      { label: "1", order: null },
-      { label: "4", order: null },
-      { label: "2", order: -1 },
-      { label: "3", order: -1 },
+      { title: "1", order: null },
+      { title: "4", order: null },
+      { title: "2", order: -1 },
+      { title: "3", order: -1 },
     ]);
 
     expect(
       (
         [
-          { label: "1", order: null },
-          { label: "2", order: -1 },
-          { label: "3", order: -2 },
-          { label: "4", order: null },
+          { title: "1", order: null },
+          { title: "2", order: -1 },
+          { title: "3", order: -2 },
+          { title: "4", order: null },
         ] as SidebarInfo[]
       ).sort(sidebarOrderSorter),
     ).toEqual([
-      { label: "1", order: null },
-      { label: "4", order: null },
-      { label: "3", order: -2 },
-      { label: "2", order: -1 },
+      { title: "1", order: null },
+      { title: "4", order: null },
+      { title: "3", order: -2 },
+      { title: "2", order: -1 },
     ]);
 
     expect(
       (
         [
-          { label: "1", order: -1 },
-          { label: "2", order: -2 },
-          { label: "3", order: -3 },
-          { label: "4", order: -4 },
+          { title: "1", order: -1 },
+          { title: "2", order: -2 },
+          { title: "3", order: -3 },
+          { title: "4", order: -4 },
         ] as SidebarInfo[]
       ).sort(sidebarOrderSorter),
     ).toEqual([
-      { label: "4", order: -4 },
-      { label: "3", order: -3 },
-      { label: "2", order: -2 },
-      { label: "1", order: -1 },
+      { title: "4", order: -4 },
+      { title: "3", order: -3 },
+      { title: "2", order: -2 },
+      { title: "1", order: -1 },
     ]);
   });
 
@@ -247,19 +247,19 @@ describe("should handle order", () => {
     expect(
       (
         [
-          { label: "1", order: null },
-          { label: "2", order: null },
-          { label: "3", order: -1 },
-          { label: "4", order: 1 },
-          { label: "5", order: null },
+          { title: "1", order: null },
+          { title: "2", order: null },
+          { title: "3", order: -1 },
+          { title: "4", order: 1 },
+          { title: "5", order: null },
         ] as SidebarInfo[]
       ).sort(sidebarOrderSorter),
     ).toEqual([
-      { label: "4", order: 1 },
-      { label: "1", order: null },
-      { label: "2", order: null },
-      { label: "5", order: null },
-      { label: "3", order: -1 },
+      { title: "4", order: 1 },
+      { title: "1", order: null },
+      { title: "2", order: null },
+      { title: "5", order: null },
+      { title: "3", order: -1 },
     ]);
   });
 });
@@ -269,19 +269,19 @@ describe("should handle time", () => {
     expect(
       (
         [
-          { label: "1", frontmatter: {} },
-          { label: "2", frontmatter: {} },
-          { label: "3", frontmatter: { date: new Date("2022-01-01") } },
-          { label: "4", frontmatter: { date: new Date("1970-01-01") } },
-          { label: "5", frontmatter: {} },
+          { title: "1", frontmatter: {} },
+          { title: "2", frontmatter: {} },
+          { title: "3", frontmatter: { date: new Date("2022-01-01") } },
+          { title: "4", frontmatter: { date: new Date("1970-01-01") } },
+          { title: "5", frontmatter: {} },
         ] as SidebarInfo[]
       ).sort(sidebarDateSorter),
     ).toEqual([
-      { label: "4", frontmatter: { date: new Date("1970-01-01") } },
-      { label: "3", frontmatter: { date: new Date("2022-01-01") } },
-      { label: "1", frontmatter: {} },
-      { label: "2", frontmatter: {} },
-      { label: "5", frontmatter: {} },
+      { title: "4", frontmatter: { date: new Date("1970-01-01") } },
+      { title: "3", frontmatter: { date: new Date("2022-01-01") } },
+      { title: "1", frontmatter: {} },
+      { title: "2", frontmatter: {} },
+      { title: "5", frontmatter: {} },
     ]);
   });
 
@@ -289,19 +289,19 @@ describe("should handle time", () => {
     expect(
       (
         [
-          { label: "1", frontmatter: {} },
-          { label: "2", frontmatter: {} },
-          { label: "3", frontmatter: { date: new Date("2022-01-01") } },
-          { label: "4", frontmatter: { date: new Date("1970-01-01") } },
-          { label: "5", frontmatter: {} },
+          { title: "1", frontmatter: {} },
+          { title: "2", frontmatter: {} },
+          { title: "3", frontmatter: { date: new Date("2022-01-01") } },
+          { title: "4", frontmatter: { date: new Date("1970-01-01") } },
+          { title: "5", frontmatter: {} },
         ] as SidebarInfo[]
       ).sort(sidebarDateDescSorter),
     ).toEqual([
-      { label: "3", frontmatter: { date: new Date("2022-01-01") } },
-      { label: "4", frontmatter: { date: new Date("1970-01-01") } },
-      { label: "1", frontmatter: {} },
-      { label: "2", frontmatter: {} },
-      { label: "5", frontmatter: {} },
+      { title: "3", frontmatter: { date: new Date("2022-01-01") } },
+      { title: "4", frontmatter: { date: new Date("1970-01-01") } },
+      { title: "1", frontmatter: {} },
+      { title: "2", frontmatter: {} },
+      { title: "5", frontmatter: {} },
     ]);
   });
 });

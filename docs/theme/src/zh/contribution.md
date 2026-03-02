@@ -119,7 +119,7 @@ VuePress 同时运行在客户端和 Node 端。 Node 侧有像 `fs` 这样的 n
 
 1. 格式化项目: `pnpm lint`
 
-   它将使用 prettier、eslint 和 stylelint 格式化项目。
+   它将使用 oxlint，oxfmt 和 stylelint 格式化项目。
 
    如果你修改了 Markdown，你还需要运行 `pnpm lint:md` 命令。
 

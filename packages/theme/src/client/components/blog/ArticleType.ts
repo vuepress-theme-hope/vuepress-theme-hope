@@ -30,9 +30,7 @@ export default defineComponent({
         const routePath = path.replace(/^\//, routeLocale.value);
 
         return {
-          text:
-            // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-            blogLocale.value[key] ?? resolveRoute(routePath).meta.title ?? key,
+          text: blogLocale.value[key] ?? resolveRoute(routePath).meta.title ?? key,
           path: routePath,
         };
       }),
@@ -46,10 +44,7 @@ export default defineComponent({
           h(
             "li",
             {
-              class: [
-                "vp-article-type",
-                { active: type.path === page.value.path },
-              ],
+              class: ["vp-article-type", { active: type.path === page.value.path }],
             },
             h(RouteLink, { to: type.path }, () => type.text),
           ),

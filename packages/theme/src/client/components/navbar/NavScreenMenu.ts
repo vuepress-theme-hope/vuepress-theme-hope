@@ -1,13 +1,5 @@
 import type { PropType, VNode } from "vue";
-import {
-  computed,
-  defineComponent,
-  h,
-  ref,
-  resolveComponent,
-  toRef,
-  watch,
-} from "vue";
+import { computed, defineComponent, h, ref, resolveComponent, toRef, watch } from "vue";
 import { onContentUpdated, useRoute } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/base/AutoLink";
@@ -16,8 +8,7 @@ import type { AutoLinkOptions, NavGroup } from "../../../shared/index.js";
 
 import "../../styles/navbar/nav-screen-menu.scss";
 
-const isLastItemOfArray = <Item>(item: Item, arr: Item[]): boolean =>
-  arr[arr.length - 1] === item;
+const isLastItemOfArray = <Item>(item: Item, arr: Item[]): boolean => arr[arr.length - 1] === item;
 
 export default defineComponent({
   name: "NavScreenMenu",
@@ -29,9 +20,7 @@ export default defineComponent({
      * 导航栏下拉列表配置
      */
     config: {
-      type: Object as PropType<
-        NavGroup<AutoLinkOptions | NavGroup<AutoLinkOptions>>
-      >,
+      type: Object as PropType<NavGroup<AutoLinkOptions | NavGroup<AutoLinkOptions>>>,
 
       required: true,
     },
@@ -41,9 +30,7 @@ export default defineComponent({
     const config = toRef(props, "config");
     const route = useRoute();
 
-    const ariaLabel = computed(
-      () => config.value.ariaLabel ?? config.value.text,
-    );
+    const ariaLabel = computed(() => config.value.ariaLabel ?? config.value.text);
 
     const open = ref(false);
 
@@ -132,8 +119,7 @@ export default defineComponent({
               : h(AutoLink, {
                   config: child,
                   onFocusout: () => {
-                    if (isLastItemOfArray(child, config.value.children))
-                      open.value = false;
+                    if (isLastItemOfArray(child, config.value.children)) open.value = false;
                   },
                 }),
           ),

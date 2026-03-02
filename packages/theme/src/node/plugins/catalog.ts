@@ -4,13 +4,12 @@ import { catalogPlugin } from "@vuepress/plugin-catalog";
 import type { Plugin } from "vuepress/core";
 
 /**
- * @private
- *
  * Resolve options for `@vuepress/plugin-catalog`
+ *
+ * @param catalog - User options
+ * @returns Catalog plugin instance or `null`
  */
-export const getCatalogPlugin = (
-  catalog?: CatalogPluginOptions | boolean,
-): Plugin | null => {
+export const getCatalogPlugin = (catalog?: CatalogPluginOptions | boolean): Plugin | null => {
   if (catalog === false) return null;
 
   return catalogPlugin({

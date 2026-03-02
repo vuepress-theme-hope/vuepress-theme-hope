@@ -79,16 +79,10 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 <template>
   <RouterLink to="/v2/zh/">首页</RouterLink>
   <RouterLink to="/v2/zh/contribution.html">贡献指南</RouterLink>
-  <RouterLink to="/v2/zh/cookbook/vuepress/config.html"
-    >VuePress 配置</RouterLink
-  >
+  <RouterLink to="/v2/zh/cookbook/vuepress/config.html">VuePress 配置</RouterLink>
   <RouterLink to="/v2/zh/guide/">指南</RouterLink>
-  <RouterLink to="/v2/zh/reference/config.html#links"
-    >配置参考 &gt; 多语言</RouterLink
-  >
-  <a href="https://github.com" target="_blank" rel="noopener noreferrer"
-    >GitHub</a
-  >
+  <RouterLink to="/v2/zh/reference/config.html#links">配置参考 &gt; 多语言</RouterLink>
+  <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
 </template>
 ```
 

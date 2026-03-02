@@ -3,10 +3,7 @@ import type { BlogTypeOptions } from "@vuepress/plugin-blog";
 import type { GitData } from "@vuepress/plugin-git";
 import type { Page } from "vuepress";
 
-import type {
-  ArticleInfoData,
-  ThemeNormalPageFrontmatter,
-} from "../shared/index.js";
+import type { ArticleInfoData, ThemeNormalPageFrontmatter } from "../shared/index.js";
 
 export interface RecentUpdateArticlesOptions {
   /**
@@ -52,18 +49,9 @@ export const getRecentUpdatedArticles = ({
       (Boolean(filePathRelative) && !frontmatter.home),
 
     sorter: (
-      pageA: Page<
-        { git?: GitData },
-        ThemeNormalPageFrontmatter,
-        { routeMeta: ArticleInfoData }
-      >,
-      pageB: Page<
-        { git?: GitData },
-        ThemeNormalPageFrontmatter,
-        { routeMeta: ArticleInfoData }
-      >,
-    ): number =>
-      dateSorter(pageA.data.git?.updatedTime, pageB.data.git?.updatedTime),
+      pageA: Page<{ git?: GitData }, ThemeNormalPageFrontmatter, { routeMeta: ArticleInfoData }>,
+      pageB: Page<{ git?: GitData }, ThemeNormalPageFrontmatter, { routeMeta: ArticleInfoData }>,
+    ): number => dateSorter(pageA.data.git?.updatedTime, pageB.data.git?.updatedTime),
 
     path,
     layout: "Blog",

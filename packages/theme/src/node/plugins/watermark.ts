@@ -4,9 +4,7 @@ import type { Plugin, PluginObject } from "vuepress/core";
 
 import { logMissingPkg } from "./utils.js";
 
-let watermarkPlugin:
-  | ((options: WatermarkPluginOptions, legacy?: boolean) => Plugin)
-  | null = null;
+let watermarkPlugin: ((options: WatermarkPluginOptions, legacy?: boolean) => Plugin) | null = null;
 
 try {
   ({ watermarkPlugin } = await import("@vuepress/plugin-watermark"));
@@ -14,9 +12,10 @@ try {
   // Do nothing
 }
 /**
- * @private
- *
  * Resolve options for `@vuepress/plugin-watermark`
+ *
+ * @param options - User options
+ * @returns Watermark plugin instance or `null`
  */
 export const getWatermarkPlugin = (
   options?: WatermarkPluginOptions | boolean,

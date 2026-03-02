@@ -81,11 +81,7 @@ const VPCard: FunctionalComponent<CardProps> = ({
 
   return link
     ? isLinkExternal(link)
-      ? h(
-          "a",
-          { class: "vp-card", href: link, target: "_blank", style },
-          children,
-        )
+      ? h("a", { class: "vp-card", href: link, target: "_blank", style }, children)
       : h(RouteLink, { to: link, class: "vp-card", style }, () => children)
     : h("div", { class: "vp-card", style }, children);
 };

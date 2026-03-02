@@ -3,22 +3,17 @@
   "version": "2.0.0-rc.99",
   "description": "Light Gallery plugin for VuePress",
   "keywords": [
-    "vuepress",
-    "vuepress2",
-    "vuepress-plugin",
-    "lightgallery",
     "image",
+    "lightgallery",
     "preview",
+    "vuepress",
+    "vuepress-plugin",
+    "vuepress2",
     "zoom"
   ],
   "homepage": "https://plugin-lightgallery.vuejs.press/",
   "bugs": {
     "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
-    "directory": "packages/lightgallery"
   },
   "license": "MIT",
   "author": {
@@ -26,17 +21,22 @@
     "email": "mister-hope@outlook.com",
     "url": "https://mister-hope.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+    "directory": "packages/lightgallery"
+  },
+  "files": [
+    "lib"
+  ],
   "type": "module",
+  "main": "./lib/node/index.js",
+  "types": "./lib/node/index.d.ts",
   "exports": {
     ".": "./lib/node/index.js",
     "./client": "./lib/client/index.js",
     "./package.json": "./package.json"
   },
-  "main": "./lib/node/index.js",
-  "types": "./lib/node/index.d.ts",
-  "files": [
-    "lib"
-  ],
   "scripts": {
     "build": "rollup -c rollup.config.ts --configPlugin esbuild",
     "clean": "rimraf --glob ./lib ./*.tsbuildinfo",

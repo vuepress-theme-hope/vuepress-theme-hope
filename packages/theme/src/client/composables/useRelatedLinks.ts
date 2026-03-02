@@ -48,25 +48,23 @@ const resolveFromSidebarItems = (
 
     if (targetItem.link) return targetItem as AutoLinkOptions;
 
-    if ("prefix" in targetItem && !resolveRoute(targetItem.prefix).notFound)
+    if ("prefix" in targetItem && !resolveRoute(targetItem.prefix).notFound) {
       return {
         ...targetItem,
         link: targetItem.prefix,
       };
+    }
 
     return null;
   }
 
-  for (const item of sidebarItems)
+  for (const item of sidebarItems) {
     if ("children" in item) {
-      const childResult = resolveFromSidebarItems(
-        item.children,
-        currentPath,
-        offset,
-      );
+      const childResult = resolveFromSidebarItems(item.children, currentPath, offset);
 
       if (childResult) return childResult;
     }
+  }
 
   const prefixIndex = sidebarItems.findIndex(
     (item) => "prefix" in item && item.prefix === currentPath,
@@ -79,11 +77,12 @@ const resolveFromSidebarItems = (
 
     if (targetItem.link) return targetItem as AutoLinkOptions;
 
-    if ("prefix" in targetItem && !resolveRoute(targetItem.prefix).notFound)
+    if ("prefix" in targetItem && !resolveRoute(targetItem.prefix).notFound) {
       return {
         ...targetItem,
         link: targetItem.prefix,
       };
+    }
 
     return null;
   }
@@ -101,28 +100,18 @@ export const useRelatedLinks = (): RelatedLinks => {
   const sidebarItems = useSidebarItems();
 
   const prevLink = computed(() => {
-    const prevConfig = resolveFromFrontmatterConfig(
-      frontmatter.value.prev,
-      routePath.value,
-    );
+    const prevConfig = resolveFromFrontmatterConfig(frontmatter.value.prev, routePath.value);
 
     return prevConfig === false
       ? null
       : (prevConfig ??
           (themeLocale.value.prevLink === false
             ? null
-            : resolveFromSidebarItems(
-                sidebarItems.value,
-                routePath.value,
-                -1,
-              )));
+            : resolveFromSidebarItems(sidebarItems.value, routePath.value, -1)));
   });
 
   const nextLink = computed(() => {
-    const nextConfig = resolveFromFrontmatterConfig(
-      frontmatter.value.next,
-      routePath.value,
-    );
+    const nextConfig = resolveFromFrontmatterConfig(frontmatter.value.next, routePath.value);
 
     return nextConfig === false
       ? null

@@ -7,9 +7,7 @@ export class Popup {
   // Generate or make sure popup container element
   constructor() {
     const containerId = "popup-container";
-    const containerElement = document.querySelector<HTMLElement>(
-      `#${containerId}`,
-    );
+    const containerElement = document.querySelector<HTMLElement>(`#${containerId}`);
 
     if (containerElement) {
       this.containerElement = containerElement;
@@ -35,10 +33,11 @@ export class Popup {
     popupElement.className = "popup-container";
     popupElement.innerHTML = html;
 
-    if (typeof duration === "number")
+    if (typeof duration === "number") {
       setTimeout(() => {
         this.close(popupId);
       }, duration);
+    }
 
     return popupId;
   }

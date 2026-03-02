@@ -16,11 +16,7 @@ export const componentsPlugin =
   (options: ComponentPluginOptions, legacy = true): PluginFunction =>
   (app) => {
     // TODO: Remove this in v2 stable
-    if (legacy)
-      // eslint-disable-next-line @typescript-eslint/no-deprecated
-      convertOptions(
-        options as ComponentPluginOptions & Record<string, unknown>,
-      );
+    if (legacy) convertOptions(options as ComponentPluginOptions & Record<string, unknown>);
 
     if (app.env.isDebug) logger.info("Options:", options);
 
@@ -31,18 +27,15 @@ export const componentsPlugin =
 
       define: getDefine(options),
 
-      extendsBundlerOptions: (bundlerOptions, app): void => {
+      extendsBundlerOptions: (bundlerOptions): void => {
         if (options.components?.includes("ArtPlayer"))
           addViteOptimizeDepsInclude(bundlerOptions, app, "artplayer");
         if (options.components?.includes("VidStack"))
           addCustomElement(bundlerOptions, app, /^media-/);
 
-        addViteSsrNoExternal(bundlerOptions, app, [
-          "@vuepress/helper",
-          "vuepress-shared",
-        ]);
+        addViteSsrNoExternal(bundlerOptions, app, ["@vuepress/helper", "vuepress-shared"]);
       },
 
-      clientConfigFile: (app) => prepareConfigFile(app, options),
+      clientConfigFile: () => prepareConfigFile(app, options),
     };
   };

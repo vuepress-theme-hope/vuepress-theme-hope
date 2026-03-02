@@ -3,22 +3,17 @@
   "version": "2.0.0-rc.102",
   "description": "A light vuepress theme with tons of features",
   "keywords": [
-    "vuepress",
-    "vuepress2",
-    "theme",
-    "vuepress-theme",
     "blog",
+    "theme",
+    "vuepress",
     "vuepress-blog",
-    "vuepress-theme-blog"
+    "vuepress-theme",
+    "vuepress-theme-blog",
+    "vuepress2"
   ],
   "homepage": "https://theme-hope.vuejs.press/",
   "bugs": {
     "url": "https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
-    "directory": "packages/theme"
   },
   "license": "MIT",
   "author": {
@@ -26,10 +21,21 @@
     "email": "mister-hope@outlook.com",
     "url": "https://mister-hope.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress-theme-hope/vuepress-theme-hope.git",
+    "directory": "packages/theme"
+  },
+  "files": [
+    "lib",
+    "templates"
+  ],
+  "type": "module",
   "sideEffects": [
     "**/*.scss"
   ],
-  "type": "module",
+  "main": "./lib/node/index.js",
+  "types": "./lib/node/index.d.ts",
   "exports": {
     ".": "./lib/node/index.js",
     "./blog": {
@@ -68,12 +74,6 @@
     "./templates/*": "./templates/*",
     "./package.json": "./package.json"
   },
-  "main": "./lib/node/index.js",
-  "types": "./lib/node/index.d.ts",
-  "files": [
-    "lib",
-    "templates"
-  ],
   "scripts": {
     "build": "pnpm build:rollup && pnpm gulp && pnpm build:ts && pnpm copy",
     "build:rollup": "rollup -c rollup.config.ts --configPlugin esbuild",

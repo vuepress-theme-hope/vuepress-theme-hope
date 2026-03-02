@@ -9,7 +9,6 @@ import type {
 } from "../../shared/index.js";
 import { logger } from "../utils.js";
 
-/** @private */
 export const checkFrontmatter = (page: Page): void => {
   const frontmatter = page.frontmatter as
     | ThemeProjectHomePageFrontmatter
@@ -28,9 +27,7 @@ export const checkFrontmatter = (page: Page): void => {
       )
     ) {
       logger.warn(
-        `${colors.magenta(
-          key,
-        )} property in Page FrontMatter should be ${colors.cyan(
+        `${colors.magenta(key)} property in Page FrontMatter should be ${colors.cyan(
           "string",
         )} or ${colors.cyan(" string[]")}${
           filePathRelative ? `, found in ${filePathRelative}` : ""
@@ -102,11 +99,12 @@ export const checkFrontmatter = (page: Page): void => {
 
   // check dot values
   Object.keys(frontmatter).forEach((key) => {
-    if (key.includes("."))
+    if (key.includes(".")) {
       logger.warn(
         `${colors.magenta(key)} in frontMatter should not contain ${colors.cyan(
           ".",
         )}${filePathRelative ? `, found in ${filePathRelative}` : ""}.`,
       );
+    }
   });
 };

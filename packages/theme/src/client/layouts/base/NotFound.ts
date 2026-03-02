@@ -25,9 +25,7 @@ export default defineComponent({
     const isMounted = ref(false);
 
     const expectedRouterLocale = computed(
-      () =>
-        theme.value.locales[isMounted.value ? routeLocale.value : "/"]
-          .routerLocales,
+      () => theme.value.locales[isMounted.value ? routeLocale.value : "/"].routerLocales,
     );
 
     const getMsg = (): string => {
@@ -56,11 +54,7 @@ export default defineComponent({
               slots.default?.() ?? [
                 h("div", { class: "not-found-hint" }, [
                   h("p", { class: "error-code" }, "404"),
-                  h(
-                    "h1",
-                    { class: "error-title" },
-                    expectedRouterLocale.value.notFoundTitle,
-                  ),
+                  h("h1", { class: "error-title" }, expectedRouterLocale.value.notFoundTitle),
                   h("p", { class: "error-hint" }, getMsg()),
                 ]),
                 h("div", { class: "actions" }, [
@@ -81,9 +75,7 @@ export default defineComponent({
                       type: "button",
                       class: "action-button",
                       onClick: () => {
-                        void router.push(
-                          themeLocale.value.home ?? routeLocale.value,
-                        );
+                        void router.push(themeLocale.value.home ?? routeLocale.value);
                       },
                     },
                     expectedRouterLocale.value.home,

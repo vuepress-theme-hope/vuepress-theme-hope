@@ -79,9 +79,7 @@ export default defineComponent({
               ? h(PortfolioHome, null, slots)
               : frontmatter.value.home
                 ? h(HomePage, null, slots)
-                : h(MainFadeInUpTransition, () =>
-                    h(PageContent, { key: page.value.path }, slots),
-                  )),
+                : h(MainFadeInUpTransition, () => h(PageContent, { key: page.value.path }, slots))),
 
         navScreenBottom:
           slots.navScreenBottom ??

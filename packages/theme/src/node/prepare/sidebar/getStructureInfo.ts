@@ -17,13 +17,7 @@ export interface DirInfo {
 
 export type StructureInfo = DirInfo | FileInfo;
 
-/**
- * @private
- */
-export const getStructureInfo = (
-  pages: Page[],
-  scope: string,
-): StructureInfo[] => {
+export const getStructureInfo = (pages: Page[], scope: string): StructureInfo[] => {
   const relatedPages = pages.filter(
     ({ filePathRelative, pathLocale }) =>
       // Generated from file and inside current scope
@@ -34,22 +28,17 @@ export const getStructureInfo = (
 
   const sortedPages = relatedPages
     // Sort pages
-    .sort(
-      (
-        { filePathRelative: filePathRelative1 },
-        { filePathRelative: filePathRelative2 },
-      ) =>
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        filePathRelative1!.localeCompare(filePathRelative2!, undefined, {
-          numeric: true,
-          sensitivity: "accent",
-        }),
+    .sort(({ filePathRelative: filePathRelative1 }, { filePathRelative: filePathRelative2 }) =>
+      // oxlint-disable-next-line no-undefined
+      filePathRelative1!.localeCompare(filePathRelative2!, undefined, {
+        numeric: true,
+        sensitivity: "accent",
+      }),
     );
 
   const structure: StructureInfo[] = [];
 
   sortedPages.forEach((page) => {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const relativePath = path.relative(scope, page.filePathRelative!);
     const filename = path.basename(relativePath);
 
@@ -64,8 +53,7 @@ export const getStructureInfo = (
       // Still generating dir
       else {
         const result = currentDir.find<DirInfo>(
-          (item): item is DirInfo =>
-            item.type === "dir" && item.dirname === level,
+          (item): item is DirInfo => item.type === "dir" && item.dirname === level,
         );
 
         if (result) {

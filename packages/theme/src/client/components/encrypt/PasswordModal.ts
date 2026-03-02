@@ -63,10 +63,7 @@ export default defineComponent({
       h(
         "div",
         {
-          class: [
-            "vp-decrypt-layer",
-            { expand: props.full || frontmatter.value.home },
-          ],
+          class: ["vp-decrypt-layer", { expand: props.full || frontmatter.value.home }],
         },
         [
           props.showTitle ? h(PageTitle) : null,
@@ -78,9 +75,7 @@ export default defineComponent({
                 ? encryptLocale.value.errorHint
                 : h(LockIcon, { "aria-label": encryptLocale.value.iconLabel }),
             ),
-            props.hint
-              ? h("div", { class: "vp-decrypt-hint" }, props.hint)
-              : null,
+            props.hint ? h("div", { class: "vp-decrypt-hint" }, props.hint) : null,
             h("div", { class: "vp-decrypt-input" }, [
               h("input", {
                 type: "password",
@@ -103,11 +98,7 @@ export default defineComponent({
                   remember.value = !remember.value;
                 },
               }),
-              h(
-                "label",
-                { for: "remember-password" },
-                encryptLocale.value.remember,
-              ),
+              h("label", { for: "remember-password" }, encryptLocale.value.remember),
             ]),
             h(
               "button",

@@ -1,7 +1,5 @@
 .vp-navbar {
-  --navbar-line-height: calc(
-    var(--navbar-height) - var(--navbar-padding-y) * 2
-  );
+  --navbar-line-height: calc(var(--navbar-height) - var(--navbar-padding-y) * 2);
 
   position: fixed;
   inset: 0 0 auto;

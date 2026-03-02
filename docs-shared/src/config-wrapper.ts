@@ -13,13 +13,9 @@ const IS_GITEE = "GITEE" in process.env;
 const IS_NETLIFY = "NETLIFY" in process.env;
 const IS_GITHUB = !IS_GITEE && !IS_NETLIFY;
 
-export const config = (name: string, config: UserConfig): UserConfig => {
+export const config = (name: string, userConfig: UserConfig): UserConfig => {
   const base = name.replace(/\d+$/, "");
-  const docsBase = IS_NETLIFY
-    ? "/"
-    : base
-      ? (`/v2/${base}/` as `/${string}/`)
-      : "/v2/";
+  const docsBase = IS_NETLIFY ? "/" : base ? (`/v2/${base}/` as `/${string}/`) : "/v2/";
 
   return defineUserConfig({
     base: docsBase,
@@ -28,8 +24,7 @@ export const config = (name: string, config: UserConfig): UserConfig => {
 
     head: pwaHead,
 
-    bundler:
-      process.env.BUNDLER === "webpack" ? webpackBundler() : viteBundler(),
+    bundler: process.env.BUNDLER === "webpack" ? webpackBundler() : viteBundler(),
 
     define: () => ({
       IS_GITEE,
@@ -37,7 +32,7 @@ export const config = (name: string, config: UserConfig): UserConfig => {
       IS_NETLIFY,
     }),
 
-    extendsBundlerOptions: (bundlerOptions: unknown, app): void => {
+    extendsBundlerOptions: (bundlerOptions, app): void => {
       addViteOptimizeDepsInclude(bundlerOptions, app, [
         "three",
         "three/examples/jsm/controls/OrbitControls",
@@ -47,7 +42,6 @@ export const config = (name: string, config: UserConfig): UserConfig => {
 
     onInitialized: (app) => {
       if (IS_NETLIFY) {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         app.pages.find((page) => page.path === "/")!.frontmatter.footer = `\
 <a href="https://www.netlify.com" target="_blank">
   <img src="https://www.netlify.com/img/global/badges/netlify-light.svg" alt="Deploys by Netlify" data-mode="lightmode-only">
@@ -56,7 +50,6 @@ export const config = (name: string, config: UserConfig): UserConfig => {
 <br/>
 Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
 `;
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         app.pages.find((page) => page.path === "/zh/")!.frontmatter.footer = `\
 <a href="https://www.netlify.com" target="_blank">
   <img src="https://www.netlify.com/img/global/badges/netlify-light.svg" alt="由 Netlify 部署" data-mode="lightmode-only">
@@ -73,6 +66,6 @@ Theme by <a href="https://theme-hope.vuejs.press" target="_blank">VuePress Theme
 
     clientConfigFile: path.resolve(__dirname, "./client.js"),
 
-    ...config,
+    ...userConfig,
   });
 };

@@ -7,16 +7,10 @@ import type { SupportedLang } from "../i18n/index.js";
 
 const NPM_MIRROR_REGISTRY = "https://registry.npmmirror.com/";
 
-const getUserRegistry = (
-  packageManager: PackageManager,
-  isYarnModern: boolean,
-): string =>
-  execSync(
-    `${packageManager} config get ${
-      isYarnModern ? "npmRegistryServer" : "registry"
-    }`,
-    { encoding: "utf8" },
-  ).trim();
+const getUserRegistry = (packageManager: PackageManager, isYarnModern: boolean): string =>
+  execSync(`${packageManager} config get ${isYarnModern ? "npmRegistryServer" : "registry"}`, {
+    encoding: "utf-8",
+  }).trim();
 
 export const getRegistry = async (
   packageManager: PackageManager,
@@ -35,9 +29,9 @@ export const getRegistry = async (
   if (lang === "zh") {
     const registry = await select({
       message: "选择你想使用的源",
-      choices: ["国内镜像源", "当前源"].map((registry) => ({
-        name: registry,
-        value: registry,
+      choices: ["国内镜像源", "当前源"].map((item) => ({
+        name: item,
+        value: item,
       })),
     });
 

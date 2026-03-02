@@ -19,21 +19,18 @@ export default defineComponent({
 
       return (
         // footer is not disabled
-        footer !== false &&
-        // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-        Boolean(copyright || footer || themeLocale.value.displayFooter)
+        footer !== false && Boolean(copyright || footer || themeLocale.value.displayFooter)
       );
     });
 
     const footer = computed(() => {
+      // oxlint-disable-next-line no-shadow
       const { footer } = frontmatter.value;
 
       return isString(footer) ? footer : (themeLocale.value.footer ?? "");
     });
 
-    const authorText = computed(() =>
-      author.value.map(({ name }) => name).join(", "),
-    );
+    const authorText = computed(() => author.value.map(({ name }) => name).join(", "));
 
     const getCopyrightText = (license?: string): string =>
       `Copyright © ${new Date().getFullYear()} ${authorText.value} ${
@@ -41,6 +38,7 @@ export default defineComponent({
       }`;
 
     const copyright = computed(() => {
+      // oxlint-disable-next-line no-shadow
       const { copyright, license = "" } = frontmatter.value;
       const { license: globalLicense } = theme.value;
       const { copyright: globalCopyright } = themeLocale.value;
@@ -50,18 +48,14 @@ export default defineComponent({
         (license
           ? getCopyrightText(license)
           : (globalCopyright ??
-            (authorText.value || globalLicense
-              ? getCopyrightText(globalLicense)
-              : false)))
+            (authorText.value || globalLicense ? getCopyrightText(globalLicense) : false)))
       );
     });
 
     return (): VNode | null =>
       enabled.value
         ? h("footer", { class: "vp-footer-wrapper", "vp-footer": "" }, [
-            footer.value
-              ? h("div", { class: "vp-footer", innerHTML: footer.value })
-              : null,
+            footer.value ? h("div", { class: "vp-footer", innerHTML: footer.value }) : null,
             copyright.value
               ? h("div", {
                   class: "vp-copyright",

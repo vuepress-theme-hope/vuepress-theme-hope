@@ -6,9 +6,13 @@ import type { Page, Plugin } from "vuepress/core";
 import type { ThemeData } from "../../shared/index.js";
 
 /**
- * @private
- *
  * Resolve options for `@vuepress/plugin-seo`
+ *
+ * @param themeData - theme data
+ * @param seo - options for `@vuepress/plugin-seo`
+ * @param hostname - hostname of current site
+ *
+ * @returns SEO plugin instance or null
  */
 export const getSEOPlugin = (
   themeData: ThemeData,

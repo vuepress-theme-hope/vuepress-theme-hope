@@ -13,16 +13,10 @@ const getScript = (
   bundler: "webpack" | "vite",
   dir: string,
 ): Record<string, string> => ({
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   "docs:build": `vuepress-${bundler} build ${dir}`,
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   "docs:clean-dev": `vuepress-${bundler} dev ${dir} --clean-cache`,
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   "docs:dev": `vuepress-${bundler} dev ${dir}`,
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  "docs:update-package": `${
-    packageManager === "npm" ? "npx" : `${packageManager} dlx`
-  } vp-update`,
+  "docs:update-package": `${packageManager === "npm" ? "npx" : `${packageManager} dlx`} vp-update`,
 });
 
 interface CreatePackageJsonOptions {
@@ -40,11 +34,12 @@ export const createPackageJson = async ({
   bundler,
   cwd = process.cwd(),
 }: CreatePackageJsonOptions): Promise<void> => {
+  // oxlint-disable-next-line no-param-reassign
   bundler ??= await select<SupportedBundler>({
     message: locale.question.bundler,
-    choices: supportedBundlers.map((bundler) => ({
-      name: bundler,
-      value: bundler,
+    choices: supportedBundlers.map((item) => ({
+      name: item,
+      value: item,
     })),
   });
 
@@ -56,9 +51,7 @@ export const createPackageJson = async ({
   const devDependencies = {
     [`@vuepress/bundler-${bundler}`]: packageJSON.devDependencies.vuepress,
     "sass-embedded": packageJSON.devDependencies["sass-embedded"],
-    ...(bundler === "webpack"
-      ? { "sass-loader": packageJSON.devDependencies["sass-loader"] }
-      : {}),
+    ...(bundler === "webpack" ? { "sass-loader": packageJSON.devDependencies["sass-loader"] } : {}),
     vue: packageJSON.devDependencies.vue,
     vuepress: packageJSON.devDependencies.vuepress,
     "vuepress-theme-hope": packageJSON.devDependencies["vuepress-theme-hope"],
@@ -79,26 +72,23 @@ export const createPackageJson = async ({
   if (existsSync(packageJsonPath)) {
     console.log(locale.flow.updatePackage);
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const packageContent: Record<string, unknown> = JSON.parse(
-      readFileSync(packageJsonPath, { encoding: "utf8" }),
+      readFileSync(packageJsonPath, { encoding: "utf-8" }),
     );
 
     deepAssign(packageContent, newContent);
 
-    writeFileSync(
-      packageJsonPath,
-      `${JSON.stringify(packageContent, null, 2)}\n`,
-      { encoding: "utf8" },
-    );
+    writeFileSync(packageJsonPath, `${JSON.stringify(packageContent, null, 2)}\n`, {
+      encoding: "utf-8",
+    });
   } else {
     console.log(locale.flow.createPackage);
 
     const name = await input({
       message: locale.question.name,
       default: "vuepress-theme-hope-template",
-      validate: (input: string): true | string =>
-        PACKAGE_NAME_REG.test(input) || locale.error.name,
+      validate: (userInput: string): true | string =>
+        PACKAGE_NAME_REG.test(userInput) || locale.error.name,
     });
 
     const description = await input({
@@ -109,8 +99,8 @@ export const createPackageJson = async ({
     const version = await input({
       message: locale.question.version,
       default: "2.0.0",
-      validate: (input: string): true | string =>
-        VERSION_REG.test(input) || locale.error.version,
+      validate: (userInput: string): true | string =>
+        VERSION_REG.test(userInput) || locale.error.version,
     });
 
     const license = await input({
@@ -127,10 +117,8 @@ export const createPackageJson = async ({
       ...newContent,
     };
 
-    writeFileSync(
-      packageJsonPath,
-      `${JSON.stringify(packageContent, null, 2)}\n`,
-      { encoding: "utf8" },
-    );
+    writeFileSync(packageJsonPath, `${JSON.stringify(packageContent, null, 2)}\n`, {
+      encoding: "utf-8",
+    });
   }
 };

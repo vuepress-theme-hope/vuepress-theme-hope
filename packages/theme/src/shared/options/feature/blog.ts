@@ -85,7 +85,6 @@ export interface DeprecatedBlogLocaleData {
  *
  * @kind locale
  */
-// eslint-disable-next-line @typescript-eslint/no-deprecated
 export interface BlogLocaleOptions extends DeprecatedBlogLocaleData {
   /**
    * Name of the Blogger

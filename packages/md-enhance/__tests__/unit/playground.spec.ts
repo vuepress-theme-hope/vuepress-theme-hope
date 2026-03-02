@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import MarkdownIt from "markdown-it";
 import { describe, expect, it } from "vitest";
 
@@ -19,13 +18,10 @@ const getVueFiles = (content: string): Record<string, string> | null => {
     .replace("__DEV__", "")
     .replace("__SSR__", "");
 
-  return JSON.parse(Buffer.from(files, "base64").toString()) as Record<
-    string,
-    string
-  >;
+  return JSON.parse(Buffer.from(files, "base64").toString()) as Record<string, string>;
 };
 
-describe("playground", () => {
+describe(playground, () => {
   it("Should not throw", () => {
     const markdownIt = new MarkdownIt({ linkify: true }).use(playground, {
       name: "test",
@@ -63,10 +59,7 @@ abc
       component: "Playground",
       propsGetter: (data) =>
         Object.fromEntries(
-          Object.entries(data).map(([key, value]) => [
-            key,
-            JSON.stringify(value),
-          ]),
+          Object.entries(data).map(([key, value]) => [key, JSON.stringify(value)]),
         ),
     });
 

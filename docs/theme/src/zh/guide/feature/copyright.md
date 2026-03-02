@@ -108,8 +108,7 @@ import { hopeTheme } from "vuepress-theme-hope";
 export default hopeTheme({
   plugins: {
     copyright: {
-      licenseGetter: (page) =>
-        page.path.startsWith("/cookbook/") ? "CC0" : "MIT",
+      licenseGetter: (page) => (page.path.startsWith("/cookbook/") ? "CC0" : "MIT"),
     },
   },
 });

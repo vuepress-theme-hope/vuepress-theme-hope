@@ -10,11 +10,7 @@ import {
   checkVuePressVersion,
 } from "./check/index.js";
 import { checkLegacyStyle, convertThemeOptions } from "./compact/index.js";
-import {
-  getSocialMediaIcons,
-  getThemeData,
-  getThemeStatus,
-} from "./config/index.js";
+import { getSocialMediaIcons, getThemeData, getThemeStatus } from "./config/index.js";
 import { extendsBundlerOptions } from "./extendsBundlerOptions.js";
 import { addFavicon } from "./init/index.js";
 import { getPlugins, usePlugins } from "./plugins/index.js";
@@ -38,7 +34,10 @@ const BEHAVIOR_DEFAULTS = {
  *
  * @param themeOptions - theme options
  * @param behaviorOptions - theme behavior options
+ *
+ * @returns VuePress theme instance
  */
+// oxlint-disable-next-line max-lines-per-function
 export const hopeTheme = (
   themeOptions: ThemeOptions,
   // TODO: Change default value in v2 stable
@@ -64,13 +63,9 @@ export const hopeTheme = (
       sidebarSorter,
       ...mainThemeOptions
     } = behavior.compact
-      ? // eslint-disable-next-line @typescript-eslint/no-deprecated
-        convertThemeOptions(
-          themeOptions as ThemeOptions & Record<string, unknown>,
-        )
+      ? convertThemeOptions(themeOptions as ThemeOptions & Record<string, unknown>)
       : themeOptions;
 
-    // eslint-disable-next-line @typescript-eslint/no-deprecated
     if (behavior.compact) checkLegacyStyle(app);
 
     const status = getThemeStatus(app, themeOptions);
@@ -85,24 +80,17 @@ export const hopeTheme = (
     return {
       name: "vuepress-theme-hope",
 
-      alias: behavior.custom
-        ? { "@theme-hope": path.resolve(CLIENT_FOLDER) }
-        : undefined,
+      ...(behavior.custom ? { alias: { "@theme-hope": path.resolve(CLIENT_FOLDER) } } : {}),
 
       define: () => ({
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         __VP_CUSTOM__: behavior.custom ?? false,
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         __VP_BLOG_TYPES__: status.blogTypes,
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         __VP_I18N__: status.isI18nProject,
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         __VP_READING_TIME__: status.enableReadingTime,
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         __VP_REPO__: status.hasRepo,
       }),
 
-      extendsBundlerOptions: (bundlerConfig, app): void => {
+      extendsBundlerOptions: (bundlerConfig): void => {
         extendsBundlerOptions(bundlerConfig, app, behavior.custom);
       },
 
@@ -110,12 +98,12 @@ export const hopeTheme = (
         checkThemeMarkdownOptions(markdownOptions, markdown);
       },
 
-      onInitialized: (app): void => {
+      onInitialized: (): void => {
         if (favicon) addFavicon(app, favicon);
         if (behavior.check) checkUserPlugins(app);
       },
 
-      onPrepared: async (app): Promise<void> => {
+      onPrepared: async (): Promise<void> => {
         await Promise.all([
           prepareSidebarData(app, themeData, sidebarSorter),
           prepareHighLighterScss(app),
@@ -123,15 +111,14 @@ export const hopeTheme = (
         ]);
       },
 
-      onWatched: (app, watchers): void => {
+      onWatched: (_, watchers): void => {
         if (hotReload) {
           // This ensure the page is generated or updated
           const structureSidebarWatcher = watch("pages", {
             cwd: app.dir.temp(),
             ignoreInitial: true,
             // only watch vue files
-            ignored: (path, stats) =>
-              Boolean(stats?.isFile() && !path.endsWith(".vue")),
+            ignored: (filePath, stats) => Boolean(stats?.isFile() && !filePath.endsWith(".vue")),
           });
 
           structureSidebarWatcher.on("add", () => {
@@ -172,10 +159,7 @@ export const hopeTheme = (
           .replace(TemplateRendererOutlet.Content, () => content)
           .replace(TemplateRendererOutlet.Head, head)
           .replace("{{ themeVersion }}", VERSION)
-          .replace(
-            "{{ themeMode }}",
-            mainThemeOptions.darkmode === "enable" ? "dark" : "light",
-          )
+          .replace("{{ themeMode }}", mainThemeOptions.darkmode === "enable" ? "dark" : "light")
           .replace(TemplateRendererOutlet.Lang, lang)
           .replace(TemplateRendererOutlet.Prefetch, prefetch)
           .replace(TemplateRendererOutlet.Preload, preload)
@@ -183,7 +167,7 @@ export const hopeTheme = (
           .replace(TemplateRendererOutlet.Styles, styles)
           .replace(TemplateRendererOutlet.Version, version),
 
-      clientConfigFile: (app) => prepareConfigFile(app, status, behavior),
+      clientConfigFile: () => prepareConfigFile(app, status, behavior),
     };
   };
 };

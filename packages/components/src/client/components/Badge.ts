@@ -46,15 +46,13 @@ export interface BadgeProps {
   color?: string;
 }
 
-const Badge: FunctionalComponent<
-  BadgeProps,
-  Record<never, never>,
-  { default?: Slot }
-> = ({ type = "info", text = "", vertical, color, bgColor }, { slots }) =>
+const Badge: FunctionalComponent<BadgeProps, Record<never, never>, { default?: Slot }> = (
+  { type = "info", text = "", vertical, color, bgColor },
+  { slots },
+) =>
   h(
     "span",
     {
-      // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
       class: ["vp-badge", type, { diy: Boolean(color || bgColor) }],
       style: {
         backgroundColor: bgColor ?? false,

@@ -50,17 +50,14 @@ const compress = (o: string, r: number, n: (pos: number) => string) => {
     else {
       if (Object.prototype.hasOwnProperty.call(p, a)) {
         if (a.charCodeAt(0) < 256) {
-          for (e = 0; e < h; e++)
-            ((m <<= 1), v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++);
+          for (e = 0; e < h; e++) ((m <<= 1), v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++);
           for (t = a.charCodeAt(0), e = 0; e < 8; e++)
             ((m = (m << 1) | (1 & t)),
               v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++,
               (t >>= 1));
         } else {
           for (t = 1, e = 0; e < h; e++)
-            ((m = (m << 1) | t),
-              v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++,
-              (t = 0));
+            ((m = (m << 1) | t), v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++, (t = 0));
           for (t = c.charCodeAt(0), e = 0; e < 16; e++)
             ((m = (m << 1) | (1 & t)),
               v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++,
@@ -78,17 +75,14 @@ const compress = (o: string, r: number, n: (pos: number) => string) => {
   if ("" !== a) {
     if (Object.prototype.hasOwnProperty.call(p, a)) {
       if (a.charCodeAt(0) < 256) {
-        for (e = 0; e < h; e++)
-          ((m <<= 1), v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++);
+        for (e = 0; e < h; e++) ((m <<= 1), v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++);
         for (t = a.charCodeAt(0), e = 0; e < 8; e++)
           ((m = (m << 1) | (1 & t)),
             v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++,
             (t >>= 1));
       } else {
         for (t = 1, e = 0; e < h; e++)
-          ((m = (m << 1) | t),
-            v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++,
-            (t = 0));
+          ((m = (m << 1) | t), v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++, (t = 0));
         for (t = a.charCodeAt(0), e = 0; e < 16; e++)
           ((m = (m << 1) | (1 & t)),
             v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++,
@@ -97,16 +91,12 @@ const compress = (o: string, r: number, n: (pos: number) => string) => {
       (0 == --l && ((l = Math.pow(2, h)), h++), delete p[a]);
     } else
       for (t = s[a], e = 0; e < h; e++)
-        ((m = (m << 1) | (1 & t)),
-          v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++,
-          (t >>= 1));
+        ((m = (m << 1) | (1 & t)), v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++, (t >>= 1));
     0 == --l && ((l = Math.pow(2, h)), h++);
   }
 
   for (t = 2, e = 0; e < h; e++)
-    ((m = (m << 1) | (1 & t)),
-      v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++,
-      (t >>= 1));
+    ((m = (m << 1) | (1 & t)), v == r - 1 ? ((v = 0), d.push(n(m)), (m = 0)) : v++, (t >>= 1));
 
   for (;;) {
     if (((m <<= 1), v == r - 1)) {

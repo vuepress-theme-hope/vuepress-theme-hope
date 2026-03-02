@@ -17,9 +17,7 @@ describe("Should resolve encrypt option correctly", () => {
 
     expect(result1.admin!.tokens.length).toEqual(1);
 
-    expect(
-      compareSync(adminSinglePassword, result1.admin!.tokens.pop()!),
-    ).toBeTruthy();
+    expect(compareSync(adminSinglePassword, result1.admin!.tokens.pop()!)).toBeTruthy();
 
     const result2 = getEncryptConfig({ admin: adminMultiplePassword });
 
@@ -40,9 +38,7 @@ describe("Should resolve encrypt option correctly", () => {
 
     expect(result1.config!["/"].tokens.length).toEqual(1);
 
-    expect(
-      compareSync(userSinglePassword, result1.config!["/"].tokens.pop()!),
-    ).toBeTruthy();
+    expect(compareSync(userSinglePassword, result1.config!["/"].tokens.pop()!)).toBeTruthy();
 
     const result2 = getEncryptConfig({ config: { "/": userMultiplePassword } });
 

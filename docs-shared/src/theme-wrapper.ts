@@ -7,20 +7,14 @@ const IS_GITEE = "GITEE" in process.env;
 const IS_NETLIFY = "NETLIFY" in process.env;
 const IS_GITHUB = !IS_GITEE && !IS_NETLIFY;
 
+// oxlint-disable-next-line max-lines-per-function
 export const theme = (
   name: string,
   { markdown = {}, plugins = {}, ...options }: ThemeOptions,
-  {
-    base = name.replace(/\d+$/, ""),
-    indexName,
-  }: { base?: string; indexName?: string } = {},
+  { base = name.replace(/\d+$/, ""), indexName }: { base?: string; indexName?: string } = {},
 ): ThemeFunction => {
   const subdomain =
-    name === "theme"
-      ? "theme-hope"
-      : name === "shared"
-        ? "shared"
-        : `plugin-${name}`;
+    name === "theme" ? "theme-hope" : name === "shared" ? "shared" : `plugin-${name}`;
   const canonical = `https://${subdomain}.vuejs.press`;
 
   const hostname = IS_GITHUB

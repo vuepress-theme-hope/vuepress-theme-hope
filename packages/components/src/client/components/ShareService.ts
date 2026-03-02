@@ -22,13 +22,14 @@ const renderIcon = (content: string, contentClass = ""): VNode => {
   const className = ["vp-share-icon", contentClass];
 
   // is a link
-  if (isLinkHttp(content) || isLinkAbsolute(content))
+  if (isLinkHttp(content) || isLinkAbsolute(content)) {
     return h("img", {
       class: className,
       src: content,
       loading: "lazy",
       "no-view": "",
     });
+  }
 
   // is html content
   if (startsWith(content, "<") && endsWith(content, ">"))
@@ -102,10 +103,7 @@ export default defineComponent({
         getMetaContent("description") ??
         getMetaContent("og:description") ??
         getMetaContent("twitter:description");
-      const url =
-        (props.url ?? typeof window === "undefined")
-          ? null
-          : window.location.href;
+      const url = (props.url ?? typeof window === "undefined") ? null : window.location.href;
       const cover = props.cover ?? getMetaContent("og:image");
       const image = document
         .querySelector<HTMLImageElement>("[vp-content] :not(a) > img")
@@ -117,24 +115,21 @@ export default defineComponent({
           ? tags
           : null;
 
-      return props.config.link.replaceAll(
-        /\[([^\]]+)\]/g,
-        (_, config: string): string => {
-          const keys = config.split("|");
+      return props.config.link.replaceAll(/\[([^\]]+)\]/g, (_, config: string): string => {
+        const keys = config.split("|");
 
-          for (const key of keys) {
-            if (key === "url" && url) return url;
-            if (key === "title" && title) return title;
-            if (key === "description" && description) return description;
-            if (key === "summary" && props.summary) return props.summary;
-            if (key === "cover" && cover) return cover;
-            if (key === "image" && image) return image;
-            if (key === "tags" && tag) return tag;
-          }
+        for (const key of keys) {
+          if (key === "url" && url) return url;
+          if (key === "title" && title) return title;
+          if (key === "description" && description) return description;
+          if (key === "summary" && props.summary) return props.summary;
+          if (key === "cover" && cover) return cover;
+          if (key === "image" && image) return image;
+          if (key === "tags" && tag) return tag;
+        }
 
-          return "";
-        },
-      );
+        return "";
+      });
     };
 
     const share = (): void => {
@@ -162,9 +157,7 @@ export default defineComponent({
               }),
             )
             .then((dataURL) => {
-              popup.emit(
-                `<img src="${dataURL}" alt="qrcode" class="share-qrcode" />`,
-              );
+              popup.emit(`<img src="${dataURL}" alt="qrcode" class="share-qrcode" />`);
             });
           break;
         }

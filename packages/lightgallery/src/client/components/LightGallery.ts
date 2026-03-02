@@ -44,11 +44,8 @@ export default defineComponent({
       if (timeID === id) {
         instance?.destroy();
 
-        const images = [
-          ...document.querySelectorAll<HTMLImageElement>(__LG_SELECTOR__),
-        ];
+        const images = [...document.querySelectorAll<HTMLImageElement>(__LG_SELECTOR__)];
 
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         instance = new LightGallery(container.value!, {
           ...lightGalleryOptions,
           dynamic: true,
@@ -72,7 +69,6 @@ export default defineComponent({
 
     onUnmounted(() => instance?.destroy());
 
-    return (): VNode =>
-      h("div", { ref: container, class: "lightgallery-vuepress" });
+    return (): VNode => h("div", { ref: container, class: "lightgallery-vuepress" });
   },
 });

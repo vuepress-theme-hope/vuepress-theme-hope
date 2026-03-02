@@ -4,12 +4,9 @@ declare const MPEGTS_JS_INSTALLED: boolean;
 
 export const SUPPORTED_VIDEO_TYPES = ["mp4", "mp3", "webm", "ogg"];
 
-const isDashjsInstalled =
-  typeof DASHJS_INSTALLED === "boolean" && DASHJS_INSTALLED;
-const isHlsJsInstalled =
-  typeof HLS_JS_INSTALLED === "boolean" && HLS_JS_INSTALLED;
-const isMpegtsJsInstalled =
-  typeof MPEGTS_JS_INSTALLED === "boolean" && MPEGTS_JS_INSTALLED;
+const isDashjsInstalled = typeof DASHJS_INSTALLED === "boolean" && DASHJS_INSTALLED;
+const isHlsJsInstalled = typeof HLS_JS_INSTALLED === "boolean" && HLS_JS_INSTALLED;
+const isMpegtsJsInstalled = typeof MPEGTS_JS_INSTALLED === "boolean" && MPEGTS_JS_INSTALLED;
 
 if (isDashjsInstalled) SUPPORTED_VIDEO_TYPES.push("mpd", "dash");
 if (isHlsJsInstalled) SUPPORTED_VIDEO_TYPES.push("m3u8", "hls");
@@ -43,9 +40,7 @@ export const registerMseDash = async (
   if (__VUEPRESS_SSR__) return;
 
   if (isDashjsInstalled) {
-    const { default: dashjs } = await import(
-      /* webpackChunkName: "dashjs" */ "dashjs"
-    );
+    const { default: dashjs } = await import(/* webpackChunkName: "dashjs" */ "dashjs");
 
     if (dashjs.supportsMediaSource()) {
       // oxlint-disable-next-line new-cap

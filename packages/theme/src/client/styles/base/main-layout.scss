@@ -57,9 +57,7 @@
     }
 
     @media (min-width: hope-config.$pc) {
-      padding-inline-end: calc(
-        100vw - var(--content-width) - var(--sidebar-space) - 6rem
-      );
+      padding-inline-end: calc(100vw - var(--content-width) - var(--sidebar-space) - 6rem);
     }
   }
 

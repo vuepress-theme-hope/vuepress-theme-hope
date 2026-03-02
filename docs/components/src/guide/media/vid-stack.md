@@ -202,14 +202,7 @@ To use local version of package, install `hls.js` and `dash.js` in your project.
 
   ```ts
   type PlayerSrc = MediaSrc | MediaSrc[];
-  type MediaSrc =
-    | string
-    | AudioSrc
-    | VideoSrc
-    | HLSSrc
-    | DASHSrc
-    | YouTubeSrc
-    | VimeoSrc;
+  type MediaSrc = string | AudioSrc | VideoSrc | HLSSrc | DASHSrc | YouTubeSrc | VimeoSrc;
   ```
 
 - Required: Yes

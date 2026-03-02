@@ -25,16 +25,7 @@ export const preProcessorConfig: Record<
     },
   },
   js: {
-    types: [
-      "js",
-      "javascript",
-      "coffee",
-      "coffeescript",
-      "ts",
-      "typescript",
-      "ls",
-      "livescript",
-    ],
+    types: ["js", "javascript", "coffee", "coffeescript", "ts", "typescript", "ls", "livescript"],
     map: {
       js: "none",
       javascript: "none",
@@ -52,6 +43,7 @@ export const preProcessorConfig: Record<
   },
 };
 
+// oxlint-disable-next-line id-length
 export const h = (
   tag: string,
   attrs?: Record<string, string>,
@@ -59,7 +51,7 @@ export const h = (
 ): HTMLElement => {
   const node = document.createElement(tag);
 
-  if (isPlainObject(attrs))
+  if (isPlainObject(attrs)) {
     keys(attrs).forEach((key) => {
       if (key.indexOf("data")) {
         // @ts-expect-error: Type is not accurate
@@ -70,28 +62,25 @@ export const h = (
         node.dataset[trippedKey] = attrs[key];
       }
     });
+  }
 
-  if (children)
+  if (children) {
     children.forEach((child) => {
       node.append(child);
     });
+  }
 
   return node;
 };
 
-export const getConfig = (
-  config: Partial<CodeDemoOptions>,
-): CodeDemoOptions => ({
+export const getConfig = (config: Partial<CodeDemoOptions>): CodeDemoOptions => ({
   ...options,
   ...config,
   jsLib: [...new Set([options.jsLib, config.jsLib ?? []].flat())],
   cssLib: [...new Set([options.cssLib, config.cssLib ?? []].flat())],
 });
 
-export const loadScript = (
-  state: Record<string, Promise<void>>,
-  link: string,
-): Promise<void> => {
+export const loadScript = (state: Record<string, Promise<void>>, link: string): Promise<void> => {
   if (isDef(state[link])) return state[link];
 
   const loadEvent = new Promise<void>((resolve) => {
@@ -122,11 +111,7 @@ export const injectCSS = (shadowRoot: ShadowRoot, code: Code): void => {
   }
 };
 
-export const injectScript = (
-  id: string,
-  shadowRoot: ShadowRoot,
-  code: Code,
-): void => {
+export const injectScript = (id: string, shadowRoot: ShadowRoot, code: Code): void => {
   const scriptText = code.getScript();
 
   if (

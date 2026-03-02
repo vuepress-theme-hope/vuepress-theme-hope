@@ -10,7 +10,6 @@ import "../../styles/blog/pagination.scss";
 const ERROR_SVG = `<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M64 512a448 448 0 1 0 896 0 448 448 0 1 0-896 0Z" fill="#FA5151"/><path d="m557.3 512 113.1-113.1c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L512 466.7 398.9 353.6c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L466.7 512 353.6 625.1c-12.5 12.5-12.5 32.8 0 45.3 6.2 6.2 14.4 9.4 22.6 9.4s16.4-3.1 22.6-9.4L512 557.3l113.1 113.1c6.2 6.2 14.4 9.4 22.6 9.4s16.4-3.1 22.6-9.4c12.5-12.5 12.5-32.8 0-45.3L557.3 512z" fill="#FFF"/></svg>`;
 
 export default defineComponent({
-  // eslint-disable-next-line vue/multi-word-component-names
   name: "Pagination",
 
   props: {
@@ -53,15 +52,11 @@ export default defineComponent({
 
     const input = ref("");
 
-    const paginationLocale = computed(
-      () => themeLocale.value.paginationLocales,
-    );
+    const paginationLocale = computed(() => themeLocale.value.paginationLocales);
 
     const totalPages = computed(() => Math.ceil(props.total / props.perPage));
 
-    const enable = computed(
-      () => Boolean(totalPages.value) && totalPages.value !== 1,
-    );
+    const enable = computed(() => Boolean(totalPages.value) && totalPages.value !== 1);
 
     const displayLeftEllipsis = computed(() => {
       if (totalPages.value < 7) return false;
@@ -81,7 +76,7 @@ export default defineComponent({
       let max = totalPages.value;
       const arr = [];
 
-      if (totalPages.value >= 7)
+      if (totalPages.value >= 7) {
         if (currentPage <= 4 && currentPage < totalPages.value - 3) {
           min = 1;
           max = 5;
@@ -92,6 +87,7 @@ export default defineComponent({
           min = currentPage - 2;
           max = currentPage + 2;
         }
+      }
 
       // Generate page index
       for (let i = min; i <= max; i++) arr.push(i);
@@ -99,23 +95,33 @@ export default defineComponent({
       return arr;
     });
 
-    /** Navigate to certain page */
-    const navigate = (page: number): void => {
-      emit("updateCurrentPage", page);
+    /**
+     * Navigate to certain page
+     *
+     * @param index - Page index
+     */
+    const navigate = (index: number): void => {
+      emit("updateCurrentPage", index);
     };
 
-    /** Check and navigate to certain page */
+    /**
+     * Check and navigate to certain page
+     *
+     * @param index - Page index
+     */
     const jumpPage = (index: string): void => {
-      const pageNum = parseInt(index, 10);
+      const pageNum = Number.parseInt(index, 10);
 
-      if (pageNum <= totalPages.value && pageNum > 0) navigate(pageNum);
-      else
+      if (pageNum <= totalPages.value && pageNum > 0) {
+        navigate(pageNum);
+      } else {
         message.pop(
           `${ERROR_SVG}${paginationLocale.value.errorText.replaceAll(
             String.raw`\$page`,
             totalPages.value.toString(),
           )}`,
         );
+      }
     };
 
     return (): VNode =>
@@ -206,11 +212,7 @@ export default defineComponent({
                   : null,
               ]),
               h("div", { class: "vp-pagination-nav" }, [
-                h(
-                  "label",
-                  { for: "navigation-text" },
-                  `${paginationLocale.value.navigate}: `,
-                ),
+                h("label", { for: "navigation-text" }, `${paginationLocale.value.navigate}: `),
                 h("input", {
                   id: "navigation-text",
                   value: input.value,

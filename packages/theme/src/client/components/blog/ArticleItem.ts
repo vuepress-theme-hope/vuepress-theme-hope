@@ -53,14 +53,7 @@ export default defineComponent({
     const router = useRouter();
 
     return (): VNode => {
-      const {
-        title,
-        type,
-        isEncrypted = false,
-        cover = null,
-        excerpt,
-        sticky,
-      } = articleInfo.value;
+      const { title, type, isEncrypted = false, cover = null, excerpt, sticky } = articleInfo.value;
       const info = pageInfo.value;
 
       return h(
@@ -68,8 +61,7 @@ export default defineComponent({
         {
           class: "vp-article-wrapper",
           onClick: (event: MouseEvent) => {
-            if ((event.target as HTMLElement | undefined)?.matches("summary"))
-              return;
+            if ((event.target as HTMLElement | undefined)?.matches("summary")) return;
 
             event.preventDefault();
             void router.push(props.path);

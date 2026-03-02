@@ -49,9 +49,7 @@ export default hopeTheme({
 会被渲染为:
 
 ```html
-<p id="p" class="a b" align="center" customize-attr="content with spaces">
-  一个包含文字的段落。
-</p>
+<p id="p" class="a b" align="center" customize-attr="content with spaces">一个包含文字的段落。</p>
 ```
 
 ## 高级
@@ -59,14 +57,7 @@ export default hopeTheme({
 你可以向 `attrs` 传递选项以自定义插件行为。
 
 ```ts
-type MarkdownItAttrRuleName =
-  | "fence"
-  | "inline"
-  | "table"
-  | "list"
-  | "hr"
-  | "softbreak"
-  | "block";
+type MarkdownItAttrRuleName = "fence" | "inline" | "table" | "list" | "hr" | "softbreak" | "block";
 
 interface MarkdownItAttrsOptions {
   /**

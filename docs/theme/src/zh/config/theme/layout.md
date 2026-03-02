@@ -33,13 +33,7 @@ tag:
   /**
    * 内置导航栏组件
    */
-  type NavbarComponent =
-    | "Brand"
-    | "Links"
-    | "Language"
-    | "Search"
-    | "Outlook"
-    | "Repo";
+  type NavbarComponent = "Brand" | "Links" | "Language" | "Search" | "Outlook" | "Repo";
 
   /**
    * 导航栏布局选项
@@ -145,10 +139,7 @@ tag:
 - 类型: `SidebarSorter`
 
   ```ts twoslash
-  import type {
-    ThemeNormalPageFrontmatter,
-    ThemePageData,
-  } from "vuepress-theme-hope";
+  import type { ThemeNormalPageFrontmatter, ThemePageData } from "vuepress-theme-hope";
 
   interface SidebarFileInfo {
     type: "file";
@@ -182,18 +173,9 @@ tag:
 
   type SidebarInfo = SidebarFileInfo | SidebarDirInfo;
 
-  type SidebarSorterKeyword =
-    | "readme"
-    | "order"
-    | "date"
-    | "date-desc"
-    | "filename"
-    | "title";
+  type SidebarSorterKeyword = "readme" | "order" | "date" | "date-desc" | "filename" | "title";
 
-  type SidebarSorterFunction = (
-    infoA: SidebarInfo,
-    infoB: SidebarInfo,
-  ) => number;
+  type SidebarSorterFunction = (infoA: SidebarInfo, infoB: SidebarInfo) => number;
 
   type SidebarSorter =
     | SidebarSorterFunction

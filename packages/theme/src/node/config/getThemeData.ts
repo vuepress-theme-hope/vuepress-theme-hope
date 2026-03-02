@@ -3,11 +3,7 @@ import type { App } from "vuepress/core";
 
 import { getEncryptConfig } from "./getEncryptConfig.js";
 import type { ThemeStatus } from "./getThemeStatus.js";
-import type {
-  ThemeData,
-  ThemeLocaleConfig,
-  ThemeLocaleOptions,
-} from "../../shared/index.js";
+import type { ThemeData, ThemeLocaleConfig, ThemeLocaleOptions } from "../../shared/index.js";
 import { themeLocaleInfo } from "../locales/index.js";
 import type { ThemeOptions } from "../typings/index.js";
 import { logger } from "../utils.js";
@@ -28,9 +24,12 @@ const ROOT_DISALLOW_CONFIG = new Set([
 ]);
 
 /**
- * @private
- *
  * Get client-side `themeData`
+ *
+ * @param app - VuePress app instance
+ * @param themeOptions - Theme options
+ * @param themeStatus - Theme status
+ * @returns Theme data for client
  */
 export const getThemeData = (
   app: App,
@@ -82,9 +81,7 @@ export const getThemeData = (
             {
               // Root config
               ...fromEntries(
-                entries(themeOptions).filter(([key]) =>
-                  ROOT_DISALLOW_CONFIG.has(key),
-                ),
+                entries(themeOptions).filter(([key]) => ROOT_DISALLOW_CONFIG.has(key)),
               ),
               // Locale options
               ...localeConfig,

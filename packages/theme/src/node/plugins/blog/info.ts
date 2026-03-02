@@ -9,7 +9,7 @@ import type {
   ThemeProjectHomePageFrontmatter,
 } from "../../../shared/index.js";
 
-/** @private */
+// oxlint-disable-next-line complexity
 export const injectBlogBasicInfo = (
   page: Page<ThemePageData>,
   info: Partial<ArticleInfoData>,
@@ -43,28 +43,22 @@ export const injectBlogBasicInfo = (
   if (frontmatter.date) {
     const date = getDate(page.frontmatter.date);
 
-    if (date) {
-      info.date = date.getTime();
-    }
+    if (date) info.date = date.getTime();
   } else if (createdTime) {
     info.date = createdTime;
   }
 
   // Resolve category
   if (frontmatter.category)
-    info.category = isArray(frontmatter.category)
-      ? frontmatter.category
-      : [frontmatter.category];
+    info.category = isArray(frontmatter.category) ? frontmatter.category : [frontmatter.category];
   else if (frontmatter.categories) info.category = frontmatter.categories;
 
   // Resolve tag
-  if (frontmatter.tag)
-    info.tag = isArray(frontmatter.tag) ? frontmatter.tag : [frontmatter.tag];
+  if (frontmatter.tag) info.tag = isArray(frontmatter.tag) ? frontmatter.tag : [frontmatter.tag];
   else if (frontmatter.tags) info.tag = frontmatter.tags;
 
   // Resolve sticky
-  if ("sticky" in frontmatter)
-    info.sticky = frontmatter.sticky as number | boolean;
+  if ("sticky" in frontmatter) info.sticky = frontmatter.sticky as number | boolean;
 
   // Resolve image
   if (frontmatter.cover) info.cover = frontmatter.cover;
@@ -76,6 +70,5 @@ export const injectBlogBasicInfo = (
   if (frontmatter.excerpt) info.excerpt = frontmatter.excerpt as string;
   else if (page.data.excerpt) info.excerpt = page.data.excerpt;
   // Fallback to user-defined description
-  else if (frontmatter.description && !page.data.autoDesc)
-    info.excerpt = frontmatter.description;
+  else if (frontmatter.description && !page.data.autoDesc) info.excerpt = frontmatter.description;
 };

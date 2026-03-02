@@ -1,15 +1,7 @@
 import type { Repl, ReplProps, Store } from "@vue/repl";
 import { LoadingIcon, deepAssign } from "@vuepress/helper/client";
 import type { Component, VNode } from "vue";
-import {
-  computed,
-  defineComponent,
-  h,
-  onMounted,
-  ref,
-  shallowRef,
-  version,
-} from "vue";
+import { computed, defineComponent, h, onMounted, ref, shallowRef, version } from "vue";
 
 import { useVuePlaygroundConfig } from "../helpers/index.js";
 import type { VuePlaygroundOptions } from "../typings/index.js";
@@ -65,36 +57,32 @@ export default defineComponent({
     const editor = shallowRef<Component>();
 
     const playgroundOptions = computed(() =>
-      deepAssign(
-        {},
-        vuePlaygroundOptions,
-        getVuePlaygroundSettings(props.settings ?? "{}"),
-      ),
+      deepAssign({}, vuePlaygroundOptions, getVuePlaygroundSettings(props.settings ?? "{}")),
     );
 
     const setupRepl = async (): Promise<void> => {
       if (__VUEPRESS_SSR__) return;
 
-      const [
-        { useStore, useVueImportMap, Repl },
-        { default: editorComponent },
-      ] = await Promise.all([
-        import(/* webpackChunkName: "vue-repl" */ "@vue/repl"),
-        VUE_PLAYGROUND_MONACO
-          ? import(/* webpackChunkName: "vue-repl" */ "@vue/repl/monaco-editor")
-          : import(
-              /* webpackChunkName: "vue-repl" */ "@vue/repl/codemirror-editor"
-            ),
-      ]);
+      const [{ useStore, useVueImportMap, Repl }, { default: editorComponent }] = await Promise.all(
+        [
+          import(/* webpackChunkName: "vue-repl" */ "@vue/repl"),
+          VUE_PLAYGROUND_MONACO
+            ? import(/* webpackChunkName: "vue-repl" */ "@vue/repl/monaco-editor")
+            : import(/* webpackChunkName: "vue-repl" */ "@vue/repl/codemirror-editor"),
+        ],
+      );
 
       component.value = Repl;
       editor.value = editorComponent;
 
+      // oxlint-disable-next-line no-shadow
       const { importMap, vueVersion } = useVueImportMap({
         runtimeDev: vueRuntimeDevUrl,
         runtimeProd: vueRuntimeProdUrl,
         serverRenderer: vueServerRendererUrl,
       });
+
+      vueVersion.value = version;
 
       store.value = useStore(
         { builtinImportMap: importMap, vueVersion },
@@ -113,17 +101,11 @@ export default defineComponent({
           ? h(
               "div",
               { class: "vp-container-header" },
-              h(
-                "div",
-                { class: "vp-container-title" },
-                decodeURIComponent(props.title),
-              ),
+              h("div", { class: "vp-container-title" }, decodeURIComponent(props.title)),
             )
           : null,
         h("div", { class: "repl-container" }, [
-          loading.value
-            ? h(LoadingIcon, { class: "vue-preview-loading", height: 192 })
-            : null,
+          loading.value ? h(LoadingIcon, { class: "vue-preview-loading", height: 192 }) : null,
           component.value
             ? h(component.value, {
                 ...playgroundOptions.value,

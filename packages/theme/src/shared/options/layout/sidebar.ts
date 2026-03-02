@@ -35,18 +35,9 @@ export interface SidebarDirInfo {
 
 export type SidebarInfo = SidebarFileInfo | SidebarDirInfo;
 
-export type SidebarSorterKeyword =
-  | "readme"
-  | "order"
-  | "date"
-  | "date-desc"
-  | "filename"
-  | "title";
+export type SidebarSorterKeyword = "readme" | "order" | "date" | "date-desc" | "filename" | "title";
 
-export type SidebarSorterFunction = (
-  infoA: SidebarInfo,
-  infoB: SidebarInfo,
-) => number;
+export type SidebarSorterFunction = (infoA: SidebarInfo, infoB: SidebarInfo) => number;
 
 export type SidebarSorter =
   | SidebarSorterFunction

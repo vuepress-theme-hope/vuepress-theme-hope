@@ -33,13 +33,7 @@ Navbar config.
   /**
    * Built-in Navbar component
    */
-  type NavbarComponent =
-    | "Brand"
-    | "Links"
-    | "Language"
-    | "Search"
-    | "Outlook"
-    | "Repo";
+  type NavbarComponent = "Brand" | "Links" | "Language" | "Search" | "Outlook" | "Repo";
 
   /**
    * Navbar layout options
@@ -145,10 +139,7 @@ Sidebar Config.
 - Type: `SidebarSorter`
 
   ```ts twoslash
-  import type {
-    ThemeNormalPageFrontmatter,
-    ThemePageData,
-  } from "vuepress-theme-hope";
+  import type { ThemeNormalPageFrontmatter, ThemePageData } from "vuepress-theme-hope";
 
   interface SidebarFileInfo {
     type: "file";
@@ -182,18 +173,9 @@ Sidebar Config.
 
   type SidebarInfo = SidebarFileInfo | SidebarDirInfo;
 
-  type SidebarSorterKeyword =
-    | "readme"
-    | "order"
-    | "date"
-    | "date-desc"
-    | "filename"
-    | "title";
+  type SidebarSorterKeyword = "readme" | "order" | "date" | "date-desc" | "filename" | "title";
 
-  type SidebarSorterFunction = (
-    infoA: SidebarInfo,
-    infoB: SidebarInfo,
-  ) => number;
+  type SidebarSorterFunction = (infoA: SidebarInfo, infoB: SidebarInfo) => number;
 
   type SidebarSorter =
     | SidebarSorterFunction

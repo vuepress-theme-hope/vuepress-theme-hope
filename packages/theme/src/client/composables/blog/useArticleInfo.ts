@@ -13,11 +13,7 @@ import { useTagMap } from "@theme-hope/composables/blog/useTagMap";
 import { useThemeLocale } from "@theme-hope/composables/useTheme";
 import type { PageCategory, PageTag } from "@theme-hope/utils/info/typings";
 
-import type {
-  ArticleInfoData,
-  AuthorInfo,
-  PageInfoType,
-} from "../../../shared/index.js";
+import type { ArticleInfoData, AuthorInfo, PageInfoType } from "../../../shared/index.js";
 import { getAuthor, getCategory, getTag } from "../../../shared/index.js";
 
 export type AuthorRef = ComputedRef<AuthorInfo[]>;
@@ -90,10 +86,7 @@ export const useArticleInfo = (props: {
     readingTime: articleInfo.value.readingTime ?? null,
     readingTimeLocale:
       articleInfo.value.readingTime && readingTimeLocaleConfig.value
-        ? getReadingTimeLocale(
-            articleInfo.value.readingTime,
-            readingTimeLocaleConfig.value,
-          )
+        ? getReadingTimeLocale(articleInfo.value.readingTime, readingTimeLocaleConfig.value)
         : null,
     pageview: props.path,
   }));

@@ -53,12 +53,9 @@ export default defineComponent({
     const items = computed(() => {
       const blogConfig = frontmatter.value.blog;
 
-      if (blogConfig?.type !== "type" || !blogConfig.key)
-        return articles.value.items;
+      if (blogConfig?.type !== "type" || !blogConfig.key) return articles.value.items;
 
-      return blogConfig.key === "star"
-        ? stars.value.items
-        : blogType.value.items;
+      return blogConfig.key === "star" ? stars.value.items : blogType.value.items;
     });
 
     return (): VNode =>

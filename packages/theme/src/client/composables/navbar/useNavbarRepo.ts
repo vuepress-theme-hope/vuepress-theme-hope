@@ -13,33 +13,24 @@ export interface RepoConfig {
 
 /**
  * Get navbar config of repository link
+ *
+ * @returns repository link config, or null if it doesn't exist or is hidden
  */
 export const useNavbarRepo = (): ComputedRef<RepoConfig | null> => {
   const themeLocale = useThemeLocale();
 
   const repo = computed(() => themeLocale.value.repo);
 
-  const repoLink = computed(() =>
-    repo.value ? resolveRepoLink(repo.value) : null,
-  );
+  const repoLink = computed(() => (repo.value ? resolveRepoLink(repo.value) : null));
 
-  const repoType = computed(() =>
-    repo.value ? resolveRepoType(repo.value) : null,
-  );
+  const repoType = computed(() => (repo.value ? resolveRepoType(repo.value) : null));
 
   const repoLabel = computed(() =>
-    repoLink.value
-      ? (themeLocale.value.repoLabel ?? repoType.value ?? "Source")
-      : null,
+    repoLink.value ? (themeLocale.value.repoLabel ?? repoType.value ?? "Source") : null,
   );
 
   return computed(() => {
-    if (
-      !repoLink.value ||
-      !repoLabel.value ||
-      themeLocale.value.repoDisplay === false
-    )
-      return null;
+    if (!repoLink.value || !repoLabel.value || themeLocale.value.repoDisplay === false) return null;
 
     return {
       type: repoType.value ?? "Source",
