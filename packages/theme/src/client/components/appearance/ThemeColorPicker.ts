@@ -56,6 +56,7 @@ export default defineComponent({
 
     const setThemeColor = (name = ""): void => {
       const classes = document.documentElement.classList;
+      // oxlint-disable-next-line no-shadow
       const colorNames = activeThemeColors.value.map(({ name }) => name);
 
       if (!name) {

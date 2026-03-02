@@ -24,13 +24,14 @@ export const useMetaInfo = (): MetaInfo => {
   );
 
   const contributors = computed(() => {
-    const { contributors: frontmatterContributors, home } = frontmatter.value;
+    // oxlint-disable-next-line no-shadow
+    const { contributors, home } = frontmatter.value;
 
-    return isArray(frontmatterContributors)
+    return isArray(contributors)
       ? (home as boolean | undefined)
         ? false
         : (themeLocale.value.contributors ?? true)
-      : (frontmatterContributors ??
+      : (contributors ??
           ((home as boolean | undefined) ? false : (themeLocale.value.contributors ?? true)));
   });
 

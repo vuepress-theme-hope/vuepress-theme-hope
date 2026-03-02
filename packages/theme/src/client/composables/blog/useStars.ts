@@ -12,7 +12,7 @@ export const starsSymbol: InjectionKey<StarsRef> = Symbol(__VUEPRESS_DEV__ ? "st
 /**
  * Inject stars
  *
- * @returns Stars data
+ * @returns Stars global computed
  */
 export const useStars = (): StarsRef => {
   const stars = inject(starsSymbol);

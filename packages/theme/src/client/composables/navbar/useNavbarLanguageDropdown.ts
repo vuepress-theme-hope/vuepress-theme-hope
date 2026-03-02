@@ -9,6 +9,8 @@ import type { AutoLinkOptions, NavGroup } from "../../../shared/index.js";
 
 /**
  * Get navbar config of select language dropdown
+ *
+ * @returns Navbar config of select language dropdown
  */
 export const useNavbarLanguageDropdown = (): ComputedRef<NavGroup<AutoLinkOptions> | null> => {
   const { routeLocale, site, siteLocale, theme, themeLocale } = useData();
@@ -68,11 +70,11 @@ export const useNavbarLanguageDropdown = (): ComputedRef<NavGroup<AutoLinkOption
             link,
           };
         }),
-        ...extraLocales.map(([text, path]) => ({
+        ...extraLocales.map(([text, localPath]) => ({
           text,
-          link: path.replace(
+          link: localPath.replace(
             ":route",
-            (isMounted.value ? fullPath : path).replace(routeLocale.value, ""),
+            (isMounted.value ? fullPath : localPath).replace(routeLocale.value, ""),
           ),
         })),
       ],

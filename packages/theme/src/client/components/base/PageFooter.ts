@@ -24,9 +24,10 @@ export default defineComponent({
     });
 
     const footer = computed(() => {
-      const { footer: frontmatterFooter } = frontmatter.value;
+      // oxlint-disable-next-line no-shadow
+      const { footer } = frontmatter.value;
 
-      return isString(frontmatterFooter) ? frontmatterFooter : (themeLocale.value.footer ?? "");
+      return isString(footer) ? footer : (themeLocale.value.footer ?? "");
     });
 
     const authorText = computed(() => author.value.map(({ name }) => name).join(", "));
@@ -37,12 +38,13 @@ export default defineComponent({
       }`;
 
     const copyright = computed(() => {
-      const { copyright: frontmatterCopyright, license = "" } = frontmatter.value;
+      // oxlint-disable-next-line no-shadow
+      const { copyright, license = "" } = frontmatter.value;
       const { license: globalLicense } = theme.value;
       const { copyright: globalCopyright } = themeLocale.value;
 
       return (
-        frontmatterCopyright ??
+        copyright ??
         (license
           ? getCopyrightText(license)
           : (globalCopyright ??

@@ -210,7 +210,7 @@ const atMarkerRule =
       ) {
         let openMakerMatched = true;
 
-        for (let index = 0; index < atMarker.length; index++) {
+        for (index = 0; index < atMarker.length; index++) {
           if (atMarker[index] !== state.src[start + index]) {
             openMakerMatched = false;
             break;

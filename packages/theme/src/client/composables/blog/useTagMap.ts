@@ -12,7 +12,7 @@ export const tagMapSymbol: InjectionKey<TagMapRef> = Symbol.for("tagMap");
 /**
  * Inject tagMap
  *
- * @returns tagMap
+ * @returns tagMap global computed
  */
 export const useTagMap = (): TagMapRef => {
   const tagMap = inject(tagMapSymbol);

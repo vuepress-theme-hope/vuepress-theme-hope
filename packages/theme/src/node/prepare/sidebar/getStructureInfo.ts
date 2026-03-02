@@ -29,6 +29,7 @@ export const getStructureInfo = (pages: Page[], scope: string): StructureInfo[] 
   const sortedPages = relatedPages
     // Sort pages
     .sort(({ filePathRelative: filePathRelative1 }, { filePathRelative: filePathRelative2 }) =>
+      // oxlint-disable-next-line no-undefined
       filePathRelative1!.localeCompare(filePathRelative2!, undefined, {
         numeric: true,
         sensitivity: "accent",

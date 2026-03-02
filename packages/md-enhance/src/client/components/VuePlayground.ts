@@ -75,11 +75,14 @@ export default defineComponent({
       component.value = Repl;
       editor.value = editorComponent;
 
+      // oxlint-disable-next-line no-shadow
       const { importMap, vueVersion } = useVueImportMap({
         runtimeDev: vueRuntimeDevUrl,
         runtimeProd: vueRuntimeProdUrl,
         serverRenderer: vueServerRendererUrl,
       });
+
+      vueVersion.value = version;
 
       store.value = useStore(
         { builtinImportMap: importMap, vueVersion },

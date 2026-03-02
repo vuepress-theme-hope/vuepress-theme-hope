@@ -35,6 +35,7 @@ export default defineComponent({
     const title = ref("");
 
     const avatar = computed(() => {
+      // oxlint-disable-next-line no-shadow
       const { name, avatar, avatarDark, avatarAlt, avatarStyle } = frontmatter.value;
 
       return {
@@ -146,7 +147,7 @@ export default defineComponent({
           slots.portfolioAvatar?.(avatar.value) ??
             h("div", { class: "vp-portfolio-avatar" }, [
               h(DropTransition, { delay: 0.04 }, () => {
-                const { avatar: avatarLight, avatarDark, name: title, alt, style } = avatar.value;
+                const { avatar: avatarLight, avatarDark, name, alt, style } = avatar.value;
 
                 return [
                   avatarLight
@@ -154,7 +155,7 @@ export default defineComponent({
                         key: "light",
                         class: { light: avatarDark },
                         src: avatarLight,
-                        title,
+                        title: name,
                         alt,
                         style,
                       })

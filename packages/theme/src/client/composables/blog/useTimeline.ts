@@ -23,7 +23,7 @@ export const timelineSymbol: InjectionKey<TimelineRef> = Symbol(__VUEPRESS_DEV__
 /**
  * Inject timeline
  *
- * @returns Timeline data
+ * @returns Timeline global computed
  */
 export const useTimeline = (): TimelineRef => {
   const timeline = inject(timelineSymbol);

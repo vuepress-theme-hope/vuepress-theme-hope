@@ -10,10 +10,10 @@ export const logger = new Logger(PLUGIN_NAME);
 export const CLIENT_FOLDER = ensureEndingSlash(path.resolve(__dirname, "../client"));
 
 export const isInstalled = (pkg: string, hint = true): boolean => {
-  const isInstalled = isModuleAvailable(pkg, import.meta);
+  const isAvailable = isModuleAvailable(pkg, import.meta);
 
-  if (hint && !isInstalled)
+  if (hint && !isAvailable)
     logger.error(`Package ${colors.cyan(pkg)} is not installed, please install it manually!`);
 
-  return isInstalled;
+  return isAvailable;
 };

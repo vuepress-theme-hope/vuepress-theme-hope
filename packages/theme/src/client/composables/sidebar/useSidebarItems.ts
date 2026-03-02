@@ -44,6 +44,8 @@ export const setupSidebarItems = (): void => {
 
 /**
  * Inject sidebar items global computed
+ *
+ * @returns Sidebar items global computed
  */
 export const useSidebarItems = (): SidebarItemsRef => {
   const sidebarItems = inject(sidebarItemsSymbol);
