@@ -26,7 +26,7 @@ import { withBase } from "vuepress/client";
 declare const PDFJS_URL: string | null;
 
 const logError = (msg: string): void => {
-  // eslint-disable-next-line no-console
+  // oxlint-disable-next-line no-console
   console.error(`[PDF]: ${msg}`);
 };
 

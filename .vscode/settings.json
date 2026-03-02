@@ -103,7 +103,6 @@
     "prismjs",
     "qrcode",
     "qzone",
-    "",
     "revealjs",
     "rgba",
     "sandpack",
@@ -140,7 +139,6 @@
     "weibo",
     "zhihu"
   ],
-  "eslint.execArgv": ["--max-old-space-size=8192"],
   "markdown.validate.enabled": true,
   "search.exclude": {
     "**/node_modules": true,
@@ -152,11 +150,5 @@
   },
   "oxc.typeAware": true,
   "oxc.unusedDisableDirectives": "deny",
-  "stylelint.validate": ["css", "scss"],
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "yaml.schemas": {
-    "https://raw.githubusercontent.com/raineorshine/npm-check-updates/main/src/types/RunOptions.json": [
-      ".ncurc.yml"
-    ]
-  }
+  "stylelint.validate": ["css", "scss"]
 }

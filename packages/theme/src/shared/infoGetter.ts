@@ -17,7 +17,7 @@ export const getAuthor = (author: Author | false | undefined, canDisable = false
 
     if (isAuthorInfo(author)) return [author];
 
-    // eslint-disable-next-line no-console
+    // oxlint-disable-next-line no-console
     console.error(
       `Expect "author" to be \`AuthorInfo[] | AuthorInfo | string[] | string ${
         canDisable ? "" : "| false"
@@ -39,7 +39,7 @@ export const getStringArray = (
     if (isArray(value) && value.every((item) => isString(item))) return value;
     if (isString(value)) return [value];
 
-    // eslint-disable-next-line no-console
+    // oxlint-disable-next-line no-console
     console.error(`Expect ${optionName} to be \`string[] | string | undefined\`, but got`, value);
   }
 

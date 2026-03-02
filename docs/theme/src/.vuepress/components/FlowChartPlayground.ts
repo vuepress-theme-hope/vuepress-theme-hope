@@ -89,7 +89,7 @@ export default defineComponent({
           scale: scale.value,
         });
       } catch (err) {
-        // eslint-disable-next-line no-console
+        // oxlint-disable-next-line no-console
         console.error(err);
       }
     };
