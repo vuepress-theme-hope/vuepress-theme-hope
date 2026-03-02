@@ -91,13 +91,7 @@ export default hopeTheme(
       stylize: [
         {
           matcher: "Recommended",
-          replacer: ({
-            tag,
-          }): {
-            tag: string;
-            attrs: Record<string, string>;
-            content: string;
-          } | void => {
+          replacer: ({ tag }) => {
             if (tag === "em") {
               return {
                 tag: "Badge",

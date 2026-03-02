@@ -6,7 +6,6 @@
     "allowUnusedLabels": false,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
-    "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strict": true,
