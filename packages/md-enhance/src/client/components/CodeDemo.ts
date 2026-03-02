@@ -145,12 +145,12 @@ export default defineComponent({
     let previousState: boolean | null = null;
 
     useEventListener("beforeprint", () => {
-      toggleIsExpand(true);
+      previousState = isExpanded.value;
+      if (!isExpanded.value) toggleIsExpand(true);
     });
 
     useEventListener("afterprint", () => {
-      if (previousState != null) toggleIsExpand(previousState);
-
+      if (previousState === false) toggleIsExpand(false);
       previousState = null;
     });
 
