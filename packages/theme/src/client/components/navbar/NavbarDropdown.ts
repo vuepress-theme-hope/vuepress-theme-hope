@@ -42,6 +42,7 @@ export default defineComponent({
      * Use event.detail to detect tab and click from keyboard.
      * The Tab + Click is UIEvent > KeyboardEvent, so the detail is 0.
      *
+     * @param event - click event
      * @see https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/detail
      */
     const handleDropdown = (event: MouseEvent): void => {

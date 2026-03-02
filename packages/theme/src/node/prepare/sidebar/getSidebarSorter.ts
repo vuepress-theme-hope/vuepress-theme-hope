@@ -12,16 +12,16 @@ export const sidebarReadmeSorter = (infoA: SidebarInfo, infoB: SidebarInfo): num
 
 export const sidebarOrderSorter = (infoA: SidebarInfo, infoB: SidebarInfo): number => {
   // itemA order is absent
-  if (infoA.order === null) {
+  if (infoA.order == null) {
     // both item do not have orders
-    if (infoB.order === null) return 0;
+    if (infoB.order == null) return 0;
 
     // itemA order is absent while itemB order is present
     return infoB.order;
   }
 
   // itemA order is present while itemB order is absent
-  if (infoB.order === null) return -infoA.order;
+  if (infoB.order == null) return -infoA.order;
 
   // now we are sure both order exist
 
@@ -71,6 +71,7 @@ const getFilename = (info: SidebarInfo): string =>
   info.type === "file" ? info.filename.replace(/\.md$/u, "") : info.dirname;
 
 export const sidebarFilenameSorter = (infoA: SidebarInfo, infoB: SidebarInfo): number => {
+  // oxlint-disable-next-line no-undefined
   const result = getFilename(infoA).localeCompare(getFilename(infoB), undefined, {
     numeric: true,
     sensitivity: "accent",
@@ -85,6 +86,7 @@ export const sidebarFilenameSorter = (infoA: SidebarInfo, infoB: SidebarInfo): n
 };
 
 export const sidebarTitleSorter = (infoA: SidebarInfo, infoB: SidebarInfo): number =>
+  // oxlint-disable-next-line no-undefined
   infoA.title.localeCompare(infoB.title, undefined, {
     numeric: true,
   });
@@ -100,7 +102,6 @@ const sortKeyMap: Record<string, SidebarSorterFunction> = {
 
 const availableKeywords = keys(sortKeyMap);
 
-/** @private */
 export const getSidebarSorter = (sorter?: SidebarSorter): SidebarSorterFunction[] => {
   if (isString(sorter) && availableKeywords.includes(sorter)) return [sortKeyMap[sorter]];
 

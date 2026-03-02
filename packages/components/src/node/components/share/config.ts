@@ -1,3 +1,4 @@
+// oxlint-disable import/max-dependencies
 import { keys } from "@vuepress/helper";
 
 import { buffer } from "./buffer.js";

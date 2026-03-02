@@ -24,9 +24,9 @@ export default defineComponent({
     });
 
     const footer = computed(() => {
-      const { footer } = frontmatter.value;
+      const { footer: frontmatterFooter } = frontmatter.value;
 
-      return isString(footer) ? footer : (themeLocale.value.footer ?? "");
+      return isString(frontmatterFooter) ? frontmatterFooter : (themeLocale.value.footer ?? "");
     });
 
     const authorText = computed(() => author.value.map(({ name }) => name).join(", "));
@@ -37,12 +37,12 @@ export default defineComponent({
       }`;
 
     const copyright = computed(() => {
-      const { copyright, license = "" } = frontmatter.value;
+      const { copyright: frontmatterCopyright, license = "" } = frontmatter.value;
       const { license: globalLicense } = theme.value;
       const { copyright: globalCopyright } = themeLocale.value;
 
       return (
-        copyright ??
+        frontmatterCopyright ??
         (license
           ? getCopyrightText(license)
           : (globalCopyright ??

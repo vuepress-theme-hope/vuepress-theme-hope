@@ -1,4 +1,4 @@
-import { deepAssign, endsWith, entries, isDef, isPlainObject, keys } from "@vuepress/helper";
+import { deepAssign, endsWith, entries, isPlainObject, keys } from "@vuepress/helper";
 import type { CompilerOptions } from "typescript";
 
 import { compressToEncodedURIComponent } from "./ventors/lzstring.js";
@@ -28,7 +28,7 @@ export const getTypescriptPlaygroundHash = (
     .map(([key, value]) => {
       const item = optionDeclarations.find((option) => option.name === key);
 
-      if (!item || value === null || !isDef(value)) return "";
+      if (!item || value == null) return "";
 
       const { type } = item;
 

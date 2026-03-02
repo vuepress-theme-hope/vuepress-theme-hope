@@ -37,7 +37,7 @@ export default defineComponent({
       () => {
         const count = pageviewElement.value!.textContent;
 
-        if (count && !isNaN(Number(count))) pageViews.value = Number(count);
+        if (count && !Number.isNaN(Number(count))) pageViews.value = Number(count);
       },
       { childList: true },
     );

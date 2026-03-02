@@ -21,21 +21,25 @@ export interface SidebarArrayItem {
 
 /**
  * Resolve sidebar item
+ *
+ * @param options - sidebar item config
+ * @param pathPrefix - current path prefix
+ * @returns resolved sidebar item
  */
 export const resolveSidebarItem = (
-  item: SidebarItemOptions,
+  options: SidebarItemOptions,
   pathPrefix: string,
 ): SidebarLinkItem | SidebarGroupItem => {
-  const config = isString(item)
-    ? resolveLinkInfo(resolvePrefix(pathPrefix, item))
-    : isString(item.link)
+  const config = isString(options)
+    ? resolveLinkInfo(resolvePrefix(pathPrefix, options))
+    : isString(options.link)
       ? {
-          ...item,
-          link: isLinkInternal(item.link)
-            ? resolveRoute(resolvePrefix(pathPrefix, item.link)).path
-            : item.link,
+          ...options,
+          link: isLinkInternal(options.link)
+            ? resolveRoute(resolvePrefix(pathPrefix, options.link)).path
+            : options.link,
         }
-      : item;
+      : options;
 
   // Resolved group item
   if ("children" in config) {
@@ -57,6 +61,9 @@ export const resolveSidebarItem = (
 
 /**
  * Resolve sidebar items if the config is an array
+ *
+ * @param options - resolve sidebar array item options
+ * @returns resolved sidebar items
  */
 export const resolveArraySidebarItems = ({
   config,
@@ -70,6 +77,9 @@ export interface ResolveMultiSidebarOptions {
 
 /**
  * Resolve sidebar items if the config is a key -> value (path-prefix -> array) object
+ *
+ * @param options - resolve multi sidebar options
+ * @returns resolved sidebar items
  */
 export const resolveMultiSidebarItems = ({
   config,

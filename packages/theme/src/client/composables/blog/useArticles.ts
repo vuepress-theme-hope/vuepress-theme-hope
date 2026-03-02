@@ -11,6 +11,8 @@ export const articlesSymbol: InjectionKey<ArticlesRef> = Symbol(__VUEPRESS_DEV__
 
 /**
  * Inject articles
+ *
+ * @returns articles data
  */
 export const useArticles = (): ArticlesRef => {
   const articles = inject(articlesSymbol);

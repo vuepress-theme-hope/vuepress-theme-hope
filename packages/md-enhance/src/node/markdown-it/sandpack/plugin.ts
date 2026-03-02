@@ -272,7 +272,7 @@ export const sandpack: PluginSimple = (md) => {
     }
   });
 
-  // oxlint-disable-next-line max-statements
+  // oxlint-disable-next-line complexity, max-statements
   md.renderer.rules.sandpack_open = (tokens, index): string => {
     const { content, info } = tokens[index];
 
@@ -295,6 +295,7 @@ export const sandpack: PluginSimple = (md) => {
     let foundSetup = false;
 
     for (let i = index; i < tokens.length; i++) {
+      // oxlint-disable-next-line no-shadow
       const { block, type, info, content } = tokens[i];
 
       if (block) {

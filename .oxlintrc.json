@@ -108,6 +108,17 @@
       "rules": {
         "max-lines": "off"
       }
+    },
+    {
+      "files": ["**/theme/src/presets/**/*.{ts,vue}"],
+      "plugins": ["vue"],
+      "rules": {
+        // loose max lines for components setup blocks
+        "max-lines-per-function": [
+          "warn",
+          { "max": 300, "skipBlankLines": true, "skipComments": true }
+        ]
+      }
     }
   ]
 }

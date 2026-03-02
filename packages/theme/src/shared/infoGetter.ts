@@ -10,7 +10,7 @@ export const getAuthor = (author: Author | false | undefined, canDisable = false
     if (isArray(author)) {
       return author
         .map((item) => (isString(item) ? { name: item } : isAuthorInfo(item) ? item : null))
-        .filter((item): item is AuthorInfo => item !== null);
+        .filter((item): item is AuthorInfo => item != null);
     }
 
     if (isString(author)) return [{ name: author }];

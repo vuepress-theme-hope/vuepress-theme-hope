@@ -130,7 +130,7 @@ export default defineComponent({
                 preset.value = (target as HTMLSelectElement).value as "ant" | "pie" | "vue";
               },
             },
-            ["ant", "pie", "vue"].map((preset) => h("option", { value: preset }, preset)),
+            ["ant", "pie", "vue"].map((item) => h("option", { value: item }, item)),
           ),
         ]),
         h("label", { for: CONTAINER_ID }, `${locale.value.result}:`),
