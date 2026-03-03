@@ -19,5 +19,5 @@ export default tsdownConfig(
     "client/components/YouTube",
     "client/index",
   ],
-  { copy: [["client/styles/"]] },
+  { copy: [["client/styles"]] },
 );
