@@ -27,8 +27,6 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build project
-        env:
-          NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run build
 
       - name: Upload build result
@@ -37,4 +35,5 @@ jobs:
           name: build-result
           path: |
             docs-shared/lib/
+            packages/*/dist/
             packages/*/lib/
