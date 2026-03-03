@@ -4,6 +4,7 @@ import {
   addViteSsrExternal,
   addViteSsrNoExternal,
   chainWebpack,
+  getModulePath,
   isPlainObject,
 } from "@vuepress/helper";
 import { useSassPalettePlugin } from "@vuepress/plugin-sass-palette";
@@ -44,8 +45,10 @@ export const mdEnhancePlugin =
       vuePlayground: getStatus("vuePlayground", ["@vue/repl"]),
     };
 
-    useSassPalettePlugin(app, { id: "hope" });
-
+    useSassPalettePlugin(app, {
+      id: "hope",
+      defaultConfig: getModulePath("vuepress-shared/styles/config.scss", import.meta),
+    });
     return {
       name: PLUGIN_NAME,
 

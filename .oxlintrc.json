@@ -7,6 +7,10 @@
     "packages/*/lib/**",
     "**/ventors/lzstring.ts"
   ],
+  "options": {
+    "typeAware": true,
+    "typeCheck": true
+  },
   "plugins": ["import", "unicorn", "oxc", "promise", "jsdoc", "vitest", "vue"],
   "rules": {
     // the following rules are still not supported by oxlint yet

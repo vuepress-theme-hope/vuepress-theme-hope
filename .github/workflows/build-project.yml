@@ -32,7 +32,7 @@ jobs:
         run: pnpm run build
 
       - name: Upload build result
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: build-result
           path: |

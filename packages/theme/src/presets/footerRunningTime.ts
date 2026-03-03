@@ -3,7 +3,7 @@ import { computed, onMounted } from "vue";
 
 import { useData } from "vuepress-theme-hope/client";
 
-const millisecondPerDay = 1000 * 60 * 60 * 24;
+const MILLISECOND_PER_DAY = 1000 * 60 * 60 * 24;
 
 /**
  *
@@ -32,10 +32,10 @@ export const setupRunningTimeFooter = (
 
   const pastedTime = computed(() => {
     const passedTime = now.value.getTime() - initialTimeStamp;
-    const restDate = new Date(passedTime % millisecondPerDay);
+    const restDate = new Date(passedTime % MILLISECOND_PER_DAY);
 
     return {
-      day: Math.floor(passedTime / millisecondPerDay),
+      day: Math.floor(passedTime / MILLISECOND_PER_DAY),
       hour: restDate.getHours(),
       minute: restDate.getMinutes(),
       second: restDate.getSeconds(),

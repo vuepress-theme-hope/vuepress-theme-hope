@@ -2,6 +2,7 @@ import {
   addCustomElement,
   addViteOptimizeDepsInclude,
   addViteSsrNoExternal,
+  getModulePath,
 } from "@vuepress/helper";
 import { useSassPalettePlugin } from "@vuepress/plugin-sass-palette";
 import type { PluginFunction } from "vuepress/core";
@@ -20,7 +21,10 @@ export const componentsPlugin =
 
     if (app.env.isDebug) logger.info("Options:", options);
 
-    useSassPalettePlugin(app, { id: "hope" });
+    useSassPalettePlugin(app, {
+      id: "hope",
+      defaultConfig: getModulePath("vuepress-shared/styles/config.scss", import.meta),
+    });
 
     return {
       name: PLUGIN_NAME,

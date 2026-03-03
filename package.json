@@ -17,10 +17,10 @@
     "dev:copy": "pnpm run --parallel -r dev:copy",
     "docs:vite-build": "pnpm run -r docs:vite-build",
     "docs:webpack-build": "pnpm run -r docs:webpack-build",
-    "lint": "pnpm lint:ox --fix && oxfmt . & pnpm lint:stylelint --fix",
-    "lint:check": "pnpm lint:ox && oxfmt --check . && pnpm lint:stylelint",
+    "lint": "pnpm lint:oxlint --fix && oxfmt . & pnpm lint:stylelint --fix",
+    "lint:check": "pnpm lint:oxlint && oxfmt --check . && pnpm lint:stylelint",
     "lint:md": "markdownlint-cli2 '**/*.md'",
-    "lint:ox": "oxlint --type-aware --type-check --report-unused-disable-directives --deny-warnings",
+    "lint:oxlint": "oxlint --report-unused-disable-directives --deny-warnings",
     "lint:stylelint": "stylelint \"**/*.{css,scss}\" \"**/.vuepress/**/*.{css,scss}\"",
     "packages:check-update": "pnpm dlx npm-check-updates -u --deep --timeout 600000",
     "packages:update": "pnpm up -r",
@@ -40,11 +40,11 @@
     "@rollup/plugin-commonjs": "29.0.0",
     "@rollup/plugin-node-resolve": "16.0.3",
     "@rollup/plugin-replace": "6.0.3",
-    "@types/node": "25.3.1",
+    "@types/node": "25.3.3",
     "@types/webpack-env": "1.18.8",
     "@vitest/coverage-istanbul": "4.0.18",
     "concurrently": "9.2.1",
-    "conventional-changelog-conventionalcommits": "9.1.0",
+    "conventional-changelog-conventionalcommits": "9.2.0",
     "cpx2": "8.0.0",
     "cross-env": "10.1.0",
     "gulp": "5.0.1",
@@ -52,10 +52,10 @@
     "husky": "9.1.7",
     "markdownlint-cli2": "0.21.0",
     "nano-staged": "0.9.0",
-    "npm-check-updates": "19.5.0",
+    "npm-check-updates": "19.6.3",
     "ora": "9.3.0",
-    "oxfmt": "^0.35.0",
-    "oxlint": "1.50.0",
+    "oxfmt": "^0.36.0",
+    "oxlint": "1.51.0",
     "oxlint-tsgolint": "0.15.0",
     "rimraf": "6.1.3",
     "rollup": "4.59.0",
@@ -86,5 +86,5 @@
   "engines": {
     "node": ">=20.19.0"
   },
-  "packageManager": "pnpm@10.30.2"
+  "packageManager": "pnpm@10.30.3"
 }
