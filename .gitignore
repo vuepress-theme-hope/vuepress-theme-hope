@@ -1,9 +1,6 @@
 # Node modules
 **/node_modules/**
 
-# Build files
-packages/*/lib/
-
 # Vuepress Cache
 **/.vuepress/.cache/**
 # Vuepress Temp

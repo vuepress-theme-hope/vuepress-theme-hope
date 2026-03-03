@@ -36,4 +36,3 @@ jobs:
           path: |
             docs/shared/dist/
             packages/*/dist/
-            packages/*/lib/

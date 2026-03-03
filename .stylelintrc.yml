@@ -12,7 +12,6 @@ ignoreFiles:
   - "**/*.module.scss"
   - "**/node_modules/**"
   - "**/dist/**"
-  - "packages/*/lib/**"
   - "**/.vuepress/.cache/**"
   - "**/.vuepress/.temp/**"
   - "**/.vuepress/dist/**"

@@ -1,12 +1,7 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "extends": ["./.oxlintrc.base.json"],
-  "ignorePatterns": [
-    "packages/*/assets/**",
-    "packages/*/dist/**",
-    "packages/*/lib/**",
-    "**/ventors/lzstring.ts"
-  ],
+  "ignorePatterns": ["packages/*/assets/**", "packages/*/dist/**", "**/ventors/lzstring.ts"],
   "options": {
     "typeAware": true,
     "typeCheck": true
