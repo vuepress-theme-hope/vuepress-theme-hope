@@ -65,7 +65,7 @@
   },
   "scripts": {
     "build": "tsdown --config-loader unrun",
-    "clean": "rimraf --glob ./dist",
+    "clean": "rimraf ./dist",
     "dev": "pnpm build --watch"
   },
   "dependencies": {

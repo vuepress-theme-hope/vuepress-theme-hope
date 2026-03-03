@@ -31,20 +31,20 @@ export const extendsBundlerOptions = (bundlerOptions: unknown, app: App, custom 
           .conditions ?? VITE_DEFAULT_CONDITIONS;
 
       (bundlerOptions as ViteBundlerOptions).viteOptions!.resolve!.conditions = [
-        "custom",
+        "hope-custom",
         ...defaultConditions,
       ];
 
       (bundlerOptions as ViteBundlerOptions).viteOptions!.ssr!.resolve!.conditions = [
-        "custom",
+        "hope-custom",
         ...defaultSSRConditions,
       ];
     }
 
     chainWebpack(bundlerOptions, app, (config) => {
       if (config.resolve.conditionNames.values().length > 0)
-        config.resolve.conditionNames.prepend("custom");
-      else config.resolve.conditionNames.merge(["custom", ...WEBPACK_DEFAULT_CONDITION_NAMES]);
+        config.resolve.conditionNames.prepend("hope-custom");
+      else config.resolve.conditionNames.merge(["hope-custom", ...WEBPACK_DEFAULT_CONDITION_NAMES]);
     });
   }
 

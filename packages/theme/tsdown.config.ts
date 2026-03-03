@@ -6,19 +6,20 @@ const __dirname = getDirname(import.meta.url);
 export default tsdownConfig(
   [
     "node/index",
-    "client/exports/base",
-    "client/exports/blog",
-    "client/exports/encrypt",
-    "client/exports/noop",
-    "client/blog",
-    "client/index",
+    Object.fromEntries(
+      [
+        "client/exports/base",
+        "client/exports/blog",
+        "client/exports/encrypt",
+        "client/exports/noop",
+        "client/blog",
+        "client/index",
+      ].map((file) => [`bundle/${file}`, `src/${file}.ts`]),
+    ),
   ],
   {
     alias: {
       "@theme-hope/": path.resolve(__dirname, "./src/client"),
-    },
-    define: {
-      __IS_BUNDLED__: "true",
     },
     copy: [["client/styles"]],
     moduleSideEffects: (id) =>

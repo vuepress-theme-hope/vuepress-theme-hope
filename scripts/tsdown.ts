@@ -118,17 +118,20 @@ export interface TsdownOptions {
   isPrivate?: boolean;
 }
 
+const resolveEntry = (entryItem: string): string =>
+  entryItem.startsWith("src/") ? entryItem : `src/${entryItem}`;
+
 /**
  * Create tsdown configuration
  *
  * 创建 tsdown 配置
  *
- * @param fileOptions - File path or file info / 文件路径或文件信息
+ * @param entryOptions - Entry options / 入口选项
  * @param options - Tsdown options / Tsdown 选项
  * @returns Tsdown configuration / Tsdown 配置
  */
 export const tsdownConfig = (
-  fileOptions: string | string[],
+  entryOptions: UserConfig["entry"],
   {
     alias,
     define,
@@ -143,11 +146,16 @@ export const tsdownConfig = (
     isPrivate = false,
   }: TsdownOptions = {},
 ): UserConfig => {
-  const files = Array.isArray(fileOptions) ? fileOptions : [fileOptions];
+  const entry =
+    typeof entryOptions === "string"
+      ? resolveEntry(entryOptions)
+      : Array.isArray(entryOptions)
+        ? entryOptions.map((item) => (typeof item === "string" ? resolveEntry(item) : item))
+        : entryOptions;
 
   return defineConfig({
     clean: !isProduction,
-    entry: Object.fromEntries(files.map((item) => [item, `./src/${item}.ts`])),
+    entry,
     format: "esm",
     outDir: "./dist",
     sourcemap: true,
