@@ -39,10 +39,8 @@ pnpm i
 │ ├── components → components 插件文档
 │ ├── lightgallery → lightgallery 插件文档
 │ ├── md-enhance → md-enhance 插件文档
-│ ├── shared → vuepress-shared 文档
+│ ├── shared → 文档的通用文件
 │ └── theme → 主题文档
-│
-├── docs-shared → 文档的通用文件
 |
 ├── packages → 项目源代码
 │ ├── components → components 插件

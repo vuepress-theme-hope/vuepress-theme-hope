@@ -109,6 +109,13 @@ export interface TsdownOptions {
    * ]
    */
   copy?: [from: string, to?: string][];
+
+  /**
+   * Whether to mark the package as private
+   *
+   * 是否将包标记为私有
+   */
+  isPrivate?: boolean;
 }
 
 /**
@@ -133,6 +140,7 @@ export const tsdownConfig = (
     dts = true,
     moduleSideEffects,
     copy = [],
+    isPrivate = false,
   }: TsdownOptions = {},
 ): UserConfig => {
   const files = Array.isArray(fileOptions) ? fileOptions : [fileOptions];
@@ -158,7 +166,7 @@ export const tsdownConfig = (
       onlyAllowBundle: onlyAllowBundle,
     },
     fixedExtension: false,
-    publint: isProduction,
+    publint: isProduction && !isPrivate,
     copy: copy.map(([from, to = dirname(from)]) => ({
       from: `./src/${from}`,
       to: `./dist/${to}`,
