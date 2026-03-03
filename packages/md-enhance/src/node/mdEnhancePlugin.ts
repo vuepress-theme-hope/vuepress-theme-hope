@@ -47,7 +47,7 @@ export const mdEnhancePlugin =
 
     useSassPalettePlugin(app, {
       id: "hope",
-      defaultConfig: getModulePath("vuepress-shared/styles/config.scss", import.meta),
+      defaultConfig: getModulePath("vuepress-shared/scss/config", import.meta),
     });
     return {
       name: PLUGIN_NAME,
