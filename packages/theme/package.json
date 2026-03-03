@@ -78,6 +78,7 @@
     "build": "pnpm build:rollup && pnpm gulp && pnpm build:ts && pnpm copy",
     "build:rollup": "rollup -c rollup.config.ts --configPlugin esbuild",
     "build:ts": "tsc -b tsconfig.release.json",
+    "build:tsdown": "tsdown --config-loader unrun",
     "clean": "rimraf --glob ./lib ./*.tsbuildinfo",
     "copy": "pnpm copy:client && pnpm copy:bundle && pnpm copy:presets",
     "copy:bundle": "cpx \"src/client/**/*.css\" lib/bundle",

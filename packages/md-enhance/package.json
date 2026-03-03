@@ -42,24 +42,31 @@
     "directory": "packages/md-enhance"
   },
   "files": [
-    "lib"
+    "dist"
   ],
   "type": "module",
-  "main": "./lib/node/index.js",
-  "types": "./lib/node/index.d.ts",
+  "sideEffects": [
+    "./dist/client/styles/**/*.scss"
+  ],
   "exports": {
-    ".": "./lib/node/index.js",
-    "./client": "./lib/client/index.js",
-    "./client/*": "./lib/client/*",
+    ".": {
+      "types": "./dist/node/index.d.ts",
+      "default": "./dist/node/index.js"
+    },
+    "./client": {
+      "types": "./dist/client/index.d.ts",
+      "default": "./dist/client/index.js"
+    },
+    "./components/*": {
+      "types": "./dist/client/components/*.d.ts",
+      "default": "./dist/client/components/*.js"
+    },
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "rollup -c rollup.config.ts --configPlugin esbuild",
-    "clean": "rimraf --glob ./lib ./*.tsbuildinfo",
-    "copy": "cpx \"src/client/**/*.{vue,css,scss,eot,woff,ttf}\" lib/client",
-    "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
-    "dev:copy": "pnpm copy -w",
-    "dev:ts": "tsc -b tsconfig.build.json --watch"
+    "build": "tsdown --config-loader unrun",
+    "clean": "rimraf --glob ./dist",
+    "dev": "pnpm build --watch"
   },
   "dependencies": {
     "@mdit/plugin-container": "^0.23.1",
@@ -76,8 +83,7 @@
   "devDependencies": {
     "@types/babel__core": "7.20.5",
     "@vuepress/bundler-vite": "catalog:vuepress",
-    "markdown-it": "14.1.1",
-    "typescript": "5.9.3"
+    "markdown-it": "14.1.1"
   },
   "peerDependencies": {
     "@vue/repl": "^4.1.1",
@@ -86,6 +92,7 @@
     "sass": "catalog:range",
     "sass-embedded": "catalog:range",
     "sass-loader": "catalog:range",
+    "typescript": ">=5.0.0",
     "vuepress": "catalog:vuepress"
   },
   "peerDependenciesMeta": {
@@ -105,6 +112,9 @@
       "optional": true
     },
     "sass-loader": {
+      "optional": true
+    },
+    "typescript": {
       "optional": true
     }
   },

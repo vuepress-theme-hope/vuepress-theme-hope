@@ -25,23 +25,21 @@
     "directory": "packages/create"
   },
   "bin": {
-    "create-vuepress-theme-hope": "./lib/index.js"
+    "create-vuepress-theme-hope": "./dist/index.js"
   },
   "files": [
-    "lib",
+    "dist",
     "template"
   ],
   "type": "module",
-  "main": "./lib/node/index.js",
-  "types": "./lib/node/index.d.ts",
+  "sideEffects": false,
   "exports": {
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "rollup -c rollup.config.ts --configPlugin esbuild",
-    "clean": "rimraf --glob ./lib ./*.tsbuildinfo",
-    "dev": "pnpm dev:ts",
-    "dev:ts": "tsc -b tsconfig.build.json --watch"
+    "build": "tsdown --config-loader unrun",
+    "clean": "rimraf --glob ./dist",
+    "dev": "pnpm build --watch"
   },
   "dependencies": {
     "@inquirer/prompts": "^8.3.0",

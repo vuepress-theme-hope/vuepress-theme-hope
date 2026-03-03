@@ -9,13 +9,13 @@ import {
 import type { PropType, VNode } from "vue";
 import { defineComponent, h, onMounted, ref } from "vue";
 import { useData } from "vuepress/client";
-import { Popup, openPopupWindow } from "vuepress-shared/client";
+import { openPopupWindow } from "vuepress-shared/client";
 
 import type { ShareServiceOptions } from "../../shared/share.js";
-import { getMetaContent } from "../utils/index.js";
+import { Popup, getMetaContent } from "../utils/index.js";
 
 import "balloon-css/balloon.css";
-import "vuepress-shared/client/styles/popup.scss";
+import "../styles/popup.scss";
 import "../styles/share-service.scss";
 
 const renderIcon = (content: string, contentClass = ""): VNode => {

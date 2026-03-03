@@ -27,7 +27,7 @@
     "prepare": "husky",
     "release": "pnpm clean && pnpm build && pnpm release:version && pnpm release:publish && pnpm release:sync",
     "release:publish": "lerna publish from-package --yes",
-    "release:sync": "cross-env NODE_OPTIONS=\"--experimental-json-modules\" tsx scripts/sync.ts",
+    "release:sync": "cross-env NODE_OPTIONS=\"--experimental-json-modules\" unrun scripts/sync.ts",
     "release:version": "lerna version",
     "test": "vitest --coverage"
   },
@@ -57,6 +57,7 @@
     "oxfmt": "^0.36.0",
     "oxlint": "1.51.0",
     "oxlint-tsgolint": "0.15.0",
+    "publint": "0.3.18",
     "rimraf": "6.1.3",
     "rollup": "4.59.0",
     "rollup-plugin-copy": "3.5.0",
@@ -66,9 +67,9 @@
     "stylelint": "17.4.0",
     "stylelint-config-hope": "11.0.0",
     "through2": "4.0.2",
-    "tslib": "2.8.1",
-    "tsx": "4.21.0",
+    "tsdown": "0.21.0-beta.2",
     "typescript": "5.9.3",
+    "unrun": "0.2.28",
     "vite": "7.1.12",
     "vitest": "4.0.18",
     "vuepress": "catalog:vuepress"
