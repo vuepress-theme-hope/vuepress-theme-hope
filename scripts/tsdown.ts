@@ -94,7 +94,7 @@ export interface TsdownOptions {
   moduleSideEffects?: (id: string, external: boolean) => boolean | undefined;
 
   /**
-   * Additional files to copy to the output director
+   * Additional files to copy to the output directory
    *
    * 要复制到输出目录的额外文件
    *
