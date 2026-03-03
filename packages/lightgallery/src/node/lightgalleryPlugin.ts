@@ -1,4 +1,9 @@
-import { addViteConfig, addViteOptimizeDepsExclude, chainWebpack } from "@vuepress/helper";
+import {
+  addViteConfig,
+  addViteOptimizeDepsExclude,
+  chainWebpack,
+  getModulePath,
+} from "@vuepress/helper";
 import { useSassPalettePlugin } from "@vuepress/plugin-sass-palette";
 import type { PluginFunction } from "vuepress/core";
 
@@ -16,8 +21,10 @@ export const lightgalleryPlugin =
 
     const plugins = options.plugins ?? ["pager", "share", "zoom"];
 
-    useSassPalettePlugin(app, { id: "hope" });
-
+    useSassPalettePlugin(app, {
+      id: "hope",
+      defaultConfig: getModulePath("vuepress-shared/styles/config.scss", import.meta),
+    });
     return {
       name: PLUGIN_NAME,
 
