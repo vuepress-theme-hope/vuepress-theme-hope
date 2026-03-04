@@ -9,5 +9,5 @@
     },
     "types": ["vuepress/client-types", "vite/client", "webpack-env"]
   },
-  "include": ["./src/client", "./src/shared", "./src/presets", "./src/*.d.ts"]
+  "include": ["./src/client", "./src/shared", "./src/*.d.ts"]
 }

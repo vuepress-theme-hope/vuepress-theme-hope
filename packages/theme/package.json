@@ -94,16 +94,13 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "pnpm build:tsdown && pnpm build:ts && pnpm build:assets",
-    "build:assets": "pnpm bundle-style && pnpm copy:client && pnpm copy:presets",
+    "build": "pnpm build:ts && pnpm build:tsdown && pnpm build:assets",
+    "build:assets": "unrun scripts/generateBundleStyle.ts",
     "build:ts": "tsc -b tsconfig.release.json",
     "build:tsdown": "tsdown --config-loader unrun",
-    "bundle-style": "unrun scripts/generateBundleStyle.ts",
     "clean": "rimraf --glob ./dist ./*.tsbuildinfo",
-    "copy:client": "cpx \"src/client/**/*.{css,scss}\" dist/client",
-    "copy:presets": "cpx \"src/presets/**/*.{css,scss}\" dist/presets",
     "dev": "concurrently \"pnpm dev:assets\" \"pnpm dev:ts\"",
-    "dev:assets": "concurrently \"pnpm bundle-style -w\" \"pnpm copy:client -w\" \"pnpm copy:presets -w\"",
+    "dev:assets": "pnpm build:assets -w",
     "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "dependencies": {
