@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.103](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.102...v2.0.0-rc.103) (2026-03-03)
+
+### 🐛 Bug Fixes
+
+- **deps:** update dependency katex to v0.16.33 ([#5222](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5222)) ([a53d092](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a53d092898dadefd7c7278d68dcdf527d5563543))
+- **shared:** fix svg helper if ([4e9529d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4e9529db2692939cf1cfa57fb101596261d5c4d3))
+- **theme:** avoid highlight overflow ([#5181](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5181)) ([ac751e3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ac751e3974a14156e85c46004268dd1f6a098327))
+- **theme:** fix markdown option check ([df6cfe2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/df6cfe2dccdda2b19ae1bab2396492d9d5fbae68))
+- **theme:** fix page cover, close [#5196](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5196) ([15fe38f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/15fe38f926363bd3f379164bc7c65fbfeafd6cb3))
+- **theme:** fix sass deprecations ([f11cc9c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f11cc9c70230aa69135052000d2632c268d59469))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.102](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.101...v2.0.0-rc.102) (2026-01-04)
 
 ### 🐛 Bug Fixes

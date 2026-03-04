@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-lightgallery",
-  "version": "2.0.0-rc.99",
+  "version": "2.0.0-rc.103",
   "description": "Light Gallery plugin for VuePress",
   "keywords": [
     "image",
