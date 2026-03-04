@@ -4,7 +4,6 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "rootDir": "./src",
     "outDir": "./dist",
-    "inlineSources": true,
     "paths": {
       "@theme-hope/*": ["./src/client/*.js"]
     },

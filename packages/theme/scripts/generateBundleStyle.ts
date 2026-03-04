@@ -1,7 +1,9 @@
 import { getDirname, fs, path } from "vuepress/utils";
 import { glob } from "node:fs/promises";
+import { watch } from "chokidar";
 
 const themeRoot = path.resolve(getDirname(import.meta.url), "..");
+const isWatch = process.argv.includes("-w") || process.argv.includes("--watch");
 
 const ENTIRES_MARKER = /^\/\*\s*bundle entries(?: dir:(.+?))?\s*\*\/$/m;
 const CONFIG_IMPORT = '@use "@sass-palette/hope-config";';
@@ -48,23 +50,43 @@ const getFileContent = async (filePath: string, content: string): Promise<string
   return result;
 };
 
-const generateBundleStyle = async () => {
-  const cwd = path.join(themeRoot, "src/client");
+const generateBundleStyle = async (entry: string) => {
+  const filePath = path.join(themeRoot, "src/client", entry);
+  const outputPath = path.join(themeRoot, "dist/bundle", entry);
 
-  for await (const entry of glob("styles/**/*.scss", {
-    cwd,
-  })) {
-    const filePath = path.join(themeRoot, "src/client", entry);
-    const outputPath = path.join(themeRoot, "dist/bundle", entry);
+  if (await fs.pathExists(filePath)) {
     const content = await fs.readFile(filePath, "utf-8");
-    const result = await getFileContent(filePath, content);
+    const result = entry.endsWith(".css") ? content : await getFileContent(filePath, content);
 
     await fs.ensureDir(path.dirname(outputPath));
     await fs.writeFile(outputPath, result, {
       encoding: "utf-8",
       flag: "w",
     });
+  } else {
+    await fs.remove(outputPath);
   }
 };
 
-await generateBundleStyle();
+const bundleStyles = async () => {
+  const cwd = path.join(themeRoot, "src/client");
+
+  for await (const entry of glob("styles/**/*.s?css", {
+    cwd,
+  }))
+    await generateBundleStyle(entry);
+
+  if (isWatch) {
+    console.info("Watching styles for changes...");
+
+    watch("styles/**/*.s?css", {
+      cwd,
+      ignoreInitial: true,
+    }).on("all", (event, entry) => {
+      console.info(`[${event}] ${entry}`);
+      generateBundleStyle(entry);
+    });
+  }
+};
+
+await bundleStyles();
