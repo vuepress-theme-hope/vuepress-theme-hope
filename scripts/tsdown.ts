@@ -111,15 +111,17 @@ export interface TsdownOptions {
   copy?: [from: string, to?: string][];
 
   /**
-   * Whether to mark the package as private
+   * Whether to run publint during the build process
    *
-   * 是否将包标记为私有
+   * 是否在构建过程中运行 publint
+   *
+   * @default true (only in production mode)
    */
-  isPrivate?: boolean;
+  publint?: boolean;
 }
 
 const resolveEntry = (entryItem: string): string =>
-  entryItem.startsWith("src/") ? entryItem : `src/${entryItem}`;
+  entryItem.startsWith("src/") ? entryItem : `./src/${entryItem}.ts`;
 
 /**
  * Create tsdown configuration
@@ -143,14 +145,18 @@ export const tsdownConfig = (
     dts = true,
     moduleSideEffects,
     copy = [],
-    isPrivate = false,
+    publint = true,
   }: TsdownOptions = {},
 ): UserConfig => {
   const entry =
     typeof entryOptions === "string"
-      ? resolveEntry(entryOptions)
+      ? { [entryOptions]: resolveEntry(entryOptions) }
       : Array.isArray(entryOptions)
-        ? entryOptions.map((item) => (typeof item === "string" ? resolveEntry(item) : item))
+        ? entryOptions.every((item) => typeof item === "string")
+          ? Object.fromEntries(entryOptions.map((item) => [item, resolveEntry(item)]))
+          : entryOptions.map((item) =>
+              typeof item === "string" ? { [item]: resolveEntry(item) } : item,
+            )
         : entryOptions;
 
   return defineConfig({
@@ -174,7 +180,7 @@ export const tsdownConfig = (
       onlyAllowBundle: onlyAllowBundle,
     },
     fixedExtension: false,
-    publint: isProduction && !isPrivate,
+    publint: isProduction && publint,
     copy: copy.map(([from, to = dirname(from)]) => ({
       from: `./src/${from}`,
       to: `./dist/${to}`,

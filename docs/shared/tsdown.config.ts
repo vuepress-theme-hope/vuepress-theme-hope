@@ -9,5 +9,5 @@ export default tsdownConfig(
     "components/ProjectLink",
     "components/SocialLink",
   ],
-  { isPrivate: true },
+  { publint: false },
 );
