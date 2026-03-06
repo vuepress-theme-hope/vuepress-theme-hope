@@ -80,6 +80,7 @@
       },
       "default": "./dist/bundle/exports/noop.js"
     },
+    "./styles/*.scss": "./dist/client/styles/*.scss",
     "./styles/*": {
       "sass": "./dist/client/styles/*.scss"
     },

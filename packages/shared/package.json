@@ -39,6 +39,7 @@
       "types": "./dist/client/index.d.ts",
       "default": "./dist/client/index.js"
     },
+    "./scss/*.scss": "./scss/*.scss",
     "./scss/*": {
       "sass": "./scss/*.scss"
     },
