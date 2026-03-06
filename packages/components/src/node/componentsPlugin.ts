@@ -23,7 +23,7 @@ export const componentsPlugin =
 
     useSassPalettePlugin(app, {
       id: "hope",
-      defaultConfig: getModulePath("vuepress-shared/scss/config", import.meta),
+      defaultConfig: getModulePath("vuepress-shared/scss/config.scss", import.meta),
     });
 
     return {
