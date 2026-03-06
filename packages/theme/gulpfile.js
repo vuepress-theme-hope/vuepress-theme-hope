@@ -30,6 +30,6 @@ const generateSass = () =>
         callback(null, file);
       }),
     )
-    .pipe(dest("lib/bundle"));
+    .pipe(dest("dist/bundle"));
 
 export default generateSass;
