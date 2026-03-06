@@ -24,7 +24,7 @@ export default tsdownConfig(
     alias: {
       "@theme-hope/": path.resolve(__dirname, "./src/client"),
     },
-    copy: [["client/styles"], ["presets/**/*.s?css", "presets"]],
+    copy: [["client/styles"], ["presets/**/*.{css,scss}", "presets"]],
     moduleSideEffects: (id) =>
       id.endsWith(".css") || id.endsWith(".scss") || id.includes("runTimeCheck"),
   },
