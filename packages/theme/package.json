@@ -102,7 +102,7 @@
     "clean": "rimraf --glob ./dist ./*.tsbuildinfo",
     "dev": "concurrently \"pnpm dev:assets\" \"pnpm dev:ts\"",
     "dev:assets": "pnpm build:assets -w",
-    "dev:ts": "tsc -b tsconfig.build.json --watch"
+    "dev:ts": "tsc -b tsconfig.release.json --watch"
   },
   "dependencies": {
     "@vuepress/helper": "catalog:vuepress",

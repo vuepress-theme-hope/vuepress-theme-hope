@@ -19,7 +19,7 @@
     // Emit
     "downlevelIteration": false,
     "importHelpers": true,
-    "inlineSources": true,
+    "inlineSources": false,
     "inlineSourceMap": false,
     "newLine": "lf",
     "noEmitOnError": true,

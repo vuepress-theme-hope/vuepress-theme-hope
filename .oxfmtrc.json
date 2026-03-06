@@ -3,9 +3,9 @@
   "ignorePatterns": [
     "coverage/",
     "**/dist/",
-    "**/.vuepress/.cache",
-    "**/.vuepress/.temp",
-    "**/.vuepress/dist"
+    "**/.vuepress/.cache/**",
+    "**/.vuepress/.temp/**",
+    "**/.vuepress/dist/**"
   ],
   "sortPackageJson": {
     "sortScripts": true
