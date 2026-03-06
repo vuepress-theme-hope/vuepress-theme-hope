@@ -55,7 +55,7 @@ icon: home
 
   默认值为 `"#markdown-content >  h1, #markdown-content > h2, #markdown-content > h3, #markdown-content > h4, #markdown-content > h5, #markdown-content > h6, [vp-content] > h2"`。
 
-- `depth`: 标题的级别。
+- `levels`: 标题的级别。
 
   `1` 到 `6` 对应 `<h1>` 到 `<h6>`
   - `false`: 没有标题。

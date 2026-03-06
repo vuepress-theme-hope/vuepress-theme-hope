@@ -55,7 +55,7 @@ You can customize TOC headers by setting an object `toc` in theme options and pa
 
   The default value is `"#markdown-content >  h1, #markdown-content > h2, #markdown-content > h3, #markdown-content > h4, #markdown-content > h5, #markdown-content > h6, [vp-content] > h2"`.
 
-- `depth`: The levels of the headers.
+- `levels`: The levels of the headers.
 
   `1` to `6` for `<h1>` to `<h6>`
   - `false`: No headers.
