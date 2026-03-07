@@ -211,16 +211,16 @@ importers:
     devDependencies:
       '@commitlint/cli':
         specifier: 20.4.3
-        version: 20.4.3(@types/node@20.19.0)(typescript@5.9.3)
+        version: 20.4.3(@types/node@22.13.0)(typescript@5.9.3)
       '@commitlint/config-conventional':
         specifier: 20.4.3
         version: 20.4.3
       '@lerna-lite/cli':
         specifier: 4.11.3
-        version: 4.11.3(@lerna-lite/publish@4.11.3(@types/node@20.19.0)(conventional-commits-filter@5.0.0))(@lerna-lite/version@4.11.3(@lerna-lite/publish@4.11.3(@types/node@20.19.0)(conventional-commits-filter@5.0.0))(@types/node@20.19.0)(conventional-commits-filter@5.0.0))(@types/node@20.19.0)
+        version: 4.11.3(@lerna-lite/publish@4.11.3(@types/node@22.13.0)(conventional-commits-filter@5.0.0))(@lerna-lite/version@4.11.3(@lerna-lite/publish@4.11.3(@types/node@22.13.0)(conventional-commits-filter@5.0.0))(@types/node@22.13.0)(conventional-commits-filter@5.0.0))(@types/node@22.13.0)
       '@lerna-lite/publish':
         specifier: 4.11.3
-        version: 4.11.3(@types/node@20.19.0)(conventional-commits-filter@5.0.0)
+        version: 4.11.3(@types/node@22.13.0)(conventional-commits-filter@5.0.0)
       '@rollup/plugin-alias':
         specifier: 6.0.0
         version: 6.0.0(patch_hash=e7d2bd3b556369fe2e44b7bcfff2cf0de4208f9c73ea32f239afe9723d80c9c8)(rollup@4.59.0)
@@ -234,14 +234,14 @@ importers:
         specifier: 6.0.3
         version: 6.0.3(rollup@4.59.0)
       '@types/node':
-        specifier: 20.19.0
-        version: 20.19.0
+        specifier: 22.13.0
+        version: 22.13.0
       '@types/webpack-env':
         specifier: 1.18.8
         version: 1.18.8
       '@vitest/coverage-istanbul':
         specifier: 4.0.18
-        version: 4.0.18(vitest@4.0.18(@opentelemetry/api@1.9.0)(@types/node@20.19.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
+        version: 4.0.18(vitest@4.0.18(@opentelemetry/api@1.9.0)(@types/node@22.13.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
       concurrently:
         specifier: 9.2.1
         version: 9.2.1
@@ -322,13 +322,13 @@ importers:
         version: 0.2.30(synckit@0.11.12)
       vite:
         specifier: npm:vite@^8.0.0-beta.16
-        version: 8.0.0-beta.16(@types/node@20.19.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
+        version: 8.0.0-beta.16(@types/node@22.13.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
       vitest:
         specifier: 4.0.18
-        version: 4.0.18(@opentelemetry/api@1.9.0)(@types/node@20.19.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
+        version: 4.0.18(@opentelemetry/api@1.9.0)(@types/node@22.13.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
       vuepress:
         specifier: catalog:vuepress
-        version: 2.0.0-rc.26(@vuepress/bundler-vite@2.0.0-rc.26(@types/node@20.19.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))(@vuepress/bundler-webpack@2.0.0-rc.26(esbuild@0.27.3)(tslib@2.8.1)(typescript@5.9.3))(typescript@5.9.3)(vue@3.5.29(typescript@5.9.3))
+        version: 2.0.0-rc.26(@vuepress/bundler-vite@2.0.0-rc.26(@types/node@22.13.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))(@vuepress/bundler-webpack@2.0.0-rc.26(esbuild@0.27.3)(tslib@2.8.1)(typescript@5.9.3))(typescript@5.9.3)(vue@3.5.29(typescript@5.9.3))
 
   demo/components:
     devDependencies:
@@ -4153,8 +4153,8 @@ packages:
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/node@20.19.0':
-    resolution: {integrity: sha512-hfrc+1tud1xcdVTABC2JiomZJEklMcXYNTVtZLAeqTVWD+qL5jkHKT+1lOtqDdGxt+mB53DTtiz673vfjU8D1Q==}
+  '@types/node@22.13.0':
+    resolution: {integrity: sha512-ClIbNe36lawluuvq3+YYhnIN2CELi+6q8NpnM7PYp4hBn/TatfboPgVSm2rwKRfnV2M+Ty9GWDFI64KEe+kysA==}
 
   '@types/node@24.12.0':
     resolution: {integrity: sha512-GYDxsZi3ChgmckRT9HPU0WEhKLP08ev/Yfcq2AstjrDASOYCSXeyjDsHg4v5t4jOj7cyDX3vmprafKlWIG9MXQ==}
@@ -9502,8 +9502,8 @@ packages:
   unconfig-core@7.5.0:
     resolution: {integrity: sha512-Su3FauozOGP44ZmKdHy2oE6LPjk51M/TRRjHv2HNCWiDvfvCoxC2lno6jevMA91MYAdCdwP05QnWdWpSbncX/w==}
 
-  undici-types@6.21.0:
-    resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
+  undici-types@6.20.0:
+    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
   undici-types@7.16.0:
     resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
@@ -10958,11 +10958,11 @@ snapshots:
       outvariant: 1.4.0
       static-browser-server: 1.0.3
 
-  '@commitlint/cli@20.4.3(@types/node@20.19.0)(typescript@5.9.3)':
+  '@commitlint/cli@20.4.3(@types/node@22.13.0)(typescript@5.9.3)':
     dependencies:
       '@commitlint/format': 20.4.3
       '@commitlint/lint': 20.4.3
-      '@commitlint/load': 20.4.3(@types/node@20.19.0)(typescript@5.9.3)
+      '@commitlint/load': 20.4.3(@types/node@22.13.0)(typescript@5.9.3)
       '@commitlint/read': 20.4.3
       '@commitlint/types': 20.4.3
       tinyexec: 1.0.2
@@ -11009,14 +11009,14 @@ snapshots:
       '@commitlint/rules': 20.4.3
       '@commitlint/types': 20.4.3
 
-  '@commitlint/load@20.4.3(@types/node@20.19.0)(typescript@5.9.3)':
+  '@commitlint/load@20.4.3(@types/node@22.13.0)(typescript@5.9.3)':
     dependencies:
       '@commitlint/config-validator': 20.4.3
       '@commitlint/execute-rule': 20.0.0
       '@commitlint/resolve-extends': 20.4.3
       '@commitlint/types': 20.4.3
       cosmiconfig: 9.0.1(typescript@5.9.3)
-      cosmiconfig-typescript-loader: 6.2.0(@types/node@20.19.0)(cosmiconfig@9.0.1(typescript@5.9.3))(typescript@5.9.3)
+      cosmiconfig-typescript-loader: 6.2.0(@types/node@22.13.0)(cosmiconfig@9.0.1(typescript@5.9.3))(typescript@5.9.3)
       is-plain-obj: 4.1.0
       lodash.mergewith: 4.6.2
       picocolors: 1.1.1
@@ -11255,18 +11255,18 @@ snapshots:
     optionalDependencies:
       '@types/node': 25.3.5
 
-  '@inquirer/core@10.3.2(@types/node@20.19.0)':
+  '@inquirer/core@10.3.2(@types/node@22.13.0)':
     dependencies:
       '@inquirer/ansi': 1.0.2
       '@inquirer/figures': 1.0.15
-      '@inquirer/type': 3.0.10(@types/node@20.19.0)
+      '@inquirer/type': 3.0.10(@types/node@22.13.0)
       cli-width: 4.1.0
       mute-stream: 2.0.0
       signal-exit: 4.1.0
       wrap-ansi: 6.2.0
       yoctocolors-cjs: 2.1.3
     optionalDependencies:
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
 
   '@inquirer/core@11.1.5(@types/node@25.3.5)':
     dependencies:
@@ -11288,13 +11288,13 @@ snapshots:
     optionalDependencies:
       '@types/node': 25.3.5
 
-  '@inquirer/expand@4.0.23(@types/node@20.19.0)':
+  '@inquirer/expand@4.0.23(@types/node@22.13.0)':
     dependencies:
-      '@inquirer/core': 10.3.2(@types/node@20.19.0)
-      '@inquirer/type': 3.0.10(@types/node@20.19.0)
+      '@inquirer/core': 10.3.2(@types/node@22.13.0)
+      '@inquirer/type': 3.0.10(@types/node@22.13.0)
       yoctocolors-cjs: 2.1.3
     optionalDependencies:
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
 
   '@inquirer/expand@5.0.8(@types/node@25.3.5)':
     dependencies:
@@ -11314,12 +11314,12 @@ snapshots:
 
   '@inquirer/figures@2.0.3': {}
 
-  '@inquirer/input@4.3.1(@types/node@20.19.0)':
+  '@inquirer/input@4.3.1(@types/node@22.13.0)':
     dependencies:
-      '@inquirer/core': 10.3.2(@types/node@20.19.0)
-      '@inquirer/type': 3.0.10(@types/node@20.19.0)
+      '@inquirer/core': 10.3.2(@types/node@22.13.0)
+      '@inquirer/type': 3.0.10(@types/node@22.13.0)
     optionalDependencies:
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
 
   '@inquirer/input@5.0.8(@types/node@25.3.5)':
     dependencies:
@@ -11373,15 +11373,15 @@ snapshots:
     optionalDependencies:
       '@types/node': 25.3.5
 
-  '@inquirer/select@4.4.2(@types/node@20.19.0)':
+  '@inquirer/select@4.4.2(@types/node@22.13.0)':
     dependencies:
       '@inquirer/ansi': 1.0.2
-      '@inquirer/core': 10.3.2(@types/node@20.19.0)
+      '@inquirer/core': 10.3.2(@types/node@22.13.0)
       '@inquirer/figures': 1.0.15
-      '@inquirer/type': 3.0.10(@types/node@20.19.0)
+      '@inquirer/type': 3.0.10(@types/node@22.13.0)
       yoctocolors-cjs: 2.1.3
     optionalDependencies:
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
 
   '@inquirer/select@5.1.0(@types/node@25.3.5)':
     dependencies:
@@ -11392,9 +11392,9 @@ snapshots:
     optionalDependencies:
       '@types/node': 25.3.5
 
-  '@inquirer/type@3.0.10(@types/node@20.19.0)':
+  '@inquirer/type@3.0.10(@types/node@22.13.0)':
     optionalDependencies:
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
 
   '@inquirer/type@4.0.3(@types/node@25.3.5)':
     optionalDependencies:
@@ -11412,7 +11412,7 @@ snapshots:
 
   '@jest/pattern@30.0.1':
     dependencies:
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
       jest-regex-util: 30.0.1
 
   '@jest/schemas@30.0.5':
@@ -11425,7 +11425,7 @@ snapshots:
       '@jest/schemas': 30.0.5
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
       '@types/yargs': 17.0.35
       chalk: 4.1.2
 
@@ -11592,10 +11592,10 @@ snapshots:
 
   '@leichtgewicht/ip-codec@2.0.5': {}
 
-  '@lerna-lite/cli@4.11.3(@lerna-lite/publish@4.11.3(@types/node@20.19.0)(conventional-commits-filter@5.0.0))(@lerna-lite/version@4.11.3(@lerna-lite/publish@4.11.3(@types/node@20.19.0)(conventional-commits-filter@5.0.0))(@types/node@20.19.0)(conventional-commits-filter@5.0.0))(@types/node@20.19.0)':
+  '@lerna-lite/cli@4.11.3(@lerna-lite/publish@4.11.3(@types/node@22.13.0)(conventional-commits-filter@5.0.0))(@lerna-lite/version@4.11.3(@lerna-lite/publish@4.11.3(@types/node@22.13.0)(conventional-commits-filter@5.0.0))(@types/node@22.13.0)(conventional-commits-filter@5.0.0))(@types/node@22.13.0)':
     dependencies:
-      '@lerna-lite/core': 4.11.3(@types/node@20.19.0)
-      '@lerna-lite/init': 4.11.3(@types/node@20.19.0)
+      '@lerna-lite/core': 4.11.3(@types/node@22.13.0)
+      '@lerna-lite/init': 4.11.3(@types/node@22.13.0)
       '@lerna-lite/npmlog': 4.11.3
       dedent: 1.7.2
       dotenv: 17.3.1
@@ -11603,18 +11603,18 @@ snapshots:
       load-json-file: 7.0.1
       yargs: 18.0.0
     optionalDependencies:
-      '@lerna-lite/publish': 4.11.3(@types/node@20.19.0)(conventional-commits-filter@5.0.0)
-      '@lerna-lite/version': 4.11.3(@lerna-lite/publish@4.11.3(@types/node@20.19.0)(conventional-commits-filter@5.0.0))(@types/node@20.19.0)(conventional-commits-filter@5.0.0)
+      '@lerna-lite/publish': 4.11.3(@types/node@22.13.0)(conventional-commits-filter@5.0.0)
+      '@lerna-lite/version': 4.11.3(@lerna-lite/publish@4.11.3(@types/node@22.13.0)(conventional-commits-filter@5.0.0))(@types/node@22.13.0)(conventional-commits-filter@5.0.0)
     transitivePeerDependencies:
       - '@types/node'
       - babel-plugin-macros
       - supports-color
 
-  '@lerna-lite/core@4.11.3(@types/node@20.19.0)':
+  '@lerna-lite/core@4.11.3(@types/node@22.13.0)':
     dependencies:
-      '@inquirer/expand': 4.0.23(@types/node@20.19.0)
-      '@inquirer/input': 4.3.1(@types/node@20.19.0)
-      '@inquirer/select': 4.4.2(@types/node@20.19.0)
+      '@inquirer/expand': 4.0.23(@types/node@22.13.0)
+      '@inquirer/input': 4.3.1(@types/node@22.13.0)
+      '@inquirer/select': 4.4.2(@types/node@22.13.0)
       '@lerna-lite/npmlog': 4.11.3
       '@npmcli/run-script': 10.0.4
       ci-info: 4.4.0
@@ -11642,9 +11642,9 @@ snapshots:
       - babel-plugin-macros
       - supports-color
 
-  '@lerna-lite/init@4.11.3(@types/node@20.19.0)':
+  '@lerna-lite/init@4.11.3(@types/node@22.13.0)':
     dependencies:
-      '@lerna-lite/core': 4.11.3(@types/node@20.19.0)
+      '@lerna-lite/core': 4.11.3(@types/node@22.13.0)
       fs-extra: 11.3.4
       p-map: 7.0.4
       write-json-file: 7.0.0
@@ -11663,12 +11663,12 @@ snapshots:
       tinyrainbow: 3.0.3
       wide-align: 1.1.5
 
-  '@lerna-lite/publish@4.11.3(@types/node@20.19.0)(conventional-commits-filter@5.0.0)':
+  '@lerna-lite/publish@4.11.3(@types/node@22.13.0)(conventional-commits-filter@5.0.0)':
     dependencies:
-      '@lerna-lite/cli': 4.11.3(@lerna-lite/publish@4.11.3(@types/node@20.19.0)(conventional-commits-filter@5.0.0))(@lerna-lite/version@4.11.3(@lerna-lite/publish@4.11.3(@types/node@20.19.0)(conventional-commits-filter@5.0.0))(@types/node@20.19.0)(conventional-commits-filter@5.0.0))(@types/node@20.19.0)
-      '@lerna-lite/core': 4.11.3(@types/node@20.19.0)
+      '@lerna-lite/cli': 4.11.3(@lerna-lite/publish@4.11.3(@types/node@22.13.0)(conventional-commits-filter@5.0.0))(@lerna-lite/version@4.11.3(@lerna-lite/publish@4.11.3(@types/node@22.13.0)(conventional-commits-filter@5.0.0))(@types/node@22.13.0)(conventional-commits-filter@5.0.0))(@types/node@22.13.0)
+      '@lerna-lite/core': 4.11.3(@types/node@22.13.0)
       '@lerna-lite/npmlog': 4.11.3
-      '@lerna-lite/version': 4.11.3(@lerna-lite/publish@4.11.3(@types/node@20.19.0)(conventional-commits-filter@5.0.0))(@types/node@20.19.0)(conventional-commits-filter@5.0.0)
+      '@lerna-lite/version': 4.11.3(@lerna-lite/publish@4.11.3(@types/node@22.13.0)(conventional-commits-filter@5.0.0))(@types/node@22.13.0)(conventional-commits-filter@5.0.0)
       '@npmcli/arborist': 9.4.0
       '@npmcli/package-json': 7.0.5
       byte-size: 9.0.1
@@ -11701,11 +11701,11 @@ snapshots:
       - conventional-commits-filter
       - supports-color
 
-  '@lerna-lite/version@4.11.3(@lerna-lite/publish@4.11.3(@types/node@20.19.0)(conventional-commits-filter@5.0.0))(@types/node@20.19.0)(conventional-commits-filter@5.0.0)':
+  '@lerna-lite/version@4.11.3(@lerna-lite/publish@4.11.3(@types/node@22.13.0)(conventional-commits-filter@5.0.0))(@types/node@22.13.0)(conventional-commits-filter@5.0.0)':
     dependencies:
       '@conventional-changelog/git-client': 2.6.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.3.0)
-      '@lerna-lite/cli': 4.11.3(@lerna-lite/publish@4.11.3(@types/node@20.19.0)(conventional-commits-filter@5.0.0))(@lerna-lite/version@4.11.3(@lerna-lite/publish@4.11.3(@types/node@20.19.0)(conventional-commits-filter@5.0.0))(@types/node@20.19.0)(conventional-commits-filter@5.0.0))(@types/node@20.19.0)
-      '@lerna-lite/core': 4.11.3(@types/node@20.19.0)
+      '@lerna-lite/cli': 4.11.3(@lerna-lite/publish@4.11.3(@types/node@22.13.0)(conventional-commits-filter@5.0.0))(@lerna-lite/version@4.11.3(@lerna-lite/publish@4.11.3(@types/node@22.13.0)(conventional-commits-filter@5.0.0))(@types/node@22.13.0)(conventional-commits-filter@5.0.0))(@types/node@22.13.0)
+      '@lerna-lite/core': 4.11.3(@types/node@22.13.0)
       '@lerna-lite/npmlog': 4.11.3
       '@octokit/plugin-enterprise-rest': 6.0.1
       '@octokit/rest': 22.0.1
@@ -12936,11 +12936,11 @@ snapshots:
   '@types/body-parser@1.19.6':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
 
   '@types/bonjour@3.5.13':
     dependencies:
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
 
   '@types/chai@5.2.3':
     dependencies:
@@ -12950,11 +12950,11 @@ snapshots:
   '@types/connect-history-api-fallback@1.5.4':
     dependencies:
       '@types/express-serve-static-core': 4.19.8
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
 
   '@types/d3-array@3.2.2': {}
 
@@ -13095,7 +13095,7 @@ snapshots:
 
   '@types/express-serve-static-core@4.19.8':
     dependencies:
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
       '@types/qs': 6.15.0
       '@types/range-parser': 1.2.7
       '@types/send': 1.2.1
@@ -13110,18 +13110,18 @@ snapshots:
   '@types/fs-extra@11.0.4':
     dependencies:
       '@types/jsonfile': 6.1.4
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
 
   '@types/fs-extra@8.1.5':
     dependencies:
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
 
   '@types/geojson@7946.0.16': {}
 
   '@types/glob@7.2.0':
     dependencies:
       '@types/minimatch': 6.0.0
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
 
   '@types/hash-sum@1.0.2': {}
 
@@ -13135,7 +13135,7 @@ snapshots:
 
   '@types/http-proxy@1.17.17':
     dependencies:
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
 
   '@types/istanbul-lib-coverage@2.0.6': {}
 
@@ -13153,7 +13153,7 @@ snapshots:
 
   '@types/jsonfile@6.1.4':
     dependencies:
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
 
   '@types/katex@0.16.8': {}
 
@@ -13182,9 +13182,9 @@ snapshots:
 
   '@types/ms@2.1.0': {}
 
-  '@types/node@20.19.0':
+  '@types/node@22.13.0':
     dependencies:
-      undici-types: 6.21.0
+      undici-types: 6.20.0
 
   '@types/node@24.12.0':
     dependencies:
@@ -13205,7 +13205,7 @@ snapshots:
 
   '@types/qrcode@1.5.6':
     dependencies:
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
 
   '@types/qs@6.15.0': {}
 
@@ -13221,16 +13221,16 @@ snapshots:
 
   '@types/sax@1.2.7':
     dependencies:
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
 
   '@types/send@0.17.6':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
 
   '@types/send@1.2.1':
     dependencies:
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
 
   '@types/serve-index@1.9.4':
     dependencies:
@@ -13239,12 +13239,12 @@ snapshots:
   '@types/serve-static@1.15.10':
     dependencies:
       '@types/http-errors': 2.0.5
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
       '@types/send': 0.17.6
 
   '@types/sockjs@0.3.36':
     dependencies:
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
 
   '@types/stats.js@0.17.4': {}
 
@@ -13272,7 +13272,7 @@ snapshots:
 
   '@types/ws@8.18.1':
     dependencies:
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
 
   '@types/yargs-parser@21.0.3': {}
 
@@ -13289,10 +13289,10 @@ snapshots:
 
   '@ungap/structured-clone@1.3.0': {}
 
-  '@vitejs/plugin-vue@6.0.4(vite@8.0.0-beta.16(@types/node@20.19.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))(vue@3.5.29(typescript@5.9.3))':
+  '@vitejs/plugin-vue@6.0.4(vite@8.0.0-beta.16(@types/node@22.13.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))(vue@3.5.29(typescript@5.9.3))':
     dependencies:
       '@rolldown/pluginutils': 1.0.0-rc.2
-      vite: 8.0.0-beta.16(@types/node@20.19.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
+      vite: 8.0.0-beta.16(@types/node@22.13.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
       vue: 3.5.29(typescript@5.9.3)
     optional: true
 
@@ -13302,7 +13302,7 @@ snapshots:
       vite: 8.0.0-beta.16(@types/node@25.3.5)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
       vue: 3.5.29(typescript@5.9.3)
 
-  '@vitest/coverage-istanbul@4.0.18(vitest@4.0.18(@opentelemetry/api@1.9.0)(@types/node@20.19.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))':
+  '@vitest/coverage-istanbul@4.0.18(vitest@4.0.18(@opentelemetry/api@1.9.0)(@types/node@22.13.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))':
     dependencies:
       '@istanbuljs/schema': 0.1.3
       '@jridgewell/gen-mapping': 0.3.13
@@ -13314,7 +13314,7 @@ snapshots:
       magicast: 0.5.2
       obug: 2.1.1
       tinyrainbow: 3.0.3
-      vitest: 4.0.18(@opentelemetry/api@1.9.0)(@types/node@20.19.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
+      vitest: 4.0.18(@opentelemetry/api@1.9.0)(@types/node@22.13.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -13327,13 +13327,13 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.0.3
 
-  '@vitest/mocker@4.0.18(vite@8.0.0-beta.16(@types/node@20.19.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))':
+  '@vitest/mocker@4.0.18(vite@8.0.0-beta.16(@types/node@22.13.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))':
     dependencies:
       '@vitest/spy': 4.0.18
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 8.0.0-beta.16(@types/node@20.19.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
+      vite: 8.0.0-beta.16(@types/node@22.13.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
 
   '@vitest/pretty-format@4.0.18':
     dependencies:
@@ -13448,9 +13448,9 @@ snapshots:
 
   '@vue/shared@3.5.29': {}
 
-  '@vuepress/bundler-vite@2.0.0-rc.26(@types/node@20.19.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)':
+  '@vuepress/bundler-vite@2.0.0-rc.26(@types/node@22.13.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)':
     dependencies:
-      '@vitejs/plugin-vue': 6.0.4(vite@8.0.0-beta.16(@types/node@20.19.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))(vue@3.5.29(typescript@5.9.3))
+      '@vitejs/plugin-vue': 6.0.4(vite@8.0.0-beta.16(@types/node@22.13.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))(vue@3.5.29(typescript@5.9.3))
       '@vuepress/bundlerutils': 2.0.0-rc.26(typescript@5.9.3)
       '@vuepress/client': 2.0.0-rc.26(typescript@5.9.3)
       '@vuepress/core': 2.0.0-rc.26(typescript@5.9.3)
@@ -13461,7 +13461,7 @@ snapshots:
       postcss: 8.5.8
       postcss-load-config: 6.0.1(jiti@2.6.1)(postcss@8.5.8)(tsx@4.21.0)(yaml@2.8.2)
       rollup: 4.59.0
-      vite: 8.0.0-beta.16(@types/node@20.19.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
+      vite: 8.0.0-beta.16(@types/node@22.13.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
       vue: 3.5.29(typescript@5.9.3)
       vue-router: 4.6.4(vue@3.5.29(typescript@5.9.3))
     transitivePeerDependencies:
@@ -14995,9 +14995,9 @@ snapshots:
     dependencies:
       layout-base: 2.0.1
 
-  cosmiconfig-typescript-loader@6.2.0(@types/node@20.19.0)(cosmiconfig@9.0.1(typescript@5.9.3))(typescript@5.9.3):
+  cosmiconfig-typescript-loader@6.2.0(@types/node@22.13.0)(cosmiconfig@9.0.1(typescript@5.9.3))(typescript@5.9.3):
     dependencies:
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
       cosmiconfig: 9.0.1(typescript@5.9.3)
       jiti: 2.6.1
       typescript: 5.9.3
@@ -16722,7 +16722,7 @@ snapshots:
   jest-util@30.2.0:
     dependencies:
       '@jest/types': 30.2.0
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
       chalk: 4.1.2
       ci-info: 4.4.0
       graceful-fs: 4.2.11
@@ -16730,13 +16730,13 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
   jest-worker@30.2.0:
     dependencies:
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
       '@ungap/structured-clone': 1.3.0
       jest-util: 30.2.0
       merge-stream: 2.0.0
@@ -19649,7 +19649,7 @@ snapshots:
       '@quansync/fs': 1.0.0
       quansync: 1.0.0
 
-  undici-types@6.21.0: {}
+  undici-types@6.20.0: {}
 
   undici-types@7.16.0: {}
 
@@ -19807,7 +19807,7 @@ snapshots:
       media-captions: 1.0.4
       unplugin: 1.16.1
 
-  vite@8.0.0-beta.16(@types/node@20.19.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2):
+  vite@8.0.0-beta.16(@types/node@22.13.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2):
     dependencies:
       '@oxc-project/runtime': 0.115.0
       lightningcss: 1.31.1
@@ -19816,7 +19816,7 @@ snapshots:
       rolldown: 1.0.0-rc.6
       tinyglobby: 0.2.15
     optionalDependencies:
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
       esbuild: 0.27.3
       fsevents: 2.3.3
       jiti: 2.6.1
@@ -19845,10 +19845,10 @@ snapshots:
       tsx: 4.21.0
       yaml: 2.8.2
 
-  vitest@4.0.18(@opentelemetry/api@1.9.0)(@types/node@20.19.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2):
+  vitest@4.0.18(@opentelemetry/api@1.9.0)(@types/node@22.13.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2):
     dependencies:
       '@vitest/expect': 4.0.18
-      '@vitest/mocker': 4.0.18(vite@8.0.0-beta.16(@types/node@20.19.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
+      '@vitest/mocker': 4.0.18(vite@8.0.0-beta.16(@types/node@22.13.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
       '@vitest/pretty-format': 4.0.18
       '@vitest/runner': 4.0.18
       '@vitest/snapshot': 4.0.18
@@ -19865,11 +19865,11 @@ snapshots:
       tinyexec: 1.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vite: 8.0.0-beta.16(@types/node@20.19.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
+      vite: 8.0.0-beta.16(@types/node@22.13.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@opentelemetry/api': 1.9.0
-      '@types/node': 20.19.0
+      '@types/node': 22.13.0
     transitivePeerDependencies:
       - '@vitejs/devtools'
       - esbuild
@@ -19929,7 +19929,7 @@ snapshots:
     optionalDependencies:
       typescript: 5.9.3
 
-  vuepress@2.0.0-rc.26(@vuepress/bundler-vite@2.0.0-rc.26(@types/node@20.19.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))(@vuepress/bundler-webpack@2.0.0-rc.26(esbuild@0.27.3)(tslib@2.8.1)(typescript@5.9.3))(typescript@5.9.3)(vue@3.5.29(typescript@5.9.3)):
+  vuepress@2.0.0-rc.26(@vuepress/bundler-vite@2.0.0-rc.26(@types/node@22.13.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))(@vuepress/bundler-webpack@2.0.0-rc.26(esbuild@0.27.3)(tslib@2.8.1)(typescript@5.9.3))(typescript@5.9.3)(vue@3.5.29(typescript@5.9.3)):
     dependencies:
       '@vuepress/cli': 2.0.0-rc.26(typescript@5.9.3)
       '@vuepress/client': 2.0.0-rc.26(typescript@5.9.3)
@@ -19939,7 +19939,7 @@ snapshots:
       '@vuepress/utils': 2.0.0-rc.26
       vue: 3.5.29(typescript@5.9.3)
     optionalDependencies:
-      '@vuepress/bundler-vite': 2.0.0-rc.26(@types/node@20.19.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)
+      '@vuepress/bundler-vite': 2.0.0-rc.26(@types/node@22.13.0)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)
       '@vuepress/bundler-webpack': 2.0.0-rc.26(esbuild@0.27.3)(tslib@2.8.1)(typescript@5.9.3)
     transitivePeerDependencies:
       - supports-color

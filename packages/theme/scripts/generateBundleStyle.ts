@@ -71,7 +71,7 @@ const generateBundleStyle = async (entry: string) => {
 const bundleStyles = async () => {
   const cwd = path.join(themeRoot, "src/client");
 
-  for await (const entry of glob("styles/**/*.s?css", {
+  for await (const entry of glob("styles/**/*.{css,scss}", {
     cwd,
   }))
     await generateBundleStyle(entry);
@@ -79,7 +79,7 @@ const bundleStyles = async () => {
   if (isWatch) {
     console.info("Watching styles for changes...");
 
-    watch("styles/**/*.s?css", {
+    watch("styles/**/*.{css,scss}", {
       cwd,
       ignoreInitial: true,
     }).on("all", (event, entry) => {
