@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import HopeLogo from "docs-shared/components/HopeLogo.js";
+import HopeLogo from "@docs/shared/components/HopeLogo";
 import { Blog } from "vuepress-theme-hope/blog";
 import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.js";
 import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";

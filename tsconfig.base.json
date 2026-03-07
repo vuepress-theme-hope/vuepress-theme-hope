@@ -19,7 +19,7 @@
     // Emit
     "downlevelIteration": false,
     "importHelpers": true,
-    "inlineSources": true,
+    "inlineSources": false,
     "inlineSourceMap": false,
     "newLine": "lf",
     "noEmitOnError": true,
@@ -40,8 +40,8 @@
 
     // lib
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    // minimal node 18 support
-    "target": "ES2022",
+    // minimal node 20 support
+    "target": "ES2023",
 
     // Compiler Diagnostics
     "diagnostics": false,

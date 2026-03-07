@@ -2,9 +2,12 @@
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "extends": ["./.oxlintrc.base.json"],
   "ignorePatterns": [
-    "docs-shared/lib/**",
     "packages/*/assets/**",
-    "packages/*/lib/**",
+    "packages/*/dist/**",
+    "**/dist/",
+    "**/.vuepress/.cache/**",
+    "**/.vuepress/.temp/**",
+    "**/.vuepress/dist/**",
     "**/ventors/lzstring.ts"
   ],
   "options": {
@@ -77,7 +80,7 @@
       }
     },
     {
-      "files": ["**/client/**/*.ts", "docs-shared/src/components/**/*.ts"],
+      "files": ["**/client/**/*.ts", "docs/shared/src/components/**/*.ts"],
       "plugins": ["vue"],
       "rules": {
         "no-restricted-imports": [

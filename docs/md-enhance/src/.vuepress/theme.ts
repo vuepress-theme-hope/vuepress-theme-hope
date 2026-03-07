@@ -1,4 +1,4 @@
-import { theme } from "docs-shared";
+import { theme } from "@docs/shared";
 import { getDirname, path } from "vuepress/utils";
 
 import { enNavbar, zhNavbar } from "./navbar.js";

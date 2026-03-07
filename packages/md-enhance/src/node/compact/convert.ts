@@ -1,6 +1,6 @@
 import { isPlainObject } from "@vuepress/helper";
 import { colors } from "vuepress/utils";
-import { createConverter } from "vuepress-shared/node";
+import { createConverter } from "vuepress-shared";
 
 import type { MarkdownEnhancePluginOptions } from "../options.js";
 import { logger } from "../utils.js";

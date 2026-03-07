@@ -1,5 +1,5 @@
-@use "vuepress-shared/styles/reset";
-@use "vuepress-shared/styles/arrow";
+@use "vuepress-shared/scss/reset";
+@use "vuepress-shared/scss/arrow";
 
 .vp-nav-screen-menu-title {
   @include reset.button;

@@ -1,11 +1,11 @@
-import { config, pwaHead } from "docs-shared";
+import { addViteConfig, config, pwaHead } from "@docs/shared";
 import { getDirname, path } from "vuepress/utils";
 
 import theme from "./theme.js";
 
 const __dirname = getDirname(import.meta.url);
 
-// The config wrapper is located in <root>/docs-shared/src/config-wrapper.ts
+// The config wrapper is located in <root>/docs/shared/src/config-wrapper.ts
 export default config("", {
   head: [
     ...pwaHead,
@@ -32,6 +32,28 @@ export default config("", {
   },
 
   theme,
+
+  extendsBundlerOptions: (bundlerOptions, app) => {
+    // FIXME: see https://github.com/zhw2590582/ArtPlayer/issues/1028
+    addViteConfig(bundlerOptions, app, {
+      build: {
+        rollupOptions: {
+          onLog(
+            level: "info" | "debug" | "warn",
+            log: { code: string; id: string },
+            defaultHandler: (
+              level: "info" | "debug" | "warn",
+              log: { code: string; id: string },
+            ) => void,
+          ) {
+            if (log.code === "COMMONJS_VARIABLE_IN_ESM" && log.id.includes("artplayer")) return;
+
+            defaultHandler(level, log);
+          },
+        },
+      },
+    });
+  },
 
   pagePatterns: ["**/*.md", "!**/*.snippet.md", "!.vuepress", "!node_modules"],
 

@@ -1,5 +1,5 @@
 {
-  "name": "docs-shared",
+  "name": "@docs/shared",
   "private": true,
   "description": "Shared files for docs",
   "license": "MIT",
@@ -9,26 +9,27 @@
     "url": "https://mister-hope.com"
   },
   "type": "module",
-  "module": "./lib/index.js",
-  "typings": "./lib/index.d.ts",
+  "sideEffects": [
+    "./dist/styles/**/*.scss"
+  ],
   "exports": {
     ".": {
-      "types": "./lib/index.d.ts",
-      "default": "./lib/index.js"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     },
-    "./*": {
-      "types": "./lib/*",
-      "default": "./lib/*"
+    "./client": {
+      "types": "./dist/client.d.ts",
+      "default": "./dist/client.js"
+    },
+    "./components/*": {
+      "types": "./dist/components/*.d.ts",
+      "default": "./dist/components/*.js"
     }
   },
   "scripts": {
-    "build": "pnpm build:ts && pnpm copy",
-    "build:ts": "tsc --build tsconfig.release.json",
-    "clean": "rimraf --glob ./lib ./*.tsbuildinfo",
-    "copy": "cpx \"src/**/*.scss\" lib",
-    "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
-    "dev:copy": "pnpm copy -w",
-    "dev:ts": "tsc -b tsconfig.build.json --watch"
+    "build": "tsdown --config-loader unrun",
+    "clean": "rimraf ./dist",
+    "dev": "pnpm build --watch"
   },
   "dependencies": {
     "@types/three": "0.183.1",

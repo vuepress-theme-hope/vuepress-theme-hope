@@ -1,4 +1,4 @@
-import { sidebar } from "docs-shared";
+import { sidebar } from "@docs/shared";
 
 // region config
 export const zhSidebarConfig = sidebar({

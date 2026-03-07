@@ -2,8 +2,10 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "rootDir": "./src",
+    "outDir": "./dist",
     "paths": {
-      "@theme-hope/*": ["./src/client/*.js"]
+      "@theme-hope/*": ["./src/client/*.js"],
+      "vuepress-theme-hope/client": ["./src/client/index.js"]
     },
     "types": ["vuepress/client-types", "vite/client", "webpack-env"]
   },
