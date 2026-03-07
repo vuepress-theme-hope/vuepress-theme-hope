@@ -44,7 +44,7 @@
     "@types/webpack-env": "1.18.8",
     "@vitest/coverage-istanbul": "4.0.18",
     "concurrently": "9.2.1",
-    "conventional-changelog-conventionalcommits": "9.2.0",
+    "conventional-changelog-conventionalcommits": "9.3.0",
     "cpx2": "8.0.0",
     "cross-env": "10.1.0",
     "gulp": "5.0.1",
