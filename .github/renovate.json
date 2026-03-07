@@ -11,6 +11,10 @@
   ],
   "packageRules": [
     {
+      "matchPackageNames": ["@types/node"],
+      "enabled": false
+    },
+    {
       "groupName": "vuepress",
       "matchPackageNames": ["vuepress", "@vuepress/**", "vuepress-**"]
     },
