@@ -95,7 +95,7 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "pnpm build:ts && pnpm build:tsdown && pnpm build:assets",
+    "build": "pnpm build:tsdown && pnpm build:ts && pnpm build:assets",
     "build:assets": "unrun scripts/generateBundleStyle.ts",
     "build:ts": "tsc",
     "build:tsdown": "tsdown --config-loader unrun",

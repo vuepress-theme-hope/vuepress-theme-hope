@@ -20,7 +20,7 @@
     "lint:md": "markdownlint-cli2 '**/*.md'",
     "lint:oxlint": "oxlint --report-unused-disable-directives --deny-warnings",
     "lint:stylelint": "stylelint \"**/*.{css,scss}\" \"**/.vuepress/**/*.{css,scss}\"",
-    "pkg:check-update": "pnpm dlx npm-check-updates -u -w --timeout 600000",
+    "pkg:check-update": "pnpm dlx npm-check-updates",
     "pkg:update": "pnpm up -r",
     "prepare": "husky",
     "release": "pnpm clean && pnpm bundle && pnpm release:version && pnpm release:publish && pnpm release:sync",
@@ -32,8 +32,8 @@
   "devDependencies": {
     "@commitlint/cli": "20.4.3",
     "@commitlint/config-conventional": "20.4.3",
-    "@lerna-lite/cli": "4.11.3",
-    "@lerna-lite/publish": "4.11.3",
+    "@lerna-lite/cli": "4.11.4",
+    "@lerna-lite/publish": "4.11.4",
     "@rollup/plugin-alias": "6.0.0",
     "@rollup/plugin-commonjs": "29.0.2",
     "@rollup/plugin-node-resolve": "16.0.3",
@@ -85,5 +85,5 @@
   "engines": {
     "node": "^20.19.0 || ^22.13.0 || ^24"
   },
-  "packageManager": "pnpm@10.30.3"
+  "packageManager": "pnpm@10.31.0"
 }
