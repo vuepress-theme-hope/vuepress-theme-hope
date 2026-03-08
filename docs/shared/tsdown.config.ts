@@ -9,5 +9,5 @@ export default tsdownConfig(
     "components/ProjectLink",
     "components/SocialLink",
   ],
-  { publint: false },
+  { copy: [["styles/**/*.{css,scss}", "styles"]], publint: false },
 );
