@@ -103,7 +103,7 @@ export default defineComponent({
         getMetaContent("description") ??
         getMetaContent("og:description") ??
         getMetaContent("twitter:description");
-      const url = props.url ? null : globalThis.location.href;
+      const url = props.url ?? globalThis.location.href;
       const cover = props.cover ?? getMetaContent("og:image");
       const image = document
         .querySelector<HTMLImageElement>("[vp-content] :not(a) > img")
