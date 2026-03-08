@@ -1,3 +1,4 @@
+// oxlint-disable typescript/no-deprecated
 // oxlint-disable max-lines
 import { entries, isArray, isPlainObject } from "@vuepress/helper";
 import { colors } from "vuepress/utils";

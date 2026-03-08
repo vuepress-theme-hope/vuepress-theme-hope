@@ -81,7 +81,7 @@ The structure of each project is as follows:
 
 ```
 .
-├── lib → compiled output file
+├── dist → compiled output file
 │    │
 │    ├── client → client-side compiled code
 │    │
@@ -102,31 +102,26 @@ VuePress is running both in client side and node side. Node side has node module
 - `node` directory stores code running in Node.js
 - `shared` directory stores files that are used in both client and node, so code shall not reference any browser globals or node module.
 
-For better performance, all plugins are packed and minified using rollup when they are published.
+For better performance, all plugins are packed and minified using tsdown when they are published.
 
 ## Project Development
 
 1. Build project: `pnpm build`
-   - Use rollup to bundle source files and minify them, and output results to `lib` folder
-   - Use `rollup-plugin-copy` to copy other files to `lib` folder
+   Bundles and minifies source files into the `dist` folder using `tsdown`. Static assets are also automatically copied to the `dist` folder during this process.
 
 1. Develop project: `pnpm dev`
-   - Use `tsc` to compile ts file to `lib` folder
-   - Use `cpx` to copy other files to `lib` folder
+   Compiles and bundles source files into the `dist` folder via `tsdown` for development.
+
+   ::: note Theme Bundle Mode
+   The theme bundling logic differs from the standard process. It introduces a `hope-custom` export field to support theme component replacement via aliases. Consequently, extra scripts and build steps are implemented to provide both a standard client bundle and a compiled output that preserves these aliases.
+   :::
 
 1. Format project: `pnpm lint`
+   Lints and formats the codebase using `oxlint`, `oxfmt`, and `stylelint`.
 
-   It will format the project using oxlint, oxfmt and stylelint.
-
-   If you modify Markdown, you also need to run the `pnpm lint:md` command.
-
-::: warning
-
-Please do not mix build and dev commands as they compile in completely different ways.
-
-You may need to execute the `pnpm clean` command to clear previous command result.
-
-:::
+   ::: note Markdown Files
+   If you modify Markdown files, you must also run the `pnpm lint:md` command.
+   :::
 
 ## Commit
 

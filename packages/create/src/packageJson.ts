@@ -72,9 +72,9 @@ export const createPackageJson = async ({
   if (existsSync(packageJsonPath)) {
     console.log(locale.flow.updatePackage);
 
-    const packageContent: Record<string, unknown> = JSON.parse(
+    const packageContent = JSON.parse(
       readFileSync(packageJsonPath, { encoding: "utf-8" }),
-    );
+    ) as Record<string, unknown>;
 
     deepAssign(packageContent, newContent);
 

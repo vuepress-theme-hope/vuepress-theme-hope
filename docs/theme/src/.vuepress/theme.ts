@@ -1,4 +1,4 @@
-import { theme } from "docs-shared";
+import { theme } from "@docs/shared";
 import { getDirname, path } from "vuepress/utils";
 import { AVAILABLE_SERVICES } from "vuepress-plugin-components";
 import { getRecentUpdatedArticles } from "vuepress-theme-hope/presets/getRecentUpdatedArticles.js";
@@ -9,7 +9,7 @@ import { enSidebarConfig, zhSidebarConfig } from "./sidebar/index.js";
 
 const __dirname = getDirname(import.meta.url);
 
-// The theme wrapper is located in <root>/docs-shared/src/theme-wrapper.ts
+// The theme wrapper is located in <root>/docs/shared/src/theme-wrapper.ts
 export default theme(
   "theme",
   {
@@ -134,6 +134,7 @@ export default theme(
       stylize: [
         {
           matcher: "Recommended",
+          // oxlint-disable-next-line typescript/explicit-function-return-type
           replacer: ({ tag }) => {
             if (tag === "em") {
               return {

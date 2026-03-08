@@ -5,6 +5,7 @@ import type { AvailableComponent, DeprecatedComponent } from "./options/index.js
 
 const __dirname = getDirname(import.meta.url);
 
+// oxlint-disable-next-line typescript/no-deprecated
 export const AVAILABLE_COMPONENTS: (AvailableComponent | DeprecatedComponent)[] = [
   "ArtPlayer",
   "Badge",

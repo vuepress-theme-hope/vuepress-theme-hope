@@ -38,6 +38,7 @@ export default defineComponent({
           if (!activeSidebarItem) return;
 
           // Get the top and height of the sidebar
+          // oxlint-disable-next-line typescript/no-non-null-assertion
           const { top: sidebarTop, height: sidebarHeight } = sidebar.value!.getBoundingClientRect();
           // Get the top and height of the active sidebar item
           const { top: activeSidebarItemTop, height: activeSidebarItemHeight } =

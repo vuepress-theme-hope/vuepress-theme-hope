@@ -65,6 +65,7 @@ export const mdDemo: PluginSimple = (md) => {
     },
     // oxlint-disable-next-line max-params
     codeRender: (tokens, index, options, _env, self) =>
+      // oxlint-disable-next-line typescript/no-non-null-assertion
       `<template #code>\n${self.rules.fence!(tokens, index, options, _env, self)}</template>\n`,
     contentOpenRender: () => `<template #default>\n`,
     contentCloseRender: () => `</template>\n`,

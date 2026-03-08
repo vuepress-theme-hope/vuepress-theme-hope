@@ -117,6 +117,7 @@ export const getSearchPlugin = (
     });
   }
 
+  // oxlint-disable-next-line typescript/no-deprecated
   if (plugins.search) {
     logger.warn(
       `${colors.cyan("search")} option is deprecated. Please use ${colors.cyan("slimsearch")} to move to powerful slimsearch instead.`,
@@ -130,6 +131,7 @@ export const getSearchPlugin = (
 
     return searchPlugin({
       isSearchable: (page) => !isPageEncrypted(page),
+      // oxlint-disable-next-line typescript/no-deprecated
       ...(isPlainObject(plugins.search) ? plugins.search : {}),
     });
   }

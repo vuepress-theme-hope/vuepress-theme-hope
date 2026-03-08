@@ -42,6 +42,7 @@ export default defineComponent({
         name: name ?? authorInfo.value.name,
         avatar: avatar ? withBase(avatar) : null,
         avatarDark: avatarDark ? withBase(avatarDark) : null,
+        // oxlint-disable-next-line typescript/prefer-nullish-coalescing
         alt: (avatarAlt || name) ?? "",
         style: avatarStyle ?? null,
       };

@@ -39,10 +39,8 @@ pnpm i
 │ ├── components → components 插件文档
 │ ├── lightgallery → lightgallery 插件文档
 │ ├── md-enhance → md-enhance 插件文档
-│ ├── shared → vuepress-shared 文档
+│ ├── shared → 文档的通用文件
 │ └── theme → 主题文档
-│
-├── docs-shared → 文档的通用文件
 |
 ├── packages → 项目源代码
 │ ├── components → components 插件
@@ -105,31 +103,26 @@ VuePress 同时运行在客户端和 Node 端。 Node 侧有像 `fs` 这样的 n
 - `node` 目录存储在 Node.js 中运行的代码
 - `shared` 目录存储在客户端和 Node 中使用的文件，因此代码不能引用浏览器全局变量或 Node.js 模块。
 
-为了更好的性能，所有插件在发布时都会使用 rollup 进行打包并压缩。
+为了更好的性能，所有插件在发布时都会使用 tsdown 进行打包并压缩。
 
 ## 项目的运行与开发
 
 1. 构建项目: `pnpm build`
-   - 使用 rollup 打包并压缩代码，并输出到 `lib` 文件夹
-   - 使用 `rollup-plugin-copy` 复制其他文件到 `lib` 文件夹
+   使用 `tsdown` 将源代码打包并压缩至 `dist` 目录，静态资源也会在构建过程中自动拷贝到该目录。
 
 1. 开发项目: `pnpm dev`
-   - 使用 `tsc` 编译 TypeScript 文件到 `lib` 文件夹
-   - 使用 `cpx` 复制其他文件到 `lib` 文件夹
+   通过 `tsdown` 将源代码打包并压缩到 `dist` 目录以供开发使用。
+
+   ::: note 关于主题打包模式
+   主题打包的处理逻辑有所不同：它引入了一个 `hope-custom` 导出字段，用于通过别名（alias）替换主题组件。因此，我们增加了额外的脚本和构建流程，以同时提供客户端包（client bundle）以及保留了别名的编译结果。
+   :::
 
 1. 格式化项目: `pnpm lint`
+   使用 `oxlint`、`oxfmt` 和 `stylelint` 对项目进行代码校验和格式化。
 
-   它将使用 oxlint，oxfmt 和 stylelint 格式化项目。
-
-   如果你修改了 Markdown，你还需要运行 `pnpm lint:md` 命令。
-
-::: warning
-
-请不要混用构建和开发命令，因为它们的构建方式完全不同。
-
-你可能需要执行 `pnpm clean` 命令来清除上一次的命令结果。
-
-:::
+   ::: note Markdown 文件
+   如果你修改了 Markdown 文件，还需要运行 `pnpm lint:md` 命令。
+   :::
 
 ## 提交
 

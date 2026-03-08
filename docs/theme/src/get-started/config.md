@@ -10,141 +10,110 @@ tag:
   - Project Config
 ---
 
-This tutorial guides you on how to configure a VuePress project.
+This tutorial guides you through configuring a VuePress project.
 
 <!-- more -->
 
-## Configure VuePress
+## Directory Structure
 
-VuePress uses the `.vuepress` folder inside the docs folder to store configuration, and all VuePress-related files will be placed here.
+VuePress uses the `.vuepress` directory within the documentation root to store all configuration, files, and cache.
 
-For a VuePress site, `.vuepress/config.ts` (or `.vuepress/config.js`) is the necessary config file.
+The primary entry point is `.vuepress/config.ts` (or `.vuepress/config.js`).
 
-::: tip Use TypeScript Configuration File
-
-We recommend using TypeScript config files for better type hinting, autocompletion and error checking.
-
-If you are not familiar with TypeScript, you can also use a JavaScript config file, but it is better to use an editor such as VS Code that fully supports TS/JS features to avoid losing the type checking, autocompletion and option hints features mentioned below.
-
+::: tip Use TypeScript
+TypeScript configuration files provide type hinting, autocompletion, and real-time error checking. If using JavaScript, an editor like VS Code is recommended to maintain IntelliSense support.
 :::
 
-## Config File
+## Configuration Entry
 
-You need to set up a config object in the config file `.vuepress/config.ts` (or `.vuepress/config.js`) and export it.
-
-To get correct hints, importing `defineUserConfig` from `vuepress` and wrapping the config object is recommended:
+Export a configuration object in `.vuepress/config.ts`. Use the `defineUserConfig` helper from `vuepress` for type safety:
 
 ```ts twoslash {2,4,6} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
-  // put your config here
+  /**
+   * Site configuration options
+   */
 });
 ```
 
-In the template, to avoid the configuration file being too long, we use the ESM feature natively provided by JavaScript to split the theme configuration, navigation bar and sidebar configuration into separate files.
+### Modular Configuration
 
-The template extracts theme functions to `.vuepress/theme.ts` and exports them via `export default`.
+To keep the main configuration concise, the VuePress Theme Hope template uses ESM to split theme, navigation bar, and sidebar settings into separate files.
 
-`.vuepress/theme.ts`:
+The theme logic is defined in `.vuepress/theme.ts`:
 
 ```ts twoslash
 import { hopeTheme } from "vuepress-theme-hope";
 
-// We export the theme object by default
+/**
+ * Export theme configuration
+ */
 export default hopeTheme({
-  // theme config
+  /**
+   * Theme-specific options
+   */
 });
 ```
 
-Then import directly in the configuration file:
+Import this into the main configuration file:
 
-`.vuepress/config.ts`:
-
-```ts
-//...
-// we introduce the theme here
+```ts title=".vuepress/config.ts"
+import { defineUserConfig } from "vuepress";
 import theme from "./theme.js";
 
-//...
-
 export default defineUserConfig({
-  //...
-
-  // This is equivalent to `theme: hopeTheme({/* theme config */})`
+  /**
+   * Equivalent to theme: hopeTheme({ ... })
+   */
   theme,
-
-  //...
 });
 ```
 
-This can also help you understand the site configuration and theme configuration in the configuration more clearly.
-
-## Config Scope
+## Configuration Scopes
 
 ### Site Config
 
-Config items in the Site Config are directly read by VuePress, have nothing to do with the theme, and can take effect in all themes.
+Site configuration consists of global properties read by VuePress core, independent of the theme. This includes `lang`, `title`, and `description`.
 
-We know that every site should have its `lang`, `title` and `description` properties, so VuePress has built-in support for setting these properties.
-
-::: info Site Config
-
-You can go to [VuePress2 → Reference → Configuration](https://vuejs.press/en/reference/config.html) to see all VuePress configuration.
-
+::: info Reference
+See [VuePress2 > Configuration](https://vuejs.press/en/reference/config.html) for the full list of core options.
 :::
 
 ### Theme Config
 
-Theme config is the object you pass to the `hopeTheme` function, which will be handled by VuePress Theme Hope.
+Theme configuration is passed to the `hopeTheme` function and managed by VuePress Theme Hope. Available options are listed in [Config > Theme Config](../config/README.md).
 
-You can find all the theme config in [Config → Theme Config](../config/README.md).
+::: tip IDE Support
+Editors like VS Code provide the following features via TypeScript definitions:
 
-::: tip Hints and Checks
+- Hover hints for property descriptions.
+- Validation for invalid types or keys.
+- Autocompletion for available options.
 
-If you are using an editor that supports TS/JS language features (such as VSCode), you can easily get option hints and checks.
-
-- You can hover over an option to get hints:
-
-  ![option hint](./assets/vscode-hint-light.png#light)
-  ![option hint](./assets/vscode-hint-dark.png#dark)
-
-- If you enter the wrong option name or invalid value, you will get an error message:
-
-  ![Error message](./assets/vscode-error-light.png#light)
-  ![Error message](./assets/vscode-error-dark.png#dark)
-
-- You can get autocompletion while inputting:
-
-  ![autocomplete](./assets/vscode-autocomplete-light.png#light)
-  ![Autocomplete](./assets/vscode-autocomplete-dark.png#dark)
-
+![option hint](./assets/vscode-hint-light.png#light)
+![option hint](./assets/vscode-hint-dark.png#dark)
 :::
 
-### More
+### Advanced Customization
 
 ::: info Plugin Config
+VuePress Theme Hope includes several plugins. Configure them via the `plugins` property in theme options. See [Theme Plugin Config](../config/plugins/README.md) for details.
 
-VuePress Theme Hope bundles some plugins, you can pass plugin options through `plugins.PLUGIN_NAME` in theme options, see [Config → Theme Plugin](../config/plugins/README.md) for more details.
-
-If you want to use additional plugins, please import the plugin yourself and pass plugin options, see [VuePress → plugins](../cookbook/vuepress/plugin.md) for details.
-
+For external plugins, import them into `config.ts` and add them to the top-level `plugins` array.
 :::
 
 ::: info Style Config
+Custom styles are stored in `.vuepress/styles`:
 
-VuePress Theme Hope is using `.vuepress/styles` folder to store style config. In this folder you can:
+- `index.scss`: Global CSS/SCSS injections.
+- `config.scss`: Theme SCSS variable overrides.
+- `palette.scss`: Color and layout constants.
 
-- Create `index.scss` to inject additional CSS styles
-- Create `config.scss` for styling config
-- Create `palette.scss` to set color and layout
-
-For more details, see [Config → Style](../config/style.md).
-
+Refer to [Config > Style](../config/style.md) for more details.
 :::
 
 ::: info Page Config
-
-VuePress supports page scope config for specific pages through YAML Frontmatter in Markdown files. For details, see [Project Content → Frontmatter](./content.md#frontmatter) in the previous chapter.
-
+Individual pages can be configured using Frontmatter in Markdown files. See [Project Content > Frontmatter](./content.md#frontmatter).
 :::

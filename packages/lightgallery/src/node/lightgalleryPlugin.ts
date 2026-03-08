@@ -23,7 +23,7 @@ export const lightgalleryPlugin =
 
     useSassPalettePlugin(app, {
       id: "hope",
-      defaultConfig: getModulePath("vuepress-shared/styles/config.scss", import.meta),
+      defaultConfig: getModulePath("vuepress-shared/scss/config.scss", import.meta),
     });
     return {
       name: PLUGIN_NAME,
@@ -55,6 +55,7 @@ export const lightgalleryPlugin =
             .use("sass-loader")
             .tap((loaderOptions) => ({
               ...loaderOptions,
+              // oxlint-disable-next-line typescript/no-unsafe-assignment
               sassOptions: {
                 quietDeps: true,
                 ...loaderOptions.sassOptions,

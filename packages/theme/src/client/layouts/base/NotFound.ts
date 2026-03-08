@@ -64,7 +64,7 @@ export default defineComponent({
                       type: "button",
                       class: "action-button",
                       onClick: () => {
-                        window.history.go(-1);
+                        globalThis.history.go(-1);
                       },
                     },
                     expectedRouterLocale.value.back,

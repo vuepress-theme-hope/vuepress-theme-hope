@@ -179,6 +179,7 @@ export default defineComponent({
       const initOptions: ArtPlayerInitOptions = {
         theme: "#3eaf7c",
         ...ART_PLAYER_OPTIONS,
+        // oxlint-disable-next-line typescript/no-non-null-assertion
         container: el.value!,
         poster: props.poster ?? "",
         url: getLink(props.src),

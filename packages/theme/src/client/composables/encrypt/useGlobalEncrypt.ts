@@ -29,11 +29,13 @@ export const useGlobalEncrypt = (): GlobalEncrypt => {
       // Valid token exists
       isEncrypted
         ? storageToken.value
-          ? encryptData.value.admin!.tokens.every(
+          ? // oxlint-disable-next-line typescript/no-non-null-assertion
+            encryptData.value.admin!.tokens.every(
               // None of the token matches
               (hash) => !compareSync(storageToken.value, hash),
             )
-          : encryptData.value.admin!.tokens.every(
+          : // oxlint-disable-next-line typescript/no-non-null-assertion
+            encryptData.value.admin!.tokens.every(
               // None of the token matches
               (hash) => !compareSync(sessionToken.value, hash),
             )

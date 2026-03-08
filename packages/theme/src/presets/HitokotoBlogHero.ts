@@ -66,21 +66,21 @@ export default defineComponent({
         display.value = "";
         let index = 0;
 
-        const renderNextWord = (): Promise<void> => {
+        const renderNextWord = async (): Promise<void> => {
           display.value += text.value[index];
           index += 1;
 
-          return nextTick().then(() => {
-            if (index < text.value.length) {
-              setTimeout(() => {
-                void renderNextWord();
-              }, 150);
-            } else if (isMounted) {
-              setTimeout(() => {
-                void getHitokoto();
-              }, 3000);
-            }
-          });
+          await nextTick();
+
+          if (index < text.value.length) {
+            setTimeout(() => {
+              void renderNextWord();
+            }, 150);
+          } else if (isMounted) {
+            setTimeout(() => {
+              void getHitokoto();
+            }, 3000);
+          }
         };
 
         void renderNextWord();

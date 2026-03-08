@@ -86,6 +86,7 @@ export default defineComponent({
                       ArticleList,
                       {
                         key: page.value.path,
+                        // oxlint-disable-next-line typescript/no-non-null-assertion
                         items: blogData.value!.items!,
                       },
                       slots,

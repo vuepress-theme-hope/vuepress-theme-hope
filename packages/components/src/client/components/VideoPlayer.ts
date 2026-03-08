@@ -76,12 +76,13 @@ export default defineComponent({
   setup(props) {
     const video = shallowRef<HTMLVideoElement>();
 
-    let player: MediaPlayerElement | null = null;
+    let player: MediaPlayerElement;
 
     onMounted(async () => {
       if (__VUEPRESS_SSR__) return;
 
       const options: VidstackPlayerConfig = {
+        // oxlint-disable-next-line typescript/no-non-null-assertion
         target: video.value!,
         crossOrigin: true,
         poster: props.poster,
@@ -100,21 +101,26 @@ export default defineComponent({
 
       if (props.tracks.length > 0) options.tracks = props.tracks;
 
-      player = await VidstackPlayer.create(options);
+      // oxlint-disable-next-line typescript/no-non-null-assertion
+      player = (await VidstackPlayer.create(options))!;
 
       player.addEventListener("provider-change", () => {
-        if (player!.provider?.type === "hls" && HLS_JS_INSTALLED) {
-          player!.provider.library = (() =>
+        if (player.provider?.type === "hls" && HLS_JS_INSTALLED) {
+          player.provider.library = (() =>
             import(/* webpackChunkName: "hls" */ "hls.js/dist/hls.min.js")) as HLSConstructorLoader;
-        } else if (player!.provider?.type === "dash" && DASHJS_INSTALLED) {
-          player!.provider.library = (() =>
+        } else if (player.provider?.type === "dash" && DASHJS_INSTALLED) {
+          player.provider.library = (() =>
             import(/* webpackChunkName: "dashjs" */ "dashjs")) as DASHNamespaceLoader;
         }
       });
     });
 
     onBeforeUnmount(() => {
-      player?.destroy();
+      try {
+        player.destroy();
+      } catch {
+        // Do nothing
+      }
     });
 
     return (): VNode => h("div", { ref: video });

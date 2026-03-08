@@ -53,6 +53,7 @@ export default defineComponent({
         /* webpackChunkName: "kotlin-playground" */ "kotlin-playground"
       );
 
+      // oxlint-disable-next-line typescript/no-non-null-assertion
       playground(kotlinPlayground.value!);
     };
 

@@ -1,6 +1,6 @@
 export const getSize = (): Record<"width" | "height" | "left" | "top", number> => {
   const { availWidth, availHeight } = screen;
-  const { screenLeft, screenTop, innerWidth, innerHeight } = window;
+  const { screenLeft, screenTop, innerWidth, innerHeight } = globalThis;
   const width = Math.max(availWidth / 2, 600);
   const height = Math.max(availHeight / 2, 400);
 
@@ -19,7 +19,7 @@ export const openPopupWindow = (
 ): void => {
   const { width, height, left, top } = getSize();
 
-  window
+  globalThis
     .open(
       link,
       target,

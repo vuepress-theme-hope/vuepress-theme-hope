@@ -45,6 +45,7 @@ export const createConverter = (name: string): Converter => {
             if (index === keys.length - 1) {
               hasDeprecatedOption = true;
               deprecatedOptionValue = temp[key];
+              // oxlint-disable-next-line typescript/no-dynamic-delete
               delete temp[key];
             } else if (isPlainObject(temp[key])) {
               temp = temp[key] as Record<string, unknown>;
@@ -56,6 +57,7 @@ export const createConverter = (name: string): Converter => {
       } else if (old in options) {
         deprecatedOptionValue = options[old];
         hasDeprecatedOption = true;
+        // oxlint-disable-next-line typescript/no-dynamic-delete
         delete options[old];
       }
 
@@ -75,6 +77,7 @@ export const createConverter = (name: string): Converter => {
               temp[key] = deprecatedOptionValue;
             } else {
               // Ensure level exists
+              // oxlint-disable-next-line typescript/prefer-nullish-coalescing
               temp[key] ||= {};
               temp = temp[key] as Record<string, unknown>;
             }
@@ -96,6 +99,7 @@ export const createConverter = (name: string): Converter => {
           if (key in temp) {
             if (index === keys.length - 1) {
               hasDroppedOption = true;
+              // oxlint-disable-next-line typescript/no-dynamic-delete
               delete temp[key];
             } else if (isPlainObject(temp[key])) {
               temp = temp[key] as Record<string, unknown>;
@@ -106,6 +110,7 @@ export const createConverter = (name: string): Converter => {
         }
       } else if (old in options) {
         hasDroppedOption = true;
+        // oxlint-disable-next-line typescript/no-dynamic-delete
         delete options[old];
       }
 

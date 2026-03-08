@@ -24,7 +24,7 @@ export default defineComponent({
               class: "print-button",
               title: metaLocale.value.print,
               onClick: () => {
-                window.print();
+                globalThis.print();
               },
             },
             h(PrintIcon),

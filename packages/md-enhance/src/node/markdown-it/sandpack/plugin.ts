@@ -24,7 +24,7 @@ const propsGetter = (sandpackData: SandpackData): Record<string, string> => ({
 });
 
 const jsRunner = (jsCode: string): unknown =>
-  // oxlint-disable-next-line no-new-func
+  // oxlint-disable-next-line no-new-func, typescript/no-implied-eval
   (new Function(`return ${jsCode};`) as () => unknown)();
 
 // oxlint-disable-next-line complexity, max-statements
@@ -170,7 +170,7 @@ const atMarkerRule =
     // Check out the rest of the marker string
     while (index < atMarker.length) {
       if (atMarker[index] !== state.src[start + index]) return false;
-      index++;
+      index += 1;
     }
 
     const markup = state.src.slice(start, start + index);
@@ -265,6 +265,7 @@ export const sandpack: PluginSimple = (md) => {
   VALID_MARKERS.forEach((marker) => {
     // Note: Here we use an internal variable to make sure tab rule is not registered
     // @ts-expect-error: __rules__ is a private property
+    // oxlint-disable-next-line typescript/no-unsafe-call, typescript/no-unsafe-member-access
     if (!md.block.ruler.__rules__.some(({ name }) => name === `at-${marker}`)) {
       md.block.ruler.before("fence", `at-${marker}`, atMarkerRule(marker), {
         alt: ["paragraph", "reference", "blockquote", "list"],

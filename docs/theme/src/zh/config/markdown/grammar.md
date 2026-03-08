@@ -99,7 +99,7 @@ tag:
   - [Markdown → 导入文件](../../guide/markdown/content/include.md)
   - [@vuepress/plugin-markdown-include][include]
 
-是否启用 Markdown 导入支持。您可以传递一个选项来自定义行为。
+是否启用 Markdown 导入支持。你可以传递一个选项来自定义行为。
 
 ## markdown.tabs
 

@@ -27,65 +27,83 @@
     "directory": "packages/theme"
   },
   "files": [
-    "lib",
+    "dist",
     "templates"
   ],
   "type": "module",
   "sideEffects": [
-    "**/*.scss"
+    "./dist/bundle/styles/**/*.s?css",
+    "./dist/client/styles/**/*.s?css"
   ],
-  "main": "./lib/node/index.js",
-  "types": "./lib/node/index.d.ts",
   "exports": {
-    ".": "./lib/node/index.js",
+    ".": {
+      "types": "./dist/node/index.d.ts",
+      "default": "./dist/node/index.js"
+    },
     "./blog": {
-      "types": "./lib/bundle/blog.d.ts",
-      "custom": "./lib/client/blog.js",
-      "default": "./lib/bundle/blog.js"
+      "types": "./dist/bundle/blog.d.ts",
+      "hope-custom": {
+        "types": "./dist/client/blog.d.ts",
+        "default": "./dist/client/blog.js"
+      },
+      "default": "./dist/bundle/blog.js"
     },
     "./client": {
-      "types": "./lib/bundle/index.d.ts",
-      "custom": "./lib/client/custom.js",
-      "default": "./lib/bundle/index.js"
+      "types": "./dist/bundle/index.d.ts",
+      "hope-custom": {
+        "types": "./dist/client/custom.d.ts",
+        "default": "./dist/client/custom.js"
+      },
+      "default": "./dist/bundle/index.js"
     },
     "./components/*": {
-      "types": "./lib/bundle/components/*.d.ts",
-      "custom": "./lib/client/components/*.js",
-      "default": "./lib/bundle/exports/noop.js"
+      "types": "./dist/bundle/exports/noop.d.ts",
+      "hope-custom": {
+        "types": "./dist/client/components/*.d.ts",
+        "default": "./dist/client/components/*.js"
+      },
+      "default": "./dist/bundle/exports/noop.js"
     },
     "./composables/*": {
-      "types": "./lib/client/composables/*.d.ts",
-      "custom": "./lib/client/composables/*.js",
-      "default": "./lib/bundle/exports/noop.js"
+      "types": "./dist/bundle/exports/noop.d.ts",
+      "hope-custom": {
+        "types": "./dist/client/composables/*.d.ts",
+        "default": "./dist/client/composables/*.js"
+      },
+      "default": "./dist/bundle/exports/noop.js"
     },
     "./layouts/*": {
-      "types": "./lib/client/layouts/*",
-      "custom": "./lib/client/layouts/*",
-      "default": "./lib/bundle/exports/noop.js"
+      "types": "./dist/bundle/exports/noop.d.ts",
+      "hope-custom": {
+        "types": "./dist/client/layouts/*.d.ts",
+        "default": "./dist/client/layouts/*.js"
+      },
+      "default": "./dist/bundle/exports/noop.js"
     },
-    "./styles/*": "./lib/client/styles/*",
+    "./styles/*.scss": "./dist/client/styles/*.scss",
+    "./styles/*": {
+      "sass": "./dist/client/styles/*.scss"
+    },
     "./utils/*": {
-      "types": "./lib/client/utils/*",
-      "custom": "./lib/client/utils/*",
-      "default": "./lib/bundle/exports/noop.js"
+      "types": "./dist/client/utils/*",
+      "hope-custom": "./dist/client/utils/*",
+      "default": "./dist/bundle/exports/noop.js"
     },
-    "./presets/*": "./lib/presets/*",
-    "./shared": "./lib/shared/index.js",
+    "./presets/*": "./dist/presets/*",
+    "./shared": "./dist/shared/index.js",
     "./templates/*": "./templates/*",
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "pnpm build:rollup && pnpm gulp && pnpm build:ts && pnpm copy",
-    "build:rollup": "rollup -c rollup.config.ts --configPlugin esbuild",
-    "build:ts": "tsc -b tsconfig.release.json",
-    "clean": "rimraf --glob ./lib ./*.tsbuildinfo",
-    "copy": "pnpm copy:client && pnpm copy:bundle && pnpm copy:presets",
-    "copy:bundle": "cpx \"src/client/**/*.css\" lib/bundle",
-    "copy:client": "cpx \"src/client/**/*.{css,scss}\" lib/client",
-    "copy:presets": "cpx \"src/presets/**/*.{css,scss}\" lib/presets",
-    "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
-    "dev:copy": "concurrently \"pnpm copy:client -w\" \"pnpm copy:presets -w\"",
-    "dev:ts": "tsc -b tsconfig.build.json --watch"
+    "build": "pnpm build:tsdown && pnpm build:ts && pnpm build:assets",
+    "build:assets": "unrun scripts/generateBundleStyle.ts",
+    "build:ts": "tsc",
+    "build:tsdown": "tsdown --config-loader unrun",
+    "clean": "rimraf ./dist",
+    "dev": "concurrently \"pnpm dev:tsdown\" \"pnpm dev:assets\" \"pnpm dev:ts\"",
+    "dev:tsdown": "pnpm build:tsdown --watch",
+    "dev:assets": "pnpm build:assets -w",
+    "dev:ts": "tsc --watch"
   },
   "dependencies": {
     "@vuepress/helper": "catalog:vuepress",

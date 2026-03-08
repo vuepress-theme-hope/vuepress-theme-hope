@@ -47,7 +47,7 @@ export const mdEnhancePlugin =
 
     useSassPalettePlugin(app, {
       id: "hope",
-      defaultConfig: getModulePath("vuepress-shared/styles/config.scss", import.meta),
+      defaultConfig: getModulePath("vuepress-shared/scss/config.scss", import.meta),
     });
     return {
       name: PLUGIN_NAME,
@@ -100,7 +100,9 @@ export const mdEnhancePlugin =
           md.use(reactDemo);
           // TODO: Remove this in v2 stable
           if (legacy) {
+            // oxlint-disable-next-line typescript/no-deprecated
             md.use(legacyCodeDemo);
+            // oxlint-disable-next-line typescript/no-deprecated
             md.use(mdDemo);
           }
         }

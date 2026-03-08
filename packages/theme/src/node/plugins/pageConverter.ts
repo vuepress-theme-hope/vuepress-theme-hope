@@ -65,6 +65,7 @@ export const extendsPagePlugin = (
       const { filePathRelative } = page;
 
       if (behavior.compact)
+        // oxlint-disable-next-line typescript/no-deprecated
         page.frontmatter = convertFrontmatter(page.frontmatter, filePathRelative ?? "");
       if (behavior.check) checkFrontmatter(page);
 

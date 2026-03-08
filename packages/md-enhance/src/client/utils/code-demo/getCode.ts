@@ -69,7 +69,9 @@ export const getNormalCode = (code: CodeType, config: Partial<CodeDemoOptions>):
     css: code.css[0] ?? "",
     isLegal: code.isLegal,
     getScript: (): string =>
-      codeConfig.useBabel ? (window.Babel?.transform(js, { presets: ["es2015"] })?.code ?? "") : js,
+      codeConfig.useBabel
+        ? (globalThis.Babel?.transform(js, { presets: ["es2015"] })?.code ?? "")
+        : js,
   };
 };
 
@@ -99,7 +101,7 @@ export const getVueCode = (code: CodeType, config: Partial<CodeDemoOptions>): Co
     jsLib: [codeConfig.vue, ...codeConfig.jsLib],
     getScript: (): string => {
       const scriptStr = config.useBabel
-        ? (window.Babel?.transform(js, { presets: ["es2015"] })?.code ?? "")
+        ? (globalThis.Babel?.transform(js, { presets: ["es2015"] })?.code ?? "")
         : js.replace(/export\s+default/u, "return");
 
       return `const app=window.document.createElement('div');document.firstElementChild.appendChild(app);const appOptions=${wrapper(
@@ -129,7 +131,7 @@ export const getReactCode = (code: CodeType, config: Partial<CodeDemoOptions>): 
     jsx: true,
     getScript: (): string => {
       const scriptStr =
-        window.Babel?.transform(js, {
+        globalThis.Babel?.transform(js, {
           presets: ["es2015", "react"],
         })?.code ?? "";
 

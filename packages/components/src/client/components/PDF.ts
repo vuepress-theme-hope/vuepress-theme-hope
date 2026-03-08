@@ -121,6 +121,7 @@ export default defineComponent({
     onMounted(() => {
       body.value = document.body;
 
+      // oxlint-disable-next-line typescript/no-non-null-assertion
       viewPDF(viewer.value!, {
         url: getLink(props.url),
         title: props.title,

@@ -19,6 +19,7 @@ export default defineComponent({
 
       return (
         // footer is not disabled
+        // oxlint-disable-next-line typescript/prefer-nullish-coalescing
         footer !== false && Boolean(copyright || footer || themeLocale.value.displayFooter)
       );
     });

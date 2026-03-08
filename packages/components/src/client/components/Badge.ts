@@ -53,6 +53,7 @@ const Badge: FunctionalComponent<BadgeProps, Record<never, never>, { default?: S
   h(
     "span",
     {
+      // oxlint-disable-next-line typescript/prefer-nullish-coalescing
       class: ["vp-badge", type, { diy: Boolean(color || bgColor) }],
       style: {
         backgroundColor: bgColor ?? false,

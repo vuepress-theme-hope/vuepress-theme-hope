@@ -101,6 +101,7 @@ export default defineComponent({
     const initDom = (innerHTML = false): void => {
       // Attach a shadow root to demo
 
+      // oxlint-disable-next-line typescript/no-non-null-assertion
       const shadowRoot = demoWrapper.value!.attachShadow({ mode: "open" });
       const appElement = document.createElement("div");
 
@@ -155,6 +156,7 @@ export default defineComponent({
     });
 
     useResizeObserver(codeContainer, () => {
+      // oxlint-disable-next-line typescript/no-non-null-assertion
       if (isExpanded.value) height.value = `${codeContainer.value!.clientHeight + 14}px`;
     });
 
@@ -173,7 +175,8 @@ export default defineComponent({
                 onClick: () => {
                   height.value = isExpanded.value
                     ? "0"
-                    : `${codeContainer.value!.clientHeight + 14}px`;
+                    : // oxlint-disable-next-line typescript/no-non-null-assertion
+                      `${codeContainer.value!.clientHeight + 14}px`;
                   toggleIsExpand();
                 },
               })

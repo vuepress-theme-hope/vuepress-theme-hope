@@ -145,8 +145,7 @@
     "**/.vuepress/public/assets/lib/**": true,
     "**/.vuepress/.cache/**": true,
     "**/.vuepress/.temp/**": true,
-    "**/dist/**": true,
-    "packages/*/lib/**": true
+    "**/dist/**": true
   },
   "oxc.typeAware": true,
   "oxc.unusedDisableDirectives": "deny",

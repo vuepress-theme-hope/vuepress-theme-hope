@@ -125,7 +125,7 @@ Mathjax:
 
 ### 使用 MathJax
 
-使用 MathJax 时，您可以设置：
+使用 MathJax 时，你可以设置：
 
 - `tex`：传递给 TeX 输入解析器的选项
 - `output`：`'svg'`（默认）或 `'chtml'` 来更改输出格式为 SVG 或 HTML。

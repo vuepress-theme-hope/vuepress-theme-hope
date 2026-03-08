@@ -74,6 +74,7 @@ export default defineComponent({
                     "data-balloon-pos": "down",
                     role: "link",
                     onClick: (): void => {
+                      // oxlint-disable-next-line typescript/no-non-null-assertion
                       navigate(intro.value!);
                     },
                   }

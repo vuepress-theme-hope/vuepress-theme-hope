@@ -60,6 +60,7 @@ export default defineComponent({
             class: [
               "vp-sidebar-header",
               {
+                // oxlint-disable-next-line typescript/prefer-nullish-coalescing
                 clickable: collapsible || link,
                 exact: exact.value,
                 active: active.value,

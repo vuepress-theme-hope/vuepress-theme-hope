@@ -10,18 +10,18 @@ tag:
   - 项目命令
 ---
 
-本教程介绍 VuePress 项目命令。
+本教程将介绍 VuePress 项目的管理命令，涵盖本地开发、生产构建及版本更新。
 
 <!-- more -->
 
 ## 常用命令
 
-- `vuepress dev <dir>` 启动开发服务器，用于本地开发你的 VuePress 站点。
-- `vuepress build <dir>` 将你的 VuePress 站点构建成静态文件，以便进行部署。
+- `vuepress dev <dir>`: 启动本地开发服务器，用于实时预览文档修改。
+- `vuepress build <dir>`: 将 VuePress 站点构建为用于部署的静态文件。
 
-:::: info 使用模板
+:::: info 使用模板脚本
 
-如果你在使用 VuePress Theme Hope 模板，你可以在 `package.json` 中发现下列三个命令:
+如果你正在使用 VuePress Theme Hope 模板，可以在 `package.json` 中找到以下三个预设命令：
 
 ```json
 {
@@ -33,41 +33,39 @@ tag:
 }
 ```
 
-这意味着你可以使用:
+这意味着你可以直接运行以下指令：
 
 ::: tabs#shell
 
 @tab pnpm
 
-- `pnpm docs:dev` 启动开发服务器
-- `pnpm docs:build` 构建项目并输出
-- `pnpm docs:clean-dev` 清除缓存并启动开发服务器
+1. `pnpm docs:dev`: 启动开发服务器。
+2. `pnpm docs:build`: 执行项目构建并输出静态文件。
+3. `pnpm docs:clean-dev`: 清除缓存并启动开发服务器。
 
 @tab yarn
 
-- `yarn docs:dev` 启动开发服务器
-- `yarn docs:build` 构建项目并输出
-- `yarn docs:clean-dev` 清除缓存并启动开发服务器
+1. `yarn docs:dev`: 启动开发服务器。
+2. `yarn docs:build`: 执行项目构建并输出静态文件。
+3. `yarn docs:clean-dev`: 清除缓存并启动开发服务器。
 
 @tab npm
 
-- `npm run docs:dev` 启动开发服务器
-- `npm run docs:build` 构建项目并输出
-- `npm run docs:clean-dev` 清除缓存并启动开发服务器
+1. `npm run docs:dev`: 启动开发服务器。
+2. `npm run docs:build`: 执行项目构建并输出静态文件。
+3. `npm run docs:clean-dev`: 清除缓存并启动开发服务器。
 
 :::
 
 ::::
 
 ::: tip 终止开发服务器
-
-要终止开发服务器，请点击终端，并连续两次按下 `Ctrl + C`。
-
+如需停止开发服务器，请点击终端窗口并按下 `Ctrl + C`。
 :::
 
-## 升级版本
+## 更新版本
 
-要升级主题和 VuePress 版本，请执行以下命令:
+执行以下命令即可一键升级你的主题和 VuePress 版本：
 
 ::: code-tabs#shell
 

@@ -46,6 +46,7 @@ export default defineComponent({
 
         const images = [...document.querySelectorAll<HTMLImageElement>(__LG_SELECTOR__)];
 
+        // oxlint-disable-next-line typescript/no-non-null-assertion
         instance = new LightGallery(container.value!, {
           ...lightGalleryOptions,
           dynamic: true,

@@ -108,7 +108,7 @@ Markdown 代码块高亮器。可以选择 `"prismjs"`、`"shiki"`、`false` 或
   - [Markdown → 链接检查](../../guide/markdown/others.md#链接检查)
   - [@vuepress/plugin-links-check][links-check]
 
-是否启用 `@vuepress/plugin-links-check` 插件，提供 Markdown 链接检查。您可以手动设置一个布尔值来控制插件状态，或提供插件选项。
+是否启用 `@vuepress/plugin-links-check` 插件，提供 Markdown 链接检查。你可以手动设置一个布尔值来控制插件状态，或提供插件选项。
 
 [links-check]: https://ecosystem.vuejs.press/zh/plugins/markdown/links-check.html#options
 [breaks]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-ext.html#breaks

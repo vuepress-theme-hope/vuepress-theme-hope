@@ -1,6 +1,6 @@
 import { isArray, isPlainObject } from "@vuepress/helper";
 import { colors } from "vuepress/utils";
-import { createConverter } from "vuepress-shared/node";
+import { createConverter } from "vuepress-shared";
 
 import type { ComponentPluginOptions } from "../options/index.js";
 import { logger } from "../utils.js";

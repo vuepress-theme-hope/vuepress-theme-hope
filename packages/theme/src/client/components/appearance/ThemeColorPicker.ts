@@ -26,29 +26,29 @@ export default defineComponent({
     const { isDarkMode } = useDarkMode();
 
     const activeThemeColors = computed(() => {
-      const themeColors = { ...props.themeColors };
+      const themeColors = new Map<string, string>(Object.entries(props.themeColors));
 
-      for (const [name, color] of Object.entries(themeColors)) {
+      for (const [name, color] of themeColors.entries()) {
         if (name.includes("light")) {
           if (isDarkMode.value) {
-            delete themeColors[name];
+            themeColors.delete(name);
           } else {
-            themeColors[name.replace("light-", "")] = color;
-            delete themeColors[name];
+            themeColors.set(name.replace("light-", ""), color);
+            themeColors.delete(name);
           }
         }
 
         if (name.includes("dark")) {
           if (isDarkMode.value) {
-            themeColors[name.replace("dark-", "")] = color;
-            delete themeColors[name];
+            themeColors.set(name.replace("dark-", ""), color);
+            themeColors.delete(name);
           } else {
-            delete themeColors[name];
+            themeColors.delete(name);
           }
         }
       }
 
-      return Object.entries(themeColors).map(([name, color]) => ({
+      return [...themeColors.entries()].map(([name, color]) => ({
         name,
         color,
       }));
