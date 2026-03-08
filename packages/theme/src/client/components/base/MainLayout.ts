@@ -95,6 +95,12 @@ export default defineComponent({
     // Navbar
     const hideNavbar = ref(false);
 
+    const autoHide = computed(() => {
+      const { navbarAutoHide = "mobile" } = themeLocale.value;
+
+      return navbarAutoHide !== "none" && (navbarAutoHide === "always" || isMobile.value);
+    });
+
     const enableNavbar = computed(() => {
       if (props.noNavbar) return false;
 
@@ -145,8 +151,8 @@ export default defineComponent({
 
           // At top or scroll up
           if (distance <= 58 || distance < lastDistance) hideNavbar.value = false;
-          // Scroll down > 200px and sidebar is not opened
-          else if (lastDistance + 200 < distance && !isMobileSidebarOpen.value)
+          // Scroll down > 200px, sidebar is not opened, and navbar auto-hide is enabled
+          else if (lastDistance + 200 < distance && !isMobileSidebarOpen.value && autoHide.value)
             hideNavbar.value = true;
 
           lastDistance = distance;
