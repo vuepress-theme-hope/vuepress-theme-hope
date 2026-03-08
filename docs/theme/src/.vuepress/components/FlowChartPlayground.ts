@@ -81,6 +81,7 @@ export default defineComponent({
         // Update scale
         scale.value = getFlowChartScale(window.innerWidth);
 
+        // oxlint-disable-next-line typescript/no-non-null-assertion
         element.value!.innerHTML = "";
 
         // draw svg to #id

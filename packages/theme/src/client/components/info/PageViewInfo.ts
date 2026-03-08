@@ -35,6 +35,7 @@ export default defineComponent({
     useMutationObserver(
       pageviewElement,
       () => {
+        // oxlint-disable-next-line typescript/no-non-null-assertion
         const count = pageviewElement.value!.textContent;
 
         if (count && !Number.isNaN(Number(count))) pageViews.value = Number(count);

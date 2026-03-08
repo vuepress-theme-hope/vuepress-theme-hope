@@ -19,13 +19,13 @@
     "docs:webpack-dev": "cross-env BUNDLER=webpack vuepress dev src"
   },
   "dependencies": {
+    "@docs/shared": "workspace:*",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/helper": "catalog:vuepress",
     "artplayer": "5.3.0",
     "artplayer-plugin-danmuku": "5.2.0",
     "dashjs": "4.7.4",
-    "docs-shared": "workspace:*",
     "hls.js": "1.6.15",
     "mpegts.js": "1.8.0",
     "sass-embedded": "catalog:",

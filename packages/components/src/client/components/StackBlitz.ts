@@ -179,6 +179,7 @@ export default defineComponent({
     onMounted(async () => {
       if (props.embed) {
         await sdk[props.type === "github" ? "embedGithubProject" : "embedProjectId"](
+          // oxlint-disable-next-line typescript/no-non-null-assertion
           el.value!,
           props.id,
           options.value,

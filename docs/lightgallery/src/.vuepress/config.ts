@@ -1,9 +1,9 @@
-import { config } from "docs-shared";
+import { config } from "@docs/shared";
 import { lightgalleryPlugin } from "vuepress-plugin-lightgallery";
 
 import theme from "./theme.js";
 
-// The config wrapper is located in <root>/docs-shared/src/config-wrapper.ts
+// The config wrapper is located in <root>/docs/shared/src/config-wrapper.ts
 export default config("lightgallery", {
   locales: {
     "/": {

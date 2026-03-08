@@ -48,6 +48,7 @@ export default defineComponent({
     const currentWallpaper = computed(() => {
       const { index, data } = bingStorage.value;
 
+      // oxlint-disable-next-line typescript/no-non-null-assertion
       const langCode = lang.value.toLowerCase().split("-").shift()!;
 
       if (data[index]) {

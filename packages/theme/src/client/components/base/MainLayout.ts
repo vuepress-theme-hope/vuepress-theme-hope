@@ -192,6 +192,7 @@ export default defineComponent({
         // sidebar is disabled via frontmatter
         frontmatter.value.sidebar === false ||
         // (is home page / no sidebar items) && no contents in sidebar slots
+        // oxlint-disable-next-line typescript/prefer-nullish-coalescing
         ((frontmatter.value.home || sidebarItems.value.length === 0) && isSidebarEmpty);
 
       return h(

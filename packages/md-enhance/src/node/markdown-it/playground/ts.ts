@@ -1,8 +1,8 @@
 import { deepAssign, endsWith, entries, isPlainObject, keys } from "@vuepress/helper";
 import type { CompilerOptions } from "typescript";
 
-import { compressToEncodedURIComponent } from "./ventors/lzstring.js";
-import { optionDeclarations } from "./ventors/optionDeclarations.js";
+import { compressToEncodedURIComponent } from "./vendors/lzstring.js";
+import { optionDeclarations } from "./vendors/optionDeclarations.js";
 import type {
   PlaygroundData,
   PlaygroundOptions,

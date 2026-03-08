@@ -41,10 +41,8 @@ The project is a monorepo, managed by pnpm.
 │ ├── components → components plugin document
 │ ├── lightgallery → lightgallery plugin document
 │ ├── md-enhance → md-enhance plugin document
-│ ├── shared → vuepress-shared document
+│ ├── shared → common files for docs
 │ └── theme → theme document
-│
-├── docs-shared → common files for docs
 |
 ├── packages → project source code
 │ ├── components → components plugin

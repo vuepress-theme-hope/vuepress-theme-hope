@@ -15,7 +15,6 @@
 import {
   ensureEndingSlash,
   entries,
-  isDef,
   isLinkHttp,
   isMobile,
   isSafari,
@@ -96,7 +95,8 @@ const addPDFViewer = (
 
   const source = `${
     embedType === "pdfjs"
-      ? `${ensureEndingSlash(withBase(PDFJS_URL!))}web/viewer.html?file=${encodeURIComponent(url)}`
+      ? // oxlint-disable-next-line typescript/no-non-null-assertion
+        `${ensureEndingSlash(withBase(PDFJS_URL!))}web/viewer.html?file=${encodeURIComponent(url)}`
       : url
   }${buildURLFragmentString(options)}`;
 
@@ -114,6 +114,7 @@ const addPDFViewer = (
   target.classList.add("pdf-viewer-container");
   target.append(el);
 
+  // oxlint-disable-next-line typescript/no-non-null-assertion
   return target.querySelector(elementType)!;
 };
 
@@ -136,9 +137,9 @@ export const viewPDF = (
   targetSelector: string | HTMLElement | null,
   { url, title, hint = DEFAULT_PDF_JS_HINT, options = {}, pdfjs }: ViewPDFOptions,
 ): HTMLElement | null => {
-  if (!isDef(window) || !window.navigator?.userAgent) return null;
+  if (!globalThis.navigator?.userAgent) return null;
 
-  const { navigator } = window;
+  const { navigator } = globalThis;
   const { userAgent } = navigator;
 
   // Time to jump through hoops -- browser vendors do not make it easy to detect PDF support.
@@ -166,7 +167,7 @@ export const viewPDF = (
     return null;
   }
 
-  const fullLink = isLinkHttp(url) ? url : __VUEPRESS_DEV__ ? null : `${window.origin}${url}`;
+  const fullLink = isLinkHttp(url) ? url : __VUEPRESS_DEV__ ? null : `${globalThis.origin}${url}`;
 
   if (pdfjs) {
     if (!fullLink) {

@@ -24,23 +24,31 @@
     "directory": "packages/components"
   },
   "files": [
-    "lib"
+    "dist"
   ],
   "type": "module",
-  "main": "./lib/node/index.js",
-  "types": "./lib/node/index.d.ts",
+  "sideEffects": [
+    "./dist/client/**/*.scss"
+  ],
   "exports": {
-    ".": "./lib/node/index.js",
-    "./client/*": "./lib/client/*",
+    ".": {
+      "types": "./dist/node/index.d.ts",
+      "default": "./dist/node/index.js"
+    },
+    "./client": {
+      "types": "./dist/client/index.d.ts",
+      "default": "./dist/client/index.js"
+    },
+    "./components/*": {
+      "types": "./dist/client/components/*.d.ts",
+      "default": "./dist/client/components/*.js"
+    },
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "rollup -c rollup.config.ts --configPlugin esbuild",
-    "clean": "rimraf --glob ./lib ./*.tsbuildinfo",
-    "copy": "cpx \"src/client/**/*.scss\" lib/client",
-    "dev": "concurrently \"pnpm dev:copy\" \"pnpm dev:ts\"",
-    "dev:copy": "pnpm copy -w",
-    "dev:ts": "tsc -b tsconfig.build.json --watch"
+    "build": "tsdown --config-loader unrun",
+    "clean": "rimraf ./dist",
+    "dev": "pnpm build --watch"
   },
   "dependencies": {
     "@stackblitz/sdk": "^1.11.0",

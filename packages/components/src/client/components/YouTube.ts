@@ -182,7 +182,9 @@ export default defineComponent({
       if (props.start) searchParams.set("start", props.start.toString());
       if (props.end) searchParams.set("end", props.end.toString());
 
+      // oxlint-disable-next-line typescript/prefer-nullish-coalescing
       searchParams.set("hl", props.uiLang || lang.value);
+      // oxlint-disable-next-line typescript/prefer-nullish-coalescing
       searchParams.set("cc_lang_pref", props.defaultCcLang || lang.value);
       searchParams.set("color", "white");
 

@@ -1,8 +1,0 @@
-{
-  "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "rootDir": "./src",
-    "types": ["vuepress/client-types", "vite/client", "webpack-env"]
-  },
-  "include": ["./src"]
-}

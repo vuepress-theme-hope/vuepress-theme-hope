@@ -22,8 +22,7 @@ export const checkFrontmatter = (page: Page): void => {
       key in frontmatter &&
       !(
         isString(frontmatter[key]) ||
-        (isArray(frontmatter[key]) &&
-          (frontmatter[key] as unknown[]).every((value) => isString(value)))
+        (isArray(frontmatter[key]) && frontmatter[key].every((value) => isString(value)))
       )
     ) {
       logger.warn(
@@ -34,6 +33,7 @@ export const checkFrontmatter = (page: Page): void => {
         }.`,
       );
 
+      // oxlint-disable-next-line typescript/no-dynamic-delete
       delete frontmatter[key];
     }
   });
@@ -69,6 +69,7 @@ export const checkFrontmatter = (page: Page): void => {
         )}${filePathRelative ? `, found in ${filePathRelative}` : ""}.`,
       );
 
+      // oxlint-disable-next-line typescript/no-dynamic-delete
       delete frontmatter[key];
     }
   });
@@ -93,6 +94,7 @@ export const checkFrontmatter = (page: Page): void => {
         )}${filePathRelative ? `, found in ${filePathRelative}` : ""}.`,
       );
 
+      // oxlint-disable-next-line typescript/no-dynamic-delete
       delete frontmatter[key];
     }
   });

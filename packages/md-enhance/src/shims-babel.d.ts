@@ -1,7 +1,5 @@
-import type Babel from "@babel/core";
+import type BabelCore from "@babel/core";
 
 declare global {
-  interface Window {
-    Babel?: typeof Babel;
-  }
+  var Babel: typeof BabelCore | undefined;
 }

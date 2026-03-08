@@ -49,6 +49,7 @@ export const useNavbarItems = (): ComputedRef<NavbarItem[]> => {
   const themeLocaleData = useThemeLocale();
 
   return computed(() =>
+    // oxlint-disable-next-line typescript/prefer-nullish-coalescing
     (themeLocaleData.value.navbar || []).map((item) => resolveNavbarItem(item)),
   );
 };

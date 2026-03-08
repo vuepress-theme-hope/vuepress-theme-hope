@@ -1,4 +1,4 @@
-import { navbar } from "docs-shared";
+import { navbar } from "@docs/shared";
 import pkg from "vuepress-plugin-md-enhance/package.json" with { type: "json" };
 
 export const enNavbar = navbar([

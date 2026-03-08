@@ -1,7 +1,7 @@
 @use "sass:color";
 @use "sass:list";
 @use "@sass-palette/helper";
-@use "vuepress-shared/styles/shining";
+@use "vuepress-shared/scss/shining";
 
 .vp-hero {
   &-info-wrapper {

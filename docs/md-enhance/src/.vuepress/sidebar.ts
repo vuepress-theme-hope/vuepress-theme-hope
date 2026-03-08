@@ -1,4 +1,4 @@
-import { sidebar } from "docs-shared";
+import { sidebar } from "@docs/shared";
 
 export const enSidebar = sidebar({
   "/": "structure",

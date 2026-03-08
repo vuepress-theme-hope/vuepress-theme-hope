@@ -1,6 +1,6 @@
 import { endsWith, keys } from "@vuepress/helper";
 
-import { compressToEncodedURIComponent as encode } from "./ventors/lzstring.js";
+import { compressToEncodedURIComponent as encode } from "./vendors/lzstring.js";
 import type {
   PlaygroundData,
   PlaygroundOptions,

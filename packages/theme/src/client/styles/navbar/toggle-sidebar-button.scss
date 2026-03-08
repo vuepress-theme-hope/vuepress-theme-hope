@@ -1,4 +1,4 @@
-@use "vuepress-shared/styles/reset";
+@use "vuepress-shared/scss/reset";
 
 .vp-toggle-sidebar-button {
   @include reset.button;

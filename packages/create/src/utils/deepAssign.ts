@@ -1,3 +1,4 @@
+// oxlint-disable-next-line typescript/no-explicit-any
 type IAnyObject = Record<any, any>;
 
 const { isArray } = Array;

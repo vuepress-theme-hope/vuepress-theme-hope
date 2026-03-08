@@ -1,4 +1,4 @@
-@use "vuepress-shared/styles/reset";
+@use "vuepress-shared/scss/reset";
 
 .vp-appearance-button {
   @include reset.button;

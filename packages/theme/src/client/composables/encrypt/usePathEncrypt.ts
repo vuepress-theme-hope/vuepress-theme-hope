@@ -53,6 +53,7 @@ export const usePathEncrypt = (): PathEncrypt => {
                 )
               : true),
         ),
+        // oxlint-disable-next-line typescript/no-non-null-assertion
         hint: firstKeyWithHint ? config[firstKeyWithHint].hint! : "",
       };
     }

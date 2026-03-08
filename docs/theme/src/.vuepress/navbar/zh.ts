@@ -1,4 +1,4 @@
-import { navbar } from "docs-shared";
+import { navbar } from "@docs/shared";
 
 // region config
 export const zhNavbarConfig = navbar([

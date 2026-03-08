@@ -1,4 +1,4 @@
-@use "vuepress-shared/styles/reset";
+@use "vuepress-shared/scss/reset";
 
 .vp-hero-slide-down-button {
   @include reset.button;

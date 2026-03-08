@@ -17,5 +17,6 @@ export const getMarkdownImagePlugin = (options: ThemeMarkdownOptions): Plugin | 
     mark: options.imgMark ?? false,
     size: options.imgSize ?? false,
     obsidianSize: options.obsidianImgSize ?? false,
+    // oxlint-disable-next-line typescript/no-deprecated
     legacySize: options.legacyImgSize ?? false,
   });

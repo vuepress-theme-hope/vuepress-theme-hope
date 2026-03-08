@@ -60,7 +60,7 @@ export default defineComponent({
       const useViewTransition =
         // @ts-expect-error: Providing backward compatibility
         document.startViewTransition &&
-        !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+        !globalThis.matchMedia("(prefers-reduced-motion: reduce)").matches &&
         !isPure.value;
 
       if (!useViewTransition) {

@@ -48,6 +48,7 @@ export default defineComponent({
             },
             [
               h(CalendarIcon),
+              // oxlint-disable-next-line typescript/no-non-null-assertion
               h("span", { "data-allow-mismatch": "text" }, formattedDate.value!),
               h("meta", {
                 property: "datePublished",

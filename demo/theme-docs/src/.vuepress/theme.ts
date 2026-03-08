@@ -91,6 +91,7 @@ export default hopeTheme(
       stylize: [
         {
           matcher: "Recommended",
+          // oxlint-disable-next-line typescript/explicit-function-return-type
           replacer: ({ tag }) => {
             if (tag === "em") {
               return {

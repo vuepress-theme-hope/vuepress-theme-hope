@@ -45,7 +45,7 @@ defineCatalogInfoGetter((meta) => {
   if (enableBlog) {
     imports.push(
       `import { Blog, BloggerInfo, SocialMedias, setupBlog } from "${targetFolder}/exports/blog.js";`,
-      `import "${targetFolder}/styles/blog/${custom ? "layout" : "bundle"}.scss";`,
+      `import "${targetFolder}/styles/blog/${custom ? "layout" : "index"}.scss";`,
     );
     enhances.push(
       `app.component("BloggerInfo", BloggerInfo);`,
@@ -60,7 +60,7 @@ defineCatalogInfoGetter((meta) => {
       `import { GlobalEncrypt, LocalEncrypt } from "${targetFolder}/exports/encrypt.js";`,
     );
 
-    if (!custom) imports.push(`import "${targetFolder}/styles/encrypt/bundle.scss"`);
+    if (!custom) imports.push(`import "${targetFolder}/styles/encrypt/index.scss"`);
 
     enhances.push(
       `app.component("GlobalEncrypt", GlobalEncrypt);`,
@@ -85,7 +85,7 @@ ${imports.join("\n")}
 import "${getModulePath("@vuepress/helper/colors.css", import.meta)}";
 import "${getModulePath("@vuepress/helper/normalize.css", import.meta)}";
 import "${getModulePath("@vuepress/helper/sr-only.css", import.meta)}";
-import "${targetFolder}/styles/${custom ? "index" : "bundle"}.scss";
+import "${targetFolder}/styles/index.scss";
 
 ${actions.join("\n")}
 

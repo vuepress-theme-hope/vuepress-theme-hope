@@ -1,15 +1,11 @@
 # Node modules
 **/node_modules/**
 
-# Build files
-docs-shared/lib/
-packages/*/lib/
-
 # Vuepress Cache
 **/.vuepress/.cache/**
 # Vuepress Temp
 **/.vuepress/.temp/**
-# Vuepress Output
+# Output
 dist/
 
 # npm config

@@ -49,6 +49,7 @@ export default defineComponent({
     });
 
     useResizeObserver(codeContainer, () => {
+      // oxlint-disable-next-line typescript/no-non-null-assertion
       if (isExpanded.value) height.value = `${codeContainer.value!.clientHeight + 14}px`;
     });
 
@@ -60,6 +61,7 @@ export default defineComponent({
             title: "toggle",
             class: ["vp-md-demo-toggle-button", isExpanded.value ? "down" : "end"],
             onClick: () => {
+              // oxlint-disable-next-line typescript/no-non-null-assertion
               height.value = isExpanded.value ? "0" : `${codeContainer.value!.clientHeight + 14}px`;
               toggleIsExpand();
             },

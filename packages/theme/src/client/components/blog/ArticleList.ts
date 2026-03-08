@@ -97,6 +97,7 @@ export default defineComponent({
       watch(currentPage, () => {
         // List top border distance
         const distance =
+          // oxlint-disable-next-line typescript/no-non-null-assertion
           document.querySelector("#article-list")!.getBoundingClientRect().top + window.scrollY;
 
         setTimeout(() => {
