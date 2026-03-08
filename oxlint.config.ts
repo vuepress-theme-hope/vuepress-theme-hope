@@ -1,9 +1,9 @@
 import { defineConfig } from "oxlint";
-import { getOxlintConfigs, nodeRules } from "oxc-config-hope";
+import { getOxlintConfigs } from "oxc-config-hope";
 
 export default defineConfig({
   extends: getOxlintConfigs({
-    node: [],
+    node: ["**/node/**/*.ts", "**/create/src/**/*.ts"],
     vue: true,
     vitest: true,
     playwright: true,
@@ -110,7 +110,6 @@ export default defineConfig({
       plugins: ["node"],
       rules: {
         "no-console": "off",
-        ...nodeRules,
       },
     },
     {
