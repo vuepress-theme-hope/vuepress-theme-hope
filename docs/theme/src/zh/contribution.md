@@ -121,7 +121,7 @@ VuePress 同时运行在客户端和 Node 端。 Node 侧有像 `fs` 这样的 n
    使用 `oxlint`、`oxfmt` 和 `stylelint` 对项目进行代码校验和格式化。
 
    ::: note Markdown 文件
-   如果您修改了 Markdown 文件，还需要运行 `pnpm lint:md` 命令。
+   如果你修改了 Markdown 文件，还需要运行 `pnpm lint:md` 命令。
    :::
 
 ## 提交

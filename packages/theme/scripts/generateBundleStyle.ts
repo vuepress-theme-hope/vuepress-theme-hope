@@ -5,7 +5,7 @@ import { watch } from "chokidar";
 const themeRoot = path.resolve(getDirname(import.meta.url), "..");
 const isWatch = process.argv.includes("-w") || process.argv.includes("--watch");
 
-const ENTIRES_MARKER = /^\/\*\s*bundle entries(?: dir:(.+?))?\s*\*\/$/m;
+const ENTRIES_MARKER = /^\/\*\s*bundle entries(?: dir:(.+?))?\s*\*\/$/m;
 const CONFIG_IMPORT = '@use "@sass-palette/hope-config";';
 const PALETTE_IMPORT = '@use "@sass-palette/hope-palette";';
 
@@ -50,11 +50,11 @@ const getFileContent = async (filePath: string, content: string): Promise<string
     result = `${PALETTE_IMPORT}\n${result}`;
 
   if (filePath.endsWith("index.scss")) {
-    const match = ENTIRES_MARKER.exec(result);
+    const match = ENTRIES_MARKER.exec(result);
 
     if (match) {
       result = result.replace(
-        ENTIRES_MARKER,
+        ENTRIES_MARKER,
         await generateDirUses(
           path.dirname(filePath),
           result,
