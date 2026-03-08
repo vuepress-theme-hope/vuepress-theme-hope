@@ -1,5 +1,4 @@
-import { getDirname, fs, path } from "vuepress/utils";
-import { glob } from "node:fs/promises";
+import { getDirname, fs, path, tinyglobby } from "vuepress/utils";
 import { watch } from "chokidar";
 
 const themeRoot = path.resolve(getDirname(import.meta.url), "..");
@@ -88,10 +87,11 @@ const generateBundleStyle = async (entry: string): Promise<void> => {
 const bundleStyles = async (): Promise<void> => {
   const cwd = path.join(themeRoot, "src/client");
 
-  for await (const entry of glob("styles/**/*.{css,scss}", {
+  const entries = await tinyglobby.glob("styles/**/*.{css,scss}", {
     cwd,
-  }))
-    await generateBundleStyle(entry);
+  });
+
+  await Promise.all(entries.map((entry) => generateBundleStyle(entry)));
 
   if (isWatch) {
     console.info("Watching styles for changes...");

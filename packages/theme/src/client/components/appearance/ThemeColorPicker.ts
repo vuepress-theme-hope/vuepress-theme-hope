@@ -48,7 +48,7 @@ export default defineComponent({
         }
       }
 
-      return themeColors.entries().map(([name, color]) => ({
+      return [...themeColors.entries()].map(([name, color]) => ({
         name,
         color,
       }));
@@ -89,7 +89,7 @@ export default defineComponent({
             },
           }),
         ),
-        [...activeThemeColors.value].map(({ name, color }) =>
+        activeThemeColors.value.map(({ name, color }) =>
           h(
             "li",
             h("span", {

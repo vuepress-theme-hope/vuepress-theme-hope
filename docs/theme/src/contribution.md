@@ -102,7 +102,7 @@ VuePress is running both in client side and node side. Node side has node module
 - `node` directory stores code running in Node.js
 - `shared` directory stores files that are used in both client and node, so code shall not reference any browser globals or node module.
 
-For better performance, all plugins are packed and minified using rollup when they are published.
+For better performance, all plugins are packed and minified using tsdown when they are published.
 
 ## Project Development
 

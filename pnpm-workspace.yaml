@@ -82,9 +82,6 @@ overrides:
   react: ^19.2.3
   vite@7: npm:vite@^8.0.0-beta.16
 
-patchedDependencies:
-  "@rollup/plugin-alias": patches/@rollup__plugin-alias.patch
-
 peerDependencyRules:
   allowedVersions:
     echarts-wordcloud@2>echarts: ^6.0.0
