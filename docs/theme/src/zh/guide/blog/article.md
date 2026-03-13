@@ -12,110 +12,78 @@ tag:
   - 星标
 ---
 
-主题默认在 `/article/` 路径下为你提供了全部的文章列表。
+主题会自动汇总所有文章，并在 `/article/` 路由下渲染文章列表。
 
-<!-- more -->
+![Article list](./assets/article-list-light.png#light)
+![Article list](./assets/article-list-dark.png#dark)
 
-## 文章
+## 文章配置
 
-所有文章都会默认被添加到文章列表中渲染在 `/article/` 路径下。
+默认情况下，所有 Markdown 文件都会被添加至文章列表。
 
-![文章列表](./assets/article-list-light.png#light)
-![文章列表](./assets/article-list-dark.png#dark)
+- **排除文章：** 在页面的 Frontmatter 中设置 `article: false`，或通过主题选项中的 `plugins.blog.filter` 配置自定义过滤逻辑。
+- **置顶文章：** 在 Frontmatter 中设置 `sticky: true` 可将文章固定在列表顶部。
 
-如果你不希望该列表包含一些特定的文章，只需在文章的 frontmatter 中将 `article` 设置为 `false`，或者你也可以通过主题选项中的 `plugins.blog.filter` 自定义哪些页面是文章。
-
-如果你希望在文章列表中置顶特定文章，只需在文章的 frontmatter 中将 `sticky` 设置为 `true`。
-
-::: tip 置顶顺序
-
-对于置顶文章，你可以将 `sticky` 设置为 `number` 来设置它们的顺序。数值大的文章会排列在前面。
-
+::: tip
+若需精确控制置顶文章的排序权重，可为 `sticky` 赋予数字（例如 `sticky: 2`）。数值越大的文章越靠前。
 :::
 
-## 文章摘要
+## 摘要 (Excerpt)
 
 ### 添加摘要
 
-如果你想要为文章添加摘要，你可以使用 `<!-- more -->` 注释来标记它。任何在此注释之前的内容会被视为摘要。
+在 Markdown 文件中使用 `<!-- more -->` 注释可以标记摘要。该标记前的所有内容会被提取为文章摘要。
 
-同时，如果你想设置的摘要并不是你要在文章开头展示的内容，你也可以在 Frontmatter 中通过 `excerpt` 选项来设置 HTML 字符串。
+如果需要覆盖默认提取的内容，可以通过 Frontmatter 中的 `excerpt` 选项直接传入一段 HTML 字符串作为摘要。
 
-### 自动生成摘要
+### 摘要提取
 
-主题默认情况下会自动生成摘要。
+主题默认会自动提取文章摘要。
 
-如果你只想让主题展示你指定的摘要或在 Frontmatter 中设置的描述，请在主题选项中设置 `plugins.blog.excerptLength: 0`。
+如需禁用自动生成并仅展示手动标记的摘要或 Frontmatter 中的描述，请在主题选项中设置 `plugins.blog.excerptLength: 0`。
 
 ::: warning 摘要限制
 
-出于性能考虑，默认情况下开发服务器中不提供自动摘录生成功能，请使用 [hotReload](../../config/theme/basic.md#hotreload) 启用它。
-
-我们推荐你优先使用 `<!-- more -->` 来标记摘要。如果你的确需要一个特别的摘要的话，请自己设置在 frontmatter。
-
-对于使用注释标记的摘要，我们会从原始文件分离出的摘要内容并将它们渲染成 HTMLString，所以在摘要外的内容**不会参与摘要渲染**，相关限制如:
-
-- `[[toc]]` 标记无法获得文章其他部分的标题
-- 如果链接和脚注的引用内容在摘要外，它们无法正确渲染
-
-另外由于两种情况都是通过 `innerHTML` 直接插入到 DOM，这意味着任何组件都会解析为原生标签，不会正常渲染成 Vue 组件。
+- 开发环境：出于性能考量，开发服务器默认禁用自动摘要生成功能。如需启用，请配置 [`hotReload`](../../config/theme/basic.md#hotreload) 选项。
+- 上下文隔离：使用 `<!-- more -->` 标记的摘要会被独立提取并渲染为 HTML 字符串。摘要外部的内容不会参与渲染上下文。因此：
+  - `[[toc]]` 目录标记无法获取摘要外部的标题结构。
+  - 定义在摘要外部的引用链接与脚注无法被正确渲染。
+- DOM 注入限制：摘要会利用 `innerHTML` 直接注入 DOM。Vue 组件及特定语法将被解析为原生 HTML 标签，无法正常渲染。
 
 :::
 
-## 星标文章
+## 星标文章 (Star)
 
-你可以通过在 frontmatter 中设置 `star` 为 `true` 星标一个文章。星标后，用户就可以在 `/star/` 页面中查看这些文章。
+在 Frontmatter 中设置 `star: true` 可将文章标记为星标（精选文章）。星标文章将被汇总在 `/star/` 路由下，并会在博客主页侧边栏中高亮展示。
 
-同时任何任何星标的文章都会显示在博客主页侧边栏的文章栏目中。
-
-::: info
-
-我们提供星标选项的考虑是: 主题使用者可能希望向访客展示一定数量的精品文章，而又不希望置顶文章充斥主页，导致用户不能看到最近更新的文章。
-
+::: tip
+为 `star` 赋予数字（例如 `star: 5`）可控制星标文章的展示顺序。数值越大的文章越靠前。
 :::
 
-::: tip 星标顺序
+## 自定义文章类型 <Badge text="Advanced" type="info" />
 
-类似置顶文章，你同样可以将 `star` 设置为 `number` 来设置它们的顺序。数值大的文章会排列在前面。
+通过主题选项中的 `plugins.blog.type` 数组，你可以定义额外的文章分类列表。
 
-:::
+每个类型对象支持以下配置：
 
-## 其他类型的文章 <Badge text="高级" type="info" />
-
-该主题为其他文章类型提供了单独的列表。
-
-要添加其他文章类型，你应该在主题选项中设置 `plugins.blog.type`。它应该是一个一数组包含描述你想要的类型的配置对象。
-
-每个类型都应该有一个唯一的键 (不含特殊字符)，以及一个 `filter` 函数来确定页面是否应该是该类型。 `filter` 函数应该接受页面对象并返回一个布尔值。
-
-要对类型列表中的页面进行排序，你还可以设置 `sorter` 选项。 `sorter` 函数应该接受两个页面对象并返回一个数字。
-
-默认情况下，类型列表路径为 `/key/` (`key` 被替换为实际键)。 你还可以通过在选项中设置 `path` 来设置自定义路径。
-
-`frontmatter` 选项控制布局页面的 frontmatter，它是一个接受 `localePath` 并返回 frontmatter 对象的函数。该选项在设置布局页面的标题时很有用。
+- `key`：唯一字符串标识（不可包含特殊字符）。默认生成 `/<key>/` 路由路径。
+- `filter`：函数 `(page) => boolean`，用于判断页面是否属于该类型。
+- `sorter`：函数 `(pageA, pageB) => number`，用于控制列表内文章的排序规则。
+- `path`：自定义路由路径（覆盖默认的 `/<key>/` 路径）。
+- `frontmatter`：函数 `(localePath) => object`，用于定义生成的布局页面的 Frontmatter（通常用于配置 `title`）。
 
 ::: note
-
-`layout` 是布局名称，默认为 `Blog`，是一个 `vuepress-theme-hope` 注册的布局。 仅当你为类型列表构建自定义布局时，才应将此选项设置为你的布局值。
-
+`layout` 属性默认为主题内置的 `Blog` 布局。**仅当**你为该文章类型专门开发了自定义布局组件时，才需要修改此值。
 :::
 
-为了让主题正确显示类型名称，你需要：
+为确保自定义类型在 UI 中正确显示名称，请应用以下任一方法：
 
-- 或者在主题多语言选项中设置 `blogLocales[key]` 为实际类型名称，
-- 或者在布局页面的 frontmatter 中设置 `title`。
+- 在主题选项的 `blogLocales` 中将 `key` 映射为本地化字符串。
+- 在 `frontmatter` 配置函数中显式返回 `title` 属性。
 
-为了方便上手，我们在这里展示一些示例。
+::: details 示例配置
 
-::: details 示例
-
-1. 增加了一种幻灯片页面。
-
-   所有幻灯片页面都应在 frontmatter 中包含 `layout: Slides`。 并且顺序无关紧要。
-
-1. 添加原创类型。
-
-你应设置以下选项：
+创建针对 `slide`（幻灯片）和 `original`（原创）类型的自定义列表：
 
 ```ts twoslash title=".vuepress/theme.ts"
 import { dateSorter } from "@vuepress/helper";

@@ -9,64 +9,53 @@ tag:
   - SEO
 ---
 
-`vuepress-theme-hope` provides SEO enhancements via built-in [`@vuepress/plugin-seo`][seo].
-
-To make the plugin work better, you may need to check the [page config](../../config/frontmatter/info.md) and configure them properly.
+`vuepress-theme-hope` provides SEO enhancements via the built-in [`@vuepress/plugin-seo`][seo].
 
 ::: info
-
-`vuepress-theme-hope` passes `plugins.seo` in theme options as plugin options to `@vuepress/plugin-seo`.
-
+Configure the plugin via the `plugins.seo` option in the theme options. To disable this feature, set `plugins.seo` to `false`.
 :::
-
-The plugin injects tags into the site `<head>` to make your site fully support [Open Content Protocol OGP](https://ogp.me/) and [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/) to enhance the SEO of the site.
-
-If you don't need this plugin, please set `plugins.seo` to `false` in theme options.
 
 <!-- more -->
 
-## Out of Box
+## Default Behavior
 
-The plugin works out of the box. Without any config, it will extract information from the page content as much as possible to complete the necessary tags required by OGP and JSON-LD.
-
-By default, the plugin will read the site config, theme config and page frontmatter to automatically generate as much as possible. Such as site name, page title, page type, writing date, last update date, and article tags are all automatically generated.
+The plugin operates out of the box. It extracts page content, site configuration, theme configuration, and page Frontmatter to automatically generate[Open Graph Protocol (OGP)](https://ogp.me/) and [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/) tags.
 
 ### Default OGP Generation
 
-|        Meta Name         |                                                      Value                                                       |
-| :----------------------: | :--------------------------------------------------------------------------------------------------------------: |
-|         `og:url`         |                                         `themeConfig.hostname` + `path`                                          |
-|      `og:site_name`      |                                                `siteConfig.title`                                                |
-|        `og:title`        |                                                   `page.title`                                                   |
-|     `og:description`     |     `page.frontmatter.description` \|\| auto generated (when `autoDescription` is `true` in plugin options)      |
-|        `og:type`         |                                                   `"article"`                                                    |
-|        `og:image`        | `themeConfig.hostname` + `page.frontmatter.image` \|\|first image in page \|\| `fallbackImage` in plugin options |
-|    `og:updated_time`     |                                              `page.git.updatedTime`                                              |
-|       `og:locale`        |                                                   `page.lang`                                                    |
-|  `og:locale:alternate`   |                                  Other languages included in `siteData.locales`                                  |
-|      `twitter:card`      |                            `"summary_large_image"` (only available when image found)                             |
-|   `twitter:image:alt`    |                                  `page.title` (only available when image found)                                  |
-|     `article:author`     |                               `page.frontmatter.author` \|\| `themeConfig.author`                                |
-|      `article:tag`       |                               `page.frontmatter.tags` \|\| `page.frontmatter.tag`                                |
-| `article:published_time` |                               `page.frontmatter.date` \|\| `page.git.createdTime`                                |
-| `article:modified_time`  |                                              `page.git.updatedTime`                                              |
+|        Meta Name         |                                              Value                                              |
+| :----------------------: | :---------------------------------------------------------------------------------------------: |
+|         `og:url`         |                                 `themeConfig.hostname` + `path`                                 |
+|      `og:site_name`      |                                       `siteConfig.title`                                        |
+|        `og:title`        |                                          `page.title`                                           |
+|     `og:description`     |      `page.frontmatter.description` \|\| auto-generated (when `autoDescription` is `true`)      |
+|        `og:type`         |                                           `"article"`                                           |
+|        `og:image`        | `themeConfig.hostname` + `page.frontmatter.image` \|\| first image in page \|\| `fallbackImage` |
+|    `og:updated_time`     |                                     `page.git.updatedTime`                                      |
+|       `og:locale`        |                                           `page.lang`                                           |
+|  `og:locale:alternate`   |                         Other languages included in `siteData.locales`                          |
+|      `twitter:card`      |                            `"summary_large_image"` (if image exists)                            |
+|   `twitter:image:alt`    |                                 `page.title` (if image exists)                                  |
+|     `article:author`     |                       `page.frontmatter.author` \|\| `themeConfig.author`                       |
+|      `article:tag`       |                       `page.frontmatter.tags` \|\| `page.frontmatter.tag`                       |
+| `article:published_time` |                       `page.frontmatter.date` \|\| `page.git.createdTime`                       |
+| `article:modified_time`  |                                     `page.git.updatedTime`                                      |
 
 ### Default JSON-LD Generation
 
-|  Property Name  |                                                    Value                                                     |
-| :-------------: | :----------------------------------------------------------------------------------------------------------: |
-|   `@context`    |                                            `"https://schema.org"`                                            |
-|     `@type`     |                                               `"NewsArticle"`                                                |
-|   `headline`    |                                                 `page.title`                                                 |
-|     `image`     | images in page \|\| `themeConfig.hostname` + `page.frontmatter.image` \|\| `fallbackImage` in plugin options |
-| `datePublished` |                             `page.frontmatter.date` \|\| `page.git.createdTime`                              |
-| `dateModified`  |                                            `page.git.updatedTime`                                            |
-|    `author`     |                             `page.frontmatter.author` \|\| `themeConfig.author`                              |
+|  Property Name  |                                           Value                                            |
+| :-------------: | :----------------------------------------------------------------------------------------: |
+|   `@context`    |                                   `"https://schema.org"`                                   |
+|     `@type`     |                                      `"NewsArticle"`                                       |
+|   `headline`    |                                        `page.title`                                        |
+|     `image`     | images in page \|\| `themeConfig.hostname` + `page.frontmatter.image` \|\| `fallbackImage` |
+| `datePublished` |                    `page.frontmatter.date` \|\| `page.git.createdTime`                     |
+| `dateModified`  |                                   `page.git.updatedTime`                                   |
+|    `author`     |                    `page.frontmatter.author` \|\| `themeConfig.author`                     |
 
 ## Setting Tags Directly
 
-You can configure the `head` option in the page's frontmatter to add specific tags to the page `<head>` to enhance SEO.
-For example:
+Configure the `head` option in the page Frontmatter to inject specific tags into the page `<head>`.
 
 ```md
 ---
@@ -77,27 +66,25 @@ head:
 ---
 ```
 
-Will automatically inject `<meta name="keywords" content="SEO plugin" />`.
+This configuration outputs: `<meta name="keywords" content="SEO plugin" />`.
 
-## Customize Generation
+## Customizing Generation
 
-The plugin also gives you full control over the build logic.
+### Page Type Resolution
 
-### Page Type
+By default, all non-home pages generated from Markdown files are treated as articles. Use the `plugins.seo.isArticle` option to provide custom logic for identifying articles.
 
-For most pages, there are basically only two types: articles and website, so the plugin provides the `isArticle` option to allow you to provide logic for identifying articles.
-
-The option accepts a function in the format `(page: Page) => boolean`, by default all non-home pages generated from Markdown files are treated as articles.
+```ts
+(page: Page) => boolean;
+```
 
 ::: note
-
-If a page does fit into the "unpopular" genre like books, music, etc., you can handle them by setting the three options below.
-
+For non-article content types (e.g., books, music), handle the custom data generation via the `ogp`, `jsonLd`, and `customHead` options below.
 :::
 
-### OGP
+### OGP Customization
 
-You can use options `plugins.seo.ogp` in theme options. To pass in a function to modify the default OGP object to your needs and return it.
+Use `plugins.seo.ogp` to mutate the default OGP object before output.
 
 ```ts
 function ogp(
@@ -110,9 +97,7 @@ function ogp(
 ): SeoContent;
 ```
 
-For detailed parameter structure, see [seo plugin config][seo-config].
-
-For example, if you are using a third-party theme and set a `banner` in frontmatter for each article according to the theme requirements, then you can pass in the following `ogp`:
+Example usage for overriding the `og:image` property with a custom `banner` field from Frontmatter:
 
 ```ts
 seoPlugin({
@@ -123,9 +108,9 @@ seoPlugin({
 });
 ```
 
-### JSON-LD
+### JSON-LD Customization
 
-Like OGP, you can use `plugins.seo.jsonLd` options in theme options to pass in a function to modify the default JSON-LD object to your needs and return it.
+Use `plugins.seo.jsonLd` to mutate the default JSON-LD object.
 
 ```ts
 function jsonLd(
@@ -138,26 +123,17 @@ function jsonLd(
 ): ArticleSchema | BlogPostingSchema | WebPageSchema;
 ```
 
-## Canonical Link
+### Canonical Link
 
-If you are deploying your content to different sites, or same content under different URLs, you may need to set `plugins.seo.canonical` in theme options to provide a "Canonical Link" for your page. You can either set a string which will be prepended before page route link, or adding a custom function `(page: Page) => string | null` to return a canonical link if necessary.
+To specify the primary URL for content deployed across multiple domains or paths, set `plugins.seo.canonical`. Pass a string to prepend a base URL, or a function `(page: Page) => string | null` for programmatic control.
 
-::: tip Example
-
-If your sites are deployed under docs folder in `example.com`, but available in:
-
-- `http://example.com/docs/xxx`
-- `https://example.com/docs/xxx`
-- `http://www.example.com/docs/xxx`
-- `https://www.example.com/docs/xxx` (primary)
-
-To let search engine results always be the primary choice, you may need to set `plugins.seo.canonical` to `https://www.example.com/docs/`, so that search engine will know that the fourth URL is preferred to be indexed.
-
+::: tip
+If your site is accessible via `http://example.com/docs/` and `https://www.example.com/docs/` (primary), setting `plugins.seo.canonical` to `https://www.example.com/docs/` instructs search engines to index the primary URL exclusively.
 :::
 
-### Customize head Tags
+### Custom `<head>` Tags
 
-Sometimes you may need to fit other protocols or provide the corresponding SEO tags in the format provided by other search engines. In this case, you can use the `plugins.seo.customHead` in theme options, whose type is:
+Use `plugins.seo.customHead` to manually modify the `<head>` tags array. This is useful for fulfilling search engine specific requirements.
 
 ```ts
 function customHead(
@@ -170,45 +146,22 @@ function customHead(
 ): void;
 ```
 
-You should modify the `head` array in this function directly.
+## RDFa 1.1 Support
 
-## RDFa 1.1
-
-The theme adds rich media structure support to most of the site structure by following [RDFa 1.1](https://www.w3.org/TR/rdfa-primer/).
+The theme implements rich media structure support following the[RDFa 1.1](https://www.w3.org/TR/rdfa-primer/) specification.
 
 ::: tip
-
-You can use [Google Rich Media Structure Test Tool](https://search.google.com/test/rich-results) to test this site.
-
+Verify the structured data of your site using the [Google Rich Results Test](https://search.google.com/test/rich-results).
 :::
 
-## SEO Introduction
+## Reference Links
 
-**S**earch **e**ngine **optimization** (SEO) is the process of improving the quality and quantity of site traffic to a site or a web page from search engines. SEO targets unpaid traffic (known as "natural" or "organic" results) rather than direct traffic or paid traffic. Unpaid traffic may originate from different kinds of searches, including image search, video search, academic search, news search, and industry-specific vertical search engines.
-
-As an internet marketing strategy, SEO considers how search engines work, the computer-programmed algorithms that dictate search engine behavior, what people search for, the actual search terms or keywords typed into search engines, and which search engines are preferred by their targeted audience. SEO is performed because a site will receive more visitors from a search engine when sites rank higher on the search engine results page (SERP). These visitors can then potentially be converted into customers.
-
-## Related Documents
-
-- [Open Content Protocol OGP](https://ogp.me/) (**O**pen **G**raph **Pr**otocal)
-
-  SEO plugin perfectly supports this protocol and will automatically generate `<meta>` tags that conform to the protocol.
-
+- [Open Graph Protocol (OGP)](https://ogp.me/)
 - [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/)
-
-  SEO will generate "NewsArticle" scheme for article pages.
-
-- [RDFa 1.1](https://www.w3.org/TR/rdfa-primer/)
-
-  `vuepress-theme-hope` support this
-
-- [Schema.Org](https://schema.org/)
-
-  Schema definition site for structural markup
-
-## Related Tools
-
-- [Google Rich Media Structure Test Tool](https://search.google.com/test/rich-results)
+- [RDFa 1.1 Primer](https://www.w3.org/TR/rdfa-primer/)
+- [Schema.org](https://schema.org/) -[Google Rich Results Test](https://search.google.com/test/rich-results)
+- [SEO Plugin Documentation][seo]
+- [SEO Plugin Configuration][seo-config]
 
 [seo]: https://ecosystem.vuejs.press/plugins/seo/seo/
 [seo-config]: https://ecosystem.vuejs.press/plugins/seo/seo/config.html
