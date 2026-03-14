@@ -397,8 +397,8 @@ importers:
         specifier: 0.16.37
         version: 0.16.37
       kotlin-playground:
-        specifier: 1.30.0
-        version: 1.30.0
+        specifier: 1.32.1
+        version: 1.32.1
       reveal.js:
         specifier: 'catalog:'
         version: 5.2.1
@@ -457,8 +457,8 @@ importers:
         specifier: 0.16.37
         version: 0.16.37
       kotlin-playground:
-        specifier: 1.30.0
-        version: 1.30.0
+        specifier: 1.32.1
+        version: 1.32.1
       markmap-lib:
         specifier: 'catalog:'
         version: 0.18.12(markmap-common@0.18.9)
@@ -523,8 +523,8 @@ importers:
         specifier: 0.16.37
         version: 0.16.37
       kotlin-playground:
-        specifier: 1.30.0
-        version: 1.30.0
+        specifier: 1.32.1
+        version: 1.32.1
       markmap-lib:
         specifier: 'catalog:'
         version: 0.18.12(markmap-common@0.18.9)
@@ -767,8 +767,8 @@ importers:
         specifier: 0.16.37
         version: 0.16.37
       kotlin-playground:
-        specifier: 1.30.0
-        version: 1.30.0
+        specifier: 1.32.1
+        version: 1.32.1
       markmap-lib:
         specifier: 'catalog:'
         version: 0.18.12(markmap-common@0.18.9)
@@ -6927,6 +6927,9 @@ packages:
 
   kotlin-playground@1.30.0:
     resolution: {integrity: sha512-E9GL84eYBq7D8o8vHm0JKt5Je3ZtNfqZVvwvWEtSmNcjf4iBiJ0i3rsnIRJwVMcjaoeGNmuKTJT3ReKKaGBRjw==}
+
+  kotlin-playground@1.32.1:
+    resolution: {integrity: sha512-eOxfflbEI8zbSE5kcp1svfyYPhmGABxYGm5piolOMSLnhgLm4zD8MaAeaCMtidUwTr7elGC7lZeLcrIX3PmRAQ==}
 
   langium@4.2.1:
     resolution: {integrity: sha512-zu9QWmjpzJcomzdJQAHgDVhLGq5bLosVak1KVa40NzQHXfqr4eAHupvnPOVXEoLkg6Ocefvf/93d//SB7du4YQ==}
@@ -16523,6 +16526,8 @@ snapshots:
   known-css-properties@0.37.0: {}
 
   kotlin-playground@1.30.0: {}
+
+  kotlin-playground@1.32.1: {}
 
   langium@4.2.1:
     dependencies:
