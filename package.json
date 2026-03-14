@@ -30,8 +30,8 @@
     "test": "vitest --coverage"
   },
   "devDependencies": {
-    "@commitlint/cli": "20.4.3",
-    "@commitlint/config-conventional": "20.4.3",
+    "@commitlint/cli": "20.4.4",
+    "@commitlint/config-conventional": "20.4.4",
     "@lerna-lite/cli": "4.11.4",
     "@lerna-lite/publish": "4.11.4",
     "@types/node": "20.19.0",
