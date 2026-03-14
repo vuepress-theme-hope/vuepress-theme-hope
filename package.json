@@ -32,8 +32,8 @@
   "devDependencies": {
     "@commitlint/cli": "20.4.3",
     "@commitlint/config-conventional": "20.4.3",
-    "@lerna-lite/cli": "4.11.4",
-    "@lerna-lite/publish": "4.11.4",
+    "@lerna-lite/cli": "4.11.5",
+    "@lerna-lite/publish": "4.11.5",
     "@types/node": "20.19.0",
     "@types/webpack-env": "1.18.8",
     "@vitest/coverage-istanbul": "4.0.18",
