@@ -171,7 +171,7 @@ Vercel 默认域名 `*.vercel.app` 在中国大陆访问速度较慢甚至无法
 1. 申请 [Vercel](https://vercel.com/signup) 账号
 1. 点击以下按钮将 Twikoo 一键部署到 Vercel
 
-   [![Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/imaegoo/twikoo/tree/dev/src/vercel-min)
+   [![Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/twikoojs/twikoo/tree/main/src/server/vercel-min)
 
 1. 进入 Settings - Environment Variables，添加环境变量 `MONGODB_URI`，值为第 3 步的数据库连接字符串
 1. 进入 Overview，点击 Domains 下方的链接，如果环境配置正确，可以看到 “Twikoo 云函数运行正常” 的提示
