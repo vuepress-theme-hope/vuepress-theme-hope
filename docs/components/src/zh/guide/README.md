@@ -14,4 +14,4 @@ index: false
 
 ## 搭配增强语法
 
-我们推荐你搭配 [md-enhance component 语法](https://plugin-md-enhance.vuejs.press/zh/guide/content/component.html) 使用插件。
+我们推荐你搭配 [component 语法](https://theme-hope.vuejs.press/zh/guide/component/grammar.html) 使用插件。

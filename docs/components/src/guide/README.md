@@ -14,4 +14,4 @@ For example, if you call this plugin with `{ components: ['VidStack'] }`, then o
 
 ## With Enhanced Syntax
 
-We recommend you to use this plugin with [md-enhance component syntax](https://plugin-md-enhance.vuejs.press/guide/content/component.html).
+We recommend you to use this plugin with [component syntax](https://theme-hope.vuejs.press/guide/component/grammar.html).
