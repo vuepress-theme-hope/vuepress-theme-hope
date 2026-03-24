@@ -59,7 +59,7 @@
     "tsdown": "0.21.0",
     "typescript": "5.9.3",
     "unrun": "0.2.30",
-    "vite": "7.1.12",
+    "vite": "8.0.2",
     "vitest": "4.0.18",
     "vuepress": "catalog:vuepress"
   },
