@@ -316,8 +316,8 @@ importers:
         specifier: catalog:vuepress
         version: 2.0.0-rc.125(@vuepress/bundler-vite@2.0.0-rc.26(@types/node@25.3.5)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))(@vuepress/bundler-webpack@2.0.0-rc.26(esbuild@0.27.3)(tslib@2.8.1)(typescript@5.9.3))(markdown-it@14.1.1)(sass-embedded@1.97.3)(sass-loader@16.0.7(sass-embedded@1.97.3)(sass@1.97.3)(webpack@5.105.4(esbuild@0.27.3)))(sass@1.97.3)(typescript@5.9.3)(vuepress@2.0.0-rc.26(@vuepress/bundler-vite@2.0.0-rc.26(@types/node@25.3.5)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))(@vuepress/bundler-webpack@2.0.0-rc.26(esbuild@0.27.3)(tslib@2.8.1)(typescript@5.9.3))(typescript@5.9.3)(vue@3.5.29(typescript@5.9.3)))
       artplayer:
-        specifier: 5.3.0
-        version: 5.3.0
+        specifier: 5.4.0
+        version: 5.4.0
       artplayer-plugin-danmuku:
         specifier: 5.2.0
         version: 5.2.0
@@ -574,8 +574,8 @@ importers:
         specifier: catalog:vuepress
         version: 2.0.0-rc.125(@vuepress/bundler-vite@2.0.0-rc.26(@types/node@25.3.5)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))(@vuepress/bundler-webpack@2.0.0-rc.26(esbuild@0.27.3)(tslib@2.8.1)(typescript@5.9.3))(typescript@5.9.3)(vuepress@2.0.0-rc.26(@vuepress/bundler-vite@2.0.0-rc.26(@types/node@25.3.5)(esbuild@0.27.3)(jiti@2.6.1)(sass-embedded@1.97.3)(sass@1.97.3)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2))(@vuepress/bundler-webpack@2.0.0-rc.26(esbuild@0.27.3)(tslib@2.8.1)(typescript@5.9.3))(typescript@5.9.3)(vue@3.5.29(typescript@5.9.3)))
       artplayer:
-        specifier: 5.3.0
-        version: 5.3.0
+        specifier: 5.4.0
+        version: 5.4.0
       artplayer-plugin-danmuku:
         specifier: 5.2.0
         version: 5.2.0
@@ -755,8 +755,8 @@ importers:
         specifier: 'catalog:'
         version: 14.2.1(vue@3.5.29(typescript@5.9.3))
       artplayer:
-        specifier: 5.3.0
-        version: 5.3.0
+        specifier: 5.4.0
+        version: 5.4.0
       echarts-wordcloud:
         specifier: 2.1.0
         version: 2.1.0
@@ -4797,6 +4797,9 @@ packages:
 
   artplayer@5.3.0:
     resolution: {integrity: sha512-yExO39MpEg4P+bxgChxx1eJfiUPE4q1QQRLCmqGhlsj+ANuaoEkR8hF93LdI5ZyrAcIbJkuEndxEiUoKobifDw==}
+
+  artplayer@5.4.0:
+    resolution: {integrity: sha512-2B+plbx8N2yNsjK4nJU3+EOG8TULm1LRZk/QPkWRAMEX2Ee/MSnZG/WJYz8kcoZxZuLKcQ3uXifqLuPxZOH29A==}
 
   asn1js@3.0.7:
     resolution: {integrity: sha512-uLvq6KJu04qoQM6gvBfKFjlh6Gl0vOKQuR5cJMDHQkmwfMOQeN3F3SHCv9SNYSL+CRoHvOGFfllDlVz03GQjvQ==}
@@ -14225,6 +14228,10 @@ snapshots:
   artplayer-plugin-danmuku@5.2.0: {}
 
   artplayer@5.3.0:
+    dependencies:
+      option-validator: 2.0.6
+
+  artplayer@5.4.0:
     dependencies:
       option-validator: 2.0.6
 
