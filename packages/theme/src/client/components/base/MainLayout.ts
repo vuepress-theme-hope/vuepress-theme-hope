@@ -21,6 +21,7 @@ import Navbar from "@theme-hope/components/navbar/Navbar";
 import Sidebar from "@theme-hope/components/sidebar/Sidebar";
 import { useSidebarItems } from "@theme-hope/composables/sidebar/useSidebarItems";
 import { useData } from "@theme-hope/composables/useData";
+import { useNavbarAutoHide } from "@theme-hope/composables/navbar/useNavbarAutoHide";
 import { usePure } from "@theme-hope/composables/usePure";
 import { useWindowSize } from "@theme-hope/composables/useWindowSize";
 import type { SidebarItemsSlotData } from "@theme-hope/typings/slots";
@@ -95,10 +96,10 @@ export default defineComponent({
     // Navbar
     const hideNavbar = ref(false);
 
-    const autoHide = computed(() => {
-      const { navbarAutoHide = "mobile" } = themeLocale.value;
+    const autoHide = useNavbarAutoHide();
 
-      return navbarAutoHide !== "none" && (navbarAutoHide === "always" || isMobile.value);
+    watch(autoHide, (value) => {
+      if (!value) hideNavbar.value = false;
     });
 
     const enableNavbar = computed(() => {
