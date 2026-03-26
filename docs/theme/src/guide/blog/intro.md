@@ -9,46 +9,37 @@ tag:
   - Intro
 ---
 
-The theme supports blog feature with`@vuepress/plugin-blog` by default, and it's **disabled by default**.
-
-If you need blog functionality, you can set `plugins.blog: true` in theme options to enable blog functionality.
+The theme integrates `@vuepress/plugin-blog` for blog functionality. It is **disabled by default**. Set `plugins.blog: true` in the theme options to enable it.
 
 <!-- more -->
 
-## Intro
+## Page Configuration
 
-After enabling the blog function, the theme allows you to configure categories, tags, whether it is an article, whether it appears in the timeline, stars, sticky and other functions through the frontmatter of the page.
+Configure categories, tags, timeline visibility, stars, and sticky status via page Frontmatter.
 
-::: tip Demo
-
-[Here is a demo](https://mister-hope.com/en/) for you to preview blog sites built with `vuepress-theme-hope`.
-
+::: tip[View the demo site](https://mister-hope.com/en/) to preview blog features.
 :::
+
+## UI Components
+
+### Sidebar {#sidebar-header}
+
+The blog information sidebar displays on the right side on desktop devices and collapses into the navigation sidebar on mobile devices.
+
+### Pagination
+
+A pagination component renders at the bottom of article lists. The default limit is `10` articles per page. Override this by setting `blog.articlePerPage` in the theme options.
 
 ## I18n Support
 
-The theme adds support for i18n in blog system. You can set different blog config for each language using `locales` in theme options.
+Blog configurations can be scoped per language via `locales` in the theme options. Article lists and timelines remain strictly independent across different languages.
 
-When you have multiple languages, the article list, timeline, etc. under each language will remain independent.
+## Limitations
 
-## Sidebar {#sidebar-header}
+::: warning Hot Reloading
+To optimize performance, Hot Module Replacement (HMR) for blog metadata (categories, tags, sticky status, etc.) is disabled by default. You must restart the development server to apply metadata changes.
 
-The theme provides a blog info sidebar. The sidebar will be displayed on the blog-related page (it will be displayed on the right side on the desktop, and retracted into the sidebar in mobile view)
+Metrics sensitive to Markdown content, such as reading time and word count, also bypass real-time updates.
 
-## Pagination
-
-For the list of articles on all pages, we will display a pagination component at the bottom. You can use this component to quickly jump to the first page, the last page, and the two pages before and after. You can also enter a number to jump to the specified page.
-
-The default number of articles per page is `10`, you can set `blog.articlePerPage` in theme options to override it.
-
-## Limitation
-
-::: warning Hot update disabled by default
-
-For performance reasons, hot updates are not enabled for blog-related data by default in devServer, i.e. if you add new articles or modify the categories, time, tags, sticky, star, etc. of existing articles, the related data of the entire site will not update until you restart devServer.
-
-In addition, since the blog information will be written to the underlying data of VuePress, modifying this file will cause application restart, so reading time (including word count information) which are sensitive to Markdown content will not take effect in devServer.
-
-If you want these to take effect or be updated in real time, you need to set `hotReload: true` and accept the fact that each modification will trigger a page refresh and some time having white screen due to heavy recomputing work.
-
+To enforce real-time updates, set `hotReload: true` in the configuration. Note that each modification will trigger a full page reload and heavy recomputation, potentially causing temporary blank screens.
 :::

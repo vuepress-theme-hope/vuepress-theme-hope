@@ -1,6 +1,5 @@
 // oxlint-disable no-console
 // oxlint-disable import/no-dynamic-require
-// oxlint-disable-next-line import/no-nodejs-modules
 import { createRequire } from "node:module";
 
 import { keys } from "@vuepress/helper";

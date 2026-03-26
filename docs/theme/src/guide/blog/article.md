@@ -12,101 +12,77 @@ tag:
   - Star
 ---
 
-The topic provides you with a list of all articles under the path `/article/` by default.
-
-## Article
-
-All articles will be added to the article list by default and rendered under the path `/article/`.
+The theme automatically aggregates all articles and renders an article list at the `/article/` route.
 
 ![Article list](./assets/article-list-light.png#light)
 ![Article list](./assets/article-list-dark.png#dark)
 
-If you don't want the list to contain some specific articles, just set the `article` to `false` in the frontmatter of the article, or you may customize it through `plugins.blog.filter` in theme options.
+## Article Configuration
 
-To sticky a specific article in the article list, just set `sticky` to `true` in the frontmatter of the article.
+By default, all Markdown files are included in the article list.
 
-::: tip Order
+- **Exclude Articles:** Set `article: false` in the page Frontmatter, or configure custom exclusion logic via `plugins.blog.filter` in the theme options.
+- **Sticky Articles:** Set `sticky: true` in the Frontmatter to pin an article to the top of the list.
 
-For sticky articles, you can set `sticky` with a number to set their order. Articles with large numbers will be listed first.
-
+::: tip
+To explicitly control the sorting order of sticky articles, assign a numeric value to `sticky` (e.g., `sticky: 2`). Higher values are prioritized.
 :::
 
-## Excerpt
+## Excerpts
 
-### Adding Excerpt
+### Defining Excerpts
 
-If you want to add an excerpt for an article, you can mark contents with `<!-- more -->` comment. Any content before this comment will be considered as an excerpt.
+Use the `<!-- more -->` comment in your Markdown file to designate an excerpt. Any content preceding this marker is extracted as the article excerpt.
 
-Meanwhile, if the excerpt you want to set is not what you want to show at the beginning of the article, you can also set the HTML string through the `excerpt` option in Frontmatter.
+To override the default extraction, define a custom HTML string via the `excerpt` option in the Frontmatter.
 
-### Automatically Generate Excerpt
+### Auto-generation
 
-By default, the theme extract article excerpts for you automatically.
+By default, the theme extracts article excerpts automatically.
 
-If you want the theme only display excerpt which you specify, set `plugins.blog.excerptLength: 0` in theme options.
+To disable auto-generation and exclusively display manually specified excerpts or Frontmatter descriptions, set `plugins.blog.excerptLength: 0` in the theme options.
 
-::: warning Excerpt Limitation
+::: warning Excerpt Limitations
 
-We recommend you to use `<!-- more -->` to mark excerpt as first choice. If you do need a special excerpt, set it in frontmatter yourself.
-
-In addition, excerpt is directly inserted into the DOM through `innerHTML`, this means that no Vue features are available.
-
-:::
+- Development Environment: Auto-extraction is disabled by default in the development server for performance. Enable it via the [`hotReload`](../../config/theme/basic.md#hotreload) option.
+- Context Isolation: Excerpts separated by `<!-- more -->` are rendered into HTML strings independently. Content outside the excerpt is excluded from the rendering context. Consequently:
+  - The `[[toc]]` marker cannot resolve headings located outside the excerpt.
+  - Reference links and footnotes defined outside the excerpt will not render correctly.
+- DOM Injection: Excerpts defined via Frontmatter or auto-generation are injected directly via `innerHTML`. Vue components and specific VuePress directives will parse as native HTML tags and fail to render.
+  :::
 
 ## Star Articles
 
-You can star an article by setting `star` to `true` in frontmatter. After staring, users can view these articles on the `/star/` page.
+Setting `star: true` in the Frontmatter marks an article as high-quality content. Starred articles are aggregated at the `/star/` route and prominently displayed in the blog homepage sidebar.
 
-At the same time, any star articles will be displayed in the article column on the sidebar of the blog homepage.
-
-::: info
-
-Our consideration for providing star options: Theme users may want to show visitors some high-quality articles, but do not want sticky articles to flood the homepage, resulting in visitors not being able to see the recently updated articles.
-
+::: tip
+Assign a numeric value to `star` (e.g., `star: 5`) to control the sorting order. Higher values appear first.
 :::
 
-::: tip Order
+## Custom Article Types <Badge text="Advanced" type="info" />
 
-Similar to sticky articles, you can also set `star` to number to set their order. Articles with large numbers will be listed first.
+Define supplementary article categorization lists via the `plugins.blog.type` array in the theme options.
 
-:::
+Each type object accepts the following configurations:
 
-## Other types of articles <Badge text="Advanced" type="info" />
-
-The theme provides separate lists for additional article type.
-
-To add additional article type, you should set `plugins.blog.type` in theme options with an array of objects describing type you want.
-
-Each type should have a unique key (without special characters), and a `filter` function to determine whether a page should be the type. The `filter` function should accept page object and return a boolean value.
-
-To sort pages in the type list, you can also set a `sorter` function. The `sorter` function should accept two page objects and return a number.
-
-By default, the type list path will be `/key/` (with `key` replaced by your actual key). You can also set a custom path by setting `path` in options.
-
-`frontmatter` option controls the frontmatter of the layout page, with is a function accepting `localePath` and returning a frontmatter object. This option is useful when setting the title of the layout page.
+- `key`: A unique string identifier (no special characters). Generates the route path `/<key>/` by default.
+- `filter`: A function `(page) => boolean` determining whether a page belongs to this type.
+- `sorter`: A function `(pageA, pageB) => number` controlling the sorting order within the list.
+- `path`: Overrides the default `/<key>/` route path.
+- `frontmatter`: A function `(localePath) => object` defining the Frontmatter for the generated layout page (commonly used to assign a `title`).
 
 ::: note
-
-`layout` is the layout name, by default it will be `Blog`, a layout `vuepress-theme-hope` registered. ONLY IF you build a custom layout for the type list, shall you set this option to your layout value.
-
+The `layout` property defaults to the theme's built-in `Blog` layout. Modify this value **only** if you are implementing a custom layout component for this specific article type.
 :::
 
-To let theme display the type name correctly, you need to:
+To ensure the custom type displays correctly in the UI, apply one of the following methods:
 
-- Either set `blogLocales[key]` in theme locales with the actual type name,
-- Or set `title` in the frontmatter of the layout page.
+- Map the `key` to a localized string via `blogLocales` in the theme options.
+- Assign a `title` within the `frontmatter` configuration function.
 
-To get start with, we would like to show you some examples.
+::: details Example Configurations
 
-::: details Examples
-
-1. Adding a type of slide pages.
-
-   All slide pages should have `layout: Slides` in frontmatter. And the sequence doesn't matter.
-
-1. Adding an original type.
-
-You shall set the following options:
+Creating custom lists for `slide` and `original` content types:
 
 ```ts twoslash title=".vuepress/theme.ts"
 import { dateSorter } from "@vuepress/helper";

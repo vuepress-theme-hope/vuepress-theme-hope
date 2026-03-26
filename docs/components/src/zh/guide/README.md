@@ -12,6 +12,6 @@ index: false
 
 例如，如果你使用 `{ components: ['VidStack'] }` 调用此插件，则仅注入 `<VidStack />` 组件。
 
-## 搭配增强语法
+## 搭配组件语法
 
-我们推荐你搭配 [md-enhance component 语法](https://plugin-md-enhance.vuejs.press/zh/guide/content/component.html) 使用插件。
+我们推荐你搭配 [component 语法](https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-ext.html#component) 使用插件。

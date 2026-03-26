@@ -10,30 +10,28 @@ tag:
   - Project Content
 ---
 
-This tutorial guides you on how to generate pages in a VuePress project.
+This document outlines page generation, Markdown processing, and Frontmatter configuration in a VuePress project.
 
 <!-- more -->
 
 ## Generating Pages
 
-VuePress is Markdown-centered. Each Markdown file inside your project is a standalone page.
+VuePress generates standalone pages from Markdown files. The route path corresponds to the file's relative path.
 
-By default, the route path of a page is determined by the relative path of your Markdown file.
+When generating a project via the CLI helper, you will see the following directory structure:
 
-Since you are generating the project from create helper, you will have the following file structure:
-
-```
+```text
 └─ src
    ├─ demo
    │  ├─ ...
-   │  └─ page.md
-   │  └─ markdown.md
+   │  ├─ page.md
+   │  ├─ markdown.md
    │  └─ README.md
    ├─ ...
    └─ README.md
 ```
 
-The route path of your Markdown files are:
+Route path resolution:
 
 | Relative Path     | Route Path        |
 | ----------------- | ----------------- |
@@ -41,41 +39,28 @@ The route path of your Markdown files are:
 | `/demo/README.md` | `/demo/`          |
 | `/demo/page.md`   | `/demo/page.html` |
 
-::: tip README.md
-
-`README.md` is a special case. In Markdown, by convention, it serves as the homepage of the folder where it is located. So when it is rendered as a web page, its corresponding path is the homepage path `index.html`.
-
-This should be easy to understand.
-
+::: note
+`README.md` resolves to `index.html` and serves as the directory's index page.
 :::
 
-## Markdown
+## Markdown Processing
 
-Each Markdown file will be processed by VuePress Theme Hope to render file content as webpage content.
+VuePress Theme Hope processes Markdown files into HTML. You can edit Markdown files to modify content, and changes will sync in real time while the development server is running.
 
-You can try editing the Markdown file yourself to modify the content of the template. If you have started the development server, the modified results will be synced to the development server in real time.
-
-::: tip Markdown Syntax
-
-If you don't know Markdown yet, check out the [Markdown Tutorial](../cookbook/markdown/README.md).
-
-In about fifteen minutes, you can learn how to write Markdown. Remember to come back after reading it!
-
+::: tip
+Refer to the [Markdown Tutorial](../cookbook/markdown/README.md) for basic syntax.
 :::
 
-::: info Markdown Extension
+::: info
+Syntax extensions available in the environment:
 
-- VuePress itself extends some Markdown syntax. For details, see [VuePress → Markdown](../cookbook/vuepress/markdown.md).
+- VuePress base extensions:[VuePress → Markdown](../cookbook/vuepress/markdown.md).
+- Theme plugin extensions: [Guide → Markdown](../guide/intro/markdown.md).
+  :::
 
-- The theme additionally enables some syntax extensions via VuePress plugins, see [Guide → Markdown](../guide/intro/markdown.md).
+## Frontmatter Configuration
 
-:::
-
-## Frontmatter
-
-Frontmatter is an important concept in VuePress, it is used to carry config of Markdown files. Markdown files can contain a [YAML](https://yaml.org/) Frontmatter.
-
-Frontmatter must be at the top of the Markdown file, surrounded by a pair of triple dashes. Here is a basic example:
+Frontmatter assigns page-level configurations. It uses YAML format and must be placed at the top of the Markdown file, enclosed by triple dashes (`---`).
 
 ```md
 ---
@@ -89,4 +74,4 @@ description: the description of the page
 ...
 ```
 
-You may have noticed that fields in demo Frontmatter are very similar to the [VuePress config file](../cookbook/vuepress/config.md#config-file). You can override the `lang`, `title`, `description` and other properties of the current page through Frontmatter. Therefore, you can think of Frontmatter as page-level scope config, which usually has the highest priority, and the config only takes effect on the current page.
+Frontmatter properties (e.g., `lang`, `title`, `description`) override global settings from the [VuePress config file](../cookbook/vuepress/config.md#config-file). These configurations apply exclusively to the current page and take the highest priority.

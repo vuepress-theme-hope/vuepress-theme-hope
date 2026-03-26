@@ -10,30 +10,28 @@ tag:
   - 项目内容
 ---
 
-本教程指引你如何在 VuePress 项目中生成页面。
+本文档介绍 VuePress 项目中的页面生成、Markdown 处理与 Frontmatter 配置。
 
 <!-- more -->
 
-## 页面的生成
+## 页面生成
 
-VuePress 是以 Markdown 为中心的。你项目中的每一个 Markdown 文件都是一个单独的页面。
+VuePress 基于 Markdown 文件生成独立页面。路由路径由文件的相对路径决定。
 
-默认情况下，页面的路由路径是根据你的 Markdown 文件的相对路径决定的。
+当你通过脚手架生成项目时，你将看到以下目录结构：
 
-由于你的项目是通过创建助手生成的，那么你会得到以下文件结构:
-
-```
+```text
 └─ src
    ├─ demo
    │  ├─ ...
-   │  └─ page.md
-   │  └─ markdown.md
+   │  ├─ page.md
+   │  ├─ markdown.md
    │  └─ README.md
    ├─ ...
    └─ README.md
 ```
 
-你的 Markdown 文件对应的路由路径为:
+路由路径解析规则：
 
 | 相对路径          | 路由路径          |
 | ----------------- | ----------------- |
@@ -41,47 +39,29 @@ VuePress 是以 Markdown 为中心的。你项目中的每一个 Markdown 文件
 | `/demo/README.md` | `/demo/`          |
 | `/demo/page.md`   | `/demo/page.html` |
 
-::: tip README\.md
+::: note
+`README.md` 会被解析为 `index.html`，作为所在目录的默认索引页。
+:::
 
-`README.md` 是特例，在 Markdown 中，按照约定俗成，它会作为所在文件夹的主页。所以在渲染为网页时，它的对应路径为网页中的主页路径 `index.html`。
+## Markdown 处理
 
-这应该很好理解。
+VuePress Theme Hope 会将 Markdown 文件渲染为 HTML 内容。你可以编辑 Markdown 文件以修改内容，在开发服务器运行期间，这些更改会实时同步。
+
+::: tip
+参考 [Markdown 教程](../cookbook/markdown/README.md) 了解基础语法。
+:::
+
+::: info
+环境内可用的语法扩展：
+
+- VuePress 基础扩展：[VuePress → Markdown](../cookbook/vuepress/markdown.md)。
+- 主题插件扩展：[指南 → Markdown](../guide/intro/markdown.md)。
 
 :::
 
-## Markdown
+## Frontmatter 配置
 
-每一个 Markdown 文件都会被 VuePress Theme Hope 处理，将文件内容渲染为网页内容。
-
-你可以尝试自己编辑 Markdown 文件来修改模板的内容。如果你已启动开发服务器，那么修改后的结果会被实时同步到开发服务器上。
-
-::: tip Markdown 语法
-
-如果你尚不了解 Markdown，请查看 [Markdown 教程](../cookbook/markdown/README.md)。
-
-大概十五分钟，你就可以学会如何书写 Markdown，看完之后记得回来！
-
-:::
-
-::: info Markdown 语法扩展
-
-- VuePress 自身对 Markdown 语法进行了一些扩展，关于这些扩展的语法，详见 [VuePress → Markdown](../cookbook/vuepress/markdown.md)。
-
-- 主题通过 VuePress 插件额外启用了一些语法扩展，详见 [指南 → Markdown](../guide/intro/markdown.md)。
-
-:::
-
-## Frontmatter
-
-Frontmatter 是 VuePress 中很重要的一个概念，它用于承载 Markdown 文件的配置。Markdown 文件可以包含一个 [YAML](https://yaml.org/) Frontmatter。
-
-::: info YAML
-
-如果你对 YAML 也不熟悉，你可以查看 [YAML 教程](https://mister-hope.com/code/language/yaml/)。
-
-:::
-
-Frontmatter 必须在 Markdown 文件的顶部，并且被包裹在一对三短划线中间。下面是一个基本的示例:
+Frontmatter 用于分配页面级配置。它采用 YAML 格式，必须置于 Markdown 文件顶部，并由三横线（`---`）包裹。
 
 ```md
 ---
@@ -95,6 +75,4 @@ description: 页面的描述
 ...
 ```
 
-你也许注意到案例中 Frontmatter 中的字段和 [VuePress 配置文件][config] 十分类似。你可以通过 Frontmatter 来覆盖当前页面的 `lang`, `title`, `description` 等属性。因此，你可以把 Frontmatter 当作页面级作用域的配置，它通常具有最高优先级，所作配置仅对当前页面生效。
-
-[config]: https://vuejs.press/zh/guide/configuration.html#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6
+Frontmatter 属性（如 `lang`、`title`、`description`）会覆盖 [VuePress 配置文件](../cookbook/vuepress/config.md#配置文件) 中的全局设置。此配置仅在当前页面生效，且具有最高优先级。

@@ -157,25 +157,7 @@ npm i -D twikoo
 
 :::
 
-### Vercel 部署
-
-::: note
-
-Vercel 默认域名 `*.vercel.app` 在中国大陆访问速度较慢甚至无法访问，绑定自己的域名可以提高访问速度，其他部署方式请查阅官方文档。
-
-:::
-
-1. 申请 [MongoDB](https://www.mongodb.com/cloud/atlas/register) 账号
-1. 创建免费 MongoDB 数据库，区域推荐选择 `AWS / N. Virginia (us-east-1)`
-1. 在 Clusters 页面点击 CONNECT，按步骤设置允许所有 IP 地址的连接 ([为什么？](https://vercel.com/support/articles/how-to-allowlist-deployment-ip-address)) ，创建数据库用户，并记录数据库连接字符串，请将连接字符串中的 `<password>` 修改为数据库密码
-1. 申请 [Vercel](https://vercel.com/signup) 账号
-1. 点击以下按钮将 Twikoo 一键部署到 Vercel
-
-   [![Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/imaegoo/twikoo/tree/dev/src/vercel-min)
-
-1. 进入 Settings - Environment Variables，添加环境变量 `MONGODB_URI`，值为第 3 步的数据库连接字符串
-1. 进入 Overview，点击 Domains 下方的链接，如果环境配置正确，可以看到 “Twikoo 云函数运行正常” 的提示
-1. Vercel Domains (包含 `https://` 前缀，例如 `https://xxx.vercel.app`) 即为你的环境 ID
+先按照 [官方文档](https://twikoo.js.org/backend.html) 部署好后端，之后在主题设置中设置后端地址:
 
 ```ts twoslash {6,7} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -192,7 +174,7 @@ export default hopeTheme({
 
 ::: tip
 
-点击评论窗口的“小齿轮”图标，开启 Twikoo 管理面板并设置管理员密码。
+及时点击评论窗口的“小齿轮”图标，开启 Twikoo 管理面板并设置管理员密码。
 
 :::
 
