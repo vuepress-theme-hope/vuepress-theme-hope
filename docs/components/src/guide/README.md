@@ -12,6 +12,6 @@ This means you are free to pick any components you like, and remain the rest of 
 
 For example, if you call this plugin with `{ components: ['VidStack'] }`, then only `<VidStack />` component is injected.
 
-## With Enhanced Syntax
+## Using with Component Syntax
 
-We recommend you to use this plugin with [md-enhance component syntax](https://plugin-md-enhance.vuejs.press/guide/content/component.html).
+We recommend you to use the plugin with [component syntax](https://ecosystem.vuejs.press/plugins/markdown/markdown-ext.html#component).
