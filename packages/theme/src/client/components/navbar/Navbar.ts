@@ -13,6 +13,7 @@ import NavScreen from "@theme-hope/components/navbar/NavScreen";
 import RepoLink from "@theme-hope/components/navbar/RepoLink";
 import ToggleNavbarButton from "@theme-hope/components/navbar/ToggleNavbarButton";
 import ToggleSidebarButton from "@theme-hope/components/navbar/ToggleSidebarButton";
+import { useNavbarAutoHide } from "@theme-hope/composables/navbar/useNavbarAutoHide";
 import { useThemeLocale } from "@theme-hope/composables/useTheme";
 import { useWindowSize } from "@theme-hope/composables/useWindowSize";
 
@@ -39,11 +40,7 @@ export default defineComponent({
 
     const showScreen = ref(false);
 
-    const autoHide = computed(() => {
-      const { navbarAutoHide = "mobile" } = themeLocale.value;
-
-      return navbarAutoHide !== "none" && (navbarAutoHide === "always" || isMobile.value);
-    });
+    const autoHide = useNavbarAutoHide();
 
     const navbarLayout = computed(
       () =>

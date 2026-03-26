@@ -21,6 +21,7 @@ import Navbar from "@theme-hope/components/navbar/Navbar";
 import Sidebar from "@theme-hope/components/sidebar/Sidebar";
 import { useSidebarItems } from "@theme-hope/composables/sidebar/useSidebarItems";
 import { useData } from "@theme-hope/composables/useData";
+import { useNavbarAutoHide } from "@theme-hope/composables/navbar/useNavbarAutoHide";
 import { usePure } from "@theme-hope/composables/usePure";
 import { useWindowSize } from "@theme-hope/composables/useWindowSize";
 import type { SidebarItemsSlotData } from "@theme-hope/typings/slots";
@@ -95,6 +96,12 @@ export default defineComponent({
     // Navbar
     const hideNavbar = ref(false);
 
+    const autoHide = useNavbarAutoHide();
+
+    watch(autoHide, (value) => {
+      if (!value) hideNavbar.value = false;
+    });
+
     const enableNavbar = computed(() => {
       if (props.noNavbar) return false;
 
@@ -145,8 +152,8 @@ export default defineComponent({
 
           // At top or scroll up
           if (distance <= 58 || distance < lastDistance) hideNavbar.value = false;
-          // Scroll down > 200px and sidebar is not opened
-          else if (lastDistance + 200 < distance && !isMobileSidebarOpen.value)
+          // Scroll down > 200px, sidebar is not opened, and navbar auto-hide is enabled
+          else if (lastDistance + 200 < distance && !isMobileSidebarOpen.value && autoHide.value)
             hideNavbar.value = true;
 
           lastDistance = distance;
