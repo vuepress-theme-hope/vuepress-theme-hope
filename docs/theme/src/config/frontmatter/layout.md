@@ -67,7 +67,7 @@ Setting it to `false` will disable navbar
 
 ## sidebar {#sidebar-header}
 
-- Type: `boolean | SidebarArrayOptions`
+- Type: `false | SidebarArrayOptions`
 - Details:
   - [Layout → Sidebar](../../guide/layout/sidebar.md#disabling-sidebar)
 

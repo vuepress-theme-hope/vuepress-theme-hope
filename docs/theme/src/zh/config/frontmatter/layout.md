@@ -70,7 +70,7 @@ tag:
 
 ## sidebar {#sidebar-header}
 
-- 类型: `boolean`
+- 类型: `false | SidebarArrayOptions`
 - 详情:
   - [布局 → 侧边栏](../../guide/layout/sidebar.md#禁用侧边栏)
 
