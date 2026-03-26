@@ -18,13 +18,32 @@ export const useNavbarLanguageDropdown = (): ComputedRef<NavGroup<AutoLinkOption
   const route = useRoute();
   const isMounted = ref(false);
 
+  const isRootLocaleClean = computed(() => {
+    const subLocales = Object.keys(site.value.locales).filter((localePath) => localePath !== "/");
+
+    if (subLocales.length === 0) return false;
+
+    const isAllowedRootPath = (path: string) => path === "/" || /^\/?404(?:\.html)?$/.test(path);
+
+    const localeRegExp = new RegExp(
+      `^(?:${subLocales.map((locale) => locale.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`,
+    );
+
+    // only / and /404.html for root locale
+    return routePaths.value.filter((path) => !localeRegExp.test(path)).every(isAllowedRootPath);
+  });
+
   onMounted(() => {
     isMounted.value = true;
   });
 
   return computed(() => {
-    const localePaths = keys(site.value.locales);
+    let localePaths = keys(site.value.locales);
     const extraLocales = entries(theme.value.extraLocales ?? {});
+
+    // remove / locale
+    if (isRootLocaleClean.value)
+      localePaths = localePaths.filter((localePath) => localePath !== "/");
 
     // Do not display language selection dropdown if there is only one language
     if (localePaths.length < 2 && extraLocales.length === 0) return null;
