@@ -78,8 +78,10 @@ onlyBuiltDependencies:
   - unrs-resolver
 
 overrides:
-  esbuild: ^0.27.3
+  # vulnerable dependency
+  "@rollup/plugin-terser@0.4>serialize-javascript": ^7.0.5
   react: ^19.2.3
+
 patchedDependencies:
   "@vuepress/cli@2.0.0-rc.27": patches/@vuepress__cli@2.0.0-rc.27.patch
 
