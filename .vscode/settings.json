@@ -147,7 +147,6 @@
     "**/.vuepress/.temp/**": true,
     "**/dist/**": true
   },
-  "oxc.typeAware": true,
   "oxc.unusedDisableDirectives": "deny",
   "stylelint.validate": ["css", "scss"]
 }

@@ -9,8 +9,6 @@ import {
 import type { App } from "vuepress/core";
 import { sanitizeFileName } from "vuepress/utils";
 
-import { getSidebarInfo } from "./getSidebarInfo.js";
-import { getSidebarSorter } from "./getSidebarSorter.js";
 import type {
   SidebarArrayOptions,
   SidebarGroupOptions,
@@ -20,6 +18,8 @@ import type {
   ThemeData,
 } from "../../../shared/index.js";
 import { logger } from "../../utils.js";
+import { getSidebarInfo } from "./getSidebarInfo.js";
+import { getSidebarSorter } from "./getSidebarSorter.js";
 
 const removeExtension = (path: string): string =>
   path.replace(/^(README|index)\.md$/iu, "").replace(/\.md$/u, "");

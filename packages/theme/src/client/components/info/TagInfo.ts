@@ -9,7 +9,6 @@ import { usePure } from "@theme-hope/composables/usePure";
 import type { PageTag } from "@theme-hope/utils/info/typings";
 
 import cssVariables from "../../styles/variables.module.scss";
-
 import "../../styles/info/tag-info.scss";
 
 export default defineComponent({

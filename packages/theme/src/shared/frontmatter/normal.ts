@@ -1,8 +1,8 @@
 import type { GetHeadersOptions } from "@vuepress/helper/shared";
 
-import type { ThemeBasePageFrontmatter } from "./base.js";
 import type { PageInfoType } from "../info.js";
 import type { AutoLinkOptions } from "../nav.js";
+import type { ThemeBasePageFrontmatter } from "./base.js";
 
 export interface StructureSidebarDirOptions {
   /**

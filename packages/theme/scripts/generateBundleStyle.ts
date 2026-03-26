@@ -1,5 +1,5 @@
-import { getDirname, fs, path, tinyglobby } from "vuepress/utils";
 import { watch } from "chokidar";
+import { getDirname, fs, path, tinyglobby } from "vuepress/utils";
 
 const themeRoot = path.resolve(getDirname(import.meta.url), "..");
 const isWatch = process.argv.includes("-w") || process.argv.includes("--watch");

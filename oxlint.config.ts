@@ -1,5 +1,5 @@
+import { getOxlintConfigs } from "oxc-config-hope/oxlint";
 import { defineConfig } from "oxlint";
-import { getOxlintConfigs } from "oxc-config-hope";
 
 export default defineConfig({
   extends: getOxlintConfigs({
@@ -16,6 +16,7 @@ export default defineConfig({
     "**/.vuepress/.temp/**",
     "**/.vuepress/dist/**",
     "**/vendors/lzstring.ts",
+    ".ncurc.cjs",
   ],
   options: {
     typeAware: true,

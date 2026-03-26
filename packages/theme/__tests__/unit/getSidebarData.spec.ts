@@ -3,11 +3,11 @@ import type { Bundler } from "vuepress/core";
 import { createBuildApp } from "vuepress/core";
 import { path } from "vuepress/utils";
 
-import { emptyTheme } from "./__fixtures__/theme/empty.js";
 import { getThemeData } from "../../src/node/config/getThemeData.js";
 import { getThemeStatus } from "../../src/node/config/getThemeStatus.js";
 import { getSidebarData } from "../../src/node/prepare/sidebar/index.js";
 import type { ThemeOptions } from "../../src/node/typings/index.js";
+import { emptyTheme } from "./__fixtures__/theme/empty.js";
 
 const app = createBuildApp({
   bundler: {} as Bundler,

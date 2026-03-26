@@ -3,6 +3,7 @@ import { computed, defineComponent, h, ref, resolveComponent } from "vue";
 import { useRoute } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/base/AutoLink";
+// oxlint-disable-next-line import/no-cycle
 import SidebarLinks from "@theme-hope/components/sidebar/SidebarLinks";
 import type { SidebarGroupItem } from "@theme-hope/typings/sidebar";
 import { isActiveItem } from "@theme-hope/utils/isActiveItem";

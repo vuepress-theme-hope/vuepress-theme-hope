@@ -1,14 +1,14 @@
 import { deepAssign, endsWith, entries, isPlainObject, keys } from "@vuepress/helper";
 import type { CompilerOptions } from "typescript";
 
-import { compressToEncodedURIComponent } from "./vendors/lzstring.js";
-import { optionDeclarations } from "./vendors/optionDeclarations.js";
 import type {
   PlaygroundData,
   PlaygroundOptions,
   TSPresetPlaygroundOptions,
 } from "../../typings/index.js";
 import { logger } from "../../utils.js";
+import { compressToEncodedURIComponent } from "./vendors/lzstring.js";
+import { optionDeclarations } from "./vendors/optionDeclarations.js";
 
 /**
  * Gets a query string representation (hash + queries)

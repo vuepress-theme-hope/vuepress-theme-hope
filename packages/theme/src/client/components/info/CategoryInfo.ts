@@ -9,7 +9,6 @@ import { usePure } from "@theme-hope/composables/usePure";
 import type { PageCategory } from "@theme-hope/utils/info/typings";
 
 import cssVariables from "../../styles/variables.module.scss";
-
 import "../../styles/info/category-info.scss";
 
 export default defineComponent({

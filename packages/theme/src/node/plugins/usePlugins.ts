@@ -3,10 +3,6 @@ import { useReadingTimePlugin } from "@vuepress/plugin-reading-time";
 import { useSassPalettePlugin } from "@vuepress/plugin-sass-palette";
 import type { App } from "vuepress/core";
 
-import { useGitPlugin } from "./git.js";
-import { useExtendsPagePlugin } from "./pageConverter.js";
-import { usePrismjsPlugin } from "./prismjs.js";
-import { useShikiPlugin } from "./shiki.js";
 import type { ThemeData } from "../../shared/index.js";
 import type {
   ThemeBehaviorOptions,
@@ -14,6 +10,10 @@ import type {
   ThemePluginsOptions,
 } from "../typings/index.js";
 import { TEMPLATE_FOLDER } from "../utils.js";
+import { useGitPlugin } from "./git.js";
+import { useExtendsPagePlugin } from "./pageConverter.js";
+import { usePrismjsPlugin } from "./prismjs.js";
+import { useShikiPlugin } from "./shiki.js";
 
 /**
  * Use plugins to ensure they apply first

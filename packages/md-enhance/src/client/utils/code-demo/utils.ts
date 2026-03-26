@@ -1,7 +1,7 @@
 import { isDef, isPlainObject, keys } from "@vuepress/helper/client";
 
-import type { Code } from "./typings.js";
 import type { CodeDemoOptions } from "../../../shared/index.js";
+import type { Code } from "./typings.js";
 
 declare const CODE_DEMO_OPTIONS: CodeDemoOptions;
 

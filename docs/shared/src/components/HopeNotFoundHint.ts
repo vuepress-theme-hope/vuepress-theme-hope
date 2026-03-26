@@ -1,7 +1,7 @@
 import type { VNode } from "vue";
 import { computed, defineComponent, h, onMounted, ref } from "vue";
-import { useRouter } from "vuepress/client";
 import { useData } from "vuepress-theme-hope/client";
+import { useRouter } from "vuepress/client";
 
 import "../styles/hope-not-found-hint.scss";
 

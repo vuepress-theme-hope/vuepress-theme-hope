@@ -8,8 +8,8 @@ import {
 } from "@vuepress/helper/client";
 import type { PropType, VNode } from "vue";
 import { defineComponent, h, onMounted, ref } from "vue";
-import { useData } from "vuepress/client";
 import { openPopupWindow } from "vuepress-shared/client";
+import { useData } from "vuepress/client";
 
 import type { ShareServiceOptions } from "../../shared/share.js";
 import { Popup, getMetaContent } from "../utils/index.js";

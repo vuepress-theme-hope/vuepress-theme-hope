@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "@mr-hope/tsconfig/web.json",
   "compilerOptions": {
     "rootDir": "./src",
     "types": ["vuepress/client-types", "vite/client", "webpack-env"]

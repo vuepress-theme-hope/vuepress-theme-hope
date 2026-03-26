@@ -1,7 +1,5 @@
 import type { ThemeData as CommonThemeData } from "@vuepress/plugin-theme-data";
 
-import type { ThemeMarkdownOptions } from "./markdown.js";
-import type { ThemePluginsOptions } from "./plugins/index.js";
 import type {
   AppearanceOptions,
   FeatureOptions,
@@ -9,6 +7,8 @@ import type {
   LayoutOptions,
   ThemeLocaleOptions,
 } from "../../shared/index.js";
+import type { ThemeMarkdownOptions } from "./markdown.js";
+import type { ThemePluginsOptions } from "./plugins/index.js";
 
 export interface ThemeOptions
   extends

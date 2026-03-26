@@ -1,6 +1,7 @@
 // oxlint-disable import/max-dependencies
 import { keys } from "@vuepress/helper";
 
+import type { BuiltInShareService, ShareServiceConfig } from "../../../shared/index.js";
 import { buffer } from "./buffer.js";
 import { douban } from "./douban.js";
 import { email } from "./email.js";
@@ -25,7 +26,6 @@ import { vk } from "./vk.js";
 import { weibo } from "./weibo.js";
 import { whatsapp } from "./whatsapp.js";
 import { wordpress } from "./wordpress.js";
-import type { BuiltInShareService, ShareServiceConfig } from "../../../shared/index.js";
 
 export const SHARE_CONFIG: Record<BuiltInShareService, ShareServiceConfig> = {
   buffer,

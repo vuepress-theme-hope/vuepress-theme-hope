@@ -1,9 +1,9 @@
 import { keys } from "@vuepress/helper";
 import { colors } from "vuepress/utils";
 
-import { PLUGIN_CHECKLIST } from "./utils.js";
 import type { ThemePluginsOptions } from "../typings/index.js";
 import { logger } from "../utils.js";
+import { PLUGIN_CHECKLIST } from "./utils.js";
 
 const KNOWN_THEME_PLUGIN_KEYS = new Set(
   PLUGIN_CHECKLIST.flatMap(([, key]) => key)

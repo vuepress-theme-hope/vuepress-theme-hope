@@ -1,8 +1,8 @@
 import type { FunctionalComponent } from "vue";
 import { h } from "vue";
 
-import { IconBase } from "./IconBase.js";
 import { resolveRepoType } from "../utils/resolveRepo.js";
+import { IconBase } from "./IconBase.js";
 
 export const GitHubIcon: FunctionalComponent = () =>
   h(IconBase, { name: "github" }, () =>

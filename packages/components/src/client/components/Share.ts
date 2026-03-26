@@ -4,8 +4,8 @@ import { computed, defineComponent, h } from "vue";
 import type { PageData } from "vuepress/client";
 import { usePage } from "vuepress/client";
 
-import ShareService from "./ShareService.js";
 import type { ShareServiceOptions } from "../../shared/share.js";
+import ShareService from "./ShareService.js";
 
 declare const SHARE_SERVICES: ShareServiceOptions[];
 

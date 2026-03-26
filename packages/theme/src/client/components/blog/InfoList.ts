@@ -4,14 +4,14 @@ import { defineComponent, h, ref } from "vue";
 
 import ArticlesInfo from "@theme-hope/components/blog/ArticlesInfo";
 import CategoriesInfo from "@theme-hope/components/blog/CategoriesInfo";
-import TagsInfo from "@theme-hope/components/blog/TagsInfo";
-import TimelineList from "@theme-hope/components/blog/TimelineList";
 import {
   ArticleIcon,
   CategoryIcon,
   TagIcon,
   TimelineIcon,
 } from "@theme-hope/components/blog/icons";
+import TagsInfo from "@theme-hope/components/blog/TagsInfo";
+import TimelineList from "@theme-hope/components/blog/TimelineList";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { useBlogLocale } from "@theme-hope/composables/blog/useBlogLocale";
 

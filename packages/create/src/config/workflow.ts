@@ -41,7 +41,7 @@ ${
   packageManager === "pnpm"
     ? `\
       - name: ${workflow.setupPnpm}
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v5
 `
     : ""
 }

@@ -112,7 +112,7 @@ PASSWORD=123456
 
 然后，像这样通过 `dotenv/config` 加载 env 文件，并在 `.vuepress/theme.ts` 中使用环境变量设置密码：
 
-```ts twoslash{2,8} title=".vuepress/theme.ts"
+```ts {2,8} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 import "dotenv/config";
 

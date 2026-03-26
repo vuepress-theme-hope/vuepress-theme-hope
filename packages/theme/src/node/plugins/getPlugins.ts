@@ -16,6 +16,9 @@ import { photoSwipePlugin } from "@vuepress/plugin-photo-swipe";
 import { themeDataPlugin } from "@vuepress/plugin-theme-data";
 import type { App, PluginConfig } from "vuepress/core";
 
+import type { ThemeData } from "../../shared/index.js";
+import { checkPluginsOptions } from "../check/index.js";
+import type { ThemeOptions } from "../typings/index.js";
 import { getActiveHeaderLinksPlugin } from "./activeHeaderLinks.js";
 import { getBlogPlugin } from "./blog/index.js";
 import { getCatalogPlugin } from "./catalog.js";
@@ -35,9 +38,6 @@ import { getSearchPlugin } from "./search.js";
 import { getSEOPlugin } from "./seo.js";
 import { getSitemapPlugin } from "./sitemap.js";
 import { getWatermarkPlugin } from "./watermark.js";
-import type { ThemeData } from "../../shared/index.js";
-import { checkPluginsOptions } from "../check/index.js";
-import type { ThemeOptions } from "../typings/index.js";
 
 /**
  * Get theme plugins

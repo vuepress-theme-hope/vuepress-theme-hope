@@ -1,20 +1,10 @@
 {
-  "extends": "./tsconfig.base.json",
+  "extends": "@mr-hope/tsconfig/web.json",
   "compilerOptions": {
-    "allowJs": true,
-    "checkJs": true,
-    "noEmit": true,
     "paths": {
       "@theme-hope/*": ["./packages/theme/src/client/*.js"]
     },
     "types": ["vuepress/client-types", "vite/client", "webpack-env"]
   },
-  "include": [
-    "**/*.ts",
-    "**/*.vue",
-    "**/.vuepress/**/*.ts",
-    "**/.vuepress/**/*.vue",
-    ".ncurc.cjs",
-    ".markdownlint-cli2.mjs"
-  ]
+  "include": ["**/*.ts", "**/*.vue", "**/.vuepress/**/*.ts", "**/.vuepress/**/*.vue"]
 }

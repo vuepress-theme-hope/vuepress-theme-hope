@@ -1,13 +1,12 @@
 import { entries } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { defineComponent, h } from "vue";
-import { RouteLink, usePage } from "vuepress/client";
 import { generateIndexFromHash } from "vuepress-shared/client";
+import { RouteLink, usePage } from "vuepress/client";
 
 import { useCategoryMap } from "@theme-hope/composables/blog/useCategoryMap";
 
 import cssVariables from "../../styles/variables.module.scss";
-
 import "../../styles/blog/category-list.scss";
 
 export default defineComponent({

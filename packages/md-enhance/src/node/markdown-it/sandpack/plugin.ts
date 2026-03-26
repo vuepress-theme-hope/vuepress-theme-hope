@@ -8,9 +8,9 @@ import type {
   SandpackSetup,
 } from "sandpack-vue3";
 
-import { encodeFiles, getAttrs } from "./utils.js";
 import type { SandpackData } from "../../typings/index.js";
 import { escapeHtml } from "../utils.js";
+import { encodeFiles, getAttrs } from "./utils.js";
 
 const AT_MARKER = `@`;
 const VALID_MARKERS = ["file", "options", "setup"] as const;

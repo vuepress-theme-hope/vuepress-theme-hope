@@ -1,5 +1,5 @@
-import type { PlaygroundGlobalOptions, VuePlaygroundOptions } from "./typings/index.js";
 import type { CodeDemoOptions } from "../shared/index.js";
+import type { PlaygroundGlobalOptions, VuePlaygroundOptions } from "./typings/index.js";
 
 export interface DeprecatedMarkdownEnhancePluginOptions {
   /**

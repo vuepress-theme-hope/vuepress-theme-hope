@@ -1,5 +1,5 @@
-import type { ShareOptions } from "./share.js";
 import type { ArtPlayerOptions } from "../../shared/index.js";
+import type { ShareOptions } from "./share.js";
 
 export interface DeprecatedComponentGlobalOptions {
   /**

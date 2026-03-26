@@ -1,12 +1,12 @@
-import { defineEChartsConfig } from "@vuepress/plugin-markdown-chart/client";
 import HopeLogo from "@docs/shared/components/HopeLogo";
 import HopeNotFoundHint from "@docs/shared/components/HopeNotFoundHint";
 import ProjectLink from "@docs/shared/components/ProjectLink";
 import SocialLink from "@docs/shared/components/SocialLink";
+import { defineEChartsConfig } from "@vuepress/plugin-markdown-chart/client";
 import { h } from "vue";
-import { defineClientConfig } from "vuepress/client";
 import { Layout, NotFound } from "vuepress-theme-hope/client";
 import { setupTransparentNavbar } from "vuepress-theme-hope/presets/transparentNavbar.js";
+import { defineClientConfig } from "vuepress/client";
 
 import BlogSlotDemo from "./layouts/BlogSlotDemo.vue";
 import CustomBlogHome from "./layouts/CustomBlogHome.vue";

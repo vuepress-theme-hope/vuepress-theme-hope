@@ -1,10 +1,10 @@
 import { h } from "vue";
-import { defineClientConfig } from "vuepress/client";
 import { Blog } from "vuepress-theme-hope/blog";
 import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.js";
-import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";
 import { setupRunningTimeFooter } from "vuepress-theme-hope/presets/footerRunningTime.js";
+import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";
 import { setupTransparentNavbar } from "vuepress-theme-hope/presets/transparentNavbar.js";
+import { defineClientConfig } from "vuepress/client";
 
 export default defineClientConfig({
   setup() {

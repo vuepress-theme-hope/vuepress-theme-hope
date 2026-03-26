@@ -110,7 +110,7 @@ PASSWORD=123456
 
 Then, load the env file with `dotenv/config` and set password using environment variables in `.vuepress/theme.ts` like this:
 
-```ts twoslash{2,8} title=".vuepress/theme.ts"
+```ts {2,8} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 import "dotenv/config";
 

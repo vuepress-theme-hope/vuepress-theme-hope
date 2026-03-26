@@ -1,6 +1,7 @@
 // oxlint-disable import/max-dependencies
 import type { DefaultLocaleInfo } from "@vuepress/helper";
 
+import type { ThemeLocaleData } from "../../shared/index.js";
 import { deLocale } from "./de.js";
 import { deATLocale } from "./deAT.js";
 import { enLocale } from "./en.js";
@@ -21,7 +22,6 @@ import { ukLocale } from "./uk.js";
 import { viLocale } from "./vi.js";
 import { zhLocale } from "./zh.js";
 import { zhTWLocale } from "./zhTW.js";
-import type { ThemeLocaleData } from "../../shared/index.js";
 
 export const themeLocaleInfo: DefaultLocaleInfo<ThemeLocaleData> = [
   [["en", "en-US"], enLocale],
