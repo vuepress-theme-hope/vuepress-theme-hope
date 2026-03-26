@@ -7,9 +7,9 @@ import { onContentUpdated } from "vuepress/client";
 
 import AppearanceButton from "@theme-hope/components/appearance/AppearanceButton";
 import LanguageDropdown from "@theme-hope/components/navbar/LanguageDropdown";
-import NavScreen from "@theme-hope/components/navbar/NavScreen";
 import NavbarBrand from "@theme-hope/components/navbar/NavbarBrand";
 import NavbarLinks from "@theme-hope/components/navbar/NavbarLinks";
+import NavScreen from "@theme-hope/components/navbar/NavScreen";
 import RepoLink from "@theme-hope/components/navbar/RepoLink";
 import ToggleNavbarButton from "@theme-hope/components/navbar/ToggleNavbarButton";
 import ToggleSidebarButton from "@theme-hope/components/navbar/ToggleSidebarButton";

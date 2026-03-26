@@ -1,5 +1,5 @@
-import type { RouteLocationNormalizedLoaded } from "vuepress/client";
 import { isActiveLink } from "vuepress-shared/client";
+import type { RouteLocationNormalizedLoaded } from "vuepress/client";
 
 import type { SidebarItem } from "@theme-hope/typings/sidebar";
 import { isActiveItem } from "@theme-hope/utils/isActiveItem";

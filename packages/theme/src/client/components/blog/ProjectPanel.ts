@@ -1,15 +1,15 @@
 import { isLinkAbsolute } from "@vuepress/helper/client";
 import type { PropType, VNode } from "vue";
 import { defineComponent, h, resolveComponent } from "vue";
-import { withBase } from "vuepress/client";
 import { generateIndexFromHash } from "vuepress-shared/client";
+import { withBase } from "vuepress/client";
 
 import { useNavigate } from "@theme-hope/composables/useNavigate";
 import { usePure } from "@theme-hope/composables/usePure";
 
 import type { ThemeBlogHomeProjectOptions } from "../../../shared/index.js";
-import cssVariables from "../../styles/variables.module.scss";
 
+import cssVariables from "../../styles/variables.module.scss";
 import "../../styles/blog/project-panel.scss";
 
 export default defineComponent({

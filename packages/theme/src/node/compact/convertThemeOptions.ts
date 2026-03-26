@@ -1,13 +1,13 @@
 // oxlint-disable typescript/no-deprecated
 // oxlint-disable max-lines
 import { entries, isArray, isPlainObject } from "@vuepress/helper";
-import { colors } from "vuepress/utils";
 import { createConverter } from "vuepress-shared";
+import { colors } from "vuepress/utils";
 
-import { convertNavbarLayoutOptions, convertNavbarOptions } from "./convertNavbarOptions.js";
-import { convertSidebarOptions } from "./convertSidebarOptions.js";
 import type { ThemeOptions } from "../typings/index.js";
 import { logger } from "../utils.js";
+import { convertNavbarLayoutOptions, convertNavbarOptions } from "./convertNavbarOptions.js";
+import { convertSidebarOptions } from "./convertSidebarOptions.js";
 
 const DEPRECATED_THEME_OPTIONS: [string, string][] = [
   // v2

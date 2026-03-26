@@ -1,7 +1,7 @@
 import { h } from "vue";
-import { defineClientConfig } from "vuepress/client";
 import { Layout, NotFound } from "vuepress-theme-hope/client";
 import { setupTransparentNavbar } from "vuepress-theme-hope/presets/transparentNavbar.js";
+import { defineClientConfig } from "vuepress/client";
 
 import HopeLogo from "./components/HopeLogo.js";
 import HopeNotFoundHint from "./components/HopeNotFoundHint.js";

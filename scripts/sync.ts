@@ -2,14 +2,10 @@ import { readdirSync } from "node:fs";
 import { request } from "node:https";
 import path from "node:path";
 
-import ora from "ora";
-
 const packagesDir = path.resolve(process.cwd(), "packages");
 const packages = readdirSync(packagesDir);
 
 const sync = async (): Promise<void> => {
-  const npmmirrorSpinner = ora("Syncing npmmirror.com").start();
-
   await Promise.all(
     packages.map((packageName) =>
       import(`../packages/${packageName}/package.json`, {
@@ -38,10 +34,6 @@ const sync = async (): Promise<void> => {
       ),
     ),
   );
-
-  npmmirrorSpinner.succeed();
-
-  ora("Release complete").succeed();
 };
 
 await sync();

@@ -1,6 +1,5 @@
 import type { CSSProperties, PropType, VNode } from "vue";
 import { defineComponent, h, nextTick, onMounted, onUnmounted, ref, watch } from "vue";
-
 import { DropTransition } from "vuepress-theme-hope/client";
 
 import "./hitokoto-blog-hero.scss";

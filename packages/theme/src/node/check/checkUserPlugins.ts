@@ -2,8 +2,8 @@ import { isString } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 import { colors } from "vuepress/utils";
 
-import { PLUGIN_CHECKLIST } from "./utils.js";
 import { logger } from "../utils.js";
+import { PLUGIN_CHECKLIST } from "./utils.js";
 
 /**
  * Check user plugin options for noob users

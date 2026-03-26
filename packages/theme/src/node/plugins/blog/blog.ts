@@ -3,12 +3,12 @@ import type { BlogPluginOptions } from "@vuepress/plugin-blog";
 import { blogPlugin } from "@vuepress/plugin-blog";
 import type { Page, Plugin } from "vuepress/core";
 
+import type { ArticleInfoData, ThemeData, ThemePageData } from "../../../shared/index.js";
+import type { BlogOptions } from "../../typings/index.js";
 import { getBlogCategoryCategory, getBlogTagCategory } from "./category.js";
 import { blogFilter } from "./filter.js";
 import { injectBlogBasicInfo } from "./info.js";
 import { getBlogArticleType, getBlogStarType, getBlogTimelineType } from "./type.js";
-import type { ArticleInfoData, ThemeData, ThemePageData } from "../../../shared/index.js";
-import type { BlogOptions } from "../../typings/index.js";
 
 /**
  * Resolves `@vuepress/plugin-blog`

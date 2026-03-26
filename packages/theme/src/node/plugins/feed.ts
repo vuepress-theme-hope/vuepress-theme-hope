@@ -2,9 +2,9 @@ import { deepAssign, entries, fromEntries, isPlainObject } from "@vuepress/helpe
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { Plugin } from "vuepress/core";
 
-import { logMissingPkg } from "./utils.js";
 import type { ThemeData } from "../../shared/index.js";
 import { getAuthor } from "../../shared/index.js";
+import { logMissingPkg } from "./utils.js";
 
 let feedPlugin: ((options: FeedPluginOptions, legacy?: boolean) => Plugin) | null = null;
 

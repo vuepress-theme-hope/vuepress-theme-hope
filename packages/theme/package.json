@@ -97,13 +97,13 @@
   "scripts": {
     "build": "pnpm build:tsdown && pnpm build:ts && pnpm build:assets",
     "build:assets": "unrun scripts/generateBundleStyle.ts",
-    "build:ts": "tsc",
+    "build:ts": "tsc --project tsconfig.build.json",
     "build:tsdown": "tsdown --config-loader unrun",
     "clean": "rimraf ./dist",
     "dev": "concurrently \"pnpm dev:tsdown\" \"pnpm dev:assets\" \"pnpm dev:ts\"",
     "dev:tsdown": "pnpm build:tsdown --watch",
     "dev:assets": "pnpm build:assets -w",
-    "dev:ts": "tsc --watch"
+    "dev:ts": "tsc --project tsconfig.build.json --watch"
   },
   "dependencies": {
     "@vuepress/helper": "catalog:vuepress",

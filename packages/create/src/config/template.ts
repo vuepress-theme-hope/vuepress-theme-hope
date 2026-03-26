@@ -5,12 +5,12 @@ import { fileURLToPath } from "node:url";
 
 import { confirm, select } from "@inquirer/prompts";
 
+import type { CreateLocale, SupportedLang } from "../i18n/index.js";
+import { checkGitInstalled, checkGitRepo, copy, ensureDirExistSync } from "../utils/index.js";
 import type { PackageManager, SupportedPreset } from "./config.js";
 import { supportedPresets } from "./config.js";
 import { updateGitIgnore } from "./gitignore.js";
 import { getWorkflowContent } from "./workflow.js";
-import type { CreateLocale, SupportedLang } from "../i18n/index.js";
-import { checkGitInstalled, checkGitRepo, copy, ensureDirExistSync } from "../utils/index.js";
 
 const __filename = fileURLToPath(import.meta.url);
 

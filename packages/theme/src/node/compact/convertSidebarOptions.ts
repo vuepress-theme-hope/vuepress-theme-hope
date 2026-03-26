@@ -1,6 +1,6 @@
 import { entries, fromEntries, isArray, isPlainObject, isString } from "@vuepress/helper";
-import { colors } from "vuepress/utils";
 import { createConverter } from "vuepress-shared";
+import { colors } from "vuepress/utils";
 
 import type {
   SidebarArrayOptions,

@@ -1,4 +1,5 @@
 import { dirname } from "node:path";
+
 import type { UserConfig } from "tsdown";
 import { defineConfig } from "tsdown";
 
@@ -20,7 +21,7 @@ export interface TsdownOptions extends Omit<UserConfig, "entry" | "copy"> {
    *
    * @default browser ? false : undefined
    */
-  onlyAllowBundle?: (string | RegExp)[] | false;
+  onlyBundle?: (string | RegExp)[] | false;
 
   /**
    * Packages to always bundle
@@ -92,7 +93,7 @@ export const tsdownConfig = (
     treeshake,
     alwaysBundle = [],
     neverBundle = [],
-    onlyAllowBundle = false,
+    onlyBundle = false,
     platform = "node",
     dts = true,
     moduleSideEffects,
@@ -130,7 +131,7 @@ export const tsdownConfig = (
     deps: {
       alwaysBundle: alwaysBundle,
       neverBundle: [/^@internal\//, /^@temp\//, /\.s?css$/, ...neverBundle],
-      onlyAllowBundle: onlyAllowBundle,
+      onlyBundle,
     },
     fixedExtension: false,
     publint,

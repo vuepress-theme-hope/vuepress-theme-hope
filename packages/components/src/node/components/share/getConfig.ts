@@ -1,8 +1,8 @@
 import { isPlainObject, isString } from "@vuepress/helper";
 
-import { AVAILABLE_SERVICES, SHARE_CONFIG } from "./config.js";
 import type { ShareService, ShareServiceOptions } from "../../../shared/index.js";
 import type { ShareOptions } from "../../options/index.js";
+import { AVAILABLE_SERVICES, SHARE_CONFIG } from "./config.js";
 
 export const getShareServiceConfig = (shareOptions?: ShareOptions): ShareServiceOptions[] => {
   const services: ShareService[] = shareOptions?.services ?? [

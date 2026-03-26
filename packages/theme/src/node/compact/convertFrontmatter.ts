@@ -1,7 +1,7 @@
 import { isString } from "@vuepress/helper";
+import { createConverter } from "vuepress-shared";
 import type { HeadConfig, PageFrontmatter } from "vuepress/shared";
 import { colors } from "vuepress/utils";
-import { createConverter } from "vuepress-shared";
 
 import type { ThemeBasePageFrontmatter } from "../../shared/index.js";
 import { logger } from "../utils.js";

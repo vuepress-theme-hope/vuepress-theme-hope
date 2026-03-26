@@ -3,7 +3,6 @@ import { useEventListener, useResizeObserver, useToggle } from "@vueuse/core";
 import type { PropType, SlotsType, VNode } from "vue";
 import { computed, defineComponent, h, onMounted, ref, shallowRef } from "vue";
 
-import { CODEPEN_SVG, JSFIDDLE_SVG } from "./icons.js";
 import type { CodeDemoOptions } from "../../shared/index.js";
 import { loadNormal, loadReact, loadVue } from "../composables/loadScript.js";
 import {
@@ -14,6 +13,7 @@ import {
   injectCSS,
   injectScript,
 } from "../utils/index.js";
+import { CODEPEN_SVG, JSFIDDLE_SVG } from "./icons.js";
 
 import "balloon-css/balloon.css";
 import "../styles/code-demo.scss";

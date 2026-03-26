@@ -1,6 +1,5 @@
 import { useNow, watchImmediate } from "@vueuse/core";
 import { computed, onMounted } from "vue";
-
 import { useData } from "vuepress-theme-hope/client";
 
 const MILLISECOND_PER_DAY = 1000 * 60 * 60 * 24;

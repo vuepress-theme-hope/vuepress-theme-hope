@@ -1,12 +1,12 @@
 import type { GetHeadersOptions } from "@vuepress/helper/shared";
 
+import type { PageInfoType } from "../../info.js";
 import type { FooterLocaleOptions } from "./footer.js";
 import type { DocsRepoLocaleOptions } from "./info.js";
 import type { MetaLocaleOptions, MetaLocateData } from "./meta.js";
 import type { NavbarLocaleData, NavbarLocaleOptions } from "./navbar.js";
 import type { RouteLocaleData } from "./route.js";
 import type { SidebarLocaleOptions, SidebarSorter } from "./sidebar.js";
-import type { PageInfoType } from "../../info.js";
 
 export interface LayoutLocaleData {
   /**

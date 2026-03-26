@@ -2,8 +2,8 @@ import type { ExactLocaleConfig } from "@vuepress/helper/client";
 import { isArray, useLocaleConfig } from "@vuepress/helper/client";
 import type { PropType, VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
-import { withBase } from "vuepress/client";
 import { RepoIcon } from "vuepress-shared/client";
+import { withBase } from "vuepress/client";
 
 import type { SiteInfoLocaleData } from "../../shared/index.js";
 

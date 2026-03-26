@@ -1,12 +1,12 @@
 import { endsWith, keys } from "@vuepress/helper";
 
-import { compressToEncodedURIComponent as encode } from "./vendors/lzstring.js";
 import type {
   PlaygroundData,
   PlaygroundOptions,
   UnoPresetPlaygroundOptions,
 } from "../../typings/index.js";
 import { logger } from "../../utils.js";
+import { compressToEncodedURIComponent as encode } from "./vendors/lzstring.js";
 
 /**
  * Gets a query string representation (hash + queries)

@@ -1,14 +1,16 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "@mr-hope/tsconfig/web.json",
   "compilerOptions": {
+    "allowImportingTsExtensions": false,
     "rootDir": "./src",
     "outDir": "./dist",
     "declaration": true,
+    "noEmit": false,
     "paths": {
       "@theme-hope/*": ["./src/client/*.js"],
       "vuepress-theme-hope/client": ["./src/client/index.js"]
     },
     "types": ["vuepress/client-types", "vite/client", "webpack-env"]
   },
-  "include": ["./src/client", "./src/shared", "src/*.d.ts"]
+  "include": ["./src/client/**/*.ts", "./src/shared/**/*.ts", "src/*.d.ts"]
 }

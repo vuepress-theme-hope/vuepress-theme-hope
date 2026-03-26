@@ -4,6 +4,7 @@ import { defineComponent, h, ref } from "vue";
 import { useRoute, useRoutePath } from "vuepress/client";
 
 import SidebarChild from "@theme-hope/components/sidebar/SidebarChild";
+// oxlint-disable-next-line import/no-cycle
 import SidebarGroup from "@theme-hope/components/sidebar/SidebarGroup";
 import type { SidebarItem } from "@theme-hope/typings/sidebar";
 import { isActiveSidebarItem } from "@theme-hope/utils/sidebar/isActiveSidebarItem";

@@ -1,5 +1,5 @@
-import { colors } from "vuepress/utils";
 import { createConverter } from "vuepress-shared";
+import { colors } from "vuepress/utils";
 
 /**
  * @deprecated You should use `defineLightGalleryConfig` from `vuepress-plugin-lightgallery/client` instead

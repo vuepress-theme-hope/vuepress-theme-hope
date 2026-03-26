@@ -1,8 +1,8 @@
 import { keys } from "@vuepress/helper/client";
 
+import type { CodeDemoOptions } from "../../../shared/index.js";
 import type { Code, CodeType } from "./typings.js";
 import { getConfig, preProcessorConfig } from "./utils.js";
-import type { CodeDemoOptions } from "../../../shared/index.js";
 
 const AVAILABLE_LANGUAGES = ["html", "js", "css"] as const;
 

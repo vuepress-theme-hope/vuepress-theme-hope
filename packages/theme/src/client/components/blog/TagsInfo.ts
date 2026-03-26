@@ -2,8 +2,8 @@ import { keys } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 
-import TagList from "@theme-hope/components/blog/TagList";
 import { TagIcon } from "@theme-hope/components/blog/icons";
+import TagList from "@theme-hope/components/blog/TagList";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { useBlogLocale } from "@theme-hope/composables/blog/useBlogLocale";
 import { useTagMap } from "@theme-hope/composables/blog/useTagMap";

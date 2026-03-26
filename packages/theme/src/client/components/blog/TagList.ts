@@ -2,13 +2,12 @@ import { entries } from "@vuepress/helper/client";
 import type { BlogPluginCategoryFrontmatter } from "@vuepress/plugin-blog";
 import type { VNode } from "vue";
 import { defineComponent, h } from "vue";
-import { RouteLink, useFrontmatter } from "vuepress/client";
 import { generateIndexFromHash } from "vuepress-shared/client";
+import { RouteLink, useFrontmatter } from "vuepress/client";
 
 import { useTagMap } from "@theme-hope/composables/blog/useTagMap";
 
 import cssVariables from "../../styles/variables.module.scss";
-
 import "../../styles/blog/tag-list.scss";
 
 export default defineComponent({

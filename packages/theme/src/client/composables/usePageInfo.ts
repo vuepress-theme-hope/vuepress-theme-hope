@@ -11,9 +11,9 @@ import type { TagMapRef } from "@theme-hope/composables/blog/useTagMap";
 import { useData } from "@theme-hope/composables/useData";
 import type { PageCategory, PageTag } from "@theme-hope/utils/info/typings";
 
-import { useAuthorInfo } from "./useAuthorInfo.js";
 import type { AuthorInfo, PageInfoType, ThemeBasePageFrontmatter } from "../../shared/index.js";
 import { getAuthor, getCategory, getTag } from "../../shared/index.js";
+import { useAuthorInfo } from "./useAuthorInfo.js";
 
 export const usePageAuthor = (): ComputedRef<AuthorInfo[]> => {
   const frontmatter = useFrontmatter<ThemeBasePageFrontmatter>();
