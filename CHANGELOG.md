@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.104](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.103...v2.0.0-rc.104) (2026-03-27)
+
+### ✨ Features
+
+- **theme:** support locale redirect, closes [#5096](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5096) ([a3b3a25](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a3b3a2563dfddc7a1f0fe0882abfaa5134353e34))
+
+### 🐛 Bug Fixes
+
+- **theme:** sidebar and TOC misalign when `navbarAutoHide: "none"` ([#5238](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5238)) ([008bf01](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/008bf0166e3cf3570a256c0cc1e9c683f48ecaec))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.103](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.102...v2.0.0-rc.103) (2026-03-03)
 
 ### 🐛 Bug Fixes
