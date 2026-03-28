@@ -33,7 +33,7 @@
     "@waline/client": "3.13.0",
     "chart.js": "4.5.1",
     "echarts": "6.0.0",
-    "katex": "0.16.43",
+    "katex": "0.16.44",
     "kotlin-playground": "1.34.0",
     "markmap-lib": "catalog:",
     "markmap-toolbar": "catalog:",
