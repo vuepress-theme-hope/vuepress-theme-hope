@@ -37,7 +37,7 @@
     "@mr-hope/tsconfig": "0.0.3",
     "@types/node": "20.19.37",
     "@types/webpack-env": "1.18.8",
-    "@vitest/coverage-istanbul": "4.1.1",
+    "@vitest/coverage-istanbul": "4.1.2",
     "concurrently": "9.2.1",
     "conventional-changelog-conventionalcommits": "9.3.0",
     "cpx2": "8.0.0",
@@ -59,7 +59,7 @@
     "typescript": "6.0.2",
     "unrun": "0.2.34",
     "vite": "8.0.3",
-    "vitest": "4.1.1",
+    "vitest": "4.1.2",
     "vuepress": "catalog:vuepress"
   },
   "nano-staged": {
