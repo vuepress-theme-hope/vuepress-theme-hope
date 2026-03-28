@@ -275,11 +275,11 @@ importers:
         specifier: 6.1.3
         version: 6.1.3
       stylelint:
-        specifier: 17.5.0
-        version: 17.5.0(typescript@6.0.2)
+        specifier: 17.6.0
+        version: 17.6.0(typescript@6.0.2)
       stylelint-config-hope:
         specifier: 11.0.0
-        version: 11.0.0(postcss@8.5.8)(stylelint@17.5.0(typescript@6.0.2))
+        version: 11.0.0(postcss@8.5.8)(stylelint@17.6.0(typescript@6.0.2))
       through2:
         specifier: 4.0.2
         version: 4.0.2
@@ -315,7 +315,7 @@ importers:
         version: 2.0.0-rc.126(@vuepress/bundler-vite@2.0.0-rc.27(@types/node@25.5.0)(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(tslib@2.8.1)(typescript@6.0.2))(typescript@6.0.2)(vuepress@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(@vuepress/bundler-vite@2.0.0-rc.27(@types/node@25.5.0)(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(tslib@2.8.1)(typescript@6.0.2))(typescript@6.0.2)(vue@3.5.31(typescript@6.0.2)))
       '@vuepress/theme-default':
         specifier: catalog:vuepress
-        version: 2.0.0-rc.126(@vuepress/bundler-vite@2.0.0-rc.27(@types/node@25.5.0)(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(tslib@2.8.1)(typescript@6.0.2))(sass-embedded@1.98.0)(sass-loader@16.0.7(sass-embedded@1.98.0)(sass@1.98.0)(webpack@5.105.4(esbuild@0.27.4)))(sass@1.98.0)(typescript@6.0.2)(vuepress@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(@vuepress/bundler-vite@2.0.0-rc.27(@types/node@25.5.0)(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(tslib@2.8.1)(typescript@6.0.2))(typescript@6.0.2)(vue@3.5.31(typescript@6.0.2)))
+        version: 2.0.0-rc.126(@vuepress/bundler-vite@2.0.0-rc.27(@types/node@25.5.0)(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(tslib@2.8.1)(typescript@6.0.2))(markdown-it@14.1.1)(sass-embedded@1.98.0)(sass-loader@16.0.7(sass-embedded@1.98.0)(sass@1.98.0)(webpack@5.105.4(esbuild@0.27.4)))(sass@1.98.0)(typescript@6.0.2)(vuepress@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(@vuepress/bundler-vite@2.0.0-rc.27(@types/node@25.5.0)(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(tslib@2.8.1)(typescript@6.0.2))(typescript@6.0.2)(vue@3.5.31(typescript@6.0.2)))
       artplayer:
         specifier: 5.4.0
         version: 5.4.0
@@ -360,7 +360,7 @@ importers:
         version: 2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(tslib@2.8.1)(typescript@6.0.2)
       '@vuepress/theme-default':
         specifier: catalog:vuepress
-        version: 2.0.0-rc.126(@vuepress/bundler-vite@2.0.0-rc.27(@types/node@25.5.0)(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(tslib@2.8.1)(typescript@6.0.2))(sass-embedded@1.98.0)(sass-loader@16.0.7(sass-embedded@1.98.0)(sass@1.98.0)(webpack@5.105.4(esbuild@0.27.4)))(sass@1.98.0)(typescript@6.0.2)(vuepress@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(@vuepress/bundler-vite@2.0.0-rc.27(@types/node@25.5.0)(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(tslib@2.8.1)(typescript@6.0.2))(typescript@6.0.2)(vue@3.5.31(typescript@6.0.2)))
+        version: 2.0.0-rc.126(@vuepress/bundler-vite@2.0.0-rc.27(@types/node@25.5.0)(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(tslib@2.8.1)(typescript@6.0.2))(markdown-it@14.1.1)(sass-embedded@1.98.0)(sass-loader@16.0.7(sass-embedded@1.98.0)(sass@1.98.0)(webpack@5.105.4(esbuild@0.27.4)))(sass@1.98.0)(typescript@6.0.2)(vuepress@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(@vuepress/bundler-vite@2.0.0-rc.27(@types/node@25.5.0)(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(tslib@2.8.1)(typescript@6.0.2))(typescript@6.0.2)(vue@3.5.31(typescript@6.0.2)))
       sass-embedded:
         specifier: 'catalog:'
         version: 1.98.0
@@ -393,7 +393,7 @@ importers:
         version: 2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(tslib@2.8.1)(typescript@6.0.2)
       '@vuepress/theme-default':
         specifier: catalog:vuepress
-        version: 2.0.0-rc.126(@vuepress/bundler-vite@2.0.0-rc.27(@types/node@25.5.0)(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(tslib@2.8.1)(typescript@6.0.2))(sass-embedded@1.98.0)(sass-loader@16.0.7(sass-embedded@1.98.0)(sass@1.98.0)(webpack@5.105.4(esbuild@0.27.4)))(sass@1.98.0)(typescript@6.0.2)(vuepress@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(@vuepress/bundler-vite@2.0.0-rc.27(@types/node@25.5.0)(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(tslib@2.8.1)(typescript@6.0.2))(typescript@6.0.2)(vue@3.5.31(typescript@6.0.2)))
+        version: 2.0.0-rc.126(@vuepress/bundler-vite@2.0.0-rc.27(@types/node@25.5.0)(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(tslib@2.8.1)(typescript@6.0.2))(markdown-it@14.1.1)(sass-embedded@1.98.0)(sass-loader@16.0.7(sass-embedded@1.98.0)(sass@1.98.0)(webpack@5.105.4(esbuild@0.27.4)))(sass@1.98.0)(typescript@6.0.2)(vuepress@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(@vuepress/bundler-vite@2.0.0-rc.27(@types/node@25.5.0)(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(tslib@2.8.1)(typescript@6.0.2))(typescript@6.0.2)(vue@3.5.31(typescript@6.0.2)))
       katex:
         specifier: 0.16.43
         version: 0.16.43
@@ -8892,8 +8892,8 @@ packages:
     peerDependencies:
       stylelint: ^16.8.2 || ^17.0.0
 
-  stylelint@17.5.0:
-    resolution: {integrity: sha512-o/NS6zhsPZFmgUm5tXX4pVNg1XDOZSlucLdf2qow/lVn4JIyzZIQ5b3kad1ugqUj3GSIgr2u5lQw7X8rjqw33g==}
+  stylelint@17.6.0:
+    resolution: {integrity: sha512-tokrsMIVAR9vAQ/q3UVEr7S0dGXCi7zkCezPRnS2kqPUulvUh5Vgfwngrk4EoAoW7wnrThqTdnTFN5Ra7CaxIg==}
     engines: {node: '>=20.19.0'}
     hasBin: true
 
@@ -13750,7 +13750,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@vuepress/theme-default@2.0.0-rc.126(@vuepress/bundler-vite@2.0.0-rc.27(@types/node@25.5.0)(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(tslib@2.8.1)(typescript@6.0.2))(sass-embedded@1.98.0)(sass-loader@16.0.7(sass-embedded@1.98.0)(sass@1.98.0)(webpack@5.105.4(esbuild@0.27.4)))(sass@1.98.0)(typescript@6.0.2)(vuepress@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(@vuepress/bundler-vite@2.0.0-rc.27(@types/node@25.5.0)(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(tslib@2.8.1)(typescript@6.0.2))(typescript@6.0.2)(vue@3.5.31(typescript@6.0.2)))':
+  '@vuepress/theme-default@2.0.0-rc.126(@vuepress/bundler-vite@2.0.0-rc.27(@types/node@25.5.0)(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(tslib@2.8.1)(typescript@6.0.2))(markdown-it@14.1.1)(sass-embedded@1.98.0)(sass-loader@16.0.7(sass-embedded@1.98.0)(sass@1.98.0)(webpack@5.105.4(esbuild@0.27.4)))(sass@1.98.0)(typescript@6.0.2)(vuepress@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(@vuepress/bundler-vite@2.0.0-rc.27(@types/node@25.5.0)(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(tslib@2.8.1)(typescript@6.0.2))(typescript@6.0.2)(vue@3.5.31(typescript@6.0.2)))':
     dependencies:
       '@vuepress/helper': 2.0.0-rc.126(@vuepress/bundler-vite@2.0.0-rc.27(@types/node@25.5.0)(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(tslib@2.8.1)(typescript@6.0.2))(typescript@6.0.2)(vuepress@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(@vuepress/bundler-vite@2.0.0-rc.27(@types/node@25.5.0)(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(tslib@2.8.1)(typescript@6.0.2))(typescript@6.0.2)(vue@3.5.31(typescript@6.0.2)))
       '@vuepress/plugin-active-header-links': 2.0.0-rc.126(typescript@6.0.2)(vuepress@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(@vuepress/bundler-vite@2.0.0-rc.27(@types/node@25.5.0)(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(tsx@4.21.0)(typescript@6.0.2)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.27(@vue/compiler-sfc@3.5.31)(esbuild@0.27.4)(tslib@2.8.1)(typescript@6.0.2))(typescript@6.0.2)(vue@3.5.31(typescript@6.0.2)))
@@ -18657,48 +18657,48 @@ snapshots:
       postcss: 8.5.8
       postcss-selector-parser: 7.1.1
 
-  stylelint-config-hope@11.0.0(postcss@8.5.8)(stylelint@17.5.0(typescript@6.0.2)):
+  stylelint-config-hope@11.0.0(postcss@8.5.8)(stylelint@17.6.0(typescript@6.0.2)):
     dependencies:
-      stylelint: 17.5.0(typescript@6.0.2)
-      stylelint-config-standard: 40.0.0(stylelint@17.5.0(typescript@6.0.2))
-      stylelint-config-standard-scss: 17.0.0(postcss@8.5.8)(stylelint@17.5.0(typescript@6.0.2))
-      stylelint-order: 7.0.1(stylelint@17.5.0(typescript@6.0.2))
+      stylelint: 17.6.0(typescript@6.0.2)
+      stylelint-config-standard: 40.0.0(stylelint@17.6.0(typescript@6.0.2))
+      stylelint-config-standard-scss: 17.0.0(postcss@8.5.8)(stylelint@17.6.0(typescript@6.0.2))
+      stylelint-order: 7.0.1(stylelint@17.6.0(typescript@6.0.2))
     transitivePeerDependencies:
       - postcss
 
-  stylelint-config-recommended-scss@17.0.0(postcss@8.5.8)(stylelint@17.5.0(typescript@6.0.2)):
+  stylelint-config-recommended-scss@17.0.0(postcss@8.5.8)(stylelint@17.6.0(typescript@6.0.2)):
     dependencies:
       postcss-scss: 4.0.9(postcss@8.5.8)
-      stylelint: 17.5.0(typescript@6.0.2)
-      stylelint-config-recommended: 18.0.0(stylelint@17.5.0(typescript@6.0.2))
-      stylelint-scss: 7.0.0(stylelint@17.5.0(typescript@6.0.2))
+      stylelint: 17.6.0(typescript@6.0.2)
+      stylelint-config-recommended: 18.0.0(stylelint@17.6.0(typescript@6.0.2))
+      stylelint-scss: 7.0.0(stylelint@17.6.0(typescript@6.0.2))
     optionalDependencies:
       postcss: 8.5.8
 
-  stylelint-config-recommended@18.0.0(stylelint@17.5.0(typescript@6.0.2)):
+  stylelint-config-recommended@18.0.0(stylelint@17.6.0(typescript@6.0.2)):
     dependencies:
-      stylelint: 17.5.0(typescript@6.0.2)
+      stylelint: 17.6.0(typescript@6.0.2)
 
-  stylelint-config-standard-scss@17.0.0(postcss@8.5.8)(stylelint@17.5.0(typescript@6.0.2)):
+  stylelint-config-standard-scss@17.0.0(postcss@8.5.8)(stylelint@17.6.0(typescript@6.0.2)):
     dependencies:
-      stylelint: 17.5.0(typescript@6.0.2)
-      stylelint-config-recommended-scss: 17.0.0(postcss@8.5.8)(stylelint@17.5.0(typescript@6.0.2))
-      stylelint-config-standard: 40.0.0(stylelint@17.5.0(typescript@6.0.2))
+      stylelint: 17.6.0(typescript@6.0.2)
+      stylelint-config-recommended-scss: 17.0.0(postcss@8.5.8)(stylelint@17.6.0(typescript@6.0.2))
+      stylelint-config-standard: 40.0.0(stylelint@17.6.0(typescript@6.0.2))
     optionalDependencies:
       postcss: 8.5.8
 
-  stylelint-config-standard@40.0.0(stylelint@17.5.0(typescript@6.0.2)):
+  stylelint-config-standard@40.0.0(stylelint@17.6.0(typescript@6.0.2)):
     dependencies:
-      stylelint: 17.5.0(typescript@6.0.2)
-      stylelint-config-recommended: 18.0.0(stylelint@17.5.0(typescript@6.0.2))
+      stylelint: 17.6.0(typescript@6.0.2)
+      stylelint-config-recommended: 18.0.0(stylelint@17.6.0(typescript@6.0.2))
 
-  stylelint-order@7.0.1(stylelint@17.5.0(typescript@6.0.2)):
+  stylelint-order@7.0.1(stylelint@17.6.0(typescript@6.0.2)):
     dependencies:
       postcss: 8.5.8
       postcss-sorting: 9.1.0(postcss@8.5.8)
-      stylelint: 17.5.0(typescript@6.0.2)
+      stylelint: 17.6.0(typescript@6.0.2)
 
-  stylelint-scss@7.0.0(stylelint@17.5.0(typescript@6.0.2)):
+  stylelint-scss@7.0.0(stylelint@17.6.0(typescript@6.0.2)):
     dependencies:
       css-tree: 3.2.1
       is-plain-object: 5.0.0
@@ -18708,9 +18708,9 @@ snapshots:
       postcss-resolve-nested-selector: 0.1.6
       postcss-selector-parser: 7.1.1
       postcss-value-parser: 4.2.0
-      stylelint: 17.5.0(typescript@6.0.2)
+      stylelint: 17.6.0(typescript@6.0.2)
 
-  stylelint@17.5.0(typescript@6.0.2):
+  stylelint@17.6.0(typescript@6.0.2):
     dependencies:
       '@csstools/css-calc': 3.1.1(@csstools/css-parser-algorithms@4.0.0(@csstools/css-tokenizer@4.0.0))(@csstools/css-tokenizer@4.0.0)
       '@csstools/css-parser-algorithms': 4.0.0(@csstools/css-tokenizer@4.0.0)
@@ -18733,7 +18733,6 @@ snapshots:
       html-tags: 5.1.0
       ignore: 7.0.5
       import-meta-resolve: 4.2.0
-      imurmurhash: 0.1.4
       is-plain-object: 5.0.0
       mathml-tag-names: 4.0.0
       meow: 14.1.0
