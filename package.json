@@ -39,7 +39,7 @@
     "@types/webpack-env": "1.18.8",
     "@vitest/coverage-istanbul": "4.1.2",
     "concurrently": "9.2.1",
-    "conventional-changelog-conventionalcommits": "9.3.0",
+    "conventional-changelog-conventionalcommits": "9.3.1",
     "cpx2": "8.0.0",
     "cross-env": "10.1.0",
     "http-server": "14.1.1",
