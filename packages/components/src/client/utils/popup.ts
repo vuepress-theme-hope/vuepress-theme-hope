@@ -1,8 +1,8 @@
 import { keys } from "@vuepress/helper/client";
 
 export class Popup {
-  private containerElement: HTMLElement;
-  private popupElements = new Map<number, HTMLDivElement>();
+  private readonly containerElement: HTMLElement;
+  private readonly popupElements = new Map<number, HTMLDivElement>();
 
   // Generate or make sure popup container element
   constructor() {

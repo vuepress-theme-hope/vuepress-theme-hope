@@ -100,9 +100,9 @@
     "build:tsdown": "tsdown --config-loader unrun",
     "clean": "rimraf ./dist",
     "dev": "concurrently \"pnpm dev:tsdown\" \"pnpm dev:assets\" \"pnpm dev:ts\"",
-    "dev:tsdown": "pnpm build:tsdown --watch",
     "dev:assets": "pnpm build:assets -w",
-    "dev:ts": "tsc --project tsconfig.build.json --watch"
+    "dev:ts": "tsc --project tsconfig.build.json --watch",
+    "dev:tsdown": "pnpm build:tsdown --watch"
   },
   "dependencies": {
     "@vuepress/helper": "catalog:vuepress",

@@ -7,5 +7,6 @@ export default defineConfig({
       provider: "istanbul",
       reporter: ["text", "clover", "json"],
     },
+    testTimeout: 3000,
   },
 });

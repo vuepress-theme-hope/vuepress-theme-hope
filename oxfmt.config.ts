@@ -1,7 +1,6 @@
-import { config, defineConfig } from "oxc-config-hope/oxfmt";
+import { defineHopeConfig } from "oxc-config-hope/oxfmt";
 
-export default defineConfig({
-  extends: config,
+export default defineHopeConfig({
   sortImports: {
     internalPattern: ["@internal/", "@temp/", "@theme-hope/"],
   },

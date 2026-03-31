@@ -27,60 +27,59 @@ catalogs:
   vuepress:
     "@vuepress/bundler-vite": 2.0.0-rc.27
     "@vuepress/bundler-webpack": 2.0.0-rc.27
-    "@vuepress/helper": 2.0.0-rc.126
-    "@vuepress/highlighter-helper": 2.0.0-rc.126
+    "@vuepress/helper": 2.0.0-rc.127
+    "@vuepress/highlighter-helper": 2.0.0-rc.127
     "@vuepress/plugin-active-header-links": 2.0.0-rc.126
-    "@vuepress/plugin-back-to-top": 2.0.0-rc.126
-    "@vuepress/plugin-blog": 2.0.0-rc.126
-    "@vuepress/plugin-catalog": 2.0.0-rc.126
-    "@vuepress/plugin-comment": 2.0.0-rc.126
-    "@vuepress/plugin-copy-code": 2.0.0-rc.126
-    "@vuepress/plugin-copyright": 2.0.0-rc.126
-    "@vuepress/plugin-docsearch": 2.0.0-rc.126
-    "@vuepress/plugin-feed": 2.0.0-rc.126
-    "@vuepress/plugin-git": 2.0.0-rc.126
-    "@vuepress/plugin-icon": 2.0.0-rc.126
-    "@vuepress/plugin-links-check": 2.0.0-rc.126
-    "@vuepress/plugin-markdown-chart": 2.0.0-rc.126
-    "@vuepress/plugin-markdown-ext": 2.0.0-rc.126
-    "@vuepress/plugin-markdown-hint": 2.0.0-rc.126
-    "@vuepress/plugin-markdown-image": 2.0.0-rc.126
-    "@vuepress/plugin-markdown-include": 2.0.0-rc.126
-    "@vuepress/plugin-markdown-math": 2.0.0-rc.126
-    "@vuepress/plugin-markdown-preview": 2.0.0-rc.126
-    "@vuepress/plugin-markdown-stylize": 2.0.0-rc.126
-    "@vuepress/plugin-markdown-tab": 2.0.0-rc.126
-    "@vuepress/plugin-meilisearch": 2.0.0-rc.126
-    "@vuepress/plugin-notice": 2.0.0-rc.126
-    "@vuepress/plugin-nprogress": 2.0.0-rc.126
-    "@vuepress/plugin-photo-swipe": 2.0.0-rc.126
-    "@vuepress/plugin-prismjs": 2.0.0-rc.126
-    "@vuepress/plugin-pwa": 2.0.0-rc.126
-    "@vuepress/plugin-reading-time": 2.0.0-rc.126
-    "@vuepress/plugin-redirect": 2.0.0-rc.126
-    "@vuepress/plugin-revealjs": 2.0.0-rc.126
-    "@vuepress/plugin-rtl": 2.0.0-rc.126
-    "@vuepress/plugin-sass-palette": 2.0.0-rc.126
-    "@vuepress/plugin-search": 2.0.0-rc.126
-    "@vuepress/plugin-seo": 2.0.0-rc.126
-    "@vuepress/plugin-shiki": 2.0.0-rc.126
-    "@vuepress/plugin-sitemap": 2.0.0-rc.126
-    "@vuepress/plugin-slimsearch": 2.0.0-rc.126
+    "@vuepress/plugin-back-to-top": 2.0.0-rc.127
+    "@vuepress/plugin-blog": 2.0.0-rc.127
+    "@vuepress/plugin-catalog": 2.0.0-rc.127
+    "@vuepress/plugin-comment": 2.0.0-rc.127
+    "@vuepress/plugin-copy-code": 2.0.0-rc.127
+    "@vuepress/plugin-copyright": 2.0.0-rc.127
+    "@vuepress/plugin-docsearch": 2.0.0-rc.127
+    "@vuepress/plugin-feed": 2.0.0-rc.127
+    "@vuepress/plugin-git": 2.0.0-rc.127
+    "@vuepress/plugin-icon": 2.0.0-rc.127
+    "@vuepress/plugin-links-check": 2.0.0-rc.127
+    "@vuepress/plugin-markdown-chart": 2.0.0-rc.127
+    "@vuepress/plugin-markdown-ext": 2.0.0-rc.127
+    "@vuepress/plugin-markdown-hint": 2.0.0-rc.127
+    "@vuepress/plugin-markdown-image": 2.0.0-rc.127
+    "@vuepress/plugin-markdown-include": 2.0.0-rc.127
+    "@vuepress/plugin-markdown-math": 2.0.0-rc.127
+    "@vuepress/plugin-markdown-preview": 2.0.0-rc.127
+    "@vuepress/plugin-markdown-stylize": 2.0.0-rc.127
+    "@vuepress/plugin-markdown-tab": 2.0.0-rc.127
+    "@vuepress/plugin-meilisearch": 2.0.0-rc.127
+    "@vuepress/plugin-notice": 2.0.0-rc.127
+    "@vuepress/plugin-nprogress": 2.0.0-rc.127
+    "@vuepress/plugin-photo-swipe": 2.0.0-rc.127
+    "@vuepress/plugin-prismjs": 2.0.0-rc.127
+    "@vuepress/plugin-pwa": 2.0.0-rc.127
+    "@vuepress/plugin-reading-time": 2.0.0-rc.127
+    "@vuepress/plugin-redirect": 2.0.0-rc.127
+    "@vuepress/plugin-revealjs": 2.0.0-rc.127
+    "@vuepress/plugin-rtl": 2.0.0-rc.127
+    "@vuepress/plugin-sass-palette": 2.0.0-rc.127
+    "@vuepress/plugin-search": 2.0.0-rc.127
+    "@vuepress/plugin-seo": 2.0.0-rc.127
+    "@vuepress/plugin-shiki": 2.0.0-rc.127
+    "@vuepress/plugin-sitemap": 2.0.0-rc.127
+    "@vuepress/plugin-slimsearch": 2.0.0-rc.127
     "@vuepress/plugin-theme-data": 2.0.0-rc.126
-    "@vuepress/plugin-watermark": 2.0.0-rc.126
-    "@vuepress/shiki-twoslash": 2.0.0-rc.126
-    "@vuepress/theme-default": 2.0.0-rc.126
+    "@vuepress/plugin-watermark": 2.0.0-rc.127
+    "@vuepress/shiki-twoslash": 2.0.0-rc.127
+    "@vuepress/theme-default": 2.0.0-rc.127
     vuepress: 2.0.0-rc.27
 
-onlyBuiltDependencies:
-  - "@parcel/watcher"
-  - esbuild
-  - unrs-resolver
+allowBuilds:
+  "@parcel/watcher": true
+  esbuild: true
+  unrs-resolver: true
 
 overrides:
   # vulnerable dependency
   "@rollup/plugin-terser@0.4>serialize-javascript": ^7.0.5
-  react: ^19.2.3
 
 patchedDependencies:
   "@vuepress/cli@2.0.0-rc.27": patches/@vuepress__cli@2.0.0-rc.27.patch

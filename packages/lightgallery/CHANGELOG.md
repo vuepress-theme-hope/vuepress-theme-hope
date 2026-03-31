@@ -2,19 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.104](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.103...v2.0.0-rc.104) (2026-03-27)
 
 **Note:** Version bump only for package vuepress-plugin-lightgallery
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.103](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.102...v2.0.0-rc.103) (2026-03-03)
 
 **Note:** Version bump only for package vuepress-plugin-lightgallery
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.99](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.98...v2.0.0-rc.99) (2025-11-29)
 
@@ -22,37 +16,25 @@ All notable changes to this project will be documented in this file. See [Conven
 
 - support new plugins ([7d39006](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7d39006fe4c900458a7deba9b4baff7f71a9bf9f))
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.97](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.96...v2.0.0-rc.97) (2025-10-31)
 
 **Note:** Version bump only for package vuepress-plugin-lightgallery
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.96](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.95...v2.0.0-rc.96) (2025-10-23)
 
 **Note:** Version bump only for package vuepress-plugin-lightgallery
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.95](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.94...v2.0.0-rc.95) (2025-10-15)
 
 **Note:** Version bump only for package vuepress-plugin-lightgallery
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.94](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.93...v2.0.0-rc.94) (2025-07-09)
 
 **Note:** Version bump only for package vuepress-plugin-lightgallery
 
-<!-- #region recent-change -->
-
 ## [2.0.0-rc.90](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.89...v2.0.0-rc.90) (2025-06-04)
 
 **Note:** Version bump only for package vuepress-plugin-lightgallery
-
-<!-- #region recent-change -->
 
 ## [2.0.0-rc.89](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.88...v2.0.0-rc.89) (2025-05-28)
 

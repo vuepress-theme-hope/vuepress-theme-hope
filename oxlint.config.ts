@@ -90,14 +90,12 @@ export default defineHopeConfig(
   },
   {
     files: ["**/create/src/**/*.ts"],
-    plugins: ["node"],
     rules: {
       "no-console": "off",
     },
   },
   {
     files: ["**/create/template/**/*.ts"],
-    plugins: ["node"],
     rules: {
       "typescript/explicit-function-return-type": "off",
     },

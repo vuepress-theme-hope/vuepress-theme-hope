@@ -25,20 +25,17 @@ it("getAuthor()", () => {
   expect(getAuthor(authorNames)).toEqual([{ name: "Mr.Hope" }, { name: "Mrs.Hope" }]);
   expect(getAuthor(author)).toEqual([author]);
   expect(getAuthor(authors)).toEqual(authors);
-  // oxlint-disable-next-line unicorn/no-useless-undefined
   expect(getAuthor(undefined)).toEqual([]);
 });
 
 it("getCategory()", () => {
   expect(getCategory(term)).toEqual(["Mr.Hope"]);
   expect(getCategory(terms)).toEqual(["Mr.Hope", "Mrs.Hope"]);
-  // oxlint-disable-next-line unicorn/no-useless-undefined
   expect(getCategory(undefined)).toEqual([]);
 });
 
 it("getTag()", () => {
   expect(getTag(term)).toEqual(["Mr.Hope"]);
   expect(getTag(terms)).toEqual(["Mr.Hope", "Mrs.Hope"]);
-  // oxlint-disable-next-line unicorn/no-useless-undefined
   expect(getTag(undefined)).toEqual([]);
 });
