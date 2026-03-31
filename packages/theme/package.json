@@ -95,8 +95,7 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "pnpm build:tsdown && pnpm build:ts && pnpm build:assets",
-    "build:assets": "unrun scripts/generateBundleStyle.ts",
+    "build": "pnpm build:tsdown && pnpm build:ts",
     "build:ts": "tsc --project tsconfig.build.json",
     "build:tsdown": "tsdown --config-loader unrun",
     "clean": "rimraf ./dist",

@@ -1,5 +1,7 @@
+// import { DevTools } from "@vitejs/devtools";
 import { viteBundler } from "@vuepress/bundler-vite";
 import { webpackBundler } from "@vuepress/bundler-webpack";
+// import inspect from "vite-plugin-inspect";
 import { defineUserConfig } from "vuepress";
 
 import theme from "./theme.js";
@@ -24,7 +26,21 @@ export default defineUserConfig({
     },
   },
 
-  bundler: process.env.BUNDLER === "webpack" ? webpackBundler() : viteBundler(),
+  bundler:
+    process.env.BUNDLER === "webpack"
+      ? webpackBundler()
+      : viteBundler({
+          // viteOptions: {
+          //   plugins: [
+          //     // oxlint-disable-next-line new-cap
+          //     DevTools({
+          //       build: { withApp: true },
+          //       builtinDevTools: false,
+          //     }),
+          //     inspect(),
+          //   ],
+          // },
+        }),
 
   theme,
 
