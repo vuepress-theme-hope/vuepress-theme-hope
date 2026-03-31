@@ -69,8 +69,8 @@
     "dev": "pnpm build --watch"
   },
   "dependencies": {
-    "@mdit/plugin-container": "^0.23.1",
-    "@mdit/plugin-demo": "^0.23.1",
+    "@mdit/plugin-container": "^0.23.2",
+    "@mdit/plugin-demo": "^0.23.2",
     "@types/markdown-it": "^14.1.2",
     "@vuepress/helper": "catalog:vuepress",
     "@vuepress/plugin-sass-palette": "catalog:vuepress",
