@@ -6,6 +6,8 @@
     "outDir": "./dist",
     "declaration": true,
     "noEmit": false,
+    "sourceMap": false,
+    "inlineSourceMap": true,
     "paths": {
       "@theme-hope/*": ["./src/client/*.js"],
       "vuepress-theme-hope/client": ["./src/client/index.js"]
