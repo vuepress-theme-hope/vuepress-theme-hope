@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.106](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.105...v2.0.0-rc.106) (2026-04-02)
+
+### ✨ Features
+
+- **md-enhance:** update ts options ([5946fd0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/5946fd06a06ef96700a5dc8b5f152f2751d20c4e))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.105](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.104...v2.0.0-rc.105) (2026-03-31)
 
 ### 🐛 Bug Fixes
