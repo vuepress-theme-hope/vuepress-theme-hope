@@ -1200,6 +1200,9 @@ importers:
       '@vuepress/bundler-webpack':
         specifier: catalog:vuepress
         version: 2.0.0-rc.28(@vue/compiler-sfc@3.5.31)(esbuild@0.27.5)(tslib@2.8.1)(typescript@6.0.2)
+      typescript:
+        specifier: 6.0.2
+        version: 6.0.2
 
 packages:
 

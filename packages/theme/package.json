@@ -147,7 +147,8 @@
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "catalog:vuepress",
-    "@vuepress/bundler-webpack": "catalog:vuepress"
+    "@vuepress/bundler-webpack": "catalog:vuepress",
+    "typescript": "6.0.2"
   },
   "peerDependencies": {
     "@vuepress/plugin-docsearch": "catalog:vuepress",
