@@ -22,6 +22,7 @@ import "../styles/vidstack.scss";
 
 declare const DASHJS_INSTALLED: boolean;
 declare const HLS_JS_INSTALLED: boolean;
+// oxlint-disable-next-line typescript/no-unnecessary-type-arguments
 declare const VIDSTACK_LOCALES: ExactLocaleConfig<VidstackLocaleData>;
 
 export default defineComponent({

@@ -3,13 +3,18 @@ packages:
   - docs/*
   - packages/*
 
+allowBuilds:
+  "@parcel/watcher": true
+  esbuild: true
+  unrs-resolver: true
+
 catalog:
   "@mathjax/src": 4.1.1
   "@vueuse/core": ^14.2.1
   markmap-lib: 0.18.12
   markmap-toolbar: 0.18.12
   markmap-view: 0.18.12
-  mermaid: 11.13.0
+  mermaid: 11.14.0
   reveal.js: 6.0.0
   sass-embedded: ^1.98.0
   sass-loader: ^16.0.7
@@ -25,64 +30,67 @@ catalogs:
     vue: ^3.5.31
 
   vuepress:
-    "@vuepress/bundler-vite": 2.0.0-rc.27
-    "@vuepress/bundler-webpack": 2.0.0-rc.27
-    "@vuepress/helper": 2.0.0-rc.127
-    "@vuepress/highlighter-helper": 2.0.0-rc.127
-    "@vuepress/plugin-active-header-links": 2.0.0-rc.126
-    "@vuepress/plugin-back-to-top": 2.0.0-rc.127
-    "@vuepress/plugin-blog": 2.0.0-rc.127
-    "@vuepress/plugin-catalog": 2.0.0-rc.127
-    "@vuepress/plugin-comment": 2.0.0-rc.127
-    "@vuepress/plugin-copy-code": 2.0.0-rc.127
-    "@vuepress/plugin-copyright": 2.0.0-rc.127
-    "@vuepress/plugin-docsearch": 2.0.0-rc.127
-    "@vuepress/plugin-feed": 2.0.0-rc.127
-    "@vuepress/plugin-git": 2.0.0-rc.127
-    "@vuepress/plugin-icon": 2.0.0-rc.127
-    "@vuepress/plugin-links-check": 2.0.0-rc.127
-    "@vuepress/plugin-markdown-chart": 2.0.0-rc.127
-    "@vuepress/plugin-markdown-ext": 2.0.0-rc.127
-    "@vuepress/plugin-markdown-hint": 2.0.0-rc.127
-    "@vuepress/plugin-markdown-image": 2.0.0-rc.127
-    "@vuepress/plugin-markdown-include": 2.0.0-rc.127
-    "@vuepress/plugin-markdown-math": 2.0.0-rc.127
-    "@vuepress/plugin-markdown-preview": 2.0.0-rc.127
-    "@vuepress/plugin-markdown-stylize": 2.0.0-rc.127
-    "@vuepress/plugin-markdown-tab": 2.0.0-rc.127
-    "@vuepress/plugin-meilisearch": 2.0.0-rc.127
-    "@vuepress/plugin-notice": 2.0.0-rc.127
-    "@vuepress/plugin-nprogress": 2.0.0-rc.127
-    "@vuepress/plugin-photo-swipe": 2.0.0-rc.127
-    "@vuepress/plugin-prismjs": 2.0.0-rc.127
-    "@vuepress/plugin-pwa": 2.0.0-rc.127
-    "@vuepress/plugin-reading-time": 2.0.0-rc.127
-    "@vuepress/plugin-redirect": 2.0.0-rc.127
-    "@vuepress/plugin-revealjs": 2.0.0-rc.127
-    "@vuepress/plugin-rtl": 2.0.0-rc.127
-    "@vuepress/plugin-sass-palette": 2.0.0-rc.127
-    "@vuepress/plugin-search": 2.0.0-rc.127
-    "@vuepress/plugin-seo": 2.0.0-rc.127
-    "@vuepress/plugin-shiki": 2.0.0-rc.127
-    "@vuepress/plugin-sitemap": 2.0.0-rc.127
-    "@vuepress/plugin-slimsearch": 2.0.0-rc.127
-    "@vuepress/plugin-theme-data": 2.0.0-rc.126
-    "@vuepress/plugin-watermark": 2.0.0-rc.127
-    "@vuepress/shiki-twoslash": 2.0.0-rc.127
-    "@vuepress/theme-default": 2.0.0-rc.127
-    vuepress: 2.0.0-rc.27
-
-allowBuilds:
-  "@parcel/watcher": true
-  esbuild: true
-  unrs-resolver: true
+    "@vuepress/bundler-vite": 2.0.0-rc.28
+    "@vuepress/bundler-webpack": 2.0.0-rc.28
+    "@vuepress/helper": 2.0.0-rc.128
+    "@vuepress/highlighter-helper": 2.0.0-rc.128
+    "@vuepress/plugin-active-header-links": 2.0.0-rc.128
+    "@vuepress/plugin-back-to-top": 2.0.0-rc.128
+    "@vuepress/plugin-blog": 2.0.0-rc.128
+    "@vuepress/plugin-catalog": 2.0.0-rc.128
+    "@vuepress/plugin-comment": 2.0.0-rc.128
+    "@vuepress/plugin-copy-code": 2.0.0-rc.128
+    "@vuepress/plugin-copyright": 2.0.0-rc.128
+    "@vuepress/plugin-docsearch": 2.0.0-rc.128
+    "@vuepress/plugin-feed": 2.0.0-rc.128
+    "@vuepress/plugin-git": 2.0.0-rc.128
+    "@vuepress/plugin-icon": 2.0.0-rc.128
+    "@vuepress/plugin-links-check": 2.0.0-rc.128
+    "@vuepress/plugin-markdown-chart": 2.0.0-rc.128
+    "@vuepress/plugin-markdown-ext": 2.0.0-rc.128
+    "@vuepress/plugin-markdown-hint": 2.0.0-rc.128
+    "@vuepress/plugin-markdown-image": 2.0.0-rc.128
+    "@vuepress/plugin-markdown-include": 2.0.0-rc.128
+    "@vuepress/plugin-markdown-math": 2.0.0-rc.128
+    "@vuepress/plugin-markdown-preview": 2.0.0-rc.128
+    "@vuepress/plugin-markdown-stylize": 2.0.0-rc.128
+    "@vuepress/plugin-markdown-tab": 2.0.0-rc.128
+    "@vuepress/plugin-meilisearch": 2.0.0-rc.128
+    "@vuepress/plugin-notice": 2.0.0-rc.128
+    "@vuepress/plugin-nprogress": 2.0.0-rc.128
+    "@vuepress/plugin-photo-swipe": 2.0.0-rc.128
+    "@vuepress/plugin-prismjs": 2.0.0-rc.128
+    "@vuepress/plugin-pwa": 2.0.0-rc.128
+    "@vuepress/plugin-reading-time": 2.0.0-rc.128
+    "@vuepress/plugin-redirect": 2.0.0-rc.128
+    "@vuepress/plugin-revealjs": 2.0.0-rc.128
+    "@vuepress/plugin-rtl": 2.0.0-rc.128
+    "@vuepress/plugin-sass-palette": 2.0.0-rc.128
+    "@vuepress/plugin-search": 2.0.0-rc.128
+    "@vuepress/plugin-seo": 2.0.0-rc.128
+    "@vuepress/plugin-shiki": 2.0.0-rc.128
+    "@vuepress/plugin-sitemap": 2.0.0-rc.128
+    "@vuepress/plugin-slimsearch": 2.0.0-rc.128
+    "@vuepress/plugin-theme-data": 2.0.0-rc.128
+    "@vuepress/plugin-watermark": 2.0.0-rc.128
+    "@vuepress/shiki-twoslash": 2.0.0-rc.128
+    "@vuepress/theme-default": 2.0.0-rc.128
+    vuepress: 2.0.0-rc.28
 
 overrides:
   # vulnerable dependency
+  "@chevrotain/cst-dts-gen@11>lodash-es": ^4.18.1
+  "@chevrotain/gast@11>lodash-es": ^4.18.1
+  "chevrotain@11>lodash-es": ^4.18.1
+  "@rollup/plugin-replace@2>magic-string": ^0.30.21
   "@rollup/plugin-terser@0.4>serialize-javascript": ^7.0.5
-
-patchedDependencies:
-  "@vuepress/cli@2.0.0-rc.27": patches/@vuepress__cli@2.0.0-rc.27.patch
+  "@surma/rollup-plugin-off-main-thread>magic-string": ^0.30.21
+  "@xmldom/xmldom": ^0.9.9
+  "markdownlint-cli2@0.22.0>smol-toml": ^1.6.1
+  "markmap-html-parser@0.18.11>cheerio": ^1.2.0
+  "workbox-build@7.4.0>@rollup/plugin-terser": ^1.0.0
+  "workbox-build@7.4.0>glob": ^13.0.6
+  "workbox-build@7.4.0>source-map": ^0.7.6
 
 peerDependencyRules:
   allowedVersions:

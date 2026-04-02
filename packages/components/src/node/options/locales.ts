@@ -22,5 +22,6 @@ export interface ComponentLocaleOptions {
    *
    * VidStack 组件国际化配置
    */
+  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   vidstack?: LocaleConfig<VidstackLocaleData>;
 }

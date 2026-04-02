@@ -44,10 +44,13 @@ jobs:
 
       - name: Combine output
         run: |
-          pnpm cpx "docs/components/dist/**" dist/components
-          pnpm cpx "docs/lightgallery/dist/**" dist/lightgallery
-          pnpm cpx "docs/md-enhance/dist/**" dist/md-enhance
-          pnpm cpx "docs/theme/dist/**" dist
+          mkdir -p dist/components
+          mkdir -p dist/lightgallery
+          mkdir -p dist/md-enhance
+          cp -r docs/components/dist/* dist/components/
+          cp -r docs/lightgallery/dist/* dist/lightgallery/
+          cp -r docs/md-enhance/dist/* dist/md-enhance/
+          cp -r docs/theme/dist/* dist/
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4

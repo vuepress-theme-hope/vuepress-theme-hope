@@ -12,7 +12,7 @@
   "packageRules": [
     {
       "matchPackageNames": ["@types/node"],
-      "enabled": false
+      "matchUpdateTypes": ["minor", "patch"]
     },
     {
       "groupName": "vuepress",
