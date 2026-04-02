@@ -44,6 +44,7 @@ export const optionDeclarations = [
   { name: "project", type: "string" },
   { name: "showConfig", type: "boolean" },
   { name: "listFilesOnly", type: "boolean" },
+  { name: "ignoreConfig", type: "boolean" },
   {
     name: "target",
     type: {
@@ -60,6 +61,7 @@ export const optionDeclarations = [
       es2022: 9,
       es2023: 10,
       es2024: 11,
+      es2025: 12,
       esnext: 99,
     },
   },
@@ -88,13 +90,7 @@ export const optionDeclarations = [
   { name: "checkJs", type: "boolean" },
   {
     name: "jsx",
-    type: {
-      preserve: 1,
-      "react-native": 3,
-      "react-jsx": 4,
-      "react-jsxdev": 5,
-      react: 2,
-    },
+    type: { preserve: 1, "react-native": 3, "react-jsx": 4, "react-jsxdev": 5, react: 2 },
   },
   { name: "outFile", type: "string" },
   { name: "outDir", type: "string" },
@@ -103,10 +99,7 @@ export const optionDeclarations = [
   { name: "tsBuildInfoFile", type: "string" },
   { name: "removeComments", type: "boolean" },
   { name: "importHelpers", type: "boolean" },
-  {
-    name: "importsNotUsedAsValues",
-    type: { remove: 0, preserve: 1, error: 2 },
-  },
+  { name: "importsNotUsedAsValues", type: { remove: 0, preserve: 1, error: 2 } },
   { name: "downlevelIteration", type: "boolean" },
   { name: "isolatedModules", type: "boolean" },
   { name: "verbatimModuleSyntax", type: "boolean" },
@@ -120,6 +113,7 @@ export const optionDeclarations = [
   { name: "strictBindCallApply", type: "boolean" },
   { name: "strictPropertyInitialization", type: "boolean" },
   { name: "strictBuiltinIteratorReturn", type: "boolean" },
+  { name: "stableTypeOrdering", type: "boolean" },
   { name: "noImplicitThis", type: "boolean" },
   { name: "useUnknownInCatchVariables", type: "boolean" },
   { name: "alwaysStrict", type: "boolean" },
@@ -133,14 +127,7 @@ export const optionDeclarations = [
   { name: "noPropertyAccessFromIndexSignature", type: "boolean" },
   {
     name: "moduleResolution",
-    type: {
-      node10: 2,
-      node: 2,
-      classic: 1,
-      node16: 3,
-      nodenext: 99,
-      bundler: 100,
-    },
+    type: { node10: 2, node: 2, classic: 1, node16: 3, nodenext: 99, bundler: 100 },
   },
   { name: "baseUrl", type: "string" },
   { name: "paths", type: "object" },
