@@ -550,8 +550,8 @@ blogs:
   - name: bxx-114514
     desc: bxx-114514 的留档博客
     logo: https://raw.githubusercontent.com/bxx-114514/image-hosting/refs/heads/main/images/users/%E3%82%B7%E3%83%88%E3%83%A9%E3%83%AA_125727901.jpg
-    url: https://bxx-114514.github.io/
-    repo: https://github.com/bxx-114514/bxx-114514.github.io
+    url: https://legacy.bxx114514.cc/
+    repo: https://github.com/bxx-114514/legacy.bxx114514.cc
     preview: https://raw.githubusercontent.com/bxx-114514/image-hosting/refs/heads/main/images/users/bxx-114514.png
 ---
 
