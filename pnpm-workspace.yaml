@@ -70,7 +70,7 @@ catalogs:
     "@vuepress/plugin-seo": 2.0.0-rc.128
     "@vuepress/plugin-shiki": 2.0.0-rc.128
     "@vuepress/plugin-sitemap": 2.0.0-rc.128
-    "@vuepress/plugin-slimsearch": 2.0.0-rc.128
+    "@vuepress/plugin-slimsearch": 2.0.0-rc.129
     "@vuepress/plugin-theme-data": 2.0.0-rc.128
     "@vuepress/plugin-watermark": 2.0.0-rc.128
     "@vuepress/shiki-twoslash": 2.0.0-rc.128
