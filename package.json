@@ -35,7 +35,7 @@
     "@lerna-lite/cli": "5.0.0",
     "@lerna-lite/publish": "5.0.0",
     "@mr-hope/tsconfig": "0.0.3",
-    "@types/node": "20.19.37",
+    "@types/node": "20.19.39",
     "@types/webpack-env": "1.18.8",
     "@vitejs/devtools": "0.1.14",
     "@vitest/coverage-istanbul": "4.1.2",
