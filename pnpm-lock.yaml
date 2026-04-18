@@ -391,8 +391,8 @@ importers:
         specifier: 'catalog:'
         version: 4.1.1
       '@vue/repl':
-        specifier: 4.7.1
-        version: 4.7.1
+        specifier: 4.7.2
+        version: 4.7.2
       '@vuepress/bundler-vite':
         specifier: catalog:vuepress
         version: 2.0.0-rc.28(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@types/node@25.5.0)(@vitejs/devtools@0.1.14(@pnpm/logger@1001.0.1)(typescript@6.0.2)(vite@8.0.3))(@vue/compiler-sfc@3.5.32)(esbuild@0.27.5)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(typescript@6.0.2)(yaml@2.8.3)
@@ -436,8 +436,8 @@ importers:
         specifier: 'catalog:'
         version: 4.1.1
       '@vue/repl':
-        specifier: 4.7.1
-        version: 4.7.1
+        specifier: 4.7.2
+        version: 4.7.2
       '@vuepress/bundler-vite':
         specifier: catalog:vuepress
         version: 2.0.0-rc.28(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@types/node@25.5.0)(@vitejs/devtools@0.1.14(@pnpm/logger@1001.0.1)(typescript@6.0.2)(vite@8.0.3))(@vue/compiler-sfc@3.5.32)(esbuild@0.27.5)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(typescript@6.0.2)(yaml@2.8.3)
@@ -508,8 +508,8 @@ importers:
         specifier: 'catalog:'
         version: 4.1.1
       '@vue/repl':
-        specifier: 4.7.1
-        version: 4.7.1
+        specifier: 4.7.2
+        version: 4.7.2
       '@vuepress/bundler-vite':
         specifier: catalog:vuepress
         version: 2.0.0-rc.28(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@types/node@25.5.0)(@vitejs/devtools@0.1.14(@pnpm/logger@1001.0.1)(typescript@6.0.2)(vite@8.0.3))(@vue/compiler-sfc@3.5.32)(esbuild@0.27.5)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(typescript@6.0.2)(yaml@2.8.3)
@@ -734,8 +734,8 @@ importers:
         specifier: 0.16.8
         version: 0.16.8
       '@vue/repl':
-        specifier: 4.7.1
-        version: 4.7.1
+        specifier: 4.7.2
+        version: 4.7.2
       '@vuepress/bundler-vite':
         specifier: catalog:vuepress
         version: 2.0.0-rc.28(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@types/node@25.5.0)(@vitejs/devtools@0.1.14(@pnpm/logger@1001.0.1)(typescript@6.0.2)(vite@8.0.3))(@vue/compiler-sfc@3.5.32)(esbuild@0.27.5)(jiti@2.6.1)(sass-embedded@1.98.0)(sass@1.98.0)(terser@5.46.1)(typescript@6.0.2)(yaml@2.8.3)
@@ -4355,6 +4355,9 @@ packages:
 
   '@vue/repl@4.7.1':
     resolution: {integrity: sha512-8w5Z3cyqBJ5ufzXO2eut2stzb7aX/ZnSva2d3ee8eEINEB7FG2JYwc14eAHHHGGuoXOGN5v4cyb5ti/YZGcwlg==}
+
+  '@vue/repl@4.7.2':
+    resolution: {integrity: sha512-6x0hisEd5XRYxhLit3fvPCfeUfXEjB3a8Z2Pl3scVa3kZjck4+ERQF4XCahC7PTabWb3He04u+j8q3MK4WZHrQ==}
 
   '@vue/runtime-core@3.5.31':
     resolution: {integrity: sha512-AZPmIHXEAyhpkmN7aWlqjSfYynmkWlluDNPHMCZKFHH+lLtxP/30UJmoVhXmbDoP1Ng0jG0fyY2zCj1PnSSA6Q==}
@@ -13757,6 +13760,8 @@ snapshots:
       '@vue/shared': 3.5.32
 
   '@vue/repl@4.7.1': {}
+
+  '@vue/repl@4.7.2': {}
 
   '@vue/runtime-core@3.5.31':
     dependencies:
