@@ -56,7 +56,7 @@
     "stylelint-config-hope": "11.0.0",
     "through2": "4.0.2",
     "tsdown": "0.21.7",
-    "typescript": "6.0.2",
+    "typescript": "6.0.3",
     "unrun": "0.2.34",
     "vite": "8.0.3",
     "vite-plugin-inspect": "12.0.0-beta.1",
