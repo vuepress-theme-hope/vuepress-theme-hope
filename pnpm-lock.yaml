@@ -334,8 +334,8 @@ importers:
         specifier: 4.7.4
         version: 4.7.4
       hls.js:
-        specifier: 1.6.15
-        version: 1.6.15
+        specifier: 1.6.16
+        version: 1.6.16
       mpegts.js:
         specifier: 1.8.0
         version: 1.8.0
@@ -592,8 +592,8 @@ importers:
         specifier: 4.7.4
         version: 4.7.4
       hls.js:
-        specifier: 1.6.15
-        version: 1.6.15
+        specifier: 1.6.16
+        version: 1.6.16
       mpegts.js:
         specifier: 1.8.0
         version: 1.8.0
@@ -6486,6 +6486,9 @@ packages:
 
   hls.js@1.6.15:
     resolution: {integrity: sha512-E3a5VwgXimGHwpRGV+WxRTKeSp2DW5DI5MWv34ulL3t5UNmyJWCQ1KmLEHbYzcfThfXG8amBL+fCYPneGHC4VA==}
+
+  hls.js@1.6.16:
+    resolution: {integrity: sha512-VSIRpLfRwlAAdGL4wiTucx2ScRipo0ed1FBatWkyt832jC4CReKstga6yIhYVwGu9LOBjuX9wzmRMeQdBJtzEA==}
 
   hookable@5.5.3:
     resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
@@ -16843,6 +16846,8 @@ snapshots:
   highlight.js@11.11.1: {}
 
   hls.js@1.6.15: {}
+
+  hls.js@1.6.16: {}
 
   hookable@5.5.3: {}
 
