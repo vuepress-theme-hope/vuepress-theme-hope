@@ -38,6 +38,7 @@ export default defineComponent({
     },
   },
 
+  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   slots: Object as SlotsType<{
     articleCover?: Slot<ArticleCoverSlotData>;
     articleTitle?: Slot<ArticleTitleSlotData>;

@@ -1,19 +1,13 @@
 export type DarkModeOptions = "switch" | "auto" | "toggle" | "enable" | "disable";
 
 export interface OutlookLocaleData {
-  /**
-   * Theme Color
-   */
+  /** Theme Color */
   themeColor: string;
 
-  /**
-   * Theme mode
-   */
+  /** Theme mode */
   darkmode: string;
 
-  /**
-   * Theme mode
-   */
+  /** Theme mode */
   fullscreen: string;
 }
 
@@ -43,20 +37,14 @@ export interface AppearanceLocaleData {
 }
 
 export interface DeprecatedAppearanceOptions {
-  /**
-   * @deprecated Use `plugins.icon.assets` instead
-   */
+  /** @deprecated Use `plugins.icon.assets` instead */
   iconAssets?: never;
 
-  /**
-   * @deprecated Use `plugins.icon.prefix` instead
-   */
+  /** @deprecated Use `plugins.icon.prefix` instead */
   iconPrefix?: never;
 }
 
-/**
- * @kind root
- */
+/** @kind root */
 export interface AppearanceOptions extends DeprecatedAppearanceOptions {
   /**
    * Whether enable pure mode
@@ -70,12 +58,12 @@ export interface AppearanceOptions extends DeprecatedAppearanceOptions {
   /**
    * Whether enable focus mode
    *
-   * @description Focus mode will be enabled by default when the `pure` mode is enabled
-   * Fill in a number to indicate the delay time
+   * Focus mode will be enabled by default when the `pure` mode is enabled Fill in a number to
+   * indicate the delay time
    *
    * 是否开启沉浸模式
    *
-   * @description 当 `pure` 模式启用时，沉浸模式将被默认启用，填入数字表示延迟时间
+   * 当 `pure` 模式启用时，沉浸模式将被默认启用，填入数字表示延迟时间
    *
    * @default false
    */
@@ -86,7 +74,8 @@ export interface AppearanceOptions extends DeprecatedAppearanceOptions {
    *
    * - `"switch"`: switch between dark, light and auto (default)
    * - `"toggle"`: toggle between lightmode and darkmode
-   * - `"auto"`: Automatically decide whether to apply dark mode based on user device’s color-scheme or current time
+   * - `"auto"`: Automatically decide whether to apply dark mode based on user device’s color-scheme
+   *   or current time
    * - `"enable"`: only dark mode
    * - `"disable"`: disable dark mode
    *

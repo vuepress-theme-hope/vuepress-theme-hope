@@ -22,6 +22,7 @@ const DEFAULT_HERO = "//theme-hope-assets.vuejs.press/hero/default.jpg";
 export default defineComponent({
   name: "BlogHero",
 
+  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   slots: Object as SlotsType<{
     heroInfo?: Slot<HeroInfoSlotData>;
     heroLogo?: Slot<HeroLogoSlotData>;
@@ -113,7 +114,7 @@ export default defineComponent({
                           class: ["vp-blog-hero-image", { light: imageDark }],
                           style: imageStyle,
                           src: imageLight,
-                          alt: alt,
+                          alt,
                         })
                       : null,
                     imageDark
@@ -122,7 +123,7 @@ export default defineComponent({
                           class: "vp-blog-hero-image dark",
                           style: imageStyle,
                           src: imageDark,
-                          alt: alt,
+                          alt,
                         })
                       : null,
                   ];

@@ -12,7 +12,7 @@ export const categoryMapSymbol: InjectionKey<CategoryMapRef> = Symbol.for("categ
 /**
  * Inject categoryMap
  *
- * @returns categoryMap global computed
+ * @returns CategoryMap global computed
  */
 export const useCategoryMap = (): CategoryMapRef => {
   const categoryMap = inject(categoryMapSymbol);
@@ -22,9 +22,7 @@ export const useCategoryMap = (): CategoryMapRef => {
   return categoryMap;
 };
 
-/**
- * Provide categoryMap
- */
+/** Provide categoryMap */
 export const setupCategoryMap = (): void => {
   const categoryMap = useBlogCategory<ArticleInfoData>("category");
 

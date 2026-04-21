@@ -42,9 +42,7 @@ export interface FeatureLocaleConfig {
   blog?: BlogLocaleConfig;
 }
 
-/**
- * @kind root
- */
+/** @kind root */
 export interface FeatureOptions {
   /**
    * Encrypt config
@@ -56,11 +54,11 @@ export interface FeatureOptions {
   /**
    * Whether enable hotReload for features that requires app to restart
    *
-   * @description These features includes blog support and structure sidebar feature
+   * These features includes blog support and structure sidebar feature
    *
    * 是否为需要重启整个 app 的功能启用热更新
    *
-   * @description 这些功能包括博客支持和结构侧边栏功能
+   * 这些功能包括博客支持和结构侧边栏功能
    *
    * @default app.env.isDebug
    */

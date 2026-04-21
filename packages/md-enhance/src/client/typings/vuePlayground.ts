@@ -3,11 +3,11 @@ import type { ReplProps } from "@vue/repl";
 /**
  * Vue Playground options
  *
- * @description Vue playground is using [`@vue/repl`](https://github.com/vuejs/repl)
+ * Vue playground is using [`@vue/repl`](https://github.com/vuejs/repl)
  *
  * Vue 交互演示配置
  *
- * @description Vue playground 使用 [`@vue/repl`](https://github.com/vuejs/repl)
+ * Vue playground 使用 [`@vue/repl`](https://github.com/vuejs/repl)
  */
 export interface VuePlaygroundOptions extends Omit<ReplProps, "store" | "editor"> {
   /**

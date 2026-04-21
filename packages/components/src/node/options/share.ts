@@ -11,11 +11,9 @@ export interface ShareOptions {
   /**
    * Your twitter twitter user name
    *
-   * @description required when you are using twitter service
+   * Required when you are using twitter service 你的 twitter 用户名
    *
-   * 你的 twitter 用户名
-   *
-   * @description required when you are using twitter service
+   * Required when you are using twitter service
    */
   twitterUserName?: string;
 }

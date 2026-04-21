@@ -1,7 +1,5 @@
 export interface RouteLocaleData {
-  /**
-   * Skip to main content
-   */
+  /** Skip to main content */
   skipToContent: string;
 
   /**

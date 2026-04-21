@@ -1,3 +1,3 @@
-export * from "./artplayer.js";
-export * from "./locales.js";
-export * from "./share.js";
+export type * from "./artplayer.js";
+export type * from "./locales.js";
+export type * from "./share.js";

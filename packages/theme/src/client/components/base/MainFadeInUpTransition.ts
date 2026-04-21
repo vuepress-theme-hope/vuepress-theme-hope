@@ -11,6 +11,7 @@ import "@vuepress/helper/transition/fade-in-up.css";
 export default defineComponent({
   name: "MainFadeInUpTransition",
 
+  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   slots: Object as SlotsType<{
     default?: Slot;
   }>,

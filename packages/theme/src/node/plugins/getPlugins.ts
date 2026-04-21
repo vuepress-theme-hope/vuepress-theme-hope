@@ -43,11 +43,10 @@ import { getWatermarkPlugin } from "./watermark.js";
  * Get theme plugins
  *
  * @param app - VuePress app
- * @param themeData - theme data
- * @param options - theme options
- * @param compact - whether to use compact mode
- *
- * @returns theme plugins
+ * @param themeData - Theme data
+ * @param options - Theme options
+ * @param compact - Whether to use compact mode
+ * @returns Theme plugins
  */
 // oxlint-disable-next-line complexity
 export const getPlugins = (

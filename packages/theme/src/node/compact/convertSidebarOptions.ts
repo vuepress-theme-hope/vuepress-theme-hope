@@ -55,7 +55,6 @@ const handleArraySidebarOptions = (
 
 /**
  * @deprecated You should use V2 standard sidebar config and avoid using it
- *
  * @param config - Original sidebar config
  * @param localePath - Current locale path, used for logger
  * @returns Converted sidebar config

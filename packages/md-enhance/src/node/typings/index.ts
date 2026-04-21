@@ -1,3 +1,3 @@
-export * from "./playground.js";
-export * from "./sandpack.js";
-export * from "./vuePlayground.js";
+export type * from "./playground.js";
+export type * from "./sandpack.js";
+export type * from "./vuePlayground.js";

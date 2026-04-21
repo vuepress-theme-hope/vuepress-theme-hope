@@ -2,8 +2,8 @@ import { createConverter } from "vuepress-shared";
 import { colors } from "vuepress/utils";
 
 /**
- * @deprecated You should use `defineLightGalleryConfig` from `vuepress-plugin-lightgallery/client` instead
- *
+ * @deprecated You should use `defineLightGalleryConfig` from `vuepress-plugin-lightgallery/client`
+ *   instead
  * @param options - User options
  */
 export const convertOptions = (options: Record<string, unknown>): void => {

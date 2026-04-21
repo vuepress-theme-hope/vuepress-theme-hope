@@ -14,10 +14,11 @@ export default defineComponent({
   name: "MarkdownContent",
 
   props: {
-    /** whether use customized layout */
+    /** Whether use customized layout */
     custom: Boolean,
   },
 
+  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   slots: Object as SlotsType<{
     contentBefore?: Slot;
     contentAfter?: Slot;

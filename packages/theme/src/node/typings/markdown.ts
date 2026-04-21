@@ -31,10 +31,9 @@ export interface ThemeMarkdownOptions
   /**
    * Link check plugin options
    *
-   * @see https://ecosystem.vuejs.press/plugins/markdown/links-check.html
-   *
    * 链接检查插件选项
    *
+   * @see https://ecosystem.vuejs.press/plugins/markdown/links-check.html
    * @see https://ecosystem.vuejs.press/zh/plugins/markdown/links-check.html
    */
   linksCheck?: LinksCheckPluginOptions | boolean;
@@ -67,7 +66,6 @@ export interface ThemeMarkdownOptions
   imgSize?: MarkdownImagePluginOptions["size"];
 
   /**
-   *
    * Whether to enable obsidian image size mark support
    *
    * 是否启用 Obsidian 图片大小标记支持。
@@ -77,12 +75,11 @@ export interface ThemeMarkdownOptions
   obsidianImgSize?: MarkdownImagePluginOptions["obsidianSize"];
 
   /**
-   * @deprecated
-   *
    * Whether to enable legacy image size mark support
    *
    * 是否启用旧版图片大小标记支持。
    *
+   * @deprecated
    * @default false
    */
   legacyImgSize?: MarkdownImagePluginOptions["legacySize"];

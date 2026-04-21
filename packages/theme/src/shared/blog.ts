@@ -5,87 +5,57 @@ import type { Author } from "./author.js";
 export type PageType = "article" | "home" | "slide" | "page";
 
 export interface PageInfoData extends Record<string, unknown> {
-  /**
-   * Article title
-   */
+  /** Article title */
   title: string;
 
-  /**
-   * Article short title
-   */
+  /** Article short title */
   shortTitle: string;
 
-  /**
-   * Page icon
-   */
+  /** Page icon */
   icon?: string;
 
   /**
    * Whether this page should be indexed
    *
-   * used in other functions, e.g.: sidebar and catalog
+   * Used in other functions, e.g.: sidebar and catalog
    */
   index?: boolean;
 
-  /**
-   * The order of this page in same directory
-   */
+  /** The order of this page in same directory */
   order?: number;
 }
 
 export interface ArticleInfoData extends PageInfoData {
-  /**
-   * Type
-   */
+  /** Type */
   type: PageType;
 
-  /**
-   * Article author
-   */
+  /** Article author */
   author?: Author | false;
 
-  /**
-   * Writing date info
-   */
+  /** Writing date info */
   date?: number;
 
-  /**
-   * Article category
-   */
+  /** Article category */
   category?: string[];
 
-  /**
-   * Article tag
-   */
+  /** Article tag */
   tag?: string[];
 
-  /**
-   * Reading time info
-   */
+  /** Reading time info */
   readingTime?: ReadingTime;
 
-  /**
-   * Article excerpt
-   */
+  /** Article excerpt */
   excerpt: string;
 
-  /**
-   * Whether is encrypted
-   */
+  /** Whether is encrypted */
   isEncrypted?: true;
 
-  /**
-   * Whether is original
-   */
+  /** Whether is original */
   isOriginal?: true;
 
-  /**
-   * Sticky info
-   */
+  /** Sticky info */
   sticky?: number | boolean;
 
-  /**
-   * Cover image
-   */
+  /** Cover image */
   cover?: string;
 }

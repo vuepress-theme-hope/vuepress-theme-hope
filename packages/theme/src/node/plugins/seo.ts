@@ -8,10 +8,9 @@ import type { ThemeData } from "../../shared/index.js";
 /**
  * Resolve options for `@vuepress/plugin-seo`
  *
- * @param themeData - theme data
- * @param seo - options for `@vuepress/plugin-seo`
- * @param hostname - hostname of current site
- *
+ * @param themeData - Theme data
+ * @param seo - Options for `@vuepress/plugin-seo`
+ * @param hostname - Hostname of current site
  * @returns SEO plugin instance or null
  */
 export const getSEOPlugin = (

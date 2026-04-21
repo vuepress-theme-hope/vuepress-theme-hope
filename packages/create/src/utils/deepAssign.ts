@@ -3,6 +3,7 @@ type IAnyObject = Record<any, any>;
 
 const { isArray } = Array;
 
+// oxlint-disable-next-line typescript/no-unnecessary-type-parameters
 const isPlainObject = <InferredType extends IAnyObject = IAnyObject>(
   val: unknown,
 ): val is InferredType => Object.prototype.toString.call(val) === "[object Object]";
@@ -17,6 +18,7 @@ const isPlainObject = <InferredType extends IAnyObject = IAnyObject>(
 export const deepAssign = <
   TargetObject extends IAnyObject,
   MergedObject extends IAnyObject = TargetObject,
+  // oxlint-disable-next-line typescript/no-unnecessary-type-parameters
   FinalObject extends Partial<TargetObject> & Partial<MergedObject> = TargetObject & MergedObject,
 >(
   originObject: TargetObject,

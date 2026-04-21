@@ -1,6 +1,4 @@
-/**
- * LightGallery plugins
- */
+/** LightGallery plugins */
 export type LightGalleryPlugin =
   | "autoplay"
   | "fullscreen"
@@ -10,9 +8,7 @@ export type LightGalleryPlugin =
   | "share"
   | "zoom";
 
-/**
- * Options of plugin
- */
+/** Options of plugin */
 export interface LightGalleryPluginOptions {
   /**
    * Image selector

@@ -1,6 +1,4 @@
-/**
- * @see https://developer.stackblitz.com/platform/api/javascript-sdk
- */
+/** @see https://developer.stackblitz.com/platform/api/javascript-sdk */
 import type { UiThemeOption, UiViewOption } from "@stackblitz/sdk";
 import sdk from "@stackblitz/sdk";
 import type { PropType, VNode } from "vue";
@@ -18,11 +16,9 @@ export default defineComponent({
     /**
      * StackBlitz id
      *
-     * @description Full StackBlitz url is also supported
+     * Full StackBlitz url is also supported StackBlitz ID
      *
-     * StackBlitz ID
-     *
-     * @description 也支持完整的 StackBlitz 链接
+     * 也支持完整的 StackBlitz 链接
      */
     id: {
       type: String,
@@ -125,17 +121,13 @@ export default defineComponent({
      */
     hideDevtools: Boolean,
 
-    /**
-     * Height of the Terminal panel below the editor (as a percentage number).
-     */
+    /** Height of the Terminal panel below the editor (as a percentage number). */
     terminalHeight: {
       type: [String, Number],
       default: 30,
     },
 
-    /**
-     * Height of the Terminal panel below the editor (as a percentage number).
-     */
+    /** Height of the Terminal panel below the editor (as a percentage number). */
     devToolsHeight: {
       type: [String, Number],
       default: 30,

@@ -32,9 +32,8 @@ const BEHAVIOR_DEFAULTS = {
 /**
  * VuePress Theme Hope
  *
- * @param themeOptions - theme options
- * @param behaviorOptions - theme behavior options
- *
+ * @param themeOptions - Theme options
+ * @param behaviorOptions - Theme behavior options
  * @returns VuePress theme instance
  */
 // oxlint-disable-next-line max-lines-per-function

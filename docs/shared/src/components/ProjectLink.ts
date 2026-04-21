@@ -37,25 +37,19 @@ const ProjectLink: FunctionalComponent<
 ProjectLink.displayName = "ProjectLink";
 
 ProjectLink.props = {
-  /**
-   * Plugin type
-   */
+  /** Plugin type */
   type: {
     type: String as PropType<"plugin" | "theme">,
     default: "plugin",
   },
 
-  /**
-   * Plugin name
-   */
+  /** Plugin name */
   name: {
     type: String,
     required: true,
   },
 
-  /**
-   * Link pathname
-   */
+  /** Link pathname */
   path: {
     type: String,
     default: "/",

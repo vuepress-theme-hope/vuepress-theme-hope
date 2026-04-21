@@ -16,7 +16,7 @@ import type { ThemeBehaviorOptions } from "../typings/index.js";
 /**
  * Inject basic page info to routeMeta
  *
- * @param page - page to inject info
+ * @param page - Page to inject info
  */
 export const injectPageInfo = (page: Page<ThemePageData>): void => {
   const frontmatter = page.frontmatter as

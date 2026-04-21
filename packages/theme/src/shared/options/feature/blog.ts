@@ -55,11 +55,11 @@ export interface PaginationLocaleData {
   /**
    * Error text when invalid page number
    *
-   * @description `$page` will be replaced by total page number automatically
+   * `$page` will be replaced by total page number automatically
    *
    * 页码错误文字
    *
-   * @description 其中 `$page` 会自动替换为当前的总页数
+   * 其中 `$page` 会自动替换为当前的总页数
    */
   errorText: string;
 }
@@ -125,17 +125,14 @@ export interface BlogLocaleOptions extends DeprecatedBlogLocaleData {
    * Media links configuration
    *
    * @example
-   *
-   * ```js
-   * {
-   *   QQ: "http://wpa.qq.com/msgrd?v=3&uin=1178522294&site=qq&menu=yes",
-   *   Qzone: "https://1178522294.qzone.qq.com/",
-   *   Gmail: "mailto:mister-hope@outlook.com",
-   *   Zhihu: "https://www.zhihu.com/people/mister-hope",
-   *   Steam: "https://steamcommunity.com/id/Mr-Hope/",
-   *   Weibo: "https://weibo.com/misterhope",
-   * }
-   * ```
+   *   ({
+   *     QQ: "http://wpa.qq.com/msgrd?v=3&uin=1178522294&site=qq&menu=yes",
+   *     Qzone: "https://1178522294.qzone.qq.com/",
+   *     Gmail: "mailto:mister-hope@outlook.com",
+   *     Zhihu: "https://www.zhihu.com/people/mister-hope",
+   *     Steam: "https://steamcommunity.com/id/Mr-Hope/",
+   *     Weibo: "https://weibo.com/misterhope",
+   *   });
    */
   medias?: Record<string, { icon: string; link: string } | string>;
 

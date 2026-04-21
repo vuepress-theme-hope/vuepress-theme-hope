@@ -25,31 +25,30 @@ export interface ThemeBlogHomeProjectOptions {
   /**
    * Project icon
    *
-   * @description image link or icon fontClass are supported, as well as `"link"`、`"project"`、`"book"`、`"article"`、`"friend"`
+   * Image link or icon fontClass are supported, as well as
+   * `"link"`、`"project"`、`"book"`、`"article"`、`"friend"`
    *
    * 项目图标
    *
-   * @description 支持图片链接或者图标字体类，同时也支持 `"link"`、`"project"`、`"book"`、`"article"`、`"friend"`
+   * 支持图片链接或者图标字体类，同时也支持 `"link"`、`"project"`、`"book"`、`"article"`、`"friend"`
    */
   icon?: string;
 
   /**
    * Background color
    *
-   * @description Can be css variables
+   * Can be css variables
    *
    * 背景颜色
    *
-   * @description 可以是 CSS 变量
+   * 可以是 CSS 变量
    */
   background?: string;
 }
 
 export interface ThemeBlogHomePageFrontmatter extends ThemeHomePageFrontmatter {
   layout: "Blog";
-  /**
-   * @default true
-   */
+  /** @default true */
   hero?: boolean;
 
   /**

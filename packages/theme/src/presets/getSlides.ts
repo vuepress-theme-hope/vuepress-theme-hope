@@ -20,10 +20,11 @@ export interface SlidesOptions {
    *
    * 博客类型的本地化文文字
    *
-   * @example {
-   *  '/': 'Slides',
-   *  '/zh/': '幻灯片',
-   * }
+   * @example
+   *   ({
+   *     "/": "Slides",
+   *     "/zh/": "幻灯片",
+   *   });
    */
   locales?: Record<string, string>;
 }

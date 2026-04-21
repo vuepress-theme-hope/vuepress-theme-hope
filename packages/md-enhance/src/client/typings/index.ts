@@ -1,3 +1,3 @@
-export * from "./kotlinPlayground.js";
-export * from "./sandpack.js";
-export * from "./vuePlayground.js";
+export type * from "./kotlinPlayground.js";
+export type * from "./sandpack.js";
+export type * from "./vuePlayground.js";

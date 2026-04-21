@@ -44,9 +44,7 @@ export interface ThemeHomePageFrontmatter extends ThemeBasePageFrontmatter {
    */
   heroImageDark?: string;
 
-  /**
-   * Hero image CSS style
-   */
+  /** Hero image CSS style */
   heroImageStyle?: Record<string, string> | string;
 
   /**

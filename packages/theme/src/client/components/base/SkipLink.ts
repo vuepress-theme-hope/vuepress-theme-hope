@@ -26,7 +26,7 @@ export default defineComponent({
   name: "SkipLink",
 
   props: {
-    /** @description Content ID */
+    /** Content ID */
     content: {
       type: String,
       default: "main-content",

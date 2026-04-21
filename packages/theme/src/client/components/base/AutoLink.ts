@@ -6,9 +6,7 @@ import { AutoLink as _AutoLink } from "vuepress/client";
 import type { AutoLinkOptions } from "../../../shared/index.js";
 
 export interface AutoLinkProps {
-  /**
-   * Autolink config
-   */
+  /** Autolink config */
   config: AutoLinkOptions;
 
   /**

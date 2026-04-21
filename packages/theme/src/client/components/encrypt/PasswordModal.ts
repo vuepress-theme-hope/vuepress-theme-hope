@@ -11,9 +11,7 @@ export default defineComponent({
   name: "PasswordModal",
 
   props: {
-    /**
-     * Password hint
-     */
+    /** Password hint */
     hint: String,
 
     /**

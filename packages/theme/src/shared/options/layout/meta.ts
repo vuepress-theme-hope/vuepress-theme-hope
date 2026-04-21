@@ -120,11 +120,11 @@ export interface MetaLocaleOptions {
   /**
    * Whether to show "Contributors" or not
    *
-   * @description `true` means `meta`
+   * `true` means `meta`
    *
    * 是否显示页面贡献者
    *
-   * @description `true` 表示 `meta`
+   * `true` 表示 `meta`
    *
    * @default "meta"
    */

@@ -25,8 +25,10 @@ export const getCopyrightPlugin = (
     canonical: hostname,
     author: getAuthor(themeData.author ?? themeData.locales["/"].author)[0]?.name,
     license: themeData.license,
+    // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
     authorGetter: (page: Page<Record<string, never>, ThemeNormalPageFrontmatter>) =>
       getAuthor(page.frontmatter.author)[0]?.name,
+    // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
     licenseGetter: (page: Page<Record<string, never>, ThemeNormalPageFrontmatter>) =>
       page.frontmatter.license,
     ...(isPlainObject(options) ? options : { global: true }),

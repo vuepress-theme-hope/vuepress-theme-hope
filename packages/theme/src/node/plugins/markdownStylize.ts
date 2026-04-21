@@ -7,7 +7,7 @@ import type { ThemeMarkdownOptions } from "../typings/index.js";
  * Resolve options for `@vuepress/plugin-markdown-stylize`
  *
  * @param options - Theme markdown options
- * @returns markdown stylize plugin instance
+ * @returns Markdown stylize plugin instance
  */
 export const getMarkdownStylizePlugin = ({
   stylize = [],

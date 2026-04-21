@@ -23,54 +23,37 @@ import type { ComponentPluginOptions } from "vuepress-plugin-components";
 import type { BlogOptions } from "./blog.js";
 
 export interface DeprecatedThemePluginsOptions {
-  /**
-   * @deprecated Use `markdown.linksCheck` instead
-   */
+  /** @deprecated Use `markdown.linksCheck` instead */
   linksCheck?: never;
 
-  /**
-   * @deprecated Use `markdown.alert` and `markdown.hint` instead
-   */
+  /** @deprecated Use `markdown.alert` and `markdown.hint` instead */
   markdownHint?: never;
 
   /**
-   * @deprecated Use `markdown.figure` `markdown.imgLazyload` `markdown.imgMark` `markdown.imgSize` and `markdown.obsidianImgSize` instead
+   * @deprecated Use `markdown.figure` `markdown.imgLazyload` `markdown.imgMark` `markdown.imgSize`
+   *   and `markdown.obsidianImgSize` instead
    */
   markdownImage?: never;
 
-  /**
-   * @deprecated Use `markdown.math` instead
-   */
+  /** @deprecated Use `markdown.math` instead */
   markdownMath?: never;
 
-  /**
-   * @deprecated Use `markdown.codeTabs` and `markdown.tabs` instead
-   */
+  /** @deprecated Use `markdown.codeTabs` and `markdown.tabs` instead */
   markdownTab?: never;
 
-  /**
-   * @deprecated Use `markdown.revealjs` instead
-   */
+  /** @deprecated Use `markdown.revealjs` instead */
   revealjs?: never;
 
-  /**
-   * @deprecated Use `markdown.highlighter` instead
-   */
+  /** @deprecated Use `markdown.highlighter` instead */
   prismjs?: never;
 
-  /**
-   * @deprecated Use `markdown.highlighter` instead
-   */
+  /** @deprecated Use `markdown.highlighter` instead */
   shiki?: never;
 
-  /**
-   * @deprecated Use `plugins.slimsearch` instead
-   */
+  /** @deprecated Use `plugins.slimsearch` instead */
   searchPro?: never;
 
-  /**
-   * @deprecated Use `markdown` instead
-   */
+  /** @deprecated Use `markdown` instead */
   mdEnhance?: never;
 }
 
@@ -78,26 +61,22 @@ export interface ThemePluginsOptions extends DeprecatedThemePluginsOptions {
   /**
    * Enable active-header-links plugin or not
    *
-   * @see https://ecosystem.vuejs.press/plugins/development/active-header-links.html
-   *
    * 是否启用 active-header-links 插件
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/development/active-header-links.html
-   *
    * @default true
+   * @see https://ecosystem.vuejs.press/plugins/development/active-header-links.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/development/active-header-links.html
    */
   activeHeaderLinks?: boolean;
 
   /**
    * Back to top plugin options
    *
-   * @see https://ecosystem.vuejs.press/plugins/features/back-to-top.html
-   *
    * 返回顶部插件配置
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/features/back-to-top.html
-   *
    * @default true
+   * @see https://ecosystem.vuejs.press/plugins/features/back-to-top.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/features/back-to-top.html
    */
   backToTop?: BackToTopPluginOptions | boolean;
 
@@ -113,23 +92,20 @@ export interface ThemePluginsOptions extends DeprecatedThemePluginsOptions {
   /**
    * Catalog plugin options
    *
-   * @see https://ecosystem.vuejs.press/plugins/features/catalog.html
-   *
    * 自动目录插件选项
    *
-   * @see https://ecosystem.vuejs.press/plugins/features/catalog.html
-   *
    * @default true
+   * @see https://ecosystem.vuejs.press/plugins/features/catalog.html
+   * @see https://ecosystem.vuejs.press/plugins/features/catalog.html
    */
   catalog?: CatalogPluginOptions | boolean;
 
   /**
    * Components plugin options
    *
-   * @see https://plugin-components.vuejs.press/config.html
-   *
    * 插件选项配置
    *
+   * @see https://plugin-components.vuejs.press/config.html
    * @see https://plugin-components.vuejs.press/zh/config.html
    */
   components?: ComponentPluginOptions | false;
@@ -137,10 +113,9 @@ export interface ThemePluginsOptions extends DeprecatedThemePluginsOptions {
   /**
    * Comment plugin options
    *
-   * @see https://ecosystem.vuejs.press/plugins/blog/comment/
-   *
    * 评论插件配置
    *
+   * @see https://ecosystem.vuejs.press/plugins/blog/comment/
    * @see https://ecosystem.vuejs.press/zh/plugins/blog/comment/
    */
   comment?: CommentPluginOptions | false;
@@ -148,10 +123,9 @@ export interface ThemePluginsOptions extends DeprecatedThemePluginsOptions {
   /**
    * Copy code plugin options
    *
-   * @see https://ecosystem.vuejs.press/plugins/features/copy-code.html
-   *
    * 代码复制插件配置
    *
+   * @see https://ecosystem.vuejs.press/plugins/features/copy-code.html
    * @see https://ecosystem.vuejs.press/zh/plugins/features/copy-code.html
    */
   copyCode?: CopyCodePluginOptions | boolean;
@@ -159,23 +133,20 @@ export interface ThemePluginsOptions extends DeprecatedThemePluginsOptions {
   /**
    * Copyright plugin options
    *
-   * @see https://ecosystem.vuejs.press/plugins/features/copyright.html
-   *
    * 版权信息插件配置
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/features/copyright.html
-   *
    * @default false
+   * @see https://ecosystem.vuejs.press/plugins/features/copyright.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/features/copyright.html
    */
   copyright?: CopyrightPluginOptions | boolean;
 
   /**
    * DocSearch plugin options
    *
-   * @see https://ecosystem.vuejs.press/plugins/search/docsearch.html
-   *
    * DocSearch 插件选项
    *
+   * @see https://ecosystem.vuejs.press/plugins/search/docsearch.html
    * @see https://ecosystem.vuejs.press/zh/plugins/search/docsearch.html
    */
   docsearch?: DocSearchPluginOptions;
@@ -183,10 +154,9 @@ export interface ThemePluginsOptions extends DeprecatedThemePluginsOptions {
   /**
    * Feed plugin options
    *
-   * @see https://ecosystem.vuejs.press/plugins/blog/feed/config.html
-   *
    * Feed 插件配置
    *
+   * @see https://ecosystem.vuejs.press/plugins/blog/feed/config.html
    * @see https://ecosystem.vuejs.press/zh/plugins/blog/feed/config.html
    */
   feed?: Omit<FeedPluginOptions, "hostname"> | boolean;
@@ -194,14 +164,13 @@ export interface ThemePluginsOptions extends DeprecatedThemePluginsOptions {
   /**
    * Git plugin options
    *
-   * @description By default this plugin is only enabled in production mode for performance reasons.
-   *
-   * @see https://ecosystem.vuejs.press/plugins/development/git.html
+   * By default this plugin is only enabled in production mode for performance reasons.
    *
    * Git 插件配置
    *
-   * @description 默认情况下，出于性能原因，此插件仅在生产模式下启用。
+   * 默认情况下，出于性能原因，此插件仅在生产模式下启用。
    *
+   * @see https://ecosystem.vuejs.press/plugins/development/git.html
    * @see https://ecosystem.vuejs.press/zh/plugins/development/git.html
    */
   git?: GitPluginOptions | boolean;
@@ -216,10 +185,9 @@ export interface ThemePluginsOptions extends DeprecatedThemePluginsOptions {
   /**
    * MeiliSearch plugin options
    *
+   * Meilisearch 插件配置
+   *
    * @see https://ecosystem.vuejs.press/plugins/search/meilisearch.html
-   *
-   * meilisearch 插件配置
-   *
    * @see https://ecosystem.vuejs.press/zh/plugins/search/meilisearch.html
    */
   meilisearch?: MeiliSearchPluginOptions;
@@ -243,51 +211,44 @@ export interface ThemePluginsOptions extends DeprecatedThemePluginsOptions {
   nprogress?: boolean;
 
   /**
-   * photo-swipe plugin options
-   *
-   * @see https://ecosystem.vuejs.press/plugins/features/photo-swipe.html
+   * Photo-swipe plugin options
    *
    * 图片预览插件配置
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/features/photo-swipe.html
-   *
    * @default true
+   * @see https://ecosystem.vuejs.press/plugins/features/photo-swipe.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/features/photo-swipe.html
    */
   photoSwipe?: PhotoSwipePluginOptions | boolean;
 
   /**
    * PWA plugin options
    *
-   * @see https://ecosystem.vuejs.press/plugins/pwa/pwa/config.html
-   *
    * PWA 插件配置
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/pwa/pwa/config.html
-   *
    * @default false
+   * @see https://ecosystem.vuejs.press/plugins/pwa/pwa/config.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/pwa/pwa/config.html
    */
   pwa?: PwaPluginOptions | boolean;
 
   /**
    * Reading time plugin options
    *
-   * @see https://ecosystem.vuejs.press/plugins/development/reading-time.html
-   *
    * 阅读时间插件配置
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/development/reading-time.html
-   *
    * @default true
+   * @see https://ecosystem.vuejs.press/plugins/development/reading-time.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/development/reading-time.html
    */
   readingTime?: ReadingTimePluginOptions | boolean;
 
   /**
    * Redirect plugin options
    *
-   * @see https://ecosystem.vuejs.press/plugins/tools/redirect.html
-   *
    * 重定向插件配置
    *
+   * @see https://ecosystem.vuejs.press/plugins/tools/redirect.html
    * @see https://ecosystem.vuejs.press/zh/plugins/tools/redirect.html
    */
   redirect?: RedirectPluginOptions | boolean;
@@ -295,25 +256,21 @@ export interface ThemePluginsOptions extends DeprecatedThemePluginsOptions {
   /**
    * Search plugin options
    *
-   * @see https://ecosystem.vuejs.press/plugins/search/search.html
-   *
-   * @deprecated Use `slimsearch` instead
-   *
    * Search 插件配置
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/search/search.html
-   *
+   * @deprecated Use `slimsearch` instead
    * @deprecated 使用 `slimsearch` 代替
+   * @see https://ecosystem.vuejs.press/plugins/search/search.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/search/search.html
    */
   search?: SearchPluginOptions | boolean;
 
   /**
    * Slimsearch plugin options
    *
+   * Slimsearch 插件配置
+   *
    * @see https://ecosystem.vuejs.press/zh/plugins/search/slimsearch.html
-   *
-   * slimsearch 插件配置
-   *
    * @see https://ecosystem.vuejs.press/zh/plugins/search/slimsearch.html
    */
   slimsearch?: SlimSearchPluginOptions | boolean;
@@ -321,39 +278,33 @@ export interface ThemePluginsOptions extends DeprecatedThemePluginsOptions {
   /**
    * SEO plugin options
    *
-   * @see https://ecosystem.vuejs.press/plugins/seo/seo/config.html
-   *
    * SEO 插件配置
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/seo/seo/config.html
-   *
    * @default true
+   * @see https://ecosystem.vuejs.press/plugins/seo/seo/config.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/seo/seo/config.html
    */
   seo?: Omit<SeoPluginOptions, "hostname" | "author"> | boolean;
 
   /**
    * Sitemap plugin options
    *
-   * @see https://ecosystem.vuejs.press/plugins/seo/sitemap/config.html
-   *
    * Sitemap 插件配置
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/seo/sitemap/config.html
-   *
    * @default true
+   * @see https://ecosystem.vuejs.press/plugins/seo/sitemap/config.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/seo/sitemap/config.html
    */
   sitemap?: Omit<SitemapPluginOptions, "hostname"> | boolean;
 
   /**
    * Watermark plugin options
    *
-   * @see https://ecosystem.vuejs.press/plugins/features/watermark.html
-   *
    * 水印插件配置
    *
-   * @see https://ecosystem.vuejs.press/zh/plugins/features/watermark.html
-   *
    * @default false
+   * @see https://ecosystem.vuejs.press/plugins/features/watermark.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/features/watermark.html
    */
   watermark?: WatermarkPluginOptions | boolean;
 }

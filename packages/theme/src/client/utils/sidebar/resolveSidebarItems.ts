@@ -22,9 +22,9 @@ export interface SidebarArrayItem {
 /**
  * Resolve sidebar item
  *
- * @param options - sidebar item config
- * @param pathPrefix - current path prefix
- * @returns resolved sidebar item
+ * @param options - Sidebar item config
+ * @param pathPrefix - Current path prefix
+ * @returns Resolved sidebar item
  */
 export const resolveSidebarItem = (
   options: SidebarItemOptions,
@@ -62,8 +62,8 @@ export const resolveSidebarItem = (
 /**
  * Resolve sidebar items if the config is an array
  *
- * @param options - resolve sidebar array item options
- * @returns resolved sidebar items
+ * @param options - Resolve sidebar array item options
+ * @returns Resolved sidebar items
  */
 export const resolveArraySidebarItems = ({
   config,
@@ -78,8 +78,8 @@ export interface ResolveMultiSidebarOptions {
 /**
  * Resolve sidebar items if the config is a key -> value (path-prefix -> array) object
  *
- * @param options - resolve multi sidebar options
- * @returns resolved sidebar items
+ * @param options - Resolve multi sidebar options
+ * @returns Resolved sidebar items
  */
 export const resolveMultiSidebarItems = ({
   config,
@@ -106,17 +106,11 @@ export const resolveMultiSidebarItems = ({
 };
 
 export interface ResolveSidebarOptions {
-  /**
-   * Sidebar config
-   */
+  /** Sidebar config */
   config: SidebarOptions;
-  /**
-   * Current route locale
-   */
+  /** Current route locale */
   routeLocale: string;
-  /**
-   * Current route path
-   */
+  /** Current route path */
   routePath: string;
 }
 
@@ -125,8 +119,8 @@ export interface ResolveSidebarOptions {
  *
  * It should only be resolved and provided once
  *
- * @param options - resolve sidebar options
- * @returns resolved sidebar items
+ * @param options - Resolve sidebar options
+ * @returns Resolved sidebar items
  */
 export const resolveSidebarItems = ({
   config,

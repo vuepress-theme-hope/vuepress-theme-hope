@@ -6,10 +6,9 @@ import type { Plugin } from "vuepress/core";
 /**
  * Resolve options for `vuepress-plugin-components`
  *
- * @param options - theme component plugin options
- * @param compact - whether to use compact mode
- *
- * @returns component plugin instance or null
+ * @param options - Theme component plugin options
+ * @param compact - Whether to use compact mode
+ * @returns Component plugin instance or null
  */
 export const getComponentsPlugin = (
   options?: ComponentPluginOptions | false,

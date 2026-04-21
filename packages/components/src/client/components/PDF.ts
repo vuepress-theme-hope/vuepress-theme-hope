@@ -66,7 +66,7 @@ export default defineComponent({
      *
      * PDF 初始页码
      *
-     * @description Chrome only
+     * Chrome only
      */
     page: {
       type: [String, Number],
@@ -78,7 +78,7 @@ export default defineComponent({
      *
      * 是否显示工具栏
      *
-     * @description Chrome only
+     * Chrome only
      */
     noToolbar: Boolean,
 

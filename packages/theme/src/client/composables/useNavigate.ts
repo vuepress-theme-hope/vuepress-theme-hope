@@ -11,18 +11,23 @@ export const useNavigate = (): ((url: string) => void) => {
     if (!url) return;
 
     // Outer url
-    if (isLinkWithProtocol(url)) return window.open(url);
+    if (isLinkWithProtocol(url)) {
+      window.open(url);
+      return;
+    }
 
     // Inner absolute path
     if (isLinkAbsolute(url)) {
       if (route.fullPath === url) return;
 
-      return void router.push(url);
+      void router.push(url);
+
+      return;
     }
 
     // Inner relative path
     const loc = route.path.slice(0, route.path.lastIndexOf("/"));
 
-    return void router.push(new URL(`${loc}/${encodeURI(url)}`, FAKE_HOST).pathname);
+    void router.push(new URL(`${loc}/${encodeURI(url)}`, FAKE_HOST).pathname);
   };
 };

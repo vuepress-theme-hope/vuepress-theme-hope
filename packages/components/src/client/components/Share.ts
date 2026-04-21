@@ -26,58 +26,42 @@ export default defineComponent({
       default: () => shareServices.map(({ name }) => name),
     },
 
-    /**
-     * Getter for page title
-     */
+    /** Getter for page title */
     titleGetter: {
       type: Function as PropType<(page: PageData) => string>,
       default: (page: PageData) => page.title,
     },
 
-    /**
-     * Getter for page description
-     */
+    /** Getter for page description */
     descriptionGetter: {
       type: Function as PropType<(page: PageData) => string | undefined | null>,
       default: (page: PageData) => page.frontmatter.description,
     },
 
-    /**
-     * Getter for page summary
-     */
+    /** Getter for page summary */
     summaryGetter: {
       type: Function as PropType<(page: PageData) => string | undefined | null>,
-      default: (page: PageData<{ summary?: string }>) => page.summary,
+      default: (page: PageData) => page.summary,
     },
 
-    /**
-     * Getter for page summary
-     */
+    /** Getter for page summary */
     coverGetter: {
       type: Function as PropType<(page: PageData) => string | undefined | null>,
-      default: (page: PageData<{ cover?: string }>) => page.cover,
+      default: (page: PageData) => page.cover,
     },
 
-    /**
-     * Getter for page summary
-     */
+    /** Getter for page summary */
     tagGetter: {
       type: Function as PropType<(page: PageData) => string | string[] | undefined | null>,
 
-      default: ({
-        frontmatter,
-      }: PageData<Record<never, never>, { tag?: string | string[]; tags?: string | string[] }>) =>
+      default: ({ frontmatter }: PageData<Record<never, never>>) =>
         frontmatter.tag ?? frontmatter.tags,
     },
 
-    /**
-     * Whether to display the share component inline
-     */
+    /** Whether to display the share component inline */
     inline: Boolean,
 
-    /**
-     * Use colorful icon
-     */
+    /** Use colorful icon */
     colorful: Boolean,
   },
 

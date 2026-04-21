@@ -11,10 +11,10 @@ import { compressToEncodedURIComponent as encode } from "./vendors/lzstring.js";
 /**
  * Gets a query string representation (hash + queries)
  *
- * @param key - query key
- * @param value - query value
- * @param sign - join sign
- * @returns query string
+ * @param key - Query key
+ * @param value - Query value
+ * @param sign - Join sign
+ * @returns Query string
  */
 const getUrlJoinParam = (key: string, value: string, sign = "&"): string => {
   if (value) return `${sign}${key}=${encode(value)}`;

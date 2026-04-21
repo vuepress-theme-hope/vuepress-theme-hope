@@ -4,7 +4,7 @@ export * from "./compact/index.js";
 export * from "./helpers.js";
 export * from "./hopeTheme.js";
 export * from "./locales/index.js";
-export * from "./typings/index.js";
+export type * from "./typings/index.js";
 export * from "../shared/index.js";
 
 // Internal methods

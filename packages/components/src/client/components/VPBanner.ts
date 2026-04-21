@@ -8,9 +8,7 @@ import "../styles/vp-banner.scss";
 export interface BannerAction {
   text: string;
   link: string;
-  /**
-   * @default "primary"
-   */
+  /** @default "primary" */
   type?: "primary" | "default";
 }
 
