@@ -1,5 +1,5 @@
-export * from "./global.js";
-export * from "./name.js";
-export * from "./locales.js";
-export * from "./options.js";
-export * from "./share.js";
+export type * from "./global.js";
+export type * from "./name.js";
+export type * from "./locales.js";
+export type * from "./options.js";
+export type * from "./share.js";

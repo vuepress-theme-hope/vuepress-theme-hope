@@ -1,6 +1,4 @@
-/**
- * Base nav item, displayed as text
- */
+/** Base nav item, displayed as text */
 export interface NavItemOptions {
   /**
    * Text of item
@@ -24,9 +22,7 @@ export interface NavItemOptions {
   ariaLabel?: string;
 }
 
-/**
- * Options for `<AutoLink>`
- */
+/** Options for `<AutoLink>` */
 export interface AutoLinkOptions extends NavItemOptions {
   /**
    * Link of item

@@ -1,4 +1,4 @@
-/**
+/*
  * Note: This file needs to be updated with typescript major and minor updates
  *
  * https://www.typescriptlang.org/play
@@ -11,7 +11,6 @@ JSON.stringify(
     type: type instanceof Map ? Object.fromEntries(type) : type,
   }))
 )
- *
  */
 
 export const optionDeclarations = [

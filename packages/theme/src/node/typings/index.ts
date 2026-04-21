@@ -1,5 +1,5 @@
-export * from "./behavior.js";
-export * from "./helper.js";
-export * from "./markdown.js";
-export * from "./options.js";
-export * from "./plugins/index.js";
+export type * from "./behavior.js";
+export type * from "./helper.js";
+export type * from "./markdown.js";
+export type * from "./options.js";
+export type * from "./plugins/index.js";

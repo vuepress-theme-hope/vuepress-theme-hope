@@ -1,6 +1,4 @@
 export interface VuePlaygroundOptions {
-  /**
-   * @default "codemirror"
-   */
+  /** @default "codemirror" */
   editor?: "codemirror" | "monaco";
 }

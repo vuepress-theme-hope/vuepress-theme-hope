@@ -13,11 +13,10 @@ import { getBlogArticleType, getBlogStarType, getBlogTimelineType } from "./type
 /**
  * Resolves `@vuepress/plugin-blog`
  *
- * @param themeData - theme data
- * @param options - blog plugin options
- * @param hotReload - whether enable hot reload
- *
- * @returns blog plugin instance or null
+ * @param themeData - Theme data
+ * @param options - Blog plugin options
+ * @param hotReload - Whether enable hot reload
+ * @returns Blog plugin instance or null
  */
 export const getBlogPlugin = (
   themeData: ThemeData,

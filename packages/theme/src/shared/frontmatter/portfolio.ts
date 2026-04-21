@@ -21,8 +21,6 @@ export interface ThemePortfolioFrontmatter extends ThemeBasePageFrontmatter {
   welcome?: string;
   medias?: PortfolioMedia[];
 
-  /**
-   * @default 'portfolio'
-   */
+  /** @default "portfolio" */
   content?: "portfolio" | "doc" | "none";
 }

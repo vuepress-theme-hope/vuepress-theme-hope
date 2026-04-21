@@ -1,6 +1,4 @@
-/**
- * Code demo options
- */
+/** Code demo options */
 export interface CodeDemoOptions {
   /**
    * Whether to use babel to transpile to es5

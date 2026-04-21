@@ -15,19 +15,19 @@ catalog:
   markmap-toolbar: 0.18.12
   markmap-view: 0.18.12
   mermaid: 11.14.0
-  reveal.js: 6.0.0
-  sass-embedded: ^1.98.0
-  sass-loader: ^16.0.7
-  vue: ^3.5.31
+  reveal.js: 6.0.1
+  sass-embedded: 1.99.0
+  sass-loader: 16.0.7
+  vue: 3.5.32
 
 catalogs:
   range:
     "@vueuse/core": ^14.2.1
     balloon-css: ^1.2.0
-    sass: ^1.98.0
-    sass-embedded: ^1.98.0
+    sass: ^1.99.0
+    sass-embedded: ^1.99.0
     sass-loader: ^16.0.7
-    vue: ^3.5.31
+    vue: ^3.5.32
 
   vuepress:
     "@vuepress/bundler-vite": 2.0.0-rc.28
@@ -70,7 +70,7 @@ catalogs:
     "@vuepress/plugin-seo": 2.0.0-rc.128
     "@vuepress/plugin-shiki": 2.0.0-rc.128
     "@vuepress/plugin-sitemap": 2.0.0-rc.128
-    "@vuepress/plugin-slimsearch": 2.0.0-rc.128
+    "@vuepress/plugin-slimsearch": 2.0.0-rc.129
     "@vuepress/plugin-theme-data": 2.0.0-rc.128
     "@vuepress/plugin-watermark": 2.0.0-rc.128
     "@vuepress/shiki-twoslash": 2.0.0-rc.128
@@ -79,13 +79,11 @@ catalogs:
 
 overrides:
   # vulnerable dependency
-  "@chevrotain/cst-dts-gen@11>lodash-es": ^4.18.1
-  "@chevrotain/gast@11>lodash-es": ^4.18.1
-  "chevrotain@11>lodash-es": ^4.18.1
   "@rollup/plugin-replace@2>magic-string": ^0.30.21
   "@rollup/plugin-terser@0.4>serialize-javascript": ^7.0.5
   "@surma/rollup-plugin-off-main-thread>magic-string": ^0.30.21
-  "@xmldom/xmldom": ^0.9.9
+  "@xmldom/xmldom": ^0.9.10
+  esbuild: 0.27.5
   "markdownlint-cli2@0.22.0>smol-toml": ^1.6.1
   "markmap-html-parser@0.18.11>cheerio": ^1.2.0
   "workbox-build@7.4.0>@rollup/plugin-terser": ^1.0.0

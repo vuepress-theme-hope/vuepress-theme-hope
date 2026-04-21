@@ -4,7 +4,7 @@ import { en } from "./en.js";
 import type { CreateLocale, SupportedLang } from "./typings.js";
 import { zh } from "./zh.js";
 
-export * from "./typings.js";
+export type * from "./typings.js";
 
 const i18n: Record<SupportedLang, CreateLocale> = { en, zh };
 

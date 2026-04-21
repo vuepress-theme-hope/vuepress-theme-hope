@@ -1,1 +1,1 @@
-export * from "./codeDemo.js";
+export type * from "./codeDemo.js";

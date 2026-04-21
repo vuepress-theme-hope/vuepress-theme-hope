@@ -15,7 +15,6 @@ import { optionDeclarations } from "./vendors/optionDeclarations.js";
  *
  * @param code - TS code
  * @param compilerOptions - TS compiler options
- *
  * @returns URL string
  */
 export const getTypescriptPlaygroundHash = (

@@ -22,7 +22,6 @@ try {
  * @param hostname Hostname for feed plugin
  * @param favicon Favicon for feed plugin
  * @param compact Whether to use compact mode for feed plugin
- *
  * @returns Feed plugin instance or null
  */
 // oxlint-disable-next-line max-params

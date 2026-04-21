@@ -38,14 +38,13 @@ export interface NavbarLocaleOptions {
   /**
    * Navbar config
    *
-   * @description Set to `false` to disable navbar in current locale
+   * Set to `false` to disable navbar in current locale
+   *
+   * 设置 `false` 以在当前语言中禁用导航栏
    *
    * @see https://theme-hope.vuejs.press/guide/layout/navbar.html
    *
    * 导航栏配置
-   *
-   * @description 设置 `false` 以在当前语言中禁用导航栏
-   *
    * @see https://theme-hope.vuejs.press/v2/zh/guide/layout/navbar.html
    */
   navbar?: NavbarOptions | false;
@@ -53,22 +52,22 @@ export interface NavbarLocaleOptions {
   /**
    * Navbar logo
    *
-   * @description should be absolute path relative to `.vuepress/public` folder
+   * Should be absolute path relative to `.vuepress/public` folder
    *
    * 导航栏图标
    *
-   * @description 应为基于 `.vuepress/public` 文件夹的绝对路径
+   * 应为基于 `.vuepress/public` 文件夹的绝对路径
    */
   logo?: string;
 
   /**
    * Navbar logo under darkmode
    *
-   * @description should be absolute path relative to `.vuepress/public` folder
+   * Should be absolute path relative to `.vuepress/public` folder
    *
    * 夜间模式下导航栏图标
    *
-   * @description 应为基于 `.vuepress/public` 文件夹的绝对路径
+   * 应为基于 `.vuepress/public` 文件夹的绝对路径
    */
   logoDark?: string;
 

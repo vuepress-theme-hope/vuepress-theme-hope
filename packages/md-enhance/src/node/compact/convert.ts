@@ -6,8 +6,8 @@ import type { MarkdownEnhancePluginOptions } from "../options.js";
 import { logger } from "../utils.js";
 
 /**
- * @param options - old markdown enhance plugin options
  * @deprecated
+ * @param options - Old markdown enhance plugin options
  */
 // oxlint-disable-next-line max-lines-per-function, max-statements
 export const convertOptions = (

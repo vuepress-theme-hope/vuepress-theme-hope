@@ -11,9 +11,7 @@ import type { LocaleDataToOption } from "./helpers.js";
 import type { LayoutLocaleConfig, LayoutLocaleData, LayoutLocaleOptions } from "./layout/index.js";
 
 export interface ThemeLocaleData extends AppearanceLocaleData, FeatureLocaleData, LayoutLocaleData {
-  /**
-   * Current lang code
-   */
+  /** Current lang code */
   lang: string;
 }
 

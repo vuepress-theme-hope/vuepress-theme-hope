@@ -22,63 +22,46 @@ import "../styles/vidstack.scss";
 
 declare const DASHJS_INSTALLED: boolean;
 declare const HLS_JS_INSTALLED: boolean;
-// oxlint-disable-next-line typescript/no-unnecessary-type-arguments
 declare const VIDSTACK_LOCALES: ExactLocaleConfig<VidstackLocaleData>;
 
 export default defineComponent({
   name: "VidStack",
 
   props: {
-    /**
-     * sources
-     */
+    /** Sources */
     src: {
       type: [String, Array, Object] as PropType<PlayerSrc>,
       required: true,
     },
 
-    /**
-     * tracks
-     */
+    /** Tracks */
     tracks: {
       type: Array as PropType<TextTrackInit[]>,
       default: () => [],
     },
 
-    /**
-     * poster
-     */
+    /** Poster */
     poster: String,
 
-    /**
-     * thumbnails
-     */
+    /** Thumbnails */
     thumbnails: String,
 
-    /**
-     * title
-     */
+    /** Title */
     title: String,
 
-    /**
-     * VidStack player options
-     */
+    /** VidStack player options */
     player: {
       type: Object as PropType<
         Omit<VidstackPlayerConfig, "target" | "src" | "sources" | "tracks" | "title" | "poster">
       >,
     },
 
-    /**
-     * VidStack layout options
-     */
+    /** VidStack layout options */
     layout: {
       type: Object as PropType<Partial<DefaultLayoutProps>>,
     },
 
-    /**
-     * Dark mode
-     */
+    /** Dark mode */
     darkmode: Boolean,
   },
 

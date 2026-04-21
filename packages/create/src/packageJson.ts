@@ -43,9 +43,7 @@ export const createPackageJson = async ({
     })),
   });
 
-  /**
-   * Generate package.json
-   */
+  /** Generate package.json */
   const packageJsonPath = resolve(cwd, "package.json");
   const scripts = getScript(packageManager, bundler, source);
   const devDependencies = {

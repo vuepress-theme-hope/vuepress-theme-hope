@@ -35,23 +35,22 @@ export interface TsdownOptions extends Omit<UserConfig, "entry" | "copy"> {
    *
    * 永远不打包的资源
    *
-   * @description `@temp/`, `@internal/` 以及 .css/.scss 文件默认不打包
+   * `@temp/`, `@internal/` 以及 .css/.scss 文件默认不打包
    */
   neverBundle?: (string | RegExp)[];
 
   /**
    * Custom module side effects determination
    *
-   * By default, only `.css` and `.scss` imports are considered to have side
-   * effects. Use this to add additional side-effect patterns. This is part
-   * of the `treeshake` option in tsdown/rolldown.
+   * By default, only `.css` and `.scss` imports are considered to have side effects. Use this to
+   * add additional side-effect patterns. This is part of the `treeshake` option in
+   * tsdown/rolldown.
    *
    * 自定义模块副作用判定，默认仅保留 `.css` 和 `.scss` 导入的副作用。
    *
+   * @default (id) => id.endsWith('.css') || id.endsWith('.scss')
    * @param id - Module ID / 模块 ID
    * @param external - Whether the module is external / 模块是否为外部模块
-   *
-   * @default (id) => id.endsWith('.css') || id.endsWith('.scss')
    */
   moduleSideEffects?: (id: string, external: boolean) => boolean | undefined;
 
@@ -60,15 +59,17 @@ export interface TsdownOptions extends Omit<UserConfig, "entry" | "copy"> {
    *
    * 要复制到输出目录的额外文件
    *
-   * Each item is a tuple of [from, to], where 'from' is the source path relative to src, and 'to' is the destination path relative to the output directory. To can be omitted to copy to the same relative path in the output directory.
-   * 每个项都是一个 [from, to] 的元组，其中 'from' 是相对于 src 目录的源路径，'to' 是相对于输出目录的目标路径。to 可以省略，表示复制到输出目录的相同相对路径。
+   * Each item is a tuple of [from, to], where 'from' is the source path relative to src, and 'to'
+   * is the destination path relative to the output directory. To can be omitted to copy to the same
+   * relative path in the output directory.
    *
-   * Example:
-   * 例如：
-   * copy: [
-   *   ['assets/'], // Copy src/assets/ folder to dist/assets/
-   *   ['types/global.d.ts', 'global.d.ts'], // Copy src/types/global.d.ts to dist/global.d.ts
-   * ]
+   * 每项都是一个 [from, to] 的元组，其中 'from' 是相对于 src 目录的源路径，'to' 是相对于输出目录的目标路径。to 可以省略，表示复制到输出目录的相同相对路径。
+   *
+   * @example
+   *   copy: [
+   *     ["assets/"], // Copy src/assets/ folder to dist/assets/
+   *     ["types/global.d.ts", "global.d.ts"], // Copy src/types/global.d.ts to dist/global.d.ts
+   *   ];
    */
   copy?: [from: string, to?: string][];
 }
@@ -129,7 +130,7 @@ export const tsdownConfig = (
       moduleSideEffects: moduleSideEffects ?? defaultModuleSideEffects,
     },
     deps: {
-      alwaysBundle: alwaysBundle,
+      alwaysBundle,
       neverBundle: [/^@internal\//, /^@temp\//, /\.s?css$/, ...neverBundle],
       onlyBundle,
     },

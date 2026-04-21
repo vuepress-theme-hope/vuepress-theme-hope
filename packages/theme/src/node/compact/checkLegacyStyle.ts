@@ -3,7 +3,6 @@ import { colors, fs, logger } from "vuepress/utils";
 
 /**
  * @deprecated You should use scss style files in v2 and avoid using it
- *
  * @param app - VuePress app instance
  */
 export const checkLegacyStyle = (app: App): void => {

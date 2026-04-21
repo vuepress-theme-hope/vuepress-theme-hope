@@ -33,12 +33,12 @@ export interface SnowflakeOptions {
 }
 
 class Snowflake {
-  x: number;
-  y: number;
-  size: number;
-  speed: number;
+  private x: number;
+  private y: number;
+  private readonly size: number;
+  private readonly speed: number;
 
-  constructor(
+  public constructor(
     public image: HTMLImageElement,
     public context: CanvasRenderingContext2D,
     { maxSize, minSize, speed }: SnowflakeOptions,
@@ -49,7 +49,7 @@ class Snowflake {
     this.speed = speed;
   }
 
-  move(): void {
+  public move(): void {
     this.y += this.speed;
     if (this.y > this.context.canvas.height) {
       this.y = 0 - this.size;
@@ -57,7 +57,7 @@ class Snowflake {
     }
   }
 
-  draw(): void {
+  public draw(): void {
     this.context.drawImage(this.image, this.x, this.y, this.size, this.size);
   }
 }

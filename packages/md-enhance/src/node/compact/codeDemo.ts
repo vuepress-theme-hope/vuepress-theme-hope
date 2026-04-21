@@ -8,8 +8,8 @@ import { escapeHtml } from "../markdown-it/utils.js";
 import { logger } from "../utils.js";
 
 /**
- * @param md - Markdown-it instance
  * @deprecated
+ * @param md - Markdown-it instance
  */
 export const legacyCodeDemo: PluginSimple = (md) => {
   md.use(container, {
@@ -52,8 +52,8 @@ export const legacyCodeDemo: PluginSimple = (md) => {
 };
 
 /**
- * @param md - Markdown-it instance
  * @deprecated
+ * @param md - Markdown-it instance
  */
 export const mdDemo: PluginSimple = (md) => {
   md.use(demo, {

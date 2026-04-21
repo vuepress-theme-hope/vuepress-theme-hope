@@ -25,46 +25,32 @@ export default defineComponent({
   name: "AudioPlayer",
 
   props: {
-    /**
-     * sources
-     */
+    /** Sources */
     src: {
       type: [String, Array, Object] as PropType<PlayerSrc>,
       required: true,
     },
 
-    /**
-     * tracks
-     */
+    /** Tracks */
     tracks: Array as PropType<TextTrackInit[]>,
 
-    /**
-     * poster
-     */
+    /** Poster */
     poster: String,
 
-    /**
-     * thumbnails
-     */
+    /** Thumbnails */
     thumbnails: String,
 
-    /**
-     * title
-     */
+    /** Title */
     title: String,
 
-    /**
-     * VidStack player options
-     */
+    /** VidStack player options */
     player: {
       type: Object as PropType<
         Omit<VidstackPlayerConfig, "target" | "src" | "sources" | "tracks" | "title" | "poster">
       >,
     },
 
-    /**
-     * VidStack layout options
-     */
+    /** VidStack layout options */
     layout: {
       type: Object as PropType<Partial<PlyrLayoutProps>>,
     },

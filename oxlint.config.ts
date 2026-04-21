@@ -2,7 +2,7 @@ import { defineHopeConfig } from "oxc-config-hope/oxlint";
 
 export default defineHopeConfig(
   {
-    ignorePatterns: ["packages/*/assets/**", "**/vendors/lzstring.ts"],
+    ignore: ["packages/*/assets/**", "**/vendors/lzstring.ts"],
 
     rules: {
       // the following rules are still not supported by oxlint yet

@@ -2,7 +2,6 @@ import type { DefaultLocaleInfo } from "@vuepress/helper";
 
 import type { VidstackLocaleData } from "../../shared/index.js";
 
-// oxlint-disable-next-line typescript/no-unnecessary-type-arguments
 export const vidstackLocaleInfo: DefaultLocaleInfo<VidstackLocaleData> = [
   [["en", "en-US"], {}],
   [

@@ -33,9 +33,7 @@ export const useTimeline = (): TimelineRef => {
   return timeline;
 };
 
-/**
- * Provide timelines
- */
+/** Provide timelines */
 export const setupTimeline = (): void => {
   const timeline = useBlogType<ArticleInfoData>("timeline");
   const pageLang = useLang();

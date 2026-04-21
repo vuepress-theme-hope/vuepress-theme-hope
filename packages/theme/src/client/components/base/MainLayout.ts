@@ -59,9 +59,7 @@ export default defineComponent({
      */
     noSidebar: Boolean,
 
-    /**
-     * Whether disable toc
-     */
+    /** Whether disable toc */
     noToc: Boolean,
   },
 

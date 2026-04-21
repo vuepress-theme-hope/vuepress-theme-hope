@@ -10,7 +10,6 @@ export interface CardProps {
    * Card title
    *
    * 卡片标题
-   *
    */
   title: string;
 

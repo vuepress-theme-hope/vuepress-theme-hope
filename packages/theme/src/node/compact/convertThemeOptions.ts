@@ -18,7 +18,6 @@ const DEPRECATED_THEME_OPTIONS: [string, string][] = [
 
 /**
  * @deprecated You should use V2 standard options and avoid using it
- *
  * @param options - Theme options
  * @param plugins - Theme plugins options
  * @param localePath - Locale path
@@ -29,6 +28,7 @@ const convertBlogOptions = (
   localePath?: string,
 ): void => {
   // Handle blog
+  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   if (isPlainObject<Record<string, unknown>>(options.blog)) {
     const blogOptions = options.blog;
 
@@ -67,7 +67,6 @@ const convertBlogOptions = (
 
 /**
  * @deprecated You should use V2 standard options and avoid using it
- *
  * @param themeLocaleOptions - Theme locale options
  * @param localePath - Locale path
  */
@@ -108,7 +107,6 @@ const convertFooterOptions = (
 
 /**
  * @deprecated You should use V2 standard options and avoid using it
- *
  * @param themeOptions - Theme options
  */
 // oxlint-disable-next-line complexity, max-lines-per-function, max-statements
@@ -614,7 +612,6 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
 
 /**
  * @deprecated You should use V2 standard options and avoid using it
- *
  * @param themeOptions - Theme options
  * @returns Converted theme options
  */

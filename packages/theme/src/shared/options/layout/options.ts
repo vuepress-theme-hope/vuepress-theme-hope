@@ -9,27 +9,19 @@ import type { RouteLocaleData } from "./route.js";
 import type { SidebarLocaleOptions, SidebarSorter } from "./sidebar.js";
 
 export interface LayoutLocaleData {
-  /**
-   * Navbar related i18n config
-   */
+  /** Navbar related i18n config */
   navbarLocales: NavbarLocaleData;
 
-  /**
-   * Meta related i18n config
-   */
+  /** Meta related i18n config */
 
   metaLocales: MetaLocateData;
 
-  /**
-   * Router related i18n config
-   */
+  /** Router related i18n config */
   routerLocales: RouteLocaleData;
 }
 
 export interface DeprecatedLayoutOptions {
-  /**
-   * @deprecated Use `toc.levels` instead
-   */
+  /** @deprecated Use `toc.levels` instead */
   headerDepth?: number;
 }
 
@@ -43,11 +35,11 @@ export interface LayoutLocaleOptions
   /**
    * Home path of current locale
    *
-   * @description Used as the link of back-to-home and navbar logo
+   * Used as the link of back-to-home and navbar logo
    *
    * 当前语言的主页路径
    *
-   * @description 用于导航栏图标和返回主页按钮的链接
+   * 用于导航栏图标和返回主页按钮的链接
    */
   home?: string;
 
@@ -81,13 +73,11 @@ export interface LayoutLocaleOptions
   /**
    * Article Info display configuration
    *
-   * @see https://theme-hope.vuejs.press/guide/feature/page-info.html
-   *
    * 文章信息配置
    *
-   * @see https://theme-hope.vuejs.press/zh/guide/feature/page-info.html
-   *
    * @default ["Author", "Original", "Date", "PageView", "ReadingTime", "Category", "Tag"]
+   * @see https://theme-hope.vuejs.press/guide/feature/page-info.html
+   * @see https://theme-hope.vuejs.press/zh/guide/feature/page-info.html
    */
   pageInfo?: PageInfoType[] | false;
 
@@ -142,9 +132,7 @@ export interface LayoutLocaleOptions
 
 export type LayoutLocaleConfig = LayoutLocaleOptions;
 
-/**
- * @kind root
- */
+/** @kind root */
 export interface LayoutOptions {
   /**
    * Sorter of structure sidebar

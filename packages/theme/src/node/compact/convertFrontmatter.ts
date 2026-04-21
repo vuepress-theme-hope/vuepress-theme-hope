@@ -31,7 +31,6 @@ const DROPPED_FRONTMATTER_OPTIONS: [string, string][] = [
 
 /**
  * @deprecated You should use V2 standard frontmatter and avoid using it
- *
  * @param frontmatter - Page frontmatter
  * @param filePathRelative - Page file path relative to source directory
  * @returns Converted frontmatter

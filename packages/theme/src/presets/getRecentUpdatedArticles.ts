@@ -20,10 +20,11 @@ export interface RecentUpdateArticlesOptions {
    *
    * 博客类型的本地化文字
    *
-   * @example {
-   *  '/': 'Recent Updated',
-   *  '/zh/': '最近更新',
-   * }
+   * @example
+   *   ({
+   *     "/": "Recent Updated",
+   *     "/zh/": "最近更新",
+   *   });
    */
   locales?: Record<string, string>;
 }

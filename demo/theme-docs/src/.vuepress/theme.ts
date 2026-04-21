@@ -37,9 +37,7 @@ export default hopeTheme(
         },
       },
 
-      /**
-       * Chinese locale config
-       */
+      /** Chinese locale config */
       "/zh/": {
         // Navbar
         navbar: zhNavbar,
@@ -91,7 +89,7 @@ export default hopeTheme(
       stylize: [
         {
           matcher: "Recommended",
-          // oxlint-disable-next-line typescript/explicit-function-return-type
+          // oxlint-disable-next-line typescript/explicit-function-return-type, typescript/consistent-return
           replacer: ({ tag }) => {
             if (tag === "em") {
               return {

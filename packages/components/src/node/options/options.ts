@@ -9,7 +9,7 @@ export interface ComponentPluginOptions {
    *
    * 需要被注册的组件
    *
-   * @default []
+   * @default [ ]
    */
   components?: AvailableComponent[];
 

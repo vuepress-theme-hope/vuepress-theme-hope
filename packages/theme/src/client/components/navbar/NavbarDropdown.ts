@@ -25,6 +25,7 @@ export default defineComponent({
     },
   },
 
+  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   slots: Object as SlotsType<{
     title?: Slot;
   }>,
@@ -39,10 +40,10 @@ export default defineComponent({
     /**
      * Open the dropdown when user tab and click from keyboard.
      *
-     * Use event.detail to detect tab and click from keyboard.
-     * The Tab + Click is UIEvent > KeyboardEvent, so the detail is 0.
+     * Use event.detail to detect tab and click from keyboard. The Tab + Click is UIEvent >
+     * KeyboardEvent, so the detail is 0.
      *
-     * @param event - click event
+     * @param event - Click event
      * @see https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/detail
      */
     const handleDropdown = (event: MouseEvent): void => {

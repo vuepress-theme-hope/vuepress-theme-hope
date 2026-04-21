@@ -134,7 +134,7 @@ export default theme(
       stylize: [
         {
           matcher: "Recommended",
-          // oxlint-disable-next-line typescript/explicit-function-return-type
+          // oxlint-disable-next-line typescript/explicit-function-return-type, typescript/consistent-return
           replacer: ({ tag }) => {
             if (tag === "em") {
               return {

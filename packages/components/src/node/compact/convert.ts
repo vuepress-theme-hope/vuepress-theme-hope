@@ -6,9 +6,8 @@ import type { ComponentPluginOptions } from "../options/index.js";
 import { logger } from "../utils.js";
 
 /**
- * @param options - old component plugin options
- *
  * @deprecated
+ * @param options - Old component plugin options
  */
 export const convertOptions = (options: ComponentPluginOptions & Record<string, unknown>): void => {
   const { deprecatedLogger, droppedLogger } = createConverter("components");

@@ -11,7 +11,6 @@ export interface StructureSidebarDirOptions {
    * @default title of README.md
    *
    * 目录标题
-   *
    * @default README.md 标题
    */
   text?: string;
@@ -22,7 +21,6 @@ export interface StructureSidebarDirOptions {
    * @default icon of README.md
    *
    * 目录图标
-   *
    * @default README.md 图标
    */
   icon?: string;
@@ -49,11 +47,11 @@ export interface StructureSidebarDirOptions {
   /**
    * Whether Dir is clickable
    *
-   * @description Will set group link to link of README.md
+   * Will set group link to link of README.md
    *
    * 目录是否可点击
    *
-   * @description 将会将目录分组的链接设置为 README.md 对应的链接
+   * 将会将目录分组的链接设置为 README.md 对应的链接
    *
    * @default false
    */
@@ -108,11 +106,11 @@ export interface ThemeNormalPageFrontmatter extends ThemeBasePageFrontmatter {
   /**
    * Dir config
    *
-   * @description Only available at README.md
+   * Only available at README.md
    *
    * 目录配置
    *
-   * @description 仅在 README.md 中可用
+   * 仅在 README.md 中可用
    */
   dir?: StructureSidebarDirOptions;
 
@@ -203,14 +201,13 @@ export interface ThemeNormalPageFrontmatter extends ThemeBasePageFrontmatter {
   breadcrumbExclude?: boolean;
 
   /**
-   *
    * Whether enable pageviews
    *
-   * @description Only available when using artalk or waline comment service
+   * Only available when using artalk or waline comment service
    *
    * 是否启用访问量
    *
-   * @description 仅在使用 Artalk 或 Waline 评论服务时有效
+   * 仅在使用 Artalk 或 Waline 评论服务时有效
    *
    * @default true
    */
@@ -218,6 +215,8 @@ export interface ThemeNormalPageFrontmatter extends ThemeBasePageFrontmatter {
 
   /**
    * Whether this page is an article
+   *
+   * 是否是文章
    */
   article?: boolean;
 

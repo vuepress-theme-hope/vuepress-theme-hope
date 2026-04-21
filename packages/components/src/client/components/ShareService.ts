@@ -53,39 +53,25 @@ export default defineComponent({
       required: true,
     },
 
-    /**
-     * Whether use plain icon
-     */
+    /** Whether use plain icon */
     plain: Boolean,
 
-    /**
-     * Share title
-     */
+    /** Share title */
     title: String,
 
-    /**
-     * Share description
-     */
+    /** Share description */
     description: String,
 
-    /**
-     * Share url
-     */
+    /** Share url */
     url: String,
 
-    /**
-     * Share summary
-     */
+    /** Share summary */
     summary: String,
 
-    /**
-     * Share image
-     */
+    /** Share image */
     cover: String,
 
-    /**
-     * Share tag
-     */
+    /** Share tag */
     tag: [Array, String] as PropType<string | string[]>,
   },
 

@@ -1,7 +1,6 @@
 import { execSync } from "node:child_process";
 import { writeFileSync } from "node:fs";
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { resolve } from "node:path";
 
 import { confirm, select } from "@inquirer/prompts";
 
@@ -12,9 +11,7 @@ import { supportedPresets } from "./config.js";
 import { updateGitIgnore } from "./gitignore.js";
 import { getWorkflowContent } from "./workflow.js";
 
-const __filename = fileURLToPath(import.meta.url);
-
-const __dirname = dirname(__filename);
+const __dirname = import.meta.dirname;
 
 interface TemplateOptions {
   packageManager: PackageManager;

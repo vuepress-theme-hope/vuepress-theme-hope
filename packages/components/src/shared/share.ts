@@ -41,7 +41,8 @@ export interface ShareServiceConfig {
   /**
    * Share link
    *
-   * @description You can use `[` and `]` to wrap the variable name, and the variable will be replaced with the value of the page.:
+   * You can use `[` and `]` to wrap the variable name, and the variable will be replaced with the
+   * value of the page.:
    *
    * - `title` will be replaced with the title of the page
    * - `description` will be replaced with the description of the page
@@ -53,7 +54,7 @@ export interface ShareServiceConfig {
    *
    * 分享链接
    *
-   * @description 你可以使用 `[` 和 `]` 包裹变量名，变量将会被替换为页面的值：
+   * 你可以使用 `[` 和 `]` 包裹变量名，变量将会被替换为页面的值：
    *
    * - `title` 将会被替换为页面的标题
    * - `description` 将会被替换为页面的描述
@@ -68,7 +69,6 @@ export interface ShareServiceConfig {
   /**
    * Action of share button
    *
-   * @description
    * - `open` will open the link in a new tab
    * - `navigate` will navigate to the link
    * - `popup` will open a popup window
@@ -76,7 +76,6 @@ export interface ShareServiceConfig {
    *
    * 分享按钮的行为
    *
-   * @description
    * - `open` 将会在新标签页打开链接
    * - `navigate` 将会跳转到链接
    * - `popup` 将会打开一个弹窗
@@ -91,7 +90,7 @@ export interface ShareServiceConfig {
    *
    * 图标的主题色
    *
-   * @default 'currentColor'
+   * @default "currentColor"
    */
   color?: string;
 

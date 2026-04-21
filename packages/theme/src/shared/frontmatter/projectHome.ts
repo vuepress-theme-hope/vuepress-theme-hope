@@ -52,11 +52,11 @@ export interface ThemeProjectHomeHighlightItem {
   /**
    * Item icon
    *
-   * @description image link or icon fontClass are supported
+   * Image link or icon fontClass are supported
    *
    * 项目图标
    *
-   * @description 支持图片链接或者图标字体类
+   * 支持图片链接或者图标字体类
    */
   icon?: string;
 

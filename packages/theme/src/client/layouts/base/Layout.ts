@@ -26,6 +26,7 @@ import type { ThemeBasePageFrontmatter } from "../../../shared/index.js";
 export default defineComponent({
   name: "Layout",
 
+  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   slots: Object as SlotsType<{
     default?: Slot;
 

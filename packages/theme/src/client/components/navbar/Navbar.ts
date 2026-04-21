@@ -28,6 +28,7 @@ export default defineComponent({
 
   emits: ["toggleSidebar"],
 
+  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   slots: Object as SlotsType<{
     // NavScreen
     navScreenTop?: Slot;

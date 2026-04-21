@@ -1,6 +1,4 @@
-/**
- * Shimmed from https://github.com/pieroxy/lz-string
- */
+/** Shimmed from https://github.com/pieroxy/lz-string */
 
 // Original license reproduced below:
 

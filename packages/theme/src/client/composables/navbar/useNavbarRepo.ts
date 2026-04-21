@@ -14,7 +14,7 @@ export interface RepoConfig {
 /**
  * Get navbar config of repository link
  *
- * @returns repository link config, or null if it doesn't exist or is hidden
+ * @returns Repository link config, or null if it doesn't exist or is hidden
  */
 export const useNavbarRepo = (): ComputedRef<RepoConfig | null> => {
   const themeLocale = useThemeLocale();

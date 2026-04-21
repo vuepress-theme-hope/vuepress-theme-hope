@@ -23,6 +23,7 @@ export type Style = string | Record<string, string>;
 export default defineComponent({
   name: "HeroInfo",
 
+  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   slots: Object as SlotsType<{
     heroInfo?: Slot<HeroInfoSlotData>;
     heroLogo?: Slot<HeroLogoSlotData>;
@@ -106,7 +107,7 @@ export default defineComponent({
                         class: ["vp-hero-image", { light: imageDark }],
                         style: imageStyle,
                         src: imageLight,
-                        alt: alt,
+                        alt,
                       })
                     : null,
                   imageDark
@@ -115,7 +116,7 @@ export default defineComponent({
                         class: "vp-hero-image dark",
                         style: imageStyle,
                         src: imageDark,
-                        alt: alt,
+                        alt,
                       })
                     : null,
                 ];

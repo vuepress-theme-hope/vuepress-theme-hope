@@ -75,9 +75,7 @@ ${parentSelector}.transparent-navbar .dropdown-wrapper .dropdown-title > .arrow 
 `;
 
 export interface TransparentNavbarOptions {
-  /**
-   * @default 'blog-homepage'
-   */
+  /** @default "blog-homepage" */
   type?: "homepage" | "blog-homepage" | "all";
 
   /**

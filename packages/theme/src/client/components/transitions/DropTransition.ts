@@ -11,24 +11,16 @@ export default defineComponent({
   name: "DropTransition",
 
   props: {
-    /**
-     * Transition delay
-     */
+    /** Transition delay */
     delay: { type: Number, default: 0 },
 
-    /**
-     * Transition duration
-     */
+    /** Transition duration */
     duration: { type: Number, default: 0.25 },
 
-    /**
-     * Whether to use TransitionGroup
-     */
+    /** Whether to use TransitionGroup */
     group: Boolean,
 
-    /**
-     * Whether to use appear
-     */
+    /** Whether to use appear */
     appear: Boolean,
   },
 

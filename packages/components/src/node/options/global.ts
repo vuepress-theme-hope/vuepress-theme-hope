@@ -2,9 +2,7 @@ import type { ArtPlayerOptions } from "../../shared/index.js";
 import type { ShareOptions } from "./share.js";
 
 export interface DeprecatedComponentGlobalOptions {
-  /**
-   * @deprecated Use `@vuepress/plugin-icon` instead
-   */
+  /** @deprecated Use `@vuepress/plugin-icon` instead */
   fontIcon?: never;
 }
 
@@ -25,7 +23,7 @@ export interface ComponentGlobalOptions extends DeprecatedComponentGlobalOptions
     /**
      * Location of pdfjs
      *
-     * pdfjs 的位置
+     * Pdfjs 的位置
      */
     pdfjs?: string | boolean;
   };

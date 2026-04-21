@@ -1,3 +1,3 @@
 export * from "./getCode.js";
 export * from "./utils.js";
-export * from "./typings.js";
+export type * from "./typings.js";

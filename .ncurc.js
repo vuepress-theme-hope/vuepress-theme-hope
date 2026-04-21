@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   workspaces: true,
   peer: true,
   upgrade: true,

@@ -16,9 +16,7 @@ export const sidebarItemsSymbol: InjectionKey<SidebarItemsRef> = Symbol(
   __VUEPRESS_DEV__ ? "sidebarItems" : "",
 );
 
-/**
- * Create sidebar items ref and provide as global computed in setup
- */
+/** Create sidebar items ref and provide as global computed in setup */
 export const setupSidebarItems = (): void => {
   const { frontmatter, routeLocale, routePath, themeLocale } = useData<
     ThemeHomePageFrontmatter | ThemeProjectHomePageFrontmatter
