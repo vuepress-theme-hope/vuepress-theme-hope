@@ -224,8 +224,8 @@ importers:
         specifier: 5.1.0
         version: 5.1.0(@types/node@20.19.39)(conventional-commits-filter@5.0.0)
       '@mr-hope/tsconfig':
-        specifier: 0.0.3
-        version: 0.0.3(typescript@6.0.3)
+        specifier: 0.0.4
+        version: 0.0.4(typescript@6.0.3)
       '@types/node':
         specifier: 20.19.39
         version: 20.19.39
@@ -2795,8 +2795,8 @@ packages:
   '@mermaid-js/parser@1.1.0':
     resolution: {integrity: sha512-gxK9ZX2+Fex5zu8LhRQoMeMPEHbc73UKZ0FQ54YrQtUxE1VVhMwzeNtKRPAu5aXks4FasbMe4xB4bWrmq6Jlxw==}
 
-  '@mr-hope/tsconfig@0.0.3':
-    resolution: {integrity: sha512-dpgwNf6puCRKL+JiR1CIXxlpon4eM/0yZN0c6W2riE4St/A+hu+GdbpLD9tgsGQw3E9abKj98mDTapt29Yg01g==}
+  '@mr-hope/tsconfig@0.0.4':
+    resolution: {integrity: sha512-sHD3OmpHV4hxZDTjdp/0hyUifITCwEN4xHvYQkl779mtpeDZOVj69kj+SJ5+nav+3m9EUx4Q1MgxzQbZlaxwPA==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       typescript: '>=5.4.0'
@@ -11927,7 +11927,7 @@ snapshots:
     dependencies:
       langium: 4.2.2
 
-  '@mr-hope/tsconfig@0.0.3(typescript@6.0.3)':
+  '@mr-hope/tsconfig@0.0.4(typescript@6.0.3)':
     dependencies:
       typescript: 6.0.3
 
