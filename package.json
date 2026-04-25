@@ -32,8 +32,8 @@
   "devDependencies": {
     "@commitlint/cli": "20.5.0",
     "@commitlint/config-conventional": "20.5.0",
-    "@lerna-lite/cli": "5.1.0",
-    "@lerna-lite/publish": "5.1.0",
+    "@lerna-lite/cli": "5.2.0",
+    "@lerna-lite/publish": "5.2.0",
     "@mr-hope/tsconfig": "0.0.3",
     "@types/node": "20.19.39",
     "@types/webpack-env": "1.18.8",
