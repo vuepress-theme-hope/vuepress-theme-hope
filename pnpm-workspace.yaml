@@ -9,7 +9,7 @@ allowBuilds:
   unrs-resolver: true
 
 catalog:
-  "@mathjax/src": 4.1.1
+  "@mathjax/src": 4.1.2
   "@vueuse/core": ^14.2.1
   markmap-lib: 0.18.12
   markmap-toolbar: 0.18.12
