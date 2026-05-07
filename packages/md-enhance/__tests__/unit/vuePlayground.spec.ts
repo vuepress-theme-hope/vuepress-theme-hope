@@ -10,7 +10,7 @@ const decodeFiles = (content: string): Record<string, string> =>
   >;
 
 const getFiles = (renderResult: string): Record<string, string> | null => {
-  const result = /files="(.*?)"/s.exec(renderResult);
+  const result = /files="(.*?)"/su.exec(renderResult);
 
   if (!result) return null;
 
@@ -18,17 +18,17 @@ const getFiles = (renderResult: string): Record<string, string> | null => {
 };
 
 const getSettings = (renderResult: string): Record<string, unknown> | null => {
-  const result = /settings="(.*?)"/s.exec(renderResult);
+  const result = /settings="(.*?)"/su.exec(renderResult);
 
   if (!result) return null;
 
   return JSON.parse(decodeURIComponent(result[1])) as Record<string, unknown>;
 };
 
-describe("Vue Playground", () => {
+describe("vue Playground", () => {
   const markdownIt = new MarkdownIt({ linkify: true }).use(vuePlayground);
 
-  it("Should resolve playground info", () => {
+  it("should resolve playground info", () => {
     const result = markdownIt.render(
       `
 ::: vue-playground Playground demo
@@ -72,7 +72,7 @@ const msg = ref('Hello World!')
     const files = getFiles(result);
     const settings = getSettings(result);
 
-    expect(files).toEqual({
+    expect(files).toStrictEqual({
       "App.vue": `\
 <script setup>
 import { ref } from 'vue'
@@ -96,10 +96,10 @@ const msg = ref('Hello World!')
 }
 `,
     });
-    expect(settings).toEqual({});
+    expect(settings).toStrictEqual({});
   });
 
-  it("Should resolve playground info with settings", () => {
+  it("should resolve playground info with settings", () => {
     const result = markdownIt.render(
       `
 ::: vue-playground Playground demo2
@@ -143,7 +143,7 @@ const msg = ref('Hello World!')
     const file = getFiles(result);
     const settings = getSettings(result);
 
-    expect(file).toEqual({
+    expect(file).toStrictEqual({
       "App.vue": `\
 <script setup>
 import { ref } from 'vue'
@@ -160,12 +160,12 @@ const msg = ref('Hello World!')
 </template>
 `,
     });
-    expect(settings).toEqual({
+    expect(settings).toStrictEqual({
       service: "https://element-plus.run/",
     });
   });
 
-  it("Should work with customize vue import", () => {
+  it("should work with customize vue import", () => {
     const result = markdownIt.render(
       `
 ::: vue-playground Playground demo2
@@ -211,7 +211,7 @@ const msg = ref('Hello World!')
     const file = getFiles(result);
     const settings = getSettings(result);
 
-    expect(file).toEqual({
+    expect(file).toStrictEqual({
       "App.vue": `\
 <script setup>
 import { ref } from 'vue'
@@ -230,7 +230,7 @@ const msg = ref('Hello World!')
 }
 `,
     });
-    expect(settings).toEqual({
+    expect(settings).toStrictEqual({
       service: "https://element-plus.run/",
     });
   });

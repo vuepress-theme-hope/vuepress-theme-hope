@@ -17,8 +17,8 @@ const app = createBuildApp({
 
 await app.init();
 
-describe("should generate sidebarData correctly", () => {
-  it("Should resolve structure in root", () => {
+describe(getSidebarData, () => {
+  it("should resolve structure in root", () => {
     const themeOptions: ThemeOptions = {
       sidebar: "structure",
     };
@@ -28,7 +28,7 @@ describe("should generate sidebarData correctly", () => {
     expect(getSidebarData(app, themeData)).toMatchSnapshot();
   });
 
-  it("Should resolve structure in dir", () => {
+  it("should resolve structure in dir", () => {
     const themeOptions: ThemeOptions = {
       sidebar: {
         "/dir/": "structure",
@@ -46,7 +46,7 @@ describe("should generate sidebarData correctly", () => {
     expect(getSidebarData(app, themeData)).toMatchSnapshot();
   });
 
-  it("Should resolve structure in group options", () => {
+  it("should resolve structure in group options", () => {
     const themeOptions: ThemeOptions = {
       sidebar: {
         "/nested-dir/": [

@@ -10,90 +10,92 @@ import {
 } from "../../src/node/prepare/sidebar/getSidebarSorter.js";
 import type { SidebarInfo } from "../../src/shared/index.js";
 
-it("should handle readme", () => {
-  expect(
-    (
-      [
-        { type: "file", filename: "2.md" },
-        { type: "file", filename: "1.md" },
-        { type: "file", filename: "4.md" },
-        { type: "file", filename: "3.md" },
-        { type: "file", filename: "22.md" },
-        { type: "file", filename: "README.md" },
-      ] as SidebarInfo[]
-    ).sort(sidebarReadmeSorter),
-  ).toEqual([
-    { type: "file", filename: "README.md" },
-    { type: "file", filename: "2.md" },
-    { type: "file", filename: "1.md" },
-    { type: "file", filename: "4.md" },
-    { type: "file", filename: "3.md" },
-    { type: "file", filename: "22.md" },
-  ]);
+describe(sidebarReadmeSorter, () => {
+  it("should handle readme", () => {
+    expect(
+      (
+        [
+          { type: "file", filename: "2.md" },
+          { type: "file", filename: "1.md" },
+          { type: "file", filename: "4.md" },
+          { type: "file", filename: "3.md" },
+          { type: "file", filename: "22.md" },
+          { type: "file", filename: "README.md" },
+        ] as SidebarInfo[]
+      ).sort(sidebarReadmeSorter),
+    ).toStrictEqual([
+      { type: "file", filename: "README.md" },
+      { type: "file", filename: "2.md" },
+      { type: "file", filename: "1.md" },
+      { type: "file", filename: "4.md" },
+      { type: "file", filename: "3.md" },
+      { type: "file", filename: "22.md" },
+    ]);
 
-  expect(
-    (
-      [
-        { type: "file", filename: "2.md" },
-        { type: "file", filename: "1.md" },
-        { type: "file", filename: "README.md" },
-        { type: "file", filename: "4.md" },
-        { type: "file", filename: "3.md" },
-        { type: "file", filename: "22.md" },
-      ] as SidebarInfo[]
-    ).sort(sidebarReadmeSorter),
-  ).toEqual([
-    { type: "file", filename: "README.md" },
-    { type: "file", filename: "2.md" },
-    { type: "file", filename: "1.md" },
-    { type: "file", filename: "4.md" },
-    { type: "file", filename: "3.md" },
-    { type: "file", filename: "22.md" },
-  ]);
+    expect(
+      (
+        [
+          { type: "file", filename: "2.md" },
+          { type: "file", filename: "1.md" },
+          { type: "file", filename: "README.md" },
+          { type: "file", filename: "4.md" },
+          { type: "file", filename: "3.md" },
+          { type: "file", filename: "22.md" },
+        ] as SidebarInfo[]
+      ).sort(sidebarReadmeSorter),
+    ).toStrictEqual([
+      { type: "file", filename: "README.md" },
+      { type: "file", filename: "2.md" },
+      { type: "file", filename: "1.md" },
+      { type: "file", filename: "4.md" },
+      { type: "file", filename: "3.md" },
+      { type: "file", filename: "22.md" },
+    ]);
 
-  expect(
-    (
-      [
-        { type: "file", filename: "2.md" },
-        { type: "file", filename: "1.md" },
-        { type: "file", filename: "4.md" },
-        { type: "file", filename: "3.md" },
-        { type: "file", filename: "22.md" },
-        { type: "file", filename: "readme.md" },
-      ] as SidebarInfo[]
-    ).sort(sidebarReadmeSorter),
-  ).toEqual([
-    { type: "file", filename: "readme.md" },
-    { type: "file", filename: "2.md" },
-    { type: "file", filename: "1.md" },
-    { type: "file", filename: "4.md" },
-    { type: "file", filename: "3.md" },
-    { type: "file", filename: "22.md" },
-  ]);
+    expect(
+      (
+        [
+          { type: "file", filename: "2.md" },
+          { type: "file", filename: "1.md" },
+          { type: "file", filename: "4.md" },
+          { type: "file", filename: "3.md" },
+          { type: "file", filename: "22.md" },
+          { type: "file", filename: "readme.md" },
+        ] as SidebarInfo[]
+      ).sort(sidebarReadmeSorter),
+    ).toStrictEqual([
+      { type: "file", filename: "readme.md" },
+      { type: "file", filename: "2.md" },
+      { type: "file", filename: "1.md" },
+      { type: "file", filename: "4.md" },
+      { type: "file", filename: "3.md" },
+      { type: "file", filename: "22.md" },
+    ]);
 
-  expect(
-    (
-      [
-        { type: "file", filename: "2.md" },
-        { type: "file", filename: "1.md" },
-        { type: "file", filename: "readme.md" },
-        { type: "file", filename: "4.md" },
-        { type: "file", filename: "3.md" },
-        { type: "file", filename: "22.md" },
-      ] as SidebarInfo[]
-    ).sort(sidebarReadmeSorter),
-  ).toEqual([
-    { type: "file", filename: "readme.md" },
-    { type: "file", filename: "2.md" },
-    { type: "file", filename: "1.md" },
-    { type: "file", filename: "4.md" },
-    { type: "file", filename: "3.md" },
-    { type: "file", filename: "22.md" },
-  ]);
+    expect(
+      (
+        [
+          { type: "file", filename: "2.md" },
+          { type: "file", filename: "1.md" },
+          { type: "file", filename: "readme.md" },
+          { type: "file", filename: "4.md" },
+          { type: "file", filename: "3.md" },
+          { type: "file", filename: "22.md" },
+        ] as SidebarInfo[]
+      ).sort(sidebarReadmeSorter),
+    ).toStrictEqual([
+      { type: "file", filename: "readme.md" },
+      { type: "file", filename: "2.md" },
+      { type: "file", filename: "1.md" },
+      { type: "file", filename: "4.md" },
+      { type: "file", filename: "3.md" },
+      { type: "file", filename: "22.md" },
+    ]);
+  });
 });
 
-describe("should handle order", () => {
-  it("Should preserve order", () => {
+describe(sidebarOrderSorter, () => {
+  it("should preserve order", () => {
     expect(
       (
         [
@@ -103,7 +105,7 @@ describe("should handle order", () => {
           { title: "4", order: null },
         ] as SidebarInfo[]
       ).sort(sidebarOrderSorter),
-    ).toEqual([
+    ).toStrictEqual([
       { title: "1", order: null },
       { title: "2", order: null },
       { title: "3", order: null },
@@ -111,7 +113,7 @@ describe("should handle order", () => {
     ]);
   });
 
-  it("Should put positive order in the front", () => {
+  it("should put positive order in the front", () => {
     expect(
       (
         [
@@ -121,7 +123,7 @@ describe("should handle order", () => {
           { title: "4", order: null },
         ] as SidebarInfo[]
       ).sort(sidebarOrderSorter),
-    ).toEqual([
+    ).toStrictEqual([
       { title: "3", order: 1 },
       { title: "1", order: null },
       { title: "2", order: null },
@@ -137,7 +139,7 @@ describe("should handle order", () => {
           { title: "4", order: null },
         ] as SidebarInfo[]
       ).sort(sidebarOrderSorter),
-    ).toEqual([
+    ).toStrictEqual([
       { title: "2", order: 1 },
       { title: "3", order: 1 },
       { title: "1", order: null },
@@ -153,7 +155,7 @@ describe("should handle order", () => {
           { title: "4", order: null },
         ] as SidebarInfo[]
       ).sort(sidebarOrderSorter),
-    ).toEqual([
+    ).toStrictEqual([
       { title: "3", order: 1 },
       { title: "2", order: 2 },
       { title: "1", order: null },
@@ -169,7 +171,7 @@ describe("should handle order", () => {
           { title: "4", order: 1 },
         ] as SidebarInfo[]
       ).sort(sidebarOrderSorter),
-    ).toEqual([
+    ).toStrictEqual([
       { title: "4", order: 1 },
       { title: "3", order: 2 },
       { title: "2", order: 3 },
@@ -177,7 +179,7 @@ describe("should handle order", () => {
     ]);
   });
 
-  it("Should put negative order in the end", () => {
+  it("should put negative order in the end", () => {
     expect(
       (
         [
@@ -187,7 +189,7 @@ describe("should handle order", () => {
           { title: "4", order: null },
         ] as SidebarInfo[]
       ).sort(sidebarOrderSorter),
-    ).toEqual([
+    ).toStrictEqual([
       { title: "1", order: null },
       { title: "2", order: null },
       { title: "4", order: null },
@@ -203,7 +205,7 @@ describe("should handle order", () => {
           { title: "4", order: null },
         ] as SidebarInfo[]
       ).sort(sidebarOrderSorter),
-    ).toEqual([
+    ).toStrictEqual([
       { title: "1", order: null },
       { title: "4", order: null },
       { title: "2", order: -1 },
@@ -219,7 +221,7 @@ describe("should handle order", () => {
           { title: "4", order: null },
         ] as SidebarInfo[]
       ).sort(sidebarOrderSorter),
-    ).toEqual([
+    ).toStrictEqual([
       { title: "1", order: null },
       { title: "4", order: null },
       { title: "3", order: -2 },
@@ -235,7 +237,7 @@ describe("should handle order", () => {
           { title: "4", order: -4 },
         ] as SidebarInfo[]
       ).sort(sidebarOrderSorter),
-    ).toEqual([
+    ).toStrictEqual([
       { title: "4", order: -4 },
       { title: "3", order: -3 },
       { title: "2", order: -2 },
@@ -243,7 +245,7 @@ describe("should handle order", () => {
     ]);
   });
 
-  it("Should handle order together", () => {
+  it("should handle order together", () => {
     expect(
       (
         [
@@ -254,7 +256,7 @@ describe("should handle order", () => {
           { title: "5", order: null },
         ] as SidebarInfo[]
       ).sort(sidebarOrderSorter),
-    ).toEqual([
+    ).toStrictEqual([
       { title: "4", order: 1 },
       { title: "1", order: null },
       { title: "2", order: null },
@@ -276,7 +278,7 @@ describe("should handle time", () => {
           { title: "5", frontmatter: {} },
         ] as SidebarInfo[]
       ).sort(sidebarDateSorter),
-    ).toEqual([
+    ).toStrictEqual([
       { title: "4", frontmatter: { date: new Date("1970-01-01") } },
       { title: "3", frontmatter: { date: new Date("2022-01-01") } },
       { title: "1", frontmatter: {} },
@@ -296,7 +298,7 @@ describe("should handle time", () => {
           { title: "5", frontmatter: {} },
         ] as SidebarInfo[]
       ).sort(sidebarDateDescSorter),
-    ).toEqual([
+    ).toStrictEqual([
       { title: "3", frontmatter: { date: new Date("2022-01-01") } },
       { title: "4", frontmatter: { date: new Date("1970-01-01") } },
       { title: "1", frontmatter: {} },
@@ -306,7 +308,7 @@ describe("should handle time", () => {
   });
 });
 
-describe("should handle title", () => {
+describe(sidebarTitleSorter, () => {
   it("sort title alphabetically", () => {
     expect(
       (
@@ -319,7 +321,7 @@ describe("should handle title", () => {
           { title: "a b c" },
         ] as SidebarInfo[]
       ).sort(sidebarTitleSorter),
-    ).toEqual([
+    ).toStrictEqual([
       { title: "a" },
       { title: "A" },
       { title: "a b c" },
@@ -341,7 +343,7 @@ describe("should handle title", () => {
           { title: "22" },
         ] as SidebarInfo[]
       ).sort(sidebarTitleSorter),
-    ).toEqual([
+    ).toStrictEqual([
       { title: "1" },
       { title: "2" },
       { title: "3" },
@@ -361,7 +363,7 @@ describe("should handle title", () => {
           { title: "22" },
         ] as SidebarInfo[]
       ).sort(sidebarTitleSorter),
-    ).toEqual([
+    ).toStrictEqual([
       { title: "1" },
       { title: "2" },
       { title: "3" },
@@ -381,7 +383,7 @@ describe("should handle title", () => {
           { title: "apple22" },
         ] as SidebarInfo[]
       ).sort(sidebarTitleSorter),
-    ).toEqual([
+    ).toStrictEqual([
       { title: "apple1" },
       { title: "apple2" },
       { title: "apple3" },
@@ -401,7 +403,7 @@ describe("should handle title", () => {
           { title: "22apple" },
         ] as SidebarInfo[]
       ).sort(sidebarTitleSorter),
-    ).toEqual([
+    ).toStrictEqual([
       { title: "1apple" },
       { title: "2apple" },
       { title: "3apple" },
@@ -421,7 +423,7 @@ describe("should handle title", () => {
           { title: "apple-22" },
         ] as SidebarInfo[]
       ).sort(sidebarTitleSorter),
-    ).toEqual([
+    ).toStrictEqual([
       { title: "apple-1" },
       { title: "apple-2" },
       { title: "apple-3" },
@@ -441,7 +443,7 @@ describe("should handle title", () => {
           { title: "22-apple" },
         ] as SidebarInfo[]
       ).sort(sidebarTitleSorter),
-    ).toEqual([
+    ).toStrictEqual([
       { title: "1-apple" },
       { title: "2-apple" },
       { title: "3-apple" },
@@ -461,7 +463,7 @@ describe("should handle title", () => {
           { title: "Banana 3" },
         ] as SidebarInfo[]
       ).sort(sidebarTitleSorter),
-    ).toEqual([
+    ).toStrictEqual([
       { title: "Apple 2" },
       { title: "Apple 5" },
       { title: "Apple 22" },
@@ -472,112 +474,114 @@ describe("should handle title", () => {
   });
 });
 
-it("should handle filename", () => {
-  expect(
-    (
-      [
-        { type: "file", filename: "README.md" },
-        { type: "file", filename: "2.md" },
-        { type: "file", filename: "1.md" },
-        { type: "file", filename: "4.md" },
-        { type: "file", filename: "3.md" },
-        { type: "file", filename: "22.md" },
-      ] as SidebarInfo[]
-    ).sort(sidebarFilenameSorter),
-  ).toEqual([
-    { type: "file", filename: "1.md" },
-    { type: "file", filename: "2.md" },
-    { type: "file", filename: "3.md" },
-    { type: "file", filename: "4.md" },
-    { type: "file", filename: "22.md" },
-    { type: "file", filename: "README.md" },
-  ]);
+describe(sidebarFilenameSorter, () => {
+  it("should handle filename", () => {
+    expect(
+      (
+        [
+          { type: "file", filename: "README.md" },
+          { type: "file", filename: "2.md" },
+          { type: "file", filename: "1.md" },
+          { type: "file", filename: "4.md" },
+          { type: "file", filename: "3.md" },
+          { type: "file", filename: "22.md" },
+        ] as SidebarInfo[]
+      ).sort(sidebarFilenameSorter),
+    ).toStrictEqual([
+      { type: "file", filename: "1.md" },
+      { type: "file", filename: "2.md" },
+      { type: "file", filename: "3.md" },
+      { type: "file", filename: "4.md" },
+      { type: "file", filename: "22.md" },
+      { type: "file", filename: "README.md" },
+    ]);
 
-  expect(
-    (
-      [
-        { type: "file", filename: "2.md" },
-        { type: "file", filename: "1.md" },
-        { type: "file", filename: "README.md" },
-        { type: "file", filename: "4.md" },
-        { type: "file", filename: "3.md" },
-        { type: "file", filename: "22.md" },
-      ] as SidebarInfo[]
-    ).sort(sidebarFilenameSorter),
-  ).toEqual([
-    { type: "file", filename: "1.md" },
-    { type: "file", filename: "2.md" },
-    { type: "file", filename: "3.md" },
-    { type: "file", filename: "4.md" },
-    { type: "file", filename: "22.md" },
-    { type: "file", filename: "README.md" },
-  ]);
+    expect(
+      (
+        [
+          { type: "file", filename: "2.md" },
+          { type: "file", filename: "1.md" },
+          { type: "file", filename: "README.md" },
+          { type: "file", filename: "4.md" },
+          { type: "file", filename: "3.md" },
+          { type: "file", filename: "22.md" },
+        ] as SidebarInfo[]
+      ).sort(sidebarFilenameSorter),
+    ).toStrictEqual([
+      { type: "file", filename: "1.md" },
+      { type: "file", filename: "2.md" },
+      { type: "file", filename: "3.md" },
+      { type: "file", filename: "4.md" },
+      { type: "file", filename: "22.md" },
+      { type: "file", filename: "README.md" },
+    ]);
 
-  expect(
-    (
-      [
-        { type: "file", filename: "readme.md" },
-        { type: "file", filename: "2.md" },
-        { type: "file", filename: "1.md" },
-        { type: "file", filename: "4.md" },
-        { type: "file", filename: "3.md" },
-        { type: "file", filename: "22.md" },
-      ] as SidebarInfo[]
-    ).sort(sidebarFilenameSorter),
-  ).toEqual([
-    { type: "file", filename: "1.md" },
-    { type: "file", filename: "2.md" },
-    { type: "file", filename: "3.md" },
-    { type: "file", filename: "4.md" },
-    { type: "file", filename: "22.md" },
-    { type: "file", filename: "readme.md" },
-  ]);
+    expect(
+      (
+        [
+          { type: "file", filename: "readme.md" },
+          { type: "file", filename: "2.md" },
+          { type: "file", filename: "1.md" },
+          { type: "file", filename: "4.md" },
+          { type: "file", filename: "3.md" },
+          { type: "file", filename: "22.md" },
+        ] as SidebarInfo[]
+      ).sort(sidebarFilenameSorter),
+    ).toStrictEqual([
+      { type: "file", filename: "1.md" },
+      { type: "file", filename: "2.md" },
+      { type: "file", filename: "3.md" },
+      { type: "file", filename: "4.md" },
+      { type: "file", filename: "22.md" },
+      { type: "file", filename: "readme.md" },
+    ]);
 
-  expect(
-    (
-      [
-        { type: "file", filename: "2.md" },
-        { type: "file", filename: "1.md" },
-        { type: "file", filename: "readme.md" },
-        { type: "file", filename: "4.md" },
-        { type: "file", filename: "3.md" },
-        { type: "file", filename: "22.md" },
-      ] as SidebarInfo[]
-    ).sort(sidebarFilenameSorter),
-  ).toEqual([
-    { type: "file", filename: "1.md" },
-    { type: "file", filename: "2.md" },
-    { type: "file", filename: "3.md" },
-    { type: "file", filename: "4.md" },
-    { type: "file", filename: "22.md" },
-    { type: "file", filename: "readme.md" },
-  ]);
+    expect(
+      (
+        [
+          { type: "file", filename: "2.md" },
+          { type: "file", filename: "1.md" },
+          { type: "file", filename: "readme.md" },
+          { type: "file", filename: "4.md" },
+          { type: "file", filename: "3.md" },
+          { type: "file", filename: "22.md" },
+        ] as SidebarInfo[]
+      ).sort(sidebarFilenameSorter),
+    ).toStrictEqual([
+      { type: "file", filename: "1.md" },
+      { type: "file", filename: "2.md" },
+      { type: "file", filename: "3.md" },
+      { type: "file", filename: "4.md" },
+      { type: "file", filename: "22.md" },
+      { type: "file", filename: "readme.md" },
+    ]);
 
-  expect(
-    (
-      [
-        { type: "file", filename: "abc.md" },
-        { type: "file", filename: "b.md" },
-        { type: "file", filename: "c.md" },
-        { type: "file", filename: "a.md" },
-        { type: "dir", dirname: "a-b-c" },
-        { type: "file", filename: "a-b-c.md" },
-        { type: "dir", dirname: "abc" },
-        { type: "dir", dirname: "c" },
-        { type: "dir", dirname: "b" },
-        { type: "dir", dirname: "a" },
-      ] as SidebarInfo[]
-    ).sort(sidebarFilenameSorter),
-  ).toEqual([
-    { type: "file", filename: "a.md" },
-    { type: "dir", dirname: "a" },
-    { type: "file", filename: "a-b-c.md" },
-    { type: "dir", dirname: "a-b-c" },
-    { type: "file", filename: "abc.md" },
-    { type: "dir", dirname: "abc" },
-    { type: "file", filename: "b.md" },
-    { type: "dir", dirname: "b" },
-    { type: "file", filename: "c.md" },
-    { type: "dir", dirname: "c" },
-  ]);
+    expect(
+      (
+        [
+          { type: "file", filename: "abc.md" },
+          { type: "file", filename: "b.md" },
+          { type: "file", filename: "c.md" },
+          { type: "file", filename: "a.md" },
+          { type: "dir", dirname: "a-b-c" },
+          { type: "file", filename: "a-b-c.md" },
+          { type: "dir", dirname: "abc" },
+          { type: "dir", dirname: "c" },
+          { type: "dir", dirname: "b" },
+          { type: "dir", dirname: "a" },
+        ] as SidebarInfo[]
+      ).sort(sidebarFilenameSorter),
+    ).toStrictEqual([
+      { type: "file", filename: "a.md" },
+      { type: "dir", dirname: "a" },
+      { type: "file", filename: "a-b-c.md" },
+      { type: "dir", dirname: "a-b-c" },
+      { type: "file", filename: "abc.md" },
+      { type: "dir", dirname: "abc" },
+      { type: "file", filename: "b.md" },
+      { type: "dir", dirname: "b" },
+      { type: "file", filename: "c.md" },
+      { type: "dir", dirname: "c" },
+    ]);
+  });
 });

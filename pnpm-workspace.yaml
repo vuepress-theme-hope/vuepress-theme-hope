@@ -10,24 +10,25 @@ allowBuilds:
 
 catalog:
   "@mathjax/src": 4.1.2
-  "@vueuse/core": ^14.2.1
+  "@vueuse/core": 14.3.0
   markmap-lib: 0.18.12
   markmap-toolbar: 0.18.12
   markmap-view: 0.18.12
   mermaid: 11.14.0
   reveal.js: 6.0.1
+  typescript: 6.0.3
   sass-embedded: 1.99.0
   sass-loader: 16.0.7
-  vue: 3.5.32
+  vue: 3.5.34
 
 catalogs:
   range:
-    "@vueuse/core": ^14.2.1
+    "@vueuse/core": ^14.3.0
     balloon-css: ^1.2.0
     sass: ^1.99.0
     sass-embedded: ^1.99.0
     sass-loader: ^16.0.7
-    vue: ^3.5.32
+    vue: ^3.5.34
 
   vuepress:
     "@vuepress/bundler-vite": 2.0.0-rc.28

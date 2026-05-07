@@ -24,7 +24,6 @@ import type { ArticleInfoData } from "../../../shared/index.js";
 export default defineComponent({
   name: "TypePage",
 
-  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   slots: Object as SlotsType<{
     default?: Slot;
 

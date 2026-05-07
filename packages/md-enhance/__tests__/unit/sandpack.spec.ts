@@ -8,7 +8,7 @@ const decodeFiles = (content: string): Record<string, string> =>
   JSON.parse(decodeData(content)) as Record<string, string>;
 
 const getTemplate = (renderResult: string): string | null => {
-  const result = /template="(.*?)"/s.exec(renderResult);
+  const result = /template="(.*?)"/su.exec(renderResult);
 
   if (!result) return null;
 
@@ -16,7 +16,7 @@ const getTemplate = (renderResult: string): string | null => {
 };
 
 const getFiles = (renderResult: string): Record<string, string> | null => {
-  const result = /files="(.*?)"/s.exec(renderResult);
+  const result = /files="(.*?)"/su.exec(renderResult);
 
   if (!result) return null;
 
@@ -24,7 +24,7 @@ const getFiles = (renderResult: string): Record<string, string> | null => {
 };
 
 const getOptions = (renderResult: string): Record<string, unknown> | null => {
-  const result = /options="(.*?)"/s.exec(renderResult);
+  const result = /options="(.*?)"/su.exec(renderResult);
 
   if (!result) return null;
 
@@ -32,17 +32,17 @@ const getOptions = (renderResult: string): Record<string, unknown> | null => {
 };
 
 const getCustomSetup = (renderResult: string): Record<string, unknown> | null => {
-  const result = /customSetup="(.*?)"/s.exec(renderResult);
+  const result = /customSetup="(.*?)"/su.exec(renderResult);
 
   if (!result) return null;
 
   return JSON.parse(decodeData(result[1])) as Record<string, unknown>;
 };
 
-describe("Sandpack", () => {
+describe(sandpack, () => {
   const markdownIt = new MarkdownIt({ linkify: true }).use(sandpack);
 
-  it("Should resolve sandpack info", () => {
+  it("should resolve sandpack info", () => {
     const result = markdownIt.render(
       `
 ::: sandpack#vue Sandpack demo
@@ -79,9 +79,9 @@ const msg = ref('Hello World!')
     const options = getOptions(result);
     const customSetup = getCustomSetup(result);
 
-    expect(template).toEqual("vue");
+    expect(template).toBe("vue");
 
-    expect(files).toEqual({
+    expect(files).toStrictEqual({
       "App.vue": `\
 <script setup>
 import { ref } from 'vue'
@@ -99,11 +99,11 @@ const msg = ref('Hello World!')
 `,
     });
 
-    expect(options).toEqual({});
-    expect(customSetup).toEqual({});
+    expect(options).toStrictEqual({});
+    expect(customSetup).toStrictEqual({});
   });
 
-  it("Should resolve sandpack info with options", () => {
+  it("should resolve sandpack info with options", () => {
     const result = markdownIt.render(
       `
 ::: sandpack Sandpack demo with options
@@ -150,9 +150,9 @@ const msg = ref('Hello World!')
     const options = getOptions(result);
     const customSetup = getCustomSetup(result);
 
-    expect(template).toEqual(null);
+    expect(template).toBeNull();
 
-    expect(file).toEqual({
+    expect(file).toStrictEqual({
       "App.vue": `\
 <script setup>
 import { ref } from 'vue'
@@ -169,15 +169,15 @@ const msg = ref('Hello World!')
 </template>
 `,
     });
-    expect(options).toEqual({
+    expect(options).toStrictEqual({
       readOnly: true,
       showReadOnly: false,
     });
 
-    expect(customSetup).toEqual({});
+    expect(customSetup).toStrictEqual({});
   });
 
-  it("Should resolve sandpack info with customSetup", () => {
+  it("should resolve sandpack info with customSetup", () => {
     const result = markdownIt.render(
       `
 ::: sandpack#vue Sandpack demo with customSetup
@@ -224,9 +224,9 @@ const msg = ref('Hello World!')
     const options = getOptions(result);
     const customSetup = getCustomSetup(result);
 
-    expect(template).toEqual("vue");
+    expect(template).toBe("vue");
 
-    expect(file).toEqual({
+    expect(file).toStrictEqual({
       "App.vue": `\
 <script setup>
 import { ref } from 'vue'
@@ -239,17 +239,17 @@ const msg = ref('Hello World!')
 `,
     });
 
-    expect(options).toEqual({
+    expect(options).toStrictEqual({
       readOnly: true,
       showReadOnly: false,
     });
 
-    expect(customSetup).toEqual({
+    expect(customSetup).toStrictEqual({
       entry: "/index.js",
     });
   });
 
-  it("Should resolve sandpack info with file attrs", () => {
+  it("should resolve sandpack info with file attrs", () => {
     const result = markdownIt.render(
       `
 ::: sandpack Sandpack demo with options
@@ -295,9 +295,9 @@ const msg = ref('Hello World!')
     const options = getOptions(result);
     const customSetup = getCustomSetup(result);
 
-    expect(template).toEqual(null);
+    expect(template).toBeNull();
 
-    expect(file).toEqual({
+    expect(file).toStrictEqual({
       "/src/App.vue": {
         code: `\
 <script setup>
@@ -329,12 +329,12 @@ const msg = ref('Hello World!')
 </template>
 `,
     });
-    expect(options).toEqual({});
+    expect(options).toStrictEqual({});
 
-    expect(customSetup).toEqual({});
+    expect(customSetup).toStrictEqual({});
   });
 
-  it("Should resolve sandpack info with file attrs and customSetup", () => {
+  it("should resolve sandpack info with file attrs and customSetup", () => {
     const result = markdownIt.render(
       `
 ::: sandpack Sandpack demo with file attrs and customSetup [rtl theme=dark]
@@ -399,9 +399,9 @@ const { charging, level } = useBattery();
     const options = getOptions(result);
     const customSetup = getCustomSetup(result);
 
-    expect(template).toEqual(null);
+    expect(template).toBeNull();
 
-    expect(file).toEqual({
+    expect(file).toStrictEqual({
       "/src/App.vue": {
         code: `\
 <script setup>
@@ -441,9 +441,9 @@ const { charging, level } = useBattery();
         readOnly: false,
       },
     });
-    expect(options).toEqual({});
+    expect(options).toStrictEqual({});
 
-    expect(customSetup).toEqual({
+    expect(customSetup).toStrictEqual({
       dependencies: {
         "@vueuse/core": "latest",
         "@vueuse/shared": "latest",

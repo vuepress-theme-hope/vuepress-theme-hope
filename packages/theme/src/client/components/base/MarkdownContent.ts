@@ -18,7 +18,6 @@ export default defineComponent({
     custom: Boolean,
   },
 
-  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   slots: Object as SlotsType<{
     contentBefore?: Slot;
     contentAfter?: Slot;

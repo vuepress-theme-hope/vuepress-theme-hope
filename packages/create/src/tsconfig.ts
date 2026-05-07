@@ -16,11 +16,12 @@ export const createTsConfig = ({
   cwd = process.cwd(),
 }: CreateTsConfigOptions): void => {
   const tsconfigPath = resolve(cwd, "tsconfig.json");
+  let tsconfigContent: Record<string, unknown> & { include?: string[] };
 
   if (existsSync(tsconfigPath)) {
     console.log(locale.flow.updateTsConfig);
 
-    const tsconfigContent = JSON.parse(readFileSync(tsconfigPath, { encoding: "utf-8" })) as Record<
+    tsconfigContent = JSON.parse(readFileSync(tsconfigPath, { encoding: "utf-8" })) as Record<
       string,
       unknown
     > & { include?: string[] };
@@ -36,14 +37,10 @@ export const createTsConfig = ({
         `${source}/.vuepress/**/*.vue`,
       ],
     });
-
-    writeFileSync(tsconfigPath, `${JSON.stringify(tsconfigContent, null, 2)}\n`, {
-      encoding: "utf-8",
-    });
   } else {
     console.log(locale.flow.createTsConfig);
 
-    const tsconfigContent = {
+    tsconfigContent = {
       compilerOptions: {
         module: "NodeNext",
         moduleResolution: "NodeNext",
@@ -52,9 +49,9 @@ export const createTsConfig = ({
       include: [`${source}/.vuepress/**/*.ts`, `${source}/.vuepress/**/*.vue`],
       exclude: ["node_modules"],
     };
-
-    writeFileSync(tsconfigPath, `${JSON.stringify(tsconfigContent, null, 2)}\n`, {
-      encoding: "utf-8",
-    });
   }
+
+  writeFileSync(tsconfigPath, `${JSON.stringify(tsconfigContent, null, 2)}\n`, {
+    encoding: "utf-8",
+  });
 };

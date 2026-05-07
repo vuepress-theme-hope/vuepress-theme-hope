@@ -1,4 +1,4 @@
-import { expect, it } from "vitest";
+import { describe, expect, it } from "vitest";
 
 import { getAuthor, getCategory, getTag } from "../../src/shared/infoGetter.js";
 
@@ -20,22 +20,52 @@ const authors = [
 const term = "Mr.Hope";
 const terms = [term, "Mrs.Hope"];
 
-it("getAuthor()", () => {
-  expect(getAuthor(authorName)).toEqual([{ name: "Mr.Hope" }]);
-  expect(getAuthor(authorNames)).toEqual([{ name: "Mr.Hope" }, { name: "Mrs.Hope" }]);
-  expect(getAuthor(author)).toEqual([author]);
-  expect(getAuthor(authors)).toEqual(authors);
-  expect(getAuthor(undefined)).toEqual([]);
+describe(getAuthor, () => {
+  it("should resolve author name to object with name property", () => {
+    expect(getAuthor(authorName)).toStrictEqual([{ name: "Mr.Hope" }]);
+  });
+
+  it("should resolve author names to array of objects with name property", () => {
+    expect(getAuthor(authorNames)).toStrictEqual([{ name: "Mr.Hope" }, { name: "Mrs.Hope" }]);
+  });
+
+  it("should resolve author object", () => {
+    expect(getAuthor(author)).toStrictEqual([author]);
+  });
+
+  it("should resolve author objects", () => {
+    expect(getAuthor(authors)).toStrictEqual(authors);
+  });
+
+  it("should return empty array if author is undefined", () => {
+    expect(getAuthor(undefined)).toStrictEqual([]);
+  });
 });
 
-it("getCategory()", () => {
-  expect(getCategory(term)).toEqual(["Mr.Hope"]);
-  expect(getCategory(terms)).toEqual(["Mr.Hope", "Mrs.Hope"]);
-  expect(getCategory(undefined)).toEqual([]);
+describe(getCategory, () => {
+  it("should resolve category term to array", () => {
+    expect(getCategory(term)).toStrictEqual(["Mr.Hope"]);
+  });
+
+  it("should resolve category terms to array", () => {
+    expect(getCategory(terms)).toStrictEqual(["Mr.Hope", "Mrs.Hope"]);
+  });
+
+  it("should return empty array if category is undefined", () => {
+    expect(getCategory(undefined)).toStrictEqual([]);
+  });
 });
 
-it("getTag()", () => {
-  expect(getTag(term)).toEqual(["Mr.Hope"]);
-  expect(getTag(terms)).toEqual(["Mr.Hope", "Mrs.Hope"]);
-  expect(getTag(undefined)).toEqual([]);
+describe(getTag, () => {
+  it("should resolve tag term to array", () => {
+    expect(getTag(term)).toStrictEqual(["Mr.Hope"]);
+  });
+
+  it("should resolve tag terms to array", () => {
+    expect(getTag(terms)).toStrictEqual(["Mr.Hope", "Mrs.Hope"]);
+  });
+
+  it("should return empty array if tag is undefined", () => {
+    expect(getTag(undefined)).toStrictEqual([]);
+  });
 });

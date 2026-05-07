@@ -18,7 +18,7 @@ export const encodeFiles = (files: SandpackData["files"]): string =>
 
 export const getAttrs = (str: string): Record<string, string> => {
   // [attr1 attr2]
-  const matches = /.*(?<!\\)\[([^}]*)\].*/.exec(str);
+  const matches = /.*(?<!\\)\[([^}]*)\].*/u.exec(str);
 
   if (matches?.[1]) {
     const arrAttrs = matches[1].split(" ");

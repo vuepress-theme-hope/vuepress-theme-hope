@@ -19,7 +19,6 @@ import "../../styles/base/page-content.scss";
 export default defineComponent({
   name: "PageContent",
 
-  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   slots: Object as SlotsType<{
     pageTop?: Slot;
     pageBottom?: Slot;

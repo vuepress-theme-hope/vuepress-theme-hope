@@ -67,18 +67,17 @@ export const createPackageJson = async ({
       : {}),
   };
 
+  let packageContent: Record<string, unknown>;
+
   if (existsSync(packageJsonPath)) {
     console.log(locale.flow.updatePackage);
 
-    const packageContent = JSON.parse(
-      readFileSync(packageJsonPath, { encoding: "utf-8" }),
-    ) as Record<string, unknown>;
+    packageContent = JSON.parse(readFileSync(packageJsonPath, { encoding: "utf-8" })) as Record<
+      string,
+      unknown
+    >;
 
     deepAssign(packageContent, newContent);
-
-    writeFileSync(packageJsonPath, `${JSON.stringify(packageContent, null, 2)}\n`, {
-      encoding: "utf-8",
-    });
   } else {
     console.log(locale.flow.createPackage);
 
@@ -106,7 +105,7 @@ export const createPackageJson = async ({
       default: "MIT",
     });
 
-    const packageContent = {
+    packageContent = {
       name,
       description,
       version,
@@ -114,9 +113,9 @@ export const createPackageJson = async ({
       type: "module",
       ...newContent,
     };
-
-    writeFileSync(packageJsonPath, `${JSON.stringify(packageContent, null, 2)}\n`, {
-      encoding: "utf-8",
-    });
   }
+
+  writeFileSync(packageJsonPath, `${JSON.stringify(packageContent, null, 2)}\n`, {
+    encoding: "utf-8",
+  });
 };

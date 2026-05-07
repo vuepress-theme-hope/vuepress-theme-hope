@@ -20,7 +20,6 @@ import "../../styles/home/portfolio-hero.scss";
 export default defineComponent({
   name: "PortfolioHero",
 
-  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   slots: Object as SlotsType<{
     portfolioInfo?: Slot<PortfolioInfoSlotData>;
     portfolioAvatar?: Slot<PortfolioAvatarSlotData>;

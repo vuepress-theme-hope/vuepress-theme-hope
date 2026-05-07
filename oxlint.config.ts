@@ -50,6 +50,22 @@ export default defineHopeConfig(
           ],
         },
       ],
+      "no-underscore-dangle": [
+        "warn",
+        {
+          allow: [
+            "__dirname",
+            "__filename",
+            "__LG_SELECTOR__",
+            "__VUEPRESS_DEV__",
+            "__VUEPRESS_SSR__",
+            "__VP_BLOG_TYPES__",
+            "__VP_CUSTOM__",
+            "__VP_I18N__",
+            "__VP_READING_TIME__",
+          ],
+        },
+      ],
       "no-warning-comments": "off",
       "prefer-object-spread": "off",
 

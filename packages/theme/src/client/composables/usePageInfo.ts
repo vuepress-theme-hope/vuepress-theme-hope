@@ -16,7 +16,6 @@ import { getAuthor, getCategory, getTag } from "../../shared/index.js";
 import { useAuthorInfo } from "./useAuthorInfo.js";
 
 export const usePageAuthor = (): ComputedRef<AuthorInfo[]> => {
-  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   const frontmatter = useFrontmatter<ThemeBasePageFrontmatter>();
   const authorInfo = useAuthorInfo();
 
@@ -31,7 +30,6 @@ export const usePageAuthor = (): ComputedRef<AuthorInfo[]> => {
 };
 
 export const usePageCategory = (): ComputedRef<PageCategory[]> => {
-  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   const frontmatter = useFrontmatter<ThemeBasePageFrontmatter>();
   const categoryMap = inject<CategoryMapRef | null>(Symbol.for("categoryMap"), null);
 
@@ -44,7 +42,6 @@ export const usePageCategory = (): ComputedRef<PageCategory[]> => {
 };
 
 export const usePageTag = (): ComputedRef<PageTag[]> => {
-  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   const frontmatter = useFrontmatter<ThemeBasePageFrontmatter>();
   const tagMap = inject<TagMapRef | null>(Symbol.for("tagMap"), null);
 

@@ -5,8 +5,8 @@ import { computed, defineComponent, h, onMounted } from "vue";
 
 import "../styles/code-pen.scss";
 
-const CODE_PBN_LINK_REGEXP =
-  /(?:^(?:https?:)?\/\/codepen.io\/|^\/|^)(.+?)\/(?:pen|embed)\/(.+?)\/?$/;
+const CODE_PEN_LINK_REGEXP =
+  /(?:^(?:https?:)?\/\/codepen.io\/|^\/|^)(.+?)\/(?:pen|embed)\/(.+?)\/?$/u;
 
 export default defineComponent({
   name: "CodePen",
@@ -87,7 +87,7 @@ export default defineComponent({
       slugHash: string;
     } | null => {
       if (props.link) {
-        const result = CODE_PBN_LINK_REGEXP.exec(props.link);
+        const result = CODE_PEN_LINK_REGEXP.exec(props.link);
 
         if (result) return { user: result[1], slugHash: result[2] };
       }

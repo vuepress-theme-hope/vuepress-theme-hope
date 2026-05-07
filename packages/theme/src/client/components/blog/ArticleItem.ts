@@ -40,7 +40,6 @@ export default defineComponent({
     path: { type: String, required: true },
   },
 
-  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   slots: Object as SlotsType<{
     articleCover?: Slot<ArticleCoverSlotData>;
     articleTitle?: Slot<ArticleTitleSlotData>;

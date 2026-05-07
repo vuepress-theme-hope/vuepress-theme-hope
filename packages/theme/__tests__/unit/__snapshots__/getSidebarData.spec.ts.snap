@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`should generate sidebarData correctly > Should resolve structure in dir 1`] = `
+exports[`getSidebarData > should resolve structure in dir 1`] = `
 {
   "/dir-negative-order/": [
     "",
@@ -127,7 +127,7 @@ exports[`should generate sidebarData correctly > Should resolve structure in dir
 }
 `;
 
-exports[`should generate sidebarData correctly > Should resolve structure in group options 1`] = `
+exports[`getSidebarData > should resolve structure in group options 1`] = `
 {
   "/nested-dir/nested-dir1/": [
     "",
@@ -160,7 +160,7 @@ exports[`should generate sidebarData correctly > Should resolve structure in gro
 }
 `;
 
-exports[`should generate sidebarData correctly > Should resolve structure in root 1`] = `
+exports[`getSidebarData > should resolve structure in root 1`] = `
 {
   "/": [
     "",

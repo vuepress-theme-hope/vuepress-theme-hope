@@ -61,7 +61,7 @@ const sandpackRule: RuleBlock = (state, startLine, endLine, silent) => {
   if (firstSpace > 0) {
     containerName = content.slice(0, firstSpace);
     // Remove attrs
-    title = content.slice(firstSpace + 1).replaceAll(/(?<!\\)\[([^}]*)\]/g, "");
+    title = content.slice(firstSpace + 1).replaceAll(/(?<!\\)\[([^}]*)\]/gu, "");
   } else {
     containerName = content;
   }
@@ -265,7 +265,7 @@ export const sandpack: PluginSimple = (md) => {
   VALID_MARKERS.forEach((marker) => {
     // Note: Here we use an internal variable to make sure tab rule is not registered
     // @ts-expect-error: __rules__ is a private property
-    // oxlint-disable-next-line typescript/no-unsafe-call, typescript/no-unsafe-member-access
+    // oxlint-disable-next-line no-underscore-dangle, typescript/no-unsafe-call, typescript/no-unsafe-member-access
     if (!md.block.ruler.__rules__.some(({ name }) => name === `at-${marker}`)) {
       md.block.ruler.before("fence", `at-${marker}`, atMarkerRule(marker), {
         alt: ["paragraph", "reference", "blockquote", "list"],

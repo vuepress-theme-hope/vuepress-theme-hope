@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`should generate themeData correctly > Should contain basic properties 1`] = `
+exports[`getThemeData > should contain basic properties 1`] = `
 {
   "encrypt": {},
   "locales": {

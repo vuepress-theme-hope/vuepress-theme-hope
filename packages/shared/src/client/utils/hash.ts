@@ -16,7 +16,7 @@ export const cyrb53 = (content: string, seed = 0): number => {
   h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507);
   h2 ^= Math.imul(h1 ^ (h1 >>> 13), 3266489909);
 
-  // oxlint-disable-next-line unicorn/prefer-math-trunc: we are converting to uint32
+  // oxlint-disable-next-line unicorn/prefer-math-trunc
   return 4294967296 * (2097151 & h2) + (h1 >>> 0);
 };
 

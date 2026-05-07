@@ -28,7 +28,6 @@ const convertBlogOptions = (
   localePath?: string,
 ): void => {
   // Handle blog
-  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   if (isPlainObject<Record<string, unknown>>(options.blog)) {
     const blogOptions = options.blog;
 

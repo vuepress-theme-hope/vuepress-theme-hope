@@ -22,7 +22,6 @@ import "../../styles/home/home-page.scss";
 export default defineComponent({
   name: "HomePage",
 
-  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   slots: Object as SlotsType<{
     heroInfo?: Slot<HeroInfoSlotData>;
     heroLogo?: Slot<HeroLogoSlotData>;

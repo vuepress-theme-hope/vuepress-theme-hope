@@ -1,60 +1,60 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`playground > Should not throw 1`] = `
-"<Playground key="0e7752d1" title="demo" files="%7B%22a.test%22%3A%7B%22ext%22%3A%22test%22%2C%22content%22%3A%22abc%5Cn%22%7D%2C%22import-map.json%22%3A%7B%22ext%22%3A%22json%22%2C%22content%22%3A%22%7B%5Cn%20%20%5C%22imports%5C%22%3A%20%7B%5Cn%20%20%20%20%5C%22example%5C%22%3A%20%5C%22https%3A%2F%2Fexample.com%5C%22%5Cn%20%20%7D%5Cn%7D%5Cn%22%7D%7D" settings="%7B%7D">
-</Playground>
-"
-`;
-
-exports[`playground > basic > Should resolve playground info 1`] = `
+exports[`playground > basic > should resolve playground info 1`] = `
 "<Playground key="&quot;62b3bf5a&quot;" title="&quot;Playground%20demo&quot;" settings="{}" files="{&quot;App.vue&quot;:{&quot;ext&quot;:&quot;vue&quot;,&quot;content&quot;:&quot;&lt;script setup&gt;\\nimport { ref } from &#39;vue&#39;\\nconst msg = ref(&#39;Hello World!&#39;)\\n&lt;/script&gt;\\n&lt;template&gt;\\n  &lt;h1&gt;{{ msg }}&lt;/h1&gt;\\n  &lt;input v-model=\\&quot;msg\\&quot; /&gt;\\n&lt;/template&gt;\\n&quot;},&quot;Comp.vue&quot;:{&quot;ext&quot;:&quot;vue&quot;,&quot;content&quot;:&quot;&lt;template&gt;\\n  &lt;div&gt;Comp&lt;/div&gt;\\n&lt;/template&gt;\\n&quot;}}">
 </Playground>
 "
 `;
 
-exports[`playground > basic > Should resolve playground info with imports and settings 1`] = `
+exports[`playground > basic > should resolve playground info with imports and settings 1`] = `
 "<Playground key="&quot;1877a7d0&quot;" title="&quot;Playground%20demo2&quot;" settings="{&quot;service&quot;:&quot;https://element-plus.run/&quot;}" files="{&quot;App.vue&quot;:{&quot;ext&quot;:&quot;vue&quot;,&quot;content&quot;:&quot;&lt;script setup&gt;\\nimport { ref } from &#39;vue&#39;\\nconst msg = ref(&#39;Hello World!&#39;)\\n&lt;/script&gt;\\n&lt;template&gt;\\n&lt;h1&gt;{{ msg }}&lt;/h1&gt;\\n&lt;input v-model=\\&quot;msg\\&quot; /&gt;\\n&lt;/template&gt;\\n&quot;},&quot;import-map.json&quot;:{&quot;ext&quot;:&quot;json&quot;,&quot;content&quot;:&quot;{\\n\\&quot;imports\\&quot;: {\\n  \\&quot;vue\\&quot;: \\&quot;https://sfc.vuejs.org/vue.runtime.esm-browser.js\\&quot;\\n}\\n}\\n&quot;}}" importMap="&quot;import-map.json&quot;">
 </Playground>
 "
 `;
 
-exports[`playground > ts preset > Should work 1`] = `
+exports[`playground > should not throw 1`] = `
+"<Playground key="0e7752d1" title="demo" files="%7B%22a.test%22%3A%7B%22ext%22%3A%22test%22%2C%22content%22%3A%22abc%5Cn%22%7D%2C%22import-map.json%22%3A%7B%22ext%22%3A%22json%22%2C%22content%22%3A%22%7B%5Cn%20%20%5C%22imports%5C%22%3A%20%7B%5Cn%20%20%20%20%5C%22example%5C%22%3A%20%5C%22https%3A%2F%2Fexample.com%5C%22%5Cn%20%20%7D%5Cn%7D%5Cn%22%7D%7D" settings="%7B%7D">
+</Playground>
+"
+`;
+
+exports[`playground > ts preset > should work > demo 1`] = `
 "<Playground title="TS%20demo%201" link="https%3A%2F%2Fwww.typescriptlang.org%2Fplay%23code%2FMYewdgzgLgBAthA5jAvDARACwKYBtcgwDuIATrgCboDcAULaJLBAA7YCGA1qjABQKIAXDGikAlmEQBKVAD4YjCCFzYAdBIBmIfkil1arDpx3S6QA">
 </Playground>
 "
 `;
 
-exports[`playground > ts preset > Should work 2`] = `
+exports[`playground > ts preset > should work > demo with settings 1`] = `
 "<Playground title="TS%20demo%202" link="https%3A%2F%2Fwww.typescriptlang.org%2Fplay%3F1%26declaration%3Dtrue%23code%2FMYewdgzgLgBAthA5jAvDARACwKYBtcgwDuIATrgCboDcAULaJLBAA7YCGA1qjABQKIAXDGikAlmEQBKVAD4YjCCFzYAdBIBmIfkil1arDpx3S6QA">
 </Playground>
 "
 `;
 
-exports[`playground > unocss preset > Should work 1`] = `
-"<Playground title="UnoCSS%20demo%201" link="https%3A%2F%2Funocss.dev%2Fplay%2F%3Fhtml%3DDwEwlgbgBAxgNgQwM5ILwCIAuBTAHpgWgCdsR0A%2BAVQDsB7AYQGVGoAVAUUdeAHpwJyAKCA">
-</Playground>
-"
-`;
-
-exports[`playground > unocss preset > Should work 2`] = `
+exports[`playground > unocss preset > should work > multi-file demo 1`] = `
 "<Playground title="UnoCSS%20demo%202" link="https%3A%2F%2Funocss.dev%2Fplay%2F%3Fhtml%3DDwEwlgbgBAxgNgQwM5ILwCIAuBTAHpgWgBIAzEAmAezkoCd0A%2BAVQDtKBhAZU6gBUBRTrygAmYAHpwEBgCggA%26config%3DJYWwDg9gTgLgBAbwFBzgEwKYDNgDsMDCEuOA5gDQpxhQYDOGMAqrhJQL5xZQQhwDkAV1YBjOnX5IkGAB6RY6bAENBAG3iYc%2BIiWCkAFMlQ16jOgC44AbSrHaDZq30BKSqgC6Sds6lA%26css%3DFwJw9mAuAEDeBQ1oFpkDMAmyDGYA2YIw0IAphgNzwC%2B88QA">
 </Playground>
 "
 `;
 
-exports[`playground > vue preset > Should work 1`] = `
+exports[`playground > unocss preset > should work > single file demo 1`] = `
+"<Playground title="UnoCSS%20demo%201" link="https%3A%2F%2Funocss.dev%2Fplay%2F%3Fhtml%3DDwEwlgbgBAxgNgQwM5ILwCIAuBTAHpgWgCdsR0A%2BAVQDsB7AYQGVGoAVAUUdeAHpwJyAKCA">
+</Playground>
+"
+`;
+
+exports[`playground > vue preset > should work > demo with customized imports 1`] = `
 "<Playground title="Vue%20demo%20with%20customized%20imports" link="https%3A%2F%2Fsfc.vuejs.org%2F%23eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gXCJ2dWVcIjtcblxuaW1wb3J0IENvbXAgZnJvbSBcIi4vQ29tcC52dWVcIjtcblxuY29uc3QgbXNnID0gcmVmKFwiSGVsbG8gV29ybGQhXCIpO1xuPC9zY3JpcHQ%2BXG5cbjx0ZW1wbGF0ZT5cbiAgPGgxPnt7IG1zZyB9fTwvaDE%2BXG4gIDxpbnB1dCB2LW1vZGVsPVwibXNnXCIgLz5cbiAgPENvbXAgLz5cbjwvdGVtcGxhdGU%2BXG4iLCJDb21wLnZ1ZSI6Ijx0ZW1wbGF0ZT5cbiAgPGRpdj5Db21wPC9kaXY%2BXG48L3RlbXBsYXRlPlxuIiwiaW1wb3J0LW1hcC5qc29uIjoie1xuICBcImltcG9ydHNcIjoge1xuICAgIFwidnVlXCI6IFwiaHR0cHM6Ly9zZmMudnVlanMub3JnL3Z1ZS5ydW50aW1lLmVzbS1icm93c2VyLmpzXCJcbiAgfVxufSJ9">
 </Playground>
 "
 `;
 
-exports[`playground > vue preset > Should work 2`] = `
+exports[`playground > vue preset > should work > demo with customized settings 1`] = `
 "<Playground title="Vue%20demo%20with%20customized%20settings" link="https%3A%2F%2Fsfc.vuejs.org%2F%23__DEV____SSR__eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gXCJ2dWVcIjtcblxuY29uc3QgbXNnID0gcmVmKFwiSGVsbG8gUGxheWdyb3VuZCFcIik7XG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8aDE%2Be3sgbXNnIH19PC9oMT5cbiAgPGlucHV0IHYtbW9kZWw9XCJtc2dcIiAvPlxuPC90ZW1wbGF0ZT5cbiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiLFxuICAgIFwidnVlL3NlcnZlci1yZW5kZXJlclwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy9zZXJ2ZXItcmVuZGVyZXIuZXNtLWJyb3dzZXIuanNcIlxuICB9XG59In0%3D">
 </Playground>
 "
 `;
 
-exports[`playground > vue preset > Should work 3`] = `
+exports[`playground > vue preset > should work > demo with customized settings and imports 1`] = `
 "<Playground title="Vue%20demo%20with%20customized%20settings" link="https%3A%2F%2Fsfc.vuejs.org%2F%23__DEV____SSR__eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gXCJ2dWVcIjtcblxuY29uc3QgbXNnID0gcmVmKFwiSGVsbG8gUGxheWdyb3VuZCFcIik7XG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8aDE%2Be3sgbXNnIH19PC9oMT5cbiAgPGlucHV0IHYtbW9kZWw9XCJtc2dcIiAvPlxuPC90ZW1wbGF0ZT5cbiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vdW5wa2cuY29tL3Z1ZS9kaXN0L3Z1ZS5ydW50aW1lLmVzbS1icm93c2VyLmpzXCIsXG4gICAgXCJ2dWUvc2VydmVyLXJlbmRlcmVyXCI6IFwiaHR0cHM6Ly9zZmMudnVlanMub3JnL3NlcnZlci1yZW5kZXJlci5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn0ifQ%3D%3D">
 </Playground>
 "

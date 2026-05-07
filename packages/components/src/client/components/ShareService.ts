@@ -101,7 +101,7 @@ export default defineComponent({
           ? tags
           : null;
 
-      return props.config.link.replaceAll(/\[([^\]]+)\]/g, (_, config: string): string => {
+      return props.config.link.replaceAll(/\[([^\]]+)\]/gu, (_, config: string): string => {
         const keys = config.split("|");
 
         for (const key of keys) {

@@ -22,7 +22,6 @@ import "../../styles/blog/blogger-info.scss";
 export default defineComponent({
   name: "BloggerInfo",
 
-  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   slots: Object as SlotsType<{
     bloggerInfo?: Slot<BloggerInfoSlotData>;
   }>,

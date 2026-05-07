@@ -8,8 +8,8 @@ import { getThemeStatus } from "../../src/node/config/getThemeStatus.js";
 import type { ThemeOptions } from "../../src/node/typings/index.js";
 import { emptyTheme } from "./__fixtures__/theme/empty.js";
 
-describe("should generate themeData correctly", () => {
-  it("Should contain basic properties", () => {
+describe(getThemeData, () => {
+  it("should contain basic properties", () => {
     const app = createBuildApp({
       locales: {
         "/": {
@@ -26,11 +26,11 @@ describe("should generate themeData correctly", () => {
 
     expect(result).toHaveProperty("encrypt");
     expect(result.locales).toBeTypeOf("object");
-    expect(Object.keys(result.locales)).toEqual(["/"]);
+    expect(Object.keys(result.locales)).toStrictEqual(["/"]);
     expect(result).toMatchSnapshot();
   });
 
-  it("Should handle single language", () => {
+  it("should handle single language", () => {
     const app = createBuildApp({
       locales: {
         "/": {
@@ -49,9 +49,9 @@ describe("should generate themeData correctly", () => {
     const result = getThemeData(app, themeOptions, getThemeStatus(app, {}));
 
     expect(result.locales).toBeTypeOf("object");
-    expect(Object.keys(result.locales)).toEqual(["/"]);
-    expect(result.locales["/"].navbar).toEqual(["/", "/about"]);
-    expect(result.locales["/"].sidebar).toEqual(["/", "/about"]);
+    expect(Object.keys(result.locales)).toStrictEqual(["/"]);
+    expect(result.locales["/"].navbar).toStrictEqual(["/", "/about"]);
+    expect(result.locales["/"].sidebar).toStrictEqual(["/", "/about"]);
   });
 
   it("locale should have higher property", () => {
@@ -85,9 +85,9 @@ describe("should generate themeData correctly", () => {
 
     expect(result).not.toHaveProperty("navbar");
     expect(result.locales).toBeTypeOf("object");
-    expect(new Set(Object.keys(result.locales))).toEqual(new Set(["/", "/zh/"]));
-    expect(result.locales["/"].navbar).toEqual(["/", "/guide", "/about"]);
-    expect(result.locales["/zh/"].navbar).toEqual(["/zh/", "/zh/guide", "/zh/about"]);
+    expect(new Set(Object.keys(result.locales))).toStrictEqual(new Set(["/", "/zh/"]));
+    expect(result.locales["/"].navbar).toStrictEqual(["/", "/guide", "/about"]);
+    expect(result.locales["/zh/"].navbar).toStrictEqual(["/zh/", "/zh/guide", "/zh/about"]);
   });
 
   it("should fallback to root if locale config is missing", () => {
@@ -117,8 +117,8 @@ describe("should generate themeData correctly", () => {
 
     const result = getThemeData(app, themeOptions, getThemeStatus(app, {}));
 
-    expect(result.locales["/"].navbar).toEqual(["/", "/guide", "/about"]);
-    expect(result.locales["/zh/"].navbar).toEqual(["/zh/", "/zh/guide", "/zh/about"]);
+    expect(result.locales["/"].navbar).toStrictEqual(["/", "/guide", "/about"]);
+    expect(result.locales["/zh/"].navbar).toStrictEqual(["/zh/", "/zh/guide", "/zh/about"]);
   });
 
   it("root only option should not appear in locales", () => {
