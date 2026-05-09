@@ -284,8 +284,8 @@ importers:
         specifier: 11.0.0
         version: 11.0.0(postcss@8.5.10)(stylelint@17.8.0(typescript@6.0.3))
       through2:
-        specifier: 4.0.2
-        version: 4.0.2
+        specifier: 5.0.0
+        version: 5.0.0
       tsdown:
         specifier: 0.21.9
         version: 0.21.9(@vitejs/devtools@0.1.14)(publint@0.3.18)(synckit@0.11.12)(typescript@6.0.3)
@@ -4097,6 +4097,7 @@ packages:
 
   '@ungap/structured-clone@1.3.0':
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
+    deprecated: Potential CWE-502 - Update to 1.3.1 or higher
 
   '@upsetjs/venn.js@2.0.0':
     resolution: {integrity: sha512-WbBhLrooyePuQ1VZxrJjtLvTc4NVfpOyKx0sKqioq9bX1C1m7Jgykkn8gLrtwumBioXIqam8DLxp88Adbue6Hw==}
@@ -4633,6 +4634,10 @@ packages:
   abbrev@4.0.0:
     resolution: {integrity: sha512-a1wflyaL0tHtJSmLSOVybYhy22vRih4eduhhrkcjgrWGnRfrZtovJ2FRjxuTtkkj47O/baf0R86QU5OuYpz8fA==}
     engines: {node: ^20.17.0 || >=22.9.0}
+
+  abort-controller@3.0.0:
+    resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
+    engines: {node: '>=6.5'}
 
   accepts@1.3.8:
     resolution: {integrity: sha512-PYAthTa2m2VKxuvSD3DPC/Gy+U+sOA1LAuT8mkmRuvw+NACSaeXEQ+NHcVF7rONl6qcaxV3Uuemwawk+7+SJLw==}
@@ -5917,6 +5922,10 @@ packages:
 
   eve-raphael@0.5.0:
     resolution: {integrity: sha512-jrxnPsCGqng1UZuEp9DecX/AuSyAszATSjf4oEcRxvfxa1Oux4KkIPKBAAWWnpdwfARtr+Q0o9aPYWjsROD7ug==}
+
+  event-target-shim@5.0.1:
+    resolution: {integrity: sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==}
+    engines: {node: '>=6'}
 
   eventemitter3@4.0.7:
     resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
@@ -8212,6 +8221,10 @@ packages:
   process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
 
+  process@0.11.10:
+    resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
+    engines: {node: '>= 0.6.0'}
+
   proggy@4.0.0:
     resolution: {integrity: sha512-MbA4R+WQT76ZBm/5JUpV9yqcJt92175+Y0Bodg3HgiXzrmKu7Ggq+bpn6y6wHH+gN9NcyKn3yg1+d47VaKwNAQ==}
     engines: {node: ^20.17.0 || >=22.9.0}
@@ -8306,6 +8319,10 @@ packages:
   readable-stream@3.6.2:
     resolution: {integrity: sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==}
     engines: {node: '>= 6'}
+
+  readable-stream@4.7.0:
+    resolution: {integrity: sha512-oIGGmcpTLwPga8Bn6/Z75SVaH1z5dUut2ibSyAMVhmUggWpmDn2dapB0n7f8nwaSiRtepAsfJyfXIO5DCVAODg==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
   readdirp@3.6.0:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
@@ -9184,8 +9201,8 @@ packages:
   three@0.184.0:
     resolution: {integrity: sha512-wtTRjG92pM5eUg/KuUnHsqSAlPM296brTOcLgMRqEeylYTh/CdtvKUvCyyCQTzFuStieWxvZb8mVTMvdPyUpxg==}
 
-  through2@4.0.2:
-    resolution: {integrity: sha512-iOqSav00cVxEEICeD7TjLB1sueEL+81Wpzp2bY17uZjZN0pWZPuo4suZ/61VujxmqSGFfgOcNuTZ85QJwNZQpw==}
+  through2@5.0.0:
+    resolution: {integrity: sha512-Nt5fASl5jYN00eSbbV3+XGJ0VYg7us7ev9ZxflZZNdnAXpy7wd8ILKGMudzkvL3GBD4RKZhYdGDMp2K6inJlVg==}
 
   thunky@1.1.0:
     resolution: {integrity: sha512-eHY7nBftgThBqOyHGVN+l8gF0BucP09fMo0oO/Lb0w1OF80dJv+lDVpXG60WMQvkcxAkNybKsrEIE3ZtKGmPrA==}
@@ -14369,6 +14386,10 @@ snapshots:
 
   abbrev@4.0.0: {}
 
+  abort-controller@3.0.0:
+    dependencies:
+      event-target-shim: 5.0.1
+
   accepts@1.3.8:
     dependencies:
       mime-types: 2.1.35
@@ -15749,6 +15770,8 @@ snapshots:
   etag@1.8.1: {}
 
   eve-raphael@0.5.0: {}
+
+  event-target-shim@5.0.1: {}
 
   eventemitter3@4.0.7: {}
 
@@ -18321,6 +18344,8 @@ snapshots:
 
   process-nextick-args@2.0.1: {}
 
+  process@0.11.10: {}
+
   proggy@4.0.0: {}
 
   promise-all-reject-late@1.0.1: {}
@@ -18417,6 +18442,14 @@ snapshots:
       inherits: 2.0.4
       string_decoder: 1.3.0
       util-deprecate: 1.0.2
+
+  readable-stream@4.7.0:
+    dependencies:
+      abort-controller: 3.0.0
+      buffer: 6.0.3
+      events: 3.3.0
+      process: 0.11.10
+      string_decoder: 1.3.0
 
   readdirp@3.6.0:
     dependencies:
@@ -19429,9 +19462,9 @@ snapshots:
 
   three@0.184.0: {}
 
-  through2@4.0.2:
+  through2@5.0.0:
     dependencies:
-      readable-stream: 3.6.2
+      readable-stream: 4.7.0
 
   thunky@1.1.0: {}
 
