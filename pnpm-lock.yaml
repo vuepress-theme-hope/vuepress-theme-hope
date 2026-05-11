@@ -22,8 +22,8 @@ catalogs:
       specifier: 0.18.12
       version: 0.18.12
     mermaid:
-      specifier: 11.14.0
-      version: 11.14.0
+      specifier: 11.15.0
+      version: 11.15.0
     reveal.js:
       specifier: 6.0.1
       version: 6.0.1
@@ -477,7 +477,7 @@ importers:
         version: 0.18.12(markmap-common@0.18.9)
       mermaid:
         specifier: 'catalog:'
-        version: 11.14.0
+        version: 11.15.0
       reveal.js:
         specifier: 'catalog:'
         version: 6.0.1
@@ -543,7 +543,7 @@ importers:
         version: 0.18.12(markmap-common@0.18.9)
       mermaid:
         specifier: 'catalog:'
-        version: 11.14.0
+        version: 11.15.0
       reveal.js:
         specifier: 'catalog:'
         version: 6.0.1
@@ -751,7 +751,7 @@ importers:
         version: 2.0.0-rc.128(@vuepress/bundler-vite@2.0.0-rc.28(@types/node@25.6.0)(@vitejs/devtools@0.1.14(@pnpm/logger@1001.0.1)(typescript@6.0.3)(vite@8.0.9))(@vue/compiler-sfc@3.5.32)(esbuild@0.27.5)(jiti@2.6.1)(sass-embedded@1.99.0)(sass@1.99.0)(terser@5.46.1)(typescript@6.0.3)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.28(@vue/compiler-sfc@3.5.32)(esbuild@0.27.5)(tslib@2.8.1)(typescript@6.0.3))(typescript@6.0.3)(vuepress@2.0.0-rc.28(@vue/compiler-sfc@3.5.32)(@vuepress/bundler-vite@2.0.0-rc.28(@types/node@25.6.0)(@vitejs/devtools@0.1.14(@pnpm/logger@1001.0.1)(typescript@6.0.3)(vite@8.0.9))(@vue/compiler-sfc@3.5.32)(esbuild@0.27.5)(jiti@2.6.1)(sass-embedded@1.99.0)(sass@1.99.0)(terser@5.46.1)(typescript@6.0.3)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.28(@vue/compiler-sfc@3.5.32)(esbuild@0.27.5)(tslib@2.8.1)(typescript@6.0.3))(typescript@6.0.3)(vue@3.5.32(typescript@6.0.3)))
       '@vuepress/plugin-markdown-chart':
         specifier: catalog:vuepress
-        version: 2.0.0-rc.128(041a90d90ac0c80963ccc251c7e0ec28)
+        version: 2.0.0-rc.128(7d6fe018726a13852a4308d7a20de7f1)
       '@vuepress/plugin-revealjs':
         specifier: catalog:vuepress
         version: 2.0.0-rc.128(@vuepress/bundler-vite@2.0.0-rc.28(@types/node@25.6.0)(@vitejs/devtools@0.1.14(@pnpm/logger@1001.0.1)(typescript@6.0.3)(vite@8.0.9))(@vue/compiler-sfc@3.5.32)(esbuild@0.27.5)(jiti@2.6.1)(sass-embedded@1.99.0)(sass@1.99.0)(terser@5.46.1)(typescript@6.0.3)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.28(@vue/compiler-sfc@3.5.32)(esbuild@0.27.5)(tslib@2.8.1)(typescript@6.0.3))(markdown-it@14.1.1)(typescript@6.0.3)(vuepress@2.0.0-rc.28(@vue/compiler-sfc@3.5.32)(@vuepress/bundler-vite@2.0.0-rc.28(@types/node@25.6.0)(@vitejs/devtools@0.1.14(@pnpm/logger@1001.0.1)(typescript@6.0.3)(vite@8.0.9))(@vue/compiler-sfc@3.5.32)(esbuild@0.27.5)(jiti@2.6.1)(sass-embedded@1.99.0)(sass@1.99.0)(terser@5.46.1)(typescript@6.0.3)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.28(@vue/compiler-sfc@3.5.32)(esbuild@0.27.5)(tslib@2.8.1)(typescript@6.0.3))(typescript@6.0.3)(vue@3.5.32(typescript@6.0.3)))
@@ -787,7 +787,7 @@ importers:
         version: 0.18.12(markmap-common@0.18.9)
       mermaid:
         specifier: 'catalog:'
-        version: 11.14.0
+        version: 11.15.0
       sandpack-vue3:
         specifier: 3.1.12
         version: 3.1.12(vue@3.5.32(typescript@6.0.3))
@@ -1073,7 +1073,7 @@ importers:
         version: 2.0.0-rc.128(@vuepress/bundler-vite@2.0.0-rc.28(@types/node@25.6.0)(@vitejs/devtools@0.1.14(@pnpm/logger@1001.0.1)(typescript@6.0.3)(vite@8.0.9))(@vue/compiler-sfc@3.5.32)(esbuild@0.27.5)(jiti@2.6.1)(sass-embedded@1.99.0)(sass@1.99.0)(terser@5.46.1)(typescript@6.0.3)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.28(@vue/compiler-sfc@3.5.32)(esbuild@0.27.5)(tslib@2.8.1)(typescript@6.0.3))(typescript@6.0.3)(vuepress@2.0.0-rc.28(@vue/compiler-sfc@3.5.32)(@vuepress/bundler-vite@2.0.0-rc.28(@types/node@25.6.0)(@vitejs/devtools@0.1.14(@pnpm/logger@1001.0.1)(typescript@6.0.3)(vite@8.0.9))(@vue/compiler-sfc@3.5.32)(esbuild@0.27.5)(jiti@2.6.1)(sass-embedded@1.99.0)(sass@1.99.0)(terser@5.46.1)(typescript@6.0.3)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.28(@vue/compiler-sfc@3.5.32)(esbuild@0.27.5)(tslib@2.8.1)(typescript@6.0.3))(typescript@6.0.3)(vue@3.5.32(typescript@6.0.3)))
       '@vuepress/plugin-markdown-chart':
         specifier: catalog:vuepress
-        version: 2.0.0-rc.128(041a90d90ac0c80963ccc251c7e0ec28)
+        version: 2.0.0-rc.128(7d6fe018726a13852a4308d7a20de7f1)
       '@vuepress/plugin-markdown-ext':
         specifier: catalog:vuepress
         version: 2.0.0-rc.128(@vuepress/bundler-vite@2.0.0-rc.28(@types/node@25.6.0)(@vitejs/devtools@0.1.14(@pnpm/logger@1001.0.1)(typescript@6.0.3)(vite@8.0.9))(@vue/compiler-sfc@3.5.32)(esbuild@0.27.5)(jiti@2.6.1)(sass-embedded@1.99.0)(sass@1.99.0)(terser@5.46.1)(typescript@6.0.3)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.28(@vue/compiler-sfc@3.5.32)(esbuild@0.27.5)(tslib@2.8.1)(typescript@6.0.3))(markdown-it@14.1.1)(typescript@6.0.3)(vuepress@2.0.0-rc.28(@vue/compiler-sfc@3.5.32)(@vuepress/bundler-vite@2.0.0-rc.28(@types/node@25.6.0)(@vitejs/devtools@0.1.14(@pnpm/logger@1001.0.1)(typescript@6.0.3)(vite@8.0.9))(@vue/compiler-sfc@3.5.32)(esbuild@0.27.5)(jiti@2.6.1)(sass-embedded@1.99.0)(sass@1.99.0)(terser@5.46.1)(typescript@6.0.3)(yaml@2.8.3))(@vuepress/bundler-webpack@2.0.0-rc.28(@vue/compiler-sfc@3.5.32)(esbuild@0.27.5)(tslib@2.8.1)(typescript@6.0.3))(typescript@6.0.3)(vue@3.5.32(typescript@6.0.3)))
@@ -1741,20 +1741,8 @@ packages:
   '@cacheable/utils@2.4.1':
     resolution: {integrity: sha512-eiFgzCbIneyMlLOmNG4g9xzF7Hv3Mga4LjxjcSC/ues6VYq2+gUbQI8JqNuw/ZM8tJIeIaBGpswAsqV2V7ApgA==}
 
-  '@chevrotain/cst-dts-gen@12.0.0':
-    resolution: {integrity: sha512-fSL4KXjTl7cDgf0B5Rip9Q05BOrYvkJV/RrBTE/bKDN096E4hN/ySpcBK5B24T76dlQ2i32Zc3PAE27jFnFrKg==}
-
-  '@chevrotain/gast@12.0.0':
-    resolution: {integrity: sha512-1ne/m3XsIT8aEdrvT33so0GUC+wkctpUPK6zU9IlOyJLUbR0rg4G7ZiApiJbggpgPir9ERy3FRjT6T7lpgetnQ==}
-
-  '@chevrotain/regexp-to-ast@12.0.0':
-    resolution: {integrity: sha512-p+EW9MaJwgaHguhoqwOtx/FwuGr+DnNn857sXWOi/mClXIkPGl3rn7hGNWvo31HA3vyeQxjqe+H36yZJwYU8cA==}
-
-  '@chevrotain/types@12.0.0':
-    resolution: {integrity: sha512-S+04vjFQKeuYw0/eW3U52LkAHQsB1ASxsPGsLPUyQgrZ2iNNibQrsidruDzjEX2JYfespXMG0eZmXlhA6z7nWA==}
-
-  '@chevrotain/utils@12.0.0':
-    resolution: {integrity: sha512-lB59uJoaGIfOOL9knQqQRfhl9g7x8/wqFkp13zTdkRu1huG9kg6IJs1O8hqj9rs6h7orGxHJUKb+mX3rPbWGhA==}
+  '@chevrotain/types@11.1.2':
+    resolution: {integrity: sha512-U+HFai5+zmJCkK86QsaJtoITlboZHBqrVketcO2ROv865xfCMSFpELQoz1GkX5GzME8pTa+3kbKrZHQtI0gdbw==}
 
   '@codemirror/autocomplete@6.20.1':
     resolution: {integrity: sha512-1cvg3Vz1dSSToCNlJfRA2WSI4ht3K+WplO0UMOgmUYPivCyy2oueZY6Lx7M9wThm7SDUBViRmuT+OG/i8+ON9A==}
@@ -2792,8 +2780,8 @@ packages:
       markdown-it:
         optional: true
 
-  '@mermaid-js/parser@1.1.0':
-    resolution: {integrity: sha512-gxK9ZX2+Fex5zu8LhRQoMeMPEHbc73UKZ0FQ54YrQtUxE1VVhMwzeNtKRPAu5aXks4FasbMe4xB4bWrmq6Jlxw==}
+  '@mermaid-js/parser@1.1.1':
+    resolution: {integrity: sha512-VuHdsYMK1bT6X2JbcAaWAhugTRvRBRyuZgd+c22swUeI9g/ntaxF7CY7dYarhZovofCbUNO0G7JesfmNtjYOCw==}
 
   '@mr-hope/tsconfig@0.0.3':
     resolution: {integrity: sha512-dpgwNf6puCRKL+JiR1CIXxlpon4eM/0yZN0c6W2riE4St/A+hu+GdbpLD9tgsGQw3E9abKj98mDTapt29Yg01g==}
@@ -4097,6 +4085,7 @@ packages:
 
   '@ungap/structured-clone@1.3.0':
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
+    deprecated: Potential CWE-502 - Update to 1.3.1 or higher
 
   '@upsetjs/venn.js@2.0.0':
     resolution: {integrity: sha512-WbBhLrooyePuQ1VZxrJjtLvTc4NVfpOyKx0sKqioq9bX1C1m7Jgykkn8gLrtwumBioXIqam8DLxp88Adbue6Hw==}
@@ -5020,15 +5009,6 @@ packages:
     resolution: {integrity: sha512-WDrybc/gKFpTYQutKIK6UvfcuxijIZfMfXaYm8NMsPQxSYvf+13fXUJ4rztGGbJcBQ/GF55gvrZ0Bc0bj/mqvg==}
     engines: {node: '>=20.18.1'}
 
-  chevrotain-allstar@0.4.1:
-    resolution: {integrity: sha512-PvVJm3oGqrveUVW2Vt/eZGeiAIsJszYweUcYwcskg9e+IubNYKKD+rHHem7A6XVO22eDAL+inxNIGAzZ/VIWlA==}
-    peerDependencies:
-      chevrotain: ^12.0.0
-
-  chevrotain@12.0.0:
-    resolution: {integrity: sha512-csJvb+6kEiQaqo1woTdSAuOWdN0WTLIydkKrBnS+V5gZz0oqBrp4kQ35519QgK6TpBThiG3V1vNSHlIkv4AglQ==}
-    engines: {node: '>=22.0.0'}
-
   chokidar@3.6.0:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
     engines: {node: '>= 8.10.0'}
@@ -5849,6 +5829,9 @@ packages:
   es-to-primitive@1.3.0:
     resolution: {integrity: sha512-w+5mJ3GuFL+NjVtJlvydShqE1eN3h3PbI7/5LAsYJP/2qtuMXjfL2LpHSRqo4b4eSF5K/DH1JXKUAHSB2UW50g==}
     engines: {node: '>= 0.4'}
+
+  es-toolkit@1.46.1:
+    resolution: {integrity: sha512-5eNtXOs3tbfxXOj04tjjseeWkRWaoCjdEI+96DgwzZoe6c9juL49pXlzAFTI72aWC9Y8p7168g6XIKjh7k6pyQ==}
 
   es6-promise@4.2.8:
     resolution: {integrity: sha512-HJDGx5daxeIvxdBxvG2cb9g4tEvwIk3i8+nhX0yGrYmZUzbkdg8QbDevheDB8gd0//uPj4c1EQua8Q+MViT0/w==}
@@ -6902,10 +6885,6 @@ packages:
   kotlin-playground@1.34.0:
     resolution: {integrity: sha512-hMtwSg1FnkwFgD8HBf9Fd2XEYIbwcj7nNXm3ocqpqWCn5WxtQ6psdbXntVIl/LxuJgx1aA8oPxRnY/gcr0EGPA==}
 
-  langium@4.2.2:
-    resolution: {integrity: sha512-JUshTRAfHI4/MF9dH2WupvjSXyn8JBuUEWazB8ZVJUtXutT0doDlAv1XKbZ1Pb5sMexa8FF4CFBc0iiul7gbUQ==}
-    engines: {node: '>=20.10.0', npm: '>=10.2.3'}
-
   launch-editor@2.13.2:
     resolution: {integrity: sha512-4VVDnbOpLXy/s8rdRCSXb+zfMeFR0WlJWpET1iA9CQdlZDfwyLjUuGQzXU4VeOoey6AicSAluWan7Etga6Kcmg==}
 
@@ -7323,8 +7302,8 @@ packages:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
 
-  mermaid@11.14.0:
-    resolution: {integrity: sha512-GSGloRsBs+JINmmhl0JDwjpuezCsHB4WGI4NASHxL3fHo3o/BRXTxhDLKnln8/Q0lRFRyDdEjmk1/d5Sn1Xz8g==}
+  mermaid@11.15.0:
+    resolution: {integrity: sha512-pTMbcf3rWdtLiYGpmoTjHEpeY8seiy6sR+9nD7LOs8KfUbHE4lOUAprTRqRAcWSQ6MQpdX+YEsxShtGsINtPtw==}
 
   meshoptimizer@1.1.1:
     resolution: {integrity: sha512-oRFNWJRDA/WTrVj7NWvqa5HqE1t9MYDj2VaWirQCzCCrAd2GHrqR/sQezCxiWATPNlKTcRaPRHPJwIRoPBAp5g==}
@@ -9686,26 +9665,6 @@ packages:
       jsdom:
         optional: true
 
-  vscode-jsonrpc@8.2.0:
-    resolution: {integrity: sha512-C+r0eKJUIfiDIfwJhria30+TYWPtuHJXHtI7J0YlOmKAo7ogxP20T0zxB7HZQIFhIyvoBPwWskjxrvAtfjyZfA==}
-    engines: {node: '>=14.0.0'}
-
-  vscode-languageserver-protocol@3.17.5:
-    resolution: {integrity: sha512-mb1bvRJN8SVznADSGWM9u/b07H7Ecg0I3OgXDuLdn307rl/J3A9YD6/eYOssqhecL27hK1IPZAsaqh00i/Jljg==}
-
-  vscode-languageserver-textdocument@1.0.12:
-    resolution: {integrity: sha512-cxWNPesCnQCcMPeenjKKsOCKQZ/L6Tv19DTRIGuLWe32lyzWhihGVJ/rcckZXJxfdKCFvRLS3fpBIsV/ZGX4zA==}
-
-  vscode-languageserver-types@3.17.5:
-    resolution: {integrity: sha512-Ld1VelNuX9pdF39h2Hgaeb5hEZM2Z3jUrrMgWQAu82jMtZp7p3vJT3BzToKtZI7NgQssZje5o0zryOrhQvzQAg==}
-
-  vscode-languageserver@9.0.1:
-    resolution: {integrity: sha512-woByF3PDpkHFUreUa7Hos7+pUWdeWMXRd26+ZX2A8cFx6v/JPTtd4/uN0/jB6XQHYaOlHbio03NTHCqrgG5n7g==}
-    hasBin: true
-
-  vscode-uri@3.1.0:
-    resolution: {integrity: sha512-/BpdSx+yCQGnCvecbyXdxHDkuk55/G3xwnC0GqY4gmQ3j+A+g8kzzgB4Nk/SINjqn6+waqw3EgbVF2QKExkRxQ==}
-
   vue-loader@17.4.2:
     resolution: {integrity: sha512-yTKOA4R/VN4jqjw4y5HrynFL8AK0Z3/Jt7eOJXEitsm0GMRHDBjCfCiuTiLP7OESvsZYo2pATCWhDqxC5ZrM6w==}
     peerDependencies:
@@ -10784,20 +10743,7 @@ snapshots:
       hashery: 1.5.1
       keyv: 5.6.0
 
-  '@chevrotain/cst-dts-gen@12.0.0':
-    dependencies:
-      '@chevrotain/gast': 12.0.0
-      '@chevrotain/types': 12.0.0
-
-  '@chevrotain/gast@12.0.0':
-    dependencies:
-      '@chevrotain/types': 12.0.0
-
-  '@chevrotain/regexp-to-ast@12.0.0': {}
-
-  '@chevrotain/types@12.0.0': {}
-
-  '@chevrotain/utils@12.0.0': {}
+  '@chevrotain/types@11.1.2': {}
 
   '@codemirror/autocomplete@6.20.1':
     dependencies:
@@ -11920,9 +11866,9 @@ snapshots:
     optionalDependencies:
       markdown-it: 14.1.1
 
-  '@mermaid-js/parser@1.1.0':
+  '@mermaid-js/parser@1.1.1':
     dependencies:
-      langium: 4.2.2
+      '@chevrotain/types': 11.1.2
 
   '@mr-hope/tsconfig@0.0.3(typescript@6.0.3)':
     dependencies:
@@ -13801,7 +13747,7 @@ snapshots:
       - '@vuepress/bundler-webpack'
       - typescript
 
-  '@vuepress/plugin-markdown-chart@2.0.0-rc.128(041a90d90ac0c80963ccc251c7e0ec28)':
+  '@vuepress/plugin-markdown-chart@2.0.0-rc.128(7d6fe018726a13852a4308d7a20de7f1)':
     dependencies:
       '@mdit/plugin-container': 0.23.2(markdown-it@14.1.1)
       '@mdit/plugin-plantuml': 0.24.2(markdown-it@14.1.1)
@@ -13816,7 +13762,7 @@ snapshots:
       markmap-lib: 0.18.12(markmap-common@0.18.9)
       markmap-toolbar: 0.18.12(markmap-common@0.18.9)
       markmap-view: 0.18.12(markmap-common@0.18.9)
-      mermaid: 11.14.0
+      mermaid: 11.15.0
     transitivePeerDependencies:
       - '@vuepress/bundler-vite'
       - '@vuepress/bundler-webpack'
@@ -14781,19 +14727,6 @@ snapshots:
       undici: 7.25.0
       whatwg-mimetype: 4.0.0
 
-  chevrotain-allstar@0.4.1(chevrotain@12.0.0):
-    dependencies:
-      chevrotain: 12.0.0
-      lodash-es: 4.18.1
-
-  chevrotain@12.0.0:
-    dependencies:
-      '@chevrotain/cst-dts-gen': 12.0.0
-      '@chevrotain/gast': 12.0.0
-      '@chevrotain/regexp-to-ast': 12.0.0
-      '@chevrotain/types': 12.0.0
-      '@chevrotain/utils': 12.0.0
-
   chokidar@3.6.0:
     dependencies:
       anymatch: 3.1.3
@@ -15673,6 +15606,8 @@ snapshots:
       is-callable: 1.2.7
       is-date-object: 1.1.0
       is-symbol: 1.1.1
+
+  es-toolkit@1.46.1: {}
 
   es6-promise@4.2.8: {}
 
@@ -16758,15 +16693,6 @@ snapshots:
 
   kotlin-playground@1.34.0: {}
 
-  langium@4.2.2:
-    dependencies:
-      '@chevrotain/regexp-to-ast': 12.0.0
-      chevrotain: 12.0.0
-      chevrotain-allstar: 0.4.1(chevrotain@12.0.0)
-      vscode-languageserver: 9.0.1
-      vscode-languageserver-textdocument: 1.0.12
-      vscode-uri: 3.1.0
-
   launch-editor@2.13.2:
     dependencies:
       picocolors: 1.1.1
@@ -17273,11 +17199,11 @@ snapshots:
 
   merge2@1.4.1: {}
 
-  mermaid@11.14.0:
+  mermaid@11.15.0:
     dependencies:
       '@braintree/sanitize-url': 7.1.2
       '@iconify/utils': 3.1.0
-      '@mermaid-js/parser': 1.1.0
+      '@mermaid-js/parser': 1.1.1
       '@types/d3': 7.4.3
       '@upsetjs/venn.js': 2.0.0
       cytoscape: 3.33.2
@@ -17288,9 +17214,9 @@ snapshots:
       dagre-d3-es: 7.0.14
       dayjs: 1.11.20
       dompurify: 3.4.0
+      es-toolkit: 1.46.1
       katex: 0.16.45
       khroma: 2.1.0
-      lodash-es: 4.18.1
       marked: 16.4.2
       roughjs: 4.6.6
       stylis: 4.4.0
@@ -19854,23 +19780,6 @@ snapshots:
       '@vitest/coverage-istanbul': 4.1.4(vitest@4.1.4)
     transitivePeerDependencies:
       - msw
-
-  vscode-jsonrpc@8.2.0: {}
-
-  vscode-languageserver-protocol@3.17.5:
-    dependencies:
-      vscode-jsonrpc: 8.2.0
-      vscode-languageserver-types: 3.17.5
-
-  vscode-languageserver-textdocument@1.0.12: {}
-
-  vscode-languageserver-types@3.17.5: {}
-
-  vscode-languageserver@9.0.1:
-    dependencies:
-      vscode-languageserver-protocol: 3.17.5
-
-  vscode-uri@3.1.0: {}
 
   vue-loader@17.4.2(@vue/compiler-sfc@3.5.32)(vue@3.5.32(typescript@6.0.3))(webpack@5.106.2(esbuild@0.27.5)):
     dependencies:
