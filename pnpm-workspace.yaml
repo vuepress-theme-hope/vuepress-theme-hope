@@ -83,7 +83,7 @@ overrides:
   "@rollup/plugin-terser@0.4>serialize-javascript": ^7.0.5
   "@surma/rollup-plugin-off-main-thread>magic-string": ^0.30.21
   "@xmldom/xmldom": ^0.9.10
-  esbuild: 0.27.5
+  esbuild: 0.28.0
   "markdownlint-cli2@0.22.0>smol-toml": ^1.6.1
   "markmap-html-parser@0.18.11>cheerio": ^1.2.0
   "workbox-build@7.4.0>@rollup/plugin-terser": ^1.0.0
