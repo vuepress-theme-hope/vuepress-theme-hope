@@ -269,8 +269,8 @@ importers:
         specifier: 0.21.1
         version: 0.21.1
       publint:
-        specifier: 0.3.18
-        version: 0.3.18
+        specifier: 0.3.21
+        version: 0.3.21
       rimraf:
         specifier: 6.1.3
         version: 6.1.3
@@ -288,7 +288,7 @@ importers:
         version: 4.0.2
       tsdown:
         specifier: 0.21.9
-        version: 0.21.9(@vitejs/devtools@0.1.14)(publint@0.3.18)(synckit@0.11.12)(typescript@6.0.3)
+        version: 0.21.9(@vitejs/devtools@0.1.14)(publint@0.3.21)(synckit@0.11.12)(typescript@6.0.3)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -4097,6 +4097,7 @@ packages:
 
   '@ungap/structured-clone@1.3.0':
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
+    deprecated: Potential CWE-502 - Update to 1.3.1 or higher
 
   '@upsetjs/venn.js@2.0.0':
     resolution: {integrity: sha512-WbBhLrooyePuQ1VZxrJjtLvTc4NVfpOyKx0sKqioq9bX1C1m7Jgykkn8gLrtwumBioXIqam8DLxp88Adbue6Hw==}
@@ -8232,8 +8233,8 @@ packages:
     resolution: {integrity: sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==}
     engines: {node: '>= 0.10'}
 
-  publint@0.3.18:
-    resolution: {integrity: sha512-JRJFeBTrfx4qLwEuGFPk+haJOJN97KnPuK01yj+4k/Wj5BgoOK5uNsivporiqBjk2JDaslg7qJOhGRnpltGeog==}
+  publint@0.3.21:
+    resolution: {integrity: sha512-OqejcnMV6E9zel2oCrUOJEiiFkGiAAni0A6ibfQNh1k9Gu5z4F+Yso8lllam7AzmV6Do0vp7u3UpZNRBwuXaHQ==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -13187,7 +13188,7 @@ snapshots:
       ohash: 2.0.11
       p-limit: 7.3.0
       pathe: 2.0.3
-      publint: 0.3.18
+      publint: 0.3.21
       sirv: 3.0.2
       split2: 4.2.0
       structured-clone-es: 2.0.0
@@ -18336,7 +18337,7 @@ snapshots:
       forwarded: 0.2.0
       ipaddr.js: 1.9.1
 
-  publint@0.3.18:
+  publint@0.3.21:
     dependencies:
       '@publint/pack': 0.1.4
       package-manager-detector: 1.6.0
@@ -19472,7 +19473,7 @@ snapshots:
 
   ts-dedent@2.2.0: {}
 
-  tsdown@0.21.9(@vitejs/devtools@0.1.14)(publint@0.3.18)(synckit@0.11.12)(typescript@6.0.3):
+  tsdown@0.21.9(@vitejs/devtools@0.1.14)(publint@0.3.21)(synckit@0.11.12)(typescript@6.0.3):
     dependencies:
       ansis: 4.2.0
       cac: 7.0.0
@@ -19492,7 +19493,7 @@ snapshots:
       unrun: 0.2.36(synckit@0.11.12)
     optionalDependencies:
       '@vitejs/devtools': 0.1.14(@pnpm/logger@1001.0.1)(typescript@6.0.3)(vite@8.0.9)
-      publint: 0.3.18
+      publint: 0.3.21
       typescript: 6.0.3
     transitivePeerDependencies:
       - '@ts-macro/tsc'
