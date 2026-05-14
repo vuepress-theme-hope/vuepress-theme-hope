@@ -26,7 +26,7 @@ jobs:
           name: build-result
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v5
+        uses: pnpm/action-setup@v6
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
@@ -35,7 +35,7 @@ jobs:
           cache: pnpm
 
       - name: Install deps
-        run: pnpm install --frozen-lockfile
+        run: pnpm ci
 
       - name: Docs build
         env:
