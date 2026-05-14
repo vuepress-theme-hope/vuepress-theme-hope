@@ -33,6 +33,7 @@ export const KNOWN_THEME_MARKDOWN_OPTIONS = [
   "tasklist",
   "component",
   "vPre",
+  "cjkFriendly",
 
   // plugin-markdown-hint
   "alert",
@@ -55,6 +56,7 @@ export const KNOWN_THEME_MARKDOWN_OPTIONS = [
   // plugin-markdown-stylize
   "align",
   "attrs",
+  "layout",
   "sup",
   "sub",
   "mark",
