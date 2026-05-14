@@ -81,6 +81,8 @@ export const hopeTheme = (
     return {
       name: "vuepress-theme-hope",
 
+      userStyle: ".vuepress/styles/index.scss",
+
       ...(behavior.custom ? { alias: { "@theme-hope": path.resolve(CLIENT_FOLDER) } } : {}),
 
       define: () => ({
