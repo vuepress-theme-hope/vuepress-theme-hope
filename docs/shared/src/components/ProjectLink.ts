@@ -16,7 +16,7 @@ const ProjectLink: FunctionalComponent<
   Record<never, never>,
   { default: () => string }
 > = ({ name, type = "plugin", path = "/" }, { slots }) => {
-  const base = name === "hope" ? "" : `/${name.replace(/\d+$/, "")}`;
+  const base = name === "hope" ? "" : `/${name.replace(/\d+$/u, "")}`;
 
   return h(
     "a",

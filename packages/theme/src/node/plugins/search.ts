@@ -91,7 +91,6 @@ export const getSearchPlugin = (
       // Add supports for category and tags
       customFields: [
         {
-          // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
           getter: (page: Page<Record<never, never>, ThemeBasePageFrontmatter>) =>
             page.frontmatter.category,
           formatter: getFullLocaleConfig({
@@ -103,7 +102,6 @@ export const getSearchPlugin = (
           }),
         },
         {
-          // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
           getter: (page: Page<Record<never, never>, ThemeBasePageFrontmatter>) =>
             page.frontmatter.tag,
           formatter: getFullLocaleConfig({

@@ -10,7 +10,6 @@ import { useData } from "@theme-hope/composables/useData";
 export default defineComponent({
   name: "NotFound",
 
-  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   slots: Object as SlotsType<{
     default?: Slot;
 

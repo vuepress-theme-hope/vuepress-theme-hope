@@ -23,7 +23,6 @@ export default defineComponent({
     show: Boolean,
   },
 
-  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   slots: Object as SlotsType<{
     navScreenTop?: Slot;
     navScreenBottom?: Slot;

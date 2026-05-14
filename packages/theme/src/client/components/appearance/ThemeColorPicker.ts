@@ -30,21 +30,14 @@ export default defineComponent({
 
       for (const [name, color] of themeColors.entries()) {
         if (name.includes("light")) {
-          if (isDarkMode.value) {
-            themeColors.delete(name);
-          } else {
-            themeColors.set(name.replace("light-", ""), color);
-            themeColors.delete(name);
-          }
+          if (!isDarkMode.value) themeColors.set(name.replace("light-", ""), color);
+          themeColors.delete(name);
         }
 
         if (name.includes("dark")) {
-          if (isDarkMode.value) {
-            themeColors.set(name.replace("dark-", ""), color);
-            themeColors.delete(name);
-          } else {
-            themeColors.delete(name);
-          }
+          if (isDarkMode.value) themeColors.set(name.replace("dark-", ""), color);
+
+          themeColors.delete(name);
         }
       }
 

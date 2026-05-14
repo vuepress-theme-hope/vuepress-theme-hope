@@ -5,7 +5,7 @@ export class Popup {
   private readonly popupElements = new Map<number, HTMLDivElement>();
 
   // Generate or make sure popup container element
-  public constructor() {
+  constructor() {
     const containerId = "popup-container";
     const containerElement = document.querySelector<HTMLElement>(`#${containerId}`);
 
@@ -18,7 +18,7 @@ export class Popup {
     }
   }
 
-  public emit(html: string, duration?: number): number {
+  emit(html: string, duration?: number): number {
     const popupWrapperElement = document.createElement("div");
     const popupElement = document.createElement("div");
     const popupId = Date.now();
@@ -42,7 +42,7 @@ export class Popup {
     return popupId;
   }
 
-  public close(popupId?: number): void {
+  close(popupId?: number): void {
     if (popupId) {
       const popupWrapperElement = this.popupElements.get(popupId);
 
@@ -61,7 +61,7 @@ export class Popup {
     }
   }
 
-  public destroy(): void {
+  destroy(): void {
     this.containerElement.remove();
   }
 }

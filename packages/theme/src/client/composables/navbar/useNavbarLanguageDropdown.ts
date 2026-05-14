@@ -8,7 +8,7 @@ import { useData } from "@theme-hope/composables/useData";
 import type { AutoLinkOptions, NavGroup } from "../../../shared/index.js";
 
 const isAllowedRootPath = (path: string): boolean =>
-  path === "/" || /^\/?404(?:\.html)?$/.test(path);
+  path === "/" || /^\/?404(?:\.html)?$/u.test(path);
 
 /**
  * Get navbar config of select language dropdown
@@ -27,7 +27,8 @@ export const useNavbarLanguageDropdown = (): ComputedRef<NavGroup<AutoLinkOption
     if (subLocales.length === 0) return false;
 
     const localeRegExp = new RegExp(
-      `^(?:${subLocales.map((locale) => locale.replaceAll(/[.*+?^${}()|[\]\\]/g, String.raw`\$&`)).join("|")})`,
+      `^(?:${subLocales.map((locale) => locale.replaceAll(/[.*+?^${}()|[\]\\]/gu, String.raw`\$&`)).join("|")})`,
+      "u",
     );
 
     // only / and /404.html for root locale

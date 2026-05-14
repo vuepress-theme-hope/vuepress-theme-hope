@@ -7,7 +7,7 @@ import { kotlinPlayground } from "../../src/node/markdown-it/kotlinPlayground.js
 const decodeFiles = (content: string): string[] => JSON.parse(decodeData(content)) as string[];
 
 const getFiles = (renderResult: string): string[] | null => {
-  const result = /files="(.*?)"/s.exec(renderResult);
+  const result = /files="(.*?)"/su.exec(renderResult);
 
   if (!result) return null;
 
@@ -15,17 +15,17 @@ const getFiles = (renderResult: string): string[] | null => {
 };
 
 const getSettings = (renderResult: string): Record<string, unknown> | null => {
-  const result = /settings="(.*?)"/s.exec(renderResult);
+  const result = /settings="(.*?)"/su.exec(renderResult);
 
   if (!result) return null;
 
   return JSON.parse(decodeURIComponent(result[1])) as Record<string, unknown>;
 };
 
-describe("Kotlin Playground", () => {
+describe(kotlinPlayground, () => {
   const markdownIt = new MarkdownIt({ linkify: true }).use(kotlinPlayground);
 
-  it("Should resolve playground info", () => {
+  it("should resolve playground info", () => {
     const result = markdownIt.render(
       `
 ::: kotlin-playground Playground title
@@ -52,7 +52,7 @@ fun main(args: Array<String>) {
     const files = getFiles(result);
     const settings = getSettings(result);
 
-    expect(files).toEqual([
+    expect(files).toStrictEqual([
       `\
 class Contact(val id: Int, var email: String)
 
@@ -62,10 +62,10 @@ fun main(args: Array<String>) {
 }
 `,
     ]);
-    expect(settings).toEqual({});
+    expect(settings).toStrictEqual({});
   });
 
-  it("Should resolve playground info with settings", () => {
+  it("should resolve playground info with settings", () => {
     const result = markdownIt.render(
       `
 ::: kotlin-playground Readonly Playground
@@ -109,7 +109,7 @@ class Cat(val name: String)
     const file = getFiles(result);
     const settings = getSettings(result);
 
-    expect(file).toEqual([
+    expect(file).toStrictEqual([
       `\
 import cat.Cat
 
@@ -125,7 +125,7 @@ package cat
 class Cat(val name: String)
 `,
     ]);
-    expect(settings).toEqual({
+    expect(settings).toStrictEqual({
       "data-highlight-only": "",
     });
   });

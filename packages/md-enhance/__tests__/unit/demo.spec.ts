@@ -6,7 +6,7 @@ import { normalDemo, reactDemo, vueDemo } from "../../src/node/markdown-it/codeD
 describe("demo", () => {
   const markdownIt = new MarkdownIt({ linkify: true }).use(normalDemo).use(vueDemo).use(reactDemo);
 
-  it("Should resolve demo info", () => {
+  it("should resolve demo info", () => {
     expect(
       markdownIt.render(
         `

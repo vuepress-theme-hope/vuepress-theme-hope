@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`should generate structure info correctly > Should generate structure info for whole dir 1`] = `
+exports[`getStructureInfo > should generate structure info for whole dir 1`] = `
 [
   {
     "children": [
@@ -472,7 +472,7 @@ exports[`should generate structure info correctly > Should generate structure in
 ]
 `;
 
-exports[`should generate structure info correctly > Should resolve structure in dir 1`] = `
+exports[`getStructureInfo > should resolve structure in dir 1`] = `
 [
   {
     "filename": "file1.md",

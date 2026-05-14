@@ -27,7 +27,7 @@ export default defineComponent({
       },
       { text: blogLocale.value.star, path: stars.value.path },
       ...__VP_BLOG_TYPES__.map(({ key, path }) => {
-        const routePath = path.replace(/^\//, routeLocale.value);
+        const routePath = path.replace(/^\//u, routeLocale.value);
 
         return {
           text: blogLocale.value[key] ?? resolveRoute(routePath).meta.title ?? key,

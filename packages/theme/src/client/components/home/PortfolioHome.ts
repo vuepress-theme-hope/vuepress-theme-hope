@@ -19,7 +19,6 @@ import "../../styles/home/portfolio-home.scss";
 export default defineComponent({
   name: "PortfolioHome",
 
-  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   slots: Object as SlotsType<{
     portfolioInfo?: Slot<PortfolioInfoSlotData>;
     portfolioAvatar?: Slot<PortfolioAvatarSlotData>;

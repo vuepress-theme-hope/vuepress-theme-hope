@@ -57,7 +57,6 @@ export const usePlugins = (
     palette: ".vuepress/styles/palette.scss",
     defaultPalette: `${TEMPLATE_FOLDER}/palette/palette.scss`,
     generator: `${TEMPLATE_FOLDER}/palette/generator.scss`,
-    style: ".vuepress/styles/index.scss",
   });
 
   useExtendsPagePlugin(app, themeData, behavior);

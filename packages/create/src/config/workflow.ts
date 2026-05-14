@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
           # ${workflow.submodule}
@@ -41,25 +41,25 @@ ${
   packageManager === "pnpm"
     ? `\
       - name: ${workflow.setupPnpm}
-        uses: pnpm/action-setup@v5
+        uses: pnpm/action-setup@v6
 `
     : ""
 }
 
       - name: ${workflow.setupNode}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
           cache: ${packageManager}
 
       - name: ${workflow.install}
         run: |
           corepack enable
-          ${packageManager === "npm" ? "npm ci" : `${packageManager} install --frozen-lockfile`}
+          ${packageManager === "yarn" ? "yarn install --frozen-lockfile" : `${packageManager} ci`}
 
       - name: ${workflow.build}
         env:
-          NODE_OPTIONS: --max_old_space_size=8192
+          NODE_OPTIONS: --max_old_space_size=4096
         run: |-
           ${packageManager} run docs:build
           > ${join(dir, ".vuepress/dist/.nojekyll").replaceAll(String.raw`\\`, "/")}

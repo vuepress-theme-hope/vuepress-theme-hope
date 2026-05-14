@@ -31,7 +31,7 @@ const getPlugin =
         for (let i = index; i < tokens.length; i++) {
           const { type, content, info } = tokens[i];
           const language = info
-            ? (/^([^ :[{]+)/.exec(md.utils.unescapeAll(info).trim())?.[1] ?? "text")
+            ? (/^([^ :[{]+)/u.exec(md.utils.unescapeAll(info).trim())?.[1] ?? "text")
             : "";
 
           if (type === `container_${name}_close`) break;

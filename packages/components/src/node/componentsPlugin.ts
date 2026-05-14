@@ -35,7 +35,7 @@ export const componentsPlugin =
         if (options.components?.includes("ArtPlayer"))
           addViteOptimizeDepsInclude(bundlerOptions, app, "artplayer");
         if (options.components?.includes("VidStack"))
-          addCustomElement(bundlerOptions, app, /^media-/);
+          addCustomElement(bundlerOptions, app, /^media-/u);
 
         addViteSsrNoExternal(bundlerOptions, app, ["@vuepress/helper", "vuepress-shared"]);
       },

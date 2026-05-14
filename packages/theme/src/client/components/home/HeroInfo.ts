@@ -23,7 +23,6 @@ export type Style = string | Record<string, string>;
 export default defineComponent({
   name: "HeroInfo",
 
-  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   slots: Object as SlotsType<{
     heroInfo?: Slot<HeroInfoSlotData>;
     heroLogo?: Slot<HeroLogoSlotData>;

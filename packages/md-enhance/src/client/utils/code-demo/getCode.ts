@@ -34,7 +34,7 @@ export const getCode = (code: Record<string, string>): CodeType => {
 };
 
 const handleHTML = (html: string): string =>
-  html.replaceAll(String.raw`<br \/>`, "<br>").replaceAll(/<((\S+)[^<]*?)\s+\/>/g, "<$1></$2>");
+  html.replaceAll(String.raw`<br \/>`, "<br>").replaceAll(/<((\S+)[^<]*?)\s+\/>/gu, "<$1></$2>");
 
 const getHtmlTemplate = (html: string): string => `<div id="app">\n${handleHTML(html)}\n</div>`;
 
@@ -42,7 +42,7 @@ const getReactTemplate = (code: string): string =>
   `${code
     .replace("export default ", "const $reactApp = ")
     .replace(
-      /App\.__style__(\s*)=(\s*)`([\s\S]*)?`/,
+      /App\.__style__(\s*)=(\s*)`([\s\S]*)?`/u,
       "",
     )};\nReactDOM.createRoot(document.getElementById("app")).render(React.createElement($reactApp))`;
 
@@ -124,7 +124,7 @@ export const getReactCode = (code: CodeType, config: Partial<CodeDemoOptions>): 
     js: getReactTemplate(js),
     css:
       code.css[0] ??
-      code.js[0]?.replace(/App\.__style__(?:\s*)=(?:\s*)`([\s\S]*)?`/, "$1").trim() ??
+      code.js[0]?.replace(/App\.__style__(?:\s*)=(?:\s*)`([\s\S]*)?`/u, "$1").trim() ??
       "",
     isLegal: code.isLegal,
     jsLib: [codeConfig.react, codeConfig.reactDOM, ...codeConfig.jsLib],

@@ -14,7 +14,7 @@ const IS_NETLIFY = "NETLIFY" in process.env;
 const IS_GITHUB = !IS_GITEE && !IS_NETLIFY;
 
 export const config = (name: string, userConfig: UserConfig): UserConfig => {
-  const base = name.replace(/\d+$/, "");
+  const base = name.replace(/\d+$/u, "");
   const docsBase = IS_NETLIFY ? "/" : base ? (`/v2/${base}/` as `/${string}/`) : "/v2/";
 
   return defineUserConfig({

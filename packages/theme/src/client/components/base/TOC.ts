@@ -34,7 +34,6 @@ export default defineComponent({
     items: Array as PropType<PageHeader[]>,
   },
 
-  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   slots: Object as SlotsType<{
     toc?: Slot<TocSlotData>;
     tocBefore?: Slot;

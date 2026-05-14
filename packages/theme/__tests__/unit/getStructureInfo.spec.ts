@@ -14,12 +14,12 @@ const app = createBuildApp({
 
 await app.init();
 
-describe("should generate structure info correctly", () => {
-  it("Should generate structure info for whole dir", () => {
+describe(getStructureInfo, () => {
+  it("should generate structure info for whole dir", () => {
     expect(getStructureInfo(app.pages, "")).toMatchSnapshot();
   });
 
-  it("Should resolve structure in dir", () => {
+  it("should resolve structure in dir", () => {
     expect(getStructureInfo(app.pages, "dir/")).toMatchSnapshot();
   });
 });

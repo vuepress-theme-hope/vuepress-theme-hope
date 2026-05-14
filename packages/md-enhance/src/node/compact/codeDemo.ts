@@ -30,7 +30,7 @@ export const legacyCodeDemo: PluginSimple = (md) => {
         // oxlint-disable-next-line no-shadow
         const { type, content, info } = tokens[i];
         const language = info
-          ? (/^([^ :[{]+)/.exec(md.utils.unescapeAll(info).trim())?.[1] ?? "text")
+          ? (/^([^ :[{]+)/u.exec(md.utils.unescapeAll(info).trim())?.[1] ?? "text")
           : "";
 
         if (type === `container_demo_close`) break;

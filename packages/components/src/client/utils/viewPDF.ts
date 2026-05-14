@@ -86,7 +86,7 @@ const addPDFViewer = (
     embedType,
     url,
     options = {},
-    title = /\/([^/]+).pdf/.exec(url)?.[1] ?? "PDF Viewer",
+    title = /\/([^/]+).pdf/u.exec(url)?.[1] ?? "PDF Viewer",
   }: AddPDFViewerOptions,
 ): HTMLElement => {
   // Ensure target element is empty first

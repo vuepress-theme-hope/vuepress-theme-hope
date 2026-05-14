@@ -13,7 +13,6 @@ import "../../styles/sidebar/sidebar.scss";
 export default defineComponent({
   name: "SideBar",
 
-  // oxlint-disable-next-line typescript/no-unnecessary-type-arguments
   slots: Object as SlotsType<{
     sidebarItems?: Slot<SidebarItemsSlotData>;
     sidebarTop?: Slot;

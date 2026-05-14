@@ -194,7 +194,7 @@ export default defineComponent({
 
       BOOLEAN_TRUE_ATTRS.forEach((config) => {
         if (attrsKeys.includes(config))
-          initOptions[camelize(config.replace(/^no-/, "")) as ArtPlayerBooleanOptionKey] = false;
+          initOptions[camelize(config.replace(/^no-/u, "")) as ArtPlayerBooleanOptionKey] = false;
       });
       BOOLEAN_FALSE_ATTRS.forEach((config) => {
         if (attrsKeys.includes(config))

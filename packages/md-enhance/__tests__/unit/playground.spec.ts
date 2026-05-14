@@ -1,3 +1,4 @@
+// oxlint-disable vitest/max-expects
 import MarkdownIt from "markdown-it";
 import { describe, expect, it } from "vitest";
 
@@ -9,7 +10,7 @@ import {
 } from "../../src/node/markdown-it/playground/index.js";
 
 const getVueFiles = (content: string): Record<string, string> | null => {
-  const result = /link="(.*?)"/.exec(decodeURIComponent(content));
+  const result = /link="(.*?)"/u.exec(decodeURIComponent(content));
 
   if (!result) return null;
 
@@ -22,7 +23,7 @@ const getVueFiles = (content: string): Record<string, string> | null => {
 };
 
 describe(playground, () => {
-  it("Should not throw", () => {
+  it("should not throw", () => {
     const markdownIt = new MarkdownIt({ linkify: true }).use(playground, {
       name: "test",
     });
@@ -63,7 +64,7 @@ abc
         ),
     });
 
-    it("Should resolve playground info", () => {
+    it("should resolve playground info", () => {
       const result = markdownIt.render(
         `
 ::: playground Playground demo
@@ -96,7 +97,7 @@ const msg = ref('Hello World!')
       expect(result).toMatchSnapshot();
     });
 
-    it("Should resolve playground info with imports and settings", () => {
+    it("should resolve playground info with imports and settings", () => {
       const result = markdownIt.render(
         `
 ::: playground Playground demo2
@@ -147,7 +148,7 @@ const msg = ref('Hello World!')
       getTSPlaygroundPreset({}),
     );
 
-    it("Should work", () => {
+    it("should work", () => {
       const result1 = markdownItWithTSPreset.render(`
 ::: playground#ts TS demo 1
 
@@ -189,8 +190,8 @@ speak(msg);
 :::
 `);
 
-      expect(result1).toMatchSnapshot();
-      expect(result2).toMatchSnapshot();
+      expect(result1).toMatchSnapshot("demo");
+      expect(result2).toMatchSnapshot("demo with settings");
     });
   });
 
@@ -200,7 +201,7 @@ speak(msg);
       getVuePlaygroundPreset({}),
     );
 
-    it("Should work", () => {
+    it("should work", () => {
       const result1 = markdownItWithVuePreset.render(`
 ::: playground#vue Vue demo with customized imports
 
@@ -316,9 +317,9 @@ const msg = ref("Hello Playground!");
 
 `);
 
-      expect(result1).toMatchSnapshot();
-      expect(result2).toMatchSnapshot();
-      expect(result3).toMatchSnapshot();
+      expect(result1).toMatchSnapshot("demo with customized imports");
+      expect(result2).toMatchSnapshot("demo with customized settings");
+      expect(result3).toMatchSnapshot("demo with customized settings and imports");
 
       expect(result2).contains("__DEV__");
       expect(result2).contains("__SSR__");
@@ -329,7 +330,7 @@ const msg = ref("Hello Playground!");
       const files2 = getVueFiles(result2);
       const files3 = getVueFiles(result3);
 
-      expect(files1).toEqual({
+      expect(files1).toStrictEqual({
         "App.vue": `\
 <script setup>
 import { ref } from "vue";
@@ -359,7 +360,7 @@ const msg = ref("Hello World!");
 `,
       });
 
-      expect(files2).toEqual({
+      expect(files2).toStrictEqual({
         "App.vue": `\
 <script setup>
 import { ref } from "vue";
@@ -382,7 +383,7 @@ const msg = ref("Hello Playground!");
 `,
       });
 
-      expect(files3).toEqual({
+      expect(files3).toStrictEqual({
         "App.vue": `\
 <script setup>
 import { ref } from "vue";
@@ -413,7 +414,7 @@ const msg = ref("Hello Playground!");
       getUnoPlaygroundPreset({}),
     );
 
-    it("Should work", () => {
+    it("should work", () => {
       const result1 = markdownItWithUnoPreset.render(`
 ::: playground#unocss UnoCSS demo 1
 
@@ -463,8 +464,8 @@ export default defineConfig({
 :::
 `);
 
-      expect(result1).toMatchSnapshot();
-      expect(result2).toMatchSnapshot();
+      expect(result1).toMatchSnapshot("single file demo");
+      expect(result2).toMatchSnapshot("multi-file demo");
     });
   });
 });

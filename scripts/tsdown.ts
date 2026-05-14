@@ -131,7 +131,7 @@ export const tsdownConfig = (
     },
     deps: {
       alwaysBundle,
-      neverBundle: [/^@internal\//, /^@temp\//, /\.s?css$/, ...neverBundle],
+      neverBundle: [/^@internal\//u, /^@temp\//u, /\.s?css$/u, ...neverBundle],
       onlyBundle,
     },
     fixedExtension: false,
