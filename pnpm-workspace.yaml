@@ -79,7 +79,17 @@ catalogs:
     vuepress: 2.0.0-rc.30
 
 peerDependencyRules:
-  allowedVersions:
-    echarts-wordcloud@2>echarts: ^6.0.0
+  ignoreMissing:
+    - echarts
 
 blockExoticSubdeps: false
+
+trustPolicy: no-downgrade
+
+trustPolicyExclude:
+  - "@trickfilm400/rollup-plugin-off-main-thread@3.0.0-pre1" # workbox-build
+  - chokidar@4.0.3 # sass@1
+  - semver@6.3.1 # @babel/core@7
+  - ua-parser-js@1.0.41 # dashjs@4
+  - undici-types@6.21.0 # @types/node@22
+
