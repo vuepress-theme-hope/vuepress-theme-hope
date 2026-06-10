@@ -46,9 +46,6 @@ catalogs:
     balloon-css:
       specifier: ^1.2.0
       version: 1.2.0
-    sass:
-      specifier: ^1.99.0
-      version: 1.99.0
     sass-embedded:
       specifier: ^1.99.0
       version: 1.99.0
@@ -134,9 +131,6 @@ catalogs:
     '@vuepress/plugin-markdown-tab':
       specifier: 2.0.0-rc.130
       version: 2.0.0-rc.130
-    '@vuepress/plugin-meilisearch':
-      specifier: 2.0.0-rc.130
-      version: 2.0.0-rc.130
     '@vuepress/plugin-notice':
       specifier: 2.0.0-rc.130
       version: 2.0.0-rc.130
@@ -144,12 +138,6 @@ catalogs:
       specifier: 2.0.0-rc.130
       version: 2.0.0-rc.130
     '@vuepress/plugin-photo-swipe':
-      specifier: 2.0.0-rc.130
-      version: 2.0.0-rc.130
-    '@vuepress/plugin-prismjs':
-      specifier: 2.0.0-rc.130
-      version: 2.0.0-rc.130
-    '@vuepress/plugin-pwa':
       specifier: 2.0.0-rc.130
       version: 2.0.0-rc.130
     '@vuepress/plugin-reading-time':
@@ -167,9 +155,6 @@ catalogs:
     '@vuepress/plugin-sass-palette':
       specifier: 2.0.0-rc.130
       version: 2.0.0-rc.130
-    '@vuepress/plugin-search':
-      specifier: 2.0.0-rc.130
-      version: 2.0.0-rc.130
     '@vuepress/plugin-seo':
       specifier: 2.0.0-rc.130
       version: 2.0.0-rc.130
@@ -179,13 +164,7 @@ catalogs:
     '@vuepress/plugin-sitemap':
       specifier: 2.0.0-rc.130
       version: 2.0.0-rc.130
-    '@vuepress/plugin-slimsearch':
-      specifier: 2.0.0-rc.130
-      version: 2.0.0-rc.130
     '@vuepress/plugin-theme-data':
-      specifier: 2.0.0-rc.130
-      version: 2.0.0-rc.130
-    '@vuepress/plugin-watermark':
       specifier: 2.0.0-rc.130
       version: 2.0.0-rc.130
     '@vuepress/shiki-twoslash':
