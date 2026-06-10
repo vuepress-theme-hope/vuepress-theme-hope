@@ -61,7 +61,7 @@ const sandpackRule: RuleBlock = (state, startLine, endLine, silent) => {
   if (firstSpace > 0) {
     containerName = content.slice(0, firstSpace);
     // Remove attrs
-    title = content.slice(firstSpace + 1).replaceAll(/(?<!\\)\[([^}]*)\]/gu, "");
+    title = content.slice(firstSpace + 1).replaceAll(/(?<!\\)\[(?:[^}]*)\]/gu, "");
   } else {
     containerName = content;
   }

@@ -22,7 +22,7 @@ import { getSidebarInfo } from "./getSidebarInfo.js";
 import { getSidebarSorter } from "./getSidebarSorter.js";
 
 const removeExtension = (path: string): string =>
-  path.replace(/^(README|index)\.md$/iu, "").replace(/\.md$/u, "");
+  path.replace(/^(?:README|index)\.md$/iu, "").replace(/\.md$/u, "");
 
 const getGeneratePaths = (sidebarConfig: SidebarArrayOptions, prefix = ""): string[] => {
   const result: string[] = [];

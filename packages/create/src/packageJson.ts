@@ -1,5 +1,5 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
-import { resolve } from "node:path";
+import path from "node:path";
 
 import { input, select } from "@inquirer/prompts";
 
@@ -44,7 +44,7 @@ export const createPackageJson = async ({
   });
 
   /** Generate package.json */
-  const packageJsonPath = resolve(cwd, "package.json");
+  const packageJsonPath = path.resolve(cwd, "package.json");
   const scripts = getScript(packageManager, bundler, source);
   const devDependencies = {
     [`@vuepress/bundler-${bundler}`]: packageJSON.devDependencies.vuepress,

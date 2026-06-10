@@ -67,6 +67,9 @@ export default defineHopeConfig(
         },
       ],
       "no-warning-comments": "off",
+      // this reduce compatibility in browsers, and produces noise in typescript
+      // as execResult.groups could be undefined
+      "prefer-named-capture-group": "off",
       "prefer-object-spread": "off",
 
       // a lot of time we are just want to check existence

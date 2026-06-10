@@ -17,18 +17,18 @@ catalog:
   mermaid: 11.15.0
   reveal.js: 6.0.1
   typescript: 6.0.3
-  sass-embedded: 1.99.0
-  sass-loader: ^16.0.8
-  vue: 3.5.34
+  sass-embedded: ^1.100.0
+  sass-loader: ^17.0.0
+  vue: ^3.5.35
 
 catalogs:
   range:
     "@vueuse/core": ^14.3.0
     balloon-css: ^1.2.0
-    sass: ^1.99.0
-    sass-embedded: ^1.99.0
-    sass-loader: ^16.0.8
-    vue: ^3.5.34
+    sass: ^1.100.0
+    sass-embedded: ^1.100.0
+    sass-loader: ^17.0.0
+    vue: ^3.5.35
 
   vuepress:
     "@vuepress/bundler-vite": 2.0.0-rc.30
@@ -78,11 +78,28 @@ catalogs:
     "@vuepress/theme-default": 2.0.0-rc.130
     vuepress: 2.0.0-rc.30
 
+packageExtensions:
+  "@vue/repl":
+    peerDependencies:
+      vue: ^3.5.18
+    peerDependenciesMeta:
+      vue:
+        optional: true
+
+  stylelint:
+    peerDependencies:
+      postcss-html: ^1.8.1
+    peerDependenciesMeta:
+      postcss-html:
+        optional: true
+
 peerDependencyRules:
   ignoreMissing:
     - echarts
 
 blockExoticSubdeps: false
+
+enableGlobalVirtualStore: true
 
 trustPolicy: no-downgrade
 
@@ -93,3 +110,11 @@ trustPolicyExclude:
   - ua-parser-js@1.0.41 # dashjs@4
   - undici-types@6.21.0 # @types/node@22
 
+minimumReleaseAgeExclude:
+  - "@oxfmt/*"
+  - "@oxlint/*"
+  - "@vitest/*"
+  - oxfmt
+  - oxlint
+  - vite
+  - vitest

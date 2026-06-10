@@ -1,5 +1,5 @@
 import { execSync } from "node:child_process";
-import { join } from "node:path";
+import path from "node:path";
 
 import type { PackageManager } from "../config/index.js";
 import type { CreateLocale } from "../i18n/index.js";
@@ -62,13 +62,13 @@ ${
           NODE_OPTIONS: --max_old_space_size=4096
         run: |-
           ${packageManager} run docs:build
-          > ${join(dir, ".vuepress/dist/.nojekyll").replaceAll(String.raw`\\`, "/")}
+          > ${path.join(dir, ".vuepress/dist/.nojekyll").replaceAll(String.raw`\\`, "/")}
 
       - name: ${workflow.deploy}
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           # ${workflow.deploy}
           branch: gh-pages
-          folder: ${join(dir, ".vuepress/dist").replaceAll(String.raw`\\`, "/")}
+          folder: ${path.join(dir, ".vuepress/dist").replaceAll(String.raw`\\`, "/")}
 `;
 };

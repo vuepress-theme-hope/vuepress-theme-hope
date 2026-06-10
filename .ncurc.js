@@ -1,4 +1,14 @@
+const cooldownExclude = ["@oxfmt/*", "@oxlint/*", "@vitest/*", "oxfmt", "oxlint", "vite", "vitest"];
+
+const matchesPattern = (packageName, pattern) => {
+  if (pattern.endsWith("/*")) return packageName.startsWith(pattern.slice(0, -1));
+
+  return packageName === pattern;
+};
+
 export default {
+  cooldown: (packageName) =>
+    cooldownExclude.some((pattern) => matchesPattern(packageName, pattern)) ? 0 : 1,
   workspaces: true,
   peer: true,
   upgrade: true,
