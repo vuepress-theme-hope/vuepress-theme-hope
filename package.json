@@ -52,7 +52,7 @@
     "serve": "14.2.6",
     "stylelint": "17.11.1",
     "stylelint-config-hope": "11.0.0",
-    "tsdown": "0.22.0",
+    "tsdown": "0.22.3",
     "typescript": "catalog:",
     "unrun": "0.3.0",
     "vite": "8.0.13",
