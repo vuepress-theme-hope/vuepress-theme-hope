@@ -10,7 +10,7 @@ const decodeFiles = (content: string): Record<string, string> =>
   >;
 
 const getFiles = (renderResult: string): Record<string, string> | null => {
-  const result = /files="(.*?)"/su.exec(renderResult);
+  const result = /files="(?<encoded>.*?)"/su.exec(renderResult);
 
   if (!result) return null;
 
@@ -18,7 +18,7 @@ const getFiles = (renderResult: string): Record<string, string> | null => {
 };
 
 const getSettings = (renderResult: string): Record<string, unknown> | null => {
-  const result = /settings="(.*?)"/su.exec(renderResult);
+  const result = /settings="(?<encoded>.*?)"/su.exec(renderResult);
 
   if (!result) return null;
 

@@ -71,6 +71,7 @@ export default defineHopeConfig(
 
       // a lot of time we are just want to check existence
       "typescript/strict-boolean-expressions": "off",
+      // FIXME: https://github.com/oxc-project/tsgolint/issues/1046
       // we need deprecated option converting
       "typescript/no-deprecated": [
         "warn",
@@ -123,10 +124,23 @@ export default defineHopeConfig(
     },
   },
   {
+    files: ["**/components/**/*.ts", "**/layouts/**/*.ts", "**/presets/**/*.ts"],
+    rules: {
+      "max-nested-calls": "off",
+      "vue/require-default-prop": "off",
+    },
+  },
+  {
     files: ["**/theme/src/presets/**/*.{ts,vue}"],
     rules: {
       // loose max lines for components setup blocks
       "max-lines-per-function": ["warn", { max: 300, skipBlankLines: true, skipComments: true }],
+    },
+  },
+  {
+    files: ["**/*.d.ts"],
+    rules: {
+      "unicorn/prefer-export-from": "off",
     },
   },
 );

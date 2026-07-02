@@ -7,8 +7,6 @@ import AutoLink from "@theme-hope/components/base/AutoLink";
 import type { SidebarLinkItem } from "@theme-hope/typings/sidebar";
 import { isActiveItem } from "@theme-hope/utils/isActiveItem";
 
-import type { AutoLinkOptions } from "../../../shared/index.js";
-
 import "../../styles/sidebar/sidebar-child.scss";
 
 export default defineComponent({
@@ -37,7 +35,7 @@ export default defineComponent({
             config: {
               ...props.config,
               exact: true,
-            } as AutoLinkOptions,
+            },
           })
         : // If the item only has text, render it as `<p>`
           h("p", props, [

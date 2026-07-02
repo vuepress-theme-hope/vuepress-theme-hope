@@ -5,8 +5,8 @@
 
 $has-multiple-theme-colors: meta.type-of(
     map.get(meta.module-variables("hope-config"), "theme-color")
-  )
-  == list;
+  ) ==
+  list;
 
 :export {
   mobileBreakPoint: hope-config.$tablet;

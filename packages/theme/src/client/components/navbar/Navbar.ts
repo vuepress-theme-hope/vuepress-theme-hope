@@ -49,7 +49,7 @@ export default defineComponent({
           start: ["Brand"],
           center: ["Links"],
           end: ["Language", "Repo", "Outlook", "Search"],
-        } as NavbarLayoutOptions),
+        } satisfies NavbarLayoutOptions),
     );
 
     const navbarComponentMap: Record<string, Component | string> = {

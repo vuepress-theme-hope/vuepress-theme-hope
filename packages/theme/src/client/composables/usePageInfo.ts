@@ -81,19 +81,16 @@ export const usePageInfo = (): {
   const readingTimeData = useReadingTimeData();
   const readingTimeLocale = useReadingTimeLocale();
 
-  const info = computed(
-    () =>
-      ({
-        author: author.value,
-        category: category.value,
-        date: date.value,
-        tag: tag.value,
-        isOriginal: frontmatter.value.isOriginal ?? false,
-        readingTime: readingTimeData.value,
-        readingTimeLocale: readingTimeLocale.value,
-        pageview: frontmatter.value.pageview ?? true,
-      }) as PageInfoProps,
-  );
+  const info = computed<PageInfoProps>(() => ({
+    author: author.value,
+    category: category.value,
+    date: date.value,
+    tag: tag.value,
+    isOriginal: frontmatter.value.isOriginal ?? false,
+    readingTime: readingTimeData.value,
+    readingTimeLocale: readingTimeLocale.value,
+    pageview: frontmatter.value.pageview ?? true,
+  }));
 
   const items = computed(() => frontmatter.value.pageInfo ?? themeLocale.value.pageInfo ?? null);
 

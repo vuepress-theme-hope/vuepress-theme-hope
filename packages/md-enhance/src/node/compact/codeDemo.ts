@@ -20,8 +20,8 @@ export const legacyCodeDemo: PluginSimple = (md) => {
       );
 
       const { info } = tokens[index];
-      const type = /\[(.*)\]/u.exec(info);
-      const title = /^ demo\s*(?:\[.*?\])?\s*(.*)\s*$/u.exec(info);
+      const type = /\[(?<type>.*)\]/u.exec(info)?.[1] ?? "normal";
+      const title = /^ demo\s*(?:\[.*?\])?\s*(?<title>.*)\s*$/u.exec(info)?.[1];
 
       let config = "";
       const code: Record<string, string> = {};
@@ -30,7 +30,7 @@ export const legacyCodeDemo: PluginSimple = (md) => {
         // oxlint-disable-next-line no-shadow
         const { type, content, info } = tokens[i];
         const language = info
-          ? (/^([^ :[{]+)/u.exec(md.utils.unescapeAll(info).trim())?.[1] ?? "text")
+          ? (/^(?<lang>[^ :[{]+)/u.exec(md.utils.unescapeAll(info).trim())?.[1] ?? "text")
           : "";
 
         if (type === `container_demo_close`) break;
@@ -42,8 +42,8 @@ export const legacyCodeDemo: PluginSimple = (md) => {
       }
 
       return `
-<CodeDemo id="code-demo-${index}" type="${type?.[1] ?? "normal"}"${
-        title ? ` title="${encodeURIComponent(title[1])}"` : ""
+<CodeDemo id="code-demo-${index}" type="${type}"${
+        title ? ` title="${encodeURIComponent(title)}"` : ""
       }${config ? ` config="${config}"` : ""} code="${encodeData(JSON.stringify(code))}">
 `;
     },

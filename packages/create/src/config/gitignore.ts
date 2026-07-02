@@ -1,5 +1,5 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
-import { resolve } from "node:path";
+import path from "node:path";
 
 const getGitIgnorePath = (dir: string): string => `
 node_modules/
@@ -9,7 +9,7 @@ ${dir}/.vuepress/dist/
 `;
 
 export const updateGitIgnore = (dir: string, cwd = process.cwd()): void => {
-  const gitignorePath = resolve(cwd, ".gitignore");
+  const gitignorePath = path.resolve(cwd, ".gitignore");
 
   const gitignoreContent = existsSync(gitignorePath)
     ? readFileSync(gitignorePath, {

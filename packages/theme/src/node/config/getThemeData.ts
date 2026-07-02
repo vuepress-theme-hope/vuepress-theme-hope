@@ -67,7 +67,7 @@ export const getThemeData = (
               // @ts-expect-error: The type is not optional
               delete localeData.encryptLocales;
 
-            return [langs, localeData as ThemeLocaleConfig];
+            return [langs, localeData];
           },
         ),
         // Extract localeConfig

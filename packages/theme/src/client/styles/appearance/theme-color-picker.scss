@@ -8,10 +8,9 @@
 @use "@sass-palette/helper";
 @use "@sass-palette/hope-config";
 
-$has-multiple-theme-colors: meta.type-of(
-    map.get(meta.module-variables("hope-config"), "theme-color")
-  )
-  == list;
+/* stylelint-disable-next-line scss/operator-no-newline-after */
+$has-multiple-theme-colors: list ==
+  meta.type-of(map.get(meta.module-variables("hope-config"), "theme-color"));
 
 .vp-theme-color-picker {
   display: flex;
@@ -56,12 +55,7 @@ $has-multiple-theme-colors: meta.type-of(
         --vp-c-accent: #{color.change($color, $lightness: 35%, $alpha: 1)};
         --vp-c-accent-bg: #{color.change($color, $lightness: 45%, $alpha: 1)};
         --vp-c-accent-hover: #{color.change($color, $lightness: 50%, $alpha: 1)};
-        --vp-c-accent-soft: #{color.change(
-            $color,
-            $lightness: 40%,
-            $saturation: 80%,
-            $alpha: 0.15
-          )};
+        --vp-c-accent-soft: #{color.change($color, $lightness: 40%, $saturation: 80%, $alpha: 0.15)};
       }
     } @else if meta.type-of($color) == map {
       $light-color: map.get($color, "light");

@@ -10,7 +10,7 @@ import {
 } from "../../src/node/markdown-it/playground/index.js";
 
 const getVueFiles = (content: string): Record<string, string> | null => {
-  const result = /link="(.*?)"/u.exec(decodeURIComponent(content));
+  const result = /link="(?<link>.*?)"/u.exec(decodeURIComponent(content));
 
   if (!result) return null;
 

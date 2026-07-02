@@ -1,6 +1,6 @@
 import { execSync } from "node:child_process";
 import { writeFileSync } from "node:fs";
-import { resolve } from "node:path";
+import path from "node:path";
 
 import { confirm, select } from "@inquirer/prompts";
 
@@ -49,30 +49,45 @@ export const generateTemplate = async ({
   const templateFolder = preset;
 
   // Copy public assets
-  copy(resolve(__dirname, "../template/public"), resolve(cwd, targetDir, "./.vuepress/public"));
   copy(
-    resolve(__dirname, "../template", templateFolder, "config/base"),
-    resolve(cwd, targetDir, ".vuepress"),
+    path.resolve(__dirname, "../template/public"),
+    path.resolve(cwd, targetDir, "./.vuepress/public"),
+  );
+  copy(
+    path.resolve(__dirname, "../template", templateFolder, "config/base"),
+    path.resolve(cwd, targetDir, ".vuepress"),
   );
 
   if (enableI18n) {
-    copy(resolve(__dirname, "../template", templateFolder, "en"), resolve(cwd, targetDir));
-    copy(resolve(__dirname, "../template", templateFolder, "zh"), resolve(cwd, targetDir, "zh"));
     copy(
-      resolve(__dirname, "../template", templateFolder, "config/multi"),
-      resolve(cwd, targetDir, ".vuepress"),
+      path.resolve(__dirname, "../template", templateFolder, "en"),
+      path.resolve(cwd, targetDir),
+    );
+    copy(
+      path.resolve(__dirname, "../template", templateFolder, "zh"),
+      path.resolve(cwd, targetDir, "zh"),
+    );
+    copy(
+      path.resolve(__dirname, "../template", templateFolder, "config/multi"),
+      path.resolve(cwd, targetDir, ".vuepress"),
     );
   } else if (lang === "zh") {
-    copy(resolve(__dirname, "../template", templateFolder, "zh"), resolve(cwd, targetDir));
     copy(
-      resolve(__dirname, "../template", templateFolder, "config/zh"),
-      resolve(cwd, targetDir, ".vuepress"),
+      path.resolve(__dirname, "../template", templateFolder, "zh"),
+      path.resolve(cwd, targetDir),
+    );
+    copy(
+      path.resolve(__dirname, "../template", templateFolder, "config/zh"),
+      path.resolve(cwd, targetDir, ".vuepress"),
     );
   } else {
-    copy(resolve(__dirname, "../template", templateFolder, "en"), resolve(cwd, targetDir));
     copy(
-      resolve(__dirname, "../template", templateFolder, "config/en"),
-      resolve(cwd, targetDir, ".vuepress"),
+      path.resolve(__dirname, "../template", templateFolder, "en"),
+      path.resolve(cwd, targetDir),
+    );
+    copy(
+      path.resolve(__dirname, "../template", templateFolder, "config/en"),
+      path.resolve(cwd, targetDir, ".vuepress"),
     );
   }
 
@@ -105,12 +120,12 @@ export const generateTemplate = async ({
       default: true,
     }))
   ) {
-    const workflowDir = resolve(cwd, ".github/workflows");
+    const workflowDir = path.resolve(cwd, ".github/workflows");
 
     ensureDirExistSync(workflowDir);
 
     writeFileSync(
-      resolve(workflowDir, "deploy-docs.yml"),
+      path.resolve(workflowDir, "deploy-docs.yml"),
       getWorkflowContent(packageManager, cwd, targetDir, locale),
       { encoding: "utf-8" },
     );

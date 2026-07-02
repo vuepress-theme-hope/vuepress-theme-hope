@@ -33,7 +33,7 @@ const types = [
 ];
 const scopes = [...packages, "deps", "demo", "release"];
 
-const commitRE = /^(revert: )?(?<type>[^(]*?)(?:\((?<scope>[^)]*?)\))?!?: .{1,50}$/u;
+const commitRE = /^(?:revert: )?(?<type>[^(]*?)(?:\((?<scope>[^)]*?)\))?!?: .{1,50}$/u;
 
 const match = commitRE.exec(msg);
 
@@ -47,20 +47,26 @@ if (!match) {
   process.exit(1);
 }
 
-if (!types.includes(match.groups?.type ?? "")) {
+// oxlint-disable-next-line typescript/no-non-null-assertion
+const { type } = match.groups!;
+
+if (!types.includes(type)) {
   console.error(
     `${picocolors.white(picocolors.bgRed(" ERROR "))} ${picocolors.red(
-      `invalid commit message type: "${match.groups?.type}".`,
+      `invalid commit message type: "${type}".`,
     )}`,
   );
   // oxlint-disable-next-line unicorn/no-process-exit
   process.exit(1);
 }
 
-if (match.groups?.scope && !scopes.includes(match.groups.scope)) {
+// oxlint-disable-next-line typescript/no-non-null-assertion
+const { scope } = match.groups!;
+
+if (scope && !scopes.includes(scope)) {
   console.error(
     `${picocolors.white(picocolors.bgRed(" ERROR "))} ${picocolors.red(
-      `invalid commit message scope: "${match.groups.scope}".`,
+      `invalid commit message scope: "${scope}".`,
     )}`,
   );
   // oxlint-disable-next-line unicorn/no-process-exit

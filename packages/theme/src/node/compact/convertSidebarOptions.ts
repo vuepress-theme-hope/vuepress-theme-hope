@@ -46,7 +46,7 @@ const handleArraySidebarOptions = (
         if ("children" in item && isArray(item.children))
           handleArraySidebarOptions(item.children, localePath);
 
-        return item as SidebarItemOptions;
+        return item;
       }
 
       return null;
