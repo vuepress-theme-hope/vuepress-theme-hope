@@ -525,8 +525,8 @@ importers:
         specifier: 'catalog:'
         version: 17.0.0(sass-embedded@1.100.0)(sass@1.101.0)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16))
       vidstack:
-        specifier: 1.12.13
-        version: 1.12.13
+        specifier: 1.15.6
+        version: 1.15.6
       vue:
         specifier: 'catalog:'
         version: 3.5.39(typescript@6.0.3)
@@ -783,8 +783,8 @@ importers:
         specifier: 'catalog:'
         version: 17.0.0(sass-embedded@1.100.0)(sass@1.101.0)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16))
       vidstack:
-        specifier: 1.12.13
-        version: 1.12.13
+        specifier: 1.15.6
+        version: 1.15.6
       vue:
         specifier: 'catalog:'
         version: 3.5.39(typescript@6.0.3)
@@ -6680,6 +6680,9 @@ packages:
     resolution: {integrity: sha512-XUBA9XClHbnJWSfBzjkm6RvPsyg3sryZt06BEQoXcF7EK/xpGaQYJgQKDJSUH5SGZ76Y7pFx1QBnXz09rU5Fbw==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
 
+  fscreen@1.2.0:
+    resolution: {integrity: sha512-hlq4+BU0hlPmwsFjwGGzZ+OZ9N/wq9Ljg/sq3pX+2CD7hrJsX9tJgWWK/wiNTFM212CLHWhicOoqwXyZGGetJg==}
+
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -10208,6 +10211,10 @@ packages:
 
   vidstack@1.12.13:
     resolution: {integrity: sha512-vuNeyRmWoH/7EoFVDYjp9nkgcqtCMmal518LDeb78dYKgWb+p6+vtY0AzDhrkBv5q1UiCn+xwmjMmwvSlPLuhQ==}
+    engines: {node: '>=18'}
+
+  vidstack@1.15.6:
+    resolution: {integrity: sha512-bdPbguNooX7Og6xqhqlRoowciTL7DibntuUwFrW6Y7K2t1jcYX7yTd05k/hfEOJrTGaY2VpU5hLQpFJDNFzK4A==}
     engines: {node: '>=18'}
 
   vite-plugin-inspect@12.0.0-beta.1:
@@ -16956,6 +16963,8 @@ snapshots:
     dependencies:
       minipass: 7.1.3
 
+  fscreen@1.2.0: {}
+
   fsevents@2.3.3:
     optional: true
 
@@ -20863,6 +20872,14 @@ snapshots:
   vidstack@1.12.13:
     dependencies:
       '@floating-ui/dom': 1.7.6
+      lit-html: 2.8.0
+      media-captions: 1.0.4
+      unplugin: 1.16.1
+
+  vidstack@1.15.6:
+    dependencies:
+      '@floating-ui/dom': 1.7.6
+      fscreen: 1.2.0
       lit-html: 2.8.0
       media-captions: 1.0.4
       unplugin: 1.16.1
