@@ -6,7 +6,7 @@ import { computed, defineComponent, h, onMounted } from "vue";
 import "../styles/code-pen.scss";
 
 const CODE_PEN_LINK_REGEXP =
-  /(?:^(?:https?:)?\/\/codepen.io\/|^\/|^)(.+?)\/(?:pen|embed)\/(.+?)\/?$/u;
+  /(?:^(?:https?:)?\/\/codepen.io\/|^\/|^)(?<username>.+?)\/(?:pen|embed)\/(?<penId>.+?)\/?$/u;
 
 export default defineComponent({
   name: "CodePen",
@@ -89,7 +89,12 @@ export default defineComponent({
       if (props.link) {
         const result = CODE_PEN_LINK_REGEXP.exec(props.link);
 
-        if (result) return { user: result[1], slugHash: result[2] };
+        if (result) {
+          // oxlint-disable-next-line typescript/no-non-null-assertion
+          const { username = "", penId = "" } = result.groups!;
+
+          return { user: username, slugHash: penId };
+        }
       }
 
       return null;

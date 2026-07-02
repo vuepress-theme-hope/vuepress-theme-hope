@@ -8,7 +8,7 @@ const decodeFiles = (content: string): Record<string, string> =>
   JSON.parse(decodeData(content)) as Record<string, string>;
 
 const getTemplate = (renderResult: string): string | null => {
-  const result = /template="(.*?)"/su.exec(renderResult);
+  const result = /template="(?<template>.*?)"/su.exec(renderResult);
 
   if (!result) return null;
 
@@ -16,7 +16,7 @@ const getTemplate = (renderResult: string): string | null => {
 };
 
 const getFiles = (renderResult: string): Record<string, string> | null => {
-  const result = /files="(.*?)"/su.exec(renderResult);
+  const result = /files="(?<encoded>.*?)"/su.exec(renderResult);
 
   if (!result) return null;
 
@@ -24,7 +24,7 @@ const getFiles = (renderResult: string): Record<string, string> | null => {
 };
 
 const getOptions = (renderResult: string): Record<string, unknown> | null => {
-  const result = /options="(.*?)"/su.exec(renderResult);
+  const result = /options="(?<options>.*?)"/su.exec(renderResult);
 
   if (!result) return null;
 
@@ -32,7 +32,7 @@ const getOptions = (renderResult: string): Record<string, unknown> | null => {
 };
 
 const getCustomSetup = (renderResult: string): Record<string, unknown> | null => {
-  const result = /customSetup="(.*?)"/su.exec(renderResult);
+  const result = /customSetup="(?<customSetup>.*?)"/su.exec(renderResult);
 
   if (!result) return null;
 

@@ -14,16 +14,13 @@ import "lightgallery/scss/lightgallery.scss";
 declare const __LG_SELECTOR__: string;
 
 const getImages = (images: HTMLImageElement[]): GalleryItem[] =>
-  images.map(
-    ({ alt, srcset, src }) =>
-      ({
-        src,
-        srcset,
-        thumb: src || srcset,
-        alt,
-        subHtml: alt,
-      }) as GalleryItem,
-  );
+  images.map(({ alt, srcset, src }) => ({
+    src,
+    srcset,
+    thumb: src || srcset,
+    alt,
+    subHtml: alt,
+  }));
 
 export default defineComponent({
   name: "LightGallery",

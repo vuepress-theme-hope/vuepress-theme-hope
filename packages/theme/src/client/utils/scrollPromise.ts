@@ -1,5 +1,5 @@
 export interface ScrollPromise {
-  wait(): Promise<void> | null;
+  wait: () => Promise<void> | null;
   pending: () => void;
   resolve: () => void;
 }

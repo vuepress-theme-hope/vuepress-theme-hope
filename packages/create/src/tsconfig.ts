@@ -1,5 +1,5 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
-import { resolve } from "node:path";
+import path from "node:path";
 
 import type { CreateLocale } from "./i18n/index.js";
 import { deepAssign } from "./utils/index.js";
@@ -15,7 +15,7 @@ export const createTsConfig = ({
   locale,
   cwd = process.cwd(),
 }: CreateTsConfigOptions): void => {
-  const tsconfigPath = resolve(cwd, "tsconfig.json");
+  const tsconfigPath = path.resolve(cwd, "tsconfig.json");
   let tsconfigContent: Record<string, unknown> & { include?: string[] };
 
   if (existsSync(tsconfigPath)) {

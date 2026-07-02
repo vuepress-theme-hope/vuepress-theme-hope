@@ -1,4 +1,4 @@
-import { dirname } from "node:path";
+import path from "node:path";
 
 import type { UserConfig } from "tsdown";
 import { defineConfig } from "tsdown";
@@ -135,8 +135,9 @@ export const tsdownConfig = (
       onlyBundle,
     },
     fixedExtension: false,
+    logLevel: "warn",
     publint,
-    copy: copy.map(([from, to = dirname(from)]) => ({
+    copy: copy.map(([from, to = path.dirname(from)]) => ({
       from: `./src/${from}`,
       to: `./dist/${to}`,
     })),

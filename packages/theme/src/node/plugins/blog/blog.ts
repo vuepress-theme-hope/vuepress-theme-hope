@@ -67,7 +67,7 @@ export const getBlogPlugin = (
       )
         info.readingTime = page.data.readingTime;
 
-      return info as Record<string, unknown>;
+      return info;
     },
 
     category: [

@@ -34,7 +34,9 @@ export const getCode = (code: Record<string, string>): CodeType => {
 };
 
 const handleHTML = (html: string): string =>
-  html.replaceAll(String.raw`<br \/>`, "<br>").replaceAll(/<((\S+)[^<]*?)\s+\/>/gu, "<$1></$2>");
+  html
+    .replaceAll(String.raw`<br \/>`, "<br>")
+    .replaceAll(/<(?<fullTag>(?<tagName>\S+)[^<]*?)\s+\/>/gu, "<$<fullTag>></$<tagName>>");
 
 const getHtmlTemplate = (html: string): string => `<div id="app">\n${handleHTML(html)}\n</div>`;
 
@@ -42,16 +44,19 @@ const getReactTemplate = (code: string): string =>
   `${code
     .replace("export default ", "const $reactApp = ")
     .replace(
-      /App\.__style__(\s*)=(\s*)`([\s\S]*)?`/u,
+      /App\.__style__(?:\s*)=(?:\s*)`(?:[\s\S]*)?`/u,
       "",
     )};\nReactDOM.createRoot(document.getElementById("app")).render(React.createElement($reactApp))`;
 
 const getVueJsTemplate = (js: string): string =>
   js
-    .replace(/export\s+default\s*\{(\n*[\s\S]*)\n*\}\s*;?$/u, "Vue.createApp({$1}).mount('#app')")
     .replace(
-      /export\s+default\s*define(Async)?Component\s*\(\s*\{(\n*[\s\S]*)\n*\}\s*\)\s*;?$/u,
-      "Vue.createApp({$1}).mount('#app')",
+      /export\s+default\s*\{(?<component>\n*[\s\S]*)\n*\}\s*;?$/u,
+      "Vue.createApp({$<component>}).mount('#app')",
+    )
+    .replace(
+      /export\s+default\s*define(?:Async)?Component\s*\(\s*\{(?<component>\n*[\s\S]*)\n*\}\s*\)\s*;?$/u,
+      "Vue.createApp({$<component>}).mount('#app')",
     )
     .trim();
 
@@ -75,9 +80,11 @@ export const getNormalCode = (code: CodeType, config: Partial<CodeDemoOptions>):
   };
 };
 
-const VUE_TEMPLATE_REG = /<template>([\s\S]+)<\/template>/u;
-const VUE_SCRIPT_REG = /<script(?:\s*lang=(['"])(.*?)\1)?>([\s\S]+)<\/script>/u;
-const VUE_STYLE_REG = /<style(?:\s*lang=(['"])(.*?)\1)?\s*(?:scoped)?>([\s\S]+)<\/style>/u;
+const VUE_TEMPLATE_REG = /<template>(?<template>[\s\S]+)<\/template>/u;
+const VUE_SCRIPT_REG =
+  /<script(?:\s*lang=(?<quote>['"])(?<lang>.*?)\1)?>(?<script>[\s\S]+)<\/script>/u;
+const VUE_STYLE_REG =
+  /<style(?:\s*lang=(?<quote>['"])(?<lang>.*?)\1)?\s*(?:scoped)?>(?<style>[\s\S]+)<\/style>/u;
 
 export const getVueCode = (code: CodeType, config: Partial<CodeDemoOptions>): Code => {
   const codeConfig = getConfig(config);
@@ -86,10 +93,12 @@ export const getVueCode = (code: CodeType, config: Partial<CodeDemoOptions>): Co
   const jsBlock = VUE_SCRIPT_REG.exec(vueTemplate);
   const cssBlock = VUE_STYLE_REG.exec(vueTemplate);
   const html = VUE_TEMPLATE_REG.exec(vueTemplate)?.[1].trim() ?? "";
-  const js = jsBlock?.[3].trim() ?? "";
-  const jsLang = jsBlock?.[2] ?? "";
-  const css = cssBlock?.[3].trim() ?? "";
-  const cssLang = cssBlock?.[2] ?? "";
+  // oxlint-disable typescript/no-non-null-assertion
+  const js = jsBlock?.groups!.script.trim() ?? "";
+  const jsLang = jsBlock?.groups!.lang ?? "";
+  const css = cssBlock?.groups!.style.trim() ?? "";
+  const cssLang = cssBlock?.groups!.lang ?? "";
+  // oxlint-enable typescript/no-non-null-assertion
   const isLegal = jsLang === "" && (cssLang === "" || cssLang === "css");
 
   return {
@@ -124,7 +133,7 @@ export const getReactCode = (code: CodeType, config: Partial<CodeDemoOptions>): 
     js: getReactTemplate(js),
     css:
       code.css[0] ??
-      code.js[0]?.replace(/App\.__style__(?:\s*)=(?:\s*)`([\s\S]*)?`/u, "$1").trim() ??
+      code.js[0]?.replace(/App\.__style__(?:\s*)=(?:\s*)`(?<css>[\s\S]*)?`/u, "$<css>").trim() ??
       "",
     isLegal: code.isLegal,
     jsLib: [codeConfig.react, codeConfig.reactDOM, ...codeConfig.jsLib],

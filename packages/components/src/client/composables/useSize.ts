@@ -7,6 +7,17 @@ import { DEFAULT_RATIO } from "../utils/index.js";
 
 const getValue = (value: string | number): string => (isString(value) ? value : `${value}px`);
 
+const getRadio = (ratio: number | string | undefined): number => {
+  if (isString(ratio)) {
+    const [widthValue, heightValue] = ratio.split(":");
+    const parsedRadio = Number(widthValue) / Number(heightValue);
+
+    if (!Number.isNaN(parsedRadio)) return parsedRadio;
+  }
+
+  return typeof ratio === "number" ? ratio : DEFAULT_RATIO;
+};
+
 export interface SizeOptions {
   width: string | number | undefined;
   height: string | number | undefined;
@@ -27,17 +38,6 @@ export const useSize = <Element extends HTMLElement>(
   const el = shallowRef<Element>();
   const width = computed(() => getValue(unref(options.width) ?? "100%"));
   const height = ref("auto");
-
-  const getRadio = (ratio: number | string | undefined): number => {
-    if (isString(ratio)) {
-      const [widthValue, heightValue] = ratio.split(":");
-      const parsedRadio = Number(widthValue) / Number(heightValue);
-
-      if (!Number.isNaN(parsedRadio)) return parsedRadio;
-    }
-
-    return typeof ratio === "number" ? ratio : DEFAULT_RATIO;
-  };
 
   const getHeight = (widthValue: number): string => {
     const heightValue = unref(options.height);

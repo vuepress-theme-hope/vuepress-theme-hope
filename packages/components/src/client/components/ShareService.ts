@@ -101,21 +101,24 @@ export default defineComponent({
           ? tags
           : null;
 
-      return props.config.link.replaceAll(/\[([^\]]+)\]/gu, (_, config: string): string => {
-        const keys = config.split("|");
+      return props.config.link.replaceAll(
+        /\[(?<config>[^\]]+)\]/gu,
+        (_, config: string): string => {
+          const keys = config.split("|");
 
-        for (const key of keys) {
-          if (key === "url" && url) return url;
-          if (key === "title" && title) return title;
-          if (key === "description" && description) return description;
-          if (key === "summary" && props.summary) return props.summary;
-          if (key === "cover" && cover) return cover;
-          if (key === "image" && image) return image;
-          if (key === "tags" && tag) return tag;
-        }
+          for (const key of keys) {
+            if (key === "url" && url) return url;
+            if (key === "title" && title) return title;
+            if (key === "description" && description) return description;
+            if (key === "summary" && props.summary) return props.summary;
+            if (key === "cover" && cover) return cover;
+            if (key === "image" && image) return image;
+            if (key === "tags" && tag) return tag;
+          }
 
-        return "";
-      });
+          return "";
+        },
+      );
     };
 
     const share = (): void => {

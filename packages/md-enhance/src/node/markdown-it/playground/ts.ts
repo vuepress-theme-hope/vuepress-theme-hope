@@ -57,7 +57,7 @@ export const getTSPlaygroundPreset = ({
 
     const link = `${service}${getTypescriptPlaygroundHash(
       files[tsFiles[0]].content,
-      deepAssign({}, settings as CompilerOptions, compilerOptions as CompilerOptions),
+      deepAssign({}, settings as CompilerOptions, compilerOptions),
     )}`;
 
     return {

@@ -86,7 +86,7 @@ const addPDFViewer = (
     embedType,
     url,
     options = {},
-    title = /\/([^/]+).pdf/u.exec(url)?.[1] ?? "PDF Viewer",
+    title = /\/(?<filename>[^/]+).pdf/u.exec(url)?.[1] ?? "PDF Viewer",
   }: AddPDFViewerOptions,
 ): HTMLElement => {
   // Ensure target element is empty first
@@ -148,7 +148,7 @@ export const viewPDF = (
   // Firefox started shipping PDF.js in Firefox 19. If this is Firefox 19 or greater, assume PDF.js is available
   const isFirefoxWithPDFJS =
     !isMobileDevice && /firefox/iu.test(userAgent) && userAgent.split("rv:").length > 1
-      ? Number.parseInt(userAgent.split("rv:")[1].split(".")[0], 10) > 18
+      ? Math.trunc(Number(userAgent.split("rv:")[1].split(".")[0])) > 18
       : false;
 
   // Determines whether PDF support is available

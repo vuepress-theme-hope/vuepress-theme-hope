@@ -107,7 +107,7 @@ declare module "artplayer-plugin-danmuku" {
     isStop: boolean;
   }
 
-  declare const artplayerPluginDanmuku: (
+  const artplayerPluginDanmuku: (
     option: ArtPlayerDanmukuOptions,
   ) => (art: Artplayer) => ArtPlayerDanmukuPlugin;
 

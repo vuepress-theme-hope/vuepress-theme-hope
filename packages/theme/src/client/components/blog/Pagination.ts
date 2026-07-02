@@ -110,7 +110,7 @@ export default defineComponent({
      * @param index - Page index
      */
     const jumpPage = (index: string): void => {
-      const pageNum = Number.parseInt(index, 10);
+      const pageNum = Math.trunc(Number(index));
 
       if (pageNum <= totalPages.value && pageNum > 0) {
         navigate(pageNum);

@@ -22,7 +22,7 @@ import { getSidebarInfo } from "./getSidebarInfo.js";
 import { getSidebarSorter } from "./getSidebarSorter.js";
 
 const removeExtension = (path: string): string =>
-  path.replace(/^(README|index)\.md$/iu, "").replace(/\.md$/u, "");
+  path.replace(/^(?:README|index)\.md$/iu, "").replace(/\.md$/u, "");
 
 const getGeneratePaths = (sidebarConfig: SidebarArrayOptions, prefix = ""): string[] => {
   const result: string[] = [];
@@ -87,16 +87,15 @@ export const getSidebarData = (
   });
 
   const sidebarData = fromEntries(
-    generatePaths.map((path) => [
-      path,
-      getSidebarItems(
-        getSidebarInfo({
-          pages: app.pages,
-          sorters,
-          scope: removeLeadingSlash(ensureEndingSlash(path)),
-        }),
-      ),
-    ]),
+    generatePaths.map((path) => {
+      const sidebarInfo = getSidebarInfo({
+        pages: app.pages,
+        sorters,
+        scope: removeLeadingSlash(ensureEndingSlash(path)),
+      });
+
+      return [path, getSidebarItems(sidebarInfo)];
+    }),
   );
 
   if (app.env.isDebug)

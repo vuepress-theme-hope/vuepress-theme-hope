@@ -17,11 +17,10 @@ export const encodeFiles = (files: SandpackData["files"]): string =>
   );
 
 export const getAttrs = (str: string): Record<string, string> => {
-  // [attr1 attr2]
-  const matches = /.*(?<!\\)\[([^}]*)\].*/u.exec(str);
+  const attrs = /.*(?<!\\)\[(?<attrs>[^}]*)\].*/u.exec(str)?.[1];
 
-  if (matches?.[1]) {
-    const arrAttrs = matches[1].split(" ");
+  if (attrs) {
+    const arrAttrs = attrs.split(" ");
 
     return fromEntries(
       arrAttrs

@@ -35,7 +35,7 @@ const handleNavbarOptions = (config: LegacyNavbarOptions, localePath: string): N
         if ("children" in item && isArray(item.children))
           handleNavbarOptions(item.children, localePath);
 
-        return item as NavbarLinkOptions | NavbarGroupOptions;
+        return item;
       }
 
       return null;
