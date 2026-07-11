@@ -36,7 +36,7 @@
     "@types/node": "22.20.0",
     "@types/webpack-env": "1.18.8",
     "@vitejs/devtools": "0.3.3",
-    "@vitest/coverage-istanbul": "4.1.9",
+    "@vitest/coverage-istanbul": "4.1.10",
     "conventional-changelog-conventionalcommits": "10.2.0",
     "cross-env": "10.1.0",
     "husky": "9.1.7",
@@ -57,7 +57,7 @@
     "unrun": "0.3.1",
     "vite": "8.0.16",
     "vite-plugin-inspect": "12.0.0-beta.1",
-    "vitest": "4.1.9",
+    "vitest": "4.1.10",
     "vuepress": "catalog:vuepress"
   },
   "nano-staged": {
