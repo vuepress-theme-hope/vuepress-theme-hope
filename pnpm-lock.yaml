@@ -403,16 +403,16 @@ importers:
     devDependencies:
       '@lerna-lite/cli':
         specifier: 5.3.0
-        version: 5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@lerna-lite/version@5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@types/node@22.20.0)
+        version: 5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.1)(conventional-commits-filter@5.0.0))(@lerna-lite/version@5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.1)(conventional-commits-filter@5.0.0))(@types/node@22.20.1)(conventional-commits-filter@5.0.0))(@types/node@22.20.1)
       '@lerna-lite/publish':
         specifier: 5.3.0
-        version: 5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0)
+        version: 5.3.0(@types/node@22.20.1)(conventional-commits-filter@5.0.0)
       '@mr-hope/tsconfig':
         specifier: 0.0.4
         version: 0.0.4(typescript@6.0.3)
       '@types/node':
-        specifier: 22.20.0
-        version: 22.20.0
+        specifier: 22.20.1
+        version: 22.20.1
       '@types/webpack-env':
         specifier: 1.18.8
         version: 1.18.8
@@ -478,16 +478,16 @@ importers:
         version: 0.3.1(synckit@0.11.13)
       vite:
         specifier: 8.0.16
-        version: 8.0.16(@types/node@22.20.0)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
+        version: 8.0.16(@types/node@22.20.1)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
       vite-plugin-inspect:
         specifier: 12.0.0-beta.1
         version: 12.0.0-beta.1(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(typescript@6.0.3)(vite@8.0.16)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16))
       vitest:
         specifier: 4.1.9
-        version: 4.1.9(@types/node@22.20.0)(@vitest/coverage-istanbul@4.1.9)(vite@8.0.16)
+        version: 4.1.9(@types/node@22.20.1)(@vitest/coverage-istanbul@4.1.9)(vite@8.0.16)
       vuepress:
         specifier: catalog:vuepress
-        version: 2.0.0-rc.30(@vue/compiler-sfc@3.5.39)(@vuepress/bundler-vite@2.0.0-rc.30(@types/node@22.20.0)(@vitejs/devtools@0.3.3)(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(jiti@2.7.0)(rollup@4.62.2)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(typescript@6.0.3)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16))(yaml@2.9.0))(@vuepress/bundler-webpack@2.0.0-rc.30(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(tslib@2.8.1)(typescript@6.0.3)(vite@8.0.16))(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(typescript@6.0.3)(vite@8.0.16)(vue@3.5.39(typescript@6.0.3))(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16))
+        version: 2.0.0-rc.30(@vue/compiler-sfc@3.5.39)(@vuepress/bundler-vite@2.0.0-rc.30(@types/node@22.20.1)(@vitejs/devtools@0.3.3)(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(jiti@2.7.0)(rollup@4.62.2)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(typescript@6.0.3)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16))(yaml@2.9.0))(@vuepress/bundler-webpack@2.0.0-rc.30(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(tslib@2.8.1)(typescript@6.0.3)(vite@8.0.16))(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(typescript@6.0.3)(vite@8.0.16)(vue@3.5.39(typescript@6.0.3))(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16))
 
   demo/components:
     devDependencies:
@@ -4599,8 +4599,8 @@ packages:
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/node@22.20.0':
-    resolution: {integrity: sha512-QWlFW2wf3nTjC13/DqRnBpR4ZO36VJH/JVBkA/vcnmbTBNQIlnObqyqZE1tUR7+Ni23Lda8R1BxMfbXRpCUx5g==}
+  '@types/node@22.20.1':
+    resolution: {integrity: sha512-EANqOCF9QFyra+4pfxUcX9STKJpCLjMbObVzljIJomAWSnuSIEAvyzEU53GaajbXJEgdh0iEcPL+DGvpUd4k1Q==}
 
   '@types/node@24.13.2':
     resolution: {integrity: sha512-fRa09kZTgu8o71KFcDjUFuc7F+dEbZYZmkI0mg5YBTRs0yMKjYHsq/c0urDKeDb+D5qVgXOdFcuu+DZPKOITwA==}
@@ -11777,17 +11777,17 @@ snapshots:
     optionalDependencies:
       '@types/node': 24.13.2
 
-  '@inquirer/core@11.2.1(@types/node@22.20.0)':
+  '@inquirer/core@11.2.1(@types/node@22.20.1)':
     dependencies:
       '@inquirer/ansi': 2.0.7
       '@inquirer/figures': 2.0.7
-      '@inquirer/type': 4.0.7(@types/node@22.20.0)
+      '@inquirer/type': 4.0.7(@types/node@22.20.1)
       cli-width: 4.1.0
       fast-wrap-ansi: 0.2.2
       mute-stream: 3.0.0
       signal-exit: 4.1.0
     optionalDependencies:
-      '@types/node': 22.20.0
+      '@types/node': 22.20.1
 
   '@inquirer/core@11.2.1(@types/node@24.13.2)':
     dependencies:
@@ -11809,12 +11809,12 @@ snapshots:
     optionalDependencies:
       '@types/node': 24.13.2
 
-  '@inquirer/expand@5.1.1(@types/node@22.20.0)':
+  '@inquirer/expand@5.1.1(@types/node@22.20.1)':
     dependencies:
-      '@inquirer/core': 11.2.1(@types/node@22.20.0)
-      '@inquirer/type': 4.0.7(@types/node@22.20.0)
+      '@inquirer/core': 11.2.1(@types/node@22.20.1)
+      '@inquirer/type': 4.0.7(@types/node@22.20.1)
     optionalDependencies:
-      '@types/node': 22.20.0
+      '@types/node': 22.20.1
 
   '@inquirer/expand@5.1.1(@types/node@24.13.2)':
     dependencies:
@@ -11832,12 +11832,12 @@ snapshots:
 
   '@inquirer/figures@2.0.7': {}
 
-  '@inquirer/input@5.1.2(@types/node@22.20.0)':
+  '@inquirer/input@5.1.2(@types/node@22.20.1)':
     dependencies:
-      '@inquirer/core': 11.2.1(@types/node@22.20.0)
-      '@inquirer/type': 4.0.7(@types/node@22.20.0)
+      '@inquirer/core': 11.2.1(@types/node@22.20.1)
+      '@inquirer/type': 4.0.7(@types/node@22.20.1)
     optionalDependencies:
-      '@types/node': 22.20.0
+      '@types/node': 22.20.1
 
   '@inquirer/input@5.1.2(@types/node@24.13.2)':
     dependencies:
@@ -11891,14 +11891,14 @@ snapshots:
     optionalDependencies:
       '@types/node': 24.13.2
 
-  '@inquirer/select@5.2.1(@types/node@22.20.0)':
+  '@inquirer/select@5.2.1(@types/node@22.20.1)':
     dependencies:
       '@inquirer/ansi': 2.0.7
-      '@inquirer/core': 11.2.1(@types/node@22.20.0)
+      '@inquirer/core': 11.2.1(@types/node@22.20.1)
       '@inquirer/figures': 2.0.7
-      '@inquirer/type': 4.0.7(@types/node@22.20.0)
+      '@inquirer/type': 4.0.7(@types/node@22.20.1)
     optionalDependencies:
-      '@types/node': 22.20.0
+      '@types/node': 22.20.1
 
   '@inquirer/select@5.2.1(@types/node@24.13.2)':
     dependencies:
@@ -11909,9 +11909,9 @@ snapshots:
     optionalDependencies:
       '@types/node': 24.13.2
 
-  '@inquirer/type@4.0.7(@types/node@22.20.0)':
+  '@inquirer/type@4.0.7(@types/node@22.20.1)':
     optionalDependencies:
-      '@types/node': 22.20.0
+      '@types/node': 22.20.1
 
   '@inquirer/type@4.0.7(@types/node@24.13.2)':
     optionalDependencies:
@@ -11929,7 +11929,7 @@ snapshots:
 
   '@jest/pattern@30.4.0':
     dependencies:
-      '@types/node': 22.20.0
+      '@types/node': 24.13.2
       jest-regex-util: 30.4.0
 
   '@jest/schemas@30.4.1':
@@ -11942,7 +11942,7 @@ snapshots:
       '@jest/schemas': 30.4.1
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 22.20.0
+      '@types/node': 24.13.2
       '@types/yargs': 17.0.35
       chalk: 4.1.2
 
@@ -12109,25 +12109,25 @@ snapshots:
 
   '@leichtgewicht/ip-codec@2.0.5': {}
 
-  '@lerna-lite/cli@5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@lerna-lite/version@5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@types/node@22.20.0)':
+  '@lerna-lite/cli@5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.1)(conventional-commits-filter@5.0.0))(@lerna-lite/version@5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.1)(conventional-commits-filter@5.0.0))(@types/node@22.20.1)(conventional-commits-filter@5.0.0))(@types/node@22.20.1)':
     dependencies:
-      '@lerna-lite/core': 5.3.0(@types/node@22.20.0)
-      '@lerna-lite/init': 5.3.0(@types/node@22.20.0)
+      '@lerna-lite/core': 5.3.0(@types/node@22.20.1)
+      '@lerna-lite/init': 5.3.0(@types/node@22.20.1)
       '@lerna-lite/npmlog': 5.3.0
       dotenv: 17.4.2
       import-local: 3.2.0
       yargs: 18.0.0
     optionalDependencies:
-      '@lerna-lite/publish': 5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0)
-      '@lerna-lite/version': 5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@types/node@22.20.0)(conventional-commits-filter@5.0.0)
+      '@lerna-lite/publish': 5.3.0(@types/node@22.20.1)(conventional-commits-filter@5.0.0)
+      '@lerna-lite/version': 5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.1)(conventional-commits-filter@5.0.0))(@types/node@22.20.1)(conventional-commits-filter@5.0.0)
     transitivePeerDependencies:
       - '@types/node'
 
-  '@lerna-lite/core@5.3.0(@types/node@22.20.0)':
+  '@lerna-lite/core@5.3.0(@types/node@22.20.1)':
     dependencies:
-      '@inquirer/expand': 5.1.1(@types/node@22.20.0)
-      '@inquirer/input': 5.1.2(@types/node@22.20.0)
-      '@inquirer/select': 5.2.1(@types/node@22.20.0)
+      '@inquirer/expand': 5.1.1(@types/node@22.20.1)
+      '@inquirer/input': 5.1.2(@types/node@22.20.1)
+      '@inquirer/select': 5.2.1(@types/node@22.20.1)
       '@lerna-lite/npmlog': 5.3.0
       '@npmcli/run-script': 10.0.4
       ci-info: 4.4.0
@@ -12143,9 +12143,9 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@lerna-lite/init@5.3.0(@types/node@22.20.0)':
+  '@lerna-lite/init@5.3.0(@types/node@22.20.1)':
     dependencies:
-      '@lerna-lite/core': 5.3.0(@types/node@22.20.0)
+      '@lerna-lite/core': 5.3.0(@types/node@22.20.1)
       write-json-file: 7.0.0
     transitivePeerDependencies:
       - '@types/node'
@@ -12155,12 +12155,12 @@ snapshots:
       fast-string-width: 3.0.2
       signal-exit: 4.1.0
 
-  '@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0)':
+  '@lerna-lite/publish@5.3.0(@types/node@22.20.1)(conventional-commits-filter@5.0.0)':
     dependencies:
-      '@lerna-lite/cli': 5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@lerna-lite/version@5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@types/node@22.20.0)
-      '@lerna-lite/core': 5.3.0(@types/node@22.20.0)
+      '@lerna-lite/cli': 5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.1)(conventional-commits-filter@5.0.0))(@lerna-lite/version@5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.1)(conventional-commits-filter@5.0.0))(@types/node@22.20.1)(conventional-commits-filter@5.0.0))(@types/node@22.20.1)
+      '@lerna-lite/core': 5.3.0(@types/node@22.20.1)
       '@lerna-lite/npmlog': 5.3.0
-      '@lerna-lite/version': 5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@types/node@22.20.0)(conventional-commits-filter@5.0.0)
+      '@lerna-lite/version': 5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.1)(conventional-commits-filter@5.0.0))(@types/node@22.20.1)(conventional-commits-filter@5.0.0)
       '@npmcli/arborist': 9.9.0
       '@npmcli/package-json': 7.0.5
       ci-info: 4.4.0
@@ -12182,11 +12182,11 @@ snapshots:
       - conventional-commits-filter
       - supports-color
 
-  '@lerna-lite/version@5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@types/node@22.20.0)(conventional-commits-filter@5.0.0)':
+  '@lerna-lite/version@5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.1)(conventional-commits-filter@5.0.0))(@types/node@22.20.1)(conventional-commits-filter@5.0.0)':
     dependencies:
       '@conventional-changelog/git-client': 2.7.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.4.0)
-      '@lerna-lite/cli': 5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@lerna-lite/version@5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@types/node@22.20.0)
-      '@lerna-lite/core': 5.3.0(@types/node@22.20.0)
+      '@lerna-lite/cli': 5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.1)(conventional-commits-filter@5.0.0))(@lerna-lite/version@5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.1)(conventional-commits-filter@5.0.0))(@types/node@22.20.1)(conventional-commits-filter@5.0.0))(@types/node@22.20.1)
+      '@lerna-lite/core': 5.3.0(@types/node@22.20.1)
       '@lerna-lite/npmlog': 5.3.0
       '@octokit/plugin-enterprise-rest': 6.0.1
       '@octokit/rest': 22.0.1
@@ -13515,11 +13515,11 @@ snapshots:
   '@types/body-parser@1.19.6':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 22.20.0
+      '@types/node': 24.13.2
 
   '@types/bonjour@3.5.13':
     dependencies:
-      '@types/node': 22.20.0
+      '@types/node': 24.13.2
 
   '@types/chai@5.2.3':
     dependencies:
@@ -13529,11 +13529,11 @@ snapshots:
   '@types/connect-history-api-fallback@1.5.4':
     dependencies:
       '@types/express-serve-static-core': 4.19.8
-      '@types/node': 22.20.0
+      '@types/node': 24.13.2
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 22.20.0
+      '@types/node': 22.20.1
 
   '@types/d3-array@3.2.2': {}
 
@@ -13662,7 +13662,7 @@ snapshots:
 
   '@types/express-serve-static-core@4.19.8':
     dependencies:
-      '@types/node': 22.20.0
+      '@types/node': 24.13.2
       '@types/qs': 6.15.1
       '@types/range-parser': 1.2.7
       '@types/send': 1.2.1
@@ -13677,7 +13677,7 @@ snapshots:
   '@types/fs-extra@11.0.4':
     dependencies:
       '@types/jsonfile': 6.1.4
-      '@types/node': 22.20.0
+      '@types/node': 24.13.2
 
   '@types/geojson@7946.0.16': {}
 
@@ -13693,7 +13693,7 @@ snapshots:
 
   '@types/http-proxy@1.17.17':
     dependencies:
-      '@types/node': 22.20.0
+      '@types/node': 24.13.2
 
   '@types/istanbul-lib-coverage@2.0.6': {}
 
@@ -13711,7 +13711,7 @@ snapshots:
 
   '@types/jsonfile@6.1.4':
     dependencies:
-      '@types/node': 22.20.0
+      '@types/node': 24.13.2
 
   '@types/katex@0.16.8': {}
 
@@ -13736,7 +13736,7 @@ snapshots:
 
   '@types/ms@2.1.0': {}
 
-  '@types/node@22.20.0':
+  '@types/node@22.20.1':
     dependencies:
       undici-types: 6.21.0
 
@@ -13754,7 +13754,7 @@ snapshots:
 
   '@types/qrcode@1.5.6':
     dependencies:
-      '@types/node': 22.20.0
+      '@types/node': 22.20.1
 
   '@types/qs@6.15.1': {}
 
@@ -13768,16 +13768,16 @@ snapshots:
 
   '@types/sax@1.2.7':
     dependencies:
-      '@types/node': 22.20.0
+      '@types/node': 22.20.1
 
   '@types/send@0.17.6':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 22.20.0
+      '@types/node': 24.13.2
 
   '@types/send@1.2.1':
     dependencies:
-      '@types/node': 22.20.0
+      '@types/node': 24.13.2
 
   '@types/serve-index@1.9.4':
     dependencies:
@@ -13786,12 +13786,12 @@ snapshots:
   '@types/serve-static@1.15.10':
     dependencies:
       '@types/http-errors': 2.0.5
-      '@types/node': 22.20.0
+      '@types/node': 24.13.2
       '@types/send': 0.17.6
 
   '@types/sockjs@0.3.36':
     dependencies:
-      '@types/node': 22.20.0
+      '@types/node': 24.13.2
 
   '@types/stats.js@0.17.4': {}
 
@@ -13818,7 +13818,7 @@ snapshots:
 
   '@types/ws@8.18.1':
     dependencies:
-      '@types/node': 22.20.0
+      '@types/node': 24.13.2
 
   '@types/yargs-parser@21.0.3': {}
 
@@ -13853,7 +13853,7 @@ snapshots:
       pathe: 2.0.3
       perfect-debounce: 2.1.0
       tinyexec: 1.2.4
-      vite: 8.0.16(@types/node@22.20.0)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@22.20.1)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
     transitivePeerDependencies:
       - '@farmfe/core'
       - '@modelcontextprotocol/sdk'
@@ -13879,7 +13879,7 @@ snapshots:
       pathe: 2.0.3
       perfect-debounce: 2.1.0
       tinyexec: 1.2.4
-      vite: 8.0.16(@types/node@22.20.0)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@22.20.1)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
     transitivePeerDependencies:
       - '@farmfe/core'
       - '@modelcontextprotocol/sdk'
@@ -13969,7 +13969,7 @@ snapshots:
       pathe: 2.0.3
       perfect-debounce: 2.1.0
       tinyexec: 1.2.4
-      vite: 8.0.16(@types/node@22.20.0)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@22.20.1)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
       vue: 3.5.39(typescript@6.0.3)
       ws: 8.21.0
     transitivePeerDependencies:
@@ -14015,7 +14015,7 @@ snapshots:
   '@vitejs/plugin-vue@6.0.7(vite@8.0.16)(vue@3.5.39(typescript@6.0.3))':
     dependencies:
       '@rolldown/pluginutils': 1.0.1
-      vite: 8.0.16(@types/node@22.20.0)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@22.20.1)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
       vue: 3.5.39(typescript@6.0.3)
     optional: true
 
@@ -14031,7 +14031,7 @@ snapshots:
       magicast: 0.5.3
       obug: 2.1.3
       tinyrainbow: 3.1.0
-      vitest: 4.1.9(@types/node@22.20.0)(@vitest/coverage-istanbul@4.1.9)(vite@8.0.16)
+      vitest: 4.1.9(@types/node@22.20.1)(@vitest/coverage-istanbul@4.1.9)(vite@8.0.16)
     transitivePeerDependencies:
       - supports-color
 
@@ -14050,7 +14050,7 @@ snapshots:
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 8.0.16(@types/node@22.20.0)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@22.20.1)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
 
   '@vitest/pretty-format@4.1.9':
     dependencies:
@@ -14175,7 +14175,7 @@ snapshots:
 
   '@vue/shared@3.5.39': {}
 
-  '@vuepress/bundler-vite@2.0.0-rc.30(@types/node@22.20.0)(@vitejs/devtools@0.3.3)(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(jiti@2.7.0)(rollup@4.62.2)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(typescript@6.0.3)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16))(yaml@2.9.0)':
+  '@vuepress/bundler-vite@2.0.0-rc.30(@types/node@22.20.1)(@vitejs/devtools@0.3.3)(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(jiti@2.7.0)(rollup@4.62.2)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(typescript@6.0.3)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16))(yaml@2.9.0)':
     dependencies:
       '@vitejs/plugin-vue': 6.0.7(vite@8.0.16)(vue@3.5.39(typescript@6.0.3))
       '@vuepress/bundlerutils': 2.0.0-rc.30(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(typescript@6.0.3)(vite@8.0.16)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16))
@@ -14188,7 +14188,7 @@ snapshots:
       postcss: 8.5.16
       postcss-load-config: 6.0.1(jiti@2.7.0)(postcss@8.5.16)(yaml@2.9.0)
       rolldown: 1.1.3
-      vite: 8.0.16(@types/node@22.20.0)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@22.20.1)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
       vue: 3.5.39(typescript@6.0.3)
       vue-router: 5.1.0(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(vite@8.0.16)(vue@3.5.39(typescript@6.0.3))(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16))
     transitivePeerDependencies:
@@ -17666,7 +17666,7 @@ snapshots:
   jest-util@30.4.1:
     dependencies:
       '@jest/types': 30.4.1
-      '@types/node': 22.20.0
+      '@types/node': 24.13.2
       chalk: 4.1.2
       ci-info: 4.4.0
       graceful-fs: 4.2.11
@@ -17674,13 +17674,13 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 22.20.0
+      '@types/node': 24.13.2
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
   jest-worker@30.4.1:
     dependencies:
-      '@types/node': 22.20.0
+      '@types/node': 24.13.2
       '@ungap/structured-clone': 1.3.2
       jest-util: 30.4.1
       merge-stream: 2.0.0
@@ -20785,7 +20785,7 @@ snapshots:
       esbuild: 0.28.1
       rolldown: 1.1.3
       rollup: 4.62.2
-      vite: 8.0.16(@types/node@22.20.0)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@22.20.1)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
       webpack: 5.108.3(esbuild@0.28.1)(lightningcss@1.32.0)(postcss@8.5.16)
 
   unrun@0.3.1(synckit@0.11.13):
@@ -20878,7 +20878,7 @@ snapshots:
       perfect-debounce: 2.1.0
       sirv: 3.0.2
       unplugin-utils: 0.3.2
-      vite: 8.0.16(@types/node@22.20.0)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@22.20.1)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
     transitivePeerDependencies:
       - '@farmfe/core'
       - '@modelcontextprotocol/sdk'
@@ -20894,7 +20894,7 @@ snapshots:
       - utf-8-validate
       - webpack
 
-  vite@8.0.16(@types/node@22.20.0)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0):
+  vite@8.0.16(@types/node@22.20.1)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0):
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.4
@@ -20902,7 +20902,7 @@ snapshots:
       rolldown: 1.0.3
       tinyglobby: 0.2.17
     optionalDependencies:
-      '@types/node': 22.20.0
+      '@types/node': 22.20.1
       '@vitejs/devtools': 0.3.3(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(typescript@6.0.3)(vite@8.0.16)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16))
       esbuild: 0.28.1
       fsevents: 2.3.3
@@ -20930,7 +20930,7 @@ snapshots:
       terser: 5.48.0
       yaml: 2.9.0
 
-  vitest@4.1.9(@types/node@22.20.0)(@vitest/coverage-istanbul@4.1.9)(vite@8.0.16):
+  vitest@4.1.9(@types/node@22.20.1)(@vitest/coverage-istanbul@4.1.9)(vite@8.0.16):
     dependencies:
       '@vitest/expect': 4.1.9
       '@vitest/mocker': 4.1.9(vite@8.0.16)
@@ -20950,10 +20950,10 @@ snapshots:
       tinyexec: 1.2.4
       tinyglobby: 0.2.17
       tinyrainbow: 3.1.0
-      vite: 8.0.16(@types/node@22.20.0)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@22.20.1)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 22.20.0
+      '@types/node': 22.20.1
       '@vitest/coverage-istanbul': 4.1.9(vitest@4.1.9)
     transitivePeerDependencies:
       - msw
@@ -21027,7 +21027,7 @@ snapshots:
       yaml: 2.9.0
     optionalDependencies:
       '@vue/compiler-sfc': 3.5.39
-      vite: 8.0.16(@types/node@22.20.0)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
+      vite: 8.0.16(@types/node@22.20.1)(@vitejs/devtools@0.3.3)(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)
     transitivePeerDependencies:
       - '@farmfe/core'
       - '@rspack/core'
@@ -21080,7 +21080,7 @@ snapshots:
       - vite
       - webpack
 
-  vuepress@2.0.0-rc.30(@vue/compiler-sfc@3.5.39)(@vuepress/bundler-vite@2.0.0-rc.30(@types/node@22.20.0)(@vitejs/devtools@0.3.3)(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(jiti@2.7.0)(rollup@4.62.2)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(typescript@6.0.3)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16))(yaml@2.9.0))(@vuepress/bundler-webpack@2.0.0-rc.30(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(tslib@2.8.1)(typescript@6.0.3)(vite@8.0.16))(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(typescript@6.0.3)(vite@8.0.16)(vue@3.5.39(typescript@6.0.3))(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16)):
+  vuepress@2.0.0-rc.30(@vue/compiler-sfc@3.5.39)(@vuepress/bundler-vite@2.0.0-rc.30(@types/node@22.20.1)(@vitejs/devtools@0.3.3)(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(jiti@2.7.0)(rollup@4.62.2)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(typescript@6.0.3)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16))(yaml@2.9.0))(@vuepress/bundler-webpack@2.0.0-rc.30(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(tslib@2.8.1)(typescript@6.0.3)(vite@8.0.16))(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(typescript@6.0.3)(vite@8.0.16)(vue@3.5.39(typescript@6.0.3))(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16)):
     dependencies:
       '@vuepress/cli': 2.0.0-rc.30(@vue/compiler-sfc@3.5.39)(rolldown@1.1.3)(rollup@4.62.2)(typescript@6.0.3)(vite@8.0.16)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16))
       '@vuepress/client': 2.0.0-rc.30(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(typescript@6.0.3)(vite@8.0.16)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16))
@@ -21090,7 +21090,7 @@ snapshots:
       '@vuepress/utils': 2.0.0-rc.30
       vue: 3.5.39(typescript@6.0.3)
     optionalDependencies:
-      '@vuepress/bundler-vite': 2.0.0-rc.30(@types/node@22.20.0)(@vitejs/devtools@0.3.3)(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(jiti@2.7.0)(rollup@4.62.2)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(typescript@6.0.3)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16))(yaml@2.9.0)
+      '@vuepress/bundler-vite': 2.0.0-rc.30(@types/node@22.20.1)(@vitejs/devtools@0.3.3)(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(jiti@2.7.0)(rollup@4.62.2)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(typescript@6.0.3)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16))(yaml@2.9.0)
       '@vuepress/bundler-webpack': 2.0.0-rc.30(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(tslib@2.8.1)(typescript@6.0.3)(vite@8.0.16)
     transitivePeerDependencies:
       - '@farmfe/core'
