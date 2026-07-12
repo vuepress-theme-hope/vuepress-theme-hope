@@ -870,8 +870,8 @@ importers:
   docs/shared:
     dependencies:
       '@types/three':
-        specifier: 0.185.0
-        version: 0.185.0
+        specifier: 0.185.1
+        version: 0.185.1
       '@vuepress/bundler-vite':
         specifier: catalog:vuepress
         version: 2.0.0-rc.30(@types/node@24.13.2)(@vitejs/devtools@0.3.3(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(typescript@6.0.3)(vite@8.0.16)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16)))(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(jiti@2.7.0)(rollup@4.62.2)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(typescript@6.0.3)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16))(yaml@2.9.0)
@@ -888,8 +888,8 @@ importers:
         specifier: 'catalog:'
         version: 14.3.0(vue@3.5.39(typescript@6.0.3))
       three:
-        specifier: 0.185.0
-        version: 0.185.0
+        specifier: 0.185.1
+        version: 0.185.1
       vue:
         specifier: 'catalog:'
         version: 3.5.39(typescript@6.0.3)
@@ -4654,8 +4654,8 @@ packages:
   '@types/stats.js@0.17.4':
     resolution: {integrity: sha512-jIBvWWShCvlBqBNIZt0KAshWpvSjhkwkEu4ZUcASoAvhmrgAUI2t1dXrjSL4xXVLB4FznPrIsX3nKXFl/Dt4vA==}
 
-  '@types/three@0.185.0':
-    resolution: {integrity: sha512-O2Uy8Cj4Nonr8dWUUbifMdPe8B0Mq7EdOHb89S4+kjUw/KhbjTZrUuYlrQ1bpUKG+EP9QJnN7qNxbHGlGoLHMA==}
+  '@types/three@0.185.1':
+    resolution: {integrity: sha512-db1xTb+EgYF2didW+eudSvVPtn75zo+fGsY8ShQrJY/B5ZBmC2Fiaykv3aImHAlCNEGuMPkPGXBJGLwzu5mC7A==}
 
   '@types/trusted-types@2.0.7':
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
@@ -9767,8 +9767,8 @@ packages:
     peerDependencies:
       tslib: ^2
 
-  three@0.185.0:
-    resolution: {integrity: sha512-+yRrcRO2iZa8uzvNNl0d7cL4huhgKgBvVJ0njcTe8xFqZ6DMAFZdCKDP91SEAuj25bNAj7k1QQdf+srZywVK6w==}
+  three@0.185.1:
+    resolution: {integrity: sha512-5aojFCXKwnjBRZvUnt3WFfEcvUJgkN5LlijRFN95hMy8WVkG4I0QNcJE+OuWvuJ0bOdStrbfXn0pkd6/QyiAlg==}
 
   thunky@1.1.0:
     resolution: {integrity: sha512-eHY7nBftgThBqOyHGVN+l8gF0BucP09fMo0oO/Lb0w1OF80dJv+lDVpXG60WMQvkcxAkNybKsrEIE3ZtKGmPrA==}
@@ -13795,7 +13795,7 @@ snapshots:
 
   '@types/stats.js@0.17.4': {}
 
-  '@types/three@0.185.0':
+  '@types/three@0.185.1':
     dependencies:
       '@dimforge/rapier3d-compat': 0.12.0
       '@tweenjs/tween.js': 23.1.3
@@ -20505,7 +20505,7 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  three@0.185.0: {}
+  three@0.185.1: {}
 
   thunky@1.1.0: {}
 
