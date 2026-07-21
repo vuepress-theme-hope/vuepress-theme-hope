@@ -31,7 +31,7 @@
     "@vuepress/plugin-revealjs": "catalog:vuepress",
     "chart.js": "4.5.1",
     "echarts": "6.1.0",
-    "katex": "0.17.0",
+    "katex": "0.18.1",
     "kotlin-playground": "1.34.0",
     "markmap-lib": "catalog:",
     "markmap-toolbar": "catalog:",
