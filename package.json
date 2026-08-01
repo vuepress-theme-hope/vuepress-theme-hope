@@ -30,8 +30,8 @@
     "test": "vitest --coverage"
   },
   "devDependencies": {
-    "@lerna-lite/cli": "5.3.0",
-    "@lerna-lite/publish": "5.3.0",
+    "@lerna-lite/cli": "5.4.2",
+    "@lerna-lite/publish": "5.4.2",
     "@mr-hope/tsconfig": "0.0.4",
     "@types/node": "22.20.0",
     "@types/webpack-env": "1.18.8",
