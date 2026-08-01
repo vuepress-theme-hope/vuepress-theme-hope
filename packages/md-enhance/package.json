@@ -83,7 +83,7 @@
   "devDependencies": {
     "@types/babel__core": "7.20.5",
     "@vuepress/bundler-vite": "catalog:vuepress",
-    "markdown-it": "14.2.0"
+    "markdown-it": "14.3.0"
   },
   "peerDependencies": {
     "@vue/repl": "^4.1.1",
