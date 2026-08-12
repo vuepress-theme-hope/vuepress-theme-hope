@@ -2,8 +2,7 @@ import { ensureLeadingSlash } from "@vuepress/helper/client";
 import type { FunctionalComponent, PropType } from "vue";
 import { h } from "vue";
 
-declare const IS_NETLIFY: boolean;
-declare const IS_GITEE: boolean;
+declare const IS_GITEE: boolean, IS_NETLIFY: boolean;
 
 export interface ProjectLinkProps {
   type?: "plugin" | "theme";

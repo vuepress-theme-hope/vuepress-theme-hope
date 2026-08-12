@@ -1,11 +1,5 @@
 import { isArray, isString } from "@vuepress/helper/client";
-import type {
-  DASHNamespaceLoader,
-  HLSConstructorLoader,
-  PlayerSrc,
-  PlyrLayoutProps,
-  TextTrackInit,
-} from "vidstack";
+import type { PlayerSrc, PlyrLayoutProps, TextTrackInit } from "vidstack";
 import type { MediaPlayerElement } from "vidstack/elements";
 import type { VidstackPlayerConfig } from "vidstack/global/player";
 import { PlyrLayout, VidstackPlayer } from "vidstack/global/player";
@@ -18,8 +12,7 @@ import "vidstack/player/styles/base.css";
 import "vidstack/player/styles/plyr/theme.css";
 import "../styles/audio-player.scss";
 
-declare const DASHJS_INSTALLED: boolean;
-declare const HLS_JS_INSTALLED: boolean;
+declare const DASHJS_INSTALLED: boolean, HLS_JS_INSTALLED: boolean;
 
 export default defineComponent({
   name: "AudioPlayer",
@@ -89,11 +82,12 @@ export default defineComponent({
 
       player.addEventListener("provider-change", () => {
         if (player.provider?.type === "hls" && HLS_JS_INSTALLED) {
-          player.provider.library = (() =>
-            import(/* webpackChunkName: "hls" */ "hls.js/dist/hls.min.js")) as HLSConstructorLoader;
+          // oxlint-disable-next-line typescript/explicit-function-return-type
+          player.provider.library = () =>
+            import(/* webpackChunkName: "hls" */ "hls.js/dist/hls.min.js");
         } else if (player.provider?.type === "dash" && DASHJS_INSTALLED) {
-          player.provider.library = (() =>
-            import(/* webpackChunkName: "dashjs" */ "dashjs")) as DASHNamespaceLoader;
+          // oxlint-disable-next-line typescript/explicit-function-return-type
+          player.provider.library = () => import(/* webpackChunkName: "dashjs" */ "dashjs");
         }
       });
     });

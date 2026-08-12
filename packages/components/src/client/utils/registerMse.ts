@@ -1,6 +1,4 @@
-declare const DASHJS_INSTALLED: boolean;
-declare const HLS_JS_INSTALLED: boolean;
-declare const MPEGTS_JS_INSTALLED: boolean;
+declare const DASHJS_INSTALLED: boolean, HLS_JS_INSTALLED: boolean, MPEGTS_JS_INSTALLED: boolean;
 
 export const SUPPORTED_VIDEO_TYPES = ["mp4", "mp3", "webm", "ogg"];
 

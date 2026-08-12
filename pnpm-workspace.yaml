@@ -9,26 +9,26 @@ allowBuilds:
   unrs-resolver: true
 
 catalog:
-  "@mathjax/src": 4.1.2
-  "@vueuse/core": 14.3.0
+  "@mathjax/src": 4.1.3
+  "@vueuse/core": 14.4.0
   markmap-lib: 0.18.12
   markmap-toolbar: 0.18.12
   markmap-view: 0.18.12
-  mermaid: 11.16.0
+  mermaid: 11.16.1
   reveal.js: 6.0.1
   typescript: 6.0.3
   sass-embedded: 1.100.0
   sass-loader: 17.0.0
-  vue: 3.5.39
+  vue: ^3.5.41
 
 catalogs:
   range:
-    "@vueuse/core": ^14.3.0
+    "@vueuse/core": ^14.4.0
     balloon-css: ^1.2.0
-    sass: ^1.101.0
-    sass-embedded: ^1.100.0
+    sass: ^1.102.0
+    sass-embedded: ^1.102.0
     sass-loader: ^17.0.0
-    vue: ^3.5.39
+    vue: ^3.5.41
 
   vuepress:
     "@vuepress/bundler-vite": 2.0.0-rc.30
@@ -42,48 +42,45 @@ catalogs:
     "@vuepress/plugin-comment": 2.0.0-rc.131
     "@vuepress/plugin-copy-code": 2.0.0-rc.131
     "@vuepress/plugin-copyright": 2.0.0-rc.131
-    "@vuepress/plugin-docsearch": 2.0.0-rc.131
-    "@vuepress/plugin-feed": 2.0.0-rc.131
-    "@vuepress/plugin-git": 2.0.0-rc.131
-    "@vuepress/plugin-icon": 2.0.0-rc.131
+    "@vuepress/plugin-docsearch": 2.0.0-rc.132
+    "@vuepress/plugin-feed": 2.0.0-rc.132
+    "@vuepress/plugin-git": 2.0.0-rc.132
+    "@vuepress/plugin-icon": 2.0.0-rc.132
     "@vuepress/plugin-links-check": 2.0.0-rc.131
-    "@vuepress/plugin-markdown-chart": 2.0.0-rc.131
-    "@vuepress/plugin-markdown-ext": 2.0.0-rc.131
-    "@vuepress/plugin-markdown-hint": 2.0.0-rc.131
-    "@vuepress/plugin-markdown-image": 2.0.0-rc.131
-    "@vuepress/plugin-markdown-include": 2.0.0-rc.131
-    "@vuepress/plugin-markdown-math": 2.0.0-rc.131
-    "@vuepress/plugin-markdown-preview": 2.0.0-rc.131
-    "@vuepress/plugin-markdown-stylize": 2.0.0-rc.131
-    "@vuepress/plugin-markdown-tab": 2.0.0-rc.131
-    "@vuepress/plugin-meilisearch": 2.0.0-rc.131
+    "@vuepress/plugin-markdown-chart": 2.0.0-rc.132
+    "@vuepress/plugin-markdown-ext": 2.0.0-rc.132
+    "@vuepress/plugin-markdown-hint": 2.0.0-rc.132
+    "@vuepress/plugin-markdown-image": 2.0.0-rc.132
+    "@vuepress/plugin-markdown-include": 2.0.0-rc.132
+    "@vuepress/plugin-markdown-math": 2.0.0-rc.132
+    "@vuepress/plugin-markdown-preview": 2.0.0-rc.132
+    "@vuepress/plugin-markdown-stylize": 2.0.0-rc.132
+    "@vuepress/plugin-markdown-tab": 2.0.0-rc.132
+    "@vuepress/plugin-meilisearch": 2.0.0-rc.133
     "@vuepress/plugin-notice": 2.0.0-rc.131
     "@vuepress/plugin-nprogress": 2.0.0-rc.131
     "@vuepress/plugin-photo-swipe": 2.0.0-rc.131
-    "@vuepress/plugin-prismjs": 2.0.0-rc.131
+    "@vuepress/plugin-prismjs": 2.0.0-rc.132
     "@vuepress/plugin-pwa": 2.0.0-rc.131
     "@vuepress/plugin-reading-time": 2.0.0-rc.131
     "@vuepress/plugin-redirect": 2.0.0-rc.131
-    "@vuepress/plugin-revealjs": 2.0.0-rc.131
+    "@vuepress/plugin-revealjs": 2.0.0-rc.132
     "@vuepress/plugin-rtl": 2.0.0-rc.131
     "@vuepress/plugin-sass-palette": 2.0.0-rc.131
     "@vuepress/plugin-search": 2.0.0-rc.131
-    "@vuepress/plugin-seo": 2.0.0-rc.131
-    "@vuepress/plugin-shiki": 2.0.0-rc.131
-    "@vuepress/plugin-sitemap": 2.0.0-rc.131
+    "@vuepress/plugin-seo": 2.0.0-rc.132
+    "@vuepress/plugin-shiki": 2.0.0-rc.132
+    "@vuepress/plugin-sitemap": 2.0.0-rc.132
     "@vuepress/plugin-slimsearch": 2.0.0-rc.131
     "@vuepress/plugin-theme-data": 2.0.0-rc.131
-    "@vuepress/plugin-watermark": 2.0.0-rc.131
-    "@vuepress/shiki-twoslash": 2.0.0-rc.131
-    "@vuepress/theme-default": 2.0.0-rc.131
+    "@vuepress/plugin-watermark": 2.0.0-rc.132
+    "@vuepress/shiki-twoslash": 2.0.0-rc.132
+    "@vuepress/theme-default": 2.0.0-rc.132
     vuepress: 2.0.0-rc.30
 
 peerDependencyRules:
   ignoreMissing:
     - echarts
-
-# configDependencies:
-#   pacquet: ^0.11.12
 
 blockExoticSubdeps: false
 
@@ -93,6 +90,7 @@ trustPolicy: no-downgrade
 
 trustPolicyExclude:
   - "@trickfilm400/rollup-plugin-off-main-thread@3.0.0-pre1" # workbox-build
+  - cytoscape@3.34.1 #FIXME: https://github.com/cytoscape/cytoscape.js/issues/3511
   - chokidar@4.0.3 # sass@1
   - semver@6.3.1 # @babel/core@7
   - ua-parser-js@1.0.41 # dashjs@4
@@ -101,3 +99,6 @@ trustPolicyExclude:
 minimumReleaseAgeExclude:
   - "@mdit/*"
   - "@vuepress/*"
+  - oxc-config-hope
+  - sass-embedded
+  - sass-embedded-*

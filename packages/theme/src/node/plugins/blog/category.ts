@@ -17,32 +17,27 @@ export const getBlogCategoryCategory = (
   { git: GitData },
   ThemeNormalPageFrontmatter,
   { routeMeta: ArticleInfoData }
-> =>
-  ({
-    key: "category",
-    getter: ({ routeMeta }) => {
-      const { category } = routeMeta;
+> => ({
+  key: "category",
+  getter: ({ routeMeta }) => {
+    const { category } = routeMeta;
 
-      return isArray(category) ? category : [];
-    },
-    sorter: defaultPageSorter,
-    path: options.category,
-    layout: BLOG_LAYOUT,
-    frontmatter: (localePath) => ({
-      ...DEFAULT_BLOG_FRONTMATTER,
-      title: themeData.locales[localePath].blogLocales.category,
-    }),
-    itemPath: options.categoryItem,
-    itemFrontmatter: (name, localePath) => ({
-      ...DEFAULT_BLOG_FRONTMATTER,
-      title: `${name} ${themeData.locales[localePath].blogLocales.category}`,
-    }),
-    itemLayout: BLOG_LAYOUT,
-  }) as BlogCategoryOptions<
-    { git: GitData },
-    ThemeNormalPageFrontmatter,
-    { routeMeta: ArticleInfoData }
-  >;
+    return isArray(category) ? category : [];
+  },
+  sorter: defaultPageSorter,
+  path: options.category,
+  layout: BLOG_LAYOUT,
+  frontmatter: (localePath) => ({
+    ...DEFAULT_BLOG_FRONTMATTER,
+    title: themeData.locales[localePath].blogLocales.category,
+  }),
+  itemPath: options.categoryItem,
+  itemFrontmatter: (name, localePath) => ({
+    ...DEFAULT_BLOG_FRONTMATTER,
+    title: `${name} ${themeData.locales[localePath].blogLocales.category}`,
+  }),
+  itemLayout: BLOG_LAYOUT,
+});
 
 export const getBlogTagCategory = (
   options: BlogOptions,
@@ -51,29 +46,24 @@ export const getBlogTagCategory = (
   { git: GitData },
   ThemeNormalPageFrontmatter,
   { routeMeta: ArticleInfoData }
-> =>
-  ({
-    key: "tag",
-    getter: ({ routeMeta }) => {
-      const { tag } = routeMeta;
+> => ({
+  key: "tag",
+  getter: ({ routeMeta }) => {
+    const { tag } = routeMeta;
 
-      return isArray(tag) ? tag : [];
-    },
-    sorter: defaultPageSorter,
-    path: options.tag,
-    layout: BLOG_LAYOUT,
-    frontmatter: (localePath) => ({
-      ...DEFAULT_BLOG_FRONTMATTER,
-      title: themeData.locales[localePath].blogLocales.tag,
-    }),
-    itemPath: options.tagItem,
-    itemLayout: BLOG_LAYOUT,
-    itemFrontmatter: (name, localePath) => ({
-      ...DEFAULT_BLOG_FRONTMATTER,
-      title: `${themeData.locales[localePath].blogLocales.tag}: ${name}`,
-    }),
-  }) as BlogCategoryOptions<
-    { git: GitData },
-    ThemeNormalPageFrontmatter,
-    { routeMeta: ArticleInfoData }
-  >;
+    return isArray(tag) ? tag : [];
+  },
+  sorter: defaultPageSorter,
+  path: options.tag,
+  layout: BLOG_LAYOUT,
+  frontmatter: (localePath) => ({
+    ...DEFAULT_BLOG_FRONTMATTER,
+    title: themeData.locales[localePath].blogLocales.tag,
+  }),
+  itemPath: options.tagItem,
+  itemLayout: BLOG_LAYOUT,
+  itemFrontmatter: (name, localePath) => ({
+    ...DEFAULT_BLOG_FRONTMATTER,
+    title: `${themeData.locales[localePath].blogLocales.tag}: ${name}`,
+  }),
+});
