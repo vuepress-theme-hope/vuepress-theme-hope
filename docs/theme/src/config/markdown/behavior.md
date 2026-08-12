@@ -88,8 +88,7 @@ Whether to enable lazy loading for images in Markdown.
 
   ```ts
   type MarkdownHighlighterOptions =
-    | ({ type: "prismjs" } & PrismjsPluginOptions)
-    | ({ type: "shiki" } & ShikiPluginOptions);
+    ({ type: "prismjs" } & PrismjsPluginOptions) | ({ type: "shiki" } & ShikiPluginOptions);
   ```
 
 - Default: `"shiki"`

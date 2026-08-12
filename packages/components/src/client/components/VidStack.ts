@@ -1,12 +1,6 @@
 import type { ExactLocaleConfig } from "@vuepress/helper/client";
 import { isArray, isString, useLocaleConfig } from "@vuepress/helper/client";
-import type {
-  DASHNamespaceLoader,
-  DefaultLayoutProps,
-  HLSConstructorLoader,
-  PlayerSrc,
-  TextTrackInit,
-} from "vidstack";
+import type { DefaultLayoutProps, PlayerSrc, TextTrackInit } from "vidstack";
 import type { MediaPlayerElement } from "vidstack/elements";
 import type { VidstackPlayerConfig } from "vidstack/global/player";
 import type { PropType, VNode } from "vue";
@@ -20,9 +14,9 @@ import "vidstack/player/styles/default/layouts/audio.css";
 import "vidstack/player/styles/default/layouts/video.css";
 import "../styles/vidstack.scss";
 
-declare const DASHJS_INSTALLED: boolean;
-declare const HLS_JS_INSTALLED: boolean;
-declare const VIDSTACK_LOCALES: ExactLocaleConfig<VidstackLocaleData>;
+declare const DASHJS_INSTALLED: boolean,
+  HLS_JS_INSTALLED: boolean,
+  VIDSTACK_LOCALES: ExactLocaleConfig<VidstackLocaleData>;
 
 export default defineComponent({
   name: "VidStack",
@@ -103,11 +97,12 @@ export default defineComponent({
 
       player.addEventListener("provider-change", () => {
         if (player.provider?.type === "hls" && HLS_JS_INSTALLED) {
-          player.provider.library = (() =>
-            import(/* webpackChunkName: "hls" */ "hls.js/dist/hls.min.js")) as HLSConstructorLoader;
+          // oxlint-disable-next-line typescript/explicit-function-return-type
+          player.provider.library = () =>
+            import(/* webpackChunkName: "hls" */ "hls.js/dist/hls.min.js");
         } else if (player.provider?.type === "dash" && DASHJS_INSTALLED) {
-          player.provider.library = (() =>
-            import(/* webpackChunkName: "dashjs" */ "dashjs")) as DASHNamespaceLoader;
+          // oxlint-disable-next-line typescript/explicit-function-return-type
+          player.provider.library = () => import(/* webpackChunkName: "dashjs" */ "dashjs");
         }
       });
     });

@@ -100,7 +100,9 @@ $$
 
 #### 上下角标
 
+<!-- prettier-ignore-start -->
 19^th^ H~2~O
+<!-- prettier-ignore-end -->
 
 - [查看详情](https://theme-hope.vuejs.press/zh/guide/markdown/stylize/sup-sub.html)
 

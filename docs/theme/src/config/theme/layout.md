@@ -178,9 +178,7 @@ Sidebar Config.
   type SidebarSorterFunction = (infoA: SidebarInfo, infoB: SidebarInfo) => number;
 
   type SidebarSorter =
-    | SidebarSorterFunction
-    | SidebarSorterKeyword
-    | (SidebarSorterKeyword | SidebarSorterFunction)[];
+    SidebarSorterFunction | SidebarSorterKeyword | (SidebarSorterKeyword | SidebarSorterFunction)[];
   ```
 
 - Default: `["readme", "order", "title", "filename"]`

@@ -152,15 +152,11 @@ export default hopeTheme({
       children: [
         {
           text: "Built in Plugins",
-          children: [
-            /* Some items */
-          ],
+          children: [/* Some items */],
         },
         {
           text: "Third party Plugins",
-          children: [
-            /* Some items */
-          ],
+          children: [/* Some items */],
         },
       ],
     },
@@ -226,16 +222,12 @@ export default hopeTheme({
     "/": {
       logo: "/logo.svg",
 
-      navbar: [
-        /* English config under root */
-      ],
+      navbar: [/* English config under root */],
     },
     "/zh/": {
       logo: "/zh-logo.svg",
 
-      navbar: [
-        /* Chinese config under zh folder */
-      ],
+      navbar: [/* Chinese config under zh folder */],
     },
   },
 });
@@ -315,9 +307,7 @@ They mainly deal with scenarios when you split your VuePress configuration into 
 ```ts twoslash title=".vuepress/navbar.ts"
 import { navbar } from "vuepress-theme-hope";
 
-export default navbar([
-  /* Your navbar configuration */
-]);
+export default navbar([/* Your navbar configuration */]);
 ```
 
 ## Demo

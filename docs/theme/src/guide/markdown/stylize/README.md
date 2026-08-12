@@ -78,6 +78,8 @@ Donate Mr.Hope a cup of coffee. _Recommended_
 
 ### Superscript and Subscript
 
+<!-- prettier-ignore-start -->
 19^th^ H~2~O
+<!-- prettier-ignore-end -->
 
 - [View Detail](./sup-sub.md)

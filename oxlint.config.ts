@@ -87,8 +87,10 @@ export default defineHopeConfig(
   },
   {
     files: ["**/node/**/*.ts"],
+    plugins: ["node"],
     rules: {
       "no-restricted-imports": ["error", "@vuepress/helper/client", "vuepress/client"],
+      "node/no-top-level-await": "off",
     },
   },
   {
