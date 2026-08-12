@@ -35,8 +35,10 @@ export default hopeTheme({
 
 ::: preview Demo
 
+<!-- prettier-ignore-start -->
 - 19^th^
 - H~2~O
+<!-- prettier-ignore-end -->
 
 :::
 

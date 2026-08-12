@@ -78,6 +78,8 @@ VuePress Theme Hope !!非常强大!!!
 
 ### 上下角标
 
+<!-- prettier-ignore-start -->
 19^th^ H~2~O
+<!-- prettier-ignore-end -->
 
 - [查看详情](./sup-sub.md)
