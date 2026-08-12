@@ -467,6 +467,15 @@ importers:
       stylelint-config-hope:
         specifier: 12.0.0
         version: 12.0.0(postcss@8.5.26)(stylelint@17.14.1(supports-color@10.2.2)(typescript@6.0.3))
+      stylelint-config-standard:
+        specifier: 40.0.0
+        version: 40.0.0(stylelint@17.14.1(supports-color@10.2.2)(typescript@6.0.3))
+      stylelint-config-standard-scss:
+        specifier: 17.0.0
+        version: 17.0.0(postcss@8.5.26)(stylelint@17.14.1(supports-color@10.2.2)(typescript@6.0.3))
+      stylelint-order:
+        specifier: 8.1.1
+        version: 8.1.1(stylelint@17.14.1(supports-color@10.2.2)(typescript@6.0.3))
       tsdown:
         specifier: 0.22.14
         version: 0.22.14(@vitejs/devtools@0.4.12)(publint@0.3.23)(typescript@6.0.3)(unrun@0.3.1(synckit@0.11.13))

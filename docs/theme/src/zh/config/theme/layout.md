@@ -178,9 +178,7 @@ tag:
   type SidebarSorterFunction = (infoA: SidebarInfo, infoB: SidebarInfo) => number;
 
   type SidebarSorter =
-    | SidebarSorterFunction
-    | SidebarSorterKeyword
-    | (SidebarSorterKeyword | SidebarSorterFunction)[];
+    SidebarSorterFunction | SidebarSorterKeyword | (SidebarSorterKeyword | SidebarSorterFunction)[];
   ```
 
 - 默认值: `["readme", "order", "title", "filename"]`

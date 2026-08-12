@@ -85,8 +85,7 @@ tag:
 
   ```ts
   type MarkdownHighlighterOptions =
-    | ({ type: "prismjs" } & PrismjsPluginOptions)
-    | ({ type: "shiki" } & ShikiPluginOptions);
+    ({ type: "prismjs" } & PrismjsPluginOptions) | ({ type: "shiki" } & ShikiPluginOptions);
   ```
 
 - 默认值: `"shiki"`
