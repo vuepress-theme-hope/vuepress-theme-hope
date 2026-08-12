@@ -58,13 +58,6 @@ export const createPackageJson = async ({
   const newContent = {
     scripts,
     devDependencies,
-    ...(packageManager === "pnpm"
-      ? {
-          pnpm: {
-            onlyBuiltDependencies: ["esbuild"],
-          },
-        }
-      : {}),
   };
 
   let packageContent: Record<string, unknown>;
@@ -118,4 +111,17 @@ export const createPackageJson = async ({
   writeFileSync(packageJsonPath, `${JSON.stringify(packageContent, null, 2)}\n`, {
     encoding: "utf-8",
   });
+
+  /** Create pnpm-workspace.yaml to allow build scripts when using pnpm */
+  if (packageManager === "pnpm") {
+    const pnpmWorkspacePath = path.resolve(cwd, "pnpm-workspace.yaml");
+
+    if (!existsSync(pnpmWorkspacePath)) {
+      console.log(locale.flow.createPnpmWorkspace);
+
+      writeFileSync(pnpmWorkspacePath, "allowBuilds:\n  esbuild: true\n", {
+        encoding: "utf-8",
+      });
+    }
+  }
 };

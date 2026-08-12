@@ -8,6 +8,7 @@ export const zh: CreateLocale = {
     updatePackage: "更新 package.json...",
     createTsConfig: "生成 tsconfig.json...",
     updateTsConfig: "更新 tsconfig.json...",
+    createPnpmWorkspace: "生成 pnpm-workspace.yaml...",
     generateTemplate: "生成模板...",
     install: "安装依赖...",
     devServer:

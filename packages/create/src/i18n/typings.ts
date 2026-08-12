@@ -9,6 +9,7 @@ export interface CreateLocale {
     updatePackage: string;
     createTsConfig: string;
     updateTsConfig: string;
+    createPnpmWorkspace: string;
     generateTemplate: string;
     install: string;
     devServer: string;

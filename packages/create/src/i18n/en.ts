@@ -8,6 +8,7 @@ export const en: CreateLocale = {
     updatePackage: "Updating package.json...",
     createTsConfig: "Generating tsconfig.json...",
     updateTsConfig: "Updating tsconfig.json...",
+    createPnpmWorkspace: "Generating pnpm-workspace.yaml...",
     generateTemplate: "Generating Template...",
     install: "Installing Deps...",
     devServer:
