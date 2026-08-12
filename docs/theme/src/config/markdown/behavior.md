@@ -62,6 +62,16 @@ Whether convert `\n` in paragraphs into `<br>`s
 
 Whether convert URL-like text into links
 
+## markdown.cjkFriendly
+
+- Type: `boolean`
+- Details:
+  - [@vuepress/plugin-markdown-ext → cjkFriendly][cjkFriendly]
+
+Whether to enable CJK-friendly support for emphasis marks.
+
+When not set, this is automatically enabled if a CJK language (`zh`, `ja`, `ko`) is detected in the site configuration.
+
 ## markdown.figure
 
 - Type: `boolean`
@@ -116,6 +126,7 @@ Whether to enable `@vuepress/plugin-links-check` plugin, which provides link che
 [links-check]: https://ecosystem.vuejs.press/plugins/markdown/links-check.html#options
 [breaks]: https://ecosystem.vuejs.press/plugins/markdown/markdown-ext.html#breaks
 [linkify]: https://ecosystem.vuejs.press/plugins/markdown/markdown-ext.html#linkify
+[cjkFriendly]: https://ecosystem.vuejs.press/plugins/markdown/markdown-ext.html#cjkFriendly
 [gfm]: https://ecosystem.vuejs.press/plugins/markdown/markdown-ext.html#gfm
 [figure]: https://ecosystem.vuejs.press/plugins/markdown/markdown-image.html#figure
 [lazyload]: https://ecosystem.vuejs.press/plugins/markdown/markdown-image.html#lazyload

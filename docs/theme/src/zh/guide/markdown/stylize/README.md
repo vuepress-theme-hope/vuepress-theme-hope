@@ -17,6 +17,7 @@ tag:
 - 提示容器: 带有样式的提示
 - 自定义对齐: 自定义内容对齐方式
 - 属性支持: 为 Markdown 内容添加属性
+- 布局: 添加 Flexbox、CSS Grid 和多栏布局
 - 标记: 突出显示内容
 - 剧透: 隐藏剧透内容
 - 上标和下标
@@ -58,6 +59,22 @@ tag:
 
 - [查看详情](./attrs.md)
 
+### 布局
+
+@flexs gap-4 items-center
+
+@flex.flex-demo flex-1
+
+左侧内容
+
+@flex.flex-demo
+
+右侧内容
+
+@end
+
+- [查看详情](./layout.md)
+
 ### 标记
 
 你可以标记 ==重要的内容== 。
@@ -78,6 +95,10 @@ VuePress Theme Hope !!非常强大!!!
 
 ### 上下角标
 
+<!-- prettier-ignore-start -->
+
 19^th^ H~2~O
+
+<!-- prettier-ignore-end -->
 
 - [查看详情](./sup-sub.md)

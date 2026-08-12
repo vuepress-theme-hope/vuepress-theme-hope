@@ -74,6 +74,16 @@ tag:
 
 是否启用属性自定义支持。
 
+## markdown.layout
+
+- 类型: `boolean`
+- 默认值: `false`
+- 详情:
+  - [Markdown → 布局](../../guide/markdown/stylize/layout.md)
+  - [@vuepress/plugin-markdown-stylize → layout][layout]
+
+是否启用布局支持。
+
 ## markdown.mark
 
 - 类型: `boolean`
@@ -160,6 +170,7 @@ tag:
 
 [align]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html#align
 [attrs]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html#attrs
+[layout]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html#layout
 [mark]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html#mark
 [sup]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html#sup
 [sub]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html#sub
