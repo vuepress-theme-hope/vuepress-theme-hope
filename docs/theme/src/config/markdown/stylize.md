@@ -74,6 +74,16 @@ Whether to enable custom align.
 
 Whether to enable attribute customize support.
 
+## markdown.layout
+
+- Type: `boolean`
+- Default: `false`
+- Details:
+  - [Markdown → Layout](../../guide/markdown/stylize/layout.md)
+  - [@vuepress/plugin-markdown-stylize → layout][layout]
+
+Whether to enable layout support.
+
 ## markdown.mark
 
 - Type: `boolean`
@@ -160,6 +170,7 @@ Stylize inline tokens to create snippet you want.
 
 [align]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html#align
 [attrs]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html#attrs
+[layout]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html#layout
 [mark]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html#mark
 [sup]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html#sup
 [sub]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html#sub

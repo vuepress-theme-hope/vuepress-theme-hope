@@ -17,6 +17,7 @@ The theme provides the following features to stylize your content:
 - Hint Container: Stylized hint
 - Align: Customize content alignment
 - Attrs: Adding attrs to Markdown contents
+- Layout: Add Flexbox, CSS Grid and Multi-column layouts
 - Mark: Highlight contents
 - Superscript and Subscript
 - Spoiler: Hide spoiler content
@@ -58,6 +59,22 @@ A **word**{#word} having id.
 
 - [View Detail](./attrs.md)
 
+### Layout
+
+@flexs gap-4 items-center
+
+@flex.flex-demo flex-1
+
+Left content
+
+@flex.flex-demo
+
+Right content
+
+@end
+
+- [View Detail](./layout.md)
+
 ### Mark
 
 You can mark ==important words==.
@@ -78,6 +95,10 @@ Donate Mr.Hope a cup of coffee. _Recommended_
 
 ### Superscript and Subscript
 
+<!-- prettier-ignore-start -->
+
 19^th^ H~2~O
+
+<!-- prettier-ignore-end -->
 
 - [View Detail](./sup-sub.md)
