@@ -516,8 +516,8 @@ importers:
         specifier: 1.6.16
         version: 1.6.16
       mpegts.js:
-        specifier: 1.8.0
-        version: 1.8.0
+        specifier: 1.8.2
+        version: 1.8.2
       sass-embedded:
         specifier: 'catalog:'
         version: 1.100.0
@@ -774,8 +774,8 @@ importers:
         specifier: 1.6.16
         version: 1.6.16
       mpegts.js:
-        specifier: 1.8.0
-        version: 1.8.0
+        specifier: 1.8.2
+        version: 1.8.2
       sass-embedded:
         specifier: 'catalog:'
         version: 1.100.0
@@ -5104,6 +5104,7 @@ packages:
   '@xmldom/xmldom@0.9.10':
     resolution: {integrity: sha512-A9gOqLdi6cV4ibazAjcQufGj0B1y/vDqYrcuP6d/6x8P27gRS8643Dj9o1dEKtB6O7fwxb2FgBmJS2mX7gpvdw==}
     engines: {node: '>=14.6'}
+    deprecated: this version has critical issues, please update to the latest version
 
   '@xtuc/ieee754@1.2.0':
     resolution: {integrity: sha512-DX8nKgqcGwsc0eJSqYt5lwP4DH5FlHnmuWWBRy7X0NcaGR0ZtuyeESgMwTYVEtxmsNGY+qit4QYT/MIYTOTPeA==}
@@ -8039,6 +8040,10 @@ packages:
 
   mpegts.js@1.8.0:
     resolution: {integrity: sha512-ZtujqtmTjWgcDDkoOnLvrOKUTO/MKgLHM432zGDI8oPaJ0S+ebPxg1nEpDpLw6I7KmV/GZgUIrfbWi3qqEircg==}
+
+  mpegts.js@1.8.2:
+    resolution: {integrity: sha512-cZYMa5muASH55wrS6JK5IGkUqnCA96c0f+WdnW91jIK9s/N6NzjmTQDJNYg9A5u/G2Q5nj2b3w1Zwzze/9guxA==}
+    engines: {node: '>=20.9.0'}
 
   mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
@@ -18457,6 +18462,11 @@ snapshots:
     dependencies:
       es6-promise: 4.2.8
       webworkify-webpack: https://codeload.github.com/xqq/webworkify-webpack/tar.gz/24d1e719b4a6cac37a518b2bb10fe124527ef4ef
+
+  mpegts.js@1.8.2:
+    dependencies:
+      es6-promise: 4.2.8
+      events: 3.3.0
 
   mri@1.2.0: {}
 
