@@ -70,7 +70,7 @@
   },
   "dependencies": {
     "@mdit/plugin-container": "^1.0.1",
-    "@mdit/plugin-demo": "^1.0.1",
+    "@mdit/plugin-demo": "^2.0.0",
     "@types/markdown-it": "^14.1.2",
     "@vuepress/helper": "catalog:vuepress",
     "@vuepress/plugin-sass-palette": "catalog:vuepress",
