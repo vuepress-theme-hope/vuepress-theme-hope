@@ -221,8 +221,8 @@ catalogs:
       specifier: 0.18.12
       version: 0.18.12
     mermaid:
-      specifier: 11.16.0
-      version: 11.16.0
+      specifier: 11.17.2
+      version: 11.17.2
     reveal.js:
       specifier: 6.0.1
       version: 6.0.1
@@ -658,7 +658,7 @@ importers:
         version: 0.18.12(markmap-common@0.18.9)
       mermaid:
         specifier: 'catalog:'
-        version: 11.16.0
+        version: 11.17.2
       reveal.js:
         specifier: 'catalog:'
         version: 6.0.1
@@ -724,7 +724,7 @@ importers:
         version: 0.18.12(markmap-common@0.18.9)
       mermaid:
         specifier: 'catalog:'
-        version: 11.16.0
+        version: 11.17.2
       reveal.js:
         specifier: 'catalog:'
         version: 6.0.1
@@ -932,7 +932,7 @@ importers:
         version: 2.0.0-rc.131(@vuepress/bundler-vite@2.0.0-rc.30(@types/node@24.13.2)(@vitejs/devtools@0.3.3(crossws@0.4.10(srvx@0.12.4))(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(typescript@6.0.3)(vite@8.0.16)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16)))(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(jiti@2.7.0)(rollup@4.62.2)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(typescript@6.0.3)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16))(yaml@2.9.0))(@vuepress/bundler-webpack@2.0.0-rc.30(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(tslib@2.8.1)(typescript@6.0.3)(vite@8.0.16(@types/node@24.13.2)(@vitejs/devtools@0.3.3(crossws@0.4.10(srvx@0.12.4))(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(typescript@6.0.3)(vite@8.0.16)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16)))(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)))(typescript@6.0.3)(vuepress@2.0.0-rc.30(15db9450648864f24bb7f9cf1c40f1c2))
       '@vuepress/plugin-markdown-chart':
         specifier: catalog:vuepress
-        version: 2.0.0-rc.131(23f8f58f92ffb118c230b8f68487fcf9)
+        version: 2.0.0-rc.131(a1a2465dd3cd7e6a84a8b7f604d14641)
       '@vuepress/plugin-revealjs':
         specifier: catalog:vuepress
         version: 2.0.0-rc.131(@vuepress/bundler-vite@2.0.0-rc.30(@types/node@24.13.2)(@vitejs/devtools@0.3.3(crossws@0.4.10(srvx@0.12.4))(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(typescript@6.0.3)(vite@8.0.16)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16)))(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(jiti@2.7.0)(rollup@4.62.2)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(typescript@6.0.3)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16))(yaml@2.9.0))(@vuepress/bundler-webpack@2.0.0-rc.30(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(tslib@2.8.1)(typescript@6.0.3)(vite@8.0.16(@types/node@24.13.2)(@vitejs/devtools@0.3.3(crossws@0.4.10(srvx@0.12.4))(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(typescript@6.0.3)(vite@8.0.16)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16)))(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)))(markdown-it@14.2.0)(typescript@6.0.3)(vuepress@2.0.0-rc.30(15db9450648864f24bb7f9cf1c40f1c2))
@@ -968,7 +968,7 @@ importers:
         version: 0.18.12(markmap-common@0.18.9)
       mermaid:
         specifier: 'catalog:'
-        version: 11.16.0
+        version: 11.17.2
       sandpack-vue3:
         specifier: 3.1.12
         version: 3.1.12(vue@3.5.39(typescript@6.0.3))
@@ -1254,7 +1254,7 @@ importers:
         version: 2.0.0-rc.131(@vuepress/bundler-vite@2.0.0-rc.30(@types/node@24.13.2)(@vitejs/devtools@0.3.3(crossws@0.4.10(srvx@0.12.4))(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(typescript@6.0.3)(vite@8.0.16)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16)))(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(jiti@2.7.0)(rollup@4.62.2)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(typescript@6.0.3)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16))(yaml@2.9.0))(@vuepress/bundler-webpack@2.0.0-rc.30(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(tslib@2.8.1)(typescript@6.0.3)(vite@8.0.16(@types/node@24.13.2)(@vitejs/devtools@0.3.3(crossws@0.4.10(srvx@0.12.4))(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(typescript@6.0.3)(vite@8.0.16)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16)))(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)))(typescript@6.0.3)(vuepress@2.0.0-rc.30(15db9450648864f24bb7f9cf1c40f1c2))
       '@vuepress/plugin-markdown-chart':
         specifier: catalog:vuepress
-        version: 2.0.0-rc.131(23f8f58f92ffb118c230b8f68487fcf9)
+        version: 2.0.0-rc.131(a1a2465dd3cd7e6a84a8b7f604d14641)
       '@vuepress/plugin-markdown-ext':
         specifier: catalog:vuepress
         version: 2.0.0-rc.131(@vuepress/bundler-vite@2.0.0-rc.30(@types/node@24.13.2)(@vitejs/devtools@0.3.3(crossws@0.4.10(srvx@0.12.4))(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(typescript@6.0.3)(vite@8.0.16)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16)))(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(jiti@2.7.0)(rollup@4.62.2)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(typescript@6.0.3)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16))(yaml@2.9.0))(@vuepress/bundler-webpack@2.0.0-rc.30(@vue/compiler-sfc@3.5.39)(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(tslib@2.8.1)(typescript@6.0.3)(vite@8.0.16(@types/node@24.13.2)(@vitejs/devtools@0.3.3(crossws@0.4.10(srvx@0.12.4))(esbuild@0.28.1)(rolldown@1.1.3)(rollup@4.62.2)(typescript@6.0.3)(vite@8.0.16)(webpack@5.108.3(esbuild@0.28.1)(postcss@8.5.16)))(esbuild@0.28.1)(jiti@2.7.0)(sass-embedded@1.100.0)(sass@1.101.0)(terser@5.48.0)(yaml@2.9.0)))(markdown-it@14.2.0)(typescript@6.0.3)(vuepress@2.0.0-rc.30(15db9450648864f24bb7f9cf1c40f1c2))
@@ -3094,8 +3094,8 @@ packages:
       markdown-it:
         optional: true
 
-  '@mermaid-js/parser@1.2.0':
-    resolution: {integrity: sha512-oYPyv8A4As1yH5Bx+04iQEQxXuIQDe0GKCNSRgao6z8AM9jixXIfP0vsppRLvGf+nKIOb9/LdpWA4YuJiVvESA==}
+  '@mermaid-js/parser@1.2.1':
+    resolution: {integrity: sha512-n12NohV3mrUyUL2o93IgG/ifeW9FTyeJn3zDxkhwa8MJ9Fxg3HQMlA3RiGmD/3UnJvheztkjjQAjA2T4LmUcpw==}
 
   '@mr-hope/tsconfig@0.0.4':
     resolution: {integrity: sha512-sHD3OmpHV4hxZDTjdp/0hyUifITCwEN4xHvYQkl779mtpeDZOVj69kj+SJ5+nav+3m9EUx4Q1MgxzQbZlaxwPA==}
@@ -5104,6 +5104,7 @@ packages:
   '@xmldom/xmldom@0.9.10':
     resolution: {integrity: sha512-A9gOqLdi6cV4ibazAjcQufGj0B1y/vDqYrcuP6d/6x8P27gRS8643Dj9o1dEKtB6O7fwxb2FgBmJS2mX7gpvdw==}
     engines: {node: '>=14.6'}
+    deprecated: this version has critical issues, please update to the latest version
 
   '@xtuc/ieee754@1.2.0':
     resolution: {integrity: sha512-DX8nKgqcGwsc0eJSqYt5lwP4DH5FlHnmuWWBRy7X0NcaGR0ZtuyeESgMwTYVEtxmsNGY+qit4QYT/MIYTOTPeA==}
@@ -6470,6 +6471,9 @@ packages:
   fast-wrap-ansi@0.2.2:
     resolution: {integrity: sha512-7F2Fl+TjRSenLqlU3UjSH0iyqopqoZIu7eZVpEirP2g1GtWa2G/ecEmBdgz31+Mxr+ELclgg6sokpSFIQiZ02Q==}
 
+  fastdom@1.0.12:
+    resolution: {integrity: sha512-LB+xjSTEbjHE1cWsxu+tN2Xqr1kpi+V9aADI7sVM5ZMaXyYGPHULQMzpJMYqOTULK/73pUkWVzzObFRBkPr+hg==}
+
   fastest-levenshtein@1.0.16:
     resolution: {integrity: sha512-eRnCtTTtGZFpQCwhJiUOuxPQWRXVKYDn0b2PeHfXL6/Zi53SLAzAHfVhVWK2AryC/WH05kGfxhFIPvTF0SXQzg==}
     engines: {node: '>= 4.9.1'}
@@ -7798,8 +7802,8 @@ packages:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
 
-  mermaid@11.16.0:
-    resolution: {integrity: sha512-Zvm3kbstgdpvIJPPItlL7fppIZ3kibvc1oZIGxdvk9t6UFz6flv+Jw7FtRGKwfcI8OckmH04LqG6LlS6X4B1pA==}
+  mermaid@11.17.2:
+    resolution: {integrity: sha512-V6K3C8EBdEsPFZXSKMJe6ppQOENxuHARr9GvHX4hh47lAbhMRD9qf4oEK7LoaRQxULMa80/qt5gHO73aCleBBg==}
 
   meshoptimizer@1.1.1:
     resolution: {integrity: sha512-oRFNWJRDA/WTrVj7NWvqa5HqE1t9MYDj2VaWirQCzCCrAd2GHrqR/sQezCxiWATPNlKTcRaPRHPJwIRoPBAp5g==}
@@ -9473,6 +9477,9 @@ packages:
 
   strict-event-emitter@0.4.6:
     resolution: {integrity: sha512-12KWeb+wixJohmnwNFerbyiBrAlq5qJLwIt38etRtKtmmHyDSoGlIqFE9wx+4IwG0aDjI7GV8tc8ZccjWZZtTg==}
+
+  strictdom@1.0.1:
+    resolution: {integrity: sha512-cEmp9QeXXRmjj/rVp9oyiqcvyocWab/HaoN4+bwFeZ7QzykJD6L3yD4v12K1x0tHpqRqVpJevN3gW7kyM39Bqg==}
 
   string-width@4.2.3:
     resolution: {integrity: sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==}
@@ -12428,7 +12435,7 @@ snapshots:
     optionalDependencies:
       markdown-it: 14.2.0
 
-  '@mermaid-js/parser@1.2.0':
+  '@mermaid-js/parser@1.2.1':
     dependencies:
       '@chevrotain/types': 11.1.2
 
@@ -14605,7 +14612,7 @@ snapshots:
       - '@vuepress/bundler-webpack'
       - typescript
 
-  '@vuepress/plugin-markdown-chart@2.0.0-rc.131(23f8f58f92ffb118c230b8f68487fcf9)':
+  '@vuepress/plugin-markdown-chart@2.0.0-rc.131(a1a2465dd3cd7e6a84a8b7f604d14641)':
     dependencies:
       '@mdit/plugin-container': 1.0.1(markdown-it@14.2.0)
       '@mdit/plugin-plantuml': 1.0.1(markdown-it@14.2.0)
@@ -14620,7 +14627,7 @@ snapshots:
       markmap-lib: 0.18.12(markmap-common@0.18.9)
       markmap-toolbar: 0.18.12(markmap-common@0.18.9)
       markmap-view: 0.18.12(markmap-common@0.18.9)
-      mermaid: 11.16.0
+      mermaid: 11.17.2
     transitivePeerDependencies:
       - '@vuepress/bundler-vite'
       - '@vuepress/bundler-webpack'
@@ -16713,6 +16720,10 @@ snapshots:
     dependencies:
       fast-string-width: 3.0.2
 
+  fastdom@1.0.12:
+    dependencies:
+      strictdom: 1.0.1
+
   fastest-levenshtein@1.0.16: {}
 
   fastq@1.20.1:
@@ -18134,11 +18145,11 @@ snapshots:
 
   merge2@1.4.1: {}
 
-  mermaid@11.16.0:
+  mermaid@11.17.2:
     dependencies:
       '@braintree/sanitize-url': 7.1.2
       '@iconify/utils': 3.1.3
-      '@mermaid-js/parser': 1.2.0
+      '@mermaid-js/parser': 1.2.1
       '@types/d3': 7.4.3
       '@upsetjs/venn.js': 2.0.0
       cytoscape: 3.34.0
@@ -18150,6 +18161,7 @@ snapshots:
       dayjs: 1.11.21
       dompurify: 3.4.11
       es-toolkit: 1.49.0
+      fastdom: 1.0.12
       katex: 0.16.47
       khroma: 2.1.0
       marked: 16.4.2
@@ -20066,6 +20078,8 @@ snapshots:
       internal-slot: 1.1.0
 
   strict-event-emitter@0.4.6: {}
+
+  strictdom@1.0.1: {}
 
   string-width@4.2.3:
     dependencies:

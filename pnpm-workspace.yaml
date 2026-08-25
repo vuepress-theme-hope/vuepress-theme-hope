@@ -14,7 +14,7 @@ catalog:
   markmap-lib: 0.18.12
   markmap-toolbar: 0.18.12
   markmap-view: 0.18.12
-  mermaid: 11.16.0
+  mermaid: 11.17.2
   reveal.js: 6.0.1
   typescript: 6.0.3
   sass-embedded: 1.100.0
