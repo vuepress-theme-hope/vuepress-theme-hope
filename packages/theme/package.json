@@ -148,7 +148,7 @@
   "devDependencies": {
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
-    "concurrently": "10.0.3",
+    "concurrently": "10.0.5",
     "typescript": "catalog:"
   },
   "peerDependencies": {
