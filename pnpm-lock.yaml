@@ -402,11 +402,11 @@ importers:
   .:
     devDependencies:
       '@lerna-lite/cli':
-        specifier: 5.3.0
-        version: 5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@lerna-lite/version@5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@types/node@22.20.0)
+        specifier: 5.6.1
+        version: 5.6.1(@lerna-lite/publish@5.6.1(@types/node@22.20.0)(conventional-commits-filter@6.0.1))(@lerna-lite/version@5.6.1(@lerna-lite/publish@5.6.1(@types/node@22.20.0)(conventional-commits-filter@6.0.1))(@types/node@22.20.0)(conventional-commits-filter@6.0.1))(@types/node@22.20.0)
       '@lerna-lite/publish':
-        specifier: 5.3.0
-        version: 5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0)
+        specifier: 5.6.1
+        version: 5.6.1(@types/node@22.20.0)(conventional-commits-filter@6.0.1)
       '@mr-hope/tsconfig':
         specifier: 0.0.4
         version: 0.0.4(typescript@6.0.3)
@@ -1970,12 +1970,12 @@ packages:
   '@colordx/core@5.5.0':
     resolution: {integrity: sha512-3PxTH8itZzltK0U9jTwVVnjLXvnDYuq3m+QXsHkENxWiPRh4WaoLcs1SQjqgZ55kS+QyirpH5BVwzP2gMVG6EQ==}
 
-  '@conventional-changelog/git-client@2.7.0':
-    resolution: {integrity: sha512-j7A8/LBEQ+3rugMzPXoKYzyUPpw/0CBQCyvtTR7Lmu4olG4yRC/Tfkq79Mr3yuPs0SUitlO2HwGP3gitMJnRFw==}
-    engines: {node: '>=18'}
+  '@conventional-changelog/git-client@3.1.2':
+    resolution: {integrity: sha512-jZqwnJwf7nboIlAcw/mkOjVa6DexCcUOgT2oOQgkoi3z9vR8tGFkcMy2BFcYwjhL9sYcDDXkRQDayiDieCoW7A==}
+    engines: {node: '>=22'}
     peerDependencies:
-      conventional-commits-filter: ^5.0.0
-      conventional-commits-parser: ^6.4.0
+      conventional-commits-filter: ^6.0.1
+      conventional-commits-parser: ^7.1.2
     peerDependenciesMeta:
       conventional-commits-filter:
         optional: true
@@ -1984,6 +1984,10 @@ packages:
 
   '@conventional-changelog/template@1.2.0':
     resolution: {integrity: sha512-12qHxvlKjHmP0PQ+17EREgC7lWyLwbph1RKcZQZ7k7ZWGmrxfxC9gadHGfvzr0g0u8BhiBGg3tks93txodlyRQ==}
+    engines: {node: '>=22'}
+
+  '@conventional-changelog/template@1.4.0':
+    resolution: {integrity: sha512-aalGyl7dbB5PArRebDIX43ZvBlXrYm9uWzGJ26t+4SzJVPsOuvfILGGbw5X4yX7i50YEmJ8zvbiWnqH/AAnZqg==}
     engines: {node: '>=22'}
 
   '@csstools/css-calc@3.2.1':
@@ -2736,8 +2740,8 @@ packages:
   '@leichtgewicht/ip-codec@2.0.5':
     resolution: {integrity: sha512-Vo+PSpZG2/fmgmiNzYK9qWRh8h/CHrwD0mo1h1DzL4yzHNSfWYujGTYsWGreD000gcgmZ7K4Ys6Tx9TxtsKdDw==}
 
-  '@lerna-lite/cli@5.3.0':
-    resolution: {integrity: sha512-gm+XWT2XRR3H8XXDMuWhL1jlqaAt0llwLZCGA/uUwe05HS2QKbEsYeaK0kZZKtt1ff7DAZYadMW4uazz9iHczg==}
+  '@lerna-lite/cli@5.6.1':
+    resolution: {integrity: sha512-P2VaDjFAAzXa4nTZwGaEDq2lZp+CGu2xIPP9DwhwYh8A6wkIcRYUY9JIwVyftLa1l1hXZKpQwnTAd4b/YUMiNQ==}
     engines: {node: ^22.17.0 || >=24.0.0}
     hasBin: true
     peerDependencies:
@@ -2761,24 +2765,24 @@ packages:
       '@lerna-lite/watch':
         optional: true
 
-  '@lerna-lite/core@5.3.0':
-    resolution: {integrity: sha512-3RnmZhOV0PccgrorAzgO33L+UcG7GlpINsGBujafrVW1Qo6yNz+tW1K9bz/WLZilXwcxc15Odg/wTicAaDbU7Q==}
+  '@lerna-lite/core@5.6.1':
+    resolution: {integrity: sha512-lpxw1oHYpA+T0x3MRsyLUZWhBy95DK5hNx1+pX6dmX5Ll1yJfP6zawXIcqAM+H3X9lVmPj4s3KOkf4Cg7+mrBg==}
     engines: {node: ^22.17.0 || >=24.0.0}
 
-  '@lerna-lite/init@5.3.0':
-    resolution: {integrity: sha512-RuCFCxjcqtcmi50b3j0/tSVC3LXBhJXhPDucpe3U3sqPFInFhvK3pazLPBRS9bbaIMOG3Xtaz4PoSzsQ9lP1pw==}
+  '@lerna-lite/init@5.6.1':
+    resolution: {integrity: sha512-opw4Xy6v1EutrP2rqoPPVUC41nl6TnPy49RmB2OB+an8aBz/NY7pVJrszkS1rMV+StW6M4S4IE8a37WaEVBI4g==}
     engines: {node: ^22.17.0 || >=24.0.0}
 
-  '@lerna-lite/npmlog@5.3.0':
-    resolution: {integrity: sha512-W2Z7ZAJrA4jfuvbDU59fNFVp3hHBAOnO1+LeX8Y2bHNNYNv5EAR9UuyIXikUqewIw7VDWaT6xh+85GjxLLKpcw==}
+  '@lerna-lite/npmlog@5.4.1':
+    resolution: {integrity: sha512-APylzmp9eDWsM5ZLnTUwV6uwTshtWAbKIF4sA0/SgBsdbgfJUVoz5VTviBnyODCKRzpjcR1MAlRTcjUmKXSbKA==}
     engines: {node: ^22.17.0 || >=24.0.0}
 
-  '@lerna-lite/publish@5.3.0':
-    resolution: {integrity: sha512-aLQEMprQJQSeGB8Wdt42zctwo79ybztps0VB/f1pjK2iaD7zBaF9ASacA6FuUt5OsyNujg2mbCZ7kgwAmtjUfg==}
+  '@lerna-lite/publish@5.6.1':
+    resolution: {integrity: sha512-Xx8riPC9PIrZxn46ORBv6FKeF2L2OCcoeLP1GzgADhKX/NUTZJ8X/B3QurAsSGz+9rHXLpMGLgBoc3sSFrPc1Q==}
     engines: {node: ^22.17.0 || >=24.0.0}
 
-  '@lerna-lite/version@5.3.0':
-    resolution: {integrity: sha512-ZZUE/ajuCFj1WLNY08wKFmiSD+RYeT0mPosHKYbXejzUGKIBcuOdTApxvRcBr/G2pAWqQowCtE1sOM7AUbvzsw==}
+  '@lerna-lite/version@5.6.1':
+    resolution: {integrity: sha512-J2tKred9b/FBrfxv8WWm+1BxyXbg5dGzgK9AQXt8cDNaxAxvvns1qmMkmFnvISGPCl6iCzIlCSboOAtUldEjpg==}
     engines: {node: ^22.17.0 || >=24.0.0}
 
   '@lezer/common@1.5.2':
@@ -3129,8 +3133,8 @@ packages:
     resolution: {integrity: sha512-EUEuWAxnL07Sp5/iC/1X6Xj+XThUvnbei9zfRWZdEXa7lss9RTHMhAHBeg+MZ5To9s/gGaSI+UwZTPdYMvKSeg==}
     engines: {node: ^20.17.0 || >=22.9.0}
 
-  '@npmcli/arborist@9.9.0':
-    resolution: {integrity: sha512-tzsb1R8mx0k0drlLDT/9ckEYaQHIaWnUti/ci2IaFoQqdqwfmYrc+90p1+QEZC/ocvqcxBep9P1xKw4FbAGofw==}
+  '@npmcli/arborist@9.9.1':
+    resolution: {integrity: sha512-K0mr16xJ/yiTApeGIFbpgZSvJFOvxO2VJnCBhP543t9NTlHzgL+ewpG0kaWv9xkjeESAlRWHG9Q4lbT/LqHbWw==}
     engines: {node: ^20.17.0 || >=22.9.0}
     hasBin: true
 
@@ -4238,17 +4242,21 @@ packages:
     resolution: {integrity: sha512-qv7+G3J2cc6wwFj3yKvXOamzqhMwSk1ogPGmhpS8iXllcPrJaIIBA+4HbttlHVu1pqWTdmaCH/WE7UOC51kdoA==}
     engines: {node: ^20.17.0 || >=22.9.0}
 
-  '@simple-libs/child-process-utils@1.0.2':
-    resolution: {integrity: sha512-/4R8QKnd/8agJynkNdJmNw2MBxuFTRcNFnE5Sg/G+jkSsV8/UBgULMzhizWWW42p8L5H7flImV2ATi79Ove2Tw==}
-    engines: {node: '>=18'}
+  '@simple-libs/child-process-utils@2.0.0':
+    resolution: {integrity: sha512-dvNoRKLijXnD0XoJAz94pbNuB5GQgDr55UhpSPhffDkTT0Cmcqh9jSCOtwfT2d4H6MI9E7c4SgtMuJXZ6F3c6A==}
+    engines: {node: '>=22'}
 
-  '@simple-libs/hosted-git-info@1.0.2':
-    resolution: {integrity: sha512-aAmGQdMH+ZinytKuA2832u0ATeOFNYNk4meBEXtB5xaPotUgggYNhq5tYU/v17wEbmTW5P9iHNqNrFyrhnqBAg==}
-    engines: {node: '>=18'}
+  '@simple-libs/hosted-git-info@2.0.0':
+    resolution: {integrity: sha512-55XwK/GYgV58PuN8lZFhI1qRxdKoMLJocXl/yM1EPqazFDmM4QWY7q6BxPCPDNKTNunj794DSD4h0H7SrqUdMg==}
+    engines: {node: '>=22'}
 
-  '@simple-libs/stream-utils@1.2.0':
-    resolution: {integrity: sha512-KxXvfapcixpz6rVEB6HPjOUZT22yN6v0vI0urQSk1L8MlEWPDFCZkhw2xmkyoTGYeFw7tWTZd7e3lVzRZRN/EA==}
-    engines: {node: '>=18'}
+  '@simple-libs/normalize-package-data@1.0.0':
+    resolution: {integrity: sha512-/EOmFBekV9tGee8gac/k+5Ox3twkypNqh5TfxA9vTkmcJkjm6f1xqrlstDNOrEhTvnYyVtU6Du2ZhY/IV1+9GA==}
+    engines: {node: '>=22'}
+
+  '@simple-libs/stream-utils@2.0.0':
+    resolution: {integrity: sha512-fCTuZK4QBa+39Oz9l4OGfJfz+GpwCp3AqO7Zch3to99xHPgstVsRFpeQ8LNd2o1Gv8raL2mCFwiaHh7bFSp5DQ==}
+    engines: {node: '>=22'}
 
   '@sinclair/typebox@0.34.49':
     resolution: {integrity: sha512-brySQQs7Jtn0joV8Xh9ZV/hZb9Ozb0pmazDIASBkYKCjXrXU3mpcFahmK/z4YDhGkQvP9mWJbVyahdtU5wQA+A==}
@@ -4487,9 +4495,6 @@ packages:
 
   '@types/node@24.13.2':
     resolution: {integrity: sha512-fRa09kZTgu8o71KFcDjUFuc7F+dEbZYZmkI0mg5YBTRs0yMKjYHsq/c0urDKeDb+D5qVgXOdFcuu+DZPKOITwA==}
-
-  '@types/normalize-package-data@2.4.4':
-    resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
 
   '@types/parse-path@7.1.0':
     resolution: {integrity: sha512-EULJ8LApcVEPbrfND0cRQqutIOdiIgJ1Mgrhpy755r14xMohPTEpkV/k28SJvuOs9bHRFW8x+KeDAEPiGQPB9Q==}
@@ -5104,6 +5109,7 @@ packages:
   '@xmldom/xmldom@0.9.10':
     resolution: {integrity: sha512-A9gOqLdi6cV4ibazAjcQufGj0B1y/vDqYrcuP6d/6x8P27gRS8643Dj9o1dEKtB6O7fwxb2FgBmJS2mX7gpvdw==}
     engines: {node: '>=14.6'}
+    deprecated: this version has critical issues, please update to the latest version
 
   '@xtuc/ieee754@1.2.0':
     resolution: {integrity: sha512-DX8nKgqcGwsc0eJSqYt5lwP4DH5FlHnmuWWBRy7X0NcaGR0ZtuyeESgMwTYVEtxmsNGY+qit4QYT/MIYTOTPeA==}
@@ -5215,15 +5221,16 @@ packages:
   argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
 
+  argue-cli@3.2.0:
+    resolution: {integrity: sha512-VipTB0gXgGIFO2Rg9yEVN5wLt2AurJcZqDbgmYSwPwsykhLrQhs240/bfceev4w68lI8JshoOJIk9uW7tFzROw==}
+    engines: {node: '>=22'}
+
   array-buffer-byte-length@1.0.2:
     resolution: {integrity: sha512-LHE+8BuR7RYGDKvnrmcuSq3tDcKv9OFEXQt/HpbZhY7V6h0zlUXutnAD82GiFx9rdieCMjkvtcsPqBwgUl1Iiw==}
     engines: {node: '>= 0.4'}
 
   array-flatten@1.1.1:
     resolution: {integrity: sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg==}
-
-  array-ify@1.0.0:
-    resolution: {integrity: sha512-c5AMf34bKdvPhQ7tBGhqkgKNUzMr4WUs+WDtC2ZUGOUncbxKMTvqxYctiseW3+L4bA8ec+GcZ6/A/FW4m8ukng==}
 
   arraybuffer.prototype.slice@1.0.4:
     resolution: {integrity: sha512-BNoCY6SXXPQ7gF2opIP4GBE+Xw7U+pHMYKuzjgCN3GwiaIR09UUeKfheyIry77QtrCBlC0KK0q5/TER/tYh3PQ==}
@@ -5626,9 +5633,6 @@ packages:
     resolution: {integrity: sha512-gk/Z852D2Wtb//0I+kRFNKKE9dIIVirjoqPoA1wJU+XePVXZfGeBpk45+A1rKO4Q43prqWBNY/MiIeRLbPWUaA==}
     engines: {node: '>=4.0.0'}
 
-  compare-func@2.0.0:
-    resolution: {integrity: sha512-zHig5N+tPWARooBnb0Zx1MFcdfpyJrfTJ3Y5L+IFvUm8rM74hHz66z0gw0x4tijh5CorKkKUCnW82R2vmpeCRA==}
-
   compressible@2.0.18:
     resolution: {integrity: sha512-AF3r7P5dWxL8MxyITRMlORQNaOA2IkAFaTr4k7BUumjPtRpGDTZpl0Pb1XCO6JeDCBdp126Cgs9sMxqSjgYyRg==}
     engines: {node: '>= 0.6'}
@@ -5671,40 +5675,40 @@ packages:
     resolution: {integrity: sha512-j/O/d7GcZCyNl7/hwZAb606rzqkyvaDctLmckbxLzHvFBzTJHuGEdodATcP3yIRoDrLHkIATJuvzbFlp/ki2cQ==}
     engines: {node: '>=18'}
 
-  conventional-changelog-angular@8.3.1:
-    resolution: {integrity: sha512-6gfI3otXK5Ph5DfCOI1dblr+kN3FAm5a97hYoQkqNZxOaYa5WKfXH+AnpsmS+iUH2mgVC2Cg2Qw9m5OKcmNrIg==}
-    engines: {node: '>=18'}
+  conventional-changelog-angular@9.4.0:
+    resolution: {integrity: sha512-HdxRxuS8bBXVIuo4V82gvSwAXT0vYQUizrjs/izmPg5JdDstr8v8I5hduGL3iQbG+o310dUDxC4+LetuS5hu9w==}
+    engines: {node: '>=22'}
 
   conventional-changelog-conventionalcommits@10.2.0:
     resolution: {integrity: sha512-UtlM9GqolY7OmlQh5L/UEVoKsTUpTgUVy1PU8JN5gl5Ydaejb7WRklGliG1SKPxxj7hzA173eG3Kt5fYWE2pmg==}
     engines: {node: '>=22'}
 
-  conventional-changelog-preset-loader@5.0.0:
-    resolution: {integrity: sha512-SetDSntXLk8Jh1NOAl1Gu5uLiCNSYenB5tm0YVeZKePRIgDW9lQImromTwLa3c/Gae298tsgOM+/CYT9XAl0NA==}
-    engines: {node: '>=18'}
+  conventional-changelog-preset-loader@6.0.1:
+    resolution: {integrity: sha512-GZ8E3RQzXQb3JFy0pKl8oeSf7ENIhvAMvJr+PlWkavZOesLHHdhkfNJ4SvW35eo1Fu2+EyVxWQ1tVvtzAG2iWg==}
+    engines: {node: '>=22'}
 
-  conventional-changelog-writer@8.4.0:
-    resolution: {integrity: sha512-HHBFkk1EECxxmCi4CTu091iuDpQv5/OavuCUAuZmrkWpmYfyD816nom1CvtfXJ/uYfAAjavgHvXHX291tSLK8g==}
-    engines: {node: '>=18'}
+  conventional-changelog-writer@9.2.1:
+    resolution: {integrity: sha512-StlYSmW3wLedRaqohJMpP3YuWiAqtgD0/cpsai9frdDkXv7rxj0hRbpJrubPYvJxJsjplONsOobEQnPuS9UgCg==}
+    engines: {node: '>=22'}
     hasBin: true
 
-  conventional-changelog@7.2.1:
-    resolution: {integrity: sha512-smcpqCeNRCAoL586/Iql8GfVsduP1JDrr7SAzKHWM5C5voDzKhc3QtqwVWeKMhvVw4iYfAr+znz1TF4kPXVm3A==}
-    engines: {node: '>=18'}
+  conventional-changelog@8.1.3:
+    resolution: {integrity: sha512-fOMwLCxm46znJKPB08jLxl1FD8SOZOQHktlzCVhvhhVUfq0KgQSryoYXsRRHs1aRlZPR1/QK5wztnY8sBNC2AA==}
+    engines: {node: '>=22'}
     hasBin: true
 
-  conventional-commits-filter@5.0.0:
-    resolution: {integrity: sha512-tQMagCOC59EVgNZcC5zl7XqO30Wki9i9J3acbUvkaosCT6JX3EeFwJD7Qqp4MCikRnzS18WXV3BLIQ66ytu6+Q==}
-    engines: {node: '>=18'}
+  conventional-commits-filter@6.0.1:
+    resolution: {integrity: sha512-cs+LadpH7Kpw0M3k8wurk+sOVVDAENA0iK4OBOrkL94j5lEVYRJ4j3zd2bhY9qgzyrPqthdcYT3axzRN7AliMg==}
+    engines: {node: '>=22'}
 
-  conventional-commits-parser@6.4.0:
-    resolution: {integrity: sha512-tvRg7FIBNlyPzjdG8wWRlPHQJJHI7DylhtRGeU9Lq+JuoPh5BKpPRX83ZdLrvXuOSu5Eo/e7SzOQhU4Hd2Miuw==}
-    engines: {node: '>=18'}
+  conventional-commits-parser@7.1.2:
+    resolution: {integrity: sha512-O+x4N2yH+ijvqWlIyTHsXTAP+algNWgGbjY2duCe8w2vUMvUB95cLRslCPfTMQyLAKlet3bhZTdu6ozn4M+QJQ==}
+    engines: {node: '>=22'}
     hasBin: true
 
-  conventional-recommended-bump@11.2.0:
-    resolution: {integrity: sha512-lqIdmw330QdMBgfL0e6+6q5OMKyIpy4OZNmepit6FS3GldhkG+70drZjuZ0A5NFpze5j85dlYs3GabQXl6sMHw==}
-    engines: {node: '>=18'}
+  conventional-recommended-bump@12.1.0:
+    resolution: {integrity: sha512-HTNG3kEZXOOfKwrEx54ljURU9bG4nVPQzXMyCSeUcA/PE8EpNpQNujSrbXNBI8QZyN35zM+pVw+FuQk4KqHSHg==}
+    engines: {node: '>=22'}
     hasBin: true
 
   convert-source-map@2.0.0:
@@ -6199,10 +6203,6 @@ packages:
 
   dot-case@3.0.4:
     resolution: {integrity: sha512-Kv5nKlh6yRrdrGvxeJ2e5y2eRUpkUosIW4A2AS38zwSz27zu7ufDwQPi5Jhs3XAlGNetl3bmnGhQsMtkKJnj3w==}
-
-  dot-prop@5.3.0:
-    resolution: {integrity: sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==}
-    engines: {node: '>=8'}
 
   dotenv@16.6.1:
     resolution: {integrity: sha512-uBq4egWHTcTt33a72vpSG0z3HnPuIl6NqYcTrKEg2azoEyl2hpW0zqlxysq2pK9HlDIHyHyakeYaYnSAwd8bow==}
@@ -6829,10 +6829,6 @@ packages:
   hookified@2.2.0:
     resolution: {integrity: sha512-p/LgFzRN5FeoD3DLS6bkUapeye6E4SI6yJs6KetENd18S+FBthqYq2amJUWpt5z0EQwwHemidjY5OqJGEKm5uA==}
 
-  hosted-git-info@8.1.0:
-    resolution: {integrity: sha512-Rw/B2DNQaPBICNXEm8balFz9a6WpZrkCGpcWFpy7nCj+NyhSdqXipmfvtmWt9xGfp0wZnBxB+iVpLmQMYt47Tw==}
-    engines: {node: ^18.17.0 || >=20.5.0}
-
   hosted-git-info@9.0.3:
     resolution: {integrity: sha512-Hc+ghLoSt6QaYZUv0WBiIvmMDZuZZ7oaDvdH8MbfOO4lOsxdXLEvuC6ePoGs9H1X9oCLyq6+NVN0MKqD+ydxyg==}
     engines: {node: ^20.17.0 || >=22.9.0}
@@ -7164,10 +7160,6 @@ packages:
   is-obj@1.0.1:
     resolution: {integrity: sha512-l4RyHgRqGN4Y3+9JHVrNqO+tN0rV5My76uW5/nuO4K1b6vw5G8d/cmFjP9tRfEsdhZNt0IFdZuK/c2Vr4Nb+Qg==}
     engines: {node: '>=0.10.0'}
-
-  is-obj@2.0.0:
-    resolution: {integrity: sha512-drqDG3cbczxxEJRoOXcOjtdp1J/lyp1mNn0xaznRs8+muBhgQcrnbspox5X5fOw0HnMnbfDzvnEMEtqDEJEo8w==}
-    engines: {node: '>=8'}
 
   is-path-inside@4.0.0:
     resolution: {integrity: sha512-lJJV/5dYS+RcL8uQdBDW9c9uWFLLBNRyFhnAKXw5tVqLlKZ4RMGZKv+YQ/IA3OhD+RpbJa1LLFM1FQPGyIXvOA==}
@@ -7576,9 +7568,6 @@ packages:
   lower-case@2.0.2:
     resolution: {integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==}
 
-  lru-cache@10.4.3:
-    resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
-
   lru-cache@11.5.1:
     resolution: {integrity: sha512-RPimw/7aMdv2oqRrxKwvZXcPfwBrn/JZ2xYcY9Hus/6LaS3VOAKVWKWgNLCFSiOm1ESXinjsDlidVU7JlnCN2A==}
     engines: {node: 20 || >=22}
@@ -7779,10 +7768,6 @@ packages:
     resolution: {integrity: sha512-bApYhn8BLpFAnAQmFfEl/NPN+8qx5Ar3V4Qt3ek23mVwBEElzV7c6XoPkb/PCG8ZFpowCEpHcPwMFTwHS7tSMA==}
     peerDependencies:
       tslib: '2'
-
-  meow@13.2.0:
-    resolution: {integrity: sha512-pxQJQzB6djGPXh08dacEloMFopsOqGVRKFPYvPOt9XDZ1HasbgDZA74CJGreSU4G3Ak7EFJGoiH2auq+yXISgA==}
-    engines: {node: '>=18'}
 
   meow@14.1.0:
     resolution: {integrity: sha512-EDYo6VlmtnumlcBCbh1gLJ//9jvM/ndXHfVXIFrZVr6fGcwTUyCTFNTLCKuY3ffbK8L/+3Mzqnd58RojiZqHVw==}
@@ -8120,10 +8105,6 @@ packages:
     resolution: {integrity: sha512-Zhq3a+yFKrYwSBluL4H9XP3m3y5uvQkB/09CwDruCiRmR/UJYnn9W4R48ry0uGC70aeTPKLynBtscP9efFFcPw==}
     engines: {node: ^20.17.0 || >=22.9.0}
     hasBin: true
-
-  normalize-package-data@7.0.1:
-    resolution: {integrity: sha512-linxNAT6M0ebEYZOx2tO6vBEFsVgnPpv+AVjk0wJHfaUIbq31Jm3T6vvZaarnOeWDh8ShnwXuaAyM7WT3RzErA==}
-    engines: {node: ^18.17.0 || >=20.5.0}
 
   normalize-path@3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
@@ -9403,14 +9384,8 @@ packages:
   space-separated-tokens@2.0.2:
     resolution: {integrity: sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==}
 
-  spdx-correct@3.2.0:
-    resolution: {integrity: sha512-kN9dJbvnySHULIluDHy32WHRUu3Og7B9sbY7tsFLctQkIqnMh3hErYgdMjTYuqmcXX+lK5T1lnUt3G7zNswmZA==}
-
   spdx-exceptions@2.5.0:
     resolution: {integrity: sha512-PiU42r+xO4UbUS1buo3LPJkjlO7430Xn5SVAhdpzzsPHsjbYVflnnFdATgabnLude+Cqu25p6N+g2lw/PFsa4w==}
-
-  spdx-expression-parse@3.0.1:
-    resolution: {integrity: sha512-cbqHunsQWnJNE6KhVSMsMeH5H/L9EpymbzqTQ3uLwNCLZ1Q481oWaofqH7nO6V07xlXwY6PhQdQ2IedWx/ZK4Q==}
 
   spdx-expression-parse@4.0.0:
     resolution: {integrity: sha512-Clya5JIij/7C6bRR22+tnGXbc4VKlibKSVj2iHvVeX5iMW7s1SIQlqu699JkODJJIhh/pUu8L0/VLh8xflD+LQ==}
@@ -9671,6 +9646,10 @@ packages:
     resolution: {integrity: sha512-4LeEWl96twnS2Q7Bz4MGqgazLqO+hJN63GZxXoIqh1T3VweYD997gbU1ItNsQafqqXTXd5WFyFdReLtwvRBNiw==}
     engines: {node: '>=18'}
 
+  tar@7.5.22:
+    resolution: {integrity: sha512-MFO/QzvtAOmJbkhOaCTvbGcFN9L9b+JunIsDwaKljSOdcLMea3NJ1k9Usz/rjdfSXTq4dfzfeS7W4p4YOAAHeA==}
+    engines: {node: '>=18'}
+
   temp-dir@2.0.0:
     resolution: {integrity: sha512-aoBAniQmmwtcKp/7BzsH8Cxzv8OL736p7v1ihGb5e9DJ9kTwGWHrQrVB5+lfVDzfGrdRzXch+ig7LHaY1JTOrg==}
     engines: {node: '>=8'}
@@ -9701,6 +9680,10 @@ packages:
 
   tinyexec@1.2.4:
     resolution: {integrity: sha512-SHf/r48b7vOrjve9PxJo3MN5v5yuyjHvdUcrQffT3WXMUfnGmHDVbC4k3sHJaJTgZCwpUplIaAo5ANtMyp3YHg==}
+    engines: {node: '>=18'}
+
+  tinyexec@1.3.0:
+    resolution: {integrity: sha512-QKAl9m8gWWGHV8jZcPeym6j+XULi6tOf1mT83WYJ4Lk2ytW/uwAWkrP0uFsdoYMdueVJ0qs26wZ+23xeB4ibNQ==}
     engines: {node: '>=18'}
 
   tinyglobby@0.2.17:
@@ -10106,9 +10089,6 @@ packages:
       typescript:
         optional: true
 
-  validate-npm-package-license@3.0.4:
-    resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
-
   validate-npm-package-name@7.0.2:
     resolution: {integrity: sha512-hVDIBwsRruT73PbK7uP5ebUt+ezEtCmzZz3F59BSr2F6OVFnJ/6h8liuvdLrQ88Xmnk6/+xGGuq+pG9WwTuy3A==}
     engines: {node: ^20.17.0 || >=22.9.0}
@@ -10119,6 +10099,10 @@ packages:
   vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
+
+  verkit@0.4.0:
+    resolution: {integrity: sha512-sXMwN6DMHeouPfCxkxWkKAmxphWKEenHYY5H1nIBzU3PmDsmJp6kBXJdshjVdpMZuWCmL9SH7KFRx29AylpP6g==}
+    engines: {node: '>=18.12.0'}
 
   vfile-location@5.0.3:
     resolution: {integrity: sha512-5yXvWDEgqeiYiBe1lbxYF7UMAIm/IcopxMHrMQDq3nvKcjPKIhZklUKL+AE7J7uApI4kwe2snsK+eI6UTj9EHg==}
@@ -10571,6 +10555,10 @@ packages:
 
   yargs@18.0.0:
     resolution: {integrity: sha512-4UEqdc2RYGHZc7Doyqkrqiln3p9X2DZVxaGbwhn2pi7MrRagKaOcIKe8L3OxYcbhXLgLFUS3zAYuQjKBQgmuNg==}
+    engines: {node: ^20.19.0 || ^22.12.0 || >=23}
+
+  yargs@18.1.0:
+    resolution: {integrity: sha512-2rAgRKu54VsHkqI0/tYkmluGXHD4KW7yZoycuqDQ15QOTnc2VVfy0nN/1eMhnQLO00A+dwtK20xuCnc1YGeUyg==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=23}
 
   yocto-queue@1.2.2:
@@ -11398,16 +11386,18 @@ snapshots:
 
   '@colordx/core@5.5.0': {}
 
-  '@conventional-changelog/git-client@2.7.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.4.0)':
+  '@conventional-changelog/git-client@3.1.2(conventional-commits-filter@6.0.1)(conventional-commits-parser@7.1.2)':
     dependencies:
-      '@simple-libs/child-process-utils': 1.0.2
-      '@simple-libs/stream-utils': 1.2.0
+      '@simple-libs/child-process-utils': 2.0.0
+      '@simple-libs/stream-utils': 2.0.0
       semver: 7.8.5
     optionalDependencies:
-      conventional-commits-filter: 5.0.0
-      conventional-commits-parser: 6.4.0
+      conventional-commits-filter: 6.0.1
+      conventional-commits-parser: 7.1.2
 
   '@conventional-changelog/template@1.2.0': {}
+
+  '@conventional-changelog/template@1.4.0': {}
 
   '@csstools/css-calc@3.2.1(@csstools/css-parser-algorithms@4.0.0(@csstools/css-tokenizer@4.0.0))(@csstools/css-tokenizer@4.0.0)':
     dependencies:
@@ -12055,33 +12045,33 @@ snapshots:
 
   '@leichtgewicht/ip-codec@2.0.5': {}
 
-  '@lerna-lite/cli@5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@lerna-lite/version@5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@types/node@22.20.0)':
+  '@lerna-lite/cli@5.6.1(@lerna-lite/publish@5.6.1(@types/node@22.20.0)(conventional-commits-filter@6.0.1))(@lerna-lite/version@5.6.1(@lerna-lite/publish@5.6.1(@types/node@22.20.0)(conventional-commits-filter@6.0.1))(@types/node@22.20.0)(conventional-commits-filter@6.0.1))(@types/node@22.20.0)':
     dependencies:
-      '@lerna-lite/core': 5.3.0(@types/node@22.20.0)
-      '@lerna-lite/init': 5.3.0(@types/node@22.20.0)
-      '@lerna-lite/npmlog': 5.3.0
+      '@lerna-lite/core': 5.6.1(@types/node@22.20.0)
+      '@lerna-lite/init': 5.6.1(@types/node@22.20.0)
+      '@lerna-lite/npmlog': 5.4.1
       dotenv: 17.4.2
       import-local: 3.2.0
-      yargs: 18.0.0
+      yargs: 18.1.0
     optionalDependencies:
-      '@lerna-lite/publish': 5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0)
-      '@lerna-lite/version': 5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@types/node@22.20.0)(conventional-commits-filter@5.0.0)
+      '@lerna-lite/publish': 5.6.1(@types/node@22.20.0)(conventional-commits-filter@6.0.1)
+      '@lerna-lite/version': 5.6.1(@lerna-lite/publish@5.6.1(@types/node@22.20.0)(conventional-commits-filter@6.0.1))(@types/node@22.20.0)(conventional-commits-filter@6.0.1)
     transitivePeerDependencies:
       - '@types/node'
 
-  '@lerna-lite/core@5.3.0(@types/node@22.20.0)':
+  '@lerna-lite/core@5.6.1(@types/node@22.20.0)':
     dependencies:
       '@inquirer/expand': 5.1.1(@types/node@22.20.0)
       '@inquirer/input': 5.1.2(@types/node@22.20.0)
       '@inquirer/select': 5.2.1(@types/node@22.20.0)
-      '@lerna-lite/npmlog': 5.3.0
+      '@lerna-lite/npmlog': 5.4.1
       '@npmcli/run-script': 10.0.4
       ci-info: 4.4.0
       json5: 2.2.3
       lilconfig: 3.1.3
       npm-package-arg: 13.0.2
-      semver: 7.8.5
-      tinyexec: 1.2.4
+      tinyexec: 1.3.0
+      verkit: 0.4.0
       write-file-atomic: 7.0.1
       write-json-file: 7.0.0
       yaml: 2.9.0
@@ -12089,25 +12079,25 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@lerna-lite/init@5.3.0(@types/node@22.20.0)':
+  '@lerna-lite/init@5.6.1(@types/node@22.20.0)':
     dependencies:
-      '@lerna-lite/core': 5.3.0(@types/node@22.20.0)
+      '@lerna-lite/core': 5.6.1(@types/node@22.20.0)
       write-json-file: 7.0.0
     transitivePeerDependencies:
       - '@types/node'
 
-  '@lerna-lite/npmlog@5.3.0':
+  '@lerna-lite/npmlog@5.4.1':
     dependencies:
       fast-string-width: 3.0.2
       signal-exit: 4.1.0
 
-  '@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0)':
+  '@lerna-lite/publish@5.6.1(@types/node@22.20.0)(conventional-commits-filter@6.0.1)':
     dependencies:
-      '@lerna-lite/cli': 5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@lerna-lite/version@5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@types/node@22.20.0)
-      '@lerna-lite/core': 5.3.0(@types/node@22.20.0)
-      '@lerna-lite/npmlog': 5.3.0
-      '@lerna-lite/version': 5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@types/node@22.20.0)(conventional-commits-filter@5.0.0)
-      '@npmcli/arborist': 9.9.0
+      '@lerna-lite/cli': 5.6.1(@lerna-lite/publish@5.6.1(@types/node@22.20.0)(conventional-commits-filter@6.0.1))(@lerna-lite/version@5.6.1(@lerna-lite/publish@5.6.1(@types/node@22.20.0)(conventional-commits-filter@6.0.1))(@types/node@22.20.0)(conventional-commits-filter@6.0.1))(@types/node@22.20.0)
+      '@lerna-lite/core': 5.6.1(@types/node@22.20.0)
+      '@lerna-lite/npmlog': 5.4.1
+      '@lerna-lite/version': 5.6.1(@lerna-lite/publish@5.6.1(@types/node@22.20.0)(conventional-commits-filter@6.0.1))(@types/node@22.20.0)(conventional-commits-filter@6.0.1)
+      '@npmcli/arborist': 9.9.1
       '@npmcli/package-json': 7.0.5
       ci-info: 4.4.0
       libnpmaccess: 10.0.3
@@ -12116,9 +12106,9 @@ snapshots:
       npm-packlist: 10.0.4
       npm-registry-fetch: 19.1.1
       pacote: 21.5.1
-      semver: 7.8.5
       ssri: 13.0.1
-      tar: 7.5.19
+      tar: 7.5.22
+      verkit: 0.4.0
     transitivePeerDependencies:
       - '@lerna-lite/exec'
       - '@lerna-lite/list'
@@ -12128,22 +12118,24 @@ snapshots:
       - conventional-commits-filter
       - supports-color
 
-  '@lerna-lite/version@5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@types/node@22.20.0)(conventional-commits-filter@5.0.0)':
+  '@lerna-lite/version@5.6.1(@lerna-lite/publish@5.6.1(@types/node@22.20.0)(conventional-commits-filter@6.0.1))(@types/node@22.20.0)(conventional-commits-filter@6.0.1)':
     dependencies:
-      '@conventional-changelog/git-client': 2.7.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.4.0)
-      '@lerna-lite/cli': 5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@lerna-lite/version@5.3.0(@lerna-lite/publish@5.3.0(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@types/node@22.20.0)(conventional-commits-filter@5.0.0))(@types/node@22.20.0)
-      '@lerna-lite/core': 5.3.0(@types/node@22.20.0)
-      '@lerna-lite/npmlog': 5.3.0
+      '@conventional-changelog/git-client': 3.1.2(conventional-commits-filter@6.0.1)(conventional-commits-parser@7.1.2)
+      '@conventional-changelog/template': 1.4.0
+      '@lerna-lite/cli': 5.6.1(@lerna-lite/publish@5.6.1(@types/node@22.20.0)(conventional-commits-filter@6.0.1))(@lerna-lite/version@5.6.1(@lerna-lite/publish@5.6.1(@types/node@22.20.0)(conventional-commits-filter@6.0.1))(@types/node@22.20.0)(conventional-commits-filter@6.0.1))(@types/node@22.20.0)
+      '@lerna-lite/core': 5.6.1(@types/node@22.20.0)
+      '@lerna-lite/npmlog': 5.4.1
       '@octokit/plugin-enterprise-rest': 6.0.1
       '@octokit/rest': 22.0.1
-      conventional-changelog: 7.2.1(conventional-commits-filter@5.0.0)
-      conventional-changelog-angular: 8.3.1
-      conventional-changelog-writer: 8.4.0
-      conventional-commits-parser: 6.4.0
-      conventional-recommended-bump: 11.2.0
+      conventional-changelog: 8.1.3
+      conventional-changelog-angular: 9.4.0
+      conventional-changelog-writer: 9.2.1
+      conventional-commits-parser: 7.1.2
+      conventional-recommended-bump: 12.1.0
       git-url-parse: 16.1.0
+      handlebars: 4.7.9
       npm-package-arg: 13.0.2
-      semver: 7.8.5
+      verkit: 0.4.0
       write-json-file: 7.0.0
       zeptomatch: 2.1.0
     transitivePeerDependencies:
@@ -12474,7 +12466,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@npmcli/arborist@9.9.0':
+  '@npmcli/arborist@9.9.1':
     dependencies:
       '@gar/promise-retry': 1.0.3
       '@isaacs/string-locale-compare': 1.1.0
@@ -13325,13 +13317,18 @@ snapshots:
       '@sigstore/core': 3.2.1
       '@sigstore/protobuf-specs': 0.5.1
 
-  '@simple-libs/child-process-utils@1.0.2':
+  '@simple-libs/child-process-utils@2.0.0':
     dependencies:
-      '@simple-libs/stream-utils': 1.2.0
+      '@simple-libs/stream-utils': 2.0.0
 
-  '@simple-libs/hosted-git-info@1.0.2': {}
+  '@simple-libs/hosted-git-info@2.0.0': {}
 
-  '@simple-libs/stream-utils@1.2.0': {}
+  '@simple-libs/normalize-package-data@1.0.0':
+    dependencies:
+      '@simple-libs/hosted-git-info': 2.0.0
+      semver: 7.8.5
+
+  '@simple-libs/stream-utils@2.0.0': {}
 
   '@sinclair/typebox@0.34.49': {}
 
@@ -13616,8 +13613,6 @@ snapshots:
   '@types/node@24.13.2':
     dependencies:
       undici-types: 7.18.2
-
-  '@types/normalize-package-data@2.4.4': {}
 
   '@types/parse-path@7.1.0':
     dependencies:
@@ -15253,14 +15248,14 @@ snapshots:
 
   argparse@2.0.1: {}
 
+  argue-cli@3.2.0: {}
+
   array-buffer-byte-length@1.0.2:
     dependencies:
       call-bound: 1.0.4
       is-array-buffer: 3.0.5
 
   array-flatten@1.1.1: {}
-
-  array-ify@1.0.0: {}
 
   arraybuffer.prototype.slice@1.0.4:
     dependencies:
@@ -15700,11 +15695,6 @@ snapshots:
 
   common-tags@1.8.2: {}
 
-  compare-func@2.0.0:
-    dependencies:
-      array-ify: 1.0.0
-      dot-prop: 5.3.0
-
   compressible@2.0.18:
     dependencies:
       mime-db: 1.54.0
@@ -15748,52 +15738,50 @@ snapshots:
 
   content-type@2.0.0: {}
 
-  conventional-changelog-angular@8.3.1:
+  conventional-changelog-angular@9.4.0:
     dependencies:
-      compare-func: 2.0.0
+      '@conventional-changelog/template': 1.4.0
 
   conventional-changelog-conventionalcommits@10.2.0:
     dependencies:
       '@conventional-changelog/template': 1.2.0
 
-  conventional-changelog-preset-loader@5.0.0: {}
+  conventional-changelog-preset-loader@6.0.1: {}
 
-  conventional-changelog-writer@8.4.0:
+  conventional-changelog-writer@9.2.1:
     dependencies:
-      '@simple-libs/stream-utils': 1.2.0
-      conventional-commits-filter: 5.0.0
-      handlebars: 4.7.9
-      meow: 13.2.0
+      '@conventional-changelog/template': 1.4.0
+      '@simple-libs/stream-utils': 2.0.0
+      argue-cli: 3.2.0
+      conventional-commits-filter: 6.0.1
       semver: 7.8.5
 
-  conventional-changelog@7.2.1(conventional-commits-filter@5.0.0):
+  conventional-changelog@8.1.3:
     dependencies:
-      '@conventional-changelog/git-client': 2.7.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.4.0)
-      '@simple-libs/hosted-git-info': 1.0.2
-      '@types/normalize-package-data': 2.4.4
-      conventional-changelog-preset-loader: 5.0.0
-      conventional-changelog-writer: 8.4.0
-      conventional-commits-parser: 6.4.0
+      '@conventional-changelog/git-client': 3.1.2(conventional-commits-filter@6.0.1)(conventional-commits-parser@7.1.2)
+      '@simple-libs/hosted-git-info': 2.0.0
+      '@simple-libs/normalize-package-data': 1.0.0
+      argue-cli: 3.2.0
+      conventional-changelog-preset-loader: 6.0.1
+      conventional-changelog-writer: 9.2.1
+      conventional-commits-filter: 6.0.1
+      conventional-commits-parser: 7.1.2
       fd-package-json: 2.0.0
-      meow: 13.2.0
-      normalize-package-data: 7.0.1
-    transitivePeerDependencies:
-      - conventional-commits-filter
 
-  conventional-commits-filter@5.0.0: {}
+  conventional-commits-filter@6.0.1: {}
 
-  conventional-commits-parser@6.4.0:
+  conventional-commits-parser@7.1.2:
     dependencies:
-      '@simple-libs/stream-utils': 1.2.0
-      meow: 13.2.0
+      '@simple-libs/stream-utils': 2.0.0
+      argue-cli: 3.2.0
 
-  conventional-recommended-bump@11.2.0:
+  conventional-recommended-bump@12.1.0:
     dependencies:
-      '@conventional-changelog/git-client': 2.7.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.4.0)
-      conventional-changelog-preset-loader: 5.0.0
-      conventional-commits-filter: 5.0.0
-      conventional-commits-parser: 6.4.0
-      meow: 13.2.0
+      '@conventional-changelog/git-client': 3.1.2(conventional-commits-filter@6.0.1)(conventional-commits-parser@7.1.2)
+      argue-cli: 3.2.0
+      conventional-changelog-preset-loader: 6.0.1
+      conventional-commits-filter: 6.0.1
+      conventional-commits-parser: 7.1.2
 
   convert-source-map@2.0.0: {}
 
@@ -16352,10 +16340,6 @@ snapshots:
     dependencies:
       no-case: 3.0.4
       tslib: 2.8.1
-
-  dot-prop@5.3.0:
-    dependencies:
-      is-obj: 2.0.0
 
   dotenv@16.6.1: {}
 
@@ -17114,10 +17098,6 @@ snapshots:
 
   hookified@2.2.0: {}
 
-  hosted-git-info@8.1.0:
-    dependencies:
-      lru-cache: 10.4.3
-
   hosted-git-info@9.0.3:
     dependencies:
       lru-cache: 11.5.1
@@ -17434,8 +17414,6 @@ snapshots:
   is-number@7.0.0: {}
 
   is-obj@1.0.1: {}
-
-  is-obj@2.0.0: {}
 
   is-path-inside@4.0.0: {}
 
@@ -17800,8 +17778,6 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  lru-cache@10.4.3: {}
-
   lru-cache@11.5.1: {}
 
   lru-cache@5.1.1:
@@ -18123,8 +18099,6 @@ snapshots:
       thingies: 2.6.0(tslib@2.8.1)
       tree-dump: 1.1.0(tslib@2.8.1)
       tslib: 2.8.1
-
-  meow@13.2.0: {}
 
   meow@14.1.0: {}
 
@@ -18519,12 +18493,6 @@ snapshots:
   nopt@9.0.0:
     dependencies:
       abbrev: 4.0.0
-
-  normalize-package-data@7.0.1:
-    dependencies:
-      hosted-git-info: 8.1.0
-      semver: 7.8.5
-      validate-npm-package-license: 3.0.4
 
   normalize-path@3.0.0: {}
 
@@ -19987,17 +19955,7 @@ snapshots:
 
   space-separated-tokens@2.0.2: {}
 
-  spdx-correct@3.2.0:
-    dependencies:
-      spdx-expression-parse: 3.0.1
-      spdx-license-ids: 3.0.23
-
   spdx-exceptions@2.5.0: {}
-
-  spdx-expression-parse@3.0.1:
-    dependencies:
-      spdx-exceptions: 2.5.0
-      spdx-license-ids: 3.0.23
 
   spdx-expression-parse@4.0.0:
     dependencies:
@@ -20338,6 +20296,14 @@ snapshots:
       minizlib: 3.1.0
       yallist: 5.0.0
 
+  tar@7.5.22:
+    dependencies:
+      '@isaacs/fs-minipass': 4.0.1
+      chownr: 3.0.0
+      minipass: 7.1.3
+      minizlib: 3.1.0
+      yallist: 5.0.0
+
   temp-dir@2.0.0: {}
 
   tempy@0.6.0:
@@ -20365,6 +20331,8 @@ snapshots:
   tinybench@2.9.0: {}
 
   tinyexec@1.2.4: {}
+
+  tinyexec@1.3.0: {}
 
   tinyglobby@0.2.17:
     dependencies:
@@ -20687,16 +20655,13 @@ snapshots:
     optionalDependencies:
       typescript: 6.0.3
 
-  validate-npm-package-license@3.0.4:
-    dependencies:
-      spdx-correct: 3.2.0
-      spdx-expression-parse: 3.0.1
-
   validate-npm-package-name@7.0.2: {}
 
   varint@6.0.0: {}
 
   vary@1.1.2: {}
+
+  verkit@0.4.0: {}
 
   vfile-location@5.0.3:
     dependencies:
@@ -21376,6 +21341,15 @@ snapshots:
       escalade: 3.2.0
       get-caller-file: 2.0.5
       string-width: 7.2.0
+      y18n: 5.0.8
+      yargs-parser: 22.0.0
+
+  yargs@18.1.0:
+    dependencies:
+      cliui: 9.0.1
+      escalade: 3.2.0
+      get-caller-file: 2.0.5
+      string-width: 8.2.1
       y18n: 5.0.8
       yargs-parser: 22.0.0
 
