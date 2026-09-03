@@ -513,8 +513,8 @@ importers:
         specifier: 4.7.4
         version: 4.7.4
       hls.js:
-        specifier: 1.6.16
-        version: 1.6.16
+        specifier: 1.7.2
+        version: 1.7.2
       mpegts.js:
         specifier: 1.8.0
         version: 1.8.0
@@ -771,8 +771,8 @@ importers:
         specifier: 4.7.4
         version: 4.7.4
       hls.js:
-        specifier: 1.6.16
-        version: 1.6.16
+        specifier: 1.7.2
+        version: 1.7.2
       mpegts.js:
         specifier: 1.8.0
         version: 1.8.0
@@ -5104,6 +5104,7 @@ packages:
   '@xmldom/xmldom@0.9.10':
     resolution: {integrity: sha512-A9gOqLdi6cV4ibazAjcQufGj0B1y/vDqYrcuP6d/6x8P27gRS8643Dj9o1dEKtB6O7fwxb2FgBmJS2mX7gpvdw==}
     engines: {node: '>=14.6'}
+    deprecated: this version has critical issues, please update to the latest version
 
   '@xtuc/ieee754@1.2.0':
     resolution: {integrity: sha512-DX8nKgqcGwsc0eJSqYt5lwP4DH5FlHnmuWWBRy7X0NcaGR0ZtuyeESgMwTYVEtxmsNGY+qit4QYT/MIYTOTPeA==}
@@ -6816,6 +6817,9 @@ packages:
 
   hls.js@1.6.16:
     resolution: {integrity: sha512-VSIRpLfRwlAAdGL4wiTucx2ScRipo0ed1FBatWkyt832jC4CReKstga6yIhYVwGu9LOBjuX9wzmRMeQdBJtzEA==}
+
+  hls.js@1.7.2:
+    resolution: {integrity: sha512-CW/pPvSOFIRsosbwxrYaE9ERmpTo5fbTqL7wCvuCFlqW1Bmb1K5fXsY7yiH95rmlr4rVuA7UXHbM/cIXQ6AXwg==}
 
   hookable@5.5.3:
     resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
@@ -17105,6 +17109,8 @@ snapshots:
   highlight.js@11.11.1: {}
 
   hls.js@1.6.16: {}
+
+  hls.js@1.7.2: {}
 
   hookable@5.5.3: {}
 
