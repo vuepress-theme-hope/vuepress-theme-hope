@@ -1,6 +1,5 @@
 import { navbar } from "@docs/shared";
 
-// region config
 export const enNavbarConfig = navbar([
   "/get-started/",
   "/guide/",
@@ -23,4 +22,3 @@ export const enNavbarConfig = navbar([
     ],
   },
 ]);
-// #endregion config

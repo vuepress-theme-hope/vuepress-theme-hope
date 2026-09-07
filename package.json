@@ -35,7 +35,6 @@
     "@mr-hope/tsconfig": "0.0.4",
     "@types/node": "22.20.1",
     "@types/webpack-env": "1.18.8",
-    "@vitejs/devtools": "0.7.2",
     "@vitest/coverage-istanbul": "5.0.0",
     "conventional-changelog-conventionalcommits": "10.4.0",
     "cross-env": "10.1.0",
@@ -59,7 +58,6 @@
     "typescript": "catalog:",
     "unrun": "0.3.1",
     "vite": "8.0.16",
-    "vite-plugin-inspect": "12.0.2",
     "vitest": "5.0.0",
     "vuepress": "catalog:vuepress"
   },

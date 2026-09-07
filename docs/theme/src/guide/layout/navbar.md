@@ -309,15 +309,3 @@ import { navbar } from "vuepress-theme-hope";
 
 export default navbar([/* Your navbar configuration */]);
 ```
-
-## Demo
-
-::: details Configuration of this documentation
-
-```ts twoslash
-import { navbar } from "vuepress-theme-hope";
-
-<!-- @include: ../../.vuepress/navbar/en.ts#config -->
-```
-
-:::

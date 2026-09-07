@@ -433,15 +433,3 @@ import { sidebar } from "vuepress-theme-hope";
 
 export default sidebar([/* 你的侧边栏配置 */]);
 ```
-
-## 例子
-
-::: details 本文档的侧边栏配置
-
-```ts twoslash title=".vuepress/sidebar/zh.ts"
-import { sidebar } from "vuepress-theme-hope";
-
-<!-- @include: ../../../.vuepress/sidebar/zh.ts#config -->
-```
-
-:::

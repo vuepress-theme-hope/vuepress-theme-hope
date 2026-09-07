@@ -432,15 +432,3 @@ import { sidebar } from "vuepress-theme-hope";
 
 export default sidebar([/* Your sidebar configuration */]);
 ```
-
-## Demo
-
-::: details Configuration of this documentation
-
-```ts twoslash
-import { sidebar } from "vuepress-theme-hope";
-
-<!-- @include: ../../.vuepress/sidebar/en.ts#config -->
-```
-
-:::

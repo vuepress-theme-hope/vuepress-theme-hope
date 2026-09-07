@@ -1,6 +1,5 @@
 import { sidebar } from "@docs/shared";
 
-// region config
 export const enSidebarConfig = sidebar({
   "/": [
     "",
@@ -51,4 +50,3 @@ export const enSidebarConfig = sidebar({
 
   "/faq/": "structure",
 });
-// #endregion config

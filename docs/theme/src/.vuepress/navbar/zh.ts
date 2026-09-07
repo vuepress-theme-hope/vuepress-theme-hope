@@ -1,6 +1,5 @@
 import { navbar } from "@docs/shared";
 
-// region config
 export const zhNavbarConfig = navbar([
   "/zh/get-started/",
   "/zh/guide/",
@@ -25,4 +24,3 @@ export const zhNavbarConfig = navbar([
     ],
   },
 ]);
-// #endregion config
