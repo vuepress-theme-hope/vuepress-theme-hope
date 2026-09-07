@@ -25,7 +25,7 @@
     "prepare": "husky",
     "release": "pnpm clean && pnpm bundle && pnpm release:version && pnpm release:publish && pnpm release:sync",
     "release:publish": "lerna publish from-package --yes",
-    "release:sync": "unrun scripts/sync.ts",
+    "release:sync": "unrun scripts/syncNpmmirror.ts",
     "release:version": "lerna version",
     "test": "vitest --coverage"
   },
