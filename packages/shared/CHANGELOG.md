@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.108](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.107...v2.0.0-rc.108) (2026-09-07)
+
+### Miscellaneous Chores
+
+- **deps:** update dependency vite to v8.2.2 ([#5371](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5371)) ([00e4b13](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/00e4b132d8c2e76a6d7ef8f99cc975f991132adb))
+
+### Build System
+
+- bump deps ([cdb1603](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cdb160303e362a418afa5fbbd12d9ab8f85f9208))
+- bump deps ([#5404](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5404)) ([dd81e3f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dd81e3f772c2469d1216615f03afffc913d833d0))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.107](/github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.106...v2.0.0-rc.107) (2026-05-14)
 
 **Note:** Version bump only for package vuepress-shared

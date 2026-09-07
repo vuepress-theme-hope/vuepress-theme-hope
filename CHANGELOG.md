@@ -4,6 +4,36 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.108](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.107...v2.0.0-rc.108) (2026-09-07)
+
+### 🐛 Bug Fixes
+
+- **create:** fix pnpm allow build ([8521962](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8521962403830f690c6a179be00b77a1a17ce1a3))
+- **deps:** update dependency vidstack to v1.15.6 ([#5345](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5345)) ([0a0fd1d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0a0fd1d8acf3edce30e160aa73b3dd41960e1822))
+
+### Documentation
+
+- fix logo ([6a0b6d6](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6a0b6d6eaf8575bca6228bf54f1999a5f33fbe95))
+
+### Miscellaneous Chores
+
+- **deps:** update actions/checkout action to v7 ([#5359](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5359)) ([a85bab7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a85bab7e0353bd81c341d3451670dca062db7931))
+- **deps:** update actions/setup-node action to v7 ([#5382](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5382)) ([308b08f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/308b08f7862401a1f3d6f6611bc53a4f2fe53b09))
+- **deps:** update codecov/codecov-action action to v7 ([#5350](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5350)) ([7dbaa83](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7dbaa83216689d15b715e4872016a7324a65ecf2))
+- **deps:** update dependency markdown-it to v14.3.1 ([#5369](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5369)) ([331fc1b](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/331fc1b2ad9bb6e7660494c134541b8c9e35c2b4))
+- **deps:** update dependency stylelint to v17.14.1 ([#5386](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5386)) ([0298be5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0298be552be5c62bc1cbcef91f7a21ec614a06d7))
+- **deps:** update dependency vite to v8.2.2 ([#5371](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5371)) ([00e4b13](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/00e4b132d8c2e76a6d7ef8f99cc975f991132adb))
+- **deps:** update dependency vite-plugin-inspect to v12.0.2 ([#5327](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5327)) ([f1b9238](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f1b92389aceab9dcfb2f0ee6d9af4937769775b5))
+- **deps:** update lockfile ([#5273](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5273)) ([1a0903f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1a0903fe14bddd555dd4d56b3ab47bcc4320421d))
+
+### Build System
+
+- bump deps ([cdb1603](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cdb160303e362a418afa5fbbd12d9ab8f85f9208))
+- bump deps ([c022e4e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c022e4e59e7d168953e74a68652f7aa7155f1ff6))
+- bump deps ([#5404](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5404)) ([dd81e3f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/dd81e3f772c2469d1216615f03afffc913d833d0))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.107](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.106...v2.0.0-rc.107) (2026-05-14)
 
 **Note:** Version bump only for package vuepress-theme-hope-root
