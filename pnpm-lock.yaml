@@ -1022,10 +1022,10 @@ importers:
     dependencies:
       '@mdit/plugin-container':
         specifier: ^2.0.0
-        version: 2.0.0(markdown-it@14.2.0)
+        version: 2.0.0(markdown-it@14.3.1)
       '@mdit/plugin-demo':
         specifier: ^2.0.0
-        version: 2.0.0(markdown-it@14.2.0)
+        version: 2.0.0(markdown-it@14.3.1)
       '@types/markdown-it':
         specifier: ^14.2.0
         version: 14.2.0
@@ -1082,8 +1082,8 @@ importers:
         specifier: catalog:vuepress
         version: 2.0.0-rc.31(@types/node@22.20.1)(@vue/compiler-sfc@3.5.42)(esbuild@0.28.2)(jiti@2.7.0)(rollup@4.63.1)(sass-embedded@1.104.0)(sass@1.104.0)(supports-color@10.2.2)(terser@5.51.2)(typescript@6.0.3)(webpack@5.110.3(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(svgo@4.1.0)(uglify-js@3.19.3))(yaml@2.9.0)
       markdown-it:
-        specifier: 14.2.0
-        version: 14.2.0
+        specifier: 14.3.1
+        version: 14.3.1
 
   packages/shared:
     dependencies:
@@ -11635,9 +11635,9 @@ snapshots:
 
   '@mdit-vue/types@3.0.2': {}
 
-  '@mdit/helper@1.1.0(markdown-it@14.2.0)':
+  '@mdit/helper@1.1.0(markdown-it@14.3.1)':
     optionalDependencies:
-      markdown-it: 14.2.0
+      markdown-it: 14.3.1
 
   '@mdit/helper@1.1.0(markdown-it@15.0.1)':
     optionalDependencies:
@@ -11662,11 +11662,11 @@ snapshots:
     optionalDependencies:
       markdown-it: 15.0.1
 
-  '@mdit/plugin-container@2.0.0(markdown-it@14.2.0)':
+  '@mdit/plugin-container@2.0.0(markdown-it@14.3.1)':
     dependencies:
-      '@mdit/helper': 1.1.0(markdown-it@14.2.0)
+      '@mdit/helper': 1.1.0(markdown-it@14.3.1)
     optionalDependencies:
-      markdown-it: 14.2.0
+      markdown-it: 14.3.1
 
   '@mdit/plugin-container@2.0.0(markdown-it@15.0.1)':
     dependencies:
@@ -11674,11 +11674,11 @@ snapshots:
     optionalDependencies:
       markdown-it: 15.0.1
 
-  '@mdit/plugin-demo@2.0.0(markdown-it@14.2.0)':
+  '@mdit/plugin-demo@2.0.0(markdown-it@14.3.1)':
     dependencies:
-      '@mdit/helper': 1.1.0(markdown-it@14.2.0)
+      '@mdit/helper': 1.1.0(markdown-it@14.3.1)
     optionalDependencies:
-      markdown-it: 14.2.0
+      markdown-it: 14.3.1
 
   '@mdit/plugin-demo@2.0.0(markdown-it@15.0.1)':
     dependencies:
