@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.109](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.108...v2.0.0-rc.109) (2026-09-07)
+
+### Continuous Integration
+
+- fix prod deploy ([00972b0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/00972b0b522331e19aea74fcfd4c0c0b5a501c29))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.108](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.107...v2.0.0-rc.108) (2026-09-07)
 
 ### 🐛 Bug Fixes
