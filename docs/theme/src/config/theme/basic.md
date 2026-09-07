@@ -287,10 +287,7 @@ Navbar config
   }
 
   export type SidebarItemOptions =
-    | SidebarLinkOptions
-    | SidebarGroupOptions
-    | SidebarStructureOptions
-    | string;
+    SidebarLinkOptions | SidebarGroupOptions | SidebarStructureOptions | string;
 
   export type SidebarArrayOptions = SidebarItemOptions[];
 

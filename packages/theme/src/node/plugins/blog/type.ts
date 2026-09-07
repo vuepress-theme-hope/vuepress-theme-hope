@@ -1,3 +1,4 @@
+// oxlint-disable typescript/no-unnecessary-type-assertion
 import { dateSorter } from "@vuepress/helper";
 import type { BlogTypeOptions } from "@vuepress/plugin-blog";
 import type { GitData } from "@vuepress/plugin-git";

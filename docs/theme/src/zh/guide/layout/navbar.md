@@ -152,15 +152,11 @@ export default hopeTheme({
       children: [
         {
           text: "内置插件",
-          children: [
-            /* 一些子项目 */
-          ],
+          children: [/* 一些子项目 */],
         },
         {
           text: "外部插件",
-          children: [
-            /* 一些子项目 */
-          ],
+          children: [/* 一些子项目 */],
         },
       ],
     },
@@ -226,16 +222,12 @@ export default hopeTheme({
     "/": {
       logo: "/logo.svg",
 
-      navbar: [
-        /* 根目录下的英文配置 */
-      ],
+      navbar: [/* 根目录下的英文配置 */],
     },
     "/zh/": {
       logo: "/zh-logo.svg",
 
-      navbar: [
-        /* 中文目录下的中文配置 */
-      ],
+      navbar: [/* 中文目录下的中文配置 */],
     },
   },
 });
@@ -314,9 +306,7 @@ export default hopeTheme({
 ```ts twoslash title=".vuepress/navbar.ts"
 import { navbar } from "vuepress-theme-hope";
 
-export default navbar([
-  /* 你的导航栏配置 */
-]);
+export default navbar([/* 你的导航栏配置 */]);
 ```
 
 ## 例子

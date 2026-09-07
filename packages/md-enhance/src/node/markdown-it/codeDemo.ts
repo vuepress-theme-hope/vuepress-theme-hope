@@ -22,7 +22,7 @@ const getPlugin =
   (md) => {
     container(md, {
       name,
-      openRender: (tokens: Token[], index: number): string => {
+      openRenderer: (tokens: Token[], index: number): string => {
         const title = tokens[index].info.trimStart().slice(name.length).trim();
 
         let config = "";
@@ -46,7 +46,7 @@ const getPlugin =
           title ? ` title="${encodeURIComponent(title)}"` : ""
         }${config ? ` config="${config}"` : ""} code="${encodeData(JSON.stringify(code))}">\n`;
       },
-      closeRender: () => `</CodeDemo>\n`,
+      closeRenderer: () => `</CodeDemo>\n`,
     });
   };
 

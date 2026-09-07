@@ -18,8 +18,7 @@ import "vidstack/player/styles/base.css";
 import "vidstack/player/styles/plyr/theme.css";
 import "../styles/audio-player.scss";
 
-declare const DASHJS_INSTALLED: boolean;
-declare const HLS_JS_INSTALLED: boolean;
+declare const DASHJS_INSTALLED: boolean, HLS_JS_INSTALLED: boolean;
 
 export default defineComponent({
   name: "AudioPlayer",
@@ -89,11 +88,11 @@ export default defineComponent({
 
       player.addEventListener("provider-change", () => {
         if (player.provider?.type === "hls" && HLS_JS_INSTALLED) {
-          player.provider.library = (() =>
-            import(/* webpackChunkName: "hls" */ "hls.js/dist/hls.min.js")) as HLSConstructorLoader;
+          player.provider.library = (): ReturnType<HLSConstructorLoader> =>
+            import(/* webpackChunkName: "hls" */ "hls.js/dist/hls.min.js");
         } else if (player.provider?.type === "dash" && DASHJS_INSTALLED) {
-          player.provider.library = (() =>
-            import(/* webpackChunkName: "dashjs" */ "dashjs")) as DASHNamespaceLoader;
+          player.provider.library = (): ReturnType<DASHNamespaceLoader> =>
+            import(/* webpackChunkName: "dashjs" */ "dashjs");
         }
       });
     });

@@ -408,14 +408,10 @@ import { hopeTheme } from "vuepress-theme-hope";
 export default hopeTheme({
   locales: {
     "/": {
-      sidebar: [
-        /* English config under root */
-      ],
+      sidebar: [/* English config under root */],
     },
     "/zh/": {
-      sidebar: [
-        /* Chinese config under zh folder */
-      ],
+      sidebar: [/* Chinese config under zh folder */],
     },
   },
 });
@@ -434,9 +430,7 @@ To deal with the situation when you split [multi-sidebar configuration](#multipl
 ```ts twoslash {6} title=".vuepress/sidebar.ts"
 import { sidebar } from "vuepress-theme-hope";
 
-export default sidebar([
-  /* Your sidebar configuration */
-]);
+export default sidebar([/* Your sidebar configuration */]);
 ```
 
 ## Demo

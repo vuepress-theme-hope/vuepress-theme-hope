@@ -33,12 +33,16 @@ export default hopeTheme({
 - Use `^ ^` to mark the superscript.
 - Use `~ ~` to mark the subscript.
 
+<!-- prettier-ignore-start -->
+
 ::: preview Demo
 
 - 19^th^
 - H~2~O
 
 :::
+
+<!-- prettier-ignore-end -->
 
 ::: preview Escaping
 
