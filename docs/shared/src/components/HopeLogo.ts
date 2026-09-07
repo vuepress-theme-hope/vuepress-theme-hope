@@ -141,6 +141,7 @@ export default defineComponent({
       const clock = new Timer();
 
       const tick = (): void => {
+        clock.update();
         const elapsedTime = clock.getElapsed();
 
         logo1.rotation.y = 0.5 * elapsedTime;
