@@ -20,22 +20,16 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Restore Build Result
-        uses: actions/download-artifact@v8
-        with:
-          name: build-result
-
       - name: Install pnpm
-        uses: pnpm/action-setup@v6
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v7
+        uses: pnpm/setup@v2
         with:
-          node-version: 24
-          cache: pnpm
+          runtime: node@^24.18.0
 
       - name: Install deps
         run: pnpm ci
+
+      - name: Build project
+        run: pnpm run build
 
       - name: Docs build
         env:

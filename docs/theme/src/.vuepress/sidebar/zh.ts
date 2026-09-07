@@ -1,6 +1,5 @@
 import { sidebar } from "@docs/shared";
 
-// region config
 export const zhSidebarConfig = sidebar({
   "/zh/": [
     "",
@@ -50,4 +49,3 @@ export const zhSidebarConfig = sidebar({
 
   "/zh/faq/": "structure",
 });
-// #endregion config

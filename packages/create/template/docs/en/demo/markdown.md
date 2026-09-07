@@ -126,7 +126,9 @@ Support setting color scheme and size.
 
 #### Superscript and Subscript
 
+<!-- prettier-ignore-start -->
 19^th^ H~2~O
+<!-- prettier-ignore-end -->
 
 - [View Detail](https://theme-hope.vuejs.press/guide/markdown/stylize/sup-sub.html)
 

@@ -27,13 +27,7 @@ Whether to enable custom align.
 
   ```ts
   type MarkdownItAttrRuleName =
-    | "fence"
-    | "inline"
-    | "table"
-    | "list"
-    | "hr"
-    | "softbreak"
-    | "block";
+    "fence" | "inline" | "table" | "list" | "hr" | "softbreak" | "block";
 
   interface MarkdownItAttrsOptions {
     /**

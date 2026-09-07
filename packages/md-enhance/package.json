@@ -69,14 +69,14 @@
     "dev": "pnpm build --watch"
   },
   "dependencies": {
-    "@mdit/plugin-container": "^1.0.1",
-    "@mdit/plugin-demo": "^1.0.1",
-    "@types/markdown-it": "^14.1.2",
+    "@mdit/plugin-container": "^2.0.0",
+    "@mdit/plugin-demo": "^2.0.0",
+    "@types/markdown-it": "^14.2.0",
     "@vuepress/helper": "catalog:vuepress",
     "@vuepress/plugin-sass-palette": "catalog:vuepress",
     "@vueuse/core": "catalog:range",
     "balloon-css": "catalog:range",
-    "js-yaml": "^5.2.0",
+    "js-yaml": "^5.4.1",
     "vue": "catalog:range",
     "vuepress-shared": "workspace:*"
   },
@@ -92,7 +92,7 @@
     "sass": "catalog:range",
     "sass-embedded": "catalog:range",
     "sass-loader": "catalog:range",
-    "typescript": ">=5.0.0",
+    "typescript": ">=5.0.0 && < 7.0.0",
     "vuepress": "catalog:vuepress"
   },
   "peerDependenciesMeta": {

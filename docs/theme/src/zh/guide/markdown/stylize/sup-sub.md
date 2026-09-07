@@ -32,12 +32,16 @@ export default hopeTheme({
 - 使用`^ ^`进行上角标标注。
 - 使用`~ ~`进行下角标标注。
 
+<!-- prettier-ignore-start -->
+
 ::: preview 案例
 
 - 19^th^
 - H~2~O
 
 :::
+
+<!-- prettier-ignore-end -->
 
 ::: preview 转义
 

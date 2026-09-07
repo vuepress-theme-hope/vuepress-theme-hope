@@ -1,4 +1,15 @@
 export default {
+  cooldown: (name) => {
+    if (
+      name.startsWith("@mdit/") ||
+      name.startsWith("@vuepress/") ||
+      name.startsWith("vuepress-") ||
+      name === "vuepress"
+    )
+      return 0;
+
+    return 1;
+  },
   workspaces: true,
   peer: true,
   upgrade: true,

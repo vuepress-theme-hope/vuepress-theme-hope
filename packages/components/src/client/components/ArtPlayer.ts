@@ -203,6 +203,7 @@ export default defineComponent({
 
       // Auto config mse
       if (initOptions.type) {
+        // oxlint-disable-next-line no-multi-assign
         const customType = (initOptions.customType ??= {});
 
         if (SUPPORTED_VIDEO_TYPES.includes(initOptions.type.toLowerCase())) {

@@ -1,3 +1,4 @@
+// oxlint-disable typescript/no-unnecessary-type-assertion
 import { isArray } from "@vuepress/helper";
 import type { BlogCategoryOptions } from "@vuepress/plugin-blog";
 import type { GitData } from "@vuepress/plugin-git";

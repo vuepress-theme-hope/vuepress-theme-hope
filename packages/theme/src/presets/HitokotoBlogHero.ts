@@ -50,13 +50,14 @@ export default defineComponent({
     const author = ref("");
     let isMounted = false;
 
-    const getHitokoto = (): Promise<void> =>
-      fetch("https://v1.hitokoto.cn")
-        .then((res) => res.json() as Promise<HitokotoResult>)
-        .then(({ from, hitokoto }) => {
-          text.value = hitokoto;
-          author.value = from;
-        });
+    const getHitokoto = async (): Promise<void> => {
+      const res = await fetch("https://v1.hitokoto.cn");
+
+      const { from, hitokoto } = (await res.json()) as HitokotoResult;
+
+      text.value = hitokoto;
+      author.value = from;
+    };
 
     onMounted(() => {
       isMounted = true;

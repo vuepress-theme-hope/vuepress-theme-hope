@@ -34,6 +34,7 @@ export default defineComponent({
     let id: number;
 
     const initLightGallery = async (): Promise<void> => {
+      // oxlint-disable-next-line no-multi-assign
       const timeID = (id = Date.now());
 
       const lightGalleryPlugins = await useLightGalleryPlugins();

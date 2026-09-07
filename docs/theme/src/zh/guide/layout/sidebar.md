@@ -409,14 +409,10 @@ import { hopeTheme } from "vuepress-theme-hope";
 export default hopeTheme({
   locales: {
     "/": {
-      sidebar: [
-        /* 根目录下的英文配置 */
-      ],
+      sidebar: [/* 根目录下的英文配置 */],
     },
     "/zh/": {
-      sidebar: [
-        /* 中文目录下的中文配置 */
-      ],
+      sidebar: [/* 中文目录下的中文配置 */],
     },
   },
 });
@@ -435,19 +431,5 @@ export default hopeTheme({
 ```ts twoslash {4} title=".vuepress/sidebar.ts"
 import { sidebar } from "vuepress-theme-hope";
 
-export default sidebar([
-  /* 你的侧边栏配置 */
-]);
+export default sidebar([/* 你的侧边栏配置 */]);
 ```
-
-## 例子
-
-::: details 本文档的侧边栏配置
-
-```ts twoslash title=".vuepress/sidebar/zh.ts"
-import { sidebar } from "vuepress-theme-hope";
-
-<!-- @include: ../../../.vuepress/sidebar/zh.ts#config -->
-```
-
-:::

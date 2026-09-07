@@ -1,7 +1,7 @@
 // oxlint-disable no-bitwise
 export const cyrb53 = (content: string, seed = 0): number => {
-  let h1 = 0xdeadbeef ^ seed,
-    h2 = 0x41c6ce57 ^ seed;
+  let h1 = 0xdeadbeef ^ seed;
+  let h2 = 0x41c6ce57 ^ seed;
 
   for (let i = 0; i < content.length; i++) {
     // oxlint-disable-next-line unicorn/prefer-code-point
@@ -16,7 +16,6 @@ export const cyrb53 = (content: string, seed = 0): number => {
   h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507);
   h2 ^= Math.imul(h1 ^ (h1 >>> 13), 3266489909);
 
-  // oxlint-disable-next-line unicorn/prefer-math-trunc
   return 4294967296 * (2097151 & h2) + (h1 >>> 0);
 };
 

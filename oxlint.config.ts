@@ -71,7 +71,6 @@ export default defineHopeConfig(
 
       // a lot of time we are just want to check existence
       "typescript/strict-boolean-expressions": "off",
-      // FIXME: https://github.com/oxc-project/tsgolint/issues/1046
       // we need deprecated option converting
       "typescript/no-deprecated": [
         "warn",
@@ -87,8 +86,10 @@ export default defineHopeConfig(
   },
   {
     files: ["**/node/**/*.ts"],
+    plugins: ["node"],
     rules: {
       "no-restricted-imports": ["error", "@vuepress/helper/client", "vuepress/client"],
+      "node/no-top-level-await": "off",
     },
   },
   {
