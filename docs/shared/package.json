@@ -32,13 +32,13 @@
     "dev": "pnpm build --watch"
   },
   "dependencies": {
-    "@types/three": "0.185.4",
+    "@types/three": "0.186.0",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/helper": "catalog:vuepress",
     "@vuepress/plugin-docsearch": "catalog:vuepress",
     "@vueuse/core": "catalog:",
-    "three": "0.185.1",
+    "three": "0.186.0",
     "vue": "catalog:",
     "vuepress": "catalog:vuepress",
     "vuepress-theme-hope": "workspace:*"
