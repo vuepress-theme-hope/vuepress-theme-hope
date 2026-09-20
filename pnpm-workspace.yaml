@@ -19,7 +19,7 @@ catalog:
   typescript: 6.0.3
   sass-embedded: 1.104.0
   sass-loader: 17.0.1
-  vue: 3.5.42
+  vue: 3.5.43
 
 catalogs:
   range:
