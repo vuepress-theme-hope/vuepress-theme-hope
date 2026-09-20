@@ -10,7 +10,7 @@ allowBuilds:
 
 catalog:
   "@mathjax/src": 4.1.3
-  "@vueuse/core": 14.4.0
+  "@vueuse/core": 15.0.0
   markmap-lib: 0.18.12
   markmap-toolbar: 0.18.12
   markmap-view: 0.18.12
@@ -23,7 +23,7 @@ catalog:
 
 catalogs:
   range:
-    "@vueuse/core": ^14.4.0
+    "@vueuse/core": ^15.0.0
     balloon-css: ^1.2.0
     sass: ^1.104.0
     sass-embedded: ^1.104.0
