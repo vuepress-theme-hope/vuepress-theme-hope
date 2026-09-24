@@ -1,9 +1,4 @@
-import {
-  addCustomElement,
-  addViteOptimizeDepsInclude,
-  addViteSsrNoExternal,
-  getModulePath,
-} from "@vuepress/helper";
+import { addViteSsrNoExternal, getModulePath } from "@vuepress/helper";
 import { useSassPalettePlugin } from "@vuepress/plugin-sass-palette";
 import type { PluginFunction } from "vuepress/core";
 
@@ -32,11 +27,6 @@ export const componentsPlugin =
       define: getDefine(options),
 
       extendsBundlerOptions: (bundlerOptions): void => {
-        if (options.components?.includes("ArtPlayer"))
-          addViteOptimizeDepsInclude(bundlerOptions, app, "artplayer");
-        if (options.components?.includes("VidStack"))
-          addCustomElement(bundlerOptions, app, /^media-/u);
-
         addViteSsrNoExternal(bundlerOptions, app, ["@vuepress/helper", "vuepress-shared"]);
       },
 

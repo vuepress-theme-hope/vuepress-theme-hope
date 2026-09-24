@@ -1,6 +1,5 @@
 import { viteBundler } from "@vuepress/bundler-vite";
 import { webpackBundler } from "@vuepress/bundler-webpack";
-import { addViteSsrNoExternal } from "@vuepress/helper";
 import { defaultTheme } from "@vuepress/theme-default";
 import { defineUserConfig } from "vuepress";
 import { componentsPlugin } from "vuepress-plugin-components";
@@ -24,39 +23,19 @@ export default defineUserConfig({
 
     sidebar: [
       "/demo/",
-      "/demo/art-player",
       "/demo/badge",
-      "/demo/bili-bili",
       "/demo/code-pen",
-      "/demo/pdf",
       "/demo/share",
       "/demo/site-info",
       "/demo/stack-blitz",
       "/demo/vp-banner",
       "/demo/vp-card",
-      "/demo/vid-stack",
     ],
   }),
 
-  extendsBundlerOptions: (bundlerOptions, app) => {
-    addViteSsrNoExternal(bundlerOptions, app, "artplayer-plugin-danmuku");
-  },
-
   plugins: [
     componentsPlugin({
-      components: [
-        "ArtPlayer",
-        "Badge",
-        "BiliBili",
-        "CodePen",
-        "PDF",
-        "Share",
-        "SiteInfo",
-        "StackBlitz",
-        "VPBanner",
-        "VPCard",
-        "VidStack",
-      ],
+      components: ["Badge", "CodePen", "Share", "SiteInfo", "StackBlitz", "VPBanner", "VPCard"],
     }),
   ],
 });

@@ -216,19 +216,7 @@ export default theme(
       },
 
       components: {
-        components: [
-          "ArtPlayer",
-          "Badge",
-          "BiliBili",
-          "CodePen",
-          "PDF",
-          "Share",
-          "SiteInfo",
-          "StackBlitz",
-          "VPBanner",
-          "VPCard",
-          "VidStack",
-        ],
+        components: ["Badge", "CodePen", "Share", "SiteInfo", "StackBlitz", "VPBanner", "VPCard"],
 
         componentOptions: {
           share: {

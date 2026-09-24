@@ -31,21 +31,23 @@ tag:
 
 可以在 Markdown 中使用的可用组件为:
 
-- ArtPlayer: 由 ArtPlayer 驱动的视频播放器。
 - Badge: 多彩的徽章组件
-- BiliBili: 嵌入 BiliBili 视频
 - CodePen: 嵌入 CodePen 演示
-- PDF: 嵌入 PDF 查看器
 - Share: 通过社交媒体分享当前页面
 - StackBlitz: 嵌入 StackBlitz 演示
 - SiteInfo: 显示站点
 - VPBanner: 一个横幅组件
 - VPCard: 一个卡片组件
-- VidStack: 由 VidStack 驱动的音频/视频播放器
 
 你可以将 `plugins.components.components` 设置为需要的组件数组，默认情况下为 `["Badge"]`。
 
 插件选项请参阅 <ProjectLink name="components" path="/zh/config.html">components 插件文档</ProjectLink>。
+
+::: tip
+
+媒体组件已迁移至 [`@vuepress/plugin-media`](https://ecosystem.vuejs.press/zh/plugins/features/media.html)。
+
+:::
 
 ## copyCode <Badge text="默认启用" />
 
@@ -68,6 +70,14 @@ tag:
 控制 `@vuepress/plugin-links-check`，提供 Markdown 链接检查。你可以手动设置一个布尔值控制插件状态，或提供插件选项。
 
 插件选项请参阅 [links-check 插件文档][links-check-config]。
+
+## media
+
+控制 `@vuepress/plugin-media`，提供嵌入视频、音频与 PDF 文档的组件。
+
+默认不启用，你需要设置 `plugins.media` 并传入插件选项来启用它。
+
+插件选项请参阅 [media 插件文档][media-config]，使用方法请参阅 [媒体](../../guide/feature/media.md)。
 
 ## nprogress <Badge text="默认启用" />
 
@@ -138,6 +148,7 @@ tag:
 [copy-code-config]: https://ecosystem.vuejs.press/zh/plugins/features/copy-code.html#选项
 [git-config]: https://ecosystem.vuejs.press/zh/plugins/development/git.html#选项
 [links-check-config]: https://ecosystem.vuejs.press/zh/plugins/markdown/links-check.html#选项
+[media-config]: https://ecosystem.vuejs.press/zh/plugins/features/media.html#选项
 [photo-swipe-config]: https://ecosystem.vuejs.press/zh/plugins/features/photo-swipe.html#选项
 [prismjs-config]: https://ecosystem.vuejs.press/zh/plugins/markdown/prismjs.html#选项
 [pwa-config]: https://ecosystem.vuejs.press/zh/plugins/pwa/pwa/config.html#选项

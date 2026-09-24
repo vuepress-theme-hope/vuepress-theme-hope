@@ -31,23 +31,25 @@ Controls `vuepress-plugin-components`, providing a set of components for Markdow
 
 Available component which can be used in Markdown files are:
 
-- ArtPlayer: A video player powered by ArtPlayer
 - Badge: Colorful badge component
-- BiliBili: Embedded BiliBili video
 - CodePen: Embedded CodePen demo
-- PDF: Embedded PDF viewer
 - Share: Sharing current page with social medias
 - StackBlitz: Embedded StackBlitz demo
 - SiteInfo: Display sites
 - VPBanner: A banner component
 - VPCard: A card component
-- VidStack: Audio/Video player powered by VidStack
 
 You can set `plugins.components.components` with an array of components you want, by default it will be `["Badge"]`.
 
 Also, you can set `plugins.components.rootComponents` to enable some root components, such as Notice.
 
 Check <ProjectLink name="components" path="/config.html">components plugin docs</ProjectLink> for available plugin options.
+
+::: tip
+
+The media components are moved to [`@vuepress/plugin-media`](https://ecosystem.vuejs.press/plugins/features/media.html).
+
+:::
 
 ## copyCode <Badge text="enabled by default" />
 
@@ -64,6 +66,14 @@ Controls `@vuepress/plugin-git` which provides page meta via Git.
 The plugin is only enabled in build mode by default to improve devServer performance. You can manually set a boolean to control the plugin state, or provide plugin options.
 
 Check [git plugin docs][git-config] for available plugin options.
+
+## media
+
+Controls `@vuepress/plugin-media` which provides components to embed videos, audios and PDF documents.
+
+The plugin is disabled by default, you need to set `plugins.media` with plugin options to enable it.
+
+Check [media plugin docs][media-config] for available plugin options, and [Media](../../guide/feature/media.md) for instructions.
 
 ## nprogress <Badge text="enabled by default" />
 
@@ -134,6 +144,7 @@ Check [watermark plugin docs][watermark-config] for available plugin options.
 [catalog-config]: https://ecosystem.vuejs.press/plugins/features/catalog.html#options
 [copy-code-config]: https://ecosystem.vuejs.press/plugins/features/copy-code.html#options
 [git-config]: https://ecosystem.vuejs.press/plugins/development/git.html#options
+[media-config]: https://ecosystem.vuejs.press/plugins/features/media.html#options
 [photo-swipe-config]: https://ecosystem.vuejs.press/plugins/features/photo-swipe.html#options
 [pwa-config]: https://ecosystem.vuejs.press/plugins/pwa/pwa/config.html#options
 [reading-time-config]: https://ecosystem.vuejs.press/plugins/development/reading-time.html#options

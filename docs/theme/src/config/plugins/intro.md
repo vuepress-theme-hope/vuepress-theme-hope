@@ -104,6 +104,8 @@ The following plugins are bundled by theme, but they are disabled by default. Yo
 
 - [@vuepress/plugin-markdown-preview][markdown-preview]: Markdown preview support (`markdown.preview`)
 
+- [@vuepress/plugin-media][media]: Components to embed videos, audios and PDF documents (`plugins.media`)
+
 - [@vuepress/plugin-notice][notice]: Provides notice (`plugins.notice`)
 
 - [@vuepress/plugin-redirect][redirect]: Redirect pages (`plugins.redirect`)
@@ -168,6 +170,7 @@ These plugins are supported by theme, but they are not bundled. You need to inst
 [markdown-stylize]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html
 [markdown-tab]: https://ecosystem.vuejs.press/plugins/markdown/markdown-tab.html
 [meilisearch]: https://ecosystem.vuejs.press/plugins/search/meilisearch.html
+[media]: https://ecosystem.vuejs.press/plugins/features/media.html
 [notice]: https://ecosystem.vuejs.press/plugins/features/notice.html
 [nprogress]: https://ecosystem.vuejs.press/plugins/features/nprogress.html
 [orama]: https://ecosystem.vuejs.press/plugins/search/orama.html

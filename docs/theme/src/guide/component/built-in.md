@@ -13,19 +13,21 @@ By using `vuepress-plugin-components`, you can import and use some components in
 
 Available components:
 
-- ArtPlayer: A video player powered by ArtPlayer
 - Badge: Colorful badge component
-- BiliBili: Embedded BiliBili video
 - CodePen: Embedded CodePen demo
-- PDF: Embedded PDF viewer
 - Share: Sharing current page with social medias
 - StackBlitz: Embedded StackBlitz demo
 - SiteInfo: Display sites
 - VPBanner: A banner component
 - VPCard: A card component
-- VidStack: Audio/Video player powered by VidStack
 
 To enable components, you should set `plugins.components.components` with an array of components names.
+
+::: tip
+
+Media components are provided by [`@vuepress/plugin-media`](../feature/media.md), which are enabled via `plugins.media`.
+
+:::
 
 <!-- more -->
 
@@ -35,26 +37,14 @@ By default, `<Badge />` is available to align with `@vuepress/theme-default`.
 
 :::
 
-```ts twoslash {7-20} title=".vuepress/theme.ts"
+```ts twoslash {7-15} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default hopeTheme({
   plugins: {
     components: {
       // components you want
-      components: [
-        "ArtPlayer",
-        "Badge",
-        "BiliBili",
-        "CodePen",
-        "PDF",
-        "Share",
-        "SiteInfo",
-        "StackBlitz",
-        "VPBanner",
-        "VPCard",
-        "VidStack",
-      ],
+      components: ["Badge", "CodePen", "Share", "SiteInfo", "StackBlitz", "VPBanner", "VPCard"],
     },
   },
 });
@@ -88,40 +78,6 @@ See <ProjectLink name="components" path="/guide/content/site-info.html">SiteInfo
 <!-- @include: @components/guide/utilities/share.md#demo -->
 
 See <ProjectLink name="components" path="/guide/utilities/share.html">Share</ProjectLink> page for available props.
-
-## Medias
-
-### VidStack
-
-> Install `vidstack@next` first.
-
-<!-- @include: @components/guide/media/vid-stack.md#demo -->
-
-See <ProjectLink name="components" path="/guide/media/vid-stack.html">VidStack</ProjectLink> page for available props.
-
-### PDF
-
-PDF viewer component.
-
-<!-- @include: @components/guide/media/p-d-f.md#demo -->
-
-See <ProjectLink name="components" path="/guide/media/p-d-f.html">PDF</ProjectLink> page for available props.
-
-### BiliBili
-
-Embed BiliBili videos in Markdown files.
-
-<!-- @include: @components/guide/media/bili-bili.md#demo -->
-
-See <ProjectLink name="components" path="/guide/media/bili-bili.html">BiliBili</ProjectLink> page for available props.
-
-### ArtPlayer
-
-> Install `artplayer` first.
-
-<!-- @include: @components/guide/media/art-player.md#demo -->
-
-See <ProjectLink name="components" path="/guide/media/art-player.html">ArtPlayer</ProjectLink> page for available props.
 
 ## Code
 

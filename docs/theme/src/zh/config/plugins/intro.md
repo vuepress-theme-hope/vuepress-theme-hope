@@ -104,6 +104,8 @@ tag:
 
 - [@vuepress/plugin-markdown-preview][markdown-preview]: Markdown 预览支持（`markdown.preview`）
 
+- [@vuepress/plugin-media][media]: 提供嵌入视频、音频与 PDF 文档的组件（`plugins.media`）
+
 - [@vuepress/plugin-notice][notice]: 提供公告（`plugins.notice`）
 
 - [@vuepress/plugin-redirect][redirect]: 重定向插件（`plugins.redirect`）
@@ -168,6 +170,7 @@ tag:
 [markdown-stylize]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html
 [markdown-tab]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-tab.html
 [meilisearch]: https://ecosystem.vuejs.press/zh/plugins/search/meilisearch.html
+[media]: https://ecosystem.vuejs.press/zh/plugins/features/media.html
 [notice]: https://ecosystem.vuejs.press/zh/plugins/features/notice.html
 [nprogress]: https://ecosystem.vuejs.press/zh/plugins/features/nprogress.html
 [orama]: https://ecosystem.vuejs.press/zh/plugins/search/orama.html

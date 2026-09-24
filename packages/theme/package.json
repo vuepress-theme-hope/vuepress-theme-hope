@@ -127,6 +127,7 @@
     "@vuepress/plugin-markdown-preview": "catalog:vuepress",
     "@vuepress/plugin-markdown-stylize": "catalog:vuepress",
     "@vuepress/plugin-markdown-tab": "catalog:vuepress",
+    "@vuepress/plugin-media": "catalog:vuepress",
     "@vuepress/plugin-notice": "catalog:vuepress",
     "@vuepress/plugin-nprogress": "catalog:vuepress",
     "@vuepress/plugin-photo-swipe": "catalog:vuepress",

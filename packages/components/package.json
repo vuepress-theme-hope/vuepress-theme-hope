@@ -66,29 +66,12 @@
     "@vuepress/bundler-vite": "catalog:vuepress"
   },
   "peerDependencies": {
-    "artplayer": "^5.0.0",
-    "dashjs": "4.7.4",
-    "hls.js": "^1.4.12",
-    "mpegts.js": "^1.7.3",
     "sass": "catalog:range",
     "sass-embedded": "catalog:range",
     "sass-loader": "catalog:range",
-    "vidstack": "^1.12.9",
     "vuepress": "catalog:vuepress"
   },
   "peerDependenciesMeta": {
-    "artplayer": {
-      "optional": true
-    },
-    "dashjs": {
-      "optional": true
-    },
-    "hls.js": {
-      "optional": true
-    },
-    "mpegts.js": {
-      "optional": true
-    },
     "sass": {
       "optional": true
     },
@@ -96,9 +79,6 @@
       "optional": true
     },
     "sass-loader": {
-      "optional": true
-    },
-    "vidstack": {
       "optional": true
     }
   },
