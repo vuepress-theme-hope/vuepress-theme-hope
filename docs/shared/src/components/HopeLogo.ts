@@ -24,7 +24,7 @@ export default defineComponent({
         {
           AmbientLight,
           DirectionalLight,
-          PCFSoftShadowMap,
+          PCFShadowMap,
           PerspectiveCamera,
           Scene,
           Timer,
@@ -92,7 +92,7 @@ export default defineComponent({
 
       renderer.setClearColor(0x000000, 0);
       renderer.shadowMap.enabled = true;
-      renderer.shadowMap.type = PCFSoftShadowMap;
+      renderer.shadowMap.type = PCFShadowMap;
       renderer.setSize(width, height);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 

@@ -30,6 +30,19 @@ const bingStorage = useStorage<{
   data: [],
 });
 
+const getBingWallpapers = (): Promise<BingWallpaperInfo[]> =>
+  fetch("https://bing-wallpaper.vuejs.press/api/wallpaper").then(
+    (response) => response.json() as Promise<BingWallpaperInfo[]>,
+  );
+
+const prev = (): void => {
+  bingStorage.value.index -= 1;
+};
+
+const next = (): void => {
+  bingStorage.value.index += 1;
+};
+
 export default defineComponent({
   name: "BingHeroBackground",
 
@@ -64,19 +77,6 @@ export default defineComponent({
 
       return null;
     });
-
-    const getBingWallpapers = (): Promise<BingWallpaperInfo[]> =>
-      fetch("https://bing-wallpaper.vuejs.press/api/wallpaper").then(
-        (response) => response.json() as Promise<BingWallpaperInfo[]>,
-      );
-
-    const prev = (): void => {
-      bingStorage.value.index -= 1;
-    };
-
-    const next = (): void => {
-      bingStorage.value.index += 1;
-    };
 
     onClickOutside(bingInfo, () => {
       showInfo.value = false;
