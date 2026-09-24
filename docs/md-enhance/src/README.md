@@ -35,12 +35,12 @@ highlights:
         link: ./guide/code/playground.html
 
       - title: Kotlin playground Support
-        icon: b:kickstarter
+        icon: fa7-brands:kickstarter
         details: Reactive kotlin playground
         link: ./guide/code/kotlin-playground.html
 
       - title: Vue playground Support
-        icon: b:vuejs
+        icon: fa7-brands:vuejs
         details: Show living vue component in playground
         link: ./guide/code/vue-playground.html
 

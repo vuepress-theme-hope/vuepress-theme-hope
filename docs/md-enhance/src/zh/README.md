@@ -35,12 +35,12 @@ highlights:
         link: ./guide/code/playground.html
 
       - title: Kotlin 交互演示
-        icon: b:kickstarter
+        icon: fa7-brands:kickstarter
         details: 响应式的 Kotlin Playground
         link: ./guide/code/kotlin-playground.html
 
       - title: Vue 交互演示
-        icon: b:vuejs
+        icon: fa7-brands:vuejs
         details: 在交互演示中展示 Vue 组件
         link: ./guide/code/vue-playground.html
 

@@ -1,6 +1,6 @@
 ---
 title: Vue Playground
-icon: b:vuejs
+icon: fa7-brands:vuejs
 ---
 
 The plugin provides you vue playground support.

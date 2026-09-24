@@ -22,6 +22,7 @@
     "@docs/shared": "workspace:*",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
+    "iconify-icon": "^3.0.3",
     "sass-embedded": "catalog:",
     "sass-loader": "catalog:",
     "vue": "catalog:",

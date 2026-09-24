@@ -675,6 +675,9 @@ importers:
       hls.js:
         specifier: 1.7.3
         version: 1.7.3
+      iconify-icon:
+        specifier: ^3.0.3
+        version: 3.0.3
       mpegts.js:
         specifier: 1.8.2
         version: 1.8.2
@@ -711,6 +714,9 @@ importers:
       '@vuepress/bundler-webpack':
         specifier: catalog:vuepress
         version: 2.0.0-rc.31(@vue/compiler-sfc@3.5.43)(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(debug@4.4.3(supports-color@10.2.2))(esbuild@0.28.2)(html-minifier-terser@6.1.0)(rolldown@1.2.9)(rollup@4.63.4)(supports-color@10.2.2)(svgo@4.1.0)(typescript@6.0.3)(uglify-js@3.19.3)(vite@8.2.2(@types/node@22.20.4)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.105.0)(sass@1.105.0)(terser@5.51.2)(yaml@2.9.1))
+      iconify-icon:
+        specifier: ^3.0.3
+        version: 3.0.3
       sass-embedded:
         specifier: 'catalog:'
         version: 1.105.0
@@ -744,6 +750,9 @@ importers:
       '@vueuse/core':
         specifier: 'catalog:'
         version: 15.0.0(vue@3.5.43(typescript@6.0.3))
+      iconify-icon:
+        specifier: ^3.0.3
+        version: 3.0.3
       sandpack-vue3:
         specifier: 3.1.12
         version: 3.1.12(vue@3.5.43(typescript@6.0.3))
