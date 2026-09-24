@@ -6,6 +6,21 @@ import type { ComponentPluginOptions } from "../options/index.js";
 import { logger } from "../utils.js";
 
 /**
+ * Components that are moved to `@vuepress/plugin-media`
+ *
+ * 已迁移至 `@vuepress/plugin-media` 的组件
+ */
+const MEDIA_COMPONENTS = [
+  "ArtPlayer",
+  "AudioPlayer",
+  "BiliBili",
+  "PDF",
+  "VideoPlayer",
+  "VidStack",
+  "YouTube",
+];
+
+/**
  * @deprecated
  * @param options - Old component plugin options
  */
@@ -91,13 +106,45 @@ export const convertOptions = (options: ComponentPluginOptions & Record<string, 
       );
     }
 
-    ["VideoPlayer", "AudioPlayer", "YouTube"].forEach((component) => {
+    MEDIA_COMPONENTS.forEach((component) => {
       if ((options.components as unknown[]).includes(component)) {
-        logger.warn(
-          `${colors.cyan(component)} component is deprecated, please use ${colors.cyan(
-            "VidStack",
-          )} component instead.`,
+        logger.error(
+          `${colors.cyan(component)} component is no longer supported, please use ${colors.magenta(
+            "@vuepress/plugin-media",
+          )} instead.`,
         );
+      }
+    });
+  }
+
+  if (isPlainObject(options.componentOptions)) {
+    const componentOptions = options.componentOptions as Record<string, unknown>;
+
+    ["artPlayer", "pdf"].forEach((key) => {
+      if (key in componentOptions) {
+        logger.error(
+          `${colors.magenta(`componentOptions.${key}`)} is removed, please use ${colors.magenta(
+            key === "artPlayer" ? "artplayer" : "pdf",
+          )} option of ${colors.cyan("@vuepress/plugin-media")} instead.`,
+        );
+        // oxlint-disable-next-line typescript/no-dynamic-delete
+        delete componentOptions[key];
+      }
+    });
+  }
+
+  if (isPlainObject(options.locales)) {
+    const locales = options.locales as Record<string, unknown>;
+
+    ["pdf", "vidstack"].forEach((key) => {
+      if (key in locales) {
+        logger.error(
+          `${colors.magenta(`locales.${key}`)} is removed, as the related component is moved to ${colors.cyan(
+            "@vuepress/plugin-media",
+          )}.`,
+        );
+        // oxlint-disable-next-line typescript/no-dynamic-delete
+        delete locales[key];
       }
     });
   }

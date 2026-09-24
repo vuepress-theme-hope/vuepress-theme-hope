@@ -7,6 +7,7 @@ import type { DocSearchPluginOptions } from "@vuepress/plugin-docsearch";
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
 import type { IconPluginOptions } from "@vuepress/plugin-icon";
+import type { MediaPluginOptions } from "@vuepress/plugin-media";
 import type { MeiliSearchPluginOptions } from "@vuepress/plugin-meilisearch";
 import type { NoticeOptions, NoticePluginOptions } from "@vuepress/plugin-notice";
 import type { OramaPluginOptions } from "@vuepress/plugin-orama";
@@ -182,6 +183,16 @@ export interface ThemePluginsOptions extends DeprecatedThemePluginsOptions {
    * 图标插件选项
    */
   icon?: Omit<IconPluginOptions, "component"> | boolean;
+
+  /**
+   * Media plugin options
+   *
+   * 媒体插件选项
+   *
+   * @see https://ecosystem.vuejs.press/plugins/features/media.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/features/media.html
+   */
+  media?: MediaPluginOptions | false;
 
   /**
    * MeiliSearch plugin options

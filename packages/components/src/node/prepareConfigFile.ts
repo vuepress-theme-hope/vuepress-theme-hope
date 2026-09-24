@@ -2,7 +2,7 @@ import { getModulePath } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
 import type { ComponentPluginOptions } from "./options/index.js";
-import { AVAILABLE_COMPONENTS, CLIENT_FOLDER, COMPONENT_PKG, isInstalled } from "./utils.js";
+import { AVAILABLE_COMPONENTS, CLIENT_FOLDER } from "./utils.js";
 
 export const prepareConfigFile = (
   app: App,
@@ -14,10 +14,7 @@ export const prepareConfigFile = (
   const configRootComponents: string[] = [];
 
   components.forEach((item) => {
-    if (
-      AVAILABLE_COMPONENTS.includes(item) &&
-      (!COMPONENT_PKG[item] || COMPONENT_PKG[item].every((pkg) => isInstalled(pkg)))
-    ) {
+    if (AVAILABLE_COMPONENTS.includes(item)) {
       imports.push(`import ${item} from "${CLIENT_FOLDER}components/${item}.js";`);
 
       enhance += `\

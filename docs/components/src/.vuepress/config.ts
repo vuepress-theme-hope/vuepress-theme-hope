@@ -1,4 +1,4 @@
-import { addViteSsrNoExternal, config } from "@docs/shared";
+import { config } from "@docs/shared";
 
 import theme from "./theme.js";
 
@@ -15,10 +15,6 @@ export default config("components", {
       title: "组件库",
       description: "面向 VuePress2 的常用组件",
     },
-  },
-
-  extendsBundlerOptions: (bundlerOptions, app) => {
-    addViteSsrNoExternal(bundlerOptions, app, "artplayer-plugin-danmuku");
   },
 
   theme,

@@ -241,6 +241,9 @@ catalogs:
     '@vuepress/plugin-markdown-tab':
       specifier: 2.0.0-rc.135
       version: 2.0.0-rc.135
+    '@vuepress/plugin-media':
+      specifier: 2.0.0-rc.135
+      version: 2.0.0-rc.135
     '@vuepress/plugin-meilisearch':
       specifier: 2.0.0-rc.135
       version: 2.0.0-rc.135
@@ -408,30 +411,12 @@ importers:
       '@vuepress/theme-default':
         specifier: catalog:vuepress
         version: 2.0.0-rc.134(7e1e7565e9bf666f2403a9892a57f57c)
-      artplayer:
-        specifier: 5.4.0
-        version: 5.4.0
-      artplayer-plugin-danmuku:
-        specifier: 5.3.0
-        version: 5.3.0
-      dashjs:
-        specifier: 4.7.4
-        version: 4.7.4
-      hls.js:
-        specifier: 1.7.3
-        version: 1.7.3
-      mpegts.js:
-        specifier: 1.8.2
-        version: 1.8.2
       sass-embedded:
         specifier: 'catalog:'
         version: 1.105.0
       sass-loader:
         specifier: 'catalog:'
         version: 17.0.1(sass-embedded@1.105.0)(sass@1.105.0)(webpack@5.111.1(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(svgo@4.1.0)(uglify-js@3.19.3))
-      vidstack:
-        specifier: 1.15.6
-        version: 1.15.6
       vue:
         specifier: 'catalog:'
         version: 3.5.43(typescript@6.0.3)
@@ -666,30 +651,12 @@ importers:
       '@vuepress/helper':
         specifier: catalog:vuepress
         version: 2.0.0-rc.135(@vuepress/bundler-vite@2.0.0-rc.31(@types/node@22.20.4)(@vue/compiler-sfc@3.5.43)(esbuild@0.28.2)(jiti@2.7.0)(rollup@4.63.4)(sass-embedded@1.105.0)(sass@1.105.0)(supports-color@10.2.2)(terser@5.51.2)(typescript@6.0.3)(webpack@5.111.1(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(svgo@4.1.0)(uglify-js@3.19.3))(yaml@2.9.1))(@vuepress/bundler-webpack@2.0.0-rc.31(@vue/compiler-sfc@3.5.43)(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(debug@4.4.3(supports-color@10.2.2))(esbuild@0.28.2)(html-minifier-terser@6.1.0)(rolldown@1.2.9)(rollup@4.63.4)(supports-color@10.2.2)(svgo@4.1.0)(typescript@6.0.3)(uglify-js@3.19.3)(vite@8.2.2(@types/node@22.20.4)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.105.0)(sass@1.105.0)(terser@5.51.2)(yaml@2.9.1)))(typescript@6.0.3)(vuepress@2.0.0-rc.31(5fda76e04f79433dc1cdb5cea3c7a14c))
-      artplayer:
-        specifier: 5.4.0
-        version: 5.4.0
-      artplayer-plugin-danmuku:
-        specifier: 5.3.0
-        version: 5.3.0
-      dashjs:
-        specifier: 4.7.4
-        version: 4.7.4
-      hls.js:
-        specifier: 1.7.3
-        version: 1.7.3
-      mpegts.js:
-        specifier: 1.8.2
-        version: 1.8.2
       sass-embedded:
         specifier: 'catalog:'
         version: 1.105.0
       sass-loader:
         specifier: 'catalog:'
         version: 17.0.1(sass-embedded@1.105.0)(sass@1.105.0)(webpack@5.111.1(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(svgo@4.1.0)(uglify-js@3.19.3))
-      vidstack:
-        specifier: 1.15.6
-        version: 1.15.6
       vue:
         specifier: 'catalog:'
         version: 3.5.43(typescript@6.0.3)
@@ -847,9 +814,6 @@ importers:
       '@vueuse/core':
         specifier: 'catalog:'
         version: 15.0.0(vue@3.5.43(typescript@6.0.3))
-      artplayer:
-        specifier: 5.4.0
-        version: 5.4.0
       echarts-wordcloud:
         specifier: 2.1.0
         version: 2.1.0(echarts@5.6.0)
@@ -913,24 +877,12 @@ importers:
       '@vueuse/core':
         specifier: catalog:range
         version: 15.0.0(vue@3.5.43(typescript@6.0.3))
-      artplayer:
-        specifier: ^5.0.0
-        version: 5.4.0
       balloon-css:
         specifier: catalog:range
         version: 1.2.0
       create-codepen:
         specifier: ^2.0.4
         version: 2.0.4
-      dashjs:
-        specifier: 4.7.4
-        version: 4.7.4
-      hls.js:
-        specifier: ^1.4.12
-        version: 1.7.3
-      mpegts.js:
-        specifier: ^1.7.3
-        version: 1.8.2
       qrcode:
         specifier: ^1.5.4
         version: 1.5.4
@@ -943,9 +895,6 @@ importers:
       sass-loader:
         specifier: catalog:range
         version: 17.0.1(sass-embedded@1.105.0)(sass@1.105.0)(webpack@5.111.1(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(svgo@4.1.0)(uglify-js@3.19.3))
-      vidstack:
-        specifier: ^1.12.9
-        version: 1.15.6
       vue:
         specifier: catalog:range
         version: 3.5.43(typescript@6.0.3)
@@ -1190,6 +1139,9 @@ importers:
       '@vuepress/plugin-markdown-tab':
         specifier: catalog:vuepress
         version: 2.0.0-rc.135(@vuepress/bundler-vite@2.0.0-rc.31(@types/node@22.20.4)(@vue/compiler-sfc@3.5.43)(esbuild@0.28.2)(jiti@2.7.0)(rollup@4.63.4)(sass-embedded@1.105.0)(sass@1.105.0)(supports-color@10.2.2)(terser@5.51.2)(typescript@6.0.3)(webpack@5.111.1(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(svgo@4.1.0)(uglify-js@3.19.3))(yaml@2.9.1))(@vuepress/bundler-webpack@2.0.0-rc.31(@vue/compiler-sfc@3.5.43)(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(debug@4.4.3(supports-color@10.2.2))(esbuild@0.28.2)(html-minifier-terser@6.1.0)(rolldown@1.2.9)(rollup@4.63.4)(supports-color@10.2.2)(svgo@4.1.0)(typescript@6.0.3)(uglify-js@3.19.3)(vite@8.2.2(@types/node@22.20.4)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.105.0)(sass@1.105.0)(terser@5.51.2)(yaml@2.9.1)))(markdown-it@15.0.1)(typescript@6.0.3)(vuepress@2.0.0-rc.31(5fda76e04f79433dc1cdb5cea3c7a14c))
+      '@vuepress/plugin-media':
+        specifier: catalog:vuepress
+        version: 2.0.0-rc.135(@vuepress/bundler-vite@2.0.0-rc.31(@types/node@22.20.4)(@vue/compiler-sfc@3.5.43)(esbuild@0.28.2)(jiti@2.7.0)(rollup@4.63.4)(sass-embedded@1.105.0)(sass@1.105.0)(supports-color@10.2.2)(terser@5.51.2)(typescript@6.0.3)(webpack@5.111.1(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(svgo@4.1.0)(uglify-js@3.19.3))(yaml@2.9.1))(@vuepress/bundler-webpack@2.0.0-rc.31(@vue/compiler-sfc@3.5.43)(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(debug@4.4.3(supports-color@10.2.2))(esbuild@0.28.2)(html-minifier-terser@6.1.0)(rolldown@1.2.9)(rollup@4.63.4)(supports-color@10.2.2)(svgo@4.1.0)(typescript@6.0.3)(uglify-js@3.19.3)(vite@8.2.2(@types/node@22.20.4)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.105.0)(sass@1.105.0)(terser@5.51.2)(yaml@2.9.1)))(artplayer@5.4.0)(dashjs@4.7.4)(hls.js@1.7.3)(mpegts.js@1.8.2)(typescript@6.0.3)(vuepress@2.0.0-rc.31(5fda76e04f79433dc1cdb5cea3c7a14c))
       '@vuepress/plugin-meilisearch':
         specifier: catalog:vuepress
         version: 2.0.0-rc.135(@vuepress/bundler-vite@2.0.0-rc.31(@types/node@22.20.4)(@vue/compiler-sfc@3.5.43)(esbuild@0.28.2)(jiti@2.7.0)(rollup@4.63.4)(sass-embedded@1.105.0)(sass@1.105.0)(supports-color@10.2.2)(terser@5.51.2)(typescript@6.0.3)(webpack@5.111.1(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(svgo@4.1.0)(uglify-js@3.19.3))(yaml@2.9.1))(@vuepress/bundler-webpack@2.0.0-rc.31(@vue/compiler-sfc@3.5.43)(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(debug@4.4.3(supports-color@10.2.2))(esbuild@0.28.2)(html-minifier-terser@6.1.0)(rolldown@1.2.9)(rollup@4.63.4)(supports-color@10.2.2)(svgo@4.1.0)(typescript@6.0.3)(uglify-js@3.19.3)(vite@8.2.2(@types/node@22.20.4)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.105.0)(sass@1.105.0)(terser@5.51.2)(yaml@2.9.1)))(typescript@6.0.3)(vuepress@2.0.0-rc.31(5fda76e04f79433dc1cdb5cea3c7a14c))
@@ -4505,6 +4457,51 @@ packages:
     peerDependencies:
       vuepress: 2.0.0-rc.31
 
+  '@vuepress/plugin-media@2.0.0-rc.135':
+    resolution: {integrity: sha512-jM2aVcb6KDIDQLaFuI0XAiXcsapToIoteOsqYrMXhWugPlmxmNh7zpINj+m7dtvCgoPay1Acf6v6Vtq70gi1yw==}
+    peerDependencies:
+      '@embedpdf/vue-pdf-viewer': ^2.15.0
+      '@videojs/dash-video': 10.0.0-rc.2
+      '@videojs/hlsjs-video': 10.0.0-rc.2
+      '@videojs/html': 10.0.0-rc.2
+      '@videojs/spotify-audio': 10.0.0-rc.2
+      '@videojs/tiktok-video': 10.0.0-rc.2
+      '@videojs/twitch-video': 10.0.0-rc.2
+      '@videojs/vimeo-video': 10.0.0-rc.2
+      '@videojs/youtube-video': 10.0.0-rc.2
+      artplayer: ^5.3.0
+      dashjs: 4.7.4
+      hls.js: ^1.6.13
+      mpegts.js: ^1.7.3
+      vuepress: 2.0.0-rc.31
+    peerDependenciesMeta:
+      '@embedpdf/vue-pdf-viewer':
+        optional: true
+      '@videojs/dash-video':
+        optional: true
+      '@videojs/hlsjs-video':
+        optional: true
+      '@videojs/html':
+        optional: true
+      '@videojs/spotify-audio':
+        optional: true
+      '@videojs/tiktok-video':
+        optional: true
+      '@videojs/twitch-video':
+        optional: true
+      '@videojs/vimeo-video':
+        optional: true
+      '@videojs/youtube-video':
+        optional: true
+      artplayer:
+        optional: true
+      dashjs:
+        optional: true
+      hls.js:
+        optional: true
+      mpegts.js:
+        optional: true
+
   '@vuepress/plugin-medium-zoom@2.0.0-rc.134':
     resolution: {integrity: sha512-eXlK4sKabhPlQTvu5ALlZdCQe4Tohudbyr5TGNVdS1WYkaCTUMV02WobfTjeMaLBM+dkETdlPAOE3hU+r6FjEA==}
     peerDependencies:
@@ -5005,9 +5002,6 @@ packages:
   arraybuffer.prototype.slice@1.0.4:
     resolution: {integrity: sha512-BNoCY6SXXPQ7gF2opIP4GBE+Xw7U+pHMYKuzjgCN3GwiaIR09UUeKfheyIry77QtrCBlC0KK0q5/TER/tYh3PQ==}
     engines: {node: '>= 0.4'}
-
-  artplayer-plugin-danmuku@5.3.0:
-    resolution: {integrity: sha512-a76bU1cWEZr53hD1X8IHfOzS4QawGHn8dQ3fIYyJ5TsyhTSnznhi2WzkS8M7LL3H02ekXRZTUFan9+9EERk12g==}
 
   artplayer@5.4.0:
     resolution: {integrity: sha512-2B+plbx8N2yNsjK4nJU3+EOG8TULm1LRZk/QPkWRAMEX2Ee/MSnZG/WJYz8kcoZxZuLKcQ3uXifqLuPxZOH29A==}
@@ -6309,9 +6303,6 @@ packages:
     resolution: {integrity: sha512-XUBA9XClHbnJWSfBzjkm6RvPsyg3sryZt06BEQoXcF7EK/xpGaQYJgQKDJSUH5SGZ76Y7pFx1QBnXz09rU5Fbw==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
 
-  fscreen@1.2.0:
-    resolution: {integrity: sha512-hlq4+BU0hlPmwsFjwGGzZ+OZ9N/wq9Ljg/sq3pX+2CD7hrJsX9tJgWWK/wiNTFM212CLHWhicOoqwXyZGGetJg==}
-
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -7195,9 +7186,6 @@ packages:
   lit-element@4.2.2:
     resolution: {integrity: sha512-aFKhNToWxoyhkNDmWZwEva2SlQia+jfG0fjIWV//YeTaWrVnOxD89dPKfigCUspXFmjzOEUQpOkejH5Ly6sG0w==}
 
-  lit-html@2.8.0:
-    resolution: {integrity: sha512-o9t+MQM3P4y7M7yNzqAyjp7z+mQGa4NS4CxiyLqFPyFWyc4O+nodLrkrxSaCTrla6M5YOLaT3RpbbqjszB5g3Q==}
-
   lit-html@3.3.3:
     resolution: {integrity: sha512-el8M6jK2o3RXBnrSHX3ZKrsN8zEV63pSExTO1wYJz7QndGYZ8353e2a5PPX+qHe2aGayfnchQmkAojaWAREOIA==}
 
@@ -7423,10 +7411,6 @@ packages:
 
   mdurl@2.1.0:
     resolution: {integrity: sha512-1+HBaOx0zi/dQWht8rNv9MYf9qqpqL/kxI0hXImU6Y547zM6Sni8BQibt7ifgMcYtQg41ao3Ivd6cnSM86inpg==}
-
-  media-captions@1.0.4:
-    resolution: {integrity: sha512-cyDNmuZvvO4H27rcBq2Eudxo9IZRDCOX/I7VEyqbxsEiD2Ei7UYUhG/Sc5fvMZjmathgz3fEK7iAKqvpY+Ux1w==}
-    engines: {node: '>=16'}
 
   media-typer@0.3.0:
     resolution: {integrity: sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==}
@@ -9547,10 +9531,6 @@ packages:
     resolution: {integrity: sha512-xVToRh2CTmLk2HnEG7ac4rl1MJTT3RFkpS8B++/SnB0kXvuaavD+n3m/vrzyWQOdJNSZQACnbz01pnppbwV5BA==}
     engines: {node: '>=20.19.0'}
 
-  unplugin@1.16.1:
-    resolution: {integrity: sha512-4/u/j4FrCKdi17jaxuJA0jClGxB1AvU2hw/IuayPc4ay1XGaJs/rbb4v5WKwAjNifjmXK9PIFyuPiaK8azyR9w==}
-    engines: {node: '>=14.0.0'}
-
   unplugin@3.4.0:
     resolution: {integrity: sha512-9skdIFlCsPdFV7wUfZxNsFInlW+7nJmGu2gkTu0OUhF56aXGsHab9x52/QhdJ4lC7ZDPWTxbiC4ANqVlsuaW3w==}
     engines: {node: ^20.19.0 || >=22.12.0}
@@ -9660,10 +9640,6 @@ packages:
 
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
-
-  vidstack@1.15.6:
-    resolution: {integrity: sha512-bdPbguNooX7Og6xqhqlRoowciTL7DibntuUwFrW6Y7K2t1jcYX7yTd05k/hfEOJrTGaY2VpU5hLQpFJDNFzK4A==}
-    engines: {node: '>=18'}
 
   vite@8.2.2:
     resolution: {integrity: sha512-cFKLV/PRgAUlIRm5WjMjJ86jrftzpqcgH+Us+DS8mI3CDNiH30Whrz8uHL3+MOLPAgqbMBAqWdAHAphOAM+z/Q==}
@@ -13815,6 +13791,22 @@ snapshots:
       - markdown-it
       - typescript
 
+  '@vuepress/plugin-media@2.0.0-rc.135(@vuepress/bundler-vite@2.0.0-rc.31(@types/node@22.20.4)(@vue/compiler-sfc@3.5.43)(esbuild@0.28.2)(jiti@2.7.0)(rollup@4.63.4)(sass-embedded@1.105.0)(sass@1.105.0)(supports-color@10.2.2)(terser@5.51.2)(typescript@6.0.3)(webpack@5.111.1(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(svgo@4.1.0)(uglify-js@3.19.3))(yaml@2.9.1))(@vuepress/bundler-webpack@2.0.0-rc.31(@vue/compiler-sfc@3.5.43)(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(debug@4.4.3(supports-color@10.2.2))(esbuild@0.28.2)(html-minifier-terser@6.1.0)(rolldown@1.2.9)(rollup@4.63.4)(supports-color@10.2.2)(svgo@4.1.0)(typescript@6.0.3)(uglify-js@3.19.3)(vite@8.2.2(@types/node@22.20.4)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.105.0)(sass@1.105.0)(terser@5.51.2)(yaml@2.9.1)))(artplayer@5.4.0)(dashjs@4.7.4)(hls.js@1.7.3)(mpegts.js@1.8.2)(typescript@6.0.3)(vuepress@2.0.0-rc.31(5fda76e04f79433dc1cdb5cea3c7a14c))':
+    dependencies:
+      '@vuepress/helper': 2.0.0-rc.135(@vuepress/bundler-vite@2.0.0-rc.31(@types/node@22.20.4)(@vue/compiler-sfc@3.5.43)(esbuild@0.28.2)(jiti@2.7.0)(rollup@4.63.4)(sass-embedded@1.105.0)(sass@1.105.0)(supports-color@10.2.2)(terser@5.51.2)(typescript@6.0.3)(webpack@5.111.1(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(svgo@4.1.0)(uglify-js@3.19.3))(yaml@2.9.1))(@vuepress/bundler-webpack@2.0.0-rc.31(@vue/compiler-sfc@3.5.43)(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(debug@4.4.3(supports-color@10.2.2))(esbuild@0.28.2)(html-minifier-terser@6.1.0)(rolldown@1.2.9)(rollup@4.63.4)(supports-color@10.2.2)(svgo@4.1.0)(typescript@6.0.3)(uglify-js@3.19.3)(vite@8.2.2(@types/node@22.20.4)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.105.0)(sass@1.105.0)(terser@5.51.2)(yaml@2.9.1)))(typescript@6.0.3)(vuepress@2.0.0-rc.31(5fda76e04f79433dc1cdb5cea3c7a14c))
+      '@vueuse/core': 15.0.0(vue@3.5.43(typescript@6.0.3))
+      vue: 3.5.43(typescript@6.0.3)
+      vuepress: 2.0.0-rc.31(5fda76e04f79433dc1cdb5cea3c7a14c)
+    optionalDependencies:
+      artplayer: 5.4.0
+      dashjs: 4.7.4
+      hls.js: 1.7.3
+      mpegts.js: 1.8.2
+    transitivePeerDependencies:
+      - '@vuepress/bundler-vite'
+      - '@vuepress/bundler-webpack'
+      - typescript
+
   '@vuepress/plugin-medium-zoom@2.0.0-rc.134(@vuepress/bundler-vite@2.0.0-rc.31(@types/node@22.20.4)(@vue/compiler-sfc@3.5.43)(esbuild@0.28.2)(jiti@2.7.0)(rollup@4.63.4)(sass-embedded@1.105.0)(sass@1.105.0)(supports-color@10.2.2)(terser@5.51.2)(typescript@6.0.3)(webpack@5.111.1(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(svgo@4.1.0)(uglify-js@3.19.3))(yaml@2.9.1))(@vuepress/bundler-webpack@2.0.0-rc.31(@vue/compiler-sfc@3.5.43)(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(debug@4.4.3(supports-color@10.2.2))(esbuild@0.28.2)(html-minifier-terser@6.1.0)(rolldown@1.2.9)(rollup@4.63.4)(supports-color@10.2.2)(svgo@4.1.0)(typescript@6.0.3)(uglify-js@3.19.3)(vite@8.2.2(@types/node@22.20.4)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.105.0)(sass@1.105.0)(terser@5.51.2)(yaml@2.9.1)))(typescript@6.0.3)(vuepress@2.0.0-rc.31(5fda76e04f79433dc1cdb5cea3c7a14c))':
     dependencies:
       '@vuepress/helper': 2.0.0-rc.134(@vuepress/bundler-vite@2.0.0-rc.31(@types/node@22.20.4)(@vue/compiler-sfc@3.5.43)(esbuild@0.28.2)(jiti@2.7.0)(rollup@4.63.4)(sass-embedded@1.105.0)(sass@1.105.0)(supports-color@10.2.2)(terser@5.51.2)(typescript@6.0.3)(webpack@5.111.1(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(svgo@4.1.0)(uglify-js@3.19.3))(yaml@2.9.1))(@vuepress/bundler-webpack@2.0.0-rc.31(@vue/compiler-sfc@3.5.43)(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(debug@4.4.3(supports-color@10.2.2))(esbuild@0.28.2)(html-minifier-terser@6.1.0)(rolldown@1.2.9)(rollup@4.63.4)(supports-color@10.2.2)(svgo@4.1.0)(typescript@6.0.3)(uglify-js@3.19.3)(vite@8.2.2(@types/node@22.20.4)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.105.0)(sass@1.105.0)(terser@5.51.2)(yaml@2.9.1)))(typescript@6.0.3)(vuepress@2.0.0-rc.31(5fda76e04f79433dc1cdb5cea3c7a14c))
@@ -14462,11 +14454,10 @@ snapshots:
       get-intrinsic: 1.3.0
       is-array-buffer: 3.0.5
 
-  artplayer-plugin-danmuku@5.3.0: {}
-
   artplayer@5.4.0:
     dependencies:
       option-validator: 2.0.6
+    optional: true
 
   asn1js@3.0.10:
     dependencies:
@@ -14548,18 +14539,21 @@ snapshots:
 
   batch@0.6.1: {}
 
-  bcp-47-match@1.0.3: {}
+  bcp-47-match@1.0.3:
+    optional: true
 
   bcp-47-normalize@1.1.1:
     dependencies:
       bcp-47: 1.0.8
       bcp-47-match: 1.0.3
+    optional: true
 
   bcp-47@1.0.8:
     dependencies:
       is-alphabetical: 1.0.4
       is-alphanumerical: 1.0.4
       is-decimal: 1.0.4
+    optional: true
 
   bcrypt-ts@9.0.2: {}
 
@@ -14857,7 +14851,8 @@ snapshots:
 
   cmd-shim@8.0.0: {}
 
-  codem-isoboxer@0.3.9: {}
+  codem-isoboxer@0.3.9:
+    optional: true
 
   color-convert@2.0.1:
     dependencies:
@@ -15369,6 +15364,7 @@ snapshots:
       localforage: 1.10.0
       path-browserify: 1.0.1
       ua-parser-js: 1.0.41
+    optional: true
 
   data-view-buffer@1.0.2:
     dependencies:
@@ -15680,7 +15676,8 @@ snapshots:
 
   es-toolkit@1.52.0: {}
 
-  es6-promise@4.2.8: {}
+  es6-promise@4.2.8:
+    optional: true
 
   esbuild-loader@4.5.0(webpack@5.111.1(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(svgo@4.1.0)(uglify-js@3.19.3)):
     dependencies:
@@ -15807,7 +15804,8 @@ snapshots:
 
   extend@3.0.2: {}
 
-  fast-deep-equal@2.0.1: {}
+  fast-deep-equal@2.0.1:
+    optional: true
 
   fast-deep-equal@3.1.3: {}
 
@@ -15940,8 +15938,6 @@ snapshots:
   fs-minipass@3.0.3:
     dependencies:
       minipass: 7.1.3
-
-  fscreen@1.2.0: {}
 
   fsevents@2.3.3:
     optional: true
@@ -16191,7 +16187,8 @@ snapshots:
 
   highlight.js@11.12.0: {}
 
-  hls.js@1.7.3: {}
+  hls.js@1.7.3:
+    optional: true
 
   hookable@5.5.3: {}
 
@@ -16212,7 +16209,8 @@ snapshots:
       readable-stream: 2.3.8
       wbuf: 1.7.3
 
-  html-entities@1.4.0: {}
+  html-entities@1.4.0:
+    optional: true
 
   html-minifier-terser@6.1.0:
     dependencies:
@@ -16347,7 +16345,8 @@ snapshots:
 
   ignore@7.0.10: {}
 
-  immediate@3.0.6: {}
+  immediate@3.0.6:
+    optional: true
 
   immutable@5.1.9: {}
 
@@ -16368,6 +16367,7 @@ snapshots:
   imsc@1.1.5:
     dependencies:
       sax: 1.2.1
+    optional: true
 
   imurmurhash@0.1.4: {}
 
@@ -16393,7 +16393,8 @@ snapshots:
 
   ipaddr.js@2.5.0: {}
 
-  is-alphabetical@1.0.4: {}
+  is-alphabetical@1.0.4:
+    optional: true
 
   is-alphabetical@2.0.1: {}
 
@@ -16401,6 +16402,7 @@ snapshots:
     dependencies:
       is-alphabetical: 1.0.4
       is-decimal: 1.0.4
+    optional: true
 
   is-alphanumerical@2.0.1:
     dependencies:
@@ -16453,7 +16455,8 @@ snapshots:
       call-bound: 1.0.4
       has-tostringtag: 1.0.2
 
-  is-decimal@1.0.4: {}
+  is-decimal@1.0.4:
+    optional: true
 
   is-decimal@2.0.1: {}
 
@@ -16737,6 +16740,7 @@ snapshots:
   lie@3.1.1:
     dependencies:
       immediate: 3.0.6
+    optional: true
 
   lightgallery@2.9.0: {}
 
@@ -16807,10 +16811,6 @@ snapshots:
       '@lit/reactive-element': 2.1.2
       lit-html: 3.3.3
 
-  lit-html@2.8.0:
-    dependencies:
-      '@types/trusted-types': 2.0.7
-
   lit-html@3.3.3:
     dependencies:
       '@types/trusted-types': 2.0.7
@@ -16836,6 +16836,7 @@ snapshots:
   localforage@1.10.0:
     dependencies:
       lie: 3.1.1
+    optional: true
 
   locate-path@5.0.0:
     dependencies:
@@ -17155,8 +17156,6 @@ snapshots:
   mdn-data@2.27.1: {}
 
   mdurl@2.1.0: {}
-
-  media-captions@1.0.4: {}
 
   media-typer@0.3.0: {}
 
@@ -17527,6 +17526,7 @@ snapshots:
     dependencies:
       es6-promise: 4.2.8
       events: 3.3.0
+    optional: true
 
   mri@1.2.0: {}
 
@@ -17693,6 +17693,7 @@ snapshots:
   option-validator@2.0.6:
     dependencies:
       kind-of: 6.0.3
+    optional: true
 
   ora@9.4.1:
     dependencies:
@@ -18657,7 +18658,8 @@ snapshots:
       '@parcel/watcher': 2.6.0
     optional: true
 
-  sax@1.2.1: {}
+  sax@1.2.1:
+    optional: true
 
   sax@1.6.1: {}
 
@@ -19425,7 +19427,8 @@ snapshots:
 
   typescript@6.0.3: {}
 
-  ua-parser-js@1.0.41: {}
+  ua-parser-js@1.0.41:
+    optional: true
 
   uc.micro@2.1.0: {}
 
@@ -19517,11 +19520,6 @@ snapshots:
       pathe: 2.0.3
       picomatch: 4.0.7
 
-  unplugin@1.16.1:
-    dependencies:
-      acorn: 8.18.0
-      webpack-virtual-modules: 0.6.2
-
   unplugin@3.4.0(esbuild@0.28.2)(rolldown@1.2.9)(rollup@4.63.4)(vite@8.2.2(@types/node@22.20.4)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.105.0)(sass@1.105.0)(terser@5.51.2)(yaml@2.9.1))(webpack@5.111.1(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(svgo@4.1.0)(uglify-js@3.19.3)):
     dependencies:
       '@jridgewell/remapping': 2.3.5
@@ -19589,14 +19587,6 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
-
-  vidstack@1.15.6:
-    dependencies:
-      '@floating-ui/dom': 1.8.0
-      fscreen: 1.2.0
-      lit-html: 2.8.0
-      media-captions: 1.0.4
-      unplugin: 1.16.1
 
   vite@8.2.2(@types/node@22.20.4)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.105.0)(sass@1.105.0)(terser@5.51.2)(yaml@2.9.1):
     dependencies:

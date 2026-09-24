@@ -10,6 +10,7 @@ export const PLUGIN_CHECKLIST: [name: string, options: string | string[], hint?:
   ["@vuepress/plugin-git", "plugins.git"],
   ["@vuepress/plugin-icon", "plugins.icon"],
   ["@vuepress/plugin-links-check", "markdown.linksCheck"],
+  ["@vuepress/plugin-media", "plugins.media"],
   ["@vuepress/plugin-markdown-hint", ["markdown.alert", "markdown.hint"]],
   [
     "@vuepress/plugin-markdown-image",
