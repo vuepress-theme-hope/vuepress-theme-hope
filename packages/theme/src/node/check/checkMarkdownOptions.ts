@@ -33,6 +33,14 @@ export const KNOWN_THEME_MARKDOWN_OPTIONS = [
   "tasklist",
   "component",
   "vPre",
+  "cjkFriendly",
+
+  // plugin-markdown-field
+  "fields",
+
+  // plugin-markdown-file-tree
+  "fileTree",
+  "codeTree",
 
   // plugin-markdown-hint
   "alert",
@@ -55,10 +63,12 @@ export const KNOWN_THEME_MARKDOWN_OPTIONS = [
   // plugin-markdown-stylize
   "align",
   "attrs",
+  "layout",
   "sup",
   "sub",
   "mark",
   "spoiler",
+  "steps",
   "stylize",
 
   // plugin-markdown-tab

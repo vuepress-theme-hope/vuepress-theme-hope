@@ -118,6 +118,8 @@
     "@vuepress/plugin-links-check": "catalog:vuepress",
     "@vuepress/plugin-markdown-chart": "catalog:vuepress",
     "@vuepress/plugin-markdown-ext": "catalog:vuepress",
+    "@vuepress/plugin-markdown-field": "catalog:vuepress",
+    "@vuepress/plugin-markdown-file-tree": "catalog:vuepress",
     "@vuepress/plugin-markdown-hint": "catalog:vuepress",
     "@vuepress/plugin-markdown-image": "catalog:vuepress",
     "@vuepress/plugin-markdown-include": "catalog:vuepress",

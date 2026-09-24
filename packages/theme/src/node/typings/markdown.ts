@@ -1,6 +1,8 @@
 import type { LinksCheckPluginOptions } from "@vuepress/plugin-links-check";
 import type { MarkdownChartPluginOptions } from "@vuepress/plugin-markdown-chart";
 import type { MarkdownExtPluginOptions } from "@vuepress/plugin-markdown-ext";
+import type { MarkdownFieldPluginOptions } from "@vuepress/plugin-markdown-field";
+import type { MarkdownFileTreePluginOptions } from "@vuepress/plugin-markdown-file-tree";
 import type { MarkdownHintPluginOptions } from "@vuepress/plugin-markdown-hint";
 import type { MarkdownImagePluginOptions } from "@vuepress/plugin-markdown-image";
 import type { MarkdownIncludePluginOptions } from "@vuepress/plugin-markdown-include";
@@ -20,6 +22,8 @@ export interface ThemeMarkdownOptions
   extends
     MarkdownChartPluginOptions,
     MarkdownExtPluginOptions,
+    Pick<MarkdownFieldPluginOptions, "fields">,
+    MarkdownFileTreePluginOptions,
     Pick<MarkdownHintPluginOptions, "alert" | "hint">,
     Pick<MarkdownImagePluginOptions, "figure">,
     Omit<MarkdownStylizePluginOptions, "custom">,
