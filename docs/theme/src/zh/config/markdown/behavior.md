@@ -59,6 +59,15 @@ tag:
 
 是否将文本中的 URL 转换为链接。
 
+## markdown.cjkFriendly
+
+- 类型：`boolean`
+- 默认值：自动
+- 详情：
+  - [@vuepress/plugin-markdown-ext → cjkFriendly][cjkFriendly]
+
+是否启用针对强调标记的 CJK 友好支持。未设置时，会为站点配置中检测到的 CJK 语言（`zh`、`ja`、`ko`）自动启用。
+
 ## markdown.figure
 
 - 类型: `boolean`
@@ -113,6 +122,7 @@ Markdown 代码块高亮器。可以选择 `"prismjs"`、`"shiki"`、`false` 或
 [breaks]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-ext.html#breaks
 [linkify]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-ext.html#linkify
 [gfm]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-ext.html#gfm
+[cjkFriendly]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-ext.html#cjkFriendly
 [figure]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-image.html#figure
 [lazyload]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-image.html#lazyload
 [vPre]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-ext.html#vPre

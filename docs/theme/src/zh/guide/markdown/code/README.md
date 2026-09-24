@@ -16,6 +16,8 @@ tag:
 
 - 代码选项卡：为代码块添加选项卡。
 - 代码演示：在浏览器中显示和运行代码片段。
+- 文件树：展示目录结构。
+- 代码树：将多个文件的代码块与文件树一起展示。
 - 交互演示：嵌入外部演示站点。
 - Kotlin 交互演示：响应式 Kotlin 演示。
 - Vue 交互演示：响应式 Vue 演示。
@@ -157,3 +159,37 @@ const msg = ref("Hello World!");
 :::
 
 - [查看详情](./sandpack.md)
+
+### 文件树
+
+::: file-tree
+
+- .vuepress
+  - config.ts
+- **README.md**
+- pnpm-lock.yaml
+- …
+
+:::
+
+- [查看详情](./file-tree.md)
+
+### 代码树
+
+::: code-tree 项目文件 height="260px" entry="src/index.ts"
+
+```ts title="src/index.ts"
+import { createApp } from "vue";
+
+createApp({}).mount("#app");
+```
+
+```json title="package.json"
+{
+  "name": "demo"
+}
+```
+
+:::
+
+- [查看详情](./code-tree.md)

@@ -99,6 +99,15 @@ Whether to enable legacy image size.
 
 Whether to enable Markdown import support. You can pass in a object to customize behavior.
 
+## markdown.fields
+
+- Type: `boolean`
+- Details:
+  - [Markdown → Fields](../../guide/markdown/content/fields.md)
+  - [@vuepress/plugin-markdown-field → fields][fields]
+
+Whether to enable fields support.
+
 ## markdown.tabs
 
 - Type: `boolean`
@@ -275,6 +284,7 @@ Controls `@vuepress/plugin-revealjs` which provides presentation support. You ca
 [obsidianSize]: https://ecosystem.vuejs.press/plugins/markdown/markdown-image.html#obsidianSize
 [legacySize]: https://ecosystem.vuejs.press/plugins/markdown/markdown-image.html#legacySize
 [include]: https://ecosystem.vuejs.press/plugins/markdown/markdown-include.html
+[fields]: https://ecosystem.vuejs.press/plugins/markdown/markdown-field.html#fields
 [math]: https://ecosystem.vuejs.press/plugins/markdown/markdown-math.html
 [revealjs]: https://ecosystem.vuejs.press/plugins/markdown/revealjs/#options
 [tabs]: https://ecosystem.vuejs.press/plugins/markdown/markdown-tab.html#tabs

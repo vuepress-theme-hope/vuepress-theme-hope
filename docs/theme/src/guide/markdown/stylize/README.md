@@ -17,9 +17,11 @@ The theme provides the following features to stylize your content:
 - Hint Container: Stylized hint
 - Align: Customize content alignment
 - Attrs: Adding attrs to Markdown contents
+- Layout: Flexbox, grid and multi-column layouts
 - Mark: Highlight contents
 - Superscript and Subscript
 - Spoiler: Hide spoiler content
+- Steps: Show content as progressive steps
 - Stylize: Customizable token stylizer
 
 <!-- more -->
@@ -58,6 +60,21 @@ A **word**{#word} having id.
 
 - [View Detail](./attrs.md)
 
+### Layout
+
+@flexs gap-4 items-center
+@flex flex-1
+
+I grow to fill the available space.
+
+@flex
+
+I take my natural width.
+
+@end
+
+- [View Detail](./layout.md)
+
 ### Mark
 
 You can mark ==important words==.
@@ -69,6 +86,20 @@ You can mark ==important words==.
 VuePress Theme Hope is !!powerful!!.
 
 - [View Detail](./spoiler.md)
+
+### Steps
+
+::: steps
+
+1. Create a project
+
+2. Install the dependencies
+
+3. Start the dev server
+
+:::
+
+- [View Detail](./steps.md)
 
 ### Stylize
 

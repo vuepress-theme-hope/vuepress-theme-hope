@@ -16,6 +16,8 @@ The theme provides the following features to enhance coding:
 
 - Code Tabs: Add tabs to your code block.
 - Code Demo: Display and run code snippets in browser.
+- File Tree: Display a directory structure.
+- Code Tree: Display the code blocks of several files together with a file tree.
 - Playground: Embed external playground site.
 - Kotlin Playground: Reactive kotlin playground.
 - Vue Playground: Reactive vue playground.
@@ -157,3 +159,37 @@ const msg = ref("Hello World!");
 :::
 
 - [View Detail](./sandpack.md)
+
+### File Tree
+
+::: file-tree
+
+- .vuepress
+  - config.ts
+- **README.md**
+- pnpm-lock.yaml
+- …
+
+:::
+
+- [View Detail](./file-tree.md)
+
+### Code Tree
+
+::: code-tree Project Files height="260px" entry="src/index.ts"
+
+```ts title="src/index.ts"
+import { createApp } from "vue";
+
+createApp({}).mount("#app");
+```
+
+```json title="package.json"
+{
+  "name": "demo"
+}
+```
+
+:::
+
+- [View Detail](./code-tree.md)

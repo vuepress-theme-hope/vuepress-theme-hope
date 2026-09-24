@@ -49,6 +49,8 @@ catalogs:
     "@vuepress/plugin-links-check": 2.0.0-rc.135
     "@vuepress/plugin-markdown-chart": 2.0.0-rc.135
     "@vuepress/plugin-markdown-ext": 2.0.0-rc.135
+    "@vuepress/plugin-markdown-field": 2.0.0-rc.135
+    "@vuepress/plugin-markdown-file-tree": 2.0.0-rc.135
     "@vuepress/plugin-markdown-hint": 2.0.0-rc.135
     "@vuepress/plugin-markdown-image": 2.0.0-rc.135
     "@vuepress/plugin-markdown-include": 2.0.0-rc.135

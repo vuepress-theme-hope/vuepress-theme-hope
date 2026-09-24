@@ -6,6 +6,8 @@ import { iconPlugin } from "@vuepress/plugin-icon";
 import { linksCheckPlugin } from "@vuepress/plugin-links-check";
 import { markdownChartPlugin } from "@vuepress/plugin-markdown-chart";
 import { markdownExtPlugin } from "@vuepress/plugin-markdown-ext";
+import { markdownFieldPlugin } from "@vuepress/plugin-markdown-field";
+import { markdownFileTreePlugin } from "@vuepress/plugin-markdown-file-tree";
 import { markdownHintPlugin } from "@vuepress/plugin-markdown-hint";
 import { markdownIncludePlugin } from "@vuepress/plugin-markdown-include";
 import { markdownMathPlugin } from "@vuepress/plugin-markdown-math";
@@ -61,7 +63,16 @@ export const getPlugins = (
 ): PluginConfig => {
   checkPluginsOptions(pluginsOptions);
 
-  const { alert = false, hint = true, include = true, linksCheck, math } = markdownOptions;
+  const {
+    alert = false,
+    codeTree,
+    fields,
+    fileTree,
+    hint = true,
+    include = true,
+    linksCheck,
+    math,
+  } = markdownOptions;
   const { backToTop, copyCode, icon, photoSwipe } = pluginsOptions;
 
   return [
@@ -74,6 +85,10 @@ export const getPlugins = (
     markdownChartPlugin(markdownOptions),
     // @vuepress/plugin-markdown-ext
     markdownExtPlugin(markdownOptions),
+    // @vuepress/plugin-markdown-field
+    markdownFieldPlugin({ fields }),
+    // @vuepress/plugin-markdown-file-tree
+    markdownFileTreePlugin({ codeTree, fileTree }),
     // @vuepress/plugin-markdown-hint
     alert || hint ? markdownHintPlugin({ alert, hint }) : null,
     // @vuepress/plugin-markdown-include

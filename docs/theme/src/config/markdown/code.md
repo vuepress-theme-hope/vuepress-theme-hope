@@ -21,6 +21,38 @@ The following options adds new code feature in Markdown, and can be set **under 
 
 Whether to enable tabs support.
 
+## markdown.fileTree
+
+- Type: `boolean`
+- Details:
+  - [Markdown → File Tree](../../guide/markdown/code/file-tree.md)
+  - [@vuepress/plugin-markdown-file-tree → fileTree][fileTree]
+
+Whether to enable file tree support.
+
+## markdown.codeTree
+
+- Type: `boolean | MarkdownCodeTreePluginOptions`
+
+  ```ts
+  interface MarkdownCodeTreePluginOptions {
+    /**
+     * Default height of the code tree
+     *
+     * Accepts a CSS length or a number in pixels.
+     *
+     * @default "320px"
+     */
+    height?: number | string;
+  }
+  ```
+
+- Details:
+  - [Markdown → Code Tree](../../guide/markdown/code/code-tree.md)
+  - [@vuepress/plugin-markdown-file-tree → codeTree][codeTree]
+
+Whether to enable code tree support. You can also pass an object to customize the default height.
+
 ## markdown.preview
 
 - Type: `boolean`
@@ -158,6 +190,15 @@ Whether to enable preview support.
 
 Playground options.
 
+## markdown.kotlinPlayground
+
+- Type: `boolean`
+- Default: `false`
+- Details:
+  - [Markdown → Kotlin Playground](../../guide/markdown/code/kotlin-playground.md)
+
+Whether to enable Kotlin playground support.
+
 ## markdown.vuePlayground
 
 - Type: `boolean`
@@ -233,5 +274,7 @@ CodePen editor layout
 
 CodePen editor status
 
+[fileTree]: https://ecosystem.vuejs.press/plugins/markdown/markdown-file-tree.html#filetree
+[codeTree]: https://ecosystem.vuejs.press/plugins/markdown/markdown-file-tree.html#codetree
 [codeTabs]: https://ecosystem.vuejs.press/plugins/markdown/markdown-tab.html#codeTabs
 [preview]: https://ecosystem.vuejs.press/plugins/markdown/markdown-preview.html

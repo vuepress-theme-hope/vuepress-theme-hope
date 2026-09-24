@@ -11,6 +11,25 @@ tag:
 
 The following options adds new stylize feature, and can be set **under `markdown` property** in theme options.
 
+## markdown.hint
+
+- Type: `boolean`
+- Default: `true`
+- Details:
+  - [Markdown → Hint box](../../guide/markdown/stylize/hint.md)
+  - [@vuepress/plugin-markdown-hint → hint][hint]
+
+Whether to enable hint containers, including important, info, note, tip, warning, caution and details.
+
+## markdown.alert
+
+- Type: `boolean`
+- Details:
+  - [Markdown → GFM alert](../../guide/markdown/stylize/alert.md)
+  - [@vuepress/plugin-markdown-hint → alert][alert]
+
+Whether to enable GFM alerts.
+
 ## markdown.align
 
 - Type: `boolean`
@@ -68,6 +87,15 @@ Whether to enable custom align.
 
 Whether to enable attribute customize support.
 
+## markdown.layout
+
+- Type: `boolean`
+- Details:
+  - [Markdown → Layout](../../guide/markdown/stylize/layout.md)
+  - [@vuepress/plugin-markdown-stylize → layout][layout]
+
+Whether to enable layout support.
+
 ## markdown.mark
 
 - Type: `boolean`
@@ -107,6 +135,15 @@ Whether to enable subscript support.
   - [@vuepress/plugin-markdown-stylize → spoiler][spoiler]
 
 Whether to enable spoiler support.
+
+## markdown.steps
+
+- Type: `boolean`
+- Details:
+  - [Markdown → Steps](../../guide/markdown/stylize/steps.md)
+  - [@vuepress/plugin-markdown-stylize → steps][steps]
+
+Whether to enable steps support.
 
 ## markdown.stylize
 
@@ -153,9 +190,13 @@ Whether to enable spoiler support.
 Stylize inline tokens to create snippet you want.
 
 [align]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html#align
+[alert]: https://ecosystem.vuejs.press/plugins/markdown/markdown-hint.html#alert
+[hint]: https://ecosystem.vuejs.press/plugins/markdown/markdown-hint.html#hint
 [attrs]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html#attrs
+[layout]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html#layout
 [mark]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html#mark
 [sup]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html#sup
 [sub]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html#sub
 [spoiler]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html#spoiler
+[steps]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html#steps
 [stylize]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html#custom
