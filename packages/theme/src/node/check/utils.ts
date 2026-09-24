@@ -26,6 +26,7 @@ export const PLUGIN_CHECKLIST: [name: string, options: string | string[], hint?:
   ["@vuepress/plugin-meilisearch", "plugins.meilisearch"],
   ["@vuepress/plugin-notice", "plugins.notice"],
   ["@vuepress/plugin-nprogress", "plugins.nprogress"],
+  ["@vuepress/plugin-orama", "plugins.orama"],
   ["@vuepress/plugin-photo-swipe", "plugins.photoSwipe"],
   ["@vuepress/plugin-prismjs", 'markdown.highlighter: { type: "prismjs", ... your options }'],
   ["@vuepress/plugin-pwa", "plugins.pwa"],

@@ -1,6 +1,7 @@
 import { getFullLocaleConfig, isPlainObject, keys, startsWith } from "@vuepress/helper";
 import type { DocSearchPluginOptions } from "@vuepress/plugin-docsearch";
 import type { MeiliSearchPluginOptions } from "@vuepress/plugin-meilisearch";
+import type { CustomFieldOptions, OramaPluginOptions } from "@vuepress/plugin-orama";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
 import type { SlimSearchPluginOptions } from "@vuepress/plugin-slimsearch";
 import type { App, Page, Plugin } from "vuepress/core";
@@ -14,6 +15,7 @@ import { logMissingPkg } from "./utils.js";
 
 let docsearchPlugin: ((options: DocSearchPluginOptions) => Plugin) | null = null;
 let meilisearchPlugin: ((options: MeiliSearchPluginOptions) => Plugin) | null = null;
+let oramaPlugin: ((options: OramaPluginOptions) => Plugin) | null = null;
 let searchPlugin: ((options: SearchPluginOptions) => Plugin) | null = null;
 let slimsearchPlugin: ((options: SlimSearchPluginOptions) => Plugin) | null = null;
 
@@ -25,6 +27,12 @@ try {
 
 try {
   ({ meilisearchPlugin } = await import("@vuepress/plugin-meilisearch"));
+} catch {
+  // Do nothing
+}
+
+try {
+  ({ oramaPlugin } = await import("@vuepress/plugin-orama"));
 } catch {
   // Do nothing
 }
@@ -42,8 +50,8 @@ try {
 }
 
 /**
- * Resolve options for `@vuepress/plugin-docsearch`, `@vuepress/plugin-search` and
- * `@vuepress/plugin-slimsearch`
+ * Resolve options for `@vuepress/plugin-docsearch`, `@vuepress/plugin-meilisearch`,
+ * `@vuepress/plugin-orama`, `@vuepress/plugin-search` and `@vuepress/plugin-slimsearch`
  *
  * @param app VuePress app instance
  * @param themeData Theme data
@@ -58,6 +66,31 @@ export const getSearchPlugin = (
   const encryptedPaths = keys(themeData.encrypt.config ?? {});
   const isPageEncrypted = ({ path }: Page): boolean =>
     encryptedPaths.some((key) => startsWith(decodeURI(path), key));
+
+  // Add supports for category and tags
+  const customFields: CustomFieldOptions[] = [
+    {
+      getter: (page: Page<Record<never, never>, ThemeBasePageFrontmatter>) =>
+        page.frontmatter.category,
+      formatter: getFullLocaleConfig({
+        app,
+        default: themeLocaleInfo.map(([langs, { blogLocales }]) => [
+          langs,
+          `${blogLocales.category}: $content`,
+        ]),
+      }),
+    },
+    {
+      getter: (page: Page<Record<never, never>, ThemeBasePageFrontmatter>) => page.frontmatter.tag,
+      formatter: getFullLocaleConfig({
+        app,
+        default: themeLocaleInfo.map(([langs, { blogLocales }]) => [
+          langs,
+          `${blogLocales.tag}: $content`,
+        ]),
+      }),
+    },
+  ];
 
   if (isPlainObject(plugins.docsearch)) {
     if (!docsearchPlugin) {
@@ -79,6 +112,8 @@ export const getSearchPlugin = (
     return meilisearchPlugin(plugins.meilisearch);
   }
 
+  // SlimSearch takes the priority over Orama, as it ships a much smaller index
+  // and worker bundle.
   if (plugins.slimsearch) {
     if (!slimsearchPlugin) {
       logMissingPkg("@vuepress/plugin-slimsearch");
@@ -88,33 +123,24 @@ export const getSearchPlugin = (
 
     return slimsearchPlugin({
       indexContent: true,
-      // Add supports for category and tags
-      customFields: [
-        {
-          getter: (page: Page<Record<never, never>, ThemeBasePageFrontmatter>) =>
-            page.frontmatter.category,
-          formatter: getFullLocaleConfig({
-            app,
-            default: themeLocaleInfo.map(([langs, { blogLocales }]) => [
-              langs,
-              `${blogLocales.category}: $content`,
-            ]),
-          }),
-        },
-        {
-          getter: (page: Page<Record<never, never>, ThemeBasePageFrontmatter>) =>
-            page.frontmatter.tag,
-          formatter: getFullLocaleConfig({
-            app,
-            default: themeLocaleInfo.map(([langs, { blogLocales }]) => [
-              langs,
-              `${blogLocales.tag}: $content`,
-            ]),
-          }),
-        },
-      ],
+      customFields,
       filter: (page) => !isPageEncrypted(page),
       ...(isPlainObject(plugins.slimsearch) ? plugins.slimsearch : {}),
+    });
+  }
+
+  if (plugins.orama) {
+    if (!oramaPlugin) {
+      logMissingPkg("@vuepress/plugin-orama");
+
+      return null;
+    }
+
+    return oramaPlugin({
+      indexContent: true,
+      customFields,
+      filter: (page) => !isPageEncrypted(page),
+      ...(isPlainObject(plugins.orama) ? plugins.orama : {}),
     });
   }
 

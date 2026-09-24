@@ -61,6 +61,7 @@ catalogs:
     "@vuepress/plugin-meilisearch": 2.0.0-rc.135
     "@vuepress/plugin-notice": 2.0.0-rc.135
     "@vuepress/plugin-nprogress": 2.0.0-rc.135
+    "@vuepress/plugin-orama": 2.0.0-rc.135
     "@vuepress/plugin-photo-swipe": 2.0.0-rc.135
     "@vuepress/plugin-prismjs": 2.0.0-rc.135
     "@vuepress/plugin-pwa": 2.0.0-rc.135
