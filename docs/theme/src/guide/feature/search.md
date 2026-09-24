@@ -8,7 +8,7 @@ tag:
   - Search
 ---
 
-The theme adds built-in support for [`@vuepress/plugin-docsearch`][docsearch], [@vuepress/plugin-meilisearch][meilisearch], [@vuepress/plugin-slimsearch][slimsearch] and [`@vuepress/plugin-search`][search]. Just install the plugin you want and config it, you will get a search box in navbar.
+The theme adds built-in support for [`@vuepress/plugin-docsearch`][docsearch], [@vuepress/plugin-meilisearch][meilisearch], [@vuepress/plugin-orama][orama], [@vuepress/plugin-slimsearch][slimsearch] and [`@vuepress/plugin-search`][search]. Just install the plugin you want and config it, you will get a search box in navbar.
 
 <!-- more -->
 
@@ -239,6 +239,55 @@ See [plugin docs][docsearch] for how to use docsearch plugin and its available o
 ::: info More
 
 See [plugin docs][slimsearch] for available options.
+
+:::
+
+## Use `@vuepress/plugin-orama`
+
+1. Install `@vuepress/plugin-orama`
+
+   ::: code-tabs#shell
+
+   @tab pnpm
+
+   ```bash
+   pnpm add -D @vuepress/plugin-orama@next
+   ```
+
+   @tab yarn
+
+   ```bash
+   yarn add -D @vuepress/plugin-orama@next
+   ```
+
+   @tab npm
+
+   ```bash
+   npm i -D @vuepress/plugin-orama@next
+   ```
+
+   :::
+
+1. Customize `plugins.orama` in theme options.
+
+   You can set `plugins.orama` to `true` to enable it directly, or set it to an object to customize the plugin.
+
+   ```ts twoslash {5-8} title=".vuepress/theme.ts"
+   import { hopeTheme } from "vuepress-theme-hope";
+
+   export default hopeTheme({
+     plugins: {
+       orama: {
+         // plugin options here
+       },
+       // or orama: true,
+     },
+   });
+   ```
+
+::: info More
+
+See [plugin docs][orama] for available options.
 
 :::
 
@@ -587,5 +636,6 @@ See [plugin docs][search] for available options.
 
 [docsearch]: https://ecosystem.vuejs.press/plugins/search/docsearch.html
 [meilisearch]: https://ecosystem.vuejs.press/plugins/search/meilisearch.html
+[orama]: https://ecosystem.vuejs.press/plugins/search/orama.html
 [search]: https://ecosystem.vuejs.press/plugins/search/search.html
 [slimsearch]: https://ecosystem.vuejs.press/plugins/search/slimsearch.html
