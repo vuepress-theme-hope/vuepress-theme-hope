@@ -112,21 +112,8 @@ export const getSearchPlugin = (
     return meilisearchPlugin(plugins.meilisearch);
   }
 
-  if (plugins.orama) {
-    if (!oramaPlugin) {
-      logMissingPkg("@vuepress/plugin-orama");
-
-      return null;
-    }
-
-    return oramaPlugin({
-      indexContent: true,
-      customFields,
-      filter: (page) => !isPageEncrypted(page),
-      ...(isPlainObject(plugins.orama) ? plugins.orama : {}),
-    });
-  }
-
+  // SlimSearch takes the priority over Orama, as it ships a much smaller index
+  // and worker bundle.
   if (plugins.slimsearch) {
     if (!slimsearchPlugin) {
       logMissingPkg("@vuepress/plugin-slimsearch");
@@ -139,6 +126,21 @@ export const getSearchPlugin = (
       customFields,
       filter: (page) => !isPageEncrypted(page),
       ...(isPlainObject(plugins.slimsearch) ? plugins.slimsearch : {}),
+    });
+  }
+
+  if (plugins.orama) {
+    if (!oramaPlugin) {
+      logMissingPkg("@vuepress/plugin-orama");
+
+      return null;
+    }
+
+    return oramaPlugin({
+      indexContent: true,
+      customFields,
+      filter: (page) => !isPageEncrypted(page),
+      ...(isPlainObject(plugins.orama) ? plugins.orama : {}),
     });
   }
 

@@ -8,7 +8,7 @@ tag:
   - Search
 ---
 
-The theme adds built-in support for [`@vuepress/plugin-docsearch`][docsearch], [@vuepress/plugin-meilisearch][meilisearch], [@vuepress/plugin-orama][orama], [@vuepress/plugin-slimsearch][slimsearch] and [`@vuepress/plugin-search`][search]. Just install the plugin you want and config it, you will get a search box in navbar.
+The theme adds built-in support for [`@vuepress/plugin-docsearch`][docsearch], [@vuepress/plugin-meilisearch][meilisearch], [@vuepress/plugin-slimsearch][slimsearch], [@vuepress/plugin-orama][orama] and [`@vuepress/plugin-search`][search]. Just install the plugin you want and config it, you will get a search box in navbar.
 
 <!-- more -->
 

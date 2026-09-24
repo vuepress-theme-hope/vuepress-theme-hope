@@ -8,7 +8,7 @@ tag:
   - 搜索
 ---
 
-主题对 [`@vuepress/plugin-docsearch`][docsearch]、[@vuepress/plugin-meilisearch][meilisearch]、[@vuepress/plugin-orama][orama]、[@vuepress/plugin-slimsearch][slimsearch] 和 [`@vuepress/plugin-search`][search] 提供了内置支持。你只需要安装并配置所需的搜索插件，就能够在导航栏获得一个搜索框。
+主题对 [`@vuepress/plugin-docsearch`][docsearch]、[@vuepress/plugin-meilisearch][meilisearch]、[@vuepress/plugin-slimsearch][slimsearch]、[@vuepress/plugin-orama][orama] 和 [`@vuepress/plugin-search`][search] 提供了内置支持。你只需要安装并配置所需的搜索插件，就能够在导航栏获得一个搜索框。
 
 <!-- more -->
 
