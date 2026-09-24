@@ -126,11 +126,8 @@ export const theme = (
           }),
 
       icon: {
-        assets: [
-          "https://theme-hope-assets.vuejs.press/fontawesome/js/fontawesome.min.js",
-          "https://theme-hope-assets.vuejs.press/fontawesome/js/solid.min.js",
-          "https://theme-hope-assets.vuejs.press/fontawesome/js/brands.min.js",
-        ],
+        prefix: "fa7-solid:",
+        offline: true,
       },
 
       redirect: { switchLocale: "modal" },

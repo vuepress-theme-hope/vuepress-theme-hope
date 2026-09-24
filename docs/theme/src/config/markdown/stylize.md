@@ -1,6 +1,6 @@
 ---
 title: Markdown Stylize Config
-icon: b:markdown
+icon: fa7-brands:markdown
 order: 3
 category:
   - Config

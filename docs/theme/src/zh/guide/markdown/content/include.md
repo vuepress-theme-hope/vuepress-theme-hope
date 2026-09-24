@@ -1,6 +1,6 @@
 ---
 title: 导入文件
-icon: b:markdown
+icon: fa7-brands:markdown
 category:
   - Markdown
 tag:

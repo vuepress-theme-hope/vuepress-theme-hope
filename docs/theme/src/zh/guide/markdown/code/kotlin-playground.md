@@ -1,6 +1,6 @@
 ---
 title: Kotlin 交互演示
-icon: b:kickstarter
+icon: fa7-brands:kickstarter
 category:
   - Markdown
 tag:

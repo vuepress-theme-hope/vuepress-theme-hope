@@ -1,6 +1,6 @@
 ---
 title: 内置 Markdown 拓展
-icon: b:markdown
+icon: fa7-brands:markdown
 order: 2
 category:
   - 教程

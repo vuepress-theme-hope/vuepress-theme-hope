@@ -143,7 +143,7 @@ highlights:
         link: ./guide/markdown/grammar/math.html
 
       - title: Include snippet Support
-        icon: b:markdown
+        icon: fa7-brands:markdown
         details: split your docs with different parts and import them in Markdown
         link: ./guide/markdown/content/include.html
 
@@ -153,12 +153,12 @@ highlights:
         link: ./guide/markdown/code/playground.html
 
       - title: Kotlin playground Support
-        icon: b:kickstarter
+        icon: fa7-brands:kickstarter
         details: Reactive kotlin playground
         link: ./guide/markdown/code/kotlin-playground.html
 
       - title: Vue playground Support
-        icon: b:vuejs
+        icon: fa7-brands:vuejs
         details: Show living vue component in playground
         link: ./guide/markdown/code/vue-playground.html
 
@@ -210,7 +210,7 @@ highlights:
         link: ./guide/layout/navbar.html
 
       - title: Sidebar
-        icon: fas fa-window-maximize fa-rotate-270
+        icon: lucide:panel-left
         details: Generate sidebar based on page headings and file structure
         link: ./guide/layout/sidebar.html
 

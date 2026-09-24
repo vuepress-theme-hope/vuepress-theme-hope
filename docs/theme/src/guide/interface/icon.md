@@ -103,7 +103,7 @@ Use `::icon decorators... =size /color key=value complex-key="complex value"...:
 ::: preview Demo
 
 ::home /blue::
-::b:apple =2rem vertical-align=text-bottom::
+::fa7-brands:apple =2rem vertical-align=text-bottom::
 
 :::
 
@@ -140,6 +140,32 @@ You can set icon in multiple options:
 - Sidebar: set `icon` option in sidebar items
 
 - HomePage: set `icon` option in feature items
+
+### Offline Deployment
+
+If your site is deployed without internet access, set `plugins.icon.offline` to `true` to bundle the icons locally instead of loading them from a CDN or the Iconify API.
+
+The theme enables the `scan` option of the icon plugin for you, so the icons used in the frontmatter of pages (including `actions`, `features`, `highlights`, `projects` and `medias`) and in the theme config (including navbar, sidebar and blog medias) are bundled as well. Icons rendered by custom components still need to be listed with the `scan` option of your own, see [plugin docs][@vuepress/plugin-icon] for details.
+
+```ts twoslash {6-9} title=".vuepress/theme.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default hopeTheme({
+  plugins: {
+    icon: {
+      // prefix of the icon set you use mostly
+      prefix: "fa7-solid:",
+      offline: true,
+    },
+  },
+});
+```
+
+::: important
+
+When you enable the offline mode, install `iconify-icon` and the `@iconify-json/<prefix>` packages of the icon sets you use, as they are bundled instead of being loaded from the CDN or the Iconify API.
+
+:::
 
 ### Available Icons
 

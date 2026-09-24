@@ -1,6 +1,6 @@
 ---
 title: Vue 交互演示
-icon: b:vuejs
+icon: fa7-brands:vuejs
 category:
   - Markdown
 tag:

@@ -20,6 +20,9 @@
   },
   "dependencies": {
     "@docs/shared": "workspace:*",
+    "@iconify-json/fa7-brands": "^1.2.4",
+    "@iconify-json/fa7-solid": "^1.2.5",
+    "@iconify-json/lucide": "^1.2.136",
     "@types/katex": "0.16.8",
     "@vue/repl": "4.7.2",
     "@vuepress/bundler-vite": "catalog:vuepress",
@@ -34,6 +37,7 @@
     "artplayer": "5.4.0",
     "echarts-wordcloud": "2.1.0",
     "flowchart.ts": "3.0.1",
+    "iconify-icon": "^3.0.3",
     "katex": "0.18.7",
     "kotlin-playground": "1.34.0",
     "markmap-lib": "catalog:",

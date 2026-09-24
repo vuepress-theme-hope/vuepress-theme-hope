@@ -1,6 +1,6 @@
 ---
 title: Footer
-icon: fas fa-window-maximize fa-rotate-180
+icon: lucide:panel-bottom
 order: 5
 category:
   - Layout

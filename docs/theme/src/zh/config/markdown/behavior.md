@@ -1,6 +1,6 @@
 ---
 title: Markdown 行为配置
-icon: b:markdown
+icon: fa7-brands:markdown
 order: 1
 category:
   - 配置

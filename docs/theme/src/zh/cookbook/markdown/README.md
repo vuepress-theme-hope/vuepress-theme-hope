@@ -1,6 +1,6 @@
 ---
 title: Markdown 介绍
-icon: b:markdown
+icon: fa7-brands:markdown
 dir:
   collapsible: false
   order: 1

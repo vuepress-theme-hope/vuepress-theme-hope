@@ -1,6 +1,6 @@
 ---
 title: Builtin Markdown features
-icon: b:markdown
+icon: fa7-brands:markdown
 order: 2
 category:
   - Cookbook
