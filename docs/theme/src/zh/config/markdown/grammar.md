@@ -101,6 +101,15 @@ tag:
 
 是否启用 Markdown 导入支持。你可以传递一个选项来自定义行为。
 
+## markdown.fields
+
+- 类型：`boolean`
+- 详情：
+  - [Markdown → 字段](../../guide/markdown/content/fields.md)
+  - [@vuepress/plugin-markdown-field → fields][fields]
+
+是否启用字段支持。
+
 ## markdown.tabs
 
 - 类型: `boolean`
@@ -277,6 +286,7 @@ tag:
 [obsidianSize]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-image.html#obsidianSize
 [legacySize]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-image.html#legacySize
 [include]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-include.html
+[fields]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-field.html#fields
 [math]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-math.html
 [revealjs]: https://ecosystem.vuejs.press/zh/plugins/markdown/revealjs/#options
 [tabs]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-tab.html#tabs

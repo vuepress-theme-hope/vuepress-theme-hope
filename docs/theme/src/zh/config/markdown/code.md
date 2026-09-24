@@ -21,6 +21,38 @@ tag:
 
 是否启用选项卡支持。
 
+## markdown.fileTree
+
+- 类型：`boolean`
+- 详情：
+  - [Markdown → 文件树](../../guide/markdown/code/file-tree.md)
+  - [@vuepress/plugin-markdown-file-tree → fileTree][fileTree]
+
+是否启用文件树支持。
+
+## markdown.codeTree
+
+- 类型：`boolean | MarkdownCodeTreePluginOptions`
+
+  ```ts
+  interface MarkdownCodeTreePluginOptions {
+    /**
+     * 代码树的默认高度
+     *
+     * 接受 CSS 长度或像素数值。
+     *
+     * @default "320px"
+     */
+    height?: number | string;
+  }
+  ```
+
+- 详情：
+  - [Markdown → 代码树](../../guide/markdown/code/code-tree.md)
+  - [@vuepress/plugin-markdown-file-tree → codeTree][codeTree]
+
+是否启用代码树支持。你也可以传入对象以自定义默认高度。
+
 ## markdown.preview
 
 - 类型: `boolean`
@@ -160,6 +192,15 @@ tag:
 
 交互演示选项。
 
+## markdown.kotlinPlayground
+
+- 类型: `boolean`
+- 默认值: `false`
+- 详情:
+  - [Markdown → Kotlin 交互演示](../../guide/markdown/code/kotlin-playground.md)
+
+是否启用 Kotlin 交互演示支持。
+
 ## markdown.vuePlayground
 
 - 类型: `boolean`
@@ -235,12 +276,7 @@ CodePen 编辑器布局
 
 CodePen 编辑器状态
 
-### markdown.demo.editors
-
-- 类型: `string`
-- 默认值: `"101"`
-
-CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第三位代表演示页面。
-
+[fileTree]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-file-tree.html#filetree
+[codeTree]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-file-tree.html#codetree
 [codeTabs]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-tab.html#codeTabs
 [preview]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-preview.html

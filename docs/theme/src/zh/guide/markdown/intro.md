@@ -11,7 +11,10 @@ tag:
 
 除了 VuePress 本身新增了一些 Markdown 语法外，`vuepress-theme-hope` 通过以下插件，在 Markdown 中启用了更多的语法与功能：
 
+- [@vuepress/plugin-markdown-chart][markdown-chart]
 - [@vuepress/plugin-markdown-ext][markdown-ext]
+- [@vuepress/plugin-markdown-field][markdown-field]
+- [@vuepress/plugin-markdown-file-tree][markdown-file-tree]
 - [@vuepress/plugin-markdown-hint][markdown-hint]
 - [@vuepress/plugin-markdown-image][markdown-image]
 - [@vuepress/plugin-markdown-include][markdown-include]
@@ -19,7 +22,7 @@ tag:
 - [@vuepress/plugin-markdown-preview][markdown-preview]
 - [@vuepress/plugin-markdown-stylize][markdown-stylize]
 - [@vuepress/plugin-markdown-tab][markdown-tab]
-- [@vuepress/plugin-link-check][link-check]
+- [@vuepress/plugin-links-check][links-check]
 - [@vuepress/plugin-revealjs][revealjs]
 - <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink>
 
@@ -41,7 +44,10 @@ VuePress 自带的 GitHub 风格的表格，Emoji、TOC 都是开箱即用的。
 
 :::
 
+[markdown-chart]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-chart/
 [markdown-ext]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-ext.html
+[markdown-field]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-field.html
+[markdown-file-tree]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-file-tree.html
 [markdown-image]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-image.html
 [markdown-include]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-include.html
 [markdown-hint]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-hint.html
@@ -49,5 +55,5 @@ VuePress 自带的 GitHub 风格的表格，Emoji、TOC 都是开箱即用的。
 [markdown-preview]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-preview.html
 [markdown-stylize]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html
 [markdown-tab]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-tab.html
-[link-check]: https://ecosystem.vuejs.press/zh/plugins/markdown/link-check.html
+[links-check]: https://ecosystem.vuejs.press/zh/plugins/markdown/links-check.html
 [revealjs]: https://ecosystem.vuejs.press/zh/plugins/markdown/revealjs/

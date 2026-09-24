@@ -88,8 +88,11 @@ export default theme(
       align: true,
       attrs: true,
       codeTabs: true,
+      codeTree: true,
       component: true,
+      fields: true,
       figure: true,
+      fileTree: true,
       gfm: true,
       imgLazyload: true,
       imgMark: true,
@@ -110,6 +113,7 @@ export default theme(
         },
         resolveLinkPath: false,
       },
+      layout: true,
       math: true,
       mark: true,
       preview: true,
@@ -131,6 +135,7 @@ export default theme(
         ],
       },
       spoiler: true,
+      steps: true,
       stylize: [
         {
           matcher: "Recommended",

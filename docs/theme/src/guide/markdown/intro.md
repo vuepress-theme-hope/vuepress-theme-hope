@@ -11,7 +11,10 @@ tag:
 
 Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables more syntax and features in Markdown via the following plugins:
 
+- [@vuepress/plugin-markdown-chart][markdown-chart]
 - [@vuepress/plugin-markdown-ext][markdown-ext]
+- [@vuepress/plugin-markdown-field][markdown-field]
+- [@vuepress/plugin-markdown-file-tree][markdown-file-tree]
 - [@vuepress/plugin-markdown-hint][markdown-hint]
 - [@vuepress/plugin-markdown-image][markdown-image]
 - [@vuepress/plugin-markdown-include][markdown-include]
@@ -19,7 +22,7 @@ Besides Markdown syntaxes VuePress itself adds, `vuepress-theme-hope` enables mo
 - [@vuepress/plugin-markdown-preview][markdown-preview]
 - [@vuepress/plugin-markdown-stylize][markdown-stylize]
 - [@vuepress/plugin-markdown-tab][markdown-tab]
-- [@vuepress/plugin-link-check][link-check]
+- [@vuepress/plugin-links-check][links-check]
 - [@vuepress/plugin-revealjs][revealjs]
 - <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink>
 
@@ -41,7 +44,10 @@ Don't worry about the size of your site. If you don't enable related features, t
 
 :::
 
+[markdown-chart]: https://ecosystem.vuejs.press/plugins/markdown/markdown-chart/
 [markdown-ext]: https://ecosystem.vuejs.press/plugins/markdown/markdown-ext.html
+[markdown-field]: https://ecosystem.vuejs.press/plugins/markdown/markdown-field.html
+[markdown-file-tree]: https://ecosystem.vuejs.press/plugins/markdown/markdown-file-tree.html
 [markdown-image]: https://ecosystem.vuejs.press/plugins/markdown/markdown-image.html
 [markdown-include]: https://ecosystem.vuejs.press/plugins/markdown/markdown-include.html
 [markdown-hint]: https://ecosystem.vuejs.press/plugins/markdown/markdown-hint.html
@@ -49,5 +55,5 @@ Don't worry about the size of your site. If you don't enable related features, t
 [markdown-preview]: https://ecosystem.vuejs.press/plugins/markdown/markdown-preview.html
 [markdown-stylize]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html
 [markdown-tab]: https://ecosystem.vuejs.press/plugins/markdown/markdown-tab.html
-[link-check]: https://ecosystem.vuejs.press/plugins/markdown/link-check.html
+[links-check]: https://ecosystem.vuejs.press/plugins/markdown/links-check.html
 [revealjs]: https://ecosystem.vuejs.press/plugins/markdown/revealjs/

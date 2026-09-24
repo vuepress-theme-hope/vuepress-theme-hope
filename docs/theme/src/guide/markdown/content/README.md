@@ -17,6 +17,7 @@ The theme provides the following ways to enrich your content.
 
 - Footnotes: Supplementary explanation of key content
 - Import files: Easily split or reuse files
+- Fields: Describe fields of an object
 - Presentation: Show content
 
 <!-- more -->
@@ -93,3 +94,18 @@ Orange
 :::
 
 - [View Detail](./tabs.md)
+
+### Fields
+
+::: fields
+@theme@ type="ThemeConfig" required default="{ base: '/' }"
+
+Theme config.
+
+@enabled@ type="boolean" optional
+
+Whether it is enabled.
+
+:::
+
+- [View Detail](./fields.md)

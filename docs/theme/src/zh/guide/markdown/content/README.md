@@ -17,6 +17,7 @@ tag:
 
 - 脚注: 对关键内容做补充说明
 - 导入文件: 轻松拆分或复用文件
+- 字段: 描述对象的字段
 - 幻灯片: 展示内容
 
 <!-- more -->
@@ -91,3 +92,18 @@ Orange
 :::
 
 - [查看详情](./tabs.md)
+
+### 字段
+
+::: fields
+@theme@ type="ThemeConfig" required default="{ base: '/' }"
+
+主题配置。
+
+@enabled@ type="boolean" optional
+
+是否启用。
+
+:::
+
+- [查看详情](./fields.md)

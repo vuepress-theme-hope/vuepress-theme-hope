@@ -11,6 +11,25 @@ tag:
 
 以下选项在 Markdown 中添加了新的样式化功能，可以在主题选项的 `markdown` 属性下进行设置。
 
+## markdown.hint
+
+- 类型：`boolean`
+- 默认值：`true`
+- 详情：
+  - [Markdown → 提示容器](../../guide/markdown/stylize/hint.md)
+  - [@vuepress/plugin-markdown-hint → hint][hint]
+
+是否启用提示容器，包括 important、info、note、tip、warning、caution 与 details。
+
+## markdown.alert
+
+- 类型：`boolean`
+- 详情：
+  - [Markdown → GFM 警告](../../guide/markdown/stylize/alert.md)
+  - [@vuepress/plugin-markdown-hint → alert][alert]
+
+是否启用 GFM 警告。
+
 ## markdown.align
 
 - 类型: `boolean`
@@ -68,6 +87,15 @@ tag:
 
 是否启用属性自定义支持。
 
+## markdown.layout
+
+- 类型：`boolean`
+- 详情：
+  - [Markdown → 布局](../../guide/markdown/stylize/layout.md)
+  - [@vuepress/plugin-markdown-stylize → layout][layout]
+
+是否启用布局支持。
+
 ## markdown.mark
 
 - 类型: `boolean`
@@ -107,6 +135,15 @@ tag:
   - [@vuepress/plugin-markdown-stylize → spoiler][spoiler]
 
 是否启用隐藏内容支持。
+
+## markdown.steps
+
+- 类型：`boolean`
+- 详情：
+  - [Markdown → 步骤](../../guide/markdown/stylize/steps.md)
+  - [@vuepress/plugin-markdown-stylize → steps][steps]
+
+是否启用步骤支持。
 
 ## markdown.stylize
 
@@ -153,9 +190,13 @@ tag:
 样式化内联标记以创建所需的片段。
 
 [align]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html#align
+[alert]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-hint.html#alert
+[hint]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-hint.html#hint
 [attrs]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html#attrs
+[layout]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html#layout
 [mark]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html#mark
 [sup]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html#sup
 [sub]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html#sub
 [spoiler]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html#spoiler
+[steps]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html#steps
 [stylize]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html#custom
