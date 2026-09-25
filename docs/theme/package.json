@@ -33,7 +33,7 @@
     "@vueuse/core": "catalog:",
     "echarts-wordcloud": "2.1.0",
     "flowchart.ts": "3.0.1",
-    "katex": "0.18.7",
+    "katex": "0.18.9",
     "kotlin-playground": "1.34.0",
     "markmap-lib": "catalog:",
     "markmap-toolbar": "catalog:",
