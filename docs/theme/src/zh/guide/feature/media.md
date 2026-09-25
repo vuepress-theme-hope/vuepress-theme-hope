@@ -56,6 +56,20 @@ export default hopeTheme({
 
 :::
 
+## 链接语法
+
+除组件外，插件也为每个启用的组件注册了 `@[name ...props](link)` 语法。该语法必须独占一行。
+
+```md
+@[youtube title="A video" width="80%"](https://youtu.be/dQw4w9WgXcQ)
+
+@[video autoplay loop](/assets/video.mp4)
+```
+
+链接会成为组件的资源地址，props 会作为属性传给组件，因此对象与函数类型的选项不可用。
+
+语法名称与细节请参阅 [链接语法文档][media-link]。
+
 ## 自定义配置
 
 `vuepress-theme-hope` 会将主题选项中的 `plugins.media` 作为插件选项传给 `@vuepress/plugin-media`。
@@ -65,4 +79,5 @@ export default hopeTheme({
 [artplayer]: https://artplayer.org/
 [embedpdf]: https://www.embedpdf.com/
 [media]: https://ecosystem.vuejs.press/zh/plugins/features/media.html
+[media-link]: https://ecosystem.vuejs.press/zh/plugins/features/media.html#链接语法
 [videojs]: https://videojs.org/
