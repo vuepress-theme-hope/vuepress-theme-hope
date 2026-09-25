@@ -56,6 +56,20 @@ Every component needs its own package installed, and the plugin skips registerin
 
 :::
 
+## Link Syntax
+
+Besides the components, the plugin also registers the `@[name ...props](link)` syntax for every enabled component. The syntax must occupy its own line.
+
+```md
+@[youtube title="A video" width="80%"](https://youtu.be/dQw4w9WgXcQ)
+
+@[video autoplay loop](/assets/video.mp4)
+```
+
+The link becomes the source of the component, and the props are passed to it as attributes, so options taking an object or a function are not available.
+
+See the [link syntax documentation][media-link] for the syntax names and details.
+
 ## Customize Config
 
 `vuepress-theme-hope` passes `plugins.media` in theme options as plugin options to `@vuepress/plugin-media`.
@@ -65,4 +79,5 @@ You can check the [media plugin documentation][media] for available components, 
 [artplayer]: https://artplayer.org/
 [embedpdf]: https://www.embedpdf.com/
 [media]: https://ecosystem.vuejs.press/plugins/features/media.html
+[media-link]: https://ecosystem.vuejs.press/plugins/features/media.html#link-syntax
 [videojs]: https://videojs.org/
