@@ -88,8 +88,6 @@ peerDependencyRules:
 
 blockExoticSubdeps: false
 
-# enableGlobalVirtualStore: true
-
 minimumReleaseAgeExclude:
   - "@mdit/*"
   - "@vuepress/*"
@@ -97,3 +95,8 @@ minimumReleaseAgeExclude:
 trustPolicy: no-downgrade
 
 trustPolicyIgnoreAfter: 720
+
+patchedDependencies:
+  "@vuepress/bundler-webpack": patches/@vuepress__bundler-webpack.patch
+
+virtualStoreType: global

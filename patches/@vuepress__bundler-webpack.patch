@@ -1,0 +1,21 @@
+diff --git a/dist/index.js b/dist/index.js
+index c250f9d462f253e3d6ef4167769b56e54d56f99c..8a1355aeb1a280c2d63de80c0a74f8a099bf4345 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -495,7 +495,15 @@ const createServerConfig = async (app, options) => {
+ 	});
+ 	config.output.path(app.dir.temp(".server")).filename("app.cjs").publicPath(app.options.base).libraryTarget("commonjs2");
+ 	config.target("node");
+-	config.externals(["vue"]);
++	config.externals([
++		({ request }, callback) => {
++			if (request === "vue" || request.startsWith("vue/") || request.startsWith("@vue/")) {
++				callback(null, `commonjs ${request}`);
++			} else {
++				callback();
++			}
++		}
++	]);
+ 	config.devtool("source-map");
+ 	config.optimization.minimize(false);
+ 	return config;
