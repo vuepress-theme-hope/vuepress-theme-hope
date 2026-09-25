@@ -21,9 +21,9 @@ jobs:
           persist-credentials: false
 
       - name: Install pnpm
-        uses: pnpm/setup@v2
+        uses: pnpm/setup@v3
         with:
-          runtime: node@^24.18.0
+          runtime: node@24
 
       - name: Install deps
         run: pnpm ci
@@ -84,9 +84,9 @@ jobs:
           persist-credentials: false
 
       - name: Install pnpm
-        uses: pnpm/setup@v2
+        uses: pnpm/setup@v3
         with:
-          runtime: node@^24.18.0
+          runtime: node@24
 
       - name: Install deps
         run: pnpm ci
@@ -134,9 +134,9 @@ jobs:
           persist-credentials: false
 
       - name: Install pnpm
-        uses: pnpm/setup@v2
+        uses: pnpm/setup@v3
         with:
-          runtime: node@^24.18.0
+          runtime: node@24
 
       - name: Install deps
         run: pnpm ci
@@ -196,9 +196,9 @@ jobs:
           persist-credentials: false
 
       - name: Install pnpm
-        uses: pnpm/setup@v2
+        uses: pnpm/setup@v3
         with:
-          runtime: node@^24.18.0
+          runtime: node@24
 
       - name: Install deps
         run: pnpm ci

@@ -26,9 +26,9 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Install pnpm
-        uses: pnpm/setup@v2
+        uses: pnpm/setup@v3
         with:
-          runtime: node@^24.18.0
+          runtime: node@24
 
       - name: Install deps
         run: pnpm ci
@@ -53,9 +53,9 @@ jobs:
           fetch-depth: 0
 
       - name: Install pnpm
-        uses: pnpm/setup@v2
+        uses: pnpm/setup@v3
         with:
-          runtime: node@^24.18.0
+          runtime: node@24
 
       - name: Install deps
         run: pnpm ci
@@ -91,7 +91,7 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Install pnpm
-        uses: pnpm/setup@v2
+        uses: pnpm/setup@v3
         with:
           runtime: node@${{ matrix.node }}
 
