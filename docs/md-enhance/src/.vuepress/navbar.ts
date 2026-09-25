@@ -1,5 +1,4 @@
 import { navbar } from "@docs/shared";
-import pkg from "vuepress-plugin-md-enhance/package.json" with { type: "json" };
 
 export const enNavbar = navbar([
   "/",
@@ -11,11 +10,6 @@ export const enNavbar = navbar([
   },
   "/config",
   "/demo",
-  {
-    text: pkg.version,
-    icon: "bookmark",
-    link: "",
-  },
 ]);
 
 export const zhNavbar = navbar([
@@ -28,9 +22,4 @@ export const zhNavbar = navbar([
   },
   "/zh/config",
   "/zh/demo",
-  {
-    text: pkg.version,
-    icon: "bookmark",
-    link: "",
-  },
 ]);

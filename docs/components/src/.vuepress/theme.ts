@@ -1,22 +1,11 @@
 import { theme } from "@docs/shared";
 import { AVAILABLE_SERVICES } from "vuepress-plugin-components";
-import pkg from "vuepress-plugin-components/package.json" with { type: "json" };
 
 // The theme wrapper is located in <root>/docs/shared/src/theme-wrapper.ts
 export default theme("components", {
   locales: {
     "/": {
-      navbar: [
-        "/",
-        "/guide/",
-        "/config",
-        "/demo",
-        {
-          text: pkg.version,
-          icon: "bookmark",
-          link: "",
-        },
-      ],
+      navbar: ["/", "/guide/", "/config", "/demo"],
 
       sidebar: [
         "/",
@@ -31,17 +20,7 @@ export default theme("components", {
     },
 
     "/zh/": {
-      navbar: [
-        "/zh/",
-        "/zh/guide/",
-        "/zh/config",
-        "/zh/demo",
-        {
-          text: pkg.version,
-          icon: "bookmark",
-          link: "",
-        },
-      ],
+      navbar: ["/zh/", "/zh/guide/", "/zh/config", "/zh/demo"],
 
       sidebar: [
         "/zh/",
