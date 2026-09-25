@@ -37,7 +37,7 @@ We recommend contacting us through [issues](https://github.com/vuepress-theme-ho
 
 ## Details
 
-V2 is based on [**VuePress2**](https://vuejs.press), with the power of [**Vite7**](https://vite.dev) / [**Webpack5**](https://webpack.js.org) and [**Vue3**](https://vuejs.org) to provide powerful features.
+V2 is based on [**VuePress2**](https://vuejs.press), with the power of [**Vite8**](https://vite.dev) / [**Webpack5**](https://webpack.js.org) and [**Vue3**](https://vuejs.org) to provide powerful features.
 
 V2 is a complete rewrite including:
 
@@ -46,9 +46,9 @@ V2 is a complete rewrite including:
 
 V2 also has better performance 🚀:
 
-- DevServer cold start time reduced by **70%**
-- Build memory usage reduced by **65%**
-- Build time reduced by **75%**
+- DevServer cold start time reduced by **80%**
+- Build memory usage reduced by **75%**
+- Build time reduced by **85%**
 - Output size reduced by **45%**
 - Webpage performance improved by **60%**
 

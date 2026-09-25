@@ -31,7 +31,7 @@
 
 ## 详情
 
-V2 基于 [**VuePress2**](https://vuejs.press/zh/)，通过 [**Vite7**](https://cn.vite.dev/) / [**Webpack5**](https://webpack.docschina.org/) 和 [**Vue3**](https://cn.vuejs.org/) 提供强大功能。
+V2 基于 [**VuePress2**](https://vuejs.press/zh/)，通过 [**Vite8**](https://cn.vite.dev/) / [**Webpack5**](https://webpack.docschina.org/) 和 [**Vue3**](https://cn.vuejs.org/) 提供强大功能。
 
 V2 完全重写，包括：
 
@@ -40,9 +40,9 @@ V2 完全重写，包括：
 
 V2 也有更好的性能 🚀：
 
-- DevServer 冷启动时间减少了 **70%**
-- 构建内存使用量减少了 **65%**
-- 构建时间减少了 **75%**
+- DevServer 冷启动时间减少了 **80%**
+- 构建内存使用量减少了 **75%**
+- 构建时间减少了 **85%**
 - 输出尺寸减少了 **45%**
 - 网页性能提高了 **60%**
 
