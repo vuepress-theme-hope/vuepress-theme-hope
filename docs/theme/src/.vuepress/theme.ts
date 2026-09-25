@@ -90,6 +90,7 @@ export default theme(
       codeTabs: true,
       codeTree: true,
       component: true,
+      cjkFriendly: true,
       fields: true,
       figure: true,
       fileTree: true,
