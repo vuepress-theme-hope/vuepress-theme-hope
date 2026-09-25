@@ -65,25 +65,7 @@ export default theme("components", {
 
   plugins: {
     components: {
-      components: [
-        "ArtPlayer",
-        // @ts-expect-error: This component is deprecated
-        "AudioPlayer",
-        "Badge",
-        "BiliBili",
-        "CodePen",
-        "PDF",
-        "Share",
-        "SiteInfo",
-        "StackBlitz",
-        "VPBanner",
-        "VPCard",
-        "VidStack",
-        // @ts-expect-error: This component is deprecated
-        "VideoPlayer",
-        // @ts-expect-error: This component is deprecated
-        "YouTube",
-      ],
+      components: ["Badge", "CodePen", "Share", "SiteInfo", "StackBlitz", "VPBanner", "VPCard"],
 
       componentOptions: {
         share: {

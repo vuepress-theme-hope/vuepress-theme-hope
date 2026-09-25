@@ -105,6 +105,181 @@ const convertFooterOptions = (
 };
 
 /**
+ * Components whose own embed player is used, and the `embeds` name they are converted to
+ *
+ * 使用平台自带嵌入播放器的组件，以及它们转换后的 `embeds` 名称
+ */
+const EMBED_COMPONENTS = new Map<string, string>([
+  ["BiliBili", "bilibili"],
+  ["YouTube", "youtube"],
+]);
+
+/**
+ * Components played by ArtPlayer or Video.js, and the plugin options they are converted to
+ *
+ * 由 ArtPlayer 或 Video.js 播放的组件，以及它们转换后的插件选项
+ *
+ * The two players of the removed `VidStack` component are replaced by Video.js.
+ *
+ * 已移除的 `VidStack` 组件的两个播放器由 Video.js 代替。
+ */
+const MEDIA_COMPONENTS = new Map<string, string[]>([
+  ["ArtPlayer", ["artplayer"]],
+  ["AudioPlayer", ["videojsAudio"]],
+  ["PDF", ["pdf"]],
+  ["VidStack", ["videojs", "videojsAudio"]],
+  ["VideoPlayer", ["videojs"]],
+]);
+
+/**
+ * Convert the media components to the options of `@vuepress/plugin-media`
+ *
+ * 将媒体组件转换为 `@vuepress/plugin-media` 的选项
+ *
+ * @param componentsOptions - Component plugin options / 组件插件选项
+ * @param mediaOptions - Media plugin options / 媒体插件选项
+ * @returns Names of the converted components / 已转换的组件名称
+ */
+const convertMediaComponents = (
+  componentsOptions: Record<string, unknown>,
+  mediaOptions: Record<string, unknown>,
+): string[] => {
+  const componentNames = isArray(componentsOptions.components)
+    ? (componentsOptions.components as string[])
+    : [];
+  const convertedComponents = componentNames.filter(
+    (name) => MEDIA_COMPONENTS.has(name) || EMBED_COMPONENTS.has(name),
+  );
+
+  if (!convertedComponents.length) return convertedComponents;
+
+  const embeds = isArray(mediaOptions.embeds) ? (mediaOptions.embeds as string[]) : [];
+
+  for (const component of convertedComponents) {
+    const embed = EMBED_COMPONENTS.get(component);
+
+    if (embed) {
+      if (!embeds.includes(embed)) embeds.push(embed);
+    } else {
+      for (const option of MEDIA_COMPONENTS.get(component) ?? []) mediaOptions[option] ??= true;
+    }
+  }
+
+  if (embeds.length) mediaOptions.embeds = embeds;
+
+  const restComponents = componentNames.filter((name) => !convertedComponents.includes(name));
+
+  if (restComponents.length) componentsOptions.components = restComponents;
+  else delete componentsOptions.components;
+
+  return convertedComponents;
+};
+
+/**
+ * Drop the component options that are removed with the media components
+ *
+ * 移除随媒体组件一同删除的组件选项
+ *
+ * @param componentsOptions - Component plugin options / 组件插件选项
+ * @param mediaOptions - Media plugin options / 媒体插件选项
+ */
+const dropMediaComponentOptions = (
+  componentsOptions: Record<string, unknown>,
+  mediaOptions: Record<string, unknown>,
+): void => {
+  const { componentOptions: componentGlobalOptions, locales } = componentsOptions;
+
+  if (isPlainObject<Record<string, unknown>>(componentGlobalOptions)) {
+    const { artPlayer } = componentGlobalOptions;
+
+    if ("artPlayer" in componentGlobalOptions) {
+      if (mediaOptions.artplayer === true) {
+        mediaOptions.artplayer = artPlayer;
+      } else {
+        logger.error(
+          `${colors.magenta(
+            "plugins.components.componentOptions.artPlayer",
+          )} is ${colors.red("no longer supported")}, please use ${colors.magenta(
+            "artplayer",
+          )} option of ${colors.cyan("@vuepress/plugin-media")} instead.`,
+        );
+      }
+
+      delete componentGlobalOptions.artPlayer;
+    }
+
+    if ("pdf" in componentGlobalOptions) {
+      logger.error(
+        `${colors.magenta("plugins.components.componentOptions.pdf")} is ${colors.red(
+          "no longer supported",
+        )}, as the PDF viewer is replaced by ${colors.magenta(
+          "PDFViewer",
+        )} of ${colors.cyan("@vuepress/plugin-media")}.`,
+      );
+
+      delete componentGlobalOptions.pdf;
+    }
+  }
+
+  if (isPlainObject<Record<string, unknown>>(locales)) {
+    ["pdf", "vidstack"].forEach((key) => {
+      if (key in locales) {
+        logger.error(
+          `${colors.magenta(`plugins.components.locales.${key}`)} is ${colors.red(
+            "no longer supported",
+          )}, please use ${colors.magenta(
+            key === "pdf" ? "plugins.media.pdfLocales" : "plugins.media.videojsLocales",
+          )} of ${colors.cyan("@vuepress/plugin-media")} instead.`,
+        );
+
+        // oxlint-disable-next-line typescript/no-dynamic-delete
+        delete locales[key];
+      }
+    });
+  }
+};
+
+/**
+ * Move media components of `vuepress-plugin-components` to `@vuepress/plugin-media`
+ *
+ * 将 `vuepress-plugin-components` 的媒体组件迁移至 `@vuepress/plugin-media`
+ *
+ * @deprecated You should use V2 standard options and avoid using it
+ * @param pluginOptions - Theme plugin options
+ */
+const convertComponentOptions = (pluginOptions: Record<string, unknown>): void => {
+  const componentsOptions = pluginOptions.components;
+
+  if (!isPlainObject<Record<string, unknown>>(componentsOptions)) return;
+  // Keep the media plugin disabled when the user disables it
+  if ("media" in pluginOptions && !isPlainObject(pluginOptions.media)) return;
+
+  const mediaOptions: Record<string, unknown> = isPlainObject<Record<string, unknown>>(
+    pluginOptions.media,
+  )
+    ? pluginOptions.media
+    : {};
+
+  const convertedComponents = convertMediaComponents(componentsOptions, mediaOptions);
+
+  if (!convertedComponents.length) return;
+
+  pluginOptions.media = mediaOptions;
+
+  dropMediaComponentOptions(componentsOptions, mediaOptions);
+
+  logger.warn(
+    `Media components are removed from ${colors.magenta(
+      "plugins.components",
+    )}, please use ${colors.magenta("plugins.media")} of ${colors.cyan(
+      "@vuepress/plugin-media",
+    )} instead. The following components are converted for you: ${convertedComponents
+      .map((component) => colors.magenta(component))
+      .join(", ")}.`,
+  );
+};
+
+/**
  * @deprecated You should use V2 standard options and avoid using it
  * @param themeOptions - Theme options
  */
@@ -129,6 +304,8 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
       components: pluginOptions.components,
     };
   }
+
+  convertComponentOptions(pluginOptions);
 
   if (pluginOptions.linksCheck) {
     deprecatedLogger({

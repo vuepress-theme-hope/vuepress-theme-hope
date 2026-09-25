@@ -1,4 +1,3 @@
-import type { ArtPlayerOptions } from "../../shared/index.js";
 import type { ShareOptions } from "./share.js";
 
 export interface DeprecatedComponentGlobalOptions {
@@ -7,27 +6,6 @@ export interface DeprecatedComponentGlobalOptions {
 }
 
 export interface ComponentGlobalOptions extends DeprecatedComponentGlobalOptions {
-  /**
-   * ArtPlayer config
-   *
-   * ArtPlayer 配置
-   */
-  artPlayer?: ArtPlayerOptions;
-
-  /**
-   * PDF viewer config
-   *
-   * PDF 阅读器配置
-   */
-  pdf?: {
-    /**
-     * Location of pdfjs
-     *
-     * Pdfjs 的位置
-     */
-    pdfjs?: string | boolean;
-  };
-
   /**
    * Share config
    *

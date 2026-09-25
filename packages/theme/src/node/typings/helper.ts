@@ -6,6 +6,7 @@ import type { CopyrightPluginOptions } from "@vuepress/plugin-copyright";
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
 import type { LinksCheckPluginOptions } from "@vuepress/plugin-links-check";
+import type { MediaPluginOptions } from "@vuepress/plugin-media";
 import type { NoticeOptions, NoticePluginOptions } from "@vuepress/plugin-notice";
 import type { PhotoSwipePluginOptions } from "@vuepress/plugin-photo-swipe";
 import type { PrismjsPluginOptions } from "@vuepress/plugin-prismjs";
@@ -56,6 +57,8 @@ export type ThemeFeedPluginHelper = Helper<Omit<FeedPluginOptions, "hostname"> |
 export type ThemeGitPluginHelper = Helper<GitPluginOptions | boolean>;
 
 export type ThemeLinksCheckPluginHelper = Helper<LinksCheckPluginOptions | boolean>;
+
+export type ThemeMediaPluginHelper = Helper<MediaPluginOptions>;
 
 export type ThemeNoticePluginHelper = Helper<NoticePluginOptions | NoticeOptions[]>;
 

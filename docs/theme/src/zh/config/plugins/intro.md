@@ -42,83 +42,109 @@ tag:
 
 ### 自动启用的插件
 
-下列插件默认启用，你可以禁用它们:
+下列插件由主题捆绑并默认启用，你可以禁用它们:
 
-- [@vuepress/plugin-active-header-links][active-header-links]: 自动更新路由 Hash
+- [@vuepress/plugin-active-header-links][active-header-links]: 自动更新路由 Hash（`plugins.activeHeaderLinks`）
 
-- [@vuepress/plugin-back-to-top][back-to-top]: 返回顶部按钮
+- [@vuepress/plugin-back-to-top][back-to-top]: 返回顶部按钮（`plugins.backToTop`）
 
-- [@vuepress/plugin-catalog][catalog]: 提供目录页自动生成与 `<Catalog />` 组件
+- [@vuepress/plugin-catalog][catalog]: 提供目录页自动生成与 `<Catalog />` 组件（`plugins.catalog`）
 
-- [@vuepress/plugin-copy-code][copy-code]: 为代码块提供复制按钮。
+- [@vuepress/plugin-copy-code][copy-code]: 为代码块提供复制按钮（`plugins.copyCode`）
 
-- [@vuepress/plugin-git][git]: 基于 Git 的信息插件
+- [@vuepress/plugin-git][git]: 基于 Git 的信息插件（`plugins.git`）
 
-- [@vuepress/plugin-icon][icon]: 提供图标
+- [@vuepress/plugin-icon][icon]: 提供图标（`plugins.icon`）
 
-- [@vuepress/plugin-links-check][links-check]: 检查 Markdown 链接
+- [@vuepress/plugin-links-check][links-check]: 检查 Markdown 链接（`markdown.linksCheck`）
 
-- [@vuepress/plugin-markdown-hint][markdown-hint]: Markdown 提示容器
+- [@vuepress/plugin-markdown-chart][markdown-chart]: 图表与流程图支持（`markdown.chartjs`、`markdown.echarts`、`markdown.flowchart`、`markdown.markmap`、`markdown.mermaid`、`markdown.plantuml`）
 
-- [@vuepress/plugin-markdown-image][markdown-image]: Markdown 图片增强
+- [@vuepress/plugin-markdown-ext][markdown-ext]: GFM 支持与其他常用 Markdown 语法（`markdown.gfm`、`markdown.breaks`、`markdown.linkify`、`markdown.footnote`、`markdown.tasklist`、`markdown.component`、`markdown.vPre`、`markdown.cjkFriendly`）
 
-- [@vuepress/plugin-nprogress][nprogress]: 进度条
+- [@vuepress/plugin-markdown-hint][markdown-hint]: Markdown 提示容器（`markdown.hint`、`markdown.alert`）
 
-- [@vuepress/plugin-photo-swipe][photo-swipe]: 基于 Photo Swipe 的图片浏览插件
+- [@vuepress/plugin-markdown-image][markdown-image]: Markdown 图片增强（`markdown.figure`、`markdown.imgLazyload`、`markdown.imgMark`、`markdown.imgSize`、`markdown.obsidianImgSize`）
 
-- [@vuepress/plugin-reading-time][reading-time]: 阅读时间与字数统计
+- [@vuepress/plugin-markdown-include][markdown-include]: Markdown 文件导入（`markdown.include`）
 
-- [@vuepress/plugin-redirect][redirect]: 重定向插件
+- [@vuepress/plugin-markdown-stylize][markdown-stylize]: Markdown 内容样式化（`markdown.align`、`markdown.attrs`、`markdown.layout`、`markdown.mark`、`markdown.spoiler`、`markdown.steps`、`markdown.sup`、`markdown.sub`、`markdown.stylize`）
 
-- [@vuepress/plugin-seo][seo]: SEO 增强插件
+- [@vuepress/plugin-markdown-tab][markdown-tab]: 选项卡与代码块分组（`markdown.tabs`、`markdown.codeTabs`）
 
-- [@vuepress/plugin-shiki][shiki]: 基于 Shiki 的代码高亮插件
+- [@vuepress/plugin-nprogress][nprogress]: 进度条（`plugins.nprogress`）
 
-- [@vuepress/plugin-sitemap][sitemap]: Sitemap 插件
+- [@vuepress/plugin-photo-swipe][photo-swipe]: 基于 Photo Swipe 的图片浏览插件（`plugins.photoSwipe`）
 
-- <ProjectLink name="md-enhance" path="/zh/">vuepress-plugin-md-enhance</ProjectLink>: 提供更多 Markdown 语法
+- [@vuepress/plugin-reading-time][reading-time]: 阅读时间与字数统计（`plugins.readingTime`）
 
-- <ProjectLink name="components" path="/zh/">vuepress-plugin-components</ProjectLink>: 提供一些开箱即用的组件
+- [@vuepress/plugin-seo][seo]: SEO 增强插件（`plugins.seo`）
+
+- [@vuepress/plugin-shiki][shiki]: 基于 Shiki 的代码高亮插件（`markdown.highlighter`）
+
+- [@vuepress/plugin-sitemap][sitemap]: Sitemap 插件（`plugins.sitemap`）
+
+- <ProjectLink name="components" path="/zh/">vuepress-plugin-components</ProjectLink>: 提供一些开箱即用的组件（`plugins.components`）
 
 ### 需要手动启用的插件
 
-主题捆绑以下插件，你可以通过配置启用它们
+主题捆绑以下插件，但它们默认处于关闭状态。你需要通过对应的选项启用它们:
 
-- [@vuepress/plugin-blog][blog]: VuePress2 的博客插件
+- [@vuepress/plugin-blog][blog]: VuePress2 的博客插件（`plugins.blog`）
 
-- [@vuepress/plugin-copyright][copyright]: 在用户复制时追加版权信息，或禁用站点的复制与选择。
+- [@vuepress/plugin-comment][comment]: 提供评论与浏览量功能（`plugins.comment`）
 
-- [@vuepress/plugin-comment][comment]: 提供评论与浏览量功能
+- [@vuepress/plugin-copyright][copyright]: 在用户复制时追加版权信息，或禁用站点的复制与选择（`plugins.copyright`）
 
-- [@vuepress/plugin-markdown-math][markdown-math]: 公式支持
+- [@vuepress/plugin-markdown-field][markdown-field]: 字段容器支持（`markdown.fields`）
 
-- [@vuepress/plugin-markdown-preview][markdown-preview]: Markdown 预览支持
+- [@vuepress/plugin-markdown-file-tree][markdown-file-tree]: 文件树与代码树支持（`markdown.fileTree`、`markdown.codeTree`）
 
-- [@vuepress/plugin-notice][notice]: 提供公告
+- [@vuepress/plugin-markdown-math][markdown-math]: 公式支持（`markdown.math`）
 
-- [@vuepress/plugin-rtl][rtl]: 提供 RTL 支持
+- [@vuepress/plugin-markdown-preview][markdown-preview]: Markdown 预览支持（`markdown.preview`）
 
-- [@vuepress/plugin-watermark][watermark]: 水印插件
+- [@vuepress/plugin-media][media]: 提供嵌入视频、音频与 PDF 文档的组件（`plugins.media`）
+
+- [@vuepress/plugin-notice][notice]: 提供公告（`plugins.notice`）
+
+- [@vuepress/plugin-redirect][redirect]: 重定向插件（`plugins.redirect`）
+
+- [@vuepress/plugin-rtl][rtl]: 提供 RTL 支持（在需要的主题语言配置中设置 `rtl: true`）
+
+- <ProjectLink name="md-enhance" path="/zh/">vuepress-plugin-md-enhance</ProjectLink>: 提供更多 Markdown 语法（`markdown.demo`、`markdown.playground`、`markdown.kotlinPlayground`、`markdown.vuePlayground`、`markdown.sandpack`）
 
 ### 内置支持的插件
 
-以下插件受到主题支持，但你需要在使用前自行安装它们:
+以下插件受到主题支持，但没有被捆绑。你需要在使用前自行安装它们，然后通过对应的选项启用:
 
-- [@vuepress/plugin-docsearch][docsearch]: 基于 DocSearch 的搜索插件
+- [@vuepress/plugin-docsearch][docsearch]: 基于 DocSearch 的搜索插件（`plugins.docsearch`）
 
-- [@vuepress/plugin-meilisearch][meilisearch]: 基于 MeiliSearch 的开源搜索插件
+- [@vuepress/plugin-feed][feed]: Feed 支持（`plugins.feed`）
 
-- [@vuepress/plugin-search][search]: 简单的客户端搜索插件
+- [@vuepress/plugin-meilisearch][meilisearch]: 基于 MeiliSearch 的开源搜索插件（`plugins.meilisearch`）
 
-- [@vuepress/plugin-slimsearch][slimsearch]: 基于 SlimSearch 的客户端搜索插件
+- [@vuepress/plugin-orama][orama]: 基于 Orama 的客户端搜索插件（`plugins.orama`）
 
-- [@vuepress/plugin-feed][feed]: Feed 支持
+- [@vuepress/plugin-prismjs][prismjs]: 基于 prism.js 的代码高亮插件（`markdown.highlighter`）
 
-- [@vuepress/plugin-prismjs][prismjs]: 基于 prism.js 的代码高亮插件
+- [@vuepress/plugin-pwa][pwa]: PWA 支持（`plugins.pwa`）
 
-- [@vuepress/plugin-pwa][pwa]: PWA 支持
+- [@vuepress/plugin-revealjs][revealjs]: 幻灯片支持（`markdown.revealjs`）
 
-### 官方插件
+- [@vuepress/plugin-search][search]: 简单的客户端搜索插件（`plugins.search`）
+
+  ::: warning 已弃用
+
+  请改用 `@vuepress/plugin-slimsearch` 或 `@vuepress/plugin-orama`。
+
+  :::
+
+- [@vuepress/plugin-slimsearch][slimsearch]: 基于 SlimSearch 的客户端搜索插件（`plugins.slimsearch`）
+
+- [@vuepress/plugin-watermark][watermark]: 水印插件（`plugins.watermark`）
+
+- [@vuepress/shiki-twoslash][shiki-twoslash]: 为 Shiki 高亮器提供 TypeScript twoslash 支持（设置 `markdown.highlighter` 的 `twoslash` 选项）
 
 [active-header-links]: https://ecosystem.vuejs.press/zh/plugins/development/active-header-links.html
 [back-to-top]: https://ecosystem.vuejs.press/zh/plugins/features/back-to-top.html
@@ -131,25 +157,36 @@ tag:
 [feed]: https://ecosystem.vuejs.press/zh/plugins/blog/feed/
 [git]: https://ecosystem.vuejs.press/zh/plugins/development/git.html
 [icon]: https://ecosystem.vuejs.press/zh/plugins/features/icon.html
+[links-check]: https://ecosystem.vuejs.press/zh/plugins/markdown/links-check.html
+[markdown-chart]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-chart/
+[markdown-ext]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-ext.html
+[markdown-field]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-field.html
+[markdown-file-tree]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-file-tree.html
 [markdown-hint]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-hint.html
 [markdown-image]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-image.html
+[markdown-include]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-include.html
 [markdown-math]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-math.html
 [markdown-preview]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-preview.html
-[links-check]: https://ecosystem.vuejs.press/zh/plugins/markdown/links-check.html
+[markdown-stylize]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html
+[markdown-tab]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-tab.html
 [meilisearch]: https://ecosystem.vuejs.press/zh/plugins/search/meilisearch.html
+[media]: https://ecosystem.vuejs.press/zh/plugins/features/media.html
 [notice]: https://ecosystem.vuejs.press/zh/plugins/features/notice.html
 [nprogress]: https://ecosystem.vuejs.press/zh/plugins/features/nprogress.html
+[orama]: https://ecosystem.vuejs.press/zh/plugins/search/orama.html
 [photo-swipe]: https://ecosystem.vuejs.press/zh/plugins/features/photo-swipe.html
 [prismjs]: https://ecosystem.vuejs.press/zh/plugins/markdown/prismjs.html
-[pwa]: https://ecosystem.vuejs.press/zh/plugins/pwa/pwa/
-[redirect]: https://ecosystem.vuejs.press/zh/plugins/tools/redirect.html
+[pwa]: https://ecosystem.vuejs.press/zh/plugins/pwa/pwa/config.html
 [reading-time]: https://ecosystem.vuejs.press/zh/plugins/development/reading-time.html
+[redirect]: https://ecosystem.vuejs.press/zh/plugins/tools/redirect.html
+[revealjs]: https://ecosystem.vuejs.press/zh/plugins/markdown/revealjs/
 [rtl]: https://ecosystem.vuejs.press/zh/plugins/development/rtl.html
 [sass-palette]: https://ecosystem.vuejs.press/zh/plugins/development/sass-palette/
 [search]: https://ecosystem.vuejs.press/zh/plugins/search/search.html
-[seo]: https://ecosystem.vuejs.press/zh/plugins/seo/seo/
+[seo]: https://ecosystem.vuejs.press/zh/plugins/seo/seo/config.html
 [shiki]: https://ecosystem.vuejs.press/zh/plugins/markdown/shiki.html
-[sitemap]: https://ecosystem.vuejs.press/zh/plugins/seo/sitemap/
+[shiki-twoslash]: https://ecosystem.vuejs.press/zh/plugins/markdown/shiki.html#twoslash
+[sitemap]: https://ecosystem.vuejs.press/zh/plugins/seo/sitemap/config.html
 [slimsearch]: https://ecosystem.vuejs.press/zh/plugins/search/slimsearch.html
 [theme-data]: https://ecosystem.vuejs.press/zh/plugins/development/theme-data.html
 [watermark]: https://ecosystem.vuejs.press/zh/plugins/features/watermark.html

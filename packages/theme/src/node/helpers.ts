@@ -9,6 +9,7 @@ import type {
   ThemeFeedPluginHelper,
   ThemeGitPluginHelper,
   ThemeLinksCheckPluginHelper,
+  ThemeMediaPluginHelper,
   ThemeNavbarHelper,
   ThemeNoticePluginHelper,
   ThemePhotoSwipePluginHelper,
@@ -44,6 +45,7 @@ export const copyright: ThemeCopyrightPluginHelper = (options) => options;
 export const feed: ThemeFeedPluginHelper = (options) => options;
 export const git: ThemeGitPluginHelper = (options) => options;
 export const linksCheck: ThemeLinksCheckPluginHelper = (options) => options;
+export const media: ThemeMediaPluginHelper = (options) => options;
 export const notice: ThemeNoticePluginHelper = (options) => options;
 export const photoSwipe: ThemePhotoSwipePluginHelper = (options) => options;
 export const prismjs: ThemePrismJsPluginHelper = (options) => options;

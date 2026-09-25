@@ -127,6 +127,7 @@
     "@vuepress/plugin-markdown-preview": "catalog:vuepress",
     "@vuepress/plugin-markdown-stylize": "catalog:vuepress",
     "@vuepress/plugin-markdown-tab": "catalog:vuepress",
+    "@vuepress/plugin-media": "catalog:vuepress",
     "@vuepress/plugin-notice": "catalog:vuepress",
     "@vuepress/plugin-nprogress": "catalog:vuepress",
     "@vuepress/plugin-photo-swipe": "catalog:vuepress",
@@ -157,6 +158,7 @@
     "@vuepress/plugin-docsearch": "catalog:vuepress",
     "@vuepress/plugin-feed": "catalog:vuepress",
     "@vuepress/plugin-meilisearch": "catalog:vuepress",
+    "@vuepress/plugin-orama": "catalog:vuepress",
     "@vuepress/plugin-prismjs": "catalog:vuepress",
     "@vuepress/plugin-pwa": "catalog:vuepress",
     "@vuepress/plugin-revealjs": "catalog:vuepress",
@@ -177,6 +179,9 @@
       "optional": true
     },
     "@vuepress/plugin-meilisearch": {
+      "optional": true
+    },
+    "@vuepress/plugin-orama": {
       "optional": true
     },
     "@vuepress/plugin-prismjs": {

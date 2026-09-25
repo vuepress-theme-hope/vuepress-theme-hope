@@ -8,7 +8,7 @@ tag:
   - 搜索
 ---
 
-主题对 [`@vuepress/plugin-docsearch`][docsearch] 、[@vuepress/plugin-slimsearch][slimsearch] 和 [`@vuepress/plugin-search`][search] 提供了内置支持。你只需要安装并配置所需的搜索插件，就能够在导航栏获得一个搜索框。
+主题对 [`@vuepress/plugin-docsearch`][docsearch]、[@vuepress/plugin-meilisearch][meilisearch]、[@vuepress/plugin-slimsearch][slimsearch]、[@vuepress/plugin-orama][orama] 和 [`@vuepress/plugin-search`][search] 提供了内置支持。你只需要安装并配置所需的搜索插件，就能够在导航栏获得一个搜索框。
 
 <!-- more -->
 
@@ -238,6 +238,55 @@ tag:
 ::: info 更多
 
 关于搜索插件的可用选项，详见 [插件文档][slimsearch]。
+
+:::
+
+## 使用 `@vuepress/plugin-orama`
+
+1. 安装 `@vuepress/plugin-orama`
+
+   ::: code-tabs#shell
+
+   @tab pnpm
+
+   ```bash
+   pnpm add -D @vuepress/plugin-orama@next
+   ```
+
+   @tab yarn
+
+   ```bash
+   yarn add -D @vuepress/plugin-orama@next
+   ```
+
+   @tab npm
+
+   ```bash
+   npm i -D @vuepress/plugin-orama@next
+   ```
+
+   :::
+
+1. 在主题选项中配置 `plugins.orama`。
+
+   你可以将 `plugins.orama` 设置为 `true` 来直接启用它，或者将其设置为一个对象来自定义插件。
+
+   ```ts twoslash {5-8} title=".vuepress/theme.ts"
+   import { hopeTheme } from "vuepress-theme-hope";
+
+   export default hopeTheme({
+     plugins: {
+       orama: {
+         // 插件选项
+       },
+       // 或 orama: true,
+     },
+   });
+   ```
+
+::: info 更多
+
+关于搜索插件的可用选项，详见 [插件文档][orama]。
 
 :::
 
@@ -586,5 +635,6 @@ tag:
 
 [docsearch]: https://ecosystem.vuejs.press/zh/plugins/search/docsearch.html
 [meilisearch]: https://ecosystem.vuejs.press/zh/plugins/search/meilisearch.html
+[orama]: https://ecosystem.vuejs.press/zh/plugins/search/orama.html
 [search]: https://ecosystem.vuejs.press/zh/plugins/search/search.html
 [slimsearch]: https://ecosystem.vuejs.press/zh/plugins/search/slimsearch.html

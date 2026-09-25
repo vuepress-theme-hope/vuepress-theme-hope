@@ -31,6 +31,7 @@ import { getIconPlugin } from "./icon.js";
 import { getMarkdownImagePlugin } from "./markdownImage.js";
 import { getMarkdownStylizePlugin } from "./markdownStylize.js";
 import { getMdEnhancePlugin } from "./mdEnhance.js";
+import { getMediaPlugin } from "./media.js";
 import { getNoticePlugin } from "./notice.js";
 import { getPwaPlugin } from "./pwa.js";
 import { getRedirectPlugin } from "./redirect.js";
@@ -119,6 +120,7 @@ export const getPlugins = (
     photoSwipe === false ? null : photoSwipePlugin(isPlainObject(photoSwipe) ? photoSwipe : {}),
 
     getComponentsPlugin(pluginsOptions.components, compact),
+    getMediaPlugin(pluginsOptions.media),
     getActiveHeaderLinksPlugin(pluginsOptions.activeHeaderLinks),
     getCatalogPlugin(pluginsOptions.catalog),
     pluginsOptions.nprogress === false ? null : nprogressPlugin(),
