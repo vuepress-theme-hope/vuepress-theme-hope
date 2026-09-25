@@ -11,4 +11,12 @@ export default defineHopeConfig({
     "demo/theme-blog/src/**/slide.md",
     "demo/theme-docs/src/**/slide.md",
   ],
+  overrides: [
+    {
+      files: ["*.md"],
+      options: {
+        printWidth: 80,
+      },
+    },
+  ],
 });
