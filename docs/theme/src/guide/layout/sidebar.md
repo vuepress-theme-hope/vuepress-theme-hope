@@ -1,6 +1,6 @@
 ---
 title: Sidebar
-icon: fas fa-window-maximize fa-rotate-270
+icon: lucide:panel-left
 order: 2
 category:
   - Layout

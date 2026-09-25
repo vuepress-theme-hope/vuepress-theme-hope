@@ -1,6 +1,6 @@
 ---
 title: Markdown Code Config
-icon: b:markdown
+icon: fa7-brands:markdown
 order: 5
 category:
   - Config

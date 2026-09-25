@@ -1,6 +1,6 @@
 ---
 title: Markdown 配置
-icon: b:markdown
+icon: fa7-brands:markdown
 dir:
   order: 4
 category:

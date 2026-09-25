@@ -103,7 +103,7 @@ export default hopeTheme({
 ::: preview Demo
 
 ::home /blue::
-::b:apple =2rem vertical-align=text-bottom::
+::fa7-brands:apple =2rem vertical-align=text-bottom::
 
 :::
 
@@ -140,6 +140,32 @@ export default hopeTheme({
 - 侧边栏: 在侧边栏项中设置 `icon` 选项
 
 - 首页: 在 `features` 项目中设置 `icon` 选项
+
+### 离线部署
+
+如果你的站点部署在无法访问外网的环境中，可以将 `plugins.icon.offline` 设置为 `true`，将图标打包到本地，而不是从 CDN 或 Iconify API 加载。
+
+主题已经为你启用了图标插件的 `scan` 选项，因此页面 frontmatter 中使用到的图标（包括 `actions`、`features`、`highlights`、`projects` 与 `medias`）与主题配置中使用到的图标（包括导航栏、侧边栏与博客媒体）也会一并打包。由自定义组件渲染的图标仍需要你自行通过 `scan` 选项列出，详见 [插件文档][@vuepress/plugin-icon]。
+
+```ts twoslash {6-9} title=".vuepress/theme.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default hopeTheme({
+  plugins: {
+    icon: {
+      // 你最常使用的图标集前缀
+      prefix: "fa7-solid:",
+      offline: true,
+    },
+  },
+});
+```
+
+::: important
+
+启用离线模式时，你需要安装 `iconify-icon` 以及所用图标集对应的 `@iconify-json/<prefix>` 包，因为它们会被打包，而不是从 CDN 或 Iconify API 加载。
+
+:::
 
 ### 可用的图标
 

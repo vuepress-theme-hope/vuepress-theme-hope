@@ -1,6 +1,6 @@
 ---
 title: Markdown Behavior Config
-icon: b:markdown
+icon: fa7-brands:markdown
 order: 1
 category:
   - Config

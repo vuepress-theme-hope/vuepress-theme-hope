@@ -1,6 +1,6 @@
 ---
 title: 思维导图
-icon: b:markdown
+icon: fa7-brands:markdown
 category:
   - Markdown
 tag:

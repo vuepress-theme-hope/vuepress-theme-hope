@@ -1,6 +1,6 @@
 ---
 title: React 代码演示
-icon: b:react
+icon: fa7-brands:react
 ---
 
 ## 格式

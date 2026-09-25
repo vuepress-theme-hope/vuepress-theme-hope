@@ -2,7 +2,6 @@
 import { isPlainObject } from "@vuepress/helper";
 import { backToTopPlugin } from "@vuepress/plugin-back-to-top";
 import { copyCodePlugin } from "@vuepress/plugin-copy-code";
-import { iconPlugin } from "@vuepress/plugin-icon";
 import { linksCheckPlugin } from "@vuepress/plugin-links-check";
 import { markdownChartPlugin } from "@vuepress/plugin-markdown-chart";
 import { markdownExtPlugin } from "@vuepress/plugin-markdown-ext";
@@ -28,6 +27,7 @@ import { getCommentPlugin } from "./comment.js";
 import { getComponentsPlugin } from "./components.js";
 import { getCopyrightPlugin } from "./copyright.js";
 import { getFeedPlugin } from "./feed.js";
+import { getIconPlugin } from "./icon.js";
 import { getMarkdownImagePlugin } from "./markdownImage.js";
 import { getMarkdownStylizePlugin } from "./markdownStylize.js";
 import { getMdEnhancePlugin } from "./mdEnhance.js";
@@ -115,13 +115,7 @@ export const getPlugins = (
     // @vuepress/plugin-copy-code
     copyCode === false ? null : copyCodePlugin(isPlainObject(copyCode) ? copyCode : {}),
     // @vuepress/plugin-icon
-    icon === false
-      ? null
-      : iconPlugin({
-          ...(isPlainObject(icon) ? icon : {}),
-          // force to use VPIcon component
-          component: "VPIcon",
-        }),
+    getIconPlugin(themeData, icon),
     // @vuepress/plugin-photo-swipe
     photoSwipe === false ? null : photoSwipePlugin(isPlainObject(photoSwipe) ? photoSwipe : {}),
 

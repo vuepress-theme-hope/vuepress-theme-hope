@@ -1,6 +1,6 @@
 ---
 title: Markdown to Vue SFC
-icon: b:vuejs
+icon: fa7-brands:vuejs
 order: 1
 category:
   - Component

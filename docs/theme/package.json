@@ -20,6 +20,9 @@
   },
   "dependencies": {
     "@docs/shared": "workspace:*",
+    "@iconify-json/fa7-brands": "^1.2.4",
+    "@iconify-json/fa7-solid": "^1.2.5",
+    "@iconify-json/lucide": "^1.2.136",
     "@types/katex": "0.16.8",
     "@vue/repl": "4.7.2",
     "@vuepress/bundler-vite": "catalog:vuepress",

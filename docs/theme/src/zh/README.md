@@ -143,7 +143,7 @@ highlights:
         link: ./guide/markdown/grammar/math.html
 
       - title: 导入文件支持
-        icon: b:markdown
+        icon: fa7-brands:markdown
         details: 将你的文档分段，并在 Markdown 中导入
         link: ./guide/markdown/content/include.html
 
@@ -153,12 +153,12 @@ highlights:
         link: ./guide/markdown/code/playground.html
 
       - title: Kotlin 交互演示支持
-        icon: b:kickstarter
+        icon: fa7-brands:kickstarter
         details: 响应式的 Kotlin 演示
         link: ./guide/markdown/code/kotlin-playground.html
 
       - title: Vue 交互演示支持
-        icon: b:vuejs
+        icon: fa7-brands:vuejs
         details: 在交互演示中展示 Vue 组件
         link: ./guide/markdown/code/vue-playground.html
 
@@ -210,7 +210,7 @@ highlights:
         link: ./guide/layout/navbar.html
 
       - title: 侧边栏
-        icon: fas fa-window-maximize fa-rotate-270
+        icon: lucide:panel-left
         details: 从文档标题或文件结构中自动生成侧边栏
         link: ./guide/layout/sidebar.html
 

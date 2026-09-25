@@ -1,6 +1,6 @@
 ---
 title: Markdown 代码配置
-icon: b:markdown
+icon: fa7-brands:markdown
 order: 5
 category:
   - 配置

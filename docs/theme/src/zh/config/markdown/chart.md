@@ -1,6 +1,6 @@
 ---
 title: Markdown 图表配置
-icon: b:markdown
+icon: fa7-brands:markdown
 order: 4
 category:
   - 配置

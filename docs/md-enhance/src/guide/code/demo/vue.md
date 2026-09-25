@@ -1,6 +1,6 @@
 ---
 title: Vue Code Demo
-icon: b:vuejs
+icon: fa7-brands:vuejs
 ---
 
 ## Syntax

@@ -1,6 +1,6 @@
 ---
 title: 页脚支持
-icon: fas fa-window-maximize fa-rotate-180
+icon: lucide:panel-bottom
 category:
   - 布局
 order: 5

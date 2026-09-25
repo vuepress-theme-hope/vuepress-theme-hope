@@ -781,6 +781,15 @@ importers:
       '@docs/shared':
         specifier: workspace:*
         version: link:../shared
+      '@iconify-json/fa7-brands':
+        specifier: ^1.2.4
+        version: 1.2.4
+      '@iconify-json/fa7-solid':
+        specifier: ^1.2.5
+        version: 1.2.5
+      '@iconify-json/lucide':
+        specifier: ^1.2.136
+        version: 1.2.136
       '@types/katex':
         specifier: 0.16.8
         version: 0.16.8
@@ -2127,6 +2136,15 @@ packages:
 
   '@gera2ld/jsx-dom@2.2.2':
     resolution: {integrity: sha512-EOqf31IATRE6zS1W1EoWmXZhGfLAoO9FIlwTtHduSrBdud4npYBxYAkv8dZ5hudDPwJeeSjn40kbCL4wAzr8dA==}
+
+  '@iconify-json/fa7-brands@1.2.4':
+    resolution: {integrity: sha512-60acXyxhQl1lddBH5YGzfQLkzlP9jqNcblFmgel7lJpgsVx/4QmrXAL90ARb8XhHX7dFMGRDmlqER9mq8aaz2g==}
+
+  '@iconify-json/fa7-solid@1.2.5':
+    resolution: {integrity: sha512-e9EOtXuvDhiv6gBjbuW1q4bSR2tU5HmsDxqbLElQt2w2dR1Byh2mXfPLdRgEVwEr50uQV5tKxE3YAL6LTa+1fA==}
+
+  '@iconify-json/lucide@1.2.136':
+    resolution: {integrity: sha512-Wk+OeDVKkw+1LELZqRR3gXWIy5jNx5XjNMvVc9KoygJYmGqclv36FYqseRuJuxBIKDggdoZWNBxNRrOkiRbtwQ==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -10994,6 +11012,18 @@ snapshots:
   '@gera2ld/jsx-dom@2.2.2':
     dependencies:
       '@babel/runtime': 7.29.7
+
+  '@iconify-json/fa7-brands@1.2.4':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/fa7-solid@1.2.5':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/lucide@1.2.136':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify/types@2.0.0': {}
 
