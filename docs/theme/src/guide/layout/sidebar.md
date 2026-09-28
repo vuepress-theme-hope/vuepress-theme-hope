@@ -167,20 +167,21 @@ You may want to use it with `prefix` to restore the structure of the document ea
 
 For example, suppose you have a following directory structure:
 
-```
-.
-├─ README.md
-├─ contact.md
-├─ about.md
-├─ foo/
-│   ├─ README.md
-│   ├─ one.md
-│   └─ two.md
-└─ bar/
-    ├─ README.md
-    ├─ three.md
-    └─ four.md
-```
+::: file-tree
+
+- README.md
+- contact.md
+- about.md
+- foo/
+  - README.md
+  - one.md
+  - two.md
+- bar/
+  - README.md
+  - three.md
+  - four.md
+
+:::
 
 Then you can use the following config:
 
@@ -220,20 +221,21 @@ To display different sidebars for different page groups, set an object for the s
 
 For example, if you have the following structure:
 
-```
-.
-├─ README.md
-├─ contact.md
-├─ about.md
-├─ foo/
-│   ├─ README.md
-│   ├─ one.md
-│   └─ two.md
-└─ bar/
-    ├─ README.md
-    ├─ three.md
-    └─ four.md
-```
+::: file-tree
+
+- README.md
+- contact.md
+- about.md
+- foo/
+  - README.md
+  - one.md
+  - two.md
+- bar/
+  - README.md
+  - three.md
+  - four.md
+
+:::
 
 You can define your sidebar for each section using below configuration:
 
@@ -274,20 +276,21 @@ You can replace the original "sidebarConfig array" with `"structure"` keyword in
 
 For example, for the following example mentioned earlier in [multiple sidebars](#multiple-sidebars):
 
-```
-.
-├─ README.md
-├─ contact.md
-├─ about.md
-├─ foo/
-│   ├─ README.md
-│   ├─ one.md
-│   └─ two.md
-└─ bar/
-    ├─ README.md
-    ├─ three.md
-    └─ four.md
-```
+::: file-tree
+
+- README.md
+- contact.md
+- about.md
+- foo/
+  - README.md
+  - one.md
+  - two.md
+- bar/
+  - README.md
+  - three.md
+  - four.md
+
+:::
 
 You can change the original config to:
 

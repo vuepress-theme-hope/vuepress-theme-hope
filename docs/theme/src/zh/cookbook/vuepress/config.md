@@ -14,14 +14,16 @@ tag:
 
 如果没有任何配置，你的 VuePress 站点仅有一些最基础的功能。为了更好地自定义你的网站，让我们首先在你的文档目录下创建一个 `.vuepress` 目录，所有 VuePress 相关的文件都将会被放在这里。你的项目结构可能是这样:
 
-```
-├─ docs
-│  ├─ .vuepress
-│  │  └─ config.js
-│  └─ README.md
-├─ .gitignore
-└─ package.json
-```
+::: file-tree
+
+- docs
+  - .vuepress
+    - config.js
+  - README.md
+- .gitignore
+- package.json
+
+:::
 
 VuePress 站点的基本配置文件是 `.vuepress/config.js` ，但也同样支持 TypeScript 配置文件。你可以使用 `.vuepress/config.ts` 来得到更好的类型提示。
 
@@ -75,15 +77,17 @@ export default defineUserConfig({
 
 在大多数情况下，配置文件已经足够帮助你配置好你的 VuePress 站点。不过，有些时候用户们可能希望直接添加一些客户端代码。 VuePress 通过客户端配置文件来支持这种需求：
 
-```
-├─ docs
-│  ├─ .vuepress
-│  │  ├─ client.js   <--- 客户端配置文件
-│  │  └─ config.js   <--- 配置文件
-│  └─ README.md
-├─ .gitignore
-└─ package.json
-```
+::: file-tree
+
+- docs
+  - .vuepress
+    - client.js # 客户端配置文件
+    - config.js # 配置文件
+  - README.md
+- .gitignore
+- package.json
+
+:::
 
 一个基础的客户端配置文件是这样的：
 

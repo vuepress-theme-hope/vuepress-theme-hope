@@ -20,16 +20,18 @@ VuePress generates standalone pages from Markdown files. The route path correspo
 
 When generating a project via the CLI helper, you will see the following directory structure:
 
-```text
-└─ src
-   ├─ demo
-   │  ├─ ...
-   │  ├─ page.md
-   │  ├─ markdown.md
-   │  └─ README.md
-   ├─ ...
-   └─ README.md
-```
+::: file-tree
+
+- src
+  - demo
+    - …
+    - page.md
+    - markdown.md
+    - README.md
+  - …
+  - README.md
+
+:::
 
 Route path resolution:
 

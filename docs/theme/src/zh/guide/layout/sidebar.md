@@ -166,20 +166,21 @@ export default hopeTheme({
 
 比如，将你的页面文件为下述的目录结构:
 
-```
-.
-├─ README.md
-├─ contact.md
-├─ about.md
-├─ foo/
-│   ├─ README.md
-│   ├─ one.md
-│   └─ two.md
-└─ bar/
-    ├─ README.md
-    ├─ three.md
-    └─ four.md
-```
+::: file-tree
+
+- README.md
+- contact.md
+- about.md
+- foo/
+  - README.md
+  - one.md
+  - two.md
+- bar/
+  - README.md
+  - three.md
+  - four.md
+
+:::
 
 你就可以进行以下配置:
 
@@ -219,20 +220,21 @@ export default hopeTheme({
 
 比如，将你的页面文件为下述的目录结构:
 
-```
-.
-├─ README.md
-├─ contact.md
-├─ about.md
-├─ foo/
-│   ├─ README.md
-│   ├─ one.md
-│   └─ two.md
-└─ bar/
-    ├─ README.md
-    ├─ three.md
-    └─ four.md
-```
+::: file-tree
+
+- README.md
+- contact.md
+- about.md
+- foo/
+  - README.md
+  - one.md
+  - two.md
+- bar/
+  - README.md
+  - three.md
+  - four.md
+
+:::
 
 你就可以遵循以下的侧边栏配置，来为不同路径显示不同的分组:
 
@@ -273,20 +275,21 @@ export default hopeTheme({
 
 比如对于之前在 [多个侧边栏](#multiple-sidebars) 提到的如下例子:
 
-```
-.
-├─ README.md
-├─ contact.md
-├─ about.md
-├─ foo/
-│   ├─ README.md
-│   ├─ one.md
-│   └─ two.md
-└─ bar/
-    ├─ README.md
-    ├─ three.md
-    └─ four.md
-```
+::: file-tree
+
+- README.md
+- contact.md
+- about.md
+- foo/
+  - README.md
+  - one.md
+  - two.md
+- bar/
+  - README.md
+  - three.md
+  - four.md
+
+:::
 
 你可以将原来的配置改为:
 

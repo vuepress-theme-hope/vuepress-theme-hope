@@ -41,18 +41,20 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 以我们文档的源文件为例:
 
-```
-└─ src
-    └─ zh
-       ├─ cookbook
-       │  └─ vuepress
-       │     ├─ markdown.md <- 我们在这里
-       │     └─ README.md
-       ├─ guide
-       │  └─ README.md
-       ├─ contribution.md
-       └─ README.md
-```
+::: file-tree
+
+- src
+  - zh
+    - cookbook
+      - vuepress
+        - **markdown.md** # 我们在这里
+        - README.md
+    - guide
+      - README.md
+    - contribution.md
+    - README.md
+
+:::
 
 原始 Markdown:
 

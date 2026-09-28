@@ -20,16 +20,18 @@ VuePress 基于 Markdown 文件生成独立页面。路由路径由文件的相�
 
 当你通过脚手架生成项目时，你将看到以下目录结构：
 
-```text
-└─ src
-   ├─ demo
-   │  ├─ ...
-   │  ├─ page.md
-   │  ├─ markdown.md
-   │  └─ README.md
-   ├─ ...
-   └─ README.md
-```
+::: file-tree
+
+- src
+  - demo
+    - …
+    - page.md
+    - markdown.md
+    - README.md
+  - …
+  - README.md
+
+:::
 
 路由路径解析规则：
 

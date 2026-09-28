@@ -43,17 +43,19 @@ When using Markdown [link syntax](https://spec.commonmark.org/0.29/#link-referen
 
 Take our documentation source files as an example:
 
-```
-└─ src
-   ├─ cookbook
-   │  └─ vuepress
-   │     ├─ markdown.md <- Here we are
-   │     └─ README.md
-   ├─ guide
-   │  └─ README.md
-   ├─ contribution.md
-   └─ README.md
-```
+::: file-tree
+
+- src
+  - cookbook
+    - vuepress
+      - **markdown.md** # Here we are
+      - README.md
+  - guide
+    - README.md
+  - contribution.md
+  - README.md
+
+:::
 
 Raw Markdown:
 

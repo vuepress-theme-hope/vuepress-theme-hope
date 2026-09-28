@@ -14,14 +14,16 @@ tag:
 
 Without any configuration, the VuePress site is pretty minimal. To customize your site, let's first create a `.vuepress` directory inside your docs directory. This is where all VuePress-specific files will be placed. Your project structure is probably like this:
 
-```
-├─ docs
-│  ├─ .vuepress
-│  │  └─ config.js
-│  └─ README.md
-├─ .gitignore
-└─ package.json
-```
+::: file-tree
+
+- docs
+  - .vuepress
+    - config.js
+  - README.md
+- .gitignore
+- package.json
+
+:::
 
 The essential file for configuring a VuePress site is `.vuepress/config.js`, while TypeScript config file is also supported. You can use `.vuepress/config.ts` instead to get better types hint for VuePress config.
 
@@ -74,15 +76,17 @@ If you don't specify the `theme` option of VuePress config, the default theme wi
 
 In most cases, the config file is sufficient to configure your VuePress site. However, sometimes users may want to add some client-side code directly. To help with this, VuePress also supports a client config file:
 
-```
-├─ docs
-│  ├─ .vuepress
-│  │  ├─ client.js   <--- client config file
-│  │  └─ config.js   <--- config file
-│  └─ README.md
-├─ .gitignore
-└─ package.json
-```
+::: file-tree
+
+- docs
+  - .vuepress
+    - client.js # client config file
+    - config.js # config file
+  - README.md
+- .gitignore
+- package.json
+
+:::
 
 A basic client config file looks like this:
 

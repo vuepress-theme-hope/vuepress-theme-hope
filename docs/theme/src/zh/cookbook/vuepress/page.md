@@ -18,14 +18,16 @@ VuePress 是以 Markdown 为中心的。你项目中的每一个 Markdown 文件
 
 假设这是你的 Markdown 文件所处的目录结构:
 
-```
-└─ docs
-   ├─ guide
-   │  ├─ getting-started.md
-   │  └─ README.md
-   ├─ contributing.md
-   └─ README.md
-```
+::: file-tree
+
+- docs
+  - guide
+    - getting-started.md
+    - README.md
+  - contributing.md
+  - README.md
+
+:::
 
 将 `docs` 目录作为你的 [sourceDir](https://vuejs.press/zh/reference/cli.html) ，例如你在运行 `vuepress dev docs` 命令。此时，你的 Markdown 文件对应的路由路径为:
 

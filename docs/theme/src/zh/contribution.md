@@ -28,39 +28,33 @@ pnpm i
 - demo: 主题演示项目
 - packages: 放置各插件与主题的代码，每个子文件夹为一个项目
 
-```
-.
-├── .github → GitHub 配置
-├── .husky → husky 配置
-│
-├── demo → 演示项目
-│
-├── docs → 文档目录
-│ ├── components → components 插件文档
-│ ├── lightgallery → lightgallery 插件文档
-│ ├── md-enhance → md-enhance 插件文档
-│ ├── shared → 文档的通用文件
-│ └── theme → 主题文档
-|
-├── packages → 项目源代码
-│ ├── components → components 插件
-│ ├── create → create-vuepress-theme-hope 助手
-│ ├── lightgallery → lightgallery 插件
-│ ├── md-enhance → md-enhance 插件
-│ ├── shared → 共享文件
-│ └── theme → vuepress-theme-hope 主题
-│
-├── scripts → 命令脚本
-│
-├── ... → 一些配置文件
-│
-├── LICENSE → 协议
-├── package.json → 项目根 package.json
-├── README.md → 项目介绍
-├── SECURITY.md → 安全政策文件
-│
-└── tsconfig.* → TypeScript 配置文件
-```
+::: file-tree
+
+- .github # GitHub 配置
+- .husky # husky 配置
+- demo # 演示项目
+- docs # 文档目录
+  - components # components 插件文档
+  - lightgallery # lightgallery 插件文档
+  - md-enhance # md-enhance 插件文档
+  - shared # 文档的通用文件
+  - theme # 主题文档
+- packages # 项目源代码
+  - components # components 插件
+  - create # create-vuepress-theme-hope 助手
+  - lightgallery # lightgallery 插件
+  - md-enhance # md-enhance 插件
+  - shared # 共享文件
+  - theme # vuepress-theme-hope 主题
+- scripts # 命令脚本
+- … # 一些配置文件
+- LICENSE # 协议
+- package.json # 项目根 package.json
+- README.md # 项目介绍
+- SECURITY.md # 安全政策文件
+- tsconfig.* # TypeScript 配置文件
+
+:::
 
 ## 文档修改 {#document-modification}
 
@@ -80,22 +74,17 @@ pnpm i
 
 每个项目的结构都大致如下:
 
-```
-.
-├── lib → 编译后的输出文件
-│    │
-│    ├── client → 客户端侧代码
-│    │
-│    └── node → Node.js 侧代码
-│
-└── src → 源文件
-     │
-     ├── client → 客户端侧代码
-     │
-     ├── node → Node.js 侧代码
-     │
-     └── shared → 客户端和 Node.js 的共享文件
-```
+::: file-tree
+
+- lib # 编译后的输出文件
+  - client # 客户端侧代码
+  - node # Node.js 侧代码
+- src # 源文件
+  - client # 客户端侧代码
+  - node # Node.js 侧代码
+  - shared # 客户端和 Node.js 的共享文件
+
+:::
 
 VuePress 同时运行在客户端和 Node 端。 Node 侧有像 `fs` 这样的 node 模块，而客户端运行在有`document``windows``navigator`等全局变量的浏览器中，你应该清楚一段代码运行在哪里。
 
