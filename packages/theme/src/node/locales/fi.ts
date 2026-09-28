@@ -4,7 +4,7 @@ export const fiLocale: ThemeLocaleData = {
   lang: "fi-FI",
 
   navbarLocales: {
-    langName: "Finnish",
+    langName: "Suomi",
     selectLangAriaLabel: "Valitse kieli",
   },
 

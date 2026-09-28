@@ -21,7 +21,7 @@ export const deLocale: ThemeLocaleData = {
     prev: "Vorherige",
     next: "Nächste",
     contributors: "Mitwirkende",
-    editLink: "Diese Seite barbeiten",
+    editLink: "Diese Seite bearbeiten",
     print: "Drucken",
   },
 
@@ -30,11 +30,11 @@ export const deLocale: ThemeLocaleData = {
     articleList: "Artikel Liste",
     category: "Kategorie",
     tag: "Tag",
-    timeline: "Timeline",
-    timelineTitle: "Yesterday Once More!",
+    timeline: "Zeitleiste",
+    timelineTitle: "Gestern noch einmal!",
     all: "Alle",
     intro: "Persönliche Einleitung",
-    star: "Star",
+    star: "Markiert",
     empty: "$text ist leer",
   },
 

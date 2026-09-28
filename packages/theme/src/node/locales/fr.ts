@@ -5,7 +5,7 @@ export const frLocale: ThemeLocaleData = {
 
   navbarLocales: {
     langName: "Français",
-    selectLangAriaLabel: "Selection de la langue",
+    selectLangAriaLabel: "Sélection de la langue",
   },
 
   metaLocales: {
@@ -30,7 +30,7 @@ export const frLocale: ThemeLocaleData = {
     articleList: "Liste d'articles",
     category: "Catégorie",
     tag: "Tag",
-    timeline: "Timeline",
+    timeline: "Chronologie",
     timelineTitle: "Toujours un peu plus!",
     all: "Tout",
     intro: "Introduction personnelle",
@@ -42,7 +42,7 @@ export const frLocale: ThemeLocaleData = {
     prev: "Précédent",
     next: "Suivant",
     navigate: "Aller à",
-    action: "Go",
+    action: "Aller",
     errorText: "Merci d'entrer un entier entre 1 et $page !",
   },
 
@@ -53,9 +53,9 @@ export const frLocale: ThemeLocaleData = {
   },
 
   encryptLocales: {
-    iconLabel: "Page Encrypted",
-    placeholder: "Enter password",
-    remember: "Remember password",
+    iconLabel: "Page chiffrée",
+    placeholder: "Entrez le mot de passe",
+    remember: "Se souvenir du mot de passe",
     errorHint: "Merci d'entrer un mot de passe valide !",
   },
 

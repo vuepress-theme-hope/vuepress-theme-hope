@@ -4,7 +4,7 @@ export const viLocale: ThemeLocaleData = {
   lang: "vi-VN",
 
   navbarLocales: {
-    langName: "Ngôn ngữ",
+    langName: "Tiếng Việt",
     selectLangAriaLabel: "Chọn ngôn ngữ",
   },
 
@@ -12,14 +12,14 @@ export const viLocale: ThemeLocaleData = {
     author: "Người viết",
     date: "Ngày viết",
     origin: "Nguồn",
-    views: "Views của trang",
-    category: "Category",
-    tag: "Tag",
+    views: "Lượt xem trang",
+    category: "Danh mục",
+    tag: "Thẻ",
     readingTime: "Thời gian đọc",
-    words: "Words",
-    toc: "On This Page",
-    prev: "Prev",
-    next: "Next",
+    words: "Từ",
+    toc: "Trong trang này",
+    prev: "Trước",
+    next: "Tiếp",
     contributors: "Người đóng góp",
     editLink: "Chỉnh sửa trang này",
     print: "In",
@@ -28,10 +28,10 @@ export const viLocale: ThemeLocaleData = {
   blogLocales: {
     article: "Bài viết",
     articleList: "Danh sách Bài viết",
-    category: "Category",
-    tag: "Tag",
-    timeline: "Timeline",
-    timelineTitle: "Yesterday Once More!",
+    category: "Danh mục",
+    tag: "Thẻ",
+    timeline: "Dòng thời gian",
+    timelineTitle: "Ngày hôm qua một lần nữa!",
     all: "Tất cả",
     intro: "Giới thiệu cá nhân",
     star: "Ngôi sao",
@@ -39,8 +39,8 @@ export const viLocale: ThemeLocaleData = {
   },
 
   paginationLocales: {
-    prev: "Bài kế",
-    next: "Bài trước",
+    prev: "Bài trước",
+    next: "Bài kế",
     navigate: "Đi đến",
     action: "Đi",
     errorText: "Xin hãy nhập 1 số từ 1 đến $page !",
@@ -48,14 +48,14 @@ export const viLocale: ThemeLocaleData = {
 
   outlookLocales: {
     themeColor: "Màu nền",
-    darkmode: "Theme Mode",
-    fullscreen: "Full Screen",
+    darkmode: "Chế độ giao diện",
+    fullscreen: "Toàn màn hình",
   },
 
   encryptLocales: {
-    iconLabel: "Page Encrypted",
-    placeholder: "Enter password",
-    remember: "Remember password",
+    iconLabel: "Trang đã được mã hóa",
+    placeholder: "Nhập mật khẩu",
+    remember: "Ghi nhớ mật khẩu",
     errorHint: "Vui lòng nhập đúng mật khẩu",
   },
 

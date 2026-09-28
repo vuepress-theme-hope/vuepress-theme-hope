@@ -4,7 +4,7 @@ export const skLocale: ThemeLocaleData = {
   lang: "sk-SK",
 
   navbarLocales: {
-    langName: "Slovensky",
+    langName: "Slovenčina",
     selectLangAriaLabel: "Vyber si jazyk",
   },
 
@@ -43,7 +43,7 @@ export const skLocale: ThemeLocaleData = {
     next: "Ďalší",
     navigate: "Skoč na",
     action: "Choď",
-    errorText: "Prosím, zadajte číso medzi 1 a $page !",
+    errorText: "Prosím, zadajte číslo medzi 1 a $page !",
   },
 
   outlookLocales: {
@@ -53,9 +53,9 @@ export const skLocale: ThemeLocaleData = {
   },
 
   encryptLocales: {
-    iconLabel: "Page Encrypted",
-    placeholder: "Enter password",
-    remember: "Remember password",
+    iconLabel: "Stránka je zašifrovaná",
+    placeholder: "Zadaj heslo",
+    remember: "Zapamätať si heslo",
     errorHint: "Prosím, zadaj správne heslo!",
   },
 

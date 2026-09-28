@@ -43,7 +43,7 @@ export const zhTWLocale: ThemeLocaleData = {
     next: "下一頁",
     navigate: "跳轉到",
     action: "前往",
-    errorText: "請輸入 1 到 $page 之前的頁碼！",
+    errorText: "請輸入 1 到 $page 之間的頁碼！",
   },
 
   outlookLocales: {
@@ -66,7 +66,7 @@ export const zhTWLocale: ThemeLocaleData = {
       "這裡什麼也沒有",
       "我們是怎麼來到這兒的？",
       "這 是 四 零 四 !",
-      "看起来你訪問了一個失效的鏈結",
+      "看起來你訪問了一個失效的連結",
     ],
     back: "返回上一頁",
     home: "帶我回家",

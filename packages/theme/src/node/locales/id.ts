@@ -4,7 +4,7 @@ export const idLocale: ThemeLocaleData = {
   lang: "id-ID",
 
   navbarLocales: {
-    langName: "Indonesia",
+    langName: "Bahasa Indonesia",
     selectLangAriaLabel: "Pilih Bahasa",
   },
 

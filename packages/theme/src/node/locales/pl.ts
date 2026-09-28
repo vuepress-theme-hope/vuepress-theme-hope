@@ -21,7 +21,7 @@ export const plLocale: ThemeLocaleData = {
     prev: "Poprzednia",
     next: "Następna",
     contributors: "Współtwórcy",
-    editLink: "Edytuj tą stronę",
+    editLink: "Edytuj tę stronę",
     print: "Drukuj",
   },
 
@@ -40,7 +40,7 @@ export const plLocale: ThemeLocaleData = {
 
   paginationLocales: {
     prev: "Poprzedni",
-    next: "Następmy",
+    next: "Następny",
     navigate: "Skocz do",
     action: "Idź",
     errorText: "Wpisz numer między 1 a $page !",
@@ -53,9 +53,9 @@ export const plLocale: ThemeLocaleData = {
   },
 
   encryptLocales: {
-    iconLabel: "Page Encrypted",
-    placeholder: "Enter password",
-    remember: "Remember password",
+    iconLabel: "Strona zaszyfrowana",
+    placeholder: "Wprowadź hasło",
+    remember: "Zapamiętaj hasło",
     errorHint: "Podaj poprawne hasło!",
   },
 

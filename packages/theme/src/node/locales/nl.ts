@@ -4,7 +4,7 @@ export const nlLocale: ThemeLocaleData = {
   lang: "nl-NL",
 
   navbarLocales: {
-    langName: "Dutch",
+    langName: "Nederlands",
     selectLangAriaLabel: "Selecteer taal",
   },
 
@@ -12,7 +12,7 @@ export const nlLocale: ThemeLocaleData = {
     author: "Auteur",
     date: "Geschreven Datum",
     origin: "Bron",
-    views: "Pagina views",
+    views: "Paginaweergaven",
     category: "Categorie",
     tag: "Tag",
     readingTime: "Leestijd",
@@ -31,10 +31,10 @@ export const nlLocale: ThemeLocaleData = {
     category: "Categorie",
     tag: "Tag",
     timeline: "Tijdlijn",
-    timelineTitle: "Yesterday Once More!",
+    timelineTitle: "Gisteren nog een keer!",
     all: "Alle",
     intro: "Persoonlijke Intro",
-    star: "Star",
+    star: "Gemarkeerd",
     empty: "$text is leeg",
   },
 
@@ -42,21 +42,21 @@ export const nlLocale: ThemeLocaleData = {
     prev: "Vorige",
     next: "Volgende",
     navigate: "Ga Naar",
-    action: "Go",
+    action: "Ga",
     errorText: "Gelieve een nummer in te geven tussen 1 en $page !",
   },
 
   outlookLocales: {
     themeColor: "Themakleur",
     darkmode: "Thema modus",
-    fullscreen: "Full Screen",
+    fullscreen: "Volledig scherm",
   },
 
   encryptLocales: {
     iconLabel: "Pagina Geëncrypteerd",
     placeholder: "Voeg paswoord in",
     remember: "Herinner paswoord",
-    errorHint: "Geliebe het juiste paswoord in te vullen!",
+    errorHint: "Gelieve het juiste paswoord in te vullen!",
   },
 
   routerLocales: {

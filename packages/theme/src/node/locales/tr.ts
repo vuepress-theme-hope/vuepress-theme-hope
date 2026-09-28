@@ -31,7 +31,7 @@ export const trLocale: ThemeLocaleData = {
     category: "Kategori",
     tag: "Etiket",
     timeline: "Zaman Çizelgesi",
-    timelineTitle: "Yesterday Once More!",
+    timelineTitle: "Dün bir kez daha!",
     all: "Hepsi",
     intro: "Kişisel Tanıtım",
     star: "Yıldız",

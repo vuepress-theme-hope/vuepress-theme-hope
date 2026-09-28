@@ -43,7 +43,7 @@ export const zhLocale: ThemeLocaleData = {
     next: "下一页",
     navigate: "跳转到",
     action: "前往",
-    errorText: "请输入 1 到 $page 之前的页码！",
+    errorText: "请输入 1 到 $page 之间的页码！",
   },
 
   outlookLocales: {
@@ -60,7 +60,7 @@ export const zhLocale: ThemeLocaleData = {
   },
 
   routerLocales: {
-    skipToContent: "跳至主要內容",
+    skipToContent: "跳至主要内容",
     notFoundTitle: "页面不存在",
     notFoundMsg: [
       "这里什么也没有",

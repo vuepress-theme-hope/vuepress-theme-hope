@@ -21,7 +21,7 @@ export const deATLocale: ThemeLocaleData = {
     prev: "Prev",
     next: "Next",
     contributors: "Mitwirkende",
-    editLink: "Diese Seite barbeiten",
+    editLink: "Diese Seite bearbeiten",
     print: "Drucken",
   },
 
@@ -30,11 +30,11 @@ export const deATLocale: ThemeLocaleData = {
     articleList: "Artikel Liste",
     category: "Kategorie",
     tag: "Tag",
-    timeline: "Timeline",
-    timelineTitle: "Yesterday Once More!",
+    timeline: "Zeitleiste",
+    timelineTitle: "Gestern noch einmal!",
     all: "Alle",
     intro: "Persönliche Einleitung",
-    star: "Star",
+    star: "Markiert",
     empty: "$text ist leer",
   },
 
@@ -49,13 +49,13 @@ export const deATLocale: ThemeLocaleData = {
   outlookLocales: {
     themeColor: "Design-Farbe",
     darkmode: "Design-Modus",
-    fullscreen: "Full Screen",
+    fullscreen: "Vollbild",
   },
 
   encryptLocales: {
-    iconLabel: "Page Encrypted",
-    placeholder: "Entre a senha",
-    remember: "Remember password",
+    iconLabel: "Seite verschlüsselt",
+    placeholder: "Passwort eingeben",
+    remember: "Passwort merken",
     errorHint: "Bitte das korrekte Passwort eingeben!",
   },
 

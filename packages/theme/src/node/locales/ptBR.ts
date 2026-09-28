@@ -4,7 +4,7 @@ export const ptBRLocale: ThemeLocaleData = {
   lang: "pt-BR",
 
   navbarLocales: {
-    langName: "Português",
+    langName: "Português (Brasil)",
     selectLangAriaLabel: "Selecione a língua",
   },
 
@@ -17,9 +17,9 @@ export const ptBRLocale: ThemeLocaleData = {
     tag: "Tag",
     readingTime: "Tempo de Leitura",
     words: "Palavras",
-    toc: "On This Page",
-    prev: "Prev",
-    next: "Next",
+    toc: "Nesta página",
+    prev: "Anterior",
+    next: "Próximo",
     editLink: "Editar esta página",
     contributors: "Contribuidores",
     print: "Imprimir",
@@ -49,13 +49,13 @@ export const ptBRLocale: ThemeLocaleData = {
   outlookLocales: {
     themeColor: "Cor do Tema",
     darkmode: "Modo do Tema",
-    fullscreen: "Full Screen",
+    fullscreen: "Tela cheia",
   },
 
   encryptLocales: {
-    iconLabel: "Page Encrypted",
+    iconLabel: "Página criptografada",
     placeholder: "Entre a senha",
-    remember: "Remember password",
+    remember: "Lembrar a senha",
     errorHint: "Por favor, entre a senha correta!",
   },
 
