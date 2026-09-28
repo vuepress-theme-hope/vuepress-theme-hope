@@ -6,9 +6,9 @@ category:
   - FAQ
 ---
 
-## 添加 Markdown 扩展
+## 添加 Markdown 扩展 {#adding-markdown-extensions}
 
-你可以在 [配置文件](../cookbook/vuepress/config.md#配置文件) 中使用 `extendsMarkdown` 钩子来添加 Markdown 扩展:
+你可以在 [配置文件](../cookbook/vuepress/config.md#config-file) 中使用 `extendsMarkdown` 钩子来添加 Markdown 扩展:
 
 ```ts {7-9} title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
@@ -23,7 +23,7 @@ export default defineUserConfig({
 });
 ```
 
-## 如何让侧边栏可折叠 / 如何在移动端显示 TOC / 如何在 PC 上将侧边栏置于左侧
+## 如何让侧边栏可折叠 / 如何在移动端显示 TOC / 如何在 PC 上将侧边栏置于左侧 {#foldable-sidebar-toc-on-mobile-left-sidebar-on-pc}
 
 为了更好的适应不同尺寸的设备，主题使用 [响应式布局](../guide/interface/responsive.md) 通过屏幕宽度来调整布局。
 
@@ -50,7 +50,7 @@ flowchart LR
     pc<==$pc==>wide
 ```
 
-你可以通过 [样式配置文件](../config/style.md#configscss) 来调整这些断点。
+你可以通过 [样式配置文件](../config/style.md#config-scss) 来调整这些断点。
 
 比如:
 
@@ -68,9 +68,9 @@ flowchart LR
 
 当然，如果你足够强，你可以自行通过覆盖主题的 CSS 样式来通过这份 DOM 实现你想要的布局。这可能会很困难，但技术上绝对是可行的。
 
-## 调整内容宽度
+## 调整内容宽度 {#adjust-content-width}
 
-如果你对默认的内容宽度不满意，你可以通过在 [调色板文件](../config/style.md#布局设置) 中设置 `$content-width` 变量来调整内容宽度。
+如果你对默认的内容宽度不满意，你可以通过在 [调色板文件](../config/style.md#layout-config) 中设置 `$content-width` 变量来调整内容宽度。
 
 ::: warning 内容宽度很窄
 
@@ -78,7 +78,7 @@ flowchart LR
 
 :::
 
-## 配置中的链接
+## 配置中的链接 {#links-in-config}
 
 打包工具需要知道要打包的资源的路径，所以只有可以静态分析的内容才能被打包。这意味着：
 
@@ -96,4 +96,4 @@ flowchart LR
 
   在不同的基础路径下，路由链接对应的实际路径名会有所不同，例如：基础路径为 `/` 时为 `/foo/example.jpg`，基础路径为 `/bar/` 时为 `/bar/foo/example.jpg`
 
-只有少数选项会保持输入不变，这意味着以 `/` 开头的输入不会自动添加基础路径。这些选项会在文档中给出警告提示，如 [VuePress 配置文件](../cookbook/vuepress/config.md#配置文件) 中的 `head` 选项。
+只有少数选项会保持输入不变，这意味着以 `/` 开头的输入不会自动添加基础路径。这些选项会在文档中给出警告提示，如 [VuePress 配置文件](../cookbook/vuepress/config.md#config-file) 中的 `head` 选项。

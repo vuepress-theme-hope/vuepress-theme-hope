@@ -14,7 +14,7 @@ tag:
 
 借助于 [插件 API](https://vuejs.press/zh/reference/plugin-api.html) ， VuePress 插件可以为你提供各种不同的功能。
 
-## 社区插件
+## 社区插件 {#community-plugin}
 
 社区用户创建了很多插件，并将它们发布到了 [NPM](https://www.npmjs.com/search?q=keywords:vuepress-plugin) 上。 VuePress 团队也在 [@vuepress](https://www.npmjs.com/search?q=%40vuepress%20keywords%3Aplugin) Scope 下维护了一些官方插件。查看插件本身的文档可以获取更详细的指引。
 
@@ -40,11 +40,11 @@ export default {
 
 :::
 
-## 本地插件
+## 本地插件 {#local-plugin}
 
 如果你想要使用自己的插件，但是又不想发布它，你可以创建一个本地插件。
 
-推荐你直接将 [配置文件](./config.md#配置文件) 作为插件使用，因为 [几乎所有的插件 API 都可以在配置文件中使用](https://vuejs.press/zh/reference/config.html#插件-api)，这在绝大多数场景下都更为方便。
+推荐你直接将 [配置文件](./config.md#config-file) 作为插件使用，因为 [几乎所有的插件 API 都可以在配置文件中使用](https://vuejs.press/zh/reference/config.html#插件-api)，这在绝大多数场景下都更为方便。
 
 但是如果你在配置文件中要做的事情太多了，你可以考虑将它们提取到单独的插件中，然后在你的配置文件中使用它们:
 

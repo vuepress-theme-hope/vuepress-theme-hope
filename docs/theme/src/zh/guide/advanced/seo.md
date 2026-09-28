@@ -17,11 +17,11 @@ tag:
 
 <!-- more -->
 
-## 默认行为
+## 默认行为 {#default-behavior}
 
 插件开箱即用。它会提取页面内容、站点配置、主题配置及页面的 Frontmatter，自动生成符合 [Open Graph Protocol (OGP)](https://ogp.me/) 和 [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/) 规范的标签。
 
-### 默认 OGP 生成规则
+### 默认 OGP 生成规则 {#default-ogp-generation}
 
 |        Meta 名称         |                                         取值                                         |
 | :----------------------: | :----------------------------------------------------------------------------------: |
@@ -41,7 +41,7 @@ tag:
 | `article:published_time` |                 `page.frontmatter.date` \|\| `page.git.createdTime`                  |
 | `article:modified_time`  |                                `page.git.updatedTime`                                |
 
-### 默认 JSON-LD 生成规则
+### 默认 JSON-LD 生成规则 {#default-json-ld-generation}
 
 |    属性名称     |                                         取值                                         |
 | :-------------: | :----------------------------------------------------------------------------------: |
@@ -53,7 +53,7 @@ tag:
 | `dateModified`  |                                `page.git.updatedTime`                                |
 |    `author`     |                 `page.frontmatter.author` \|\| `themeConfig.author`                  |
 
-## 直接设置标签
+## 直接设置标签 {#setting-tags-directly}
 
 通过配置页面 Frontmatter 的 `head` 选项，可以将特定标签直接注入至页面的 `<head>` 中。
 
@@ -68,9 +68,9 @@ head:
 
 上述配置将输出：`<meta name="keywords" content="SEO plugin" />`。
 
-## 自定义生成逻辑
+## 自定义生成逻辑 {#customizing-generation}
 
-### 页面类型解析
+### 页面类型解析 {#page-type-resolution}
 
 默认情况下，由 Markdown 生成的非主页页面均被视为文章。你可以通过 `plugins.seo.isArticle` 选项提供自定义的文章识别逻辑。
 
@@ -82,7 +82,7 @@ head:
 针对书籍、音乐等非文章类型的页面，可通过下方介绍的 `ogp`、`jsonLd` 和 `customHead` 选项接管生成逻辑。
 :::
 
-### OGP 自定义
+### OGP 自定义 {#ogp-customization}
 
 通过 `plugins.seo.ogp` 可以在输出前修改默认生成的 OGP 对象。
 
@@ -108,7 +108,7 @@ seoPlugin({
 });
 ```
 
-### JSON-LD 自定义
+### JSON-LD 自定义 {#json-ld-customization}
 
 通过 `plugins.seo.jsonLd` 可以在输出前修改默认生成的 JSON-LD 对象。
 
@@ -123,7 +123,7 @@ function jsonLd(
 ): ArticleSchema | BlogPostingSchema | WebPageSchema;
 ```
 
-### 规范链接 (Canonical Link)
+### 规范链接 (Canonical Link) {#canonical-link}
 
 如果你的内容部署在多个域名或路径下，需通过 `plugins.seo.canonical` 指定首选 URL。可以传入字符串作为基准 URL 自动拼接，或传入函数 `(page: Page) => string | null` 进行编程式控制。
 
@@ -131,7 +131,7 @@ function jsonLd(
 如果你的站点同时可被 `http://example.com/docs/` 和 `https://www.example.com/docs/`（首选）访问，将 `plugins.seo.canonical` 设置为 `https://www.example.com/docs/` 会指示搜索引擎仅索引该首选 URL。
 :::
 
-### 自定义 `<head>` 标签
+### 自定义 `<head>` 标签 {#custom-head-tags}
 
 通过 `plugins.seo.customHead` 可以直接修改 `<head>` 标签数组。这适用于需满足特定搜索引擎特殊标签格式要求的场景。
 
@@ -146,7 +146,7 @@ function customHead(
 ): void;
 ```
 
-## RDFa 1.1 支持
+## RDFa 1.1 支持 {#rdfa-1-1-support}
 
 主题遵循 [RDFa 1.1](https://www.w3.org/TR/rdfa-primer/) 规范，为站点提供了富媒体结构支持。
 
@@ -154,7 +154,7 @@ function customHead(
 使用 [Google 富媒体搜索结果测试工具](https://search.google.com/test/rich-results) 验证站点的结构化数据。
 :::
 
-## 参考链接
+## 参考链接 {#reference-links}
 
 - [Open Graph Protocol (OGP)](https://ogp.me/)
 - [JSON-LD 1.1](https://www.w3.org/TR/json-ld-api/)

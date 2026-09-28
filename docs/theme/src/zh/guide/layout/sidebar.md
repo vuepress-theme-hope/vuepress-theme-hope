@@ -13,17 +13,17 @@ tag:
 
 <!-- markdownlint-disable MD051 -->
 
-主题允许你通过 [文件结构](#通过文件结构自动生成) 和 [文档标题](#通过标题自动生成) 自动生成侧边栏，也可以手动配置。
+主题允许你通过 [文件结构](#generate-sidebar-from-file-structure) 自动生成侧边栏，也可以手动配置。
 
 <!-- markdownlint-enable MD051 -->
 
 <!-- more -->
 
-## 侧边栏链接
+## 侧边栏链接 {#sidebar-links}
 
 站点侧边栏的配置由主题选项中的 `sidebar` 控制。
 
-### 字符串格式
+### 字符串格式 {#string-format}
 
 同导航栏，你可以填入一个包含多个文件链接的数组，作为侧边栏基本的配置:
 
@@ -44,11 +44,11 @@ export default hopeTheme({
 
 你可以省略 `.md` 扩展名，以 `/` 结尾的路径会被推断为 `/README.md`。
 
-如果你不喜欢默认显示图标的行为，我们提供了 [相关预设](../customize/presets.md#样式相关) 来隐藏它。
+如果你不喜欢默认显示图标的行为，我们提供了 [相关预设](../customize/presets.md#style-related) 来隐藏它。
 
 :::
 
-### 对象格式
+### 对象格式 {#object-format}
 
 同导航栏，如果你对页面的图标不满意或者觉得页面标题太长，你可以改为配置一个对象。可用的配置项有:
 
@@ -84,11 +84,11 @@ export default hopeTheme({
 
 :::
 
-### 分组与嵌套
+### 分组与嵌套 {#grouping-and-nesting}
 
 如果你需要展示嵌套结构的侧边栏，你可以将同类链接整理成菜单分组。
 
-你需要使用 [对象格式](#对象格式) ，并提供额外的 `children` 选项设置链接列表。
+你需要使用 [对象格式](#object-format) ，并提供额外的 `children` 选项设置链接列表。
 
 和导航栏一样，你可以在侧边栏中使用 `prefix` 来为组内的每个链接添加默认的路径前缀，
 
@@ -150,7 +150,10 @@ export default hopeTheme({
         {
           text: "Sub Group 2",
           prefix: "corge/",
-          children: ["fred" /* /corge/fred.html */, "grault" /* /corge/grault.html */],
+          children: [
+            "fred" /* /corge/fred.html */,
+            "grault" /* /corge/grault.html */,
+          ],
         },
         "foo" /* /foo.html */,
       ],
@@ -163,20 +166,21 @@ export default hopeTheme({
 
 比如，将你的页面文件为下述的目录结构:
 
-```
-.
-├─ README.md
-├─ contact.md
-├─ about.md
-├─ foo/
-│   ├─ README.md
-│   ├─ one.md
-│   └─ two.md
-└─ bar/
-    ├─ README.md
-    ├─ three.md
-    └─ four.md
-```
+::: file-tree
+
+- README.md
+- contact.md
+- about.md
+- foo/
+  - README.md
+  - one.md
+  - two.md
+- bar/
+  - README.md
+  - three.md
+  - four.md
+
+:::
 
 你就可以进行以下配置:
 
@@ -189,12 +193,20 @@ export default hopeTheme({
     {
       text: "Foo",
       prefix: "/foo/",
-      children: ["" /* /foo/ */, "one" /* /foo/one.html */, "two" /* /foo/two.html */],
+      children: [
+        "" /* /foo/ */,
+        "one" /* /foo/one.html */,
+        "two" /* /foo/two.html */,
+      ],
     },
     {
       text: "Bar",
       prefix: "/bar/",
-      children: ["" /* /bar/ */, "three" /* /bar/three.html */, "four" /* /bar/four.html */],
+      children: [
+        "" /* /bar/ */,
+        "three" /* /bar/three.html */,
+        "four" /* /bar/four.html */,
+      ],
     },
     "/contact" /* /contact.html */,
     "/about" /* /about.html */,
@@ -202,26 +214,27 @@ export default hopeTheme({
 });
 ```
 
-### 多个侧边栏
+### 多个侧边栏 {#multiple-sidebars}
 
 如果你想为不同的页面组来显示不同的侧边栏，你需要通过 `路径前缀: 侧边栏配置` 的格式为侧边栏配置一个对象。
 
 比如，将你的页面文件为下述的目录结构:
 
-```
-.
-├─ README.md
-├─ contact.md
-├─ about.md
-├─ foo/
-│   ├─ README.md
-│   ├─ one.md
-│   └─ two.md
-└─ bar/
-    ├─ README.md
-    ├─ three.md
-    └─ four.md
-```
+::: file-tree
+
+- README.md
+- contact.md
+- about.md
+- foo/
+  - README.md
+  - one.md
+  - two.md
+- bar/
+  - README.md
+  - three.md
+  - four.md
+
+:::
 
 你就可以遵循以下的侧边栏配置，来为不同路径显示不同的分组:
 
@@ -230,9 +243,17 @@ import { hopeTheme } from "vuepress-theme-hope";
 
 export default hopeTheme({
   sidebar: {
-    "/foo/": ["" /* /foo/ */, "one" /* /foo/one.html */, "two" /* /foo/two.html */],
+    "/foo/": [
+      "" /* /foo/ */,
+      "one" /* /foo/one.html */,
+      "two" /* /foo/two.html */,
+    ],
 
-    "/bar/": ["" /* /bar/ */, "three" /* /bar/three.html */, "four" /* /bar/four.html */],
+    "/bar/": [
+      "" /* /bar/ */,
+      "three" /* /bar/three.html */,
+      "four" /* /bar/four.html */,
+    ],
 
     // 回退
     "/": ["" /* / */, "contact" /* /contact.html */, "about" /* /about.html */],
@@ -248,26 +269,27 @@ export default hopeTheme({
 
 :::
 
-## 通过文件结构自动生成侧边栏 <Badge text="新增" type="tip" />
+## 通过文件结构自动生成侧边栏 <Badge text="新增" type="tip" /> {#generate-sidebar-from-file-structure}
 
 你可以在上述任意侧边栏配置中，将原来的“侧边栏数组”替换为 `"structure"` 关键词。这会让主题自动读取本地文件，为你生成对应的侧边栏结构，以大大减少你的配置工作量。
 
-比如对于之前在 [多个侧边栏](#多个侧边栏) 提到的如下例子:
+比如对于之前在 [多个侧边栏](#multiple-sidebars) 提到的如下例子:
 
-```
-.
-├─ README.md
-├─ contact.md
-├─ about.md
-├─ foo/
-│   ├─ README.md
-│   ├─ one.md
-│   └─ two.md
-└─ bar/
-    ├─ README.md
-    ├─ three.md
-    └─ four.md
-```
+::: file-tree
+
+- README.md
+- contact.md
+- about.md
+- foo/
+  - README.md
+  - one.md
+  - two.md
+- bar/
+  - README.md
+  - three.md
+  - four.md
+
+:::
 
 你可以将原来的配置改为:
 
@@ -298,7 +320,7 @@ export default hopeTheme({
 
 :::
 
-### 进阶控制
+### 进阶控制 {#advanced-control}
 
 在从结构自动生成的过程中，你可以通过页面 Frontmatter 中的 `index` 选项控制同一文件夹下的文件是否被包含、并通过 `order` 控制它们的排序方式。
 
@@ -352,7 +374,7 @@ dir:
 
 如果对应文件夹不存在 `README.md` 文件，则只有分组标题会从文件夹名称中生成。
 
-#### 自定义排序
+#### 自定义排序 {#customize-sorter}
 
 除了上面的实现外，我们还在主题选项中添加了更为强大的 `sidebarSorter` 选项。你可以传入一个或一系列内置排序器名称，也可以传递一个自己需要的排序函数对同级的侧边栏项目进行排序。
 
@@ -367,7 +389,7 @@ dir:
 
 对应上述的进阶控制，它的默认值是 `["readme", "order", "title", "filename"]`
 
-## 禁用侧边栏
+## 禁用侧边栏 {#disabling-sidebar}
 
 你可以通过 `Frontmatter 来禁用指定页面的侧边栏:
 
@@ -383,7 +405,7 @@ sidebar: false
 
 :::
 
-## 活动的标题链接
+## 活动的标题链接 {#active-header-links}
 
 默认情况下，当用户通过滚动查看页面的不同部分时，嵌套的标题链接和 URL 中的 Hash 值会实时更新。
 
@@ -399,7 +421,7 @@ export default hopeTheme({
 });
 ```
 
-## 多语言
+## 多语言 {#i18n-support}
 
 主题的侧边栏支持 [多语言](https://vuejs.press/zh/guide/i18n.html)，所以你可以为每个语言单独设置侧边栏:
 
@@ -418,13 +440,13 @@ export default hopeTheme({
 });
 ```
 
-## 相关助手与类型
+## 相关助手与类型 {#types-and-helpers}
 
 `vuepress-theme-hope` 将侧边栏的类型导出为 `SidebarOptions`，同时，提供了一个 `sidebar` 帮助函数。
 
 ::: tip
 
-为了应对当你将 [多侧边栏配置](#多个侧边栏) 拆分成多个部分的情景，我们还针对性的提供了 `SidebarArrayConfig` `SidebarObjectConfig` 类型与 `arraySidebar` 和 `objectSidebar` 帮助函数。
+为了应对当你将 [多侧边栏配置](#multiple-sidebars) 拆分成多个部分的情景，我们还针对性的提供了 `SidebarArrayConfig` `SidebarObjectConfig` 类型与 `arraySidebar` 和 `objectSidebar` 帮助函数。
 
 :::
 

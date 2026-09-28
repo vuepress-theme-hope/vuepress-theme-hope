@@ -27,13 +27,18 @@ export default hopeTheme({
 });
 ```
 
-Available options:
+::: fields
+@`darkmode` type=`'switch' | 'toggle' | 'auto' | 'enable' | 'disable'` default=`'switch'`
 
-- `"switch"`: switch between dark, light and auto (default)
-- `"toggle"`: toggle between light mode and dark mode
-- `"auto"`: Automatically decide whether to apply dark mode based on user device's color-scheme or current time
-- `"enable"`: only dark mode
-- `"disable"`: disable dark mode
+Whether to enable dark mode support:
+
+- `'switch'`: switch between dark, light and auto
+- `'toggle'`: toggle between light mode and dark mode
+- `'auto'`: automatically decide whether to apply dark mode based on the user device color-scheme or current time
+- `'enable'`: only dark mode
+- `'disable'`: disable dark mode
+
+:::
 
 ::: tip Try it
 

@@ -15,10 +15,10 @@ titles:
 footer: false
 ---
 
-## 介绍
+## 介绍 {#description}
 
 这是一个档案主页的案例。
 
 要使用此布局，你应该在页面 Frontmatter 中设置 `home: true` 和 `portfolio: true`。
 
-相关配置文档请见 [档案主页](../guide/blog/home.md#档案类型主页)。
+相关配置文档请见 [档案主页](../config/frontmatter/portfolio.md)。

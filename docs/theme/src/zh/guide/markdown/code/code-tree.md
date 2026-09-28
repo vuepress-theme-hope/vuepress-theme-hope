@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 ```ts twoslash {5} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -38,7 +38,7 @@ export default hopeTheme({
 });
 ```
 
-## 语法
+## 语法 {#syntax}
 
 将多个代码块包裹在 `code-tree` 容器中，并为代码块添加 `title="文件路径"` 属性以声明其所属文件。
 
@@ -48,11 +48,11 @@ export default hopeTheme({
 - 没有 `title` 属性的代码块会被忽略，文件会按其路径排列。
 - 未声明 `entry` 与 `:active` 时，默认打开第一个代码块。
 
-### 嵌入目录
+### 嵌入目录 {#embedding-a-directory}
 
 使用 `@[code-tree](目录路径)` 将目录中的所有代码文件渲染为代码树。以 `/` 开头的路径从源目录解析，其他路径从当前页面所在目录解析。
 
-## 演示
+## 演示 {#demo}
 
 :::: preview
 

@@ -18,21 +18,16 @@ Badge Test <Badge text="Building" type="warning" /> <Badge text="MrHope" color="
 
 :::
 
-## Props
+## Options
 
-### text
+::: fields
+@`text` type=string required
 
-- Type: `string`
-- Required: Yes
+Text of the badge.
 
-Text of the badge
+@`type` type=`"tip" | "warning" | "danger" | "important" | "info" | "note"` default=`"info"`
 
-### type
-
-- Type: `"tip" | "warning" | "danger" | "important" | "info" | "note"`
-- Default: `"info"`
-
-Badge types:
+Badge type:
 
 - <Badge text="tip" type="tip" vertical="middle" />
 - <Badge text="warning" type="warning" vertical="middle" />
@@ -41,16 +36,12 @@ Badge types:
 - <Badge text="info" type="info" vertical="middle" />
 - <Badge text="note" type="note" vertical="middle" />
 
-### color
+@`color` type=string
 
-- Type: `string`
-- Required: No
+Badge color, please fill in CSS color strings.
 
-Badge color, please fill in CSS color strings
+@`vertical` type=`"top" | "middle" | "baseline" | "bottom"`
 
-### vertical
+Vertical position of the badge.
 
-- Type: `"top" | "middle" | "baseline" | "bottom"`
-- Required: No
-
-Vertical position of the badge
+:::

@@ -37,10 +37,10 @@ export default defineUserConfig({
 });
 ```
 
-## check
+## 选项 {#options}
 
-- 类型: `boolean`
-- 默认值: `true`
+:::: fields
+@`check` type=boolean default=`true`
 
 是否执行附加检查。
 
@@ -52,10 +52,7 @@ export default defineUserConfig({
 
 :::
 
-## compact
-
-- 类型: `boolean`
-- 默认值: `true`
+@`compact` type=boolean default=`true`
 
 是否兼容历史版本 (v1 最新版本和 v2 beta 版本)。
 
@@ -68,10 +65,7 @@ export default defineUserConfig({
 
 :::
 
-## custom
-
-- 类型: `boolean`
-- 默认值: `false`
+@`custom` type=boolean
 
 是否启用通过别名导入组件的自定义支持。
 
@@ -79,10 +73,7 @@ export default defineUserConfig({
 
 如果你想通过覆盖组件和布局来自定义主题，请将此选项设置为 `true`，主题将加载带有 `@theme-hope` 别名的组件和布局。
 
-## debug
-
-- 类型: `boolean`
-- 默认值: `false`
+@`debug` type=boolean
 
 是否在调试模式下运行。
 
@@ -94,9 +85,8 @@ export default defineUserConfig({
 
 :::
 
-## checkVuePress
-
-- 类型: `boolean`
-- 默认值: `true`
+@`checkVuePress` type=boolean default=`true`
 
 是否检查 VuePress 版本是否兼容。
+
+::::

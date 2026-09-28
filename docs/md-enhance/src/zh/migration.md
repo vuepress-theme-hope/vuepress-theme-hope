@@ -3,11 +3,11 @@ title: 最新版本迁移
 icon: code-compare
 ---
 
-## 传统模式 <Badge text="当前默认" />
+## 传统模式 <Badge text="当前默认" /> {#legacy-mode}
 
 你可以在调用 `mdEnhancePlugin` 时传递第二个参数 `true` 以启用传统模式，插件将尝试以 V1 行为运行。
 
-## 新功能
+## 新功能 {#new-features}
 
 - `v-pre` 支持
 
@@ -35,7 +35,7 @@ icon: code-compare
 
   通过 `@vue/repl` 提供 Vue 交互演示
 
-## 变更
+## 变更 {#changed}
 
 - 现在所有选项均默认不开启
 
@@ -85,7 +85,7 @@ icon: code-compare
   :::
   ```
 
-## 移除的选项
+## 移除的选项 {#removed-options}
 
 - `enableAll` 被移除
 
@@ -143,7 +143,7 @@ icon: code-compare
 
   请用 `@vuepress/plugin-markdown-chart` 代替
 
-## 预发布版本中的选项调整
+## 预发布版本中的选项调整 {#options-adjustments-in-pre-release-version}
 
 - `vpre` 选项被重命名为 `vPre`
 

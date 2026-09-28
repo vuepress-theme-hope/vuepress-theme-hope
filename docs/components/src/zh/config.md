@@ -3,16 +3,10 @@ title: 插件选项
 icon: gears
 ---
 
-## components
+## 选项 {#options}
 
-- 类型: `AvailableComponent[]`
-
-  ```ts
-  type AvailableComponent =
-    "Badge" | "CodePen" | "Share" | "StackBlitz" | "SiteInfo" | "VPBanner" | "VPCard";
-  ```
-
-- 默认值: `[]`
+:::: fields
+@`components` type=`AvailableComponent[]` default=`[]`
 
 需要被注册的组件。
 
@@ -32,48 +26,34 @@ icon: gears
 
 :::
 
-## componentsOptions
+@`componentsOptions` type=`ComponentGlobalOptions`
 
-组件的全局配置
+组件的全局配置。
 
-### componentsOptions.share.services
+@@`componentsOptions.share` type=`ShareOptions`
 
-- 类型: `(string | ShareService)[]`
-- 详情:
-  - [指南 → Share → 设置组件](./guide/utilities/share.md#设置组件)
+分享配置。
 
-分享服务
+@@@`componentsOptions.share.services` type=`(string | ShareService)[]` required
 
-### componentsOptions.share.twitterUserName
+分享服务。
 
-- 类型: `string`
-- 必填: 否
+参考：[指南 → Share → 设置组件](./guide/utilities/share.md#setting-component)。
+
+@@@`componentsOptions.share.twitterUserName` type=string
 
 Twitter 用户名。
 
-## locales
+@`locales` type=`ComponentLocaleOptions`
 
-组件多语言配置
+组件多语言配置。
 
-### locales.siteInfo
-
-- 类型: `SiteInfoLocaleConfig`
-
-  ```ts
-  interface SiteInfoLocaleData {
-    /**
-     * Source text
-     *
-     * 源代码文字
-     */
-    source: string;
-  }
-
-  interface SiteInfoLocaleConfig {
-    [localePath: string]: SiteInfoLocaleData;
-  }
-  ```
-
-- 必填: 否
+@@`locales.siteInfo` type=`SiteInfoLocaleConfig`
 
 站点信息组件国际化配置。
+
+@@@`locales.siteInfo.<localePath>.source` type=string
+
+源代码文字。
+
+::::

@@ -3,16 +3,10 @@ title: Plugin Options
 icon: gears
 ---
 
-## components
+## Options
 
-- Type: `AvailableComponent[]`
-
-  ```ts
-  type AvailableComponent =
-    "Badge" | "CodePen" | "Share" | "StackBlitz" | "SiteInfo" | "VPBanner" | "VPCard";
-  ```
-
-- Default: `[]`
+:::: fields
+@`components` type=`AvailableComponent[]` default=`[]`
 
 Components to be registered.
 
@@ -32,48 +26,34 @@ The media components are moved to [`@vuepress/plugin-media`](https://ecosystem.v
 
 :::
 
-## componentsOptions
+@`componentsOptions` type=`ComponentGlobalOptions`
 
 Global config for components.
 
-### componentsOptions.share.services
+@@`componentsOptions.share` type=`ShareOptions`
 
-- Type: `(string | ShareService)[]`
-- Details:
-  - [Guide → Share → Setting component](./guide/utilities/share.md#setting-component)
+Share config.
 
-Share services
+@@@`componentsOptions.share.services` type=`(string | ShareService)[]` required
 
-### componentsOptions.share.twitterUserName
+Share services.
 
-- Type: `string`
-- Required: No
+See also: [Guide → Share → Setting component](./guide/utilities/share.md#setting-component).
+
+@@@`componentsOptions.share.twitterUserName` type=string
 
 Twitter username.
 
-## locales
+@`locales` type=`ComponentLocaleOptions`
 
 Component locales.
 
-### locales.siteInfo
-
-- Type: `SiteInfoLocaleConfig`
-
-  ```ts
-  interface SiteInfoLocaleData {
-    /**
-     * Source text
-     *
-     * 源代码文字
-     */
-    source: string;
-  }
-
-  interface SiteInfoLocaleConfig {
-    [localePath: string]: SiteInfoLocaleData;
-  }
-  ```
-
-- Required: No
+@@`locales.siteInfo` type=`SiteInfoLocaleConfig`
 
 Locales config for site info component.
+
+@@@`locales.siteInfo.<localePath>.source` type=string
+
+Source text.
+
+::::

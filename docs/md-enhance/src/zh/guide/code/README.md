@@ -20,11 +20,11 @@ index: false
 
 <!-- more -->
 
-## 案例
+## 案例 {#demo}
 
 <!-- #region demo -->
 
-### 代码演示
+### 代码演示 {#code-demo}
 
 ::: normal-demo 一个普通 Demo
 
@@ -49,7 +49,7 @@ span {
 
 - [查看详情](./demo/README.md)
 
-### 交互演示
+### 交互演示 {#playground}
 
 ::: playground#ts TS 案例
 
@@ -67,7 +67,7 @@ speak(msg);
 
 - [查看详情](./playground.md)
 
-### Kotlin 交互演示
+### Kotlin 交互演示 {#kotlin-playground}
 
 ::: kotlin-playground Kotlin 交互演示
 
@@ -86,7 +86,7 @@ fun main(args: Array<String>) {
 
 - [查看详情](./kotlin-playground.md)
 
-### Vue 交互演示
+### Vue 交互演示 {#vue-playground}
 
 ::: vue-playground Vue 交互演示
 
@@ -109,7 +109,7 @@ const msg = ref("Hello World!");
 
 - [查看详情](./vue-playground.md)
 
-### Sandpack 交互演示
+### Sandpack 交互演示 {#sandpack}
 
 ::: sandpack#vue Vue 交互演示
 

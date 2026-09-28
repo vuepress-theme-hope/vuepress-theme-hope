@@ -98,11 +98,11 @@ Orange
 ### Fields
 
 ::: fields
-@theme@ type="ThemeConfig" required default="{ base: '/' }"
+@`theme` type=`ThemeConfig` required default=`{ base: '/' }`
 
 Theme config.
 
-@enabled@ type="boolean" optional
+@`enabled` type=boolean optional
 
 Whether it is enabled.
 

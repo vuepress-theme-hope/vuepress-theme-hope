@@ -43,17 +43,19 @@ When using Markdown [link syntax](https://spec.commonmark.org/0.29/#link-referen
 
 Take our documentation source files as an example:
 
-```
-└─ src
-   ├─ cookbook
-   │  └─ vuepress
-   │     ├─ markdown.md <- Here we are
-   │     └─ README.md
-   ├─ guide
-   │  └─ README.md
-   ├─ contribution.md
-   └─ README.md
-```
+::: file-tree
+
+- src
+  - cookbook
+    - vuepress
+      - **markdown.md** # Here we are
+      - README.md
+  - guide
+    - README.md
+  - contribution.md
+  - README.md
+
+:::
 
 Raw Markdown:
 
@@ -80,10 +82,14 @@ Converted to:
 <template>
   <RouterLink to="/v2/">Home</RouterLink>
   <RouterLink to="/v2/contribution.html">Contribution Guide</RouterLink>
-  <RouterLink to="/v2/cookbook/vuepress/config.html">VuePress Config</RouterLink>
+  <RouterLink to="/v2/cookbook/vuepress/config.html"
+    >VuePress Config</RouterLink
+  >
   <RouterLink to="/v2/guide/">Guide</RouterLink>
   <RouterLink to="/v2/config/i18n.html">Config &gt; I18n</RouterLink>
-  <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+  <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+    >GitHub</a
+  >
 </template>
 ```
 

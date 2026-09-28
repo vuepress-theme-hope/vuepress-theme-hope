@@ -11,13 +11,13 @@ icon: fa7-brands:vuejs
 
 由于我们提供了一个运行时编译器，我们引入了带有 TypeScript 支持的整个 `@vue/compiler-sfc` 包，因此整个 Vue Playground 块大于 4MB。 因此，只有在严重依赖交互式 Vue Playground 时才应使用它。
 
-你可以使用 [Vue Demo](./demo/vue.md) 和 [交互演示 Vue 预设](./playground.md#vue) 作为替代。
+你可以使用 [Vue Demo](./demo/vue.md) 和 [交互演示 Vue 预设](./playground.md) 作为替代。
 
 :::
 
 <!-- #region settings -->
 
-## 配置
+## 配置 {#settings}
 
 在你的项目中安装 `@vue/repl`:
 
@@ -62,7 +62,7 @@ export default {
 
 <!-- #region after -->
 
-## 用法
+## 用法 {#usage}
 
 要使用 vue 交互演示，你应该使用一个名为 `vue-playground` 的容器。
 
@@ -86,7 +86,7 @@ defineVuePlaygroundConfig({
 });
 ```
 
-## 案例
+## 案例 {#demo}
 
 :::: preview 简单的 Vue 交互演示
 

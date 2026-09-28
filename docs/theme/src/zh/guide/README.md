@@ -8,7 +8,7 @@ tag:
   - 介绍
 ---
 
-## 介绍
+## 介绍 {#introduction}
 
 VuePress Theme Hope 是一个包含大量功能的 VuePress 主题。
 
@@ -27,6 +27,6 @@ VuePress Theme Hope 是一个包含大量功能的 VuePress 主题。
 
 :::
 
-## 寻求帮助
+## 寻求帮助 {#asking-for-help}
 
 如果你在使用过程中遇到了 bug，可以 [提一个 issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues)。如果你遇到了使用问题，可以 [开一个讨论](https://github.com/orgs/vuepress-theme-hope/discussions) 或者 [加入 QQ 群](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555) 进行反馈。

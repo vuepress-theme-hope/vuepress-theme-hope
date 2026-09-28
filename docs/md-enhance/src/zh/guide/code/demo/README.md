@@ -15,7 +15,7 @@ icon: splotch
 
 :::
 
-## 配置
+## 配置 {#settings}
 
 ```js {7} title=".vuepress/config.js"
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
@@ -32,7 +32,7 @@ export default {
 
 <!-- #region syntax -->
 
-## 语法
+## 语法 {#syntax}
 
 请使用以下语法:
 
@@ -71,7 +71,7 @@ JSON 块是可选的，可用的配置详见 [配置](../../../config.md#demo)�
 
 <!-- #region language -->
 
-## 可用的语言
+## 可用的语言 {#available-languages}
 
 你可以在演示块中使用不同语言。
 
@@ -108,7 +108,7 @@ JSON 块是可选的，可用的配置详见 [配置](../../../config.md#demo)�
 
 <!-- #endregion language -->
 
-### 不支持的语言演示
+### 不支持的语言演示 {#not-supported-language-demo}
 
 <!-- #region demo -->
 

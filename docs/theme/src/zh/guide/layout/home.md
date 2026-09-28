@@ -15,7 +15,7 @@ tag:
 
 <!-- more -->
 
-## 站点信息
+## 站点信息 {#site-information}
 
 你可以使用 `heroText` 设置主标题，并通过 `tagline` 设置副标题。
 
@@ -89,7 +89,7 @@ heroImageStyle:
 
 :::
 
-## 主页按钮
+## 主页按钮 {#home-button}
 
 你可以将一些重要的链接以按钮的形式展示在主页中。
 
@@ -119,7 +119,7 @@ actions:
 
 :::
 
-## 项目功能 (旧版)
+## 项目功能 (旧版) {#project-features-legacy}
 
 你可以通过 `features` 设置并展示项目特性，它是一个数组，每个元素都是一个对象，包含以下键值:
 
@@ -148,7 +148,7 @@ features:
 
 :::
 
-## 项目亮点与功能
+## 项目亮点与功能 {#project-highlights-and-features}
 
 你可以通过 `highlights` 来设置和显示项目功能和亮点，它是一个数组，每个元素都是一个对象，代表一个功能或亮点章节。
 
@@ -210,7 +210,7 @@ highlights:
 
 :::
 
-## 配置案例
+## 配置案例 {#demo}
 
 ::: info
 

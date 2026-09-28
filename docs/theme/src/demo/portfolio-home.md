@@ -20,4 +20,4 @@ This is a portfolio home page demo.
 
 To use this layout, you should set `home: true` and `portfolio: true` in the page front matter.
 
-For related configuration docs, please see [portfolio homepage](../guide/blog/home.md#portfolio-style-homepage).
+For related configuration docs, please see [portfolio homepage](../config/frontmatter/portfolio.md).

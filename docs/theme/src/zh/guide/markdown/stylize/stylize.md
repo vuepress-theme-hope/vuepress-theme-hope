@@ -13,7 +13,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 ```ts twoslash {5-7} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -27,7 +27,7 @@ export default hopeTheme({
 });
 ```
 
-## 使用
+## 使用 {#usage}
 
 `stylize` 接收一个数组，其中每个元素接受 2 个选项：
 

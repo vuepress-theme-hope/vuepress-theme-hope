@@ -16,11 +16,11 @@ actions:
     link: https://stackblitz.com/fork/vuepress-theme-hope
 ```
 
-## 开源项目
+## 开源项目 {#open-source-projects}
 
 - [查看详情](./projects.md)
 
-## 即时案例页面
+## 即时案例页面 {#living-demo-pages}
 
 - [使用功能展示的项目主页](./project-home.md)
 

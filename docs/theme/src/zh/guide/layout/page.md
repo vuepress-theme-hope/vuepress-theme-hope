@@ -9,7 +9,7 @@ tag:
   - 页面
 ---
 
-## 图标支持
+## 图标支持 {#icon-support}
 
 你可以在页面 Frontmatter 中设置 `icon` 来为页面设置图标，详见 [图标支持](../interface/icon.md)。
 
@@ -25,7 +25,7 @@ icon: home
 
 :::
 
-## 路径导航
+## 路径导航 {#breadcrumb}
 
 主题添加了开箱即用的路径导航支持。
 
@@ -35,11 +35,11 @@ icon: home
 
 如果你不希望某个页面被添加到路径导航中（例如：首页），你可以在页面的 Frontmatter 中设置 `breadcrumbExclude: true`。
 
-## 文章信息展示
+## 文章信息展示 {#page-info-display}
 
 详见 [文章信息](../feature/page-info.md) 章节。
 
-## 标题列表
+## 标题列表 {#header-list}
 
 在桌面模式下，文章的标题列表会自动显示在屏幕的右侧。(在移动视图下它们会放置在侧边栏里)
 
@@ -67,11 +67,11 @@ icon: home
 
 :::
 
-## 贡献者与最后更新时间
+## 贡献者与最后更新时间 {#contributors-and-last-updated-time}
 
 详见 [页面元数据](../feature/meta.md) 章节。
 
-## 上 / 下一篇链接
+## 上 / 下一篇链接 {#prev-next-links}
 
 上一篇和下一篇文章的链接将会自动地根据当前页面的侧边栏的顺序来获取。你也可以通过主题选项或 frontmatter 来明确地重写或者禁用它:
 
@@ -84,11 +84,11 @@ next: false
 
 你也可以通过传递一个拥有 title, icon 和 link 的对象来完全自定义它。
 
-## 评论
+## 评论 {#comment}
 
 具体详情请见 [评论](../feature/comment.md) 章节。
 
-## 自定义布局
+## 自定义布局 {#customize-layout}
 
 默认情况下，每个 `*.md` 文件将会被渲染在一个 `<div class="page">` 容器中，同时还有侧边栏、自动生成的编辑链接，以及上 / 下一篇文章的链接。如果你想要使用一个完全自定义的组件来代替当前的页面，你可以通过 frontmatter 来指定布局组件。
 
@@ -113,7 +113,7 @@ layout: SpecialLayout
 
 :::
 
-## 自定义容器 Class
+## 自定义容器 Class {#customize-container-class}
 
 默认情况下，每个页面都会渲染在 class 为 `theme-container` 的 `div` 中。如果你需要对特定页面应用一些特殊样式，你可以通过在 frontmatter 中设置 `containerClass` 来额外指定一个类名
 

@@ -10,7 +10,7 @@ tag:
   - 插槽
 ---
 
-## 主题布局
+## 主题布局 {#theme-layouts}
 
 主题提供了以下布局：
 
@@ -19,11 +19,13 @@ tag:
 - Slides（仅在启用 [reveal.js](../../guide/markdown/content/revealjs.md) 时可用）
 - Blog（仅在启用 [blog](../../guide/blog/intro.md) 时可用）
 
-## 通过插槽自定义布局
+## 通过插槽自定义布局 {#customize-layouts-with-slots}
 
-你可以通过 [客户端配置文件](../../cookbook/vuepress/config.md#客户端配置文件) 中的 `layouts` 选项添加新布局或覆盖现有布局。
+你可以通过 [客户端配置文件](../../cookbook/vuepress/config.md#client-config-file) 中的 `layouts` 选项添加新布局或覆盖现有布局。
 
 <!-- #region layout -->
+
+::: code-tree
 
 ```vue title=".vuepress/layouts/Home.vue"
 <script setup lang="ts">
@@ -78,6 +80,8 @@ export default defineClientConfig({
 });
 ```
 
+:::
+
 <!-- #endregion layout -->
 
 基础布局可以从 `vuepress-theme-hope/client` 导入：
@@ -108,9 +112,9 @@ import { SlidePage } from "@vuepress/plugin-revealjs/layouts";
 
 :::
 
-## `<Layout>` 的插槽
+## `<Layout>` 的插槽 {#slots-of-layout}
 
-### 在所有布局中可用的插槽
+### 在所有布局中可用的插槽 {#slots-available-in-all-type-of-pages}
 
 - `default`
 
@@ -154,7 +158,7 @@ import { SlidePage } from "@vuepress/plugin-revealjs/layouts";
 
 - `sidebarBottom`: 侧边栏底部的插槽。
 
-### 在内容页面中可用的插槽
+### 在内容页面中可用的插槽 {#slots-available-in-content-page}
 
 - `pageTop`: 页面顶部的插槽。
 
@@ -174,7 +178,7 @@ import { SlidePage } from "@vuepress/plugin-revealjs/layouts";
 
   页面目录的插槽，在实际的目录之后。可添加赞助商链接或广告。
 
-### 主页中可用的插槽
+### 主页中可用的插槽 {#slots-available-in-home-page}
 
 - `heroInfo`: 主页英雄信息的插槽。
 
@@ -186,7 +190,7 @@ import { SlidePage } from "@vuepress/plugin-revealjs/layouts";
 
 - `heroAfter`: 主页英雄之后的插槽。
 
-### 在作品集页面中可用的插槽
+### 在作品集页面中可用的插槽 {#slots-available-in-portfolio-page}
 
 - `portfolioInfo`: 作品集信息的插槽。
 
@@ -194,7 +198,7 @@ import { SlidePage } from "@vuepress/plugin-revealjs/layouts";
 
 - `portfolioBg`: 作品集背景的插槽。
 
-## `<NotFound>` 的插槽
+## `<NotFound>` 的插槽 {#slots-of-notfound}
 
 - `default`: 404 页面内容插槽
 
@@ -210,9 +214,9 @@ import { SlidePage } from "@vuepress/plugin-revealjs/layouts";
 
   导航屏幕是当你在移动视图中点击右上角菜单按钮时弹出的屏幕。
 
-## `<Blog>` 的插槽
+## `<Blog>` 的插槽 {#slots-of-blog}
 
-### 在所有博客页面中可用的插槽
+### 在所有博客页面中可用的插槽 {#slots-available-in-all-blog-page}
 
 - `default`
 
@@ -244,14 +248,14 @@ import { SlidePage } from "@vuepress/plugin-revealjs/layouts";
 
 - `infoAfter`: 博客信息面板之后的插槽。
 
-### 在主页、分类、标签页面中可用的插槽
+### 在主页、分类、标签页面中可用的插槽 {#slots-available-in-home-category-tag-page}
 
 - `articleCover`: 文章封面的插槽。
 - `articleTitle`: 文章标题的插槽。
 - `articleInfo`: 文章信息的插槽。
 - `articleExcerpt`: 文章摘要的插槽。
 
-### 在博客主页中可用的插槽
+### 在博客主页中可用的插槽 {#slots-available-in-blog-home-page}
 
 - `content`
 

@@ -50,7 +50,7 @@ flowchart LR
     pc<==$pc==>wide
 ```
 
-You can customize these breakpoints with [style config file](../config/style.md#configscss).
+You can customize these breakpoints with [style config file](../config/style.md#config-scss).
 
 For example:
 

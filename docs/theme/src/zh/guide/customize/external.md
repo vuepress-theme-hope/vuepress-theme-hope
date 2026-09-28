@@ -13,7 +13,7 @@ tag:
 
 <!-- more -->
 
-## 全局
+## 全局 {#global}
 
 如果你需要添加全局的 CSS 与 JS，请在 VuePress [配置文件](../../cookbook/vuepress/config.md) 中配置 `head` 选项。
 
@@ -57,7 +57,7 @@ export default defineUserConfig({
 
 :::
 
-## 每页
+## 每页 {#per-page}
 
 如果你需要添加页面级别的 CSS 与 JS，请在 [frontmatter](../../cookbook/vuepress/page.md#frontmatter) 中配置 `head` 选项。
 

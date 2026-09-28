@@ -14,7 +14,7 @@ tag:
 
 <!-- more -->
 
-## 分类设置
+## 分类设置 {#category-settings}
 
 只需要在页面 frontmatter 中设置 `category` 数组，并设置一个或多个文章所属的分类，该文章会自动渲染在 `/category/<分类名>/` 分类页面的列表中。
 
@@ -35,7 +35,7 @@ category:
 ![Category](./assets/category-light.png#light)
 ![Category](./assets/category-dark.png#dark)
 
-## 标签
+## 标签 {#tags}
 
 只需要在页面的 frontmatter 中设置 `tag`，并设置一个或多个文章所属的标签，该文章会自动渲染在 `/tag/<标签名>/` 标签页面的列表中。
 
@@ -56,7 +56,7 @@ tag:
 ![Tag](./assets/tag-light.png#light)
 ![Tag](./assets/tag-dark.png#dark)
 
-## 查看列表
+## 查看列表 {#view-list}
 
 除了直接访问对应的地址外，分类和标签名称会显示在文章开头的文章信息处，你可以点击它来导航到对应的列表查看相同分类或标签的文章。
 

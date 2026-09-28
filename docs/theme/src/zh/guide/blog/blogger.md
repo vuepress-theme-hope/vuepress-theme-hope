@@ -16,7 +16,7 @@ tag:
 ![博主信息](./assets/blogger-info-light.png#light)
 ![博主信息](./assets/blogger-info-dark.png#dark)
 
-## 头像和博主名称
+## 头像和博主名称 {#avatar-and-blogger-name}
 
 你可以通过 `blog.avatar` 和 `blog.name` 自由配置博客页面中显示的的博主头像和姓名。
 
@@ -26,7 +26,7 @@ tag:
 
 :::
 
-## 座右铭、社交媒体与个人介绍页地址
+## 座右铭、社交媒体与个人介绍页地址 {#motto-social-media-profile-link}
 
 你可以通过 `blog.description` 设置自己的一句话介绍、座右铭或口号。
 

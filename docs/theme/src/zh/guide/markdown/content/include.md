@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 ```ts twoslash {5} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -24,7 +24,7 @@ export default hopeTheme({
 });
 ```
 
-## 语法
+## 语法 {#syntax}
 
 使用 `<!-- @include: filename -->` 导入文件。
 
@@ -60,15 +60,17 @@ export default hopeTheme({
   <body>
     <!-- region snippet -->
     <p>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi, repellendus. Voluptatibus
-      alias cupiditate at, fuga tenetur error officiis provident quisquam autem, porro facere! Neque
-      quibusdam animi quaerat eligendi recusandae eaque.
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi,
+      repellendus. Voluptatibus alias cupiditate at, fuga tenetur error officiis
+      provident quisquam autem, porro facere! Neque quibusdam animi quaerat
+      eligendi recusandae eaque.
     </p>
     <!-- endregion snippet -->
     <p>
-      Veniam harum illum natus omnis necessitatibus numquam architecto eum dignissimos, quos a
-      adipisci et non quam maxime repellendus alias ipsum, vero praesentium laborum commodi
-      perferendis velit repellat? Vero, cupiditate sequi.
+      Veniam harum illum natus omnis necessitatibus numquam architecto eum
+      dignissimos, quos a adipisci et non quam maxime repellendus alias ipsum,
+      vero praesentium laborum commodi perferendis velit repellat? Vero,
+      cupiditate sequi.
     </p>
   </body>
 </html>
@@ -311,7 +313,7 @@ int main() {
 
 ::::
 
-## 演示
+## 演示 {#demo}
 
 `<!-- @include: ./demo.snippet.md -->`:
 
@@ -325,7 +327,7 @@ int main() {
 
 <!-- @include: ./demo.snippet.md#snippet -->
 
-## 高级用法
+## 高级用法 {#advanced}
 
 你还可以设置一个对象来自定义包含文件路径和包含行为。
 
@@ -379,7 +381,8 @@ export default defineUserConfig({
       // 添加 `@src` 别名支持
       include: {
         resolvePath: (file) => {
-          if (file.startsWith("@src")) return file.replace("@src", path.resolve(__dirname, ".."));
+          if (file.startsWith("@src"))
+            return file.replace("@src", path.resolve(__dirname, ".."));
 
           return file;
         },

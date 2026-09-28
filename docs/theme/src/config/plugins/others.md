@@ -9,23 +9,26 @@ tag:
   - Theme Config
 ---
 
-## backToTop <Badge text="enabled by default" />
+## Options
+
+:::: fields
+@`backToTop` enabled-by-default=Yes
 
 Controls `@vuepress/plugin-back-to-top` which provides a back to top button.
 
-No extra config is required by default. Se it to `false` if you don't need it.
+No extra config is required by default. Set it to `false` if you don't need it.
 
 Check [back-to-top plugin docs][back-to-top-config] for available plugin options.
 
-## catalog <Badge text="enabled by default" />
+@`catalog` enabled-by-default=Yes
 
 Controls `@vuepress/plugin-catalog` which provides catalog pages generation.
 
-No extra config is required by default. Se it to `false` if you don't need it.
+No extra config is required by default. Set it to `false` if you don't need it.
 
 Check [catalog plugin docs][catalog-config] for available plugin options.
 
-## components
+@`components`
 
 Controls `vuepress-plugin-components`, providing a set of components for Markdown.
 
@@ -51,15 +54,15 @@ The media components are moved to [`@vuepress/plugin-media`](https://ecosystem.v
 
 :::
 
-## copyCode <Badge text="enabled by default" />
+@`copyCode` enabled-by-default=Yes
 
 Controls `@vuepress/plugin-copy-code` which provides a code copy button on desktop.
 
-No extra config is required by default. Se it to `false` if you don't need it.
+No extra config is required by default. Set it to `false` if you don't need it.
 
 Check [copy-code plugin docs][copy-code-config] for available plugin options.
 
-## git <Badge text="enabled in production" />
+@`git` enabled-in-production=Yes
 
 Controls `@vuepress/plugin-git` which provides page meta via Git.
 
@@ -67,7 +70,7 @@ The plugin is only enabled in build mode by default to improve devServer perform
 
 Check [git plugin docs][git-config] for available plugin options.
 
-## media
+@`media`
 
 Controls `@vuepress/plugin-media` which provides components to embed videos, audios and PDF documents.
 
@@ -75,21 +78,21 @@ The plugin is disabled by default, you need to set `plugins.media` with plugin o
 
 Check [media plugin docs][media-config] for available plugin options, and [Media](../../guide/feature/media.md) for instructions.
 
-## nprogress <Badge text="enabled by default" />
+@`nprogress` enabled-by-default=Yes
 
 Controls `@vuepress/plugin-nprogress` which provides a progress bar through `nprogress` when switching pages .
 
 You can set `false` to disable it.
 
-## photoSwipe <Badge text="enabled by default" />
+@`photoSwipe` enabled-by-default=Yes
 
 Controls `@vuepress/plugin-photo-swipe` which provides picture browsing feature.
 
-No extra config is required by default. Se it to `false` if you don't need it.
+No extra config is required by default. Set it to `false` if you don't need it.
 
 Check [photo-swipe plugin docs][photo-swipe-config] for available plugin options.
 
-## pwa
+@`pwa`
 
 Controls `@vuepress/plugin-pwa` which provides PWA support.
 
@@ -97,20 +100,17 @@ You can set `true` to directly enable it, or provide plugin options.
 
 Check [pwa plugin docs][pwa-config] for available plugin options.
 
-## readingTime <Badge text="enabled by default" />
+@`readingTime` enabled-by-default=Yes
 
 Controls `@vuepress/plugin-reading-time` which generates words count and estimated reading time for pages.
 
-### readingTime.wordPerMinute
-
-- Type: `number`
-- Default: `300`
-
-Reading speed (words per minute)
-
 Check [reading-time plugin docs][reading-time-config] for available plugin options.
 
-## redirect <Badge text="enabled by default" />
+@@`readingTime.wordPerMinute` type=number default=`300`
+
+Reading speed (words per minute).
+
+@`redirect` enabled-by-default=Yes
 
 Controls `@vuepress/plugin-redirect` which provides redirect support.
 
@@ -118,27 +118,29 @@ The default option of theme is `{ switchLocale: 'modal' }`, set it to `false` if
 
 Check [redirect plugin docs][redirect-config] for available plugin options.
 
-## seo <Badge text="enabled by default" />
+@`seo` enabled-by-default=Yes
 
 Controls `@vuepress/plugin-seo` which provides search engine enhancements.
 
-No extra config is required by default. Se it to `false` if you don't need it.
+No extra config is required by default. Set it to `false` if you don't need it.
 
 Check [seo plugin docs][seo-config] for available plugin options.
 
-## sitemap <Badge text="enabled by default" />
+@`sitemap` enabled-by-default=Yes
 
 Controls `@vuepress/plugin-sitemap` which provides sitemap.
 
-No extra config is required by default. Se it to `false` if you don't need it.
+No extra config is required by default. Set it to `false` if you don't need it.
 
 Check [sitemap plugin docs][sitemap-config] for available plugin options.
 
-## watermark
+@`watermark`
 
 Controls `@vuepress/plugin-watermark` which provides watermark.
 
 Check [watermark plugin docs][watermark-config] for available plugin options.
+
+::::
 
 [back-to-top-config]: https://ecosystem.vuejs.press/plugins/back-to-top.html#options
 [catalog-config]: https://ecosystem.vuejs.press/plugins/features/catalog.html#options

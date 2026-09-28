@@ -44,7 +44,15 @@ export default hopeTheme({
   plugins: {
     components: {
       // components you want
-      components: ["Badge", "CodePen", "Share", "SiteInfo", "StackBlitz", "VPBanner", "VPCard"],
+      components: [
+        "Badge",
+        "CodePen",
+        "Share",
+        "SiteInfo",
+        "StackBlitz",
+        "VPBanner",
+        "VPCard",
+      ],
     },
   },
 });

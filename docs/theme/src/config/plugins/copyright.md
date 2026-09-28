@@ -22,42 +22,30 @@ The theme passes `plugins.copyright` in theme options as plugin options to `@vue
 
 You can pass your own options with `plugins.copyright`, here are some common ones:
 
-### triggerLength
+::: fields
+@`triggerLength` type=number default=`100`
 
-- Type: `number`
-- Default: `100`
+Min words triggering copyright append.
 
-Min words triggering copyright append
+@`global` type=boolean
 
-### global
+Whether enabled globally.
 
-- Type: `boolean`
-- Default: `false`
+@`disableCopy` type=boolean
 
-Whether enabled globally
+Disable copy.
 
-### disableCopy
+@`disableSelection` type=boolean
 
-- Type: `boolean`
-- Default: `false`
+Disable selection.
 
-Disable copy
-
-### disableSelection
-
-- Type: `boolean`
-- Default: `false`
-
-Disable selection
-
-### canonical
-
-- Type: `string`
-- Required: No
+@`canonical` type=string
 
 Canonical hostname with base.
 
-This is useful when your content are deploying in multiple places.
+This is useful when your content is deployed in multiple places.
+
+:::
 
 ::: info
 

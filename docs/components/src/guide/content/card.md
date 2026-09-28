@@ -24,49 +24,34 @@ Card component, can be use to display items.
 
 <!-- #endregion demo -->
 
-## Props
+## Options
 
-### title
+::: fields
+@`title` type=string required
 
-- Type: `string`
-- Required: Yes
+Card title.
 
-Card title
+@`desc` type=string
 
-### desc
+Card description.
 
-- Type: `string`
-- Default: `''`
+@`logo` type=string
 
-Card description
+Card logo.
 
-### logo
+@`link` type=string
 
-- Type: `string`
-- Required: No
+Card link.
 
-Card logo
+@`background` type=string
 
-### link
+Card background.
 
-- Type: `string`
-- Required: No
+@`color` type=string
 
-Card link
+Card font color.
 
-### background
-
-- Type: `string`
-- Required: No
-
-Card background
-
-### color
-
-- Type: `string`
-- Required: No
-
-Card font color
+:::
 
 ::: tip
 

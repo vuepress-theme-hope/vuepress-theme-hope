@@ -11,183 +11,117 @@ tag:
 
 The following options adds new stylize feature, and can be set **under `markdown` property** in theme options.
 
-## markdown.hint
+## Options
 
-- Type: `boolean`
-- Default: `true`
-- Details:
-  - [Markdown → Hint box](../../guide/markdown/stylize/hint.md)
-  - [@vuepress/plugin-markdown-hint → hint][hint]
+::: fields
+@`markdown.hint` type=boolean default=`true`
 
 Whether to enable hint containers, including important, info, note, tip, warning, caution and details.
 
-## markdown.alert
+See also: [Markdown → Hint box](../../guide/markdown/stylize/hint.md) and [@vuepress/plugin-markdown-hint → hint][hint].
 
-- Type: `boolean`
-- Details:
-  - [Markdown → GFM alert](../../guide/markdown/stylize/alert.md)
-  - [@vuepress/plugin-markdown-hint → alert][alert]
+@`markdown.alert` type=boolean
 
 Whether to enable GFM alerts.
 
-## markdown.align
+See also: [Markdown → GFM alert](../../guide/markdown/stylize/alert.md) and [@vuepress/plugin-markdown-hint → alert][alert].
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → Align](../../guide/markdown/stylize/align.md)
-  - [@vuepress/plugin-markdown-stylize → align][align]
+@`markdown.align` type=boolean
 
 Whether to enable custom align.
 
-## markdown.attrs
+See also: [Markdown → Align](../../guide/markdown/stylize/align.md) and [@vuepress/plugin-markdown-stylize → align][align].
 
-- Type: `MarkdownItAttrsOptions | boolean`
-
-  ```ts
-  type MarkdownItAttrRuleName =
-    "fence" | "inline" | "table" | "list" | "hr" | "softbreak" | "block";
-
-  interface MarkdownItAttrsOptions {
-    /**
-     * left delimiter
-     *
-     * @default '{'
-     */
-    left?: string;
-
-    /**
-     * right delimiter
-     *
-     * @default '}'
-     */
-    right?: string;
-
-    /**
-     * allowed attributes
-     *
-     * @description An empty list means allowing all attribute
-     *
-     * @default []
-     */
-    allowed?: (string | RegExp)[];
-    /**
-     * Rules to enable
-     *
-     * @default "all"
-     */
-    rule?: "all" | boolean | MarkdownItAttrRuleName[];
-  }
-  ```
-
-- Default: `false`
-- Details:
-  - [Markdown → Attrs](../../guide/markdown/stylize/attrs.md)
-  - [@vuepress/plugin-markdown-stylize → attrs][attrs]
+@`markdown.attrs` type=`MarkdownItAttrsOptions | boolean`
 
 Whether to enable attribute customize support.
 
-## markdown.layout
+See also: [Markdown → Attrs](../../guide/markdown/stylize/attrs.md) and [@vuepress/plugin-markdown-stylize → attrs][attrs].
 
-- Type: `boolean`
-- Details:
-  - [Markdown → Layout](../../guide/markdown/stylize/layout.md)
-  - [@vuepress/plugin-markdown-stylize → layout][layout]
+@@`markdown.attrs.left` type=string default=`'{'`
+
+Left delimiter.
+
+@@`markdown.attrs.right` type=string default=`'}'`
+
+Right delimiter.
+
+@@`markdown.attrs.allowed` type=`(string | RegExp)[]` default=`[]`
+
+Allowed attributes. An empty list means allowing all attributes.
+
+@@`markdown.attrs.rule` type=`"all" | boolean | MarkdownItAttrRuleName[]` default=`"all"`
+
+Rules to enable, where `MarkdownItAttrRuleName` is one of `"fence"`, `"inline"`, `"table"`, `"list"`, `"hr"`, `"softbreak"` and `"block"`.
+
+@`markdown.layout` type=boolean
 
 Whether to enable layout support.
 
-## markdown.mark
+See also: [Markdown → Layout](../../guide/markdown/stylize/layout.md) and [@vuepress/plugin-markdown-stylize → layout][layout].
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → Mark](../../guide/markdown/stylize/mark.md)
-  - [@vuepress/plugin-markdown-stylize → mark][mark]
+@`markdown.mark` type=boolean
 
 Whether to enable mark support.
 
-## markdown.sup
+See also: [Markdown → Mark](../../guide/markdown/stylize/mark.md) and [@vuepress/plugin-markdown-stylize → mark][mark].
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → Superscript](../../guide/markdown/stylize/sup-sub.md)
-  - [@vuepress/plugin-markdown-stylize → sup][sup]
+@`markdown.sup` type=boolean
 
 Whether to enable the superscript support.
 
-## markdown.sub
+See also: [Markdown → Superscript](../../guide/markdown/stylize/sup-sub.md) and [@vuepress/plugin-markdown-stylize → sup][sup].
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → Subscript](../../guide/markdown/stylize/sup-sub.md)
-  - [@vuepress/plugin-markdown-stylize → sub][sub]
+@`markdown.sub` type=boolean
 
 Whether to enable subscript support.
 
-## markdown.spoiler
+See also: [Markdown → Subscript](../../guide/markdown/stylize/sup-sub.md) and [@vuepress/plugin-markdown-stylize → sub][sub].
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → Spoiler](../../guide/markdown/stylize/spoiler.md)
-  - [@vuepress/plugin-markdown-stylize → spoiler][spoiler]
+@`markdown.spoiler` type=boolean
 
 Whether to enable spoiler support.
 
-## markdown.steps
+See also: [Markdown → Spoiler](../../guide/markdown/stylize/spoiler.md) and [@vuepress/plugin-markdown-stylize → spoiler][spoiler].
 
-- Type: `boolean`
-- Details:
-  - [Markdown → Steps](../../guide/markdown/stylize/steps.md)
-  - [@vuepress/plugin-markdown-stylize → steps][steps]
+@`markdown.steps` type=boolean
 
 Whether to enable steps support.
 
-## markdown.stylize
+See also: [Markdown → Steps](../../guide/markdown/stylize/steps.md) and [@vuepress/plugin-markdown-stylize → steps][steps].
 
-- Type: `MarkdownItStylizeConfig[] | false`
-
-  ```ts
-  interface MarkdownItStylizeResult {
-    /**
-     * Tag name
-     */
-    tag: string;
-    /**
-     * Attributes settings
-     */
-    attrs: Record<string, string>;
-    /**
-     * Tag content
-     */
-    content: string;
-  }
-
-  interface MarkdownItStylizeConfig {
-    /**
-     * Inline token matcher
-     */
-    matcher: string | RegExp;
-    /**
-     * Content Replacer
-     */
-    replacer: (options: {
-      tag: string;
-      content: string;
-      attrs: Record<string, string>;
-      env?: any;
-    }) => MarkdownItStylizeResult | null | undefined | void;
-  }
-  ```
-
-- Default: `false`
-- Details:
-  - [Markdown → Stylize](../../guide/markdown/stylize/stylize.md)
-  - [@vuepress/plugin-markdown-stylize → custom][stylize]
+@`markdown.stylize` type=`MarkdownItStylizeConfig[] | false`
 
 Stylize inline tokens to create snippet you want.
+
+See also: [Markdown → Stylize](../../guide/markdown/stylize/stylize.md) and [@vuepress/plugin-markdown-stylize → custom][stylize].
+
+@@`markdown.stylize[*].matcher` type=`string | RegExp`
+
+Inline token matcher.
+
+@@`markdown.stylize[*].replacer` type=`(options: { tag: string; content: string; attrs: Record<string, string>; env?: any }) => MarkdownItStylizeResult | null | undefined | void`
+
+Content replacer. `MarkdownItStylizeResult` is:
+
+```ts
+interface MarkdownItStylizeResult {
+  /**
+   * Tag name
+   */
+  tag: string;
+  /**
+   * Attributes settings
+   */
+  attrs: Record<string, string>;
+  /**
+   * Tag content
+   */
+  content: string;
+}
+```
+
+:::
 
 [align]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html#align
 [alert]: https://ecosystem.vuejs.press/plugins/markdown/markdown-hint.html#alert

@@ -21,7 +21,7 @@ actions:
     link: ../guide/intro/intro.html
 ```
 
-## 教程章节
+## 教程章节 {#tutorial-chapters}
 
 1. [准备运行环境](env.md)
 

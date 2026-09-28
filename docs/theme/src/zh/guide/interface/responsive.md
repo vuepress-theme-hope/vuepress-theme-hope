@@ -13,7 +13,7 @@ tag:
 
 <!-- more -->
 
-## 响应式布局介绍
+## 响应式布局介绍 {#introduction-to-responsive-layout}
 
 在中小型设备上:
 
@@ -34,7 +34,7 @@ tag:
 - 侧边栏会紧贴在页面内容的左侧
 - 当前页面的标题将显示在页面右侧
 
-## 响应式配置
+## 响应式配置 {#responsive-configuration}
 
 主题提供了断点变量用于控制响应式布局的行为。你可以在 `.vuepress/styles/config.scss` 中修改它们:
 

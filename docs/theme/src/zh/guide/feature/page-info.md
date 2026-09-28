@@ -12,13 +12,13 @@ tag:
 
 <!-- more -->
 
-## 启用
+## 启用 {#enable}
 
 页面信息默认全局启用，同时支持页面配置。你可以在特定页面的 front matter 中设置 `pageInfo: false` 来局部禁用它。
 
 如果你需要保持全局禁用，请在主题选项中设置 `pageInfo: false`。这样你可以在特定页面的 front matter 中设置 `pageInfo` 来局部启用它。
 
-## 参数 <Badge text="支持页面配置" />
+## 参数 <Badge text="支持页面配置" /> {#parameters}
 
 `pageInfo` 默认接受一个字符串数组，可以填入各条目名称，填入的顺序即是各条目显示的顺序。
 
@@ -37,7 +37,7 @@ tag:
 
 默认会显示 “作者，访问量，写作日期，分类，标签，预计阅读时间”。
 
-### 作者 <Badge text="支持页面配置" />
+### 作者 <Badge text="支持页面配置" /> {#author}
 
 你可以在主题选项中设置 `author` 来全局配置默认作者信息，或者在页面的 frontmatter 中设置 `author` 来为特定页面设置作者。
 
@@ -94,7 +94,7 @@ tag:
   ---
   ```
 
-### 写作日期
+### 写作日期 {#writing-date}
 
 建议 time 以标准格式输入日期，即 `yyyy-mm-dd` 的形式，如 “2020 年 4 月 1 日” 应当输入为 `2020-04-01`
 
@@ -112,15 +112,15 @@ date: 2020-01-01
 
 :::
 
-### 分类与标签
+### 分类与标签 {#category-and-tags}
 
 详见 [博客章节](../blog/category-and-tags.md)
 
-### 阅读时间
+### 阅读时间 {#reading-time}
 
 默认的统计方式是一分钟 300 字，你可以设置在主题选项中设置 `plugins.readingTime.wordPerMinute` 来覆盖它，该选项不支持在页面单独配置。
 
-### 浏览量 <Badge text="支持页面配置" />
+### 浏览量 <Badge text="支持页面配置" /> {#view-count}
 
 当配置 Waline 作为 [评论功能](comment.md) 的提供者时，该功能默认启用。
 

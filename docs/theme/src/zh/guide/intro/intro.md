@@ -10,13 +10,13 @@ tag:
   - 介绍
 ---
 
-## 主题初衷
+## 主题初衷 {#original-intention}
 
 VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常用的功能，例如文本对齐、标记、流程图、公式、演示等，同时默认主题提供的一些功能较弱或缺失，如图片预览、代码块复制、目录页等。同时 VuePress 默认主题太简陋，功能不够强大。在这种情况下，`vuepress-theme-hope` 和一些系列插件就应运诞生。
 
 与默认主题相比，我们不仅**大大改进了美观度**，而且**通过主题插件为 VuePress** 提供了全方位的增强功能。
 
-## 设计目标
+## 设计目标 {#design-goals}
 
 ::: info 强大且独立的功能
 
@@ -46,9 +46,9 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 
 :::
 
-## 因何强大
+## 因何强大 {#why-powerful}
 
-### 更丰富的内容
+### 更丰富的内容 {#content-richness}
 
 主题为 Markdown 提供了大量的扩展语法支持，让你在正文插入更多的内容。
 
@@ -58,7 +58,7 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 
 - 如果你希望存放一些知识笔记，主题提供了 [自定义容器](../markdown/stylize/hint.md)、[标记](../markdown/stylize/mark.md)、[任务列表](../markdown/grammar/tasklist.md)、[思维导图](../markdown/chart/markmap.md) 与 [数学公式](../markdown/grammar/math.md) 支持。
 
-- 如果你是一名程序员需要大量展示代码与 demo，本主题为代码块提供了[多种主题](../markdown/code/fence.md#代码主题)，[代码组](../markdown/code/code-tabs.md)，[文件树](../markdown/code/file-tree.md)，[代码树](../markdown/code/code-tree.md) 与 [代码块复制按钮](../markdown/code/fence.md#复制按钮)。同时我们还提供 [代码演示](../markdown/code/demo.md)，[Playground](../markdown/code/playground.md) [Kotlin Playground](../markdown/code/kotlin-playground.md) 和 [Vue Playground](../markdown/code/vue-playground.md) 功能，方便你展示自己的 Vue、React 组件或者其他 demo。
+- 如果你是一名程序员需要大量展示代码与 demo，本主题为代码块提供了[多种主题](../markdown/code/fence.md#highlighter)，[代码组](../markdown/code/code-tabs.md)，[文件树](../markdown/code/file-tree.md)，[代码树](../markdown/code/code-tree.md) 与 [代码块复制按钮](../markdown/code/fence.md#copy-button)。同时我们还提供 [代码演示](../markdown/code/demo.md)，[Playground](../markdown/code/playground.md) [Kotlin Playground](../markdown/code/kotlin-playground.md) 和 [Vue Playground](../markdown/code/vue-playground.md) 功能，方便你展示自己的 Vue、React 组件或者其他 demo。
 
 - 如果你需要提供产品文档与展示，主题提供了 [选项卡](../markdown/content/tabs.md)、[字段](../markdown/content/fields.md)、[幻灯片](../markdown/content/revealjs.md)、[图表](../markdown/chart/chartjs.md)、[echarts](../markdown/chart/echarts.md)、[流程图](../markdown/chart/flowchart.md)、 [Mermaid 图表](../markdown/chart/mermaid.md) 与 [Plant UML](../markdown/chart/plantuml.md) 功能。
 
@@ -68,7 +68,7 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 
 总之，任何人都可以享受 Markdown 增强语法带来的便利。
 
-### UI 改进
+### UI 改进 {#ui-improvements}
 
 - [夜间模式支持](../interface/darkmode.md)
 
@@ -78,9 +78,9 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 
 - 更多:
 
-  [全屏按钮](../interface/others.md#全屏按钮)、[返回顶部按钮](../interface/others.md#返回顶部按钮)、[打印按钮](../interface/others.md#打印按钮)、[无障碍完整支持](../interface/others.md#完整无障碍支持) 和 [RTL 布局](../interface/others.md#rtl-布局)。
+  [全屏按钮](../interface/others.md#fullscreen-button)、[返回顶部按钮](../interface/others.md#back-to-top-button)、[打印按钮](../interface/others.md#print-button)、[无障碍完整支持](../interface/others.md#full-a11y-support) 和 [RTL 布局](../interface/others.md#rtl-layout)。
 
-### 布局改进
+### 布局改进 {#layouts-improvement}
 
 - [导航栏](../layout/navbar.md):
   - 支持图标和路径前缀。
@@ -88,7 +88,7 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 
 - [侧边栏](../layout/sidebar.md):
   - 支持图标和路径前缀。
-  - 从 [页面标题](../layout/sidebar.md#通过标题自动生成) 和 [文件结构](../layout/sidebar.md#通过文件结构自动生成) 自动生成。
+  - 从 [文件结构](../layout/sidebar.md#generate-sidebar-from-file-structure) 自动生成。
 
 - [全新主页，支持特性与亮点](../layout/home.md)
 
@@ -96,9 +96,9 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 
 - 更多:
 
-  增加 [路径导航](../layout/page.md#路径导航), [页面标题](../layout/page#标题列表) 与 [页脚](../layout/footer.md) 支持。
+  增加 [路径导航](../layout/page.md#breadcrumb), [页面标题](../layout/page#header-list) 与 [页脚](../layout/footer.md) 支持。
 
-### 页面元数据
+### 页面元数据 {#page-meta}
 
 - [页面信息](../feature/page-info.md) 包括：
   - 作者
@@ -107,19 +107,19 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
   - 标签和类别
   - 浏览量
 
-- [贡献者和最后更新时间](../feature/meta.md#基于-git-的信息)
+- [贡献者和最后更新时间](../feature/meta.md#git-based-information)
 
-- [编辑链接](../feature/meta.md#编辑此页链接)
+- [编辑链接](../feature/meta.md#edit-link)
 
-### 功能
+### 功能 {#new-features}
 
 - [图片预览](../feature/photo-swipe.md) 支持缩放、拖动、幻灯片浏览、分享和下载
 
 - [自动生成目录页](../feature/catalog.md)
 
 - 搜索功能
-  - [基于 docsearch 的爬虫搜索支持](../feature/search.md#使用-vuepressplugin-docsearch)
-  - [基于 slimsearch 的强大客户端搜索支持](../feature/search.md#使用-vuepressplugin-slimsearch)。
+  - [基于 docsearch 的爬虫搜索支持](../feature/search.md#use-vuepress-plugin-docsearch)
+  - [基于 slimsearch 的强大客户端搜索支持](../feature/search.md#use-vuepress-plugin-slimsearch)。
 
 - [页面加密](../feature/encrypt.md) 功能来限制访问。
 
@@ -134,7 +134,7 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 
   - [PWA 功能](../advanced/pwa.md)
 
-### 完整的博客支持
+### 完整的博客支持 {#blog-support}
 
 该主题支持[博客](../blog/intro.md)，[有置顶功能的文章列表，星标文章，自动摘录生成，自动摘要](../blog/article.md)。
 
@@ -146,7 +146,7 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 
 - 支持创建 [Feed](../advanced/feed.md)，以便他人可以订阅你的网站。
 
-## 内置插件 🧩
+## 内置插件 🧩 {#build-in-plugins🧩}
 
 本主题包含了以下内建插件，如果有需要，你也可以单独进行使用或搭配其他主题。
 

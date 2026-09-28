@@ -26,7 +26,7 @@ Markdown 的目标是实现「易读易写」。
 
 Markdown 具有一系列衍生版本，用于扩展 Markdown 的功能 (如表格、脚注、内嵌 HTML 等等) ，这些功能原初的 Markdown 尚不具备，它们能让 Markdown 转换成更多的格式，例如 LaTeX，Docbook。Markdown 增强版中比较有名的有 Markdown Extra、MultiMarkdown、 Maruku 等。这些衍生版本要么基于工具，如 Pandoc；要么基于网站，如 GitHub 和 Wikipedia，在语法上基本兼容，但在一些语法和渲染效果上有改动。
 
-## 用途
+## 用途 {#usage}
 
 Markdown 的语法有个主要的目的: 用来作为一种网络内容的*写作*用语言。Markdown 的重点在于，它能让文件更容易阅读、编写。因此，Markdown 的格式语法只涵盖纯文字可以涵盖的范围。
 
@@ -48,7 +48,7 @@ Markdown 的语法简洁明了、学习容易，而且功能比纯文本更强�
 
 是的，这确实需要花比较多功夫来插入 `<br>` ，但是「每个换行都转换为 `<br>` 的方法在 Markdown 中并不适合， Markdown 中电子邮件式的 [块引言](#块引言) 和多段落的 [列表](#列表) 在使用换行来排版的时候，不但更好用，还更好阅读。
 
-### 标题
+### 标题 {#title}
 
 标题能显示出文章的结构。
 
@@ -340,7 +340,7 @@ const a = 1;
 
 ## 行内元素
 
-### 链接
+### 链接 {#link}
 
 Markdown 支持两种形式的链接语法: *行内*和*参考*两种形式。
 
@@ -349,14 +349,17 @@ Markdown 支持两种形式的链接语法: *行内*和*参考*两种形式。
 要建立一个行内形式的链接，只要在方块括号后面马上接着括号并插入网址链接即可，如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可，例如:
 
 ```html
-This is [an example](http://example.com/ "Title") inline link. [This link](http://example.net/) has
-no title attribute.
+This is [an example](http://example.com/ "Title") inline link. [This
+link](http://example.net/) has no title attribute.
 ```
 
 会产生:
 
 ```html
-<p>This is <a href="http://example.com/" title="Title"> an example</a> inline link.</p>
+<p>
+  This is <a href="http://example.com/" title="Title"> an example</a> inline
+  link.
+</p>
 
 <p><a href="http://example.net/">This link</a> has no title attribute.</p>
 ```
@@ -594,10 +597,13 @@ Please don't use any `<blink>` tags.
 以产生:
 
 ```html
-<p><code>&amp;#8212;</code> is the decimal-encoded equivalent of <code>&amp;mdash;</code>.</p>
+<p>
+  <code>&amp;#8212;</code> is the decimal-encoded equivalent of
+  <code>&amp;mdash;</code>.
+</p>
 ```
 
-### 图片
+### 图片 {#image}
 
 很明显地，要在纯文字应用中设计一个「自然」的语法来插入图片是有一定难度的。
 
@@ -698,7 +704,7 @@ Markdown 支持在下面这些符号前面加上反斜线来帮助插入普通�
 - `.` 英文句点
 - `!` 惊叹号
 
-## 快捷键
+## 快捷键 {#shortcut-key}
 
 | 输出后的效果  | Markdown   | 快捷键         |
 | ------------- | ---------- | -------------- |
@@ -706,7 +712,7 @@ Markdown 支持在下面这些符号前面加上反斜线来帮助插入普通�
 | _Emphasize_   | `*text*`   | Ctrl/⌘ + I     |
 | `Inline Code` | \`code\`   | 选中后 `` ` `` |
 
-## 表格
+## 表格 {#tables}
 
 |     居中      |         右对齐 | 左对齐         |
 | :-----------: | -------------: | :------------- |
@@ -790,7 +796,7 @@ Markdown 将会把它转换为:
 
 不过需要注意的是，code 范围内，不论是行内还是块， `<` 和 `&` 两个符号都*一定*会被转换成 HTML 实体，这项特性让你可以很容易地用 Markdown 写 HTML code (和 HTML 相对而言， HTML 语法中，你要把所有的 `<` 和 `&` 都转换为 HTML 实体，才能在 HTML 文件里面写出 HTML code。)
 
-## Markdown 效果演示
+## Markdown 效果演示 {#markdown-display}
 
 - [查看详情](demo.md)
 

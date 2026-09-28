@@ -15,10 +15,10 @@ tag:
 
 :::
 
-## hostname <Badge text="仅限 Root" type="warning" />
+## 选项 {#options}
 
-- 类型: `string`
-- 必填: 是
+:::: fields
+@`hostname` type=string required root-only=Yes
 
 当前网站部署到的域名。
 
@@ -28,295 +28,283 @@ tag:
 
 :::
 
-## author
+@`author` type=`Author`
 
-- 类型: `Author`
+文章显示的默认作者。
 
-  ```ts
-  type AuthorName = string;
+参考：[功能 → 页面信息](../../guide/feature/page-info.md#author)。
 
-  interface AuthorInfo {
-    /**
-     * 作者姓名
-     */
-    name: string;
+其类型为：
 
-    /**
-     * 作者网站
-     */
-    url?: string;
+```ts
+type AuthorName = string;
 
-    /**
-     * 作者 Email
-     */
-    email?: string;
-  }
-
-  type Author = AuthorName | AuthorName[] | AuthorInfo | AuthorInfo[];
-  ```
-
-- 必填: 否
-
-- 详情:
-  - [功能 → 页面信息](../../guide/feature/page-info.md#作者)
-
-文章显示的默认作者
-
-## license
-
-- 类型: `string`
-- 必填: 否
-- 详情:
-  - [布局 → 页脚](../../guide/layout/footer.md#版权信息)
-
-站点的默认协议
-
-## favicon
-
-- 类型: `string`
-- 必填: 否
-
-站点图标
-
-## navbar {#navbar-header}
-
-- 类型: `NavbarOptions`
-
-  ```ts
+interface AuthorInfo {
   /**
-   * Base nav item, displayed as text
+   * 作者姓名
    */
-  export interface NavItemOptions {
-    /**
-     * 项目文字
-     */
-    text: string;
-
-    /**
-     * 项目图标
-     */
-    icon?: string;
-
-    /**
-     * 项目无障碍标签
-     */
-    ariaLabel?: string;
-  }
+  name: string;
 
   /**
-   * Options for `<AutoLink>`
+   * 作者网站
    */
-  export interface AutoLinkOptions extends NavItemOptions {
-    /**
-     * 当前页面链接
-     */
-    link: string;
-
-    /**
-     * `<a>` 标签的 `rel` 属性
-     */
-    rel?: string;
-
-    /**
-     * `<a>` 标签的 `target` 属性
-     */
-    target?: string;
-
-    /**
-     * 匹配激活的正则表达式
-     */
-    activeMatch?: string;
-
-    /**
-     * 是否仅在完全匹配时激活
-     */
-    exact?: boolean;
-  }
+  url?: string;
 
   /**
-   * Base nav group, has nav items children
+   * 作者 Email
    */
-  export interface NavGroup<T> extends NavItemOptions {
-    /**
-     * 当前分组的页面前缀
-     */
-    prefix?: string;
+  email?: string;
+}
 
-    /**
-     * 当前分组的链接
-     */
-    link?: string;
+type Author = AuthorName | AuthorName[] | AuthorInfo | AuthorInfo[];
+```
 
-    /**
-     * 当前分组的子项
-     */
-    children: T[];
-  }
+@`license` type=string
 
-  // Navbar types
+站点的默认协议。
 
-  // types for NavbarItem
-  export type NavbarLinkOptions = AutoLinkOptions;
-  // types for NavbarDropdown
-  export type NavbarGroupOptions = NavGroup<
-    NavbarLinkOptions | NavGroup<NavbarLinkOptions> | string
-  >;
-  // types for navbar options
-  export type NavbarOptions = (NavbarLinkOptions | NavbarGroupOptions | string)[];
-  ```
+参考：[布局 → 页脚](../../guide/layout/footer.md#copyright-information)。
 
-- 详情: [布局 → 导航栏](../../guide/layout/navbar.md)
+@`favicon` type=string
 
-导航栏配置
+站点图标。
 
-## sidebar {#sidebar-header}
+@`navbar` type=`NavbarOptions`
 
-- 类型: `SidebarOptions`
+导航栏配置。
 
-  ```ts
+参考：[布局 → 导航栏](../../guide/layout/navbar.md)。
+
+其类型为：
+
+```ts
+/**
+ * Base nav item, displayed as text
+ */
+export interface NavItemOptions {
   /**
-   * Base nav item, displayed as text
+   * 项目文字
    */
-  export interface NavItemOptions {
-    /**
-     * 项目文字
-     */
-    text: string;
-
-    /**
-     * 项目图标
-     */
-    icon?: string;
-
-    /**
-     * 项目无障碍标签
-     */
-    ariaLabel?: string;
-  }
+  text: string;
 
   /**
-   * Options for `<AutoLink>`
+   * 项目图标
    */
-  export interface AutoLinkOptions extends NavItemOptions {
-    /**
-     * 当前页面链接
-     */
-    link: string;
+  icon?: string;
 
-    /**
-     * `<a>` 标签的 `rel` 属性
-     */
-    rel?: string;
+  /**
+   * 项目无障碍标签
+   */
+  ariaLabel?: string;
+}
 
-    /**
-     * `<a>` 标签的 `target` 属性
-     */
-    target?: string;
+/**
+ * Options for `<AutoLink>`
+ */
+export interface AutoLinkOptions extends NavItemOptions {
+  /**
+   * 当前页面链接
+   */
+  link: string;
 
-    /**
-     * 匹配激活的正则表达式
-     */
-    activeMatch?: string;
+  /**
+   * `<a>` 标签的 `rel` 属性
+   */
+  rel?: string;
 
-    /**
-     * 是否仅在完全匹配时激活
-     */
-    exact?: boolean;
-  }
+  /**
+   * `<a>` 标签的 `target` 属性
+   */
+  target?: string;
 
-  export type SidebarLinkOptions = AutoLinkOptions;
+  /**
+   * 匹配激活的正则表达式
+   */
+  activeMatch?: string;
 
-  export interface SidebarGroupOptions extends NavItemOptions {
-    /**
-     * 当前分组的页面前缀
-     */
-    prefix?: string;
+  /**
+   * 是否仅在完全匹配时激活
+   */
+  exact?: boolean;
+}
 
-    /**
-     * 当前分组的链接
-     */
-    link?: string;
+/**
+ * Base nav group, has nav items children
+ */
+export interface NavGroup<T> extends NavItemOptions {
+  /**
+   * 当前分组的页面前缀
+   */
+  prefix?: string;
 
-    /**
-     * 当前分组的链接是否默认展开
-     *
-     * @default false
-     */
-    expanded?: boolean;
+  /**
+   * 当前分组的链接
+   */
+  link?: string;
 
-    /**
-     * 当前分组的链接是否可折叠
-     *
-     * @default false
-     */
-    collapsible?: boolean;
+  /**
+   * 当前分组的子项
+   */
+  children: T[];
+}
 
-    /**
-     * 当前分组的子项
-     */
-    children: SidebarItemOptions[];
-  }
+// Navbar types
 
-  export interface SidebarStructureOptions extends NavItemOptions {
-    /**
-     * 当前分组的页面前缀
-     */
-    prefix?: string;
+// types for NavbarItem
+export type NavbarLinkOptions = AutoLinkOptions;
+// types for NavbarDropdown
+export type NavbarGroupOptions = NavGroup<
+  NavbarLinkOptions | NavGroup<NavbarLinkOptions> | string
+>;
+// types for navbar options
+export type NavbarOptions = (NavbarLinkOptions | NavbarGroupOptions | string)[];
+```
 
-    /**
-     * 当前分组的链接
-     */
-    link?: string;
+@`sidebar` type=`SidebarOptions`
 
-    /**
-     * 当前分组的链接是否默认展开
-     *
-     * @default false
-     */
-    expanded?: boolean;
+侧边栏配置。
 
-    /**
-     * 当前分组的链接是否可折叠
-     *
-     * @default false
-     */
-    collapsible?: boolean;
+参考：[布局 → 侧边栏](../../guide/layout/sidebar.md)。
 
-    children: "structure";
-  }
+其类型为：
 
-  export type SidebarItemOptions =
-    SidebarLinkOptions | SidebarGroupOptions | SidebarStructureOptions | string;
+```ts
+/**
+ * Base nav item, displayed as text
+ */
+export interface NavItemOptions {
+  /**
+   * 项目文字
+   */
+  text: string;
 
-  export type SidebarArrayOptions = SidebarItemOptions[];
+  /**
+   * 项目图标
+   */
+  icon?: string;
 
-  export type SidebarObjectOptions = Record<string, SidebarArrayOptions | "structure" | false>;
+  /**
+   * 项目无障碍标签
+   */
+  ariaLabel?: string;
+}
 
-  export type SidebarOptions = SidebarArrayOptions | SidebarObjectOptions | "structure" | false;
-  ```
+/**
+ * Options for `<AutoLink>`
+ */
+export interface AutoLinkOptions extends NavItemOptions {
+  /**
+   * 当前页面链接
+   */
+  link: string;
 
-- 详情: [布局 → 侧边栏](../../guide/layout/sidebar.md)
+  /**
+   * `<a>` 标签的 `rel` 属性
+   */
+  rel?: string;
 
-侧边栏配置
+  /**
+   * `<a>` 标签的 `target` 属性
+   */
+  target?: string;
 
-## locales <Badge text="仅限 Root" type="warning" />
+  /**
+   * 匹配激活的正则表达式
+   */
+  activeMatch?: string;
 
-- 类型: `Record<string, ThemeLocaleOptions>`
-- 详情:
-  - [主题多语言配置](./i18n.md)
+  /**
+   * 是否仅在完全匹配时激活
+   */
+  exact?: boolean;
+}
+
+export type SidebarLinkOptions = AutoLinkOptions;
+
+export interface SidebarGroupOptions extends NavItemOptions {
+  /**
+   * 当前分组的页面前缀
+   */
+  prefix?: string;
+
+  /**
+   * 当前分组的链接
+   */
+  link?: string;
+
+  /**
+   * 当前分组的链接是否默认展开
+   *
+   * @default false
+   */
+  expanded?: boolean;
+
+  /**
+   * 当前分组的链接是否可折叠
+   *
+   * @default false
+   */
+  collapsible?: boolean;
+
+  /**
+   * 当前分组的子项
+   */
+  children: SidebarItemOptions[];
+}
+
+export interface SidebarStructureOptions extends NavItemOptions {
+  /**
+   * 当前分组的页面前缀
+   */
+  prefix?: string;
+
+  /**
+   * 当前分组的链接
+   */
+  link?: string;
+
+  /**
+   * 当前分组的链接是否默认展开
+   *
+   * @default false
+   */
+  expanded?: boolean;
+
+  /**
+   * 当前分组的链接是否可折叠
+   *
+   * @default false
+   */
+  collapsible?: boolean;
+
+  children: "structure";
+}
+
+export type SidebarItemOptions =
+  SidebarLinkOptions | SidebarGroupOptions | SidebarStructureOptions | string;
+
+export type SidebarArrayOptions = SidebarItemOptions[];
+
+export type SidebarObjectOptions = Record<
+  string,
+  SidebarArrayOptions | "structure" | false
+>;
+
+export type SidebarOptions =
+  SidebarArrayOptions | SidebarObjectOptions | "structure" | false;
+```
+
+@`locales` type=`Record<string, ThemeLocaleOptions>` root-only=Yes
 
 主题的多语言配置，你可以在这里分别为每个语言设置单独的选项。
 
-## extraLocales <Badge text="仅限 Root" type="warning" />
+参考：[主题多语言配置](./i18n.md)。
 
-- 类型: `Record<string, string>`
+@`extraLocales` type=`Record<string, string>` root-only=Yes
 
 站点的额外语言环境，其中键名是语言名称，值是站点路径，`:route` 将替换为当前路由路径。
 
-## hotReload <Badge text="仅限 Root" type="warning" />
-
-- 类型: `boolean`
-- 默认值: 是否在使用 `--debug` 标识
+@`hotReload` type=boolean root-only=Yes default="是否在使用 `--debug` 标识"
 
 是否需要在开发服务器启用完整功能与热更新。
 是否在开发服务器中启用热重载。
@@ -340,3 +328,5 @@ tag:
 启用它意味着你接受每次修改都会触发一些高耗时计算并且整个应用程序将重新启动，这通常会导致页面刷新，并在在性能较弱的环境中获得数秒白屏。
 
 :::
+
+::::

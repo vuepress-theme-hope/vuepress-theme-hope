@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 在你的项目中安装 [mermaid](https://mermaid.js.org/):
 
@@ -50,7 +50,7 @@ export default hopeTheme({
 });
 ```
 
-## 语法
+## 语法 {#syntax}
 
 ````md
 ```mermaid
@@ -94,11 +94,11 @@ export default hopeTheme({
 ```
 ````
 
-## 使用
+## 使用 {#usage}
 
 详见 [mermaid 官方文档](https://mermaid.js.org/)。
 
-## 高级
+## 高级 {#advanced}
 
 你可以在[客户端配置文件][client-config]中导入并使用 `defineMermaidConfig` 来自定义 Mermaid 配置:
 
@@ -110,7 +110,7 @@ defineMermaidConfig({
 });
 ```
 
-## 例子
+## 例子 {#demo}
 
 ::: preview 流程图
 

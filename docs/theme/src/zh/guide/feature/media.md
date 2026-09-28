@@ -12,7 +12,7 @@ VuePress Theme Hope 通过 [`@vuepress/plugin-media`][media] 允许你嵌入视�
 
 <!-- more -->
 
-## 介绍
+## 介绍 {#introduction}
 
 该插件注册了一组组件，你可以直接在 Markdown 文件中使用它们:
 
@@ -22,7 +22,7 @@ VuePress Theme Hope 通过 [`@vuepress/plugin-media`][media] 允许你嵌入视�
 - `BiliBiliEmbed`、`YouTubeEmbed`、`VimeoEmbed`、`TwitchEmbed`、`DailymotionEmbed`、`TikTokEmbed` 与 `SpotifyEmbed`: 由平台自身提供的播放器。
 - `YouTubePlayer`、`VimeoPlayer`、`TwitchPlayer`、`TikTokPlayer` 与 `SpotifyPlayer`: 由 Video.js 皮肤控制的播放器。
 
-## 启用功能
+## 启用功能 {#enable-feature}
 
 该插件默认不启用，你需要在主题选项中设置 `plugins.media` 来启用它:
 
@@ -56,7 +56,7 @@ export default hopeTheme({
 
 :::
 
-## 链接语法
+## 链接语法 {#link-syntax}
 
 除组件外，插件也为每个启用的组件注册了 `@[name ...props](link)` 语法。该语法必须独占一行。
 
@@ -70,7 +70,7 @@ export default hopeTheme({
 
 语法名称与细节请参阅 [链接语法文档][media-link]。
 
-## 自定义配置
+## 自定义配置 {#customize-config}
 
 `vuepress-theme-hope` 会将主题选项中的 `plugins.media` 作为插件选项传给 `@vuepress/plugin-media`。
 

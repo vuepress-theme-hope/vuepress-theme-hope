@@ -26,9 +26,9 @@ tag:
 
 <!-- more -->
 
-## 案例
+## 案例 {#demo}
 
-### 提示容器
+### 提示容器 {#hint-container}
 
 ::: tip
 
@@ -38,7 +38,7 @@ tag:
 
 - [查看详情](./hint.md)
 
-### 自定义对齐
+### 自定义对齐 {#align}
 
 ::: center
 
@@ -54,13 +54,13 @@ tag:
 
 - [查看详情](./align.md)
 
-### 属性支持
+### 属性支持 {#attrs}
 
 一个有 id 的 **单词**{#word}。
 
 - [查看详情](./attrs.md)
 
-### 布局
+### 布局 {#layout}
 
 @flexs gap-4 items-center
 @flex flex-1
@@ -75,19 +75,19 @@ tag:
 
 - [查看详情](./layout.md)
 
-### 标记
+### 标记 {#mark}
 
 你可以标记 ==重要的内容== 。
 
 - [查看详情](./mark.md)
 
-## 剧透
+## 剧透 {#spoiler}
 
 VuePress Theme Hope !!非常强大!!!
 
 - [查看详情](./spoiler.md)
 
-### 步骤
+### 步骤 {#steps}
 
 ::: steps
 
@@ -101,13 +101,13 @@ VuePress Theme Hope !!非常强大!!!
 
 - [查看详情](./steps.md)
 
-### 样式化
+### 样式化 {#stylize}
 
 设置它<span style="color:red">没有</span>任何效果，请<span style="color:red">不要</span>这样使用
 
 - [查看详情](./stylize.md)
 
-### 上下角标
+### 上下角标 {#superscript-and-subscript}
 
 <!-- prettier-ignore-start -->
 19^th^ H~2~O

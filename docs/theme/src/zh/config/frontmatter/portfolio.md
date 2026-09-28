@@ -9,107 +9,79 @@ tag:
   - 档案
 ---
 
-## portfolio
+## 选项 {#options}
 
-必须设置为 `true` 以使用档案页面。
+::: fields
+@`portfolio` type=boolean required
 
-## home
+是否使用档案布局。
 
-如果档案是主页时推荐设置为 `true`
+@`home` type=boolean
 
-## name
+档案是否为主页。推荐设置为 `true`。
 
-- 类型: `string`
-- 默认值: `themeConfig.author.name`
+@`name` type=string default=`themeConfig.author.name`
 
-档案名称，默认为 `themeConfig.author.name` 的值。
+档案名称，默认为主题选项中的作者名。
 
-## avatar
-
-- 类型: `string`
-- 必填: 否
+@`avatar` type=string
 
 档案头像图片地址，不支持相对路径。
 
-## avatarDark
-
-- 类型: `string`
-- 默认值: `avatar`
+@`avatarDark` type=string default=`avatar`
 
 深色模式下档案头像图片地址，不支持相对路径。
 
-## titles
-
-- 类型: `string[]`
-- 必填: 否
+@`titles` type=`string[]`
 
 档案标题。
 
-## avatarStyle
+@`avatarStyle` type=`Record<string, string> | string`
 
-- 类型: `Record<string, string> | string`
-- 必填: 否
+档案头像的 CSS 样式。
 
-档案头像的 CSS 样式
+@`avatarAlt` type=string default=`name`
 
-## avatarAlt
+档案头像的 alt 文本。
 
-- 类型: `string`
-- 默认值: `name`
-
-档案头像的 alt 文本
-
-## bgImage
-
-- 类型: `string`
-- 必填: 否
+@`bgImage` type=string
 
 档案背景图片地址，不支持相对路径。
 
-## bgImageDark
-
-- 类型: `string`
-- 默认值: `bgImage`
+@`bgImageDark` type=string default=`bgImage`
 
 深色模式下档案背景图片地址，不支持相对路径。
 
-## bgImageStyle
-
-- 类型: `Record<string, string> | string`
-- 必填: 否
+@`bgImageStyle` type=`Record<string, string> | string`
 
 档案背景图片的 CSS 样式。
 
-## welcome
-
-- 类型: `string`
-- 默认值: `'👋 Hi there, I am'`
+@`welcome` type=string default=`'👋 Hi there, I am'`
 
 欢迎语句。
 
-## medias
-
-- 类型: `PortfolioMedia[]`
-
-  ```ts
-  interface PortfolioMedia {
-    icon: string;
-    name: string;
-    link: string;
-  }
-  ```
-
-- 必填: 否
+@`medias` type=`PortfolioMedia[]`
 
 档案媒体信息。
 
-## content
+@@`medias[*].icon` type=string required
 
-- 类型: `"portfolio" | "doc" | "none"`
-- 默认值: `"portfolio"`
+媒体的图标。
 
-档案内容类型。
+@@`medias[*].name` type=string required
 
-- `"portfolio"`: 使用档案样式渲染 Markdown 内容
-- `"doc"`: 使用文档样式渲染 Markdown 内容
-- `"none"`: 不渲染 Markdown 内容
+媒体的名称。
+
+@@`medias[*].link` type=string required
+
+媒体的链接。
+
+@`content` type=`'portfolio' | 'doc' | 'none'` default=`'portfolio'`
+
+档案内容类型:
+
+- `'portfolio'`: 使用档案样式渲染 Markdown 内容
+- `'doc'`: 使用文档样式渲染 Markdown 内容
+- `'none'`: 不渲染 Markdown 内容
+
+:::

@@ -13,7 +13,7 @@ tag:
 
 <!-- more -->
 
-## Markdown 到 Vue SFC
+## Markdown 到 Vue SFC {#markdown-to-vue-sfc}
 
 每个 Markdown 文件首先会被编译为 HTML，然后转换为 Vue 单文件组件（SFC）。换句话说，你可以像编写 Vue SFC 一样编写 Markdown 文件。
 
@@ -23,9 +23,9 @@ tag:
 
 转换后的 Vue SFC 会被缓存到 `.vuepress/.temp/pages` 目录中，并会在布局中通过内置的 `<Content />` 组件渲染。
 
-## 在 Markdown 中使用 Vue 语法
+## 在 Markdown 中使用 Vue 语法 {#using-vue-syntax-in-markdown}
 
-你可以在 Markdown 中直接使用 Vue 语法，详情请见 [VuePress → Markdown](../../cookbook/vuepress/markdown.md#在-markdown-中使用-vue)。
+你可以在 Markdown 中直接使用 Vue 语法，详情请见 [VuePress → Markdown](../../cookbook/vuepress/markdown.md#using-vue-in-markdown)。
 
 ::: important
 
@@ -33,7 +33,7 @@ tag:
 
 :::
 
-## 导入文件
+## 导入文件 {#importing-files}
 
 ::: important 通过别名导入
 
@@ -43,16 +43,17 @@ tag:
 
 - 你可以使用 `@source` 别名来引用当前项目的源目录
 
-  ```:no-line-numbers
-  .
-  ├── src → project folder
-  │    ├── example
-  │    │    ├── ...
-  │    │    └── MyComponent.vue
-  │    ├── ...
-  │    └── README.md
-  └── ...
-  ```
+  ::: file-tree
+
+  - src # project folder
+    - example
+      - …
+      - MyComponent.vue
+    - …
+    - README.md
+  - …
+
+  :::
 
   ```md title="Markdown 文件"
   <MyComponent />
@@ -64,18 +65,21 @@ tag:
 
 - 你也可以使用 `alias` 选项来创建别名:
 
-  ```:no-line-numbers
-  .
-  ├── src → project folder
-  │    ├── .vuepress
-  │    │    ├── components
-  │    │    │    └── MyComponent.vue
-  │    │    ├── ...
-  │    │    └── config.ts
-  │    ├── ...
-  │    └── README.md
-  └── ...
-  ```
+  ::: file-tree
+
+  - src # project folder
+    - .vuepress
+      - components
+        - MyComponent.vue
+      - …
+      - config.ts
+    - …
+    - README.md
+  - …
+
+  :::
+
+  ::: code-tree
 
   ```ts twoslash title=".vuepress/config.ts"
   import { defineUserConfig } from "vuepress";
@@ -97,6 +101,8 @@ tag:
   import MyComponent from "@MyComponent";
   </script>
   ```
+
+  :::
 
 ::: important 尽可能使用局部注册
 

@@ -12,7 +12,7 @@ tag:
 
 <Catalog />
 
-## 案例
+## 案例 {#demo}
 
 你可以查看 [本文档的配置][docs-config] 作为案例。
 

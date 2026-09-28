@@ -18,61 +18,54 @@ This plugin can be disabled by setting `plugins.icon` to `false`.
 
 ## Options
 
-### plugins.icon.assets
+::: fields
+@`plugins.icon.assets` type=`IconAsset`
 
-- Type: `IconAsset`
+Icon assets to be used.
 
-  ```ts
-  export type BuiltInIcon = "fontawesome-with-brands" | "fontawesome" | "iconify";
+The following keywords are supported and you may use other CDN links or even your own:
 
-  export type IconLink = `//${string}` | `/${string}` | `http://${string}` | `https://${string}`;
+- `iconify`: Iconify
+- `fontawesome`: Font Awesome free icons only
+- `fontawesome-with-brands`: Font Awesome free icons and brand icons
 
-  export type IconAsset = (BuiltInIcon | IconLink)[] | BuiltInIcon | IconLink;
-  ```
+Its type is:
 
-- Details:
+```ts
+export type BuiltInIcon = "fontawesome-with-brands" | "fontawesome" | "iconify";
 
-  Icon assets to be used.
+export type IconLink =
+  `//${string}` | `/${string}` | `http://${string}` | `https://${string}`;
 
-  The following keywords are supported and you may use other CDN links or even your own.:
-  - `iconify`: Iconify
-  - `fontawesome`: Font Awesome free icons only
-  - `fontawesome-with-brands`: Font Awesome free icons and brand icons
+export type IconAsset = (BuiltInIcon | IconLink)[] | BuiltInIcon | IconLink;
+```
 
-### plugins.icon.type
+@`plugins.icon.type` type=`IconType` default="Inferred from the assets"
 
-- Type: `IconType`
+Type of the icon, the plugin will try to infer the type from the assets, and fallbacks to `unknown`.
 
-  ```ts
-  export type IconType = "fontawesome" | "iconfont" | "iconify" | "unknown";
-  ```
+Notably, the plugin can recognize:
 
-- Default: Inferred from the `assets`
+- iconfont css links
+- fontawesome kits
+- CDN links for fontawesome and iconify
 
-- Details:
+Its type is:
 
-  Type of the icon, the plugin will try to infer the type from the assets, and fallbacks to `unknown`.
+```ts
+export type IconType = "fontawesome" | "iconfont" | "iconify" | "unknown";
+```
 
-  Notably, the plugin can recognize:
-  - iconfont css links
-  - fontawesome kits
-  - CDN links for fontawesome and iconify
+@`plugins.icon.prefix` type=string default="Inferred from the assets and type"
 
-### plugins.icon.prefix
+Prefix for the icon component. By default, the plugin will use:
 
-- Type: `string`
-- Default: Infer from the `assets` and `type`
-- Details:
+- `iconfont icon-` for iconfont type
+- `fas fa-` for fontawesome type
+- empty string for all other types
 
-  Prefix for the icon component. By default, the plugin will use:
-  - `iconfont icon-` for iconfont type
-  - `fas fa-` for fontawesome type
-  - empty string for all other types
+@`plugins.icon.markdown` type=boolean default=`true`
 
-### plugins.icon.markdown
+Whether to enable icon syntax (`::icon::`) in markdown.
 
-- Type: `boolean`
-- Default: `true`
-- Details:
-
-  Whether to enable icon syntax (`::icon::`) in markdown.
+:::

@@ -19,9 +19,9 @@ footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VueP
 copyright: false
 ---
 
-## 使用插件
+## 使用插件 {#how-to-use}
 
-### 安装
+### 安装 {#install}
 
 ::: code-tabs#shell
 
@@ -45,7 +45,7 @@ npm i -D vuepress-plugin-lightgallery
 
 :::
 
-### 使用
+### 使用 {#usage}
 
 ::: code-tabs#language
 

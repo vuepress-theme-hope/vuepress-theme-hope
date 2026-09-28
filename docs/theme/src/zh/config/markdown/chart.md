@@ -13,67 +13,51 @@ tag:
 
 <!-- more -->
 
-## markdown.chartjs
+## 选项 {#options}
 
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [Markdown → Chart.js](../../guide/markdown/chart/chartjs.md)
+::: fields
+@`markdown.chartjs` type=boolean
 
-是否启用 Chart.js 支持
+是否启用 Chart.js 支持。
 
-## markdown.echarts
+参考：[Markdown → Chart.js](../../guide/markdown/chart/chartjs.md)。
 
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [Markdown → ECharts](../../guide/markdown/chart/echarts.md)
+@`markdown.echarts` type=boolean
 
-是否启用 ECharts 支持
+是否启用 ECharts 支持。
 
-## markdown.flowchart
+参考：[Markdown → ECharts](../../guide/markdown/chart/echarts.md)。
 
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [Markdown → Flowchart](../../guide/markdown/chart/flowchart.md)
+@`markdown.flowchart` type=boolean
 
-是否启用流程图支持
+是否启用流程图支持。
 
-## markdown.markmap
+参考：[Markdown → Flowchart](../../guide/markdown/chart/flowchart.md)。
 
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [Markdown → Markmap](../../guide/markdown/chart/markmap.md)
+@`markdown.markmap` type=boolean
 
 是否启用 [Markmap](https://markmap.js.org/) 支持。
 
-## markdown.mermaid
+参考：[Markdown → Markmap](../../guide/markdown/chart/markmap.md)。
 
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [Markdown → Mermaid](../../guide/markdown/chart/mermaid.md)
+@`markdown.mermaid` type=boolean
 
 是否启用 [Mermaid](https://mermaid.js.org/) 支持。
 
-## markdown.plantuml
+参考：[Markdown → Mermaid](../../guide/markdown/chart/mermaid.md)。
 
-- 类型: `MarkdownItPlantumlOptions[] | boolean`
-- 默认值: `false`
-- 详情:
-  - [Markdown → PlantUML](../../guide/markdown/chart/plantuml.md)
+@`markdown.plantuml` type=`MarkdownItPlantumlOptions[] | boolean`
 
 是否启用 [plantuml](https://plantuml.com/zh/) 支持。
 
-## markdown.DANGEROUS_ALLOW_SCRIPT_EXECUTION
+参考：[Markdown → PlantUML](../../guide/markdown/chart/plantuml.md)。
 
-- 类型：`boolean`
-- 详情：是否允许在图表中执行脚本。这可能会带来安全风险，请谨慎使用。
+@`markdown.DANGEROUS_ALLOW_SCRIPT_EXECUTION` type=boolean
 
-## markdown.DANGEROUS_SCRIPT_EXECUTION_ALLOWLIST
+是否允许在图表中执行脚本。这可能会带来安全风险，请谨慎使用。
 
-- 类型：`string[] | '*'`
-- 默认：`[]`
-- 详情：当启用脚本执行时，允许执行图表脚本的文件路径列表。使用 `'*'` 允许所有文件。
+@`markdown.DANGEROUS_SCRIPT_EXECUTION_ALLOWLIST` type=`string[] | '*'` default=`[]`
+
+当启用脚本执行时，允许执行图表脚本的文件路径列表。使用 `'*'` 允许所有文件。
+
+:::

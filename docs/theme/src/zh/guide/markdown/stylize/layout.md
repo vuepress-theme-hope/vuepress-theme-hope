@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 ```ts twoslash {5} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -24,7 +24,7 @@ export default hopeTheme({
 });
 ```
 
-## 语法
+## 语法 {#syntax}
 
 使用复数指令开启一个布局，使用单数指令表示其中的项目，并使用 `@end` 结束布局。
 
@@ -40,7 +40,7 @@ export default hopeTheme({
 
 完整的工具类与选项请参阅 [@mdit/plugin-layout](https://mdit-plugins.github.io/zh/layout.html)。
 
-## 演示
+## 演示 {#demo}
 
 :::: preview
 

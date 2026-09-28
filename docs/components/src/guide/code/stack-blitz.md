@@ -24,109 +24,67 @@ Embed StackBlitz demo in Markdown files.
 
 <!-- #endregion demo -->
 
-## Props
+## Options
 
-### id
+::: fields
+@`id` type=string required
 
-- Type: `string`
-- Required: Yes
+StackBlitz id.
 
-StackBlitz id
-
-### type
-
-- Type: `"project" | "github"`
-- Default: `"project"`
+@`type` type=`"project" | "github"` default=`"project"`
 
 Type of StackBlitz project.
 
-### width
-
-- Type: `string | number`
-- Default: `100%`
+@`width` type=`string | number` default=`100%`
 
 Stackblitz component width.
 
-### height
+@`height` type=`string | number`
 
-- Type: `string | number`
-- Required: No
+Stackblitz component height.
 
-Stackblitz component height
+@`ratio` type=number default=`16 / 9`
 
-### ratio
+Stackblitz component ratio, only valid when `height` is not set.
 
-- Type: `number`
-- Default: `16 / 9`
-
-Stackblitz component ratio, ONLY valid when `height` not set.
-
-### file
-
-- Type: `string[] | string`
-- Required: No
+@`file` type=`string[] | string`
 
 The default file to have open in the editor.
 
-### initialPath
-
-- Type: `string`
-- Required: No
+@`initialPath` type=string
 
 The initial URL path the preview should open.
 
-### embed
+@`embed` type=boolean
 
-- Type: `boolean`
-- Default: `false`
+Embed the StackBlitz editor instead of displaying a button.
 
-Embed StackBlitz editor instead of displaying a button.
+@`load` type=boolean
 
-### load
+Whether to load the embed demo directly. Only available with `embed`.
 
-- Type: `boolean`
-- Default: `false`
+@`theme` type=`"dark" | "light"` default=`"dark"`
 
-Whether load embed demo directly. (Only available with `embed`)
+Editor theme. Only available with `embed`.
 
-### theme
+@`text` type=string default=`"Open in StackBlitz"`
 
-- Type: `"dark" | "light"`
-- Default: `"dark"`
+Text to display on the button. Only available without `embed`.
 
-Editor theme. (Only available with `embed`)
-
-### text
-
-- Type: `string`
-- Default: `"Open in StackBlitz"`
-
-Text to display on the button. (Only available without `embed`)
-
-### view
-
-- Type: `"default" | "editor" | "preview"`
-- Default: `"preview"`
+@`view` type=`"default" | "editor" | "preview"` default=`"preview"`
 
 Which view to open by default.
 
-### hideExplorer
+@`hideExplorer` type=boolean
 
-- Type: `boolean`
-- Default: `false`
+Hide the file explorer panel in the embed view.
 
-Hide file explorer panel in embed view.
+@`hideNavigation` type=boolean
 
-### hideNavigation
+Hide the navigation panel in the embed view.
 
-- Type: `boolean`
-- Default: `false`
-
-Hide navigation panel in embed view.
-
-### hideDevtools
-
-- Type: `boolean`
-- Default: `false`
+@`hideDevtools` type=boolean
 
 Hide the debugging console in the editor preview.
+
+:::

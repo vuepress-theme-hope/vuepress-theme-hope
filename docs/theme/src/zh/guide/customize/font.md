@@ -13,7 +13,7 @@ tag:
 
 <!-- more -->
 
-## 字体族
+## 字体族 {#font-family}
 
 对于常见的字体族，一般可以分为 **衬线体**[^serif] 和 **无衬线体**[^sans-serif]。
 
@@ -23,7 +23,7 @@ tag:
 
 :::
 
-## 修改主题字体
+## 修改主题字体 {#modifying-fonts}
 
 主题在 `.vuepress/styles/palette.scss` 中提供了 `$vp-font`、`$vp-font-heading` 和 `$vp-font-mono` 三个变量控制字体。
 
@@ -47,7 +47,7 @@ $vp-font: 'Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC", "Hiragin
 
 :::
 
-## 后备字体
+## 后备字体 {#fallback-font}
 
 由于不同平台、不同操作系统以及不同的安装方式 (slim/full) 会导致字体库中的字体数量以及类别产生较大差异，你应该尽可能地设置多个字体，并确保后备字体[^fallback-font]存在。
 
@@ -57,7 +57,7 @@ $vp-font: 'Georgia, -apple-system, "Nimbus Roman No9 L", "PingFang SC", "Hiragin
 
 :::
 
-## 字体库
+## 字体库 {#font-library}
 
 你可以在 [Google Fonts](https://fonts.google.com/) 中找到更多字体，并可以在线预览与下载。
 
@@ -91,7 +91,10 @@ export default defineUserConfig({
 
     // 导入相应链接
     ["link", { rel: "preconnect", href: "https://fonts.googleapis.com" }],
-    ["link", { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" }],
+    [
+      "link",
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
+    ],
     [
       "link",
       {
@@ -118,7 +121,7 @@ $vp-font: '"Noto Serif SC", serif';
 
 <div class="noto-serif">
 
-## 人人生而自由
+## 人人生而自由 {#whereas-recognition-of-the-inherent-dignity}
 
 人人生而自由，在尊严和权利上一律平等。他们赋有理性和良心，并应以弟兄关系的精神相对待。
 

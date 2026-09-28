@@ -13,7 +13,7 @@ The sidebar contains list of related documents, document titles, and blogger inf
 
 <!-- markdownlint-disable MD051 -->
 
-The theme allows you to generate side bar from [file structure](#generate-from-file-structure) or [headers](#generate-from-headers) automatically, or you can [customize](#sidebar-links) it manually.
+The theme allows you to generate the sidebar from the [file structure](#generate-sidebar-from-file-structure) automatically, or you can [customize](#sidebar-links) it manually.
 
 <!-- markdownlint-enable MD051 -->
 
@@ -151,7 +151,10 @@ export default hopeTheme({
         {
           text: "Sub Group 2",
           prefix: "corge/",
-          children: ["fred" /* /corge/fred.html */, "grault" /* /corge/grault.html */],
+          children: [
+            "fred" /* /corge/fred.html */,
+            "grault" /* /corge/grault.html */,
+          ],
         },
         "foo" /* /foo.html */,
       ],
@@ -164,20 +167,21 @@ You may want to use it with `prefix` to restore the structure of the document ea
 
 For example, suppose you have a following directory structure:
 
-```
-.
-├─ README.md
-├─ contact.md
-├─ about.md
-├─ foo/
-│   ├─ README.md
-│   ├─ one.md
-│   └─ two.md
-└─ bar/
-    ├─ README.md
-    ├─ three.md
-    └─ four.md
-```
+::: file-tree
+
+- README.md
+- contact.md
+- about.md
+- foo/
+  - README.md
+  - one.md
+  - two.md
+- bar/
+  - README.md
+  - three.md
+  - four.md
+
+:::
 
 Then you can use the following config:
 
@@ -190,12 +194,20 @@ export default hopeTheme({
     {
       text: "Foo",
       prefix: "/foo/",
-      children: ["" /* /foo/ */, "one" /* /foo/one.html */, "two" /* /foo/two.html */],
+      children: [
+        "" /* /foo/ */,
+        "one" /* /foo/one.html */,
+        "two" /* /foo/two.html */,
+      ],
     },
     {
       text: "Bar",
       prefix: "/bar/",
-      children: ["" /* /bar/ */, "three" /* /bar/three.html */, "four" /* /bar/four.html */],
+      children: [
+        "" /* /bar/ */,
+        "three" /* /bar/three.html */,
+        "four" /* /bar/four.html */,
+      ],
     },
     "/contact" /* /contact.html */,
     "/about" /* /about.html */,
@@ -209,20 +221,21 @@ To display different sidebars for different page groups, set an object for the s
 
 For example, if you have the following structure:
 
-```
-.
-├─ README.md
-├─ contact.md
-├─ about.md
-├─ foo/
-│   ├─ README.md
-│   ├─ one.md
-│   └─ two.md
-└─ bar/
-    ├─ README.md
-    ├─ three.md
-    └─ four.md
-```
+::: file-tree
+
+- README.md
+- contact.md
+- about.md
+- foo/
+  - README.md
+  - one.md
+  - two.md
+- bar/
+  - README.md
+  - three.md
+  - four.md
+
+:::
 
 You can define your sidebar for each section using below configuration:
 
@@ -231,9 +244,17 @@ import { hopeTheme } from "vuepress-theme-hope";
 
 export default hopeTheme({
   sidebar: {
-    "/foo/": ["" /* /foo/ */, "one" /* /foo/one.html */, "two" /* /foo/two.html */],
+    "/foo/": [
+      "" /* /foo/ */,
+      "one" /* /foo/one.html */,
+      "two" /* /foo/two.html */,
+    ],
 
-    "/bar/": ["" /* /bar/ */, "three" /* /bar/three.html */, "four" /* /bar/four.html */],
+    "/bar/": [
+      "" /* /bar/ */,
+      "three" /* /bar/three.html */,
+      "four" /* /bar/four.html */,
+    ],
 
     // fallback
     "/": ["" /* / */, "contact" /* /contact.html */, "about" /* /about.html */],
@@ -255,20 +276,21 @@ You can replace the original "sidebarConfig array" with `"structure"` keyword in
 
 For example, for the following example mentioned earlier in [multiple sidebars](#multiple-sidebars):
 
-```
-.
-├─ README.md
-├─ contact.md
-├─ about.md
-├─ foo/
-│   ├─ README.md
-│   ├─ one.md
-│   └─ two.md
-└─ bar/
-    ├─ README.md
-    ├─ three.md
-    └─ four.md
-```
+::: file-tree
+
+- README.md
+- contact.md
+- about.md
+- foo/
+  - README.md
+  - one.md
+  - two.md
+- bar/
+  - README.md
+  - three.md
+  - four.md
+
+:::
 
 You can change the original config to:
 

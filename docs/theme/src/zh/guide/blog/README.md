@@ -6,7 +6,7 @@ dir:
   order: 7
 ---
 
-## 目录
+## 目录 {#catalog}
 
 - [博客功能介绍](intro.md)
 

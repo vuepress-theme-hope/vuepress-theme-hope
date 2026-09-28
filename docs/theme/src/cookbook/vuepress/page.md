@@ -18,14 +18,16 @@ By default, the route path of a page is determined by the relative path of your 
 
 Assuming this is the directory structure of your Markdown files:
 
-```
-└─ docs
-   ├─ guide
-   │  ├─ getting-started.md
-   │  └─ README.md
-   ├─ contributing.md
-   └─ README.md
-```
+::: file-tree
+
+- docs
+  - guide
+    - getting-started.md
+    - README.md
+  - contributing.md
+  - README.md
+
+:::
 
 Take the `docs` directory as your [sourceDir](https://vuejs.press/reference/cli.html), e.g. you are running `vuepress dev docs` command. Then the route paths of your Markdown files would be:
 

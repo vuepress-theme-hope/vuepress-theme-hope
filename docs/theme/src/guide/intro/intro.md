@@ -58,7 +58,7 @@ The theme provides a lot of extended syntax support for Markdown, allowing you t
 
 - To store some knowledge notes, the theme provides [Custom container](../markdown/stylize/hint.md), [Mark](../markdown/stylize/mark.md), [Task list](../markdown/grammar/tasklist.md) [mindmap](../markdown/chart/markmap.md) and [math](../markdown/grammar/math.md) support.
 
-- If you are a programmer and need to show a lot of codes and demos, this theme provides [multiple themes for code blocks](../markdown/code/fence.md#code-block-themes), [code tabs](../markdown/code/code-tabs.md), [file tree](../markdown/code/file-tree.md), [code tree](../markdown/code/code-tree.md) and [copy button for code blocks](../markdown/code/fence.md#copy-button). At the same time, we also provide the [Code Demo](../markdown/code/demo.md), [Playground](../markdown/code/playground.md), [Kotlin Playground](../markdown/code/kotlin-playground.md) and [Vue Playground](../markdown/code/vue-playground.md) functions, which is convenient for you to show your own Vue, React components or other demos and provide playground for visitors.
+- If you are a programmer and need to show a lot of codes and demos, this theme provides [multiple themes for code blocks](../markdown/code/fence.md#highlighter), [code tabs](../markdown/code/code-tabs.md), [file tree](../markdown/code/file-tree.md), [code tree](../markdown/code/code-tree.md) and [copy button for code blocks](../markdown/code/fence.md#copy-button). At the same time, we also provide the [Code Demo](../markdown/code/demo.md), [Playground](../markdown/code/playground.md), [Kotlin Playground](../markdown/code/kotlin-playground.md) and [Vue Playground](../markdown/code/vue-playground.md) functions, which is convenient for you to show your own Vue, React components or other demos and provide playground for visitors.
 
 - If you are providing product documentation and presentation, the theme provides [tabs](../markdown/content/tabs.md), [fields](../markdown/content/fields.md), [slide](../markdown/content/revealjs.md), [chart](../markdown/chart/chartjs.md), [echarts](../markdown/chart/echarts.md), [flowchart](../markdown/chart/flowchart.md), [mermaid diagram](../markdown/chart/mermaid.md) and [plantuml](../markdown/chart/plantuml.md) functions.
 
@@ -90,7 +90,7 @@ In short, anyone can enjoy the convenience of Markdown's enhanced syntax.
 
 - [Sidebar](../layout/sidebar.md):
   - Support for icons and path prefix.
-  - Auto generating sidebars from [file structure](../layout/sidebar.md#generate-from-file-structure).
+  - Auto generating sidebars from [file structure](../layout/sidebar.md#generate-sidebar-from-file-structure).
 
 - [Brand-new Homepage with features and highlights](../layout/home.md)
 
@@ -120,8 +120,8 @@ In short, anyone can enjoy the convenience of Markdown's enhanced syntax.
 - [Catalog Page auto-generation](../feature/catalog.md)
 
 - Search feature
-  - [Crawler search support with docsearch](../feature/search.md#use-vuepressplugin-docsearch)
-  - [Powerful client search support with slimsearch](../feature/search.md#use-vuepressplugin-slimsearch).
+  - [Crawler search support with docsearch](../feature/search.md#use-vuepress-plugin-docsearch)
+  - [Powerful client search support with slimsearch](../feature/search.md#use-vuepress-plugin-slimsearch).
 
 - [Page Encryption](../feature/encrypt.md) feature to limit access.
 

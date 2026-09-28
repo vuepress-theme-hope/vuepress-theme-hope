@@ -8,7 +8,7 @@ tag:
   - 界面
 ---
 
-## 打印按钮
+## 打印按钮 {#print-button}
 
 试一试: <PrintButton />
 
@@ -26,7 +26,7 @@ export default hopeTheme({
 });
 ```
 
-## 全屏按钮
+## 全屏按钮 {#fullscreen-button}
 
 试一试:
 
@@ -50,7 +50,7 @@ export default hopeTheme({
 
 :::
 
-## 返回顶部按钮
+## 返回顶部按钮 {#back-to-top-button}
 
 `vuepress-theme-hope` 通过 [`@vuepress/plugin-back-to-top`][back-to-top] 添加了一个带进度条的返回顶部按钮，默认向下滚动 100px 后显示。
 
@@ -82,7 +82,7 @@ export default hopeTheme({
 });
 ```
 
-## 完整无障碍支持
+## 完整无障碍支持 {#full-a11y-support}
 
 主题完全支持无障碍功能。
 
@@ -94,7 +94,7 @@ export default hopeTheme({
 
 这是我们为全球视障人群做出的支持! :heart:
 
-## 专注模式
+## 专注模式 {#focus-mode}
 
 如果你更喜欢专注于内容，你可以在主题选项中设置 `focus: true` 启用专注模式。
 
@@ -110,7 +110,7 @@ export default hopeTheme({
 
 在这个模式下，我们会模糊内容之外元素，提供更好的专注体验。
 
-## 纯净模式
+## 纯净模式 {#pure-mode}
 
 如果你的网站是一个纯文档站点，并且你更喜欢干净的样式，你可以在主题选项中设置 `pure: true` 启用纯净模式。
 
@@ -128,7 +128,7 @@ export default hopeTheme({
 
 默认延迟为 1500ms，你可以通过设置为一个数字来自定义延迟时间。
 
-## RTL 布局
+## RTL 布局 {#rtl-layout}
 
 `vuepress-theme-hope` 完全支持 RTL 布局。只需在多语言配置内的对应语言设置 `rtl: true`
 

@@ -33,61 +33,46 @@ Banner component, can be use to display banner.
 
 <!-- #endregion demo -->
 
-## Props
+## Options
 
-### title
+::: fields
+@`title` type=string required
 
-- Type: `string`
-- Required: Yes
+Banner title.
 
-Banner title
+@`content` type=string
 
-### content
+Banner content.
 
-- Type: `string`
-- Default: `''`
+@`logo` type=string
 
-Banner content
+Banner logo.
 
-### logo
+@`actions` type=`BannerAction[]`
 
-- Type: `string`
-- Required: No
+Banner actions.
 
-Banner logo
+@@`actions[*].text` type=string required
 
-### actions
+Text of the action.
 
-- Type: `BannerAction[]`
+@@`actions[*].link` type=string required
 
-  ```ts
-  interface BannerAction {
-    text: string;
-    link: string;
-    /**
-     * @default "primary"
-     */
-    type?: "primary" | "default";
-  }
-  ```
+Link of the action.
 
-- Required: No
+@@`actions[*].type` type=`"primary" | "default"` default=`"primary"`
 
-Banner actions
+Type of the action.
 
-### background
+@`background` type=string
 
-- Type: `string`
-- Required: No
+Banner background.
 
-Banner background
+@`color` type=string
 
-### color
+Banner font color.
 
-- Type: `string`
-- Required: No
-
-Banner font color
+:::
 
 ::: tip
 

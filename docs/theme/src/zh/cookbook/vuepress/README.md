@@ -17,7 +17,7 @@ VuePress 是一个以 Markdown 为中心的静态网站生成器。你可以使�
 
 <!-- more -->
 
-## VuePress 工作原理
+## VuePress 工作原理 {#how-it-works}
 
 一个 VuePress 站点本质上是一个由 [Vue](https://v3.vuejs.org/) 和 [Vue Router](https://next.router.vuejs.org) 驱动的单页面应用 (SPA)。
 
@@ -27,7 +27,7 @@ VuePress 是一个以 Markdown 为中心的静态网站生成器。你可以使�
 
 - 在构建过程中，我们会为 VuePress 站点创建一个服务端渲染 (SSR) 的版本，然后通过虚拟访问每一条路径来渲染对应的 HTML。
 
-## VuePress 介绍
+## VuePress 介绍 {#vuepress-intro}
 
 - [页面](page.md)
 
@@ -41,6 +41,6 @@ VuePress 是一个以 Markdown 为中心的静态网站生成器。你可以使�
 
 - [主题](theme.md)
 
-## VuePress 官方文档
+## VuePress 官方文档 {#vuepress-official-docs}
 
 - [VuePress](https://vuejs.press/zh/)

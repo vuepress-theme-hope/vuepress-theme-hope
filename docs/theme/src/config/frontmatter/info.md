@@ -11,66 +11,28 @@ tag:
 
 You can set information for page with the following frontmatter options.
 
-## title
+## Options
 
-- Type: `string`
-- Required: No
+:::: fields
+@`title` type=string
 
 Current page's title. Markdown's first h1 by default.
 
-## shortTitle
+@`shortTitle` type=string
 
-- Type: `string`
-- Required: No
+Current page's short title. It will be used as the preferred title in navbar, sidebar and breadcrumb.
 
-Current page's short title. Will be used as in navbar, sidebar and breadcrumb.
-
-## description
-
-- Type: `string`
-- Required: No
+@`description` type=string
 
 Current page's description.
 
-## icon
-
-- Type: `string`
-- Required: No
-- Details:
-  - [Interface → Icon Support](../../guide/interface/icon.md)
+@`icon` type=string
 
 FontClass / Image link of the current page icon (recommended).
 
-## author
+See also: [Interface → Icon Support](../../guide/interface/icon.md).
 
-- Type: `Author | boolean`
-
-  ```ts
-  type AuthorName = string;
-
-  interface AuthorInfo {
-    /**
-     * Author name
-     */
-    name: string;
-
-    /**
-     * Author website
-     */
-    url?: string;
-
-    /**
-     * Author email
-     */
-    email?: string;
-  }
-
-  type Author = AuthorName | AuthorName[] | AuthorInfo | AuthorInfo[];
-  ```
-
-- Required: No
-- Details:
-  - [Feature → Page Info](../../guide/feature/page-info.md#author)
+@`author` type=`Author | boolean`
 
 Show the author of the current page. If you don't fill it, you will fall back to the default author.
 
@@ -80,66 +42,70 @@ When setting default author in theme options, you can set `false` to prevent sho
 
 :::
 
-## isOriginal
+See also: [Feature → Page Info](../../guide/feature/page-info.md#author).
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Feature → Page Info](../../guide/feature/page-info.md#parameters)
+Its type is:
+
+```ts
+type AuthorName = string;
+
+interface AuthorInfo {
+  /**
+   * Author name
+   */
+  name: string;
+
+  /**
+   * Author website
+   */
+  url?: string;
+
+  /**
+   * Author email
+   */
+  email?: string;
+}
+
+type Author = AuthorName | AuthorName[] | AuthorInfo | AuthorInfo[];
+```
+
+@`isOriginal` type=boolean
 
 Whether the current article is original.
 
-## date
+See also: [Feature → Page Info](../../guide/feature/page-info.md#parameters).
 
-- Type: `DateString`
-- Required: No
-- Details:
-  - [Feature → Page Info](../../guide/feature/page-info.md#writing-date)
+@`date` type=`DateString`
 
-Set the writing time of the current page, with `YYYY-MM-DD` or `YYYY-MM-DD hh:mm:ss` format
+Set the writing time of the current page, with `YYYY-MM-DD` or `YYYY-MM-DD hh:mm:ss` format.
 
-## category
+See also: [Feature → Page Info](../../guide/feature/page-info.md#writing-date).
 
-- Type: `string | string[]`
-- Required: No
-- Details:
-  - [Feature → Page Info](../../guide/feature/page-info.md#category-and-tags)
+@`category` type=`string | string[]`
 
 Set the category of the current page.
 
-## tag
+See also: [Feature → Page Info](../../guide/feature/page-info.md#category-and-tags).
 
-- Type: `string | string []`
-- Required: No
-- Details:
-  - [Feature → Page Info](../../guide/feature/page-info.md#category-and-tags)
+@`tag` type=`string | string[]`
 
 Set the label of the current page.
 
-## license
+See also: [Feature → Page Info](../../guide/feature/page-info.md#category-and-tags).
 
-- Type: `string`
-- Default: value in theme options
-- Details:
-  - [Layout → Footer](../../guide/layout/footer.md#copyright-information).
+@`license` type=string default="value in theme options"
 
 License name of the page.
 
-## copyright
+See also: [Layout → Footer](../../guide/layout/footer.md#copyright-information).
 
-- Type: `string | false`
-- Default: value in theme options
-- Details:
-  - [Layout → Footer](../../guide/layout/footer.md#copyright-information).
+@`copyright` type=`string | false` default="value in theme options"
 
-The copyright information of the page, will be displayed in footer
+The copyright information of the page, will be displayed in footer.
 
-## pageview
+See also: [Layout → Footer](../../guide/layout/footer.md#copyright-information).
 
-- Type: `boolean`
-- Default: value in theme options
-- Details:
-  - [Feature → Comment](../../guide/feature/comment.md#waline)
+@`pageview` type=boolean default="value in theme options"
 
 Whether display page views.
 
@@ -149,56 +115,42 @@ The pageview feature requires you to have a valid Waline Comment Service config.
 
 :::
 
-## article
+See also: [Feature → Comment](../../guide/feature/comment.md#waline).
 
-- Type: `boolean`
-- Default: `true`
-- Details:
-  - [Blog → Article](../../guide/blog/article.md#article).
+@`article` type=boolean default=`true`
 
 Whether to add the article to the article list.
 
-## timeline
+See also: [Blog → Article](../../guide/blog/article.md#article-configuration).
 
-- Type: `boolean`
-- Default: `true`
-- Details:
-  - [Blog → Timeline](../../guide/blog/timeline.md#excluding-articles).
+@`timeline` type=boolean default=`true`
 
 Whether to add the article to the timeline list.
 
-## sticky
+See also: [Blog → Timeline](../../guide/blog/timeline.md#excluding-articles).
 
-- Type: `boolean | number`
-- Default: `false`
-- Details:
-  - [Blog → Article](../../guide/blog/article.md#article).
+@`sticky` type=`boolean | number`
 
 Sets whether the current article is pinned in the list. When fill in with number, greater ones come before smaller ones.
 
-## star
+See also: [Blog → Article](../../guide/blog/article.md#article-configuration).
 
-- Type: `boolean | number`
-- Default: `false`
-- Details:
-  - [Blog → Article](../../guide/blog/article.md#star-articles).
+@`star` type=`boolean | number`
 
 Sets whether the current article is pinned in the article list in blog theme. When fill in with number, greater ones come before smaller ones.
 
-## cover
+See also: [Blog → Article](../../guide/blog/article.md#star-articles).
 
-- Type: `string`
-- Required: No
-- Details:
-  - [FAQ → Links in Config](../../faq/common-question.md#links-in-config)
+@`cover` type=string
 
 Cover image of the page.
 
-## banner
+See also: [FAQ → Links in Config](../../faq/common-question.md#links-in-config).
 
-- Type: `string`
-- Required: No
-- Details:
-  - [FAQ → Links in Config](../../faq/common-question.md#links-in-config)
+@`banner` type=string
 
 Banner image of the page.
+
+See also: [FAQ → Links in Config](../../faq/common-question.md#links-in-config).
+
+::::

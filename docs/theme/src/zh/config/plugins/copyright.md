@@ -10,54 +10,42 @@ tag:
   - 版权信息
 ---
 
-## 介绍
+## 介绍 {#intro}
 
 主题可通过 `@vuepress/plugin-copyright` 在复制时追加版权信息，默认情况下此功能**不启用**。
 
 你可以在主题选项中设置 `plugins.copyright: true` 来启用此功能。默认行为是全局启用插件并使用主题选项中的作者和协议名称。
 
-## 插件选项
+## 插件选项 {#plugin-options}
 
 主题将主题选项中的 `plugins.copyright` 作为插件选项传递给 `@vuepress/plugin-copyright`。
 
 你可以通过 `plugins.copyright` 自行设置选项，以下是常见选项:
 
-### triggerLength
+::: fields
+@`triggerLength` type=number default=`100`
 
-- 类型: `number`
-- 默认值: `100`
+触发附加版权的最小字数。
 
-触发附加版权的最小字数
+@`global` type=boolean
 
-### global
+是否全局启用。
 
-- 类型: `boolean`
-- 默认值: `false`
+@`disableCopy` type=boolean
 
-是否全局启用
+禁用复制。
 
-### disableCopy
+@`disableSelection` type=boolean
 
-- 类型: `boolean`
-- 默认值: `false`
+禁用选择。
 
-禁用复制
+@`canonical` type=string
 
-### disableSelection
-
-- 类型: `boolean`
-- 默认值: `false`
-
-禁用选择
-
-### canonical
-
-- 类型: `string`
-- 必填: 否
-
-首选域名与部署目录
+首选域名与部署目录。
 
 当你在多个站点部署内容时很有用。
+
+:::
 
 ::: info
 

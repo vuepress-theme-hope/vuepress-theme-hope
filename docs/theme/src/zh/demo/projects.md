@@ -555,7 +555,7 @@ blogs:
     preview: https://raw.githubusercontent.com/bxx-114514/image-hosting/refs/heads/main/images/users/bxx-114514.png
 ---
 
-## 使用 VuePress Theme Hope 的文档
+## 使用 VuePress Theme Hope 的文档 {#docs-using-vuepress-theme-hope}
 
 <SiteInfo
   v-for="item in $frontmatter.docs"
@@ -563,7 +563,7 @@ blogs:
   v-bind="item"
 />
 
-## 使用 VuePress Theme Hope 的档案
+## 使用 VuePress Theme Hope 的档案 {#portfolio-using-vuepress-theme-hope}
 
 <SiteInfo
   v-for="item in $frontmatter.portfolios"
@@ -571,7 +571,7 @@ blogs:
   v-bind="item"
 />
 
-## 使用 VuePress Theme Hope 的博客
+## 使用 VuePress Theme Hope 的博客 {#blog-using-vuepress-theme-hope}
 
 <SiteInfo
   v-for="item in $frontmatter.blogs"
@@ -579,6 +579,6 @@ blogs:
   v-bind="item"
 />
 
-## 更多
+## 更多 {#more}
 
 - 随时随地通过 PR 添加你的博客或文档至此。

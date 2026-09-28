@@ -4,175 +4,138 @@ icon: gears
 order: 2
 ---
 
-## Plugin Options
+## Options
 
 You can pass these options to the plugin:
 
-### playground
-
-- Type: `PlaygroundGlobalOptions`
-
-  ```ts
-  interface PlaygroundCodeConfig {
-    /**
-     * Code block extension
-     *
-     * @description It's based on filename, not code fence language
-     */
-    ext: string;
-
-    /** Code block content */
-    content: string;
-  }
-
-  interface PlaygroundData {
-    /** Title of Playground */
-    title?: string;
-
-    /**
-     * Import map file name
-     *
-     * @default "import-map.json"
-     */
-    importMap?: string;
-
-    /** Playground files info */
-    files: Record<
-      /** File name */
-      string,
-      /** File detail */
-      PlaygroundCodeConfig
-    >;
-
-    /**
-     * Playground settings
-     *
-     * @description It's parsed result of json content after setting directive
-     */
-    settings: Record<string, unknown>;
-
-    /** hash key based on playground content */
-    key: string;
-  }
-
-  interface PlaygroundOptions {
-    /** Playground container name */
-    name: string;
-
-    /**
-     * Playground component name
-     *
-     * @default "Playground"
-     */
-    component?: string;
-
-    /**
-     * Props getter
-     */
-    propsGetter: (data: PlaygroundData) => Record<string, string>;
-  }
-
-  interface TSPresetPlaygroundOptions extends CompilerOptions {
-    /**
-     * external playground service url
-     *
-     * @default "https://www.typescriptlang.org/play"
-     */
-    service?: string;
-  }
-
-  interface VuePresetPlaygroundOptions {
-    /**
-     * external playground service url
-     *
-     * @default "https://sfc.vuejs.org/"
-     */
-    service?: string;
-
-    /**
-     * Whether to use dev version
-     *
-     * @default false
-     */
-    dev?: boolean;
-
-    /**
-     * Whether to enable SSR
-     *
-     * @default false
-     */
-    ssr?: boolean;
-  }
-
-  interface UnoPresetPlaygroundOptions {
-    /**
-     * external playground service url
-     *
-     * @default "https://unocss.dev/play"
-     */
-    service?: string;
-  }
-
-  type BuiltInPlaygroundPreset = "ts" | "vue" | "unocss";
-
-  interface PlaygroundGlobalOptions {
-    /** Playground presets */
-    presets: (BuiltInPlaygroundPreset | PlaygroundOptions)[];
-    /** Playground config */
-    config?: {
-      ts?: TSPresetPlaygroundOptions;
-      vue?: VuePresetPlaygroundOptions;
-      unocss?: UnoPresetPlaygroundOptions;
-    };
-  }
-  ```
-
-- Required: No
-- Details:
-  - [Playground](./guide/code/playground.md)
+:::: fields
+@`playground` type=`PlaygroundGlobalOptions`
 
 Playground options.
 
-### kotlinPlayground
+See also: [Playground](./guide/code/playground.md).
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Kotlin Playground](./guide/code/kotlin-playground.md)
+@@`playground.presets` type=`(BuiltInPlaygroundPreset | PlaygroundOptions)[]` required
+
+Playground presets. `BuiltInPlaygroundPreset` is one of `"ts"`, `"vue"` and `"unocss"`, which enables a built-in preset, while an object configures a custom playground.
+
+@@@`playground.presets[*].name` type=string required
+
+Playground container name.
+
+@@@`playground.presets[*].component` type=string default=`"Playground"`
+
+Playground component name.
+
+@@@`playground.presets[*].propsGetter` type=`(data: PlaygroundData) => Record<string, string>` required
+
+Props getter. Its `data` argument has the following types:
+
+```ts
+interface PlaygroundCodeConfig {
+  /**
+   * Code block extension
+   *
+   * @description It's based on filename, not code fence language
+   */
+  ext: string;
+
+  /** Code block content */
+  content: string;
+}
+
+interface PlaygroundData {
+  /** Title of Playground */
+  title?: string;
+
+  /**
+   * Import map file name
+   *
+   * @default "import-map.json"
+   */
+  importMap?: string;
+
+  /** Playground files info */
+  files: Record<
+    /** File name */
+    string,
+    /** File detail */
+    PlaygroundCodeConfig
+  >;
+
+  /**
+   * Playground settings
+   *
+   * @description It's parsed result of json content after setting directive
+   */
+  settings: Record<string, unknown>;
+
+  /** hash key based on playground content */
+  key: string;
+}
+```
+
+@@`playground.config` type=`{ ts?: TSPresetPlaygroundOptions; vue?: VuePresetPlaygroundOptions; unocss?: UnoPresetPlaygroundOptions }`
+
+Playground config of the built-in presets.
+
+@@@`playground.config.ts` type=`TSPresetPlaygroundOptions`
+
+Options of the `ts` preset.
+
+@@@@`playground.config.ts.service` type=string default=`"https://www.typescriptlang.org/play"`
+
+External playground service url.
+
+@@@`playground.config.vue` type=`VuePresetPlaygroundOptions`
+
+Options of the `vue` preset.
+
+@@@@`playground.config.vue.service` type=string default=`"https://sfc.vuejs.org/"`
+
+External playground service url.
+
+@@@@`playground.config.vue.dev` type=boolean
+
+Whether to use the development version.
+
+@@@@`playground.config.vue.ssr` type=boolean
+
+Whether to enable SSR.
+
+@@@`playground.config.unocss` type=`UnoPresetPlaygroundOptions`
+
+Options of the `unocss` preset.
+
+@@@@`playground.config.unocss.service` type=string default=`"https://unocss.dev/play"`
+
+External playground service url.
+
+@`kotlinPlayground` type=boolean
 
 Whether to enable kotlin playground support.
 
-### vuePlayground
+See also: [Kotlin Playground](./guide/code/kotlin-playground.md).
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Vue Playground](./guide/code/vue-playground.md)
+@`vuePlayground` type=boolean
 
 Whether to enable vue playground support.
 
-### demo
+See also: [Vue Playground](./guide/code/vue-playground.md).
 
-- Type: `CodeDemoGlobalOptions | boolean`
-- Default: `false`
-- Details:
-  - [Code Demo](./guide/code/demo/README.md)
+@`demo` type=`Partial<CodeDemoOptions> | boolean`
 
 Whether to enable code demo support.
 
-#### demo.jsLib
+See also: [Code Demo](./guide/code/demo/README.md).
 
-- Type: `string[]`
-- Required: No
-
-External JS libraries for CodePen, JsFiddle only.
-
-#### demo.cssLib
-
-- Type: `string[]`
-- Required: No
+@@`demo.jsLib` type=`string[]`
 
 External JS libraries for CodePen, JsFiddle only.
+
+@@`demo.cssLib` type=`string[]`
+
+External CSS libraries for CodePen, JsFiddle only.
 
 ::: warning
 
@@ -180,60 +143,37 @@ The above two options are only used by third-party code demo service, you need t
 
 :::
 
-#### demo.jsfiddle
+@@`demo.jsfiddle` type=boolean default=`true`
 
-- Type: `boolean`
-- Default: `true`
+Whether to display the JSFiddle button.
 
-Whether to display the JSFiddle button
+@@`demo.codepen` type=boolean default=`true`
 
-#### demo.codepen
+Whether to display the CodePen button.
 
-- Type: `boolean`
-- Default: `true`
+@@`demo.codepenLayout` type=`"top" | "left" | "right"` default=`"left"`
 
-Whether to display the CodePen button
+CodePen editor layout.
 
-#### demo.codepenLayout
+@@`demo.codepenEditors` type=string default=`"101"`
 
-- Type: `"top" | "left" | "correct"`
-- Default: `"left"`
-
-CodePen editor layout
-
-#### demo.codepenEditors
-
-- Type: `string`
-- Default: `"101"`
-
-CodePen editor status
-
-#### others
+CodePen editor status.
 
 The following are the library links used by the third-party code demo service. Unless your environment cannot visit unpkg or the speed is slow, you probably don't need to override the default values.
 
-##### demo.babel
+@@`demo.babel` type=string default=`"https://unpkg.com/@babel/standalone/babel.min.js"`
 
-Default value: `"https://unpkg.com/@babel/standalone/babel.min.js"`
+@@`demo.vue` type=string default=`"https://unpkg.com/vue/dist/vue.global.prod.js"`
 
-##### demo.vue
+@@`demo.react` type=string default=`"https://unpkg.com/react/umd/react.production.min.js"`
 
-Default value: `"https://unpkg.com/vue/dist/vue.global.prod.js"`
+@@`demo.reactDOM` type=string default=`"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
 
-##### demo.react
-
-Default value: `"https://unpkg.com/react/umd/react.production.min.js"`
-
-##### demo.reactDOM
-
-Default value: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
-
-### sandpack
-
-- Type: `boolean`
-- Default: `false`
+@`sandpack` type=boolean
 
 Whether to enable sandpack playground support.
+
+::::
 
 ## Client Config
 
@@ -289,7 +229,10 @@ Define config which you want to pass to `sandpack-vue3`.
 ### defineVuePlaygroundConfig
 
 ```ts
-export interface VuePlaygroundOptions extends Omit<ReplProps, "store" | "editor"> {
+export interface VuePlaygroundOptions extends Omit<
+  ReplProps,
+  "store" | "editor"
+> {
   /**
    * Specify the version of vue
    */

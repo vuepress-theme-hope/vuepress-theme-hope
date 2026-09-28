@@ -14,7 +14,7 @@ tag:
 
 <!-- more -->
 
-## 构建项目
+## 构建项目 {#build-project}
 
 当你在本地完成项目的初步开发后，你可以使用 `pnpm docs:build` 命令构建网站。
 
@@ -22,7 +22,7 @@ tag:
 
 你可以将此文件夹的内容部署到你网站的服务器上。最简单的做法是上传到 GitHub 并开启 GitHub Pages。
 
-## 部署到 GitHub Pages
+## 部署到 GitHub Pages {#deploy-to-github-pages}
 
 如果你在使用模板，且在创建过程中选择了创建自动部署文档的 GitHub 工作流，那么你唯一要做的就是设置正确的 [base 选项](https://vuejs.press/zh/reference/config.html#base)。
 
@@ -38,6 +38,6 @@ tag:
 
 :::
 
-## 其他部署方式
+## 其他部署方式 {#other-deployment-methods}
 
 关于其他部署方式，请参阅 [VuePress → 部署](https://vuejs.press/zh/guide/deployment.html)。

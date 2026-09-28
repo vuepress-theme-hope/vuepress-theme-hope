@@ -13,7 +13,7 @@ tag:
 
 如果想使用它，你需要在页面 frontmatter 中设置 `home: true` 和 `portfolio: true`。
 
-## 个人信息
+## 个人信息 {#personal-information}
 
 名称默认为主题选项中的 `author` 选项，你可以在 frontmatter 中设置 `name` 进行自定义。欢迎信息可以通过 frontmatter 中的 `welcome` 选项进行自定义。
 

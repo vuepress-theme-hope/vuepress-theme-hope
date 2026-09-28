@@ -9,107 +9,79 @@ tag:
   - Portfolio
 ---
 
-## portfolio
+## Options
 
-Must be `true` to use portfolio layout.
+::: fields
+@`portfolio` type=boolean required
 
-## home
+Whether to use the portfolio layout.
 
-Recommend be `true` if the portfolio is home page.
+@`home` type=boolean
 
-## name
+Whether the portfolio is the home page. Recommended to be `true`.
 
-- Type: `string`
-- Default: `themeConfig.author.name`
+@`name` type=string default=`themeConfig.author.name`
 
-Name of the portfolio, by default its the author name from .
+Name of the portfolio, which defaults to the author name in theme options.
 
-## avatar
+@`avatar` type=string
 
-- Type: `string`
-- Required: No
+Avatar image of the portfolio. Relative paths are not supported.
 
-Avatar image of the portfolio, relative path is not supported.
+@`avatarDark` type=string default=`avatar`
 
-## avatarDark
+Dark mode avatar image of the portfolio. Relative paths are not supported.
 
-- Type: `string`
-- Default: `avatar`
-
-Dark mode avatar image of the portfolio, relative path is not supported.
-
-## titles
-
-- Type: `string[]`
-- Required: No
+@`titles` type=`string[]`
 
 Titles of the portfolio.
 
-## avatarStyle
+@`avatarStyle` type=`Record<string, string> | string`
 
-- Type: `Record<string, string> | string`
-- Required: No
+CSS style for the avatar.
 
-CSS style for avatar
+@`avatarAlt` type=string default=`name`
 
-## avatarAlt
+Alt text of the avatar.
 
-- Type: `string`
-- Default: `name`
+@`bgImage` type=string
 
-Avatar alt text
+Background image of the portfolio. Relative paths are not supported.
 
-## bgImage
+@`bgImageDark` type=string default=`bgImage`
 
-- Type: `string`
-- Required: No
+Dark mode background image of the portfolio. Relative paths are not supported.
 
-Background image of the portfolio, relative path is not supported.
+@`bgImageStyle` type=`Record<string, string> | string`
 
-## bgImageDark
+CSS style for the background image.
 
-- Type: `string`
-- Default: `bgImage`
-
-Dark mode background image of the portfolio, relative path is not supported.
-
-## bgImageStyle
-
-- Type: `Record<string, string> | string`
-- Required: No
-
-CSS style for background image
-
-## welcome
-
-- Type: `string`
-- Default: `'👋 Hi there, I am'`
+@`welcome` type=string default=`'👋 Hi there, I am'`
 
 Welcome message of the portfolio.
 
-## medias
-
-- Type: `PortfolioMedia[]`
-
-  ```ts twoslash
-  interface PortfolioMedia {
-    icon: string;
-    name: string;
-    link: string;
-  }
-  ```
-
-- Required: No
+@`medias` type=`PortfolioMedia[]`
 
 Social media links of the portfolio.
 
-## content
+@@`medias[*].icon` type=string required
 
-- Type: `"portfolio" | "doc" | "none"`
-- Default: `"portfolio"`
+Icon of the media.
 
-Content type of the portfolio.
+@@`medias[*].name` type=string required
 
-- `portfolio` means display Markdown content as portfolio style
-- `doc` means display Markdown content as document style
-- `none` means hide Markdown content
+Name of the media.
+
+@@`medias[*].link` type=string required
+
+Link of the media.
+
+@`content` type=`'portfolio' | 'doc' | 'none'` default=`'portfolio'`
+
+Content type of the portfolio:
+
+- `'portfolio'`: display the Markdown content as portfolio style
+- `'doc'`: display the Markdown content as document style
+- `'none'`: hide the Markdown content
+
+:::

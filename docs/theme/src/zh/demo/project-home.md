@@ -104,7 +104,7 @@ copyright: false
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 
-## 🛠 安装
+## 🛠 安装 {#🛠install}
 
 在当前目录下的 `<dir>` 文件夹内创建 vuepress-theme-hope 项目:
 
@@ -142,7 +142,7 @@ npm init vuepress-theme-hope@latest add <dir>
 
 :::
 
-## 🚀 使用
+## 🚀 使用 {#🚀usage}
 
 ```ts twoslash title=".vuepress/config.ts"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -158,7 +158,7 @@ export default {
 };
 ```
 
-## 官方 QQ 群
+## 官方 QQ 群 {#telegram-group}
 
 - [点击加入](https://jq.qq.com/?_wv=1027&k=rATJyxGK) (群号: 1003437555)
 

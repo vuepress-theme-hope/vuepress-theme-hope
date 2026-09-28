@@ -12,20 +12,22 @@ tag:
 
 VuePress 是以 Markdown 为中心的。你项目中的每一个 Markdown 文件都是一个单独的页面。
 
-## 路由
+## 路由 {#routing}
 
 默认情况下，页面的路由路径是根据你的 Markdown 文件的相对路径决定的。
 
 假设这是你的 Markdown 文件所处的目录结构:
 
-```
-└─ docs
-   ├─ guide
-   │  ├─ getting-started.md
-   │  └─ README.md
-   ├─ contributing.md
-   └─ README.md
-```
+::: file-tree
+
+- docs
+  - guide
+    - getting-started.md
+    - README.md
+  - contributing.md
+  - README.md
+
+:::
 
 将 `docs` 目录作为你的 [sourceDir](https://vuejs.press/zh/reference/cli.html) ，例如你在运行 `vuepress dev docs` 命令。此时，你的 Markdown 文件对应的路由路径为:
 
@@ -60,7 +62,7 @@ description: 页面的描述
 
 :::
 
-## 内容
+## 内容 {#content}
 
 页面的主要内容是使用 Markdown 书写的。VuePress 首先会将 Markdown 转换为 HTML ，然后将 HTML 作为 Vue 单文件组件的 `<template>` 。
 

@@ -25,7 +25,7 @@ actions:
     link: ../../cookbook/markdown/
 ```
 
-## Markdown 配置
+## Markdown 配置 {#markdown-config}
 
 VuePress 通过 Frontmatter 为每个 Markdown 页面引入配置。
 
@@ -35,7 +35,7 @@ Frontmatter 是 VuePress 中很重要的一个概念，请阅读 [Frontmatter �
 
 :::
 
-## Markdown 扩展
+## Markdown 扩展 {#markdown-extensions}
 
 VuePress 会使用 [Markdown It](https://github.com/markdown-it/markdown-it) 来解析 Markdown 内容，因此可以借助于 Markdown It 插件来实现语法扩展。
 

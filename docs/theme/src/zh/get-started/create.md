@@ -14,13 +14,13 @@ tag:
 
 <!-- more -->
 
-## 1. 选择合适的项目位置
+## 1. 选择合适的项目位置 {#_1-choose-an-appropriate-location}
 
 为了避免偶然间触发一些问题而你无法解决，请尽量避免使用包含中文文字、表情符号或空格的文件路径 (如: `C:\Users\鲁迅\Desktop\VuePress 项目\Hope 主题❤️\`)。
 
 建议使用纯英文路径 (如: `D:\projects\vuepress-theme-hope\`)。
 
-## 2. 创建项目模板
+## 2. 创建项目模板 {#_2-create-project-template}
 
 在选定的文件夹中打开终端。
 

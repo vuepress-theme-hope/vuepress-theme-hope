@@ -11,270 +11,189 @@ tag:
 
 The following options adds new Markdown grammar, and can be set **under `markdown` property** in theme options.
 
-## markdown.component
+## Options
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Component → Grammar](../../guide/component/grammar.md)
-  - [@vuepress/plugin-markdown-ext → component][component]
+::: fields
+@`markdown.component` type=boolean
 
 Whether to enable component support.
 
-## markdown.footnote
+See also: [Component → Grammar](../../guide/component/grammar.md) and [@vuepress/plugin-markdown-ext → component][component].
 
-- Type: `boolean`
-- Default: `false`
-- Enabled in GFM: Yes
-- Details:
-  - [Markdown → Footnote](../../guide/markdown/content/footnote.md)
-  - [@vuepress/plugin-markdown-ext → footnote][footnote]
+@`markdown.footnote` type=boolean gfm=Yes
 
 Whether to enable footnote format support.
 
-## markdown.imgMark
+See also: [Markdown → Footnote](../../guide/markdown/content/footnote.md) and [@vuepress/plugin-markdown-ext → footnote][footnote].
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → Image Mark](../../guide/markdown/grammar/image.md#image-mark)
-  - [@vuepress/plugin-markdown-image → mark][mark]
+@`markdown.imgMark` type=boolean
 
 Whether to enable image mark.
 
-## markdown.imgSize
+See also: [Markdown → Image Mark](../../guide/markdown/grammar/image.md#image-mark) and [@vuepress/plugin-markdown-image → mark][mark].
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → Image Size](../../guide/markdown/grammar/image.md#image-size)
-  - [@vuepress/plugin-markdown-image → size][size]
+@`markdown.imgSize` type=boolean
 
 Whether to enable image size.
 
-## markdown.obsidianImgSize
+See also: [Markdown → Image Size](../../guide/markdown/grammar/image.md#image-size) and [@vuepress/plugin-markdown-image → size][size].
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → Image Size](../../guide/markdown/grammar/image.md#image-size)
-  - [@vuepress/plugin-markdown-image → obsidianSize][obsidianSize]
+@`markdown.obsidianImgSize` type=boolean
 
-## markdown.legacyImgSize (Deprecated)
+Whether to enable Obsidian image size.
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → Image Size](../../guide/markdown/grammar/image.md#image-size)
-  - [@vuepress/plugin-markdown-image → legacySize][legacySize]
+See also: [Markdown → Image Size](../../guide/markdown/grammar/image.md#image-size) and [@vuepress/plugin-markdown-image → obsidianSize][obsidianSize].
+
+@`markdown.legacyImgSize` type=boolean deprecated
 
 Whether to enable legacy image size.
 
-## markdown.include
+See also: [Markdown → Image Size](../../guide/markdown/grammar/image.md#image-size) and [@vuepress/plugin-markdown-image → legacySize][legacySize].
 
-- Type: `MarkdownIncludePluginOptions | boolean`
+@`markdown.include` type=`MarkdownIncludePluginOptions | boolean`
 
-  ```ts
-  interface MarkdownIncludePluginOptions {
-    /**
-     * handle include filePath
-     *
-     * @default (path) => path
-     */
-    resolvePath?: (path: string, cwd: string) => string;
+Whether to enable Markdown import support. You can pass in an object to customize behavior.
 
-    /**
-     * Whether deep include files in included Markdown files
-     *
-     * @default false
-     */
-    deep?: boolean;
-  }
-  ```
+See also: [Markdown → Include](../../guide/markdown/content/include.md) and [@vuepress/plugin-markdown-include][include].
 
-- Default: `false`
-- Details:
-  - [Markdown → Include](../../guide/markdown/content/include.md)
-  - [@vuepress/plugin-markdown-include][include]
+@@`markdown.include.resolvePath` type=`(path: string, cwd: string) => string` default=`(path) => path`
 
-Whether to enable Markdown import support. You can pass in a object to customize behavior.
+Handle the path of the included file.
 
-## markdown.fields
+@@`markdown.include.deep` type=boolean
 
-- Type: `boolean`
-- Details:
-  - [Markdown → Fields](../../guide/markdown/content/fields.md)
-  - [@vuepress/plugin-markdown-field → fields][fields]
+Whether to deep include files in included Markdown files.
+
+@`markdown.fields` type=boolean
 
 Whether to enable fields support.
 
-## markdown.tabs
+See also: [Markdown → Fields](../../guide/markdown/content/fields.md) and [@vuepress/plugin-markdown-field → fields][fields].
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → Tabs](../../guide/markdown/content/tabs.md)
-  - [@vuepress/plugin-markdown-tab → tabs][tabs]
+@`markdown.tabs` type=boolean
 
 Whether to enable tabs support.
 
-## markdown.tasklist
+See also: [Markdown → Tabs](../../guide/markdown/content/tabs.md) and [@vuepress/plugin-markdown-tab → tabs][tabs].
 
-- Type: `MarkdownItTaskListOptions | boolean`
-
-  ```ts
-  interface MarkdownItTaskListOptions {
-    /**
-     * Whether disable checkbox
-     *
-     * @default true
-     */
-    disabled?: boolean;
-
-    /**
-     * Whether use `<label>` to wrap text
-     *
-     * @default true
-     */
-    label?: boolean;
-  }
-  ```
-
-- Default: `false`
-- Enabled in GFM: Yes
-- Details:
-  - [Markdown → Tasklist](../../guide/markdown/grammar/tasklist.md)
-  - [@vuepress/plugin-markdown-ext][tasklist]
+@`markdown.tasklist` type=`MarkdownItTaskListOptions | boolean` gfm=Yes
 
 Whether to enable tasklist format support. You can pass an object to config task list.
 
-## markdown.math
+See also: [Markdown → Tasklist](../../guide/markdown/grammar/tasklist.md) and [@vuepress/plugin-markdown-ext][tasklist].
 
-- Type: `MarkdownMathPluginOptions | boolean`
+@@`markdown.tasklist.disabled` type=boolean default=`true`
 
-  ```ts
-  interface MarkdownKatexPluginOptions extends KatexOptions {
-    type?: "katex";
+Whether to disable checkbox.
 
-    /**
-     * Whether to allow inline math with spaces on ends
-     *
-     * @description NOT recommended to set this to true, because it will likely break the default usage of $
-     *
-     * @default false
-     */
-    allowInlineWithSpace?: boolean;
+@@`markdown.tasklist.label` type=boolean default=`true`
 
-    /**
-     * Whether enable copy plugin
-     *
-     * @default false
-     */
-    copy?: boolean;
+Whether to use `<label>` to wrap text.
 
-    /**
-     * Whether enable mhchem plugin
-     *
-     * @default false
-     */
-    mhchem?: boolean;
-  }
-
-  interface MarkdownMathjaxPluginOptions extends Omit<MarkdownItMathjaxOptions, "transformer"> {
-    type?: "mathjax";
-
-    /**
-     * Whether to allow inline math with spaces on ends
-     *
-     * @description NOT recommended to set this to true, because it will likely break the default usage of $
-     *
-     * @default false
-     */
-    allowInlineWithSpace?: boolean;
-
-    /**
-     * Output syntax
-     *
-     * @default 'svg'
-     */
-    output?: "chtml" | "svg";
-
-    /**
-     * Enable A11y
-     *
-     * @default true
-     */
-    a11y?: boolean;
-
-    /**
-     * TeX input options
-     */
-    tex?: MathJaxTexInputOptions;
-
-    /**
-     * Common HTML output options
-     */
-    chtml?: MathjaxCommonHTMLOutputOptions;
-
-    /**
-     * SVG output options
-     */
-    svg?: MathjaxSVGOutputOptions;
-  }
-
-  type MarkdownMathPluginOptions = MarkdownKatexPluginOptions | MarkdownMathjaxPluginOptions;
-  ```
-
-- Default: `false`
-- Details:
-  - [Markdown → Math](../../guide/markdown/grammar/math.md)
-  - [@vuepress/plugin-markdown-math][math]
+@`markdown.math` type=`MarkdownMathPluginOptions | boolean`
 
 Whether to enable math formula support. You can set `true` to auto detect the installed one of katex/mathjax, or provide plugin options.
 
-## markdown.revealjs
+See also: [Markdown → Math](../../guide/markdown/grammar/math.md) and [@vuepress/plugin-markdown-math][math].
 
-- Type: `RevealJsPluginOptions | boolean`
+Its type is:
 
-  ```ts
-  type RevealJsPlugin = "highlight" | "math" | "notes" | "search" | "zoom";
+```ts
+interface MarkdownKatexPluginOptions extends KatexOptions {
+  type?: "katex";
 
-  type RevealJsTheme =
-    | "auto"
-    | "beige"
-    | "black"
-    | "blood"
-    | "league"
-    | "moon"
-    | "night"
-    | "serif"
-    | "simple"
-    | "sky"
-    | "solarized"
-    | "white";
+  /**
+   * Whether to allow inline math with spaces on ends
+   *
+   * @description NOT recommended to set this to true, because it will likely break the default usage of $
+   *
+   * @default false
+   */
+  allowInlineWithSpace?: boolean;
 
-  interface RevealJsPluginOptions {
-    /**
-     * Reveal.js plugins
-     *
-     * @default []
-     */
-    plugins?: RevealJsPlugin[];
-    /**
-     * Reveal.js themes
-     *
-     * @default ["auto"]
-     */
-    themes?: RevealJsTheme[];
-  }
-  ```
+  /**
+   * Whether enable copy plugin
+   *
+   * @default false
+   */
+  copy?: boolean;
 
-- Default: `false`
-- Details:
-  - [Markdown → Presentation](../../guide/markdown/content/revealjs.md)
-  - [@vuepress/plugin-revealjs][revealjs]
+  /**
+   * Whether enable mhchem plugin
+   *
+   * @default false
+   */
+  mhchem?: boolean;
+}
+
+interface MarkdownMathjaxPluginOptions extends Omit<
+  MarkdownItMathjaxOptions,
+  "transformer"
+> {
+  type?: "mathjax";
+
+  /**
+   * Whether to allow inline math with spaces on ends
+   *
+   * @description NOT recommended to set this to true, because it will likely break the default usage of $
+   *
+   * @default false
+   */
+  allowInlineWithSpace?: boolean;
+
+  /**
+   * Output syntax
+   *
+   * @default 'svg'
+   */
+  output?: "chtml" | "svg";
+
+  /**
+   * Enable A11y
+   *
+   * @default true
+   */
+  a11y?: boolean;
+
+  /**
+   * TeX input options
+   */
+  tex?: MathJaxTexInputOptions;
+
+  /**
+   * Common HTML output options
+   */
+  chtml?: MathjaxCommonHTMLOutputOptions;
+
+  /**
+   * SVG output options
+   */
+  svg?: MathjaxSVGOutputOptions;
+}
+
+type MarkdownMathPluginOptions =
+  MarkdownKatexPluginOptions | MarkdownMathjaxPluginOptions;
+```
+
+@`markdown.revealjs` type=`RevealJsPluginOptions | boolean`
 
 Controls `@vuepress/plugin-revealjs` which provides presentation support. You can set `true` to directly enable it, or provide plugin options.
+
+See also: [Markdown → Presentation](../../guide/markdown/content/revealjs.md) and [@vuepress/plugin-revealjs][revealjs].
+
+@@`markdown.revealjs.plugins` type=`RevealJsPlugin[]` default=`[]`
+
+Built-in reveal.js plugins to enable.
+
+Available values: `highlight`, `math`, `notes`, `search`, `zoom`.
+
+@@`markdown.revealjs.themes` type=`RevealJsTheme[]` default=`["auto"]`
+
+Themes to enable.
+
+Available values: `auto`, `beige`, `black`, `blood`, `league`, `moon`, `night`, `serif`, `simple`, `sky`, `solarized`, `white`.
+
+:::
 
 [component]: https://ecosystem.vuejs.press/plugins/markdown/markdown-ext.html#component
 [footnote]: https://ecosystem.vuejs.press/plugins/markdown/markdown-ext.html#footenote

@@ -13,7 +13,7 @@ tag:
 
 <!-- more -->
 
-## 博客选项
+## 博客选项 {#blog-options}
 
 主题通过使用 [`@vuepress/plugin-blog`][blog] 提供博客功能，且该功能默认**禁用**。
 
@@ -27,31 +27,20 @@ tag:
 
 :::
 
-### blog\.name
-
-- 类型: `string`
-- 默认值: `author`
+::::: fields
+@`blog.name` type=string default=`author`
 
 博主姓名。
 
-### blog.avatar
-
-- 类型: `string`
-- 默认值: `logo`
+@`blog.avatar` type=string default=`logo`
 
 博主头像。
 
-### blog.description
-
-- 类型: `string`
-- 必填: 否
+@`blog.description` type=string
 
 口号、座右铭或介绍语。
 
-### blog.intro
-
-- 类型: `string`
-- 必填: 否
+@`blog.intro` type=string
 
 博主的个人介绍地址。
 
@@ -61,15 +50,12 @@ tag:
 
 :::
 
-### blog.medias
-
-- 类型: `Record<string, string | { icon: string ; link: string }>`
-- 必填: 否
+@`blog.medias` type=`Record<string, string | { icon: string; link: string }>`
 
 博主的媒体链接配置。
 
 - 如果社交媒体已在下方列表中，你可以直接设置 `社交媒体名称: 社交媒体地址`。
-- 否则，你应该传入一个对象 `社交媒体名称: { icon: 社交媒体 SVG 图标字符串或社交媒体图标 URL, link: 社交媒体地址 }`
+- 否则，你应该传入一个对象 `社交媒体名称: { icon: 社交媒体 SVG 图标字符串或社交媒体图标 URL, link: 社交媒体地址 }`。
 
 :::: info 可用的社交媒体
 
@@ -183,36 +169,27 @@ tag:
 
 ::::
 
-### blog.timeline
-
-- 类型: `string`
-- 默认值: `"昨日不在"`
+@`blog.timeline` type=string default=`'昨日不在'`
 
 时间轴的顶部文字。
 
-### blog.articlePerPage
-
-- 类型: `number`
-- 默认值: `10`
+@`blog.articlePerPage` type=number default=`10`
 
 每页的文章数量。
 
-### blog.articleInfo
+@`blog.articleInfo` type=`ArticleInfo[]` default=`["Author", "Original", "Date", "PageView", "Category", "Tag", "ReadingTime"]`
 
-- 类型: `ArticleInfo[]`
-- 默认值: `["Author", "Original", "Date", "PageView", "Category", "Tag", "ReadingTime"]`
-
-文章列表中展示的文章信息
+文章列表中展示的文章信息。
 
 `ArticleInfo` 的可选值如下:
 
-- `"Author"`
-- `"Category"`
-- `"Date"`
-- `"Original"`
-- `"Tag"`
-- `"ReadingTime"`
-- `"Word"`
+- `'Author'`
+- `'Category'`
+- `'Date'`
+- `'Original'`
+- `'Tag'`
+- `'ReadingTime'`
+- `'Word'`
 
 ::: warning 限制
 
@@ -220,7 +197,9 @@ tag:
 
 :::
 
-## 加密配置 <Badge text="仅限 Root" type="warning" />
+:::::
+
+## 加密配置 <Badge text="仅限 Root" type="warning" /> {#encrypt-config}
 
 有关详细信息，请参阅 [加密功能介绍](../../guide/feature/encrypt.md)。
 
@@ -230,48 +209,42 @@ tag:
 
 :::
 
-### encrypt.global
-
-- 类型: `boolean`
-- 默认值: `false`
+:::: fields
+@`encrypt.global` type=boolean
 
 是否全局加密。
 
-### encrypt.admin
-
-- 类型: `PasswordOptions`
-
-  ```ts
-  type PasswordOptions =
-    | string
-    | string[]
-    | {
-        password: string | string[];
-        hint: string;
-      };
-  ```
-
-- 必填: 否
+@`encrypt.admin` type=`PasswordOptions`
 
 最高权限密码，可以以数组的形式设置多个，也可以通过对象形式来添加一个密码提示。
 
-### encrypt.config
+其类型为：
 
-- 类型: `Record<string, PasswordOptions>`
+```ts
+type PasswordOptions =
+  | string
+  | string[]
+  | {
+      password: string | string[];
+      hint: string;
+    };
+```
 
-  ```ts
-  type PasswordOptions =
-    | string
-    | string[]
-    | {
-        password: string | string[];
-        hint: string;
-      };
-  ```
-
-- 必填: 否
+@`encrypt.config` type=`Record<string, PasswordOptions>`
 
 加密配置，为一个对象，键名为匹配的路径，键值为对应的密码，接受字符串或字符串数组，也可以通过对象形式来添加一个密码提示。
+
+其类型为：
+
+```ts
+type PasswordOptions =
+  | string
+  | string[]
+  | {
+      password: string | string[];
+      hint: string;
+    };
+```
 
 ::: details 例子
 
@@ -288,5 +261,7 @@ tag:
 ```
 
 :::
+
+::::
 
 [blog]: https://ecosystem.vuejs.press/zh/plugins/blog/blog/

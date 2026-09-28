@@ -19,7 +19,7 @@ footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VueP
 copyright: false
 ---
 
-## 安装
+## 安装 {#install}
 
 ::: code-tabs#shell
 
@@ -43,7 +43,7 @@ npm i -D vuepress-plugin-components
 
 :::
 
-## 使用
+## 使用 {#usage}
 
 ::: code-tabs#language
 

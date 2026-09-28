@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 全局注册 Vue 组件
+## 全局注册 Vue 组件 {#register-components-globally}
 
 你可以全局注册组件，这样你就可以在 Markdown 文件和布局中直接使用它们。
 
@@ -20,17 +20,17 @@ tag:
 
 全局注册组件可以让组件变得“开箱即用”，所以如果一个组件在你的项目中经常使用，建议你全局注册它。
 
-但是如果一个组件很大，只在某些页面或布局中使用，建议你[局部注册组件](./sfc.md#导入文件)。
+但是如果一个组件很大，只在某些页面或布局中使用，建议你[局部注册组件](./sfc.md#importing-files)。
 
 :::
 
-### 通过 `@vuepress/plugin-register-components` 注册组件
+### 通过 `@vuepress/plugin-register-components` 注册组件 {#register-via-vuepress-plugin-register-components}
 
 你可以通过 `@vuepress/plugin-register-components` 插件来自动注册组件。
 
 插件的使用方法详见 [官方文档](https://ecosystem.vuejs.press/zh/plugins/tools/register-components.html)。
 
-### 通过客户端配置文件注册
+### 通过客户端配置文件注册 {#register-via-client-config-file}
 
 你可以通过创建 `.vuepress/client.js` 或 `.vuepress/client.ts` 手动注册组件。
 
@@ -45,7 +45,7 @@ export default defineClientConfig({
 });
 ```
 
-## 使用
+## 使用 {#usage}
 
 全局组件可以直接在任何组件、布局或页面中使用。
 

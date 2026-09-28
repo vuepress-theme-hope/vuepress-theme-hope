@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 ```ts twoslash {6-32} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";

@@ -12,21 +12,21 @@ tag:
 导航栏包含:
 
 - 站点名称
-- [搜索框](#搜索框)
-- [导航栏链接](#导航栏链接)
+- [搜索框](#search-box)
+- [导航栏链接](#navbar-links)
 - [多语言选择菜单](https://vuejs.press/zh/guide/i18n.html)
-- [仓库链接](#git-仓库和编辑链接)
-- [外观弹窗](#外观弹窗)。
+- [仓库链接](#git-repository-and-edit-links)
+- [外观弹窗](#outlook-popup)。
 
-它们都是可配置的，你也可以[完全自定义导航栏布局](#布局配置)。
+它们都是可配置的，你也可以[完全自定义导航栏布局](#layout-config)。
 
 <!-- more -->
 
-## 导航栏链接
+## 导航栏链接 {#navbar-links}
 
 你可以在主题选项中通过 `navbar` 配置导航栏链接，它接受一个数组。
 
-### 字符串格式
+### 字符串格式 {#string-format}
 
 配置导航栏最简单的方式，是依次填入需要展示的页面文件的路径，这样导航栏的文字、图标和链接会自动通过对应文件生成。
 
@@ -45,11 +45,11 @@ export default hopeTheme({
 
 我们推荐你省略 `.md` 扩展名，以 `/` 结尾的路径会被推断为 `/README.md`。
 
-如果你不喜欢默认显示图标的行为，我们提供了 [相关预设](../customize/presets.md#样式相关) 来隐藏它。
+如果你不喜欢默认显示图标的行为，我们提供了 [相关预设](../customize/presets.md#style-related) 来隐藏它。
 
 :::
 
-### 对象格式
+### 对象格式 {#object-format}
 
 如果你对页面的图标不满意或者觉得页面标题太长，你可以改为配置一个对象。可用的配置项有:
 
@@ -97,7 +97,7 @@ export default hopeTheme({
 
 :::
 
-### 下拉列表
+### 下拉列表 {#dropdown-list}
 
 如果你需要展示较多的链接，你可以将同类链接整理成下拉列表。
 
@@ -164,7 +164,7 @@ export default hopeTheme({
 });
 ```
 
-## 禁用导航栏
+## 禁用导航栏 {#disabling-navbar}
 
 你可以在主题选项中设置 `navbar: false` 以全局禁用导航栏:
 
@@ -184,7 +184,7 @@ navbar: false
 ---
 ```
 
-## 站点图标
+## 站点图标 {#site-logo}
 
 你可以在主题选项中使用 `logo` 来配置站点的图标，请填入绝对路径。
 
@@ -210,7 +210,7 @@ export default hopeTheme({
 
 :::
 
-## 多语言
+## 多语言 {#i18n-support}
 
 主题的导航栏支持 [多语言](https://vuejs.press/zh/guide/i18n.html)，所以你可以为每个语言单独设置上面提到的导航栏选项:
 
@@ -233,13 +233,13 @@ export default hopeTheme({
 });
 ```
 
-## 搜索框
+## 搜索框 {#search-box}
 
 `vuepress-theme-hope` 同默认主题一样，带来了搜索插件的内置支持。你可以根据自己的需要来自行添加插件并启用搜索功能。导航栏会自动出现对应的搜索框。
 
 关于详情，详见 [功能 → 搜索](../feature/search.md)。
 
-## Git 仓库和编辑链接
+## Git 仓库和编辑链接 {#git-repository-and-edit-links}
 
 当你在主题选项中提供了 `repo` 选项，将会自动在每个页面的导航栏生成源文件仓库按钮。
 
@@ -258,15 +258,15 @@ export default hopeTheme({
 });
 ```
 
-## 外观弹窗
+## 外观弹窗 {#outlook-popup}
 
 提供下列三种功能:
 
 - [主题色切换](../interface/theme-color.md)
 - [深色模式](../interface/darkmode.md)
-- [全屏按钮](../interface/others.md#全屏按钮)
+- [全屏按钮](../interface/others.md#fullscreen-button)
 
-## 布局配置
+## 布局配置 {#layout-config}
 
 你可以在主题选项中通过 `navbarLayout` 自定义导航栏，你可以在选项中通过 `start`、`center` 和 `end` 键中添加组件。
 
@@ -295,7 +295,7 @@ export default hopeTheme({
 });
 ```
 
-## 相关助手与类型
+## 相关助手与类型 {#types-and-helpers}
 
 `vuepress-theme-hope` 将导航栏的类型导出为 `NavbarOptions`，同时，提供了一个 `navbar` 帮助函数。
 

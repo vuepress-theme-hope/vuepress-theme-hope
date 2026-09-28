@@ -44,13 +44,21 @@ export default hopeTheme({
   plugins: {
     components: {
       // 你想使用的组件
-      components: ["Badge", "CodePen", "Share", "SiteInfo", "StackBlitz", "VPBanner", "VPCard"],
+      components: [
+        "Badge",
+        "CodePen",
+        "Share",
+        "SiteInfo",
+        "StackBlitz",
+        "VPBanner",
+        "VPCard",
+      ],
     },
   },
 });
 ```
 
-## 杂项
+## 杂项 {#utilities}
 
 ### Badge
 
@@ -81,7 +89,7 @@ export default hopeTheme({
 
 有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/utilities/share.html">Share</ProjectLink> 页面。
 
-## 代码相关
+## 代码相关 {#code}
 
 ### CodePen
 

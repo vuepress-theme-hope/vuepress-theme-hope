@@ -3,21 +3,16 @@ title: Config
 icon: gears
 ---
 
-## Plugin Options
+## Options
 
-### selector
+:::: fields
+@`selector` type=string default=`"[vp-content] :not(a) > img:not([no-view])"`
 
-- Type: `string`
-- Default: `"[vp-content] :not(a) > img:not([no-view])"`
+Image selector.
 
-Image selector
+@`plugins` type=`string[]` default=`["pager", "share", "zoom"]`
 
-### plugins
-
-- Type: `string[]`
-- Default: `["pager", "share", "zoom"]`
-
-Light Gallery Plugins to enable
+Light Gallery plugins to enable.
 
 ::: info Available plugins
 
@@ -30,6 +25,8 @@ Light Gallery Plugins to enable
 - `"zoom"`
 
 :::
+
+::::
 
 ## Client Config
 

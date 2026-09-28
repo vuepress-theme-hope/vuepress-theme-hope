@@ -3,7 +3,7 @@ title: React 代码演示
 icon: fa7-brands:react
 ---
 
-## 格式
+## 格式 {#syntax}
 
 <!-- #region syntax -->
 
@@ -35,7 +35,7 @@ icon: fa7-brands:react
 
 :::
 
-## 演示
+## 演示 {#demo}
 
 <!-- #region demo -->
 

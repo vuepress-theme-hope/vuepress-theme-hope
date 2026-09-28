@@ -19,31 +19,31 @@ The theme provides many layout-related options for you to customize the layout o
 
 ## Responsive BreakPoints
 
-The theme will automatically apply responsive layouts under different screen widths. If you need to modify these breakpoints, you can modify them in [style config file](../../config/style.md#configscss).
+The theme will automatically apply responsive layouts under different screen widths. If you need to modify these breakpoints, you can modify them in [style config file](../../config/style.md#config-scss).
 
 ```scss title=".vuepress/styles/config.scss"
 // Modify the breakpoint of the desktop layout
 $pc = 1280px;
 ```
 
-For details about breakpoint variables `$pc`, `$laptop`, `$pad`, `$tablet`, `$mobile`, see [Theme Configuration → Styles](../../config/style.md#configscss).
+For details about breakpoint variables `$pc`, `$laptop`, `$pad`, `$tablet`, `$mobile`, see [Theme Configuration → Styles](../../config/style.md#config-scss).
 
 ## Layout Size
 
-The theme provides common size variables in the [style palette file](../../config/style.md#palettescss), and you can modify these variables in the palette file to achieve the purpose of modifying the layout size.
+The theme provides common size variables in the [style palette file](../../config/style.md#palette-scss), and you can modify these variables in the palette file to achieve the purpose of modifying the layout size.
 
 ```scss title=".vuepress/styles/palette.scss"
 // Modify the height of the navigation bar
 $navbar-height = 80px;
 ```
 
-Introduction of layout variables can be found at [Theme Configuration → Style](../../config/style.md#palettescss).
+Introduction of layout variables can be found at [Theme Configuration → Style](../../config/style.md#palette-scss).
 
 ## Via Style File
 
-The [style file](../../config/style.md#indexscss) is `.vuepress/styles/index.scss` in the project directory, where you can put your own styles.
+The [style file](../../config/style.md#index-scss) is `.vuepress/styles/index.scss` in the project directory, where you can put your own styles.
 
-- If you are not satisfied with the style of the theme, you can adjust the style of the theme components through the [style file](../../config/style.md#indexscss).
+- If you are not satisfied with the style of the theme, you can adjust the style of the theme components through the [style file](../../config/style.md#index-scss).
 
   ::: note
 
@@ -51,7 +51,7 @@ The [style file](../../config/style.md#indexscss) is `.vuepress/styles/index.scs
 
   :::
 
-- If you want to remove some features, you can hide related dom elements by `display: none` in the [style file](../../config/style.md#indexscss).
+- If you want to remove some features, you can hide related dom elements by `display: none` in the [style file](../../config/style.md#index-scss).
 
 ## Via Adding / Overriding Layouts
 

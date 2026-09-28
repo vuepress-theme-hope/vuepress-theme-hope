@@ -13,52 +13,39 @@ You can configure the following options in the frontmatter of the page to contro
 
 ## Options for `@vuepress/plugin-copyright`
 
-### copy.triggerLength
+::: fields
+@`copy.triggerLength` type=number default=`100`
 
-- Type: `number`
-- Default: `100`
+Min words triggering copyright append.
 
-Min words triggering copyright append
+@`copy.disableCopy` type=boolean
 
-### copy.disableCopy
+Disable copy.
 
-- Type: `boolean`
-- Default: `false`
+@`copy.disableSelection` type=boolean
 
-Disable copy
+Disable selection.
 
-### copy.disableSelection
-
-- Type: `boolean`
-- Default: `false`
-
-Disable selection
+:::
 
 ## Options for `@vuepress/plugin-feed`
 
-### feed.title
+:::: fields
+@`feed.title` type=string
 
-- Type: `string`
+The title of the feed item.
 
-The title of the feed item
+@`feed.description` type=string
 
-### feed.description
+Description of the feed item.
 
-- Type: `string`
+@`feed.content` type=string
 
-Description of the feed item
+The content of the feed item.
 
-### feed.content
+@`feed.author` type=`FeedAuthor[] | FeedAuthor`
 
-- Type: `string`
-
-The content of the feed item
-
-### feed.author
-
-- Type: `FeedAuthor[] | FeedAuthor`
-
-The author of the feed item
+The author of the feed item.
 
 ::: details FeedAuthor format
 
@@ -92,11 +79,9 @@ interface FeedAuthor {
 
 :::
 
-### feed.contributor
+@`feed.contributor` type=`FeedContributor[] | FeedContributor`
 
-- Type: `FeedContributor[] | FeedContributor`
-
-Contributors to feed item
+Contributors to feed item.
 
 ::: details FeedContributor format
 
@@ -130,9 +115,7 @@ interface FeedContributor {
 
 :::
 
-### feed.guid
-
-- Type: `string`
+@`feed.guid` type=string
 
 The identifier of feed item, used to identify the feed item.
 
@@ -142,25 +125,21 @@ You should make sure this is globally unique.
 
 :::
 
+::::
+
 ## Options for `@vuepress/sitemap`
 
-### sitemap.changefreq
-
-- Type: `"always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never"`
-- Default: `"daily"`
+::: fields
+@`sitemap.changefreq` type=`"always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never"` default=`"daily"`
 
 Page default update frequency. This will override changefreq in Plugin Options.
 
-### sitemap.exclude
+@`sitemap.exclude` type=boolean
 
-- Type: `boolean`
-- Default: `false`
+Whether exclude the page from sitemap.
 
-Whether exclude the page from sitemap
-
-### sitemap.priority
-
-- Type: `number`
-- Default: `0.5`
+@`sitemap.priority` type=number default=`0.5`
 
 Page priority, range from `0` to `1`.
+
+:::

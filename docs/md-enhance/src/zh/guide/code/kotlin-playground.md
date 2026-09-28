@@ -9,7 +9,7 @@ icon: fa7-brands:kickstarter
 
 <!-- #region settings -->
 
-## 设置
+## 设置 {#settings}
 
 在你的项目中安装 `kotlin-playground`:
 
@@ -54,7 +54,7 @@ export default {
 
 <!-- #region after -->
 
-## 使用
+## 使用 {#usage}
 
 为了使用 kotlin 交互演示，你应该使用一个名为 `kotlin-playground` 的容器。
 
@@ -121,7 +121,7 @@ interface KotlinPlaygroundOptions {
 }
 ```
 
-## 案例
+## 案例 {#demo}
 
 :::: preview 基础交互演示
 

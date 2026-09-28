@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 ```ts twoslash {5} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -24,7 +24,7 @@ export default hopeTheme({
 });
 ```
 
-## 语法
+## 语法 {#syntax}
 
 在 `file-tree` 容器中使用 Markdown 无序列表描述目录结构。嵌套的列表项会创建子目录，以 `/` 结尾的目录会保持折叠。
 
@@ -37,7 +37,7 @@ export default hopeTheme({
 
 容器标记后的文字会成为文件树的标题。
 
-## 演示
+## 演示 {#demo}
 
 :::: preview
 

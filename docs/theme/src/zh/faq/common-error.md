@@ -101,7 +101,7 @@ npx vp-update
 
 如果你在开发进程启动时看到 `xxx is not assign with a lang, and will return 'en-US'.`，请检查是否为每种语言设置了语言。
 
-即使你只有一种语言，你仍然需要 [设置你的根目录语言](../config/i18n.md#设置语言)。
+即使你只有一种语言，你仍然需要 [设置你的根目录语言](../config/i18n.md#setting-language)。
 
 ## xxx is missing sidebar config
 
@@ -172,13 +172,13 @@ CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理�
 
 [^csr]: **CSR**: **C**lient **S**ide **R**endering，客户端渲染
 
-## 热更新在开发服务器中不工作
+## 热更新在开发服务器中不工作 {#hotreload-not-working-in-devserver}
 
 某些配置对开发服务器有高性能影响，因此默认情况下禁用它们的热重载，你可以通过在主题选项中设置 `hotReload: true` 手动开启。
 
 其中包括博客的类别和标签、结构化侧边栏和基于 Git 的信息。
 
-## 部分页面设置无效
+## 部分页面设置无效 {#some-page-settings-are-invalid}
 
 你可以先查看文档以查看设置是否**不支持页面配置**。
 
@@ -190,7 +190,7 @@ CloudFlare 的 Auto Minify 会错误的对 HTML 的空格和换行进行处理�
 
 :::
 
-## 样式出现问题
+## 样式出现问题 {#issues-with-styles}
 
 为了支持 RTL 布局以及减少样式体积，主题使用较新的 CSS，比如 `padding-inline` `margin-block` `inset-inline-start` 等。
 
@@ -235,7 +235,9 @@ import { defineUserConfig } from "vuepress";
 export default defineUserConfig({
   extendsBundlerOptions: (config, app) => {
     configWebpack(config, app, (config) => {
-      (((config.postcss ??= {}).postcssOptions ??= {}).plugins ??= []).push(postcssPresetEnv());
+      (((config.postcss ??= {}).postcssOptions ??= {}).plugins ??= []).push(
+        postcssPresetEnv(),
+      );
     });
   },
 });

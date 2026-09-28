@@ -6,7 +6,7 @@ dir:
 index: false
 ---
 
-## 组件
+## 组件 {#components}
 
 - [Badge](./badge.md): 徽章
 

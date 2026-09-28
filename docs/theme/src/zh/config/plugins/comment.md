@@ -10,7 +10,7 @@ tag:
   - 评论
 ---
 
-## 介绍
+## 介绍 {#intro}
 
 主题使用 `@vuepress/plugin-comment` 提供评论支持，并将主题选项中的 `plugins.comment` 作为插件选项传递。
 
@@ -25,7 +25,7 @@ tag:
 
 :::
 
-## 选项
+## 选项 {#options}
 
 对于每个评论服务对应选项的详细信息，请参考 [@vuepress/plugin-comment 文档][comment]。
 

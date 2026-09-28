@@ -9,297 +9,179 @@ tag:
   - 项目主页
 ---
 
-## home
+## 选项 {#options}
 
-必须设置为 `true` 以使用项目首页。
+::: fields
+@`home` type=boolean required
 
-## title
+是否使用项目首页布局。
 
-- 类型: `string`
-- 必填: 否
+@`title` type=string
 
-设置页面标题，会用于路径导航、页面增强等。
+页面标题，会用于路径导航、SEO 等。
 
-## heroText
+@`heroText` type=string default="站点标题"
 
-- 类型: `string | false`
-- 默认值: 站点标题
+主页标题。设置为空字符串可隐藏默认标题。
 
-主页标题，可通过设置为空字符串来隐藏默认标题。
+@`tagline` type=string default=`"Welcome to your VuePress site"`
 
-## tagline
+主页的简短描述。
 
-- 类型: `string | false`
-- 默认值: `"Welcome to your VuePress site"`
-
-附加文字描述
-
-## heroImage
-
-- 类型: `string`
-- 必填: 否
+@`heroImage` type=string
 
 主页图标 (logo) 链接，不支持相对路径。
 
-## heroImageDark
-
-- 类型: `string`
-- 默认值: `heroImage`
+@`heroImageDark` type=string default=`heroImage`
 
 深色模式下主页图标 (logo) 链接，不支持相对路径。
 
-## heroImageStyle
+@`heroAlt` type=string default=`heroText`
 
-- 类型: `Record<string, string> | string`
-- 必填: 否
+主页图标的替代文字。
 
-首页图标的 CSS 样式
+@`heroImageStyle` type=`Record<string, string> | string`
 
-## heroAlt
+首页图标的 CSS 样式。
 
-- 类型: `string`
-- 必填: 否
-
-主页图标的替代文字
-
-## bgImage
-
-- 类型: `string`
-- 必填: 否
+@`bgImage` type=string
 
 背景图片的地址，不支持相对路径。
 
-## bgImageDark
-
-- 类型: `string`
-- 默认值: `bgImage`
+@`bgImageDark` type=string default=`bgImage`
 
 深色模式下背景图片的地址，不支持相对路径。
 
-## bgImageStyle
-
-- 类型: `Record<string, string> | string`
-- 必填: 否
+@`bgImageStyle` type=`Record<string, string> | string`
 
 背景图片的 CSS 样式。
 
-## heroStyle
-
-- 类型: `string`
-- 必填: 否
+@`heroStyle` type=string
 
 Hero 样式。
 
-## heroFullScreen
+@`heroFullScreen` type=boolean
 
-- 类型: `boolean`
-- 默认值: `false`
+是否全屏显示 Hero。
 
-是否全屏显示 Hero
+@`actions` type=`ThemeProjectHomeActionOptions[]`
 
-## actions
+主页操作。
 
-- 类型: `ThemeHomeActionOptions[]`
+@@`actions[*].text` type=string required
 
-  ```ts
-  interface ThemeHomeActionOptions {
-    /**
-     * 操作名称
-     */
-    text: string;
+操作名称。
 
-    /**
-     * 操作链接
-     */
-    link: string;
+@@`actions[*].link` type=string required
 
-    /**
-     * 操作类型
-     * @default 'default'
-     */
-    type?: "primary" | "default";
-  }
-  ```
+操作链接。
 
-- 必填: 否
+@@`actions[*].type` type=`'primary' | 'default'` default=`'default'`
 
-主页操作
+操作类型。
 
-## highlights
+@@`actions[*].icon` type=string
 
-- 类型: `(ThemeProjectHomeFeatureOptions | ThemeProjectHomeHighlightOptions)[]`
+操作图标。
 
-  ```ts
-  interface ThemeProjectHomeHighlightItem {
-    /**
-     * Item name, supports HTML string
-     */
-    title: string;
+@`highlights` type=`(ThemeProjectHomeFeatureOptions | ThemeProjectHomeHighlightOptions)[]`
 
-    /**
-     * Item description, supports HTML string
-     */
-    details?: string;
+主页的亮点区域。每一项要么是功能区域，要么是亮点区域。
 
-    /**
-     * Item icon
-     *
-     * @description image link or icon fontClass are supported
-     */
-    icon?: string;
+@@`highlights[*].header` type=string
 
-    /**
-     * Item link
-     */
-    link?: string;
-  }
+区域标题，支持 HTML 字符串。亮点区域中为必填。
 
-  type ThemeProjectHomeFeatureItem = ThemeProjectHomeHighlightItem;
+@@`highlights[*].description` type=string
 
-  interface ThemeProjectHomeFeatureOptions {
-    /**
-     * 功能标题
-     */
-    header?: string;
+区域描述，支持 HTML 字符串。
 
-    /**
-     * 功能描述，支持 HTML 字符串
-     */
-    description?: string;
+@@`highlights[*].color` type=string
 
-    /**
-     * 文字颜色
-     */
-    color?: string;
+文字颜色。
 
-    /**
-     * 功能图像
-     */
-    image?: string;
+@@`highlights[*].image` type=string
 
-    /**
-     * 夜间模式使用的功能图片
-     *
-     * @default image
-     */
-    imageDark?: string;
+区域图像。
 
-    /**
-     * 功能背景图
-     */
-    bgImage?: string;
+@@`highlights[*].imageDark` type=string default=`image`
 
-    /**
-     * 夜间模式使用的功能背景图
-     *
-     * @default bgImage
-     */
-    bgImageDark?: string;
+夜间模式使用的区域图片。
 
-    /**
-     * 功能背景图样式
-     */
-    bgImageStyle?: Record<string, string> | string;
+@@`highlights[*].bgImage` type=string
 
-    /**
-     * 功能
-     */
-    features: ThemeProjectHomeFeatureItem[];
-  }
+区域背景图。
 
-  interface ThemeProjectHomeHighlightSection {
-    /**
-     * 亮点标题，支持 HTML 字符串
-     */
-    header: string;
+@@`highlights[*].bgImageDark` type=string default=`bgImage`
 
-    /**
-     * 亮点描述，支持 HTML 字符串
-     */
-    description?: string;
+夜间模式使用的区域背景图。
 
-    /**
-     * 文字颜色
-     */
-    color?: string;
+@@`highlights[*].bgImageStyle` type=`Record<string, string> | string`
 
-    /**
-     * 亮点图像
-     */
-    image?: string;
+区域背景图样式。
 
-    /**
-     * 夜间模式使用的亮点图片
-     *
-     * @default image
-     */
-    imageDark?: string;
+@@`highlights[*].features` type=`ThemeProjectHomeFeatureItem[]` feature-section=Yes
 
-    /**
-     * 亮点背景图
-     */
-    bgImage?: string;
+功能区域中的功能。
 
-    /**
-     * 夜间模式使用的亮点背景图
-     *
-     * @default bgImage
-     */
-    bgImageDark?: string;
+@@@`highlights[*].features[*].title` type=string required
 
-    /**
-     * 亮点背景图样式
-     */
-    bgImageStyle?: Record<string, string> | string;
+项目名称，支持 HTML 字符串。
 
-    /**
-     * 亮点列表类型
-     *
-     * @default un-order
-     */
-    type?: "order" | "un-order" | "no-order";
+@@@`highlights[*].features[*].details` type=string
 
-    /**
-     * 亮点
-     */
-    highlights?: ThemeProjectHomeHighlightItem[];
-  }
-  ```
+项目描述，支持 HTML 字符串。
 
-- 必填: 否
+@@@`highlights[*].features[*].icon` type=string
 
-亮点描述。
+项目图标，支持图片链接或图标字体类。
 
-## features
+@@@`highlights[*].features[*].link` type=string
 
-- 类型: `ThemeProjectHomeFeatureItem[]`
+项目链接。
 
-  ```ts
-  interface ThemeProjectHomeFeatureItem {
-    /**
-     * 项目名称，支持 HTML 字符串
-     */
-    title: string;
+@@`highlights[*].type` type=`'order' | 'un-order' | 'no-order'` default=`'un-order'` highlight-section=Yes
 
-    /**
-     * 项目描述，支持 HTML 字符串
-     */
-    details?: string;
+亮点区域的列表类型。
 
-    /**
-     * 项目图标
-     *
-     * @description 支持图片链接或者图标字体类
-     */
-    icon?: string;
+@@`highlights[*].highlights` type=`ThemeProjectHomeHighlightItem[]` highlight-section=Yes
 
-    /**
-     * 项目链接
-     */
-    link?: string;
-  }
-  ```
+亮点区域中的亮点。
 
-- 必填: 否
+@@@`highlights[*].highlights[*].title` type=string required
 
-功能描述。
+项目名称，支持 HTML 字符串。
+
+@@@`highlights[*].highlights[*].details` type=string
+
+项目描述，支持 HTML 字符串。
+
+@@@`highlights[*].highlights[*].icon` type=string
+
+项目图标，支持图片链接或图标字体类。
+
+@@@`highlights[*].highlights[*].link` type=string
+
+项目链接。
+
+@`features` type=`ThemeProjectHomeFeatureItem[]`
+
+主页的功能。
+
+@@`features[*].title` type=string required
+
+功能名称，支持 HTML 字符串。
+
+@@`features[*].details` type=string
+
+功能描述，支持 HTML 字符串。
+
+@@`features[*].icon` type=string
+
+功能图标，支持图片链接或图标字体类。
+
+@@`features[*].link` type=string
+
+功能链接。
+
+:::

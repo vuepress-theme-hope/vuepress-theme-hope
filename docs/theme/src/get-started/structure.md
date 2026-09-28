@@ -26,29 +26,20 @@ If you used `docs` as instructed in the previous tutorial, then `docs` is your V
 
 A basic project structure is as follows:
 
-```
-.
-├── .github (optional) → GitHub config file storage path
-│     └── workflow → GitHub workflow configuration
-│          └── docs-deploy.yml → Workflow for automatic deployment of documentation
-│
-├── src → docs folder
-│    │
-│    ├── .vuepress (optional) → VuePress config folder
-│    │    │
-│    │    ├── dist (default) → build output directory
-│    │    │
-│    │    ├── public (optional) → static resource directory
-│    │    │
-│    │    ├── styles (optional) → style-related files
-│    │    │
-│    │    ├── config.{js,ts} (optional) → the entry file of the configuration
-│    │    │
-│    │    └── client.{js,ts} (optional) → client application file
-│    │
-│    ├── ... → Other project documentation
-│    │
-│    └── README.md → Project Homepage
-│
-└── package.json → Node.js configuration file
-```
+::: file-tree
+
+- .github # optional, GitHub config file storage path
+  - workflow # GitHub workflow configuration
+    - docs-deploy.yml # Workflow for automatic deployment of documentation
+- src # docs folder
+  - .vuepress # optional, VuePress config folder
+    - dist # default, build output directory
+    - public # optional, static resource directory
+    - styles # optional, style-related files
+    - config.{js,ts} # optional, the entry file of the configuration
+    - client.{js,ts} # optional, client application file
+  - … # Other project documentation
+  - README.md # Project Homepage
+- package.json # Node.js configuration file
+
+:::

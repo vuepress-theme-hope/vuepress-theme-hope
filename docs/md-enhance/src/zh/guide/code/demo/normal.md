@@ -3,7 +3,7 @@ title: 普通代码演示
 icon: code
 ---
 
-## 格式
+## 格式 {#syntax}
 
 <!-- #region syntax -->
 
@@ -71,7 +71,7 @@ document.appendChild(linkElem);
 :::
 ::::
 
-## 例子
+## 例子 {#demo}
 
 <!-- #region demo -->
 

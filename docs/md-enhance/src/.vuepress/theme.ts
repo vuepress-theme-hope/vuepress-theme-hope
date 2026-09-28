@@ -20,7 +20,9 @@ export default theme("md-enhance", {
   },
 
   markdown: {
+    attrs: true,
     codeTabs: true,
+    fields: true,
     figure: true,
     imgLazyload: true,
     imgMark: true,

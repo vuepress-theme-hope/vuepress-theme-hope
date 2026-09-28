@@ -19,7 +19,7 @@ tag:
 
 :::
 
-## 例子
+## 例子 {#example}
 
 ```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";

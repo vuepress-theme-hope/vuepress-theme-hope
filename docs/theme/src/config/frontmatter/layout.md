@@ -11,14 +11,14 @@ tag:
 
 You can configure page layout by setting the following frontmatter options.
 
-## pageInfo
+## Options
 
-- Type: `PageInfo[] | false`
-- Default: value in theme options
-- Details:
-  - [Feature → PageInfo](../../guide/feature/page-info.md)
+:::: fields
+@`pageInfo` type=`PageInfo[] | false` default="value in theme options"
 
 Customize page info items in current page.
+
+See also: [Feature → PageInfo](../../guide/feature/page-info.md).
 
 | Item            | Corresponding Content | Page frontmatter Value                  |
 | --------------- | --------------------- | --------------------------------------- |
@@ -30,94 +30,64 @@ Customize page info items in current page.
 | `"Word"`        | Word count            | N/A (automatically generated)           |
 | `"PageView"`    | Visit Number          | `pageview` (only available with Waline) |
 
-## breadcrumb
-
-- Type: `boolean`
-- Default: value in theme options
-- Details:
-  - [Layout → Page](../../guide/layout/page.md#breadcrumb)
+@`breadcrumb` type=boolean default="value in theme options"
 
 Whether enable breadcrumb.
 
-## breadcrumbIcon
+See also: [Layout → Page](../../guide/layout/page.md#breadcrumb).
 
-- Type: `boolean`
-- Default: value in theme options
-- Details:
-  - [Layout → Page](../../guide/layout/page.md#breadcrumb)
+@`breadcrumbIcon` type=boolean default="value in theme options"
 
 Whether show icons in breadcrumb.
 
-## breadcrumbExclude
+See also: [Layout → Page](../../guide/layout/page.md#breadcrumb).
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Layout → Page](../../guide/layout/page.md#breadcrumb)
+@`breadcrumbExclude` type=boolean
 
 Whether to exclude the current page from the breadcrumb.
 
-## navbar {#navbar-header}
+See also: [Layout → Page](../../guide/layout/page.md#breadcrumb).
 
-- Type: `boolean`
-- Details:
-  - [Layout → Navbar](../../guide/layout/navbar.md#disabling-navbar)
+@`navbar` type=boolean
 
-Setting it to `false` will disable navbar
+Setting it to `false` will disable navbar.
 
-## sidebar {#sidebar-header}
+See also: [Layout → Navbar](../../guide/layout/navbar.md#disabling-navbar).
 
-- Type: `false | SidebarArrayOptions`
-- Details:
-  - [Layout → Sidebar](../../guide/layout/sidebar.md#disabling-sidebar)
+@`sidebar` type=`false | SidebarArrayOptions`
 
 Setting it to `false` will disable sidebar, setting it to empty array `[]` will render sidebar slots content only.
 
-## index
+See also: [Layout → Sidebar](../../guide/layout/sidebar.md#disabling-sidebar).
 
-- Type: `boolean`
-- Default: `true`
+@`index` type=boolean default=`true`
 
 Whether index current page in sidebar and catalog.
 
-## order
-
-- Type: `number`
+@`order` type=number
 
 Page order in sidebar and catalog.
 
 - By filling in a positive number, the page will appear in the front, while the smaller number comes to the front.
 - By filling in a negative number, the page will appear in the end, while the greater number comes to the front. (e.g. -1 is after -2)
 
-## dir
+@`dir`
 
-Sidebar group information used for [structure sidebar](../../guide/layout/sidebar.md#auto-sidebar).
+Sidebar group information used for [structure sidebar](../../guide/layout/sidebar.md#generate-sidebar-from-file-structure).
 
-### dir.text
-
-- Type: `string`
-- Default: title of `README.md`
+@@`dir.text` type=string default="title of `README.md`"
 
 Group title.
 
-### dir.icon
-
-- Type: `string`
-- Default: icon of `README.md`
+@@`dir.icon` type=string default="icon of `README.md`"
 
 Group icon.
 
-### dir.collapsible
+@@`dir.collapsible` type=boolean default=`true`
 
-- Type: `boolean`
-- Default: `true`
+Whether group is collapsible.
 
-Whether group is collapsible
-
-### dir.link
-
-- Type: `boolean`
-- Default: `false`
+@@`dir.link` type=boolean
 
 Whether Dir is clickable.
 
@@ -127,162 +97,117 @@ Setting to `true` means setting group link to link of `README.md`.
 
 :::
 
-### dir.index
+@@`dir.index` type=boolean default=`true`
 
-- Type: `boolean`
-- Default: `true`
+Whether index current dir.
 
-Whether index current dir
-
-### dir.order
-
-- Type: `number`
+@@`dir.order` type=number
 
 Group order in sidebar.
 
 - By filling in a positive number, the page will appear in the front, while the smaller number comes to the front.
 - By filling in a negative number, the page will appear in the end, while the greater number comes to the front. (e.g. -1 is after -2)
 
-## comment
-
-- Type: `boolean`
-- Default: value in theme options
+@`comment` type=boolean default="value in theme options"
 
 Whether to enable comments on the current page.
 
-## lastUpdated
-
-- Type: `boolean`
-- Default: value in theme options
+@`lastUpdated` type=boolean default="value in theme options"
 
 Whether to display lastUpdated time.
 
-## editLink
-
-- Type: `boolean`
-- Default: value in theme options
+@`editLink` type=boolean default="value in theme options"
 
 Whether to show edit link.
 
-## contributors
-
-- Type: `boolean`
-- Default: value in theme options
+@`contributors` type=boolean default="value in theme options"
 
 Whether to show contributors.
 
-## changelog
-
-- Type: `boolean`
-- Default: value in theme options
+@`changelog` type=boolean default="value in theme options"
 
 Whether to display changelog.
 
-## prev
-
-- Type: `AutoLinkConfig | string | false`
-
-  ```ts
-  interface AutoLinkConfig {
-    text: string;
-    icon: string;
-    link: string;
-  }
-  ```
+@`prev` type=`AutoLinkConfig | string | false`
 
 Previous article link.
 
-## next
+@@`prev.text` type=string required
 
-- Type: `AutoLinkConfig | string | false`
+Link text.
 
-  ```ts
-  interface AutoLinkConfig {
-    text: string;
-    icon: string;
-    link: string;
-  }
-  ```
+@@`prev.icon` type=string required
+
+Link icon.
+
+@@`prev.link` type=string required
+
+Link address.
+
+@`next` type=`AutoLinkConfig | string | false`
 
 Next article link.
 
-## footer
+@@`next.text` type=string required
 
-- Type: `boolean | string | HTMLString`
-- Default: the value configured globally
+Link text.
+
+@@`next.icon` type=string required
+
+Link icon.
+
+@@`next.link` type=string required
+
+Link address.
+
+@`footer` type=`boolean | string | HTMLString` default="the value configured globally"
 
 Footer content.
 
-- Set it to an empty string if you want an empty content
-- Set it to `false` to disable the footer
-- Set it to `true` to display the default footer
+- Set it to an empty string if you want an empty content.
+- Set it to `false` to disable the footer.
+- Set it to `true` to display the default footer.
 
-For more details, please see [Page → Footer Support](../../guide/layout/footer.md).
+See also: [Page → Footer Support](../../guide/layout/footer.md).
 
-## copyright
+@`copyright` type=`string | false` default="value in theme options"
 
-- Type: `string | false`
-- Default: value in theme options
+Copyright information.
 
-Copyright information
+See also: [Page → Footer Support](../../guide/layout/footer.md).
 
-For more details, please see [Page → Footer Support](../../guide/layout/footer.md).
-
-## backToTop
-
-- Type: `boolean`
-- Default: `true`
+@`backToTop` type=boolean default=`true`
 
 Whether display the back to top button.
 
-## toc {#toc-heading}
+@`toc` type=`GetHeadersOptions | boolean` default="value in theme options"
 
-- Type: `GetHeadersOptions | boolean`
+Whether display toc.
 
-  ```ts
-  export interface GetHeadersOptions {
-    /**
-     * The selector of the headers.
-     *
-     * @default "#markdown-content >  h1, #markdown-content > h2, #markdown-content > h3, #markdown-content > h4, #markdown-content > h5, #markdown-content > h6, [vp-content] > h2"
-     */
-    selector?: string;
-    /**
-     * Ignore specific elements within the header, should be an array of `CSS Selector`
-     *
-     * @default [".vp-badge", ".vp-icon"]
-     */
-    ignore?: string[];
-    /**
-     * The levels of the headers.
-     *
-     * `1` to `6` for `<h1>` to `<h6>`
-     *
-     * - `false`: No headers.
-     * - `number`: only headings of that level will be displayed.
-     * - `[number, number]: headings level tuple, where the first number should be less than the second number, for example, `[2, 4]` which means all headings from `<h2>` to `<h4>` will be displayed.
-     * - `deep`: same as `[2, 6]`, which means all headings from `<h2>` to `<h6>` will be displayed.
-     *
-     * @default "deep"
-     */
-    levels?: HeaderLevels;
-  }
-  ```
+@@`toc.selector` type=string default=`"#markdown-content >  h1, #markdown-content > h2, #markdown-content > h3, #markdown-content > h4, #markdown-content > h5, #markdown-content > h6, [vp-content] > h2"`
 
-- Default: value in theme options
+The selector of the headers.
 
-Whether display toc
+@@`toc.ignore` type=`string[]` default=`[".vp-badge", ".vp-icon"]`
 
-## containerClass
+Ignore specific elements within the header, should be an array of `CSS Selector`.
 
-- Type: `string`
-- Required: No
+@@`toc.levels` type=`HeaderLevels` default=`"deep"`
+
+The levels of the headers, where `HeaderLevels` is `false`, a number, a `[number, number]` tuple or `"deep"`.
+
+- `1` to `6` for `<h1>` to `<h6>`.
+- `false`: No headers.
+- `number`: only headings of that level will be displayed.
+- `[number, number]`: headings level tuple, where the first number should be less than the second number, for example, `[2, 4]` which means all headings from `<h2>` to `<h4>` will be displayed.
+- `deep`: same as `[2, 6]`, which means all headings from `<h2>` to `<h6>` will be displayed.
+
+@`containerClass` type=string
 
 Extra container class.
 
-## layout
-
-- Type: `string`
-- Default: `"Layout"`
+@`layout` type=string default=`"Layout"`
 
 Page custom layout name.
+
+::::

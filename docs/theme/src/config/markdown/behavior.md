@@ -13,13 +13,10 @@ The following options change Markdown renderer behaviors, and can be set **under
 
 <!-- more -->
 
-## markdown.gfm
+## Options
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → GFM](../../guide/markdown/others.md#gfm)
-  - [@vuepress/plugin-markdown-ext → gfm][gfm]
+:::: fields
+@`markdown.gfm` type=boolean
 
 Whether to support [GFM](https://github.github.com/gfm/).
 
@@ -32,78 +29,45 @@ in VuePress.
 
 :::
 
-## markdown.vPre
+See also: [Markdown → GFM](../../guide/markdown/others.md#gfm) and [@vuepress/plugin-markdown-ext → gfm][gfm].
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [v-pre wrapper](../../guide/markdown/others.md#v-pre)
-  - [@vuepress/plugin-markdown-ext → vPre][vPre]
+@`markdown.vPre` type=boolean
 
 Whether to enable v-pre wrapper.
 
-## markdown.breaks
+See also: [v-pre wrapper](../../guide/markdown/others.md#v-pre) and [@vuepress/plugin-markdown-ext → vPre][vPre].
 
-- Type: `boolean`
-- Default: `false`
-- Enabled in GFM: Yes
-- Details:
-  - [@vuepress/plugin-markdown-ext → breaks][breaks]
+@`markdown.breaks` type=boolean gfm=Yes
 
-Whether convert `\n` in paragraphs into `<br>`s
+Whether to convert `\n` in paragraphs into `<br>`s.
 
-## markdown.linkify
+See also: [@vuepress/plugin-markdown-ext → breaks][breaks].
 
-- Type: `boolean`
-- Default: `false`
-- Enabled in GFM: Yes
-- Details:
-  - [@vuepress/plugin-markdown-ext → linkify][linkify]
+@`markdown.linkify` type=boolean gfm=Yes
 
-Whether convert URL-like text into links
+Whether to convert URL-like text into links.
 
-## markdown.cjkFriendly
+See also: [@vuepress/plugin-markdown-ext → linkify][linkify].
 
-- Type: `boolean`
-- Default: Auto
-- Details:
-  - [@vuepress/plugin-markdown-ext → cjkFriendly][cjkFriendly]
+@`markdown.cjkFriendly` type=boolean default="Auto"
 
 Whether to enable CJK-friendly support for emphasis marks. When not set, it's automatically enabled for CJK languages (`zh`, `ja`, `ko`) detected in site configuration.
 
-## markdown.figure
+See also: [@vuepress/plugin-markdown-ext → cjkFriendly][cjkFriendly].
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → Figure](../../guide/markdown/grammar/image.md#figure)
-  - [@vuepress/plugin-markdown-image → figure][figure]
+@`markdown.figure` type=boolean
 
 Whether to convert standalone `<img>` into `<figure>`.
 
-## markdown.imgLazyload
+See also: [Markdown → Figure](../../guide/markdown/grammar/image.md#figure) and [@vuepress/plugin-markdown-image → figure][figure].
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → Image Lazy Loading](../../guide/markdown/grammar/image.md#image-lazyload)
-  - [@vuepress/plugin-markdown-image → lazyload][lazyload]
+@`markdown.imgLazyload` type=boolean
 
 Whether to enable lazy loading for images in Markdown.
 
-## markdown.highlighter
+See also: [Markdown → Image Lazy Loading](../../guide/markdown/grammar/image.md#image-lazyload) and [@vuepress/plugin-markdown-image → lazyload][lazyload].
 
-- Type: `MarkdownHighlighterOptions | "prismjs" | "shiki" | false`
-
-  ```ts
-  type MarkdownHighlighterOptions =
-    ({ type: "prismjs" } & PrismjsPluginOptions) | ({ type: "shiki" } & ShikiPluginOptions);
-  ```
-
-- Default: `"shiki"`
-
-- Details:
-  - [Feature → Code Block](../../guide/markdown/code/fence.md)
+@`markdown.highlighter` type=`MarkdownHighlighterOptions | "prismjs" | "shiki" | false` default=`"shiki"`
 
 Controls Markdown code block highlighter. You can choose `"prismjs"`, `"shiki"`, `false` or an object with `type` field declaring the highlighter name and other plugin options.
 
@@ -111,15 +75,23 @@ Controls Markdown code block highlighter. You can choose `"prismjs"`, `"shiki"`,
 - `"shiki"`: Use [@vuepress/plugin-shiki][shiki].
 - `false`: Disable code block highlighting.
 
-## markdown.linksCheck <Badge text="Enabled by default" />
+See also: [Feature → Code Block](../../guide/markdown/code/fence.md).
 
-- Type: `LinksCheckPluginOptions | Options`
-- Default: `true`
-- Details:
-  - [Markdown → Link check](../../guide/markdown/others.md#link-check)
-  - [@vuepress/plugin-links-check][links-check]
+Its type is:
+
+```ts
+type MarkdownHighlighterOptions =
+  | ({ type: "prismjs" } & PrismjsPluginOptions)
+  | ({ type: "shiki" } & ShikiPluginOptions);
+```
+
+@`markdown.linksCheck` type=`LinksCheckPluginOptions | boolean` enabled-by-default=Yes default=`true`
 
 Whether to enable `@vuepress/plugin-links-check` plugin, which provides link check for Markdown. You can manually set a boolean value to control the plugin status, or provide plugin options.
+
+See also: [Markdown → Link check](../../guide/markdown/others.md#link-check) and [@vuepress/plugin-links-check][links-check].
+
+::::
 
 [links-check]: https://ecosystem.vuejs.press/plugins/markdown/links-check.html#options
 [breaks]: https://ecosystem.vuejs.press/plugins/markdown/markdown-ext.html#breaks

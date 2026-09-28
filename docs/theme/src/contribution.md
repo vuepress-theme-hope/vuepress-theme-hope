@@ -28,38 +28,32 @@ The project is a monorepo, managed by pnpm.
 - `demo`: theme demo project
 - `packages`: place the code of each plugin and theme, each subdirectory is a project
 
-```
-.
-├── .github → GitHub config
-├── .husky → husky config
-│
-├── demo → Demo projects
-│
-├── docs → document directory
-│ ├── components → components plugin document
-│ ├── lightgallery → lightgallery plugin document
-│ ├── md-enhance → md-enhance plugin document
-│ └── theme → theme document
-│
-├── packages → project source code
-│ ├── components → components plugin
-│ ├── create → create-vuepress-theme-hope helper
-│ ├── lightgallery → lightgallery plugin
-│ ├── md-enhance → md-enhance plugin
-│ ├── shared → shared file
-│ └── theme → vuepress-theme-hope theme
-│
-├── scripts → command scripts
-│
-├── ... → some config files
-│
-├── LICENSE → License
-├── package.json → root package.json
-├── README.md → project intro
-├── SECURITY.md → Security Policy
-│
-└── tsconfig.* → TypeScript config file
-```
+::: file-tree
+
+- .github # GitHub config
+- .husky # husky config
+- demo # Demo projects
+- docs # document directory
+  - components # components plugin document
+  - lightgallery # lightgallery plugin document
+  - md-enhance # md-enhance plugin document
+  - theme # theme document
+- packages # project source code
+  - components # components plugin
+  - create # create-vuepress-theme-hope helper
+  - lightgallery # lightgallery plugin
+  - md-enhance # md-enhance plugin
+  - shared # shared file
+  - theme # vuepress-theme-hope theme
+- scripts # command scripts
+- … # some config files
+- LICENSE # License
+- package.json # root package.json
+- README.md # project intro
+- SECURITY.md # Security Policy
+- tsconfig.* # TypeScript config file
+
+:::
 
 ## Document Modification
 
@@ -79,22 +73,17 @@ To start previewing, cd to the right project under `docs` directory, then run `p
 
 The structure of each project is as follows:
 
-```
-.
-├── dist → compiled output file
-│    │
-│    ├── client → client-side compiled code
-│    │
-│    └── node → Node.js side compiled code
-│
-└── src → source file
-     │
-     ├── client → client-side source code
-     │
-     ├── node → Node.js side source code
-     │
-     └── shared → Shared files between node and client
-```
+::: file-tree
+
+- dist # compiled output file
+  - client # client-side compiled code
+  - node # Node.js side compiled code
+- src # source file
+  - client # client-side source code
+  - node # Node.js side source code
+  - shared # Shared files between node and client
+
+:::
 
 VuePress is running both in client side and node side. Node side has node module like `fs`, while client side is running in browser which has `document` `windows` `navigator` etc. globals, you should be aware of where a piece of code is running.
 

@@ -13,7 +13,7 @@ tag:
 
 <!-- more -->
 
-## 介绍
+## 介绍 {#introduction}
 
 页脚包含可自定义的页脚内容和版权信息。
 
@@ -27,7 +27,7 @@ tag:
 
 你也可以在页面 frontmatter 中配置 `footer`，`copyright` 和 `license` 字段，指定特定页面的页脚内容。
 
-## 页脚配置
+## 页脚配置 {#footer-config}
 
 页脚的内容会通过 `v-html` 插入，因此同时支持 HTML 和纯文本，你可以在主题选项中通过 `footer` 选项设置全局内容。
 
@@ -37,14 +37,14 @@ tag:
 - 当全局显示页脚已开启时，在页面 Frontmatter 中将 `footer` 设置为 `false` 会禁用默认的页脚。
 - 如果页面 Frontmatter 中的 `footer` 是一个字符串，它将被用作页脚内容。
 
-## 版权信息
+## 版权信息 {#copyright-information}
 
 你可以通过 `copyright` 和 `license` 字段设置全局或特定页面的版权与协议信息。
 
 - `copyright` 字段标识版权信息内容，它会通过 `v-html` 插入，因此同时支持 HTML 和纯文本。你可以在页面 Frontmatter 中将 `copyright` 设置为 `false` 隐藏此页面的版权信息。
 - `license` 字段标识协议名称，我们推荐你严格遵守协议的规定进行指定。指定后，`copyright` 会拥有基于协议名称的默认版权信息（当然你仍然可以自定义 `copyright`）。
 
-## 例子
+## 例子 {#examples}
 
 - 显示默认的页脚文字:
 

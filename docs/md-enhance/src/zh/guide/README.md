@@ -19,7 +19,7 @@ VuePress 本身新增了一些 Markdown 语法，详见 [官方文档](https://v
 
 :::
 
-## 代码
+## 代码 {#coding}
 
 <!-- @include: ./code/README.md#intro -->
 

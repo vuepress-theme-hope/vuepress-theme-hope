@@ -10,7 +10,7 @@ tag:
   - VuePress
 ---
 
-## 语法扩展
+## 语法扩展 {#syntax-extensions}
 
 VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来解析 Markdown 内容，因此可以借助于 markdown-it 插件来实现 [语法扩展](https://github.com/markdown-it/markdown-it#syntax-extensions) 。
 
@@ -18,14 +18,14 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 
 你也可以通过 [markdown](https://vuejs.press/zh/reference/config.html#markdown) 和 [extendsMarkdown](https://vuejs.press/zh/reference/plugin-api.html#extendsmarkdown) 来配置这些内置扩展、加载更多 markdown-it 插件、实现你自己的扩展等。
 
-### 内置
+### 内置 {#embedded}
 
 由 markdown-it 内置支持:
 
 - [表格](https://help.github.com/articles/organizing-information-with-tables/) (GFM)
 - [删除线](https://help.github.com/articles/basic-writing-and-formatting-syntax/#styling-text) (GFM)
 
-### 标题锚点
+### 标题锚点 {#header-anchors}
 
 你可能已经注意到，当你把鼠标放在各个章节的标题上时，会显示出一个 `#` 锚点。点击这个 `#` 锚点，可以直接跳转到对应章节。
 
@@ -35,24 +35,26 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 配置参考: [markdown.anchor](https://vuejs.press/zh/reference/config.html#markdown-anchor)
 :::
 
-### 链接
+### 链接 {#links}
 
 在你使用 Markdown 的 [链接语法](https://spec.commonmark.org/0.29/#link-reference-definitions) 时， VuePress 会为你进行一些转换。
 
 以我们文档的源文件为例:
 
-```
-└─ src
-    └─ zh
-       ├─ cookbook
-       │  └─ vuepress
-       │     ├─ markdown.md <- 我们在这里
-       │     └─ README.md
-       ├─ guide
-       │  └─ README.md
-       ├─ contribution.md
-       └─ README.md
-```
+::: file-tree
+
+- src
+  - zh
+    - cookbook
+      - vuepress
+        - **markdown.md** # 我们在这里
+        - README.md
+    - guide
+      - README.md
+    - contribution.md
+    - README.md
+
+:::
 
 原始 Markdown:
 
@@ -79,10 +81,16 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 <template>
   <RouterLink to="/v2/zh/">首页</RouterLink>
   <RouterLink to="/v2/zh/contribution.html">贡献指南</RouterLink>
-  <RouterLink to="/v2/zh/cookbook/vuepress/config.html">VuePress 配置</RouterLink>
+  <RouterLink to="/v2/zh/cookbook/vuepress/config.html"
+    >VuePress 配置</RouterLink
+  >
   <RouterLink to="/v2/zh/guide/">指南</RouterLink>
-  <RouterLink to="/v2/zh/reference/config.html#links">配置参考 &gt; 多语言</RouterLink>
-  <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+  <RouterLink to="/v2/zh/reference/config.html#links"
+    >配置参考 &gt; 多语言</RouterLink
+  >
+  <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+    >GitHub</a
+  >
 </template>
 ```
 
@@ -98,7 +106,7 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 解释:
 
 - 内部链接会被转换为 `<RouterLink>` 以便进行 SPA 导航。
-- 指向 `.md` 文件的内部链接会被转换为目标页面的 [路由路径](./page.md#路由)，并且支持绝对路径和相对路径。
+- 指向 `.md` 文件的内部链接会被转换为目标页面的 [路由路径](./page.md#routing)，并且支持绝对路径和相对路径。
 - 外部链接会被添加 `target="_blank" rel="noopener noreferrer"` 属性。
 
 建议:
@@ -137,7 +145,7 @@ Emoji 扩展由 [markdown-it-emoji](https://github.com/markdown-it/markdown-it-e
 配置参考: [markdown.emoji](https://vuejs.press/zh/reference/config.html#markdown-emoji)
 :::
 
-### 目录
+### 目录 {#table-of-contents}
 
 如果你想要把当前页面的目录添加到 Markdown 内容中，你可以使用 `[[toc]]` 语法。
 
@@ -151,7 +159,7 @@ Emoji 扩展由 [markdown-it-emoji](https://github.com/markdown-it/markdown-it-e
 
 [[toc]]
 
-目录中的标题将会链接到对应的 [标题锚点](#标题锚点)，因此如果你禁用了标题锚点，可能会影响目录的功能。
+目录中的标题将会链接到对应的 [标题锚点](#header-anchors)，因此如果你禁用了标题锚点，可能会影响目录的功能。
 
 ::: tip
 目录扩展是由我们的内置插件支持的，该扩展 Fork 并修改自 [markdown-it-toc-done-right](https://github.com/nagaozen/markdown-it-toc-done-right)。
@@ -159,13 +167,13 @@ Emoji 扩展由 [markdown-it-emoji](https://github.com/markdown-it/markdown-it-e
 配置参考: [markdown.toc](https://vuejs.press/zh/reference/config.html#markdown-toc)
 :::
 
-### 代码块
+### 代码块 {#code-blocks}
 
 下列代码块扩展都是在 Node 端进行 Markdown 解析时实现的，也就是代码块并不会在客户端被处理。
 
 通过 [@vuepress/plugin-prismjs][prismjs] 和 [@vuepress/plugin-shiki][shiki]，你可以通过 [Prism](https://prismjs.com/) 或 [Shiki](https://shiki.tmrs.site/) 来高亮代码块。
 
-#### 代码标题
+#### 代码标题 {#code-title}
 
 你可以在代码块添加一个 `title` 键值对来为代码块设置标题。
 
@@ -207,7 +215,7 @@ export default defineUserConfig({
 
 :::
 
-#### 行高亮
+#### 行高亮 {#line-highlighting}
 
 你可以在代码块添加行数范围标记，来为对应代码行进行高亮。
 
@@ -257,7 +265,7 @@ export default defineUserConfig({
 
 :::
 
-#### 行号
+#### 行号 {#line-numbers}
 
 你肯定已经注意到在代码块的最左侧会展示行号。这个功能是默认启用的，你可以通过配置来禁用它。
 
@@ -301,9 +309,9 @@ const line3 = "This is line 3";
 
 :::
 
-#### 添加 v-pre
+#### 添加 v-pre {#wrap-with-v-pre}
 
-由于 [模板语法可以在 Markdown 中使用](#模板语法)，它也同样可以在代码块中生效。
+由于 [模板语法可以在 Markdown 中使用](#template-syntax)，它也同样可以在代码块中生效。
 
 为了避免你的代码块被 Vue 编译， VuePress 默认会在你的代码块添加 [v-pre](https://v3.vuejs.org/api/directives.html#v-pre) 指令。这一默认行为可以在配置中关闭。
 
@@ -364,7 +372,7 @@ v-pre 扩展是由我们的内置插件支持的。
 配置参考: [markdown.code.vPre](https://vuejs.press/zh/reference/config.html#markdown-vpre)
 :::
 
-### 导入代码块
+### 导入代码块 {#import-code-blocks}
 
 你可以使用下面的语法，从文件中导入代码块:
 
@@ -390,7 +398,7 @@ v-pre 扩展是由我们的内置插件支持的。
 @[code js](../foo.js)
 ```
 
-实际上，`[]` 内的第二部分会被作为代码块标记来处理，因此在上面 [代码块](#代码块) 章节中提到的语法在这里都可以支持:
+实际上，`[]` 内的第二部分会被作为代码块标记来处理，因此在上面 [代码块](#code-blocks) 章节中提到的语法在这里都可以支持:
 
 ```md
 <!-- 行高亮 -->
@@ -438,13 +446,13 @@ export default {
 配置参考: [markdown.importCode](https://vuejs.press/zh/reference/config.html#markdown-importcode)
 :::
 
-## 在 Markdown 中使用 Vue
+## 在 Markdown 中使用 Vue {#using-vue-in-markdown}
 
 这一章节会介绍 Vue 在 Markdown 中一些基本用法。
 
 可以前往 [Cookbook > Markdown 和 Vue SFC](https://vuejs.press/zh/advanced/cookbook/markdown-and-vue-sfc.html) 来了解更多内容。
 
-### 模板语法
+### 模板语法 {#template-syntax}
 
 我们知道:
 
@@ -471,7 +479,7 @@ export default {
 
 <!-- markdownlint-restore -->
 
-### 组件
+### 组件 {#components}
 
 你可以在 Markdown 中直接使用 Vue 组件。
 
@@ -493,9 +501,9 @@ export default {
 
 :::
 
-## 注意事项
+## 注意事项 {#cautions}
 
-### 已废弃的 HTML 标签
+### 已废弃的 HTML 标签 {#deprecated-html-tags}
 
 已废弃的 HTML 标签默认不允许在 VuePress 的 Markdown 中使用，比如 [\<center>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/center) 和 [\<font>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/font) 等。
 

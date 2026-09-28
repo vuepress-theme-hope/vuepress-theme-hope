@@ -11,234 +11,170 @@ tag:
 
 The following options adds new code feature in Markdown, and can be set **under `markdown` property** in theme options.
 
-## markdown.codeTabs
+## Options
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → Code Tabs](../../guide/markdown/code/code-tabs.md)
-  - [@vuepress/plugin-markdown-tab → codeTabs][codeTabs]
+:::: fields
+@`markdown.codeTabs` type=boolean
 
 Whether to enable tabs support.
 
-## markdown.fileTree
+See also: [Markdown → Code Tabs](../../guide/markdown/code/code-tabs.md) and [@vuepress/plugin-markdown-tab → codeTabs][codeTabs].
 
-- Type: `boolean`
-- Details:
-  - [Markdown → File Tree](../../guide/markdown/code/file-tree.md)
-  - [@vuepress/plugin-markdown-file-tree → fileTree][fileTree]
+@`markdown.fileTree` type=boolean
 
 Whether to enable file tree support.
 
-## markdown.codeTree
+See also: [Markdown → File Tree](../../guide/markdown/code/file-tree.md) and [@vuepress/plugin-markdown-file-tree → fileTree][fileTree].
 
-- Type: `boolean | MarkdownCodeTreePluginOptions`
-
-  ```ts
-  interface MarkdownCodeTreePluginOptions {
-    /**
-     * Default height of the code tree
-     *
-     * Accepts a CSS length or a number in pixels.
-     *
-     * @default "320px"
-     */
-    height?: number | string;
-  }
-  ```
-
-- Details:
-  - [Markdown → Code Tree](../../guide/markdown/code/code-tree.md)
-  - [@vuepress/plugin-markdown-file-tree → codeTree][codeTree]
+@`markdown.codeTree` type=`boolean | MarkdownCodeTreePluginOptions`
 
 Whether to enable code tree support. You can also pass an object to customize the default height.
 
-## markdown.preview
+See also: [Markdown → Code Tree](../../guide/markdown/code/code-tree.md) and [@vuepress/plugin-markdown-file-tree → codeTree][codeTree].
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → Preview](../../guide/markdown/code/preview.md)
-  - [@vuepress/plugin-markdown-preview][preview]
+@@`markdown.codeTree.height` type=`number | string` default=`"320px"`
+
+The default height of the code tree, accepts a CSS length or a number in pixels.
+
+@`markdown.preview` type=boolean
 
 Whether to enable preview support.
 
-## markdown.playground
+See also: [Markdown → Preview](../../guide/markdown/code/preview.md) and [@vuepress/plugin-markdown-preview][preview].
 
-- Type: `PlaygroundGlobalOptions`
-
-  ```ts twoslash
-  import type { CompilerOptions } from "typescript";
-
-  interface PlaygroundCodeConfig {
-    /**
-     * Code block extension
-     *
-     * @description It's based on filename, not code fence language
-     */
-    ext: string;
-
-    /** Code block content */
-    content: string;
-  }
-
-  interface PlaygroundData {
-    /** Title of Playground */
-    title?: string;
-
-    /**
-     * Import map file name
-     *
-     * @default "import-map.json"
-     */
-    importMap?: string;
-
-    /** Playground files info */
-    files: Record<
-      /** File name */
-      string,
-      /** File detail */
-      PlaygroundCodeConfig
-    >;
-
-    /**
-     * Playground settings
-     *
-     * @description It's parsed result of json content after setting directive
-     */
-    settings: Record<string, unknown>;
-
-    /** hash key based on playground content */
-    key: string;
-  }
-
-  interface PlaygroundOptions {
-    /** Playground container name */
-    name: string;
-
-    /**
-     * Playground component name
-     *
-     * @default "Playground"
-     */
-    component?: string;
-
-    /**
-     * Props getter
-     */
-    propsGetter: (data: PlaygroundData) => Record<string, string>;
-  }
-
-  interface TSPresetPlaygroundOptions extends CompilerOptions {
-    /**
-     * external playground service url
-     *
-     * @default "https://www.typescriptlang.org/play"
-     */
-    service?: string;
-  }
-
-  interface VuePresetPlaygroundOptions {
-    /**
-     * external playground service url
-     *
-     * @default "https://sfc.vuejs.org/"
-     */
-    service?: string;
-
-    /**
-     * Whether to use dev version
-     *
-     * @default false
-     */
-    dev?: boolean;
-
-    /**
-     * Whether to enable SSR
-     *
-     * @default false
-     */
-    ssr?: boolean;
-  }
-
-  interface UnoPresetPlaygroundOptions {
-    /**
-     * external playground service url
-     *
-     * @default "https://unocss.dev/play"
-     */
-    service?: string;
-  }
-
-  type BuiltInPlaygroundPreset = "ts" | "vue" | "unocss";
-
-  interface PlaygroundGlobalOptions {
-    /** Playground presets */
-    presets: (BuiltInPlaygroundPreset | PlaygroundOptions)[];
-    /** Playground config */
-    config?: {
-      ts?: TSPresetPlaygroundOptions;
-      vue?: VuePresetPlaygroundOptions;
-      unocss?: UnoPresetPlaygroundOptions;
-    };
-  }
-  ```
-
-- Required: No
-- Details:
-  - [Markdown → Playground](../../guide/markdown/code/playground.md)
+@`markdown.playground` type=`PlaygroundGlobalOptions`
 
 Playground options.
 
-## markdown.kotlinPlayground
+See also: [Markdown → Playground](../../guide/markdown/code/playground.md).
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → Kotlin Playground](../../guide/markdown/code/kotlin-playground.md)
+@@`markdown.playground.presets` type=`(BuiltInPlaygroundPreset | PlaygroundOptions)[]` required
+
+Playground presets. `BuiltInPlaygroundPreset` is one of `"ts"`, `"vue"` and `"unocss"`, which enables a built-in preset, while an object configures a custom playground.
+
+@@@`markdown.playground.presets[*].name` type=string required
+
+Playground container name.
+
+@@@`markdown.playground.presets[*].component` type=string default=`"Playground"`
+
+Playground component name.
+
+@@@`markdown.playground.presets[*].propsGetter` type=`(data: PlaygroundData) => Record<string, string>` required
+
+Props getter. Its `data` argument has the following types:
+
+```ts
+interface PlaygroundCodeConfig {
+  /**
+   * Code block extension
+   *
+   * @description It's based on filename, not code fence language
+   */
+  ext: string;
+
+  /** Code block content */
+  content: string;
+}
+
+interface PlaygroundData {
+  /** Title of Playground */
+  title?: string;
+
+  /**
+   * Import map file name
+   *
+   * @default "import-map.json"
+   */
+  importMap?: string;
+
+  /** Playground files info */
+  files: Record<
+    /** File name */
+    string,
+    /** File detail */
+    PlaygroundCodeConfig
+  >;
+
+  /**
+   * Playground settings
+   *
+   * @description It's parsed result of json content after setting directive
+   */
+  settings: Record<string, unknown>;
+
+  /** hash key based on playground content */
+  key: string;
+}
+```
+
+@@`markdown.playground.config` type=`{ ts?: TSPresetPlaygroundOptions; vue?: VuePresetPlaygroundOptions; unocss?: UnoPresetPlaygroundOptions }`
+
+Playground config of the built-in presets.
+
+@@@`markdown.playground.config.ts` type=`TSPresetPlaygroundOptions`
+
+Options of the `ts` preset.
+
+@@@@`markdown.playground.config.ts.service` type=string default=`"https://www.typescriptlang.org/play"`
+
+External playground service url.
+
+@@@`markdown.playground.config.vue` type=`VuePresetPlaygroundOptions`
+
+Options of the `vue` preset.
+
+@@@@`markdown.playground.config.vue.service` type=string default=`"https://sfc.vuejs.org/"`
+
+External playground service url.
+
+@@@@`markdown.playground.config.vue.dev` type=boolean
+
+Whether to use the development version.
+
+@@@@`markdown.playground.config.vue.ssr` type=boolean
+
+Whether to enable SSR.
+
+@@@`markdown.playground.config.unocss` type=`UnoPresetPlaygroundOptions`
+
+Options of the `unocss` preset.
+
+@@@@`markdown.playground.config.unocss.service` type=string default=`"https://unocss.dev/play"`
+
+External playground service url.
+
+@`markdown.kotlinPlayground` type=boolean
 
 Whether to enable Kotlin playground support.
 
-## markdown.vuePlayground
+See also: [Markdown → Kotlin Playground](../../guide/markdown/code/kotlin-playground.md).
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → Vue Playground](../../guide/markdown/code/vue-playground.md)
+@`markdown.vuePlayground` type=boolean
 
-Whether to enable vue playground support.
+Whether to enable Vue playground support.
 
-## markdown.sandpack
+See also: [Markdown → Vue Playground](../../guide/markdown/code/vue-playground.md).
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → Sandpack Playground](../../guide/markdown/code/sandpack.md)
+@`markdown.sandpack` type=boolean
 
 Whether to enable sandpack playground support.
 
-## markdown.demo
+See also: [Markdown → Sandpack Playground](../../guide/markdown/code/sandpack.md).
 
-- Type: `CodeDemoGlobalOptions | boolean`
-- Default: `false`
-- Details:
-  - [Markdown → Code Demo](../../guide/markdown/code/demo.md)
+@`markdown.demo` type=`Partial<CodeDemoOptions> | boolean`
 
 Whether to enable code demo support.
 
-### markdown.demo.jsLib
+See also: [Markdown → Code Demo](../../guide/markdown/code/demo.md).
 
-- Type: `string[]`
-- Required: No
-
-External JS libraries for CodePen, JsFiddle only.
-
-### markdown.demo.cssLib
-
-- Type: `string[]`
-- Required: No
+@@`markdown.demo.jsLib` type=`string[]`
 
 External JS libraries for CodePen, JsFiddle only.
+
+@@`markdown.demo.cssLib` type=`string[]`
+
+External CSS libraries for CodePen, JsFiddle only.
 
 ::: warning
 
@@ -246,33 +182,23 @@ The above two options are only used by third-party code demo service, you need t
 
 :::
 
-### markdown.demo.jsfiddle
+@@`markdown.demo.jsfiddle` type=boolean default=`true`
 
-- Type: `boolean`
-- Default: `true`
+Whether to display the JSFiddle button.
 
-Whether to display the JSFiddle button
+@@`markdown.demo.codepen` type=boolean default=`true`
 
-### markdown.demo.codepen
+Whether to display the CodePen button.
 
-- Type: `boolean`
-- Default: `true`
+@@`markdown.demo.codepenLayout` type=`"top" | "left" | "right"` default=`"left"`
 
-Whether to display the CodePen button
+CodePen editor layout.
 
-### markdown.demo.codepenLayout
+@@`markdown.demo.codepenEditors` type=string default=`"101"`
 
-- Type: `"top" | "left" | "correct"`
-- Default: `"left"`
+CodePen editor status.
 
-CodePen editor layout
-
-### markdown.demo.codepenEditors
-
-- Type: `string`
-- Default: `"101"`
-
-CodePen editor status
+::::
 
 [fileTree]: https://ecosystem.vuejs.press/plugins/markdown/markdown-file-tree.html#filetree
 [codeTree]: https://ecosystem.vuejs.press/plugins/markdown/markdown-file-tree.html#codetree

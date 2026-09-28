@@ -115,5 +115,5 @@ Refer to [Config > Style](../config/style.md) for more details.
 :::
 
 ::: info Page Config
-Individual pages can be configured using Frontmatter in Markdown files. See [Project Content > Frontmatter](./content.md#frontmatter).
+Individual pages can be configured using Frontmatter in Markdown files. See [Project Content > Frontmatter](./content.md#frontmatter-configuration).
 :::

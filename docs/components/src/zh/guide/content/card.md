@@ -6,7 +6,7 @@ title: VPCard
 
 <!-- more -->
 
-## 案例
+## 案例 {#demo}
 
 <!-- #region demo -->
 
@@ -24,49 +24,34 @@ title: VPCard
 
 <!-- #endregion demo -->
 
-## 属性
+## 选项 {#options}
 
-### title
+::: fields
+@`title` type=string required
 
-- 类型: `string`
-- 必填: 是
+卡片标题。
 
-卡片标题
+@`desc` type=string
 
-### desc
+卡片描述。
 
-- 类型: `string`
-- Default: `''`
+@`logo` type=string
 
-卡片描述
+卡片图标。
 
-### logo
+@`link` type=string
 
-- 类型: `string`
-- 必填: 否
+卡片链接。
 
-卡片图标
+@`background` type=string
 
-### link
+卡片背景。
 
-- 类型: `string`
-- 必填: 否
+@`color` type=string
 
-卡片链接
+卡片字体颜色。
 
-### background
-
-- 类型: `string`
-- 必填: 否
-
-卡片背景
-
-### color
-
-- 类型: `string`
-- 必填: 否
-
-卡片字体颜色
+:::
 
 ::: tip
 
@@ -74,7 +59,7 @@ title: VPCard
 
 :::
 
-## 容器
+## 容器 {#container}
 
 如果你想要在一个响应式容器中放置多个卡片，你可以将它们包裹在一个 `div` 中，并添加 `vp-card-container` 类:
 

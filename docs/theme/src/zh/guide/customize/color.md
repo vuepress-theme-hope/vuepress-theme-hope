@@ -13,7 +13,7 @@ tag:
 
 <!-- more -->
 
-## 修改内置颜色
+## 修改内置颜色 {#modify-the-built-in-color}
 
 主题通过配置文件和调色板控制颜色。这些文件是 VuePress 项目文件夹下的 `.vuepress/styles/{config,palette}.scss` 文件。
 
@@ -37,9 +37,9 @@ $vp-c-bg: (
 );
 ```
 
-所有可用的颜色变量详见 [主题配置 → 颜色设置](../../config/style.md#颜色设置)。
+所有可用的颜色变量详见 [主题配置 → 颜色设置](../../config/style.md#color-config)。
 
-## 修改其他颜色
+## 修改其他颜色 {#modify-other-colors}
 
 有些时候，你可能希望修改一些不在 `palette.scss` 中的颜色，比如代码块的背景色，此时你可以通过开发者工具查看对应的颜色属性值是否为 CSS 变量。
 

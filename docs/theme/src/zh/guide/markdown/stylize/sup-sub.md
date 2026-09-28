@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 ```ts twoslash {6,8} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -27,7 +27,7 @@ export default hopeTheme({
 });
 ```
 
-## 语法
+## 语法 {#syntax}
 
 - 使用`^ ^`进行上角标标注。
 - 使用`~ ~`进行下角标标注。

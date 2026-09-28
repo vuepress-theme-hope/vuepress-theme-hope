@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 在你的项目中安装相关的 $\TeX$ 包 [katex](https://katex.org) 或 [@mathjax/src](https://docs.mathjax.org/en/latest/):
 
@@ -58,7 +58,7 @@ export default hopeTheme({
 });
 ```
 
-## 格式
+## 格式 {#syntax}
 
 - 内联模式：`$xxx$`
 
@@ -80,7 +80,7 @@ $a=1$ 是一个 TeX 方程，而 $ a=1 $ 和 \$a=1$ 不是。
 
 :::
 
-## 案例
+## 案例 {#demo}
 
 ::: preview 行内语法
 
@@ -97,11 +97,11 @@ $$
 
 :::
 
-## 在此尝试
+## 在此尝试 {#playground}
 
 <KatexPlayground />
 
-## 支持列表
+## 支持列表 {#support-list}
 
 插件教程和常见问题: [TeX](https://mdit-plugins.github.io/zh/tex.html#tex-%E6%95%99%E7%A8%8B)
 
@@ -114,7 +114,7 @@ Mathjax:
 
 - [支持的 TeX/LaTeX 命令](https://docs.mathjax.org/en/latest/input/tex/macros/index.html#tex-commands)
 
-### 使用 KaTeX
+### 使用 KaTeX {#using-katex}
 
 使用 KaTeX 时，任何其他选项都将作为 `KatexOptions` 传递给 KaTeX。有关所有可用选项，请参阅 [KaTeX 文档](https://katex.org/docs/options.html)。
 
@@ -123,7 +123,7 @@ Mathjax:
 - `copy`：是否启用复制扩展。
 - `mhchem`：是否启用 mhchem 扩展。
 
-### 使用 MathJax
+### 使用 MathJax {#using-mathjax}
 
 使用 MathJax 时，你可以设置：
 

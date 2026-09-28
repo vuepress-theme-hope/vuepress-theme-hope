@@ -9,7 +9,7 @@ tag:
   - 代码块
 ---
 
-## 高亮器
+## 高亮器 {#highlighter}
 
 你可以使用 `markdown.highlighter` 来选择你想要使用的高亮器，`shiki` 为 Shiki，`prismjs` 为 Prism.js。你也可以将 `markdown.highlighter` 设置为一个对象，通过 `type` 字段指定高亮器的类型，并将选项传递给高亮器：
 
@@ -75,11 +75,11 @@ npm i -D @vuepress/plugin-prismjs@next
 
 我们支持 [`@vuepress/plugin-prismjs`][prismjs] 插件的所有选项。
 
-## 高亮器功能
+## 高亮器功能 {#highlighter-features}
 
 以下功能在 Shiki 和 Prism.js 中都受支持，并且可以通过高亮器选项进行自定义。
 
-### 行号
+### 行号 {#line-numbers}
 
 你可以在代码块添加 `:line-numbers` / `:no-line-numbers` 标记来覆盖配置项中的设置，还可以在 `:line-numbers` 之后添加 `=` 来自定义起始行号，例如 `:line-numbers=2` 表示代码块中的行号从 `2` 开始。
 
@@ -125,7 +125,7 @@ const line3 = "This is line 3";
 const line4 = "This is line 4";
 ```
 
-### 行高亮
+### 行高亮 {#highlight-lines}
 
 你可在代码块的信息描述中添加行数标记来高亮指定的行：
 
@@ -165,7 +165,7 @@ export default defineUserConfig({
 });
 ```
 
-### 行折叠
+### 行折叠 {#line-collapsing}
 
 默认情况下禁用，可以通过高亮器选项中的 `collapsedLines` 启用。
 
@@ -297,7 +297,7 @@ body > div {
 }
 ```
 
-### 代码块标题
+### 代码块标题 {#code-block-title}
 
 在代码块 ` ``` ` 后面添加 `title="标题"` 来设置标题。
 
@@ -315,7 +315,7 @@ console.log("hello");
 console.log("hello");
 ```
 
-### 差异标记
+### 差异标记 {#notation-diff}
 
 在高亮器选项中通过 `notationDiff: true` 启用。
 
@@ -337,7 +337,7 @@ console.log("hello"); // [!code ++]
 console.log("goodbye");
 ```
 
-### 聚焦标记
+### 聚焦标记 {#notation-focus}
 
 在高亮器选项中通过 `notationFocus: true` 启用。
 
@@ -359,7 +359,7 @@ console.log("Focused"); // [!code focus]
 console.log("Not focused");
 ```
 
-### 高亮标记
+### 高亮标记 {#notation-highlight}
 
 在高亮器选项中通过 `notationHighlight: true` 启用。
 
@@ -381,7 +381,7 @@ console.log("Highlighted"); // [!code highlight]
 console.log("Not highlighted");
 ```
 
-### 错误级别标记
+### 错误级别标记 {#notation-error-level}
 
 在高亮器选项中通过 `notationErrorLevel: true` 启用。
 
@@ -403,7 +403,7 @@ console.warn("Warning"); // [!code warning]
 console.error("Error"); // [!code error]
 ```
 
-### 词高亮标记
+### 词高亮标记 {#notation-word-highlight}
 
 在高亮器选项中通过 `notationWordHighlight: true` 启用。
 
@@ -445,7 +445,7 @@ console.log(msg);
 console.log(msg); // 打印 Hello World
 ```
 
-### 空白符渲染
+### 空白符渲染 {#whitespace}
 
 通过高亮器选项中的 `whitespace` 控制空白符（空格 和 Tab）渲染。
 
@@ -535,7 +535,7 @@ with line break
     code block
 ```
 
-## 复制按钮
+## 复制按钮 {#copy-button}
 
 主题使用 [`@vuepress/plugin-copy-code`][copy-code] 在所有代码块上添加复制按钮。
 

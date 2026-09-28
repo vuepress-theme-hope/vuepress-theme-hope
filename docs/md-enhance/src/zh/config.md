@@ -4,175 +4,140 @@ icon: gears
 order: 2
 ---
 
-## 插件配置
+## 选项 {#options}
 
 你可以设置以下插件选项来启用或禁用一些功能。
 
-### playground
-
-- 类型: `PlaygroundGlobalOptions`
-
-  ```ts
-  interface PlaygroundCodeConfig {
-    /**
-     * 代码块扩展名
-     *
-     * @description 它基于文件名，而不是代码块语言
-     */
-    ext: string;
-
-    /** 代码块内容 */
-    content: string;
-  }
-
-  interface PlaygroundData {
-    /** 交互演示标题 */
-    title?: string;
-
-    /**
-     * Import map 文件名
-     *
-     * @default "import-map.json"
-     */
-    importMap?: string;
-
-    /** 交互演示文件信息 */
-    files: Record<
-      /** 文件名 */
-      string,
-      /** 文件详情 */
-      PlaygroundCodeConfig
-    >;
-
-    /**
-     * 交互演示设置
-     *
-     * @description 它是设置指令后的 json 内容的解析结果
-     */
-    settings: Record<string, unknown>;
-
-    /**
-     * hash key based on playground content
-     *
-     * 根据交互演示内容生成的 hash key
-     */
-    key: string;
-  }
-
-  interface PlaygroundOptions {
-    /** 交互演示容器名 */
-    name: string;
-
-    /**
-     * 交互演示组件名称
-     *
-     * @default "Playground"
-     */
-    component?: string;
-
-    /** 属性获取器 */
-    propsGetter: (data: PlaygroundData) => Record<string, string>;
-  }
-
-  interface TSPresetPlaygroundOptions extends CompilerOptions {
-    /**
-     * 交互演示外部地址
-     *
-     * @default "https://www.typescriptlang.org/play"
-     */
-    service?: string;
-  }
-
-  interface VuePresetPlaygroundOptions {
-    /**
-     * 交互演示外部地址
-     *
-     * @default "https://sfc.vuejs.org/"
-     */
-    service?: string;
-
-    /**
-     * 是否启用开发版本
-     *
-     * @default false
-     */
-    dev?: boolean;
-
-    /**
-     * 是否启用 SSR
-     *
-     * @default false
-     */
-    ssr?: boolean;
-  }
-
-  interface UnoPresetPlaygroundOptions {
-    /**
-     * 交互演示外部地址
-     *
-     * @default "https://unocss.dev/play"
-     */
-    service?: string;
-  }
-
-  type BuiltInPlaygroundPreset = "ts" | "vue" | "unocss";
-
-  interface PlaygroundGlobalOptions {
-    /** 交互演示预设 */
-    presets: (BuiltInPlaygroundPreset | PlaygroundOptions)[];
-    /** 交互演示配置 */
-    config?: {
-      ts?: TSPresetPlaygroundOptions;
-      vue?: VuePresetPlaygroundOptions;
-      unocss?: UnoPresetPlaygroundOptions;
-    };
-  }
-  ```
-
-- 必填: 否
-- 详情:
-  - [交互演示](./guide/code/playground.md)
+:::: fields
+@`playground` type=`PlaygroundGlobalOptions`
 
 交互演示选项。
 
-### kotlinPlayground
+参考：[交互演示](./guide/code/playground.md)。
 
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [Kotlin 交互演示](./guide/code/kotlin-playground.md)
+@@`playground.presets` type=`(BuiltInPlaygroundPreset | PlaygroundOptions)[]` required
+
+交互演示预设。`BuiltInPlaygroundPreset` 为 `"ts"`、`"vue"` 或 `"unocss"` 之一，会启用内置预设，而对象则用于配置自定义交互演示。
+
+@@@`playground.presets[*].name` type=string required
+
+交互演示容器名。
+
+@@@`playground.presets[*].component` type=string default=`"Playground"`
+
+交互演示组件名称。
+
+@@@`playground.presets[*].propsGetter` type=`(data: PlaygroundData) => Record<string, string>` required
+
+属性获取器。其 `data` 参数类型如下：
+
+```ts
+interface PlaygroundCodeConfig {
+  /**
+   * 代码块扩展名
+   *
+   * @description 它基于文件名，而不是代码块语言
+   */
+  ext: string;
+
+  /** 代码块内容 */
+  content: string;
+}
+
+interface PlaygroundData {
+  /** 交互演示标题 */
+  title?: string;
+
+  /**
+   * Import map 文件名
+   *
+   * @default "import-map.json"
+   */
+  importMap?: string;
+
+  /** 交互演示文件信息 */
+  files: Record<
+    /** 文件名 */
+    string,
+    /** 文件详情 */
+    PlaygroundCodeConfig
+  >;
+
+  /**
+   * 交互演示设置
+   *
+   * @description 它是设置指令后的 json 内容的解析结果
+   */
+  settings: Record<string, unknown>;
+
+  /**
+   * hash key based on playground content
+   *
+   * 根据交互演示内容生成的 hash key
+   */
+  key: string;
+}
+```
+
+@@`playground.config` type=`{ ts?: TSPresetPlaygroundOptions; vue?: VuePresetPlaygroundOptions; unocss?: UnoPresetPlaygroundOptions }`
+
+内置预设的交互演示配置。
+
+@@@`playground.config.ts` type=`TSPresetPlaygroundOptions`
+
+`ts` 预设的选项。
+
+@@@@`playground.config.ts.service` type=string default=`"https://www.typescriptlang.org/play"`
+
+交互演示外部地址。
+
+@@@`playground.config.vue` type=`VuePresetPlaygroundOptions`
+
+`vue` 预设的选项。
+
+@@@@`playground.config.vue.service` type=string default=`"https://sfc.vuejs.org/"`
+
+交互演示外部地址。
+
+@@@@`playground.config.vue.dev` type=boolean
+
+是否启用开发版本。
+
+@@@@`playground.config.vue.ssr` type=boolean
+
+是否启用 SSR。
+
+@@@`playground.config.unocss` type=`UnoPresetPlaygroundOptions`
+
+`unocss` 预设的选项。
+
+@@@@`playground.config.unocss.service` type=string default=`"https://unocss.dev/play"`
+
+交互演示外部地址。
+
+@`kotlinPlayground` type=boolean
 
 是否启用 Kotlin 交互演示支持。
 
-### vuePlayground
+参考：[Kotlin 交互演示](./guide/code/kotlin-playground.md)。
 
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [Vue 交互演示](./guide/code/vue-playground.md)
+@`vuePlayground` type=boolean
 
 是否启用 Vue 交互演示支持。
 
-### demo
+参考：[Vue 交互演示](./guide/code/vue-playground.md)。
 
-- 类型: `CodeDemoGlobalOptions | boolean`
-- 默认值: `false`
-- 详情:
-  - [代码案例](./guide/code/demo/README.md)
+@`demo` type=`Partial<CodeDemoOptions> | boolean`
 
 是否启用代码案例支持。
 
-#### demo.jsLib
+参考：[代码案例](./guide/code/demo/README.md)。
 
-- 类型: `string[]`
-- 必填: 否
+@@`demo.jsLib` type=`string[]`
 
 CodePen, JsFiddle 需要引入的外部 JS 库。
 
-#### demo.cssLib
-
-- 类型: `string[]`
-- 必填: 否
+@@`demo.cssLib` type=`string[]`
 
 CodePen, JsFiddle 需要引入的外部 CSS 库。
 
@@ -182,69 +147,39 @@ CodePen, JsFiddle 需要引入的外部 CSS 库。
 
 :::
 
-#### demo.jsfiddle
+@@`demo.jsfiddle` type=boolean default=`true`
 
-- 类型: `boolean`
-- 默认值: `true`
+是否显示 JSFiddle 按钮。
 
-是否显示 JSFiddle 按钮
+@@`demo.codepen` type=boolean default=`true`
 
-#### demo.codepen
+是否显示 CodePen 按钮。
 
-- 类型: `boolean`
-- 默认值: `true`
+@@`demo.codepenLayout` type=`"top" | "left" | "right"` default=`"left"`
 
-是否显示 CodePen 按钮
+CodePen 编辑器布局。
 
-#### demo.codepenLayout
+@@`demo.codepenEditors` type=string default=`"101"`
 
-- 类型: `"top" | "left" | "right"`
-- 默认值: `"left"`
-
-CodePen 编辑器布局
-
-#### demo.codepenEditors
-
-- 类型: `string`
-- 默认值: `"101"`
-
-CodePen 编辑器状态
-
-#### demo.editors
-
-- 类型: `string`
-- 默认值: `"101"`
-
-CodePen 编辑器显示情况，第一位代表 HTML ，第二位代表 JS，第三位代表演示页面。
-
-#### 其他
+CodePen 编辑器状态。
 
 以下是第三方代码演示使用的库地址，除非你的环境无法访问 unpkg 或访问缓慢，否则无需覆盖默认设置。
 
-##### demo.babel
+@@`demo.babel` type=string default=`"https://unpkg.com/@babel/standalone/babel.min.js"`
 
-默认值: `"https://unpkg.com/@babel/standalone/babel.min.js"`
+@@`demo.vue` type=string default=`"https://unpkg.com/vue/dist/vue.global.prod.js"`
 
-##### demo.vue
+@@`demo.react` type=string default=`"https://unpkg.com/react/umd/react.production.min.js"`
 
-默认值: `"https://unpkg.com/vue/dist/vue.global.prod.js"`
+@@`demo.reactDOM` type=string default=`"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
 
-##### demo.react
-
-默认值: `"https://unpkg.com/react/umd/react.production.min.js"`
-
-##### demo.reactDOM
-
-默认值: `"https://unpkg.com/react-dom/umd/react-dom.production.min.js"`
-
-### sandpack
-
-- 类型: `boolean`
-- 默认值: `false`
+@`sandpack` type=boolean
 
 是否启用 Sandpack 交互演示。
 
-## 客户端配置
+::::
+
+## 客户端配置 {#client-config}
 
 ### defineKotlinPlaygroundConfig
 
@@ -298,7 +233,10 @@ const defineSandpackConfig = (config: SandpackConfig)=> void
 ### defineVuePlaygroundConfig
 
 ```ts
-export interface VuePlaygroundOptions extends Omit<ReplProps, "store" | "editor"> {
+export interface VuePlaygroundOptions extends Omit<
+  ReplProps,
+  "store" | "editor"
+> {
   /**
    * 指定 vue 版本
    */
