@@ -38,7 +38,7 @@
     "@vuepress/helper": "catalog:vuepress",
     "@vuepress/plugin-docsearch": "catalog:vuepress",
     "@vueuse/core": "catalog:",
-    "three": "0.186.0",
+    "three": "0.186.1",
     "vue": "catalog:",
     "vuepress": "catalog:vuepress",
     "vuepress-theme-hope": "workspace:*"
