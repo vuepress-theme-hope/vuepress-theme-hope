@@ -4,7 +4,7 @@ icon: lightbulb
 index: false
 ---
 
-## 大小优化
+## 大小优化 {#optimized-size}
 
 这个插件完全支持 tree-shaking。
 
@@ -12,6 +12,6 @@ index: false
 
 例如，如果你使用 `{ components: ['VPCard'] }` 调用此插件，则仅注入 `<VPCard />` 组件。
 
-## 搭配组件语法
+## 搭配组件语法 {#using-with-component-syntax}
 
 我们推荐你搭配 [component 语法](https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-ext.html#component) 使用插件。

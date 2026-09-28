@@ -17,7 +17,7 @@ tag:
 
 <!-- more -->
 
-## 启用 Feed 输出
+## 启用 Feed 输出 {#enable-feed-output}
 
 `@vuepress/plugin-feed` 插件支持生成三种格式的 Feed 文件：
 
@@ -31,7 +31,7 @@ tag:
 RSS 为主要格式，Atom 与 JSON 仅用于兼容性支持。
 :::
 
-## 频道设置
+## 频道设置 {#channel-settings}
 
 你可以通过主题选项中的 `plugins.feed.channel` 自定义 Feed 频道信息。
 
@@ -48,7 +48,7 @@ RSS 为主要格式，Atom 与 JSON 仅用于兼容性支持。
 
 详细选项请参考[Feed Channel 文档][feed-channel]。
 
-## 生成控制
+## 生成控制 {#generation-control}
 
 默认情况下，所有文章均会加入 Feed 流。
 
@@ -56,7 +56,7 @@ RSS 为主要格式，Atom 与 JSON 仅用于兼容性支持。
 
 你可以通过配置 `plugins.feed.getter` 完全接管 Feed 项目的生成逻辑，详见 [Feed Getter 文档][feed-getter]。
 
-### 多语言配置
+### 多语言配置 {#i18n-configuration}
 
 插件会为每种语言生成独立的 Feed 文件。
 

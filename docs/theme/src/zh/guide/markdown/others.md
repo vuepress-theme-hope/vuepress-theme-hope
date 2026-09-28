@@ -8,7 +8,7 @@ tag:
   - Markdown
 ---
 
-## 链接检查
+## 链接检查 {#link-check}
 
 主题默认通过 `@vuepress/plugin-links-check` 检查你的 Markdown 链接。
 

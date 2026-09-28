@@ -7,7 +7,7 @@ description: 分享组件，将页面内容分享到社交媒体。
 
 <!-- more -->
 
-## 示例
+## 示例 {#demo}
 
 <!-- #region demo -->
 
@@ -32,7 +32,7 @@ description: 分享组件，将页面内容分享到社交媒体。
 
 <!-- #endregion demo -->
 
-## 设置组件
+## 设置组件 {#setting-component}
 
 要提供 tree-shaking 支持，你应该在插件选项中设置 `componentOptions.share.services` 以及你想要在客户端使用的服务。 这将防止未使用的配置注入到客户端，并将减少客户端包的大小。
 

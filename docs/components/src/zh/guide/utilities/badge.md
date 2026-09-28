@@ -8,11 +8,11 @@ title: Badge
 
 <!-- more -->
 
-## 示例
+## 示例 {#demo}
 
 ::: preview
 
-## 标题徽章 <Badge text="新" type="tip" /> <Badge text="MrHope" color="grey" />
+## 标题徽章 <Badge text="新" type="tip" /> <Badge text="MrHope" color="grey" /> {#heading-badge}
 
 徽章测试 <Badge text="构建中" type="warning" /> <Badge text="MrHope" color="grey" />
 

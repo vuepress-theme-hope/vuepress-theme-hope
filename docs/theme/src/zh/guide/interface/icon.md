@@ -13,7 +13,7 @@ tag:
 
 <!-- more -->
 
-## 使用
+## 使用 {#usage}
 
 我们支持多种类型的图标：
 
@@ -83,9 +83,9 @@ export default hopeTheme({
 
 :::
 
-## 添加图标
+## 添加图标 {#adding-icons}
 
-### 在 Markdown 中
+### 在 Markdown 中 {#in-markdown}
 
 在 markdown 中，你可以使用 `::icon decorators... =size /color key=value complex-key="complex value"...::` 来插入自定义图标。
 
@@ -107,7 +107,7 @@ export default hopeTheme({
 
 :::
 
-### 在组件中
+### 在组件中 {#in-components}
 
 你可以使用 `<VPIcon />` 组件在 Vue 组件中添加图标。
 
@@ -127,7 +127,7 @@ export default hopeTheme({
 
 :::
 
-### 在配置中
+### 在配置中 {#in-configuration}
 
 你可以在多个选项中设置图标：
 
@@ -141,7 +141,7 @@ export default hopeTheme({
 
 - 首页: 在 `features` 项目中设置 `icon` 选项
 
-### 离线部署
+### 离线部署 {#offline-deployment}
 
 如果你的站点部署在无法访问外网的环境中，可以将 `plugins.icon.offline` 设置为 `true`，将图标打包到本地，而不是从 CDN 或 Iconify API 加载。
 
@@ -167,13 +167,13 @@ export default hopeTheme({
 
 :::
 
-### 可用的图标
+### 可用的图标 {#available-icons}
 
 - Iconify: <https://icon-sets.iconify.design/>
 - Iconfont: <https://www.iconfont.cn/>
 - Fontawesome: <https://fontawesome.com/search?o=r&m=free>
 
-## 图标类型
+## 图标类型 {#icon-types}
 
 ### Iconify
 
@@ -258,9 +258,9 @@ export default hopeTheme({
 
 每个设计师都可以将图标上传到 Iconfont 平台，用户可以从这些图标中创建项目。项目可以以各种格式使用。
 
-#### 生成自己的 Iconfont 链接
+#### 生成自己的 Iconfont 链接 {#generating-your-own-iconfont-links}
 
-##### 创建项目
+##### 创建项目 {#create-a-project}
 
 首先，你需要创建一个新项目来设置和管理你网站的图标：
 
@@ -271,7 +271,7 @@ export default hopeTheme({
 
 ![新项目](./assets/iconfont-new.png)
 
-##### 导入图标
+##### 导入图标 {#import-icon}
 
 搜索并找到你想要使用的图标，点击图标上的 "添加到图标库" 按钮。
 
@@ -279,13 +279,13 @@ export default hopeTheme({
 
 当你完成搜索后，点击右上角的 "添加到图库" 图标，点击下面的 "添加到项目"，选择你创建的项目然后确认。
 
-##### 编辑图标
+##### 编辑图标 {#edit-icon}
 
 在项目页面上，你可以编辑项目中的图标，包括调整位置、大小、旋转、颜色、Unicode 编码和字体类/符号。
 
 ![编辑图标](./assets/iconfont-edit.png)
 
-##### 生成链接
+##### 生成链接 {#generate-links}
 
 点击项目上方的 "字体类" 按钮，然后点击 "生成链接"。
 
@@ -299,7 +299,7 @@ export default hopeTheme({
 
 :::
 
-### 图片
+### 图片 {#images}
 
 任何图标类型都支持图像链接（不支持相对链接）。
 

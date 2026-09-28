@@ -8,7 +8,7 @@ tag:
   - 介绍
 ---
 
-## 配置概念
+## 配置概念 {#config-concepts}
 
 VuePress 主要通过目录下的 `.vuepress/` 文件夹存放配置和需要的文件。
 
@@ -24,7 +24,7 @@ VuePress 主要通过目录下的 `.vuepress/` 文件夹存放配置和需要的
 - 主题配置: 传递给 `hopeTheme` 的第一个对象
 - 页面配置: 由在页面顶部基于 YAML 语法的 Frontmatter 提供
 
-## 使用主题
+## 使用主题 {#theme-usage}
 
 ```ts twoslash title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";

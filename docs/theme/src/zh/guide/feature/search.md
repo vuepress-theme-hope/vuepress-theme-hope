@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 使用 `@vuepress/plugin-docsearch`
+## 使用 `@vuepress/plugin-docsearch` {#use-vuepress-plugin-docsearch}
 
 1. 你需要 [提交你的网站 URL](https://docsearch.algolia.com/apply/) 来加入 DocSearch 项目。
 
@@ -205,7 +205,7 @@ tag:
 
 :::
 
-## 使用 `@vuepress/plugin-slimsearch`
+## 使用 `@vuepress/plugin-slimsearch` {#use-vuepress-plugin-slimsearch}
 
 1. 安装 `@vuepress/plugin-slimsearch`
 
@@ -254,7 +254,7 @@ tag:
 
 :::
 
-## 使用 `@vuepress/plugin-orama`
+## 使用 `@vuepress/plugin-orama` {#use-vuepress-plugin-orama}
 
 1. 安装 `@vuepress/plugin-orama`
 
@@ -303,7 +303,7 @@ tag:
 
 :::
 
-## 使用 `@vuepress/plugin-meilisearch`
+## 使用 `@vuepress/plugin-meilisearch` {#use-vuepress-plugin-meilisearch}
 
 ::: tip
 
@@ -598,7 +598,7 @@ tag:
 
 :::
 
-## 使用 `@vuepress/plugin-search`
+## 使用 `@vuepress/plugin-search` {#use-vuepress-plugin-search}
 
 1. 安装 `@vuepress/plugin-search`
 

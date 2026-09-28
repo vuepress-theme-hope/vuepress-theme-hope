@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 ```ts twoslash {5} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -24,7 +24,7 @@ export default hopeTheme({
 });
 ```
 
-## 语法
+## 语法 {#syntax}
 
 - 在 Markdown 中使用 `[^锚点文字]` 来定义脚注。
 
@@ -32,7 +32,7 @@ export default hopeTheme({
 
 - 如果脚注包含多个段落，其后的段落应当保持双层缩进。
 
-## 例子
+## 例子 {#demo}
 
 ::: preview
 

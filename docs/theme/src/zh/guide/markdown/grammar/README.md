@@ -18,15 +18,15 @@ tag:
 - 任务列表
 - TeX：支持 KaTeX 和 Mathjax
 
-## 案例
+## 案例 {#demo}
 
-### 图片增强
+### 图片增强 {#image-enhancement}
 
 支持设置标题、颜色模式和大小
 
 - [查看详情](./image.md)
 
-### 数学公式
+### 数学公式 {#math}
 
 $$
 \frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
@@ -35,7 +35,7 @@ $$
 
 - [查看详情](./math.md)
 
-### 任务列表
+### 任务列表 {#task-list}
 
 - [x] 计划 1
 - [ ] 计划 2

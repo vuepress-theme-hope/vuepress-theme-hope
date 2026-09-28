@@ -10,13 +10,13 @@ tag:
   - 版权信息
 ---
 
-## 介绍
+## 介绍 {#intro}
 
 主题可通过 `@vuepress/plugin-copyright` 在复制时追加版权信息，默认情况下此功能**不启用**。
 
 你可以在主题选项中设置 `plugins.copyright: true` 来启用此功能。默认行为是全局启用插件并使用主题选项中的作者和协议名称。
 
-## 插件选项
+## 插件选项 {#plugin-options}
 
 主题将主题选项中的 `plugins.copyright` 作为插件选项传递给 `@vuepress/plugin-copyright`。
 

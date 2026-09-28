@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 在你的项目中安装 `@vuepress/plugin-revealjs`:
 
@@ -50,7 +50,7 @@ export default hopeTheme({
 });
 ```
 
-## 幻灯片语法
+## 幻灯片语法 {#slide-syntax}
 
 - 使用 `---` 分割幻灯片
 - 使用 `--` 对幻灯片进行二次分割(垂直显示)
@@ -142,7 +142,7 @@ const add = (a, b) => {
 
 :::
 
-## 演示
+## 演示 {#demo}
 
 ::: preview 简单幻灯片演示
 
@@ -185,9 +185,9 @@ $$
 
 :::
 
-## 自定义 Reveal.js
+## 自定义 Reveal.js {#customize-reveal-js}
 
-### 内置插件
+### 内置插件 {#built-in-plugins}
 
 你可以通过插件选项中的 `plugins` 启用 reveal.js 中的内置插件。它接受以下插件名称的数组:
 
@@ -203,9 +203,9 @@ $$
 
 :::
 
-### 高级配置
+### 高级配置 {#advanced-configuration}
 
-你也可以在[客户端配置文件](../../../cookbook/vuepress/config.md#客户端配置文件) 中导入并调用 `defineRevealJsConfig` 来自定义 reveal.js:
+你也可以在[客户端配置文件](../../../cookbook/vuepress/config.md#client-config-file) 中导入并调用 `defineRevealJsConfig` 来自定义 reveal.js:
 
 ```ts twoslash title=".vuepress/client.ts"
 import { defineRevealJsConfig } from "@vuepress/plugin-revealjs/client";
@@ -221,7 +221,7 @@ Reveal.js 还提供了[更多的插件](https://github.com/hakimel/reveal.js/wik
 
 :::
 
-### 页面级配置
+### 页面级配置 {#per-page-configuration}
 
 你也可以在 Frontmatter 设置 `revealJs` 以设置特定页面的 reveal.js 选项。
 

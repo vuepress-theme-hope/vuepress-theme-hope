@@ -37,7 +37,7 @@ export default defineUserConfig({
 });
 ```
 
-## 选项
+## 选项 {#options}
 
 :::: fields
 @`check` type=boolean default=`true`

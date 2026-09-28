@@ -12,7 +12,7 @@ tag:
 
 VuePress 是以 Markdown 为中心的。你项目中的每一个 Markdown 文件都是一个单独的页面。
 
-## 路由
+## 路由 {#routing}
 
 默认情况下，页面的路由路径是根据你的 Markdown 文件的相对路径决定的。
 
@@ -60,7 +60,7 @@ description: 页面的描述
 
 :::
 
-## 内容
+## 内容 {#content}
 
 页面的主要内容是使用 Markdown 书写的。VuePress 首先会将 Markdown 转换为 HTML ，然后将 HTML 作为 Vue 单文件组件的 `<template>` 。
 

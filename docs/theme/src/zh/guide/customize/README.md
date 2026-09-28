@@ -14,7 +14,7 @@ tag:
 
 <!-- more -->
 
-## 自定义样式的方式
+## 自定义样式的方式 {#how-to-customize-styles}
 
 你可以在自己文档内的 `.vuepress/styles` 文件夹下放置三个文件进行样式配置。
 
@@ -28,7 +28,7 @@ tag:
 
 上述文件支持的完整配置列表详见 [配置 → 样式](../../config/style.md)。
 
-## 基础教程
+## 基础教程 {#basic-tutorials}
 
 - [自定义颜色](color.md)
 
@@ -42,7 +42,7 @@ tag:
 
 - [添加外部脚本和样式](external.md)
 
-## 高级使用
+## 高级使用 {#advanced-usage}
 
 - [客户端配置文件](../advanced/client.md)
 

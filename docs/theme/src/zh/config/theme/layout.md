@@ -13,20 +13,20 @@ tag:
 
 <!-- more -->
 
-## 导航栏相关
+## 导航栏相关 {#navbar-related}
 
 :::: fields
 @`navbar` type=`NavbarOptions | false` recommended=Yes default=`false`
 
 导航栏配置。
 
-参考：[布局 → 导航栏 → 导航栏链接](../../guide/layout/navbar.md#导航栏链接)和[布局 → 导航栏 → 禁用导航栏](../../guide/layout/navbar.md#禁用导航栏)。
+参考：[布局 → 导航栏 → 导航栏链接](../../guide/layout/navbar.md#navbar-links)和[布局 → 导航栏 → 禁用导航栏](../../guide/layout/navbar.md#disabling-navbar)。
 
 @`navbarLayout` type=`NavbarLayoutOptions` default=`{ start: ["Brand"], center: ["Links"], end: ["Language", "Repo", "Outlook", "Search"] }`
 
 自定义导航栏布局。
 
-参考：[布局 → 导航栏 → 导航栏布局](../../guide/layout/navbar.md#布局配置)。
+参考：[布局 → 导航栏 → 导航栏布局](../../guide/layout/navbar.md#layout-config)。
 
 每个字段接受一组内置导航栏组件名称或自定义组件名称：
 
@@ -51,13 +51,13 @@ type NavbarComponent =
 
 导航栏图标，应为基于 `.vuepress/public` 文件夹的绝对路径。
 
-参考：[布局 → 导航栏 → 站点图标](../../guide/layout/navbar.md#站点图标)。
+参考：[布局 → 导航栏 → 站点图标](../../guide/layout/navbar.md#site-logo)。
 
 @`logoDark` type=string default=`logo`
 
 夜间模式下导航栏图标，应为基于 `.vuepress/public` 文件夹的绝对路径。
 
-参考：[布局 → 导航栏 → 站点图标](../../guide/layout/navbar.md#站点图标)。
+参考：[布局 → 导航栏 → 站点图标](../../guide/layout/navbar.md#site-logo)。
 
 @`navbarTitle` type=string default=`$siteLocale.title`
 
@@ -67,13 +67,13 @@ type NavbarComponent =
 
 仓库配置，用于在导航栏中显示仓库链接。
 
-参考：[布局 → 导航栏 → Git 仓库和编辑链接](../../guide/layout/navbar.md#git-仓库和编辑链接)。
+参考：[布局 → 导航栏 → Git 仓库和编辑链接](../../guide/layout/navbar.md#git-repository-and-edit-links)。
 
 @`repoDisplay` type=boolean default=`true`
 
 是否在导航栏显示仓库链接。
 
-参考：[布局 → 导航栏 → Git 仓库和编辑链接](../../guide/layout/navbar.md#git-仓库和编辑链接)。
+参考：[布局 → 导航栏 → Git 仓库和编辑链接](../../guide/layout/navbar.md#git-repository-and-edit-links)。
 
 @`repoLabel` type=string
 
@@ -85,7 +85,7 @@ type NavbarComponent =
 
 :::
 
-参考：[布局 → 导航栏 → Git 仓库和编辑链接](../../guide/layout/navbar.md#git-仓库和编辑链接)。
+参考：[布局 → 导航栏 → Git 仓库和编辑链接](../../guide/layout/navbar.md#git-repository-and-edit-links)。
 
 @`navbarAutoHide` type=`'always' | 'mobile' | 'none'` default=`'mobile'`
 
@@ -97,7 +97,7 @@ type NavbarComponent =
 
 ::::
 
-## 侧边栏相关
+## 侧边栏相关 {#sidebar-related}
 
 关于配置指南，详见 [布局 → 侧边栏](../../guide/layout/sidebar.md)。
 
@@ -178,7 +178,7 @@ type SidebarSorter =
 
 :::
 
-## 导航相关
+## 导航相关 {#route-navigation}
 
 ::: fields
 @`breadcrumb` type=boolean default=`true`
@@ -199,7 +199,7 @@ type SidebarSorter =
 
 :::
 
-## 页面元数据
+## 页面元数据 {#page-meta}
 
 :::: fields
 @`titleIcon` type=boolean default=`true`
@@ -266,7 +266,7 @@ type SidebarSorter =
 
 ::::
 
-## 页脚
+## 页脚 {#footer}
 
 ::: fields
 @`footer` type=string
@@ -283,7 +283,7 @@ type SidebarSorter =
 
 :::
 
-## 杂项
+## 杂项 {#others}
 
 ::: fields
 @`home` type=string default="当前 locale 的键名"

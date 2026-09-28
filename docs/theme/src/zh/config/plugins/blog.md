@@ -10,7 +10,7 @@ tag:
   - 博客
 ---
 
-## 介绍
+## 介绍 {#intro}
 
 主题通过 `@vuepress/plugin-blog` 提供博客功能，默认情况下此功能**不启用**。
 
@@ -18,7 +18,7 @@ tag:
 
 有关说明，请参阅[博客介绍](../../guide/blog/intro.md)。
 
-## 选项
+## 选项 {#options}
 
 :::: fields
 @`plugins.blog.excerpt` type=boolean default=`true`
@@ -64,7 +64,7 @@ Slugify 函数，用于转换 key 在路由中注册的形式。
 
 额外的文章类型。
 
-参考：[指南 → 文章列表](../../guide/blog/article.md#自定义文章类型)。
+参考：[指南 → 文章列表](../../guide/blog/article.md#custom-article-types)。
 
 @@`plugins.blog.type[*].key` type=string required
 

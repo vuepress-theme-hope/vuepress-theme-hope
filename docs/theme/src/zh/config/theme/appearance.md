@@ -19,7 +19,7 @@ tag:
 
 :::
 
-## 选项
+## 选项 {#options}
 
 :::: fields
 @`darkmode` type=`'switch' | 'toggle' | 'auto' | 'enable' | 'disable'` enabled-by-default=Yes root-only=Yes default=`'switch'`
@@ -48,7 +48,7 @@ tag:
 
 是否显示全屏按钮。
 
-参考：[界面 → 全屏按钮](../../guide/interface/others.md#全屏按钮)。
+参考：[界面 → 全屏按钮](../../guide/interface/others.md#fullscreen-button)。
 
 @`pure` type=boolean root-only=Yes
 
@@ -62,18 +62,18 @@ tag:
 
 :::
 
-参考：[界面 → 纯净模式](../../guide/interface/others.md#纯净模式)。
+参考：[界面 → 纯净模式](../../guide/interface/others.md#pure-mode)。
 
 @`focus` type=`number | boolean` root-only=Yes default="pure 的值"
 
 是否启用专注模式，默认在启用纯净模式时启用。数字值是触发专注模式的延迟时间。
 
-参考：[界面 → 专注模式](../../guide/interface/others.md#专注模式)。
+参考：[界面 → 专注模式](../../guide/interface/others.md#focus-mode)。
 
 @`print` type=boolean root-only=Yes default=`true`
 
 是否在桌面模式下显示打印按钮。
 
-参考：[界面 → 打印按钮](../../guide/interface/others.md#打印按钮)。
+参考：[界面 → 打印按钮](../../guide/interface/others.md#print-button)。
 
 ::::

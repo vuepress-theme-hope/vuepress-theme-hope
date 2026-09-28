@@ -14,7 +14,7 @@ tag:
 
 <!-- more -->
 
-## 基于 Git 的信息
+## 基于 Git 的信息 {#git-based-information}
 
 `vuepress-theme-hope` 通过内置 [`@vuepress/plugin-git`][git] 插件，实现了页面创建时间、最后更新时间与贡献者的自动生成。
 
@@ -31,7 +31,7 @@ tag:
 
 :::
 
-## 编辑此页链接
+## 编辑此页链接 {#edit-link}
 
 你可以通过在主题选项中设置如下项目，来自动为每个页面生成编辑此页链接:
 
@@ -49,7 +49,7 @@ export default hopeTheme({
 });
 ```
 
-## 显示控制
+## 显示控制 {#display-control}
 
 如果你想要全局禁用这些项目的显示，请在主题选项中，将以下对应项目设置为 `false`。你也可以在 Frontmatter 中设置这些项目来启用/禁用指定页面:
 

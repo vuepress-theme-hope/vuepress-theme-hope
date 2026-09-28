@@ -30,25 +30,25 @@ tag:
 
 是否启用图片标记。
 
-参考：[Markdown → 图片标记](../../guide/markdown/grammar/image.md#图片-id-标记) 与 [@vuepress/plugin-markdown-image → mark][mark]。
+参考：[Markdown → 图片标记](../../guide/markdown/grammar/image.md#image-mark) 与 [@vuepress/plugin-markdown-image → mark][mark]。
 
 @`markdown.imgSize` type=boolean
 
 是否启用图片大小。
 
-参考：[Markdown → 图片尺寸](../../guide/markdown/grammar/image.md#图片尺寸) 与 [@vuepress/plugin-markdown-image → size][size]。
+参考：[Markdown → 图片尺寸](../../guide/markdown/grammar/image.md#image-size) 与 [@vuepress/plugin-markdown-image → size][size]。
 
 @`markdown.obsidianImgSize` type=boolean
 
 是否启用 Obsidian 图片大小。
 
-参考：[Markdown → 图片尺寸](../../guide/markdown/grammar/image.md#图片尺寸) 与 [@vuepress/plugin-markdown-image → obsidianSize][obsidianSize]。
+参考：[Markdown → 图片尺寸](../../guide/markdown/grammar/image.md#image-size) 与 [@vuepress/plugin-markdown-image → obsidianSize][obsidianSize]。
 
 @`markdown.legacyImgSize` type=boolean deprecated
 
 是否启用旧版图片大小。
 
-参考：[Markdown → 图片尺寸](../../guide/markdown/grammar/image.md#图片尺寸) 与 [@vuepress/plugin-markdown-image → legacySize][legacySize]。
+参考：[Markdown → 图片尺寸](../../guide/markdown/grammar/image.md#image-size) 与 [@vuepress/plugin-markdown-image → legacySize][legacySize]。
 
 @`markdown.include` type=`MarkdownIncludePluginOptions | boolean`
 

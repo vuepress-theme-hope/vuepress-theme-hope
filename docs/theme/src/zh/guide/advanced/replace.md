@@ -13,7 +13,7 @@ tag:
 
 <!-- more -->
 
-## 如何通过别名替换组件
+## 如何通过别名替换组件 {#alias-configuration}
 
 你需要在自己的 VuePress 配置文件通过 `alias` 替换主题中使用的组件别名。
 
@@ -45,9 +45,9 @@ export default {
 
 有些组件提供了插槽，在这种情况下，你可以在覆盖组件时直接引入原组件，并通过插槽传入你需要的内容。
 
-## 主题别名
+## 主题别名 {#theme-alias}
 
-### 基础组件
+### 基础组件 {#base-components}
 
 - `@theme-hope/components/base/AutoLink`: 基础链接
 
@@ -91,7 +91,7 @@ export default {
 
   插槽: `toc` `tocBefore`, `tocAfter`
 
-### 主页组件
+### 主页组件 {#home-page-components}
 
 - `@theme-hope/components/home/FeatureSection`: 主页特色部分
 
@@ -124,7 +124,7 @@ export default {
   插槽: `portfolioInfo`, `portfolioAvatar`, `portfolioBg`
   - `portfolioInfo`, `portfolioAvatar`, `portfolioBg` 插槽被传递到 `PortfolioHero` 组件。
 
-### 导航栏组件
+### 导航栏组件 {#navbar-components}
 
 - `@theme-hope/components/navbar/I18nIcon`: 多语言图标
 
@@ -157,7 +157,7 @@ export default {
 
 - `@theme-hope/components/navbar/ToggleSidebarButton`: 侧边栏切换按钮
 
-### 侧边栏组件
+### 侧边栏组件 {#sidebar-components}
 
 - `@theme-hope/components/sidebar/Sidebar`: 侧边栏
 
@@ -170,7 +170,7 @@ export default {
 
 - `@theme-hope/components/sidebar/SidebarLinks`: 侧边栏链接
 
-### 信息组件
+### 信息组件 {#info-components}
 
 - `@theme-hope/components/info/AuthorInfo`: 作者信息
 - `@theme-hope/components/info/CategoryInfo`: 分类信息
@@ -184,7 +184,7 @@ export default {
 - `@theme-hope/components/info/WordInfo`: 字数信息
 - `@theme-hope/components/info/icons`: 信息图标
 
-### 外观组件
+### 外观组件 {#appearance-components}
 
 - `@theme-hope/components/appearance/AppearanceButton`: 外观按钮
 - `@theme-hope/components/appearance/AppearanceIcon`: 外观图标
@@ -196,12 +196,12 @@ export default {
 - `@theme-hope/components/appearance/ToggleFullScreen`: 全屏切换
 - `@theme-hope/components/appearance/ToggleFullScreenButton`: 全屏切换按钮
 
-### 过渡组件
+### 过渡组件 {#transition-components}
 
 - `@theme-hope/components/transition/DropTransition`: 下落过渡组件
   插槽: `default`
 
-### 博客组件
+### 博客组件 {#blog-components}
 
 - `@theme-hope/components/blog/ArticleItem`: 文章项目
 
@@ -295,7 +295,7 @@ export default {
 
 - `@theme-hope/components/blog/icons`: 博客图标
 
-### 加密组件
+### 加密组件 {#encryption-components}
 
 - `@theme-hope/modules/encrypt/components/GlobalEncrypt`: 全局加密
 
@@ -307,6 +307,6 @@ export default {
 
 - `@theme-hope/modules/encrypt/components/PasswordModal`: 密码输入
 
-### 其他别名
+### 其他别名 {#others}
 
 主题的可组合式 API，布局和工具函数也提供了别名。详见 [主题源代码](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/packages/theme/src/client/)。

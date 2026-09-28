@@ -19,7 +19,7 @@ icon: lightbulb
 
 :::
 
-## 自定义 LightGallery 选项
+## 自定义 LightGallery 选项 {#customize-options}
 
 你可以通过在[客户端配置文件][client-config]中导入和调用 `defineLightGalleryConfig` 来将选项传递给 [`lightgallery`](https://www.lightgalleryjs.com/)：
 
@@ -31,11 +31,11 @@ defineLightGalleryConfig({
 });
 ```
 
-## 操作延迟
+## 操作延迟 {#operation-delay}
 
 如果你的主题在页面切换时会添加动画，你可能需要延迟 lightgallery 重新查找页面图片的时间点。你可以通过 `delay` 选项来配置这一延迟，默认的值为 `800` (单位为毫秒)。
 
-## 演示
+## 演示 {#demo}
 
 <!-- markdownlint-disable -->
 

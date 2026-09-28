@@ -27,11 +27,11 @@ tag:
 
     它允许网站通过支持该特性的浏览器将网站作为 App 安装在对应平台上。
 
-## 快速启用 <Badge text="不推荐" type="warning" />
+## 快速启用 <Badge text="不推荐" type="warning" /> {#direct-enable}
 
 你可以在主题选项中设置 `plugins.pwa: true` 来让主题自动生成必要配置并快速启用插件。但我们推荐你按照下方说明对部分选项进行手动配置。
 
-## 网络 App 清单
+## 网络 App 清单 {#web-app-manifests}
 
 为了使你的网站符合 PWA 的要求，一个网络 App 清单[^manifest]文件是必要的，并且你的 PWA 应满足可安装性[^installable]要求。
 
@@ -69,21 +69,21 @@ tag:
 
 此外，此插件默认不处理清单中的任何内容，而是按原样输出。 这意味着，如果你计划部署到子目录，则应自行将 URL 前缀附加到自己的清单 Urls 中。如果你需要的所有东西都在 base 文件夹下，你可以在插件选项中设置 `plugins.pwa.appendBase: true` 让插件将 `base` 自动附加到任何地址。
 
-## 缓存控制
+## 缓存控制 {#cache-control}
 
 为了更好的控制 Service Worker 可以预缓存的内容，插件提供了相关的缓存控制选项。
 
-### 默认缓存
+### 默认缓存 {#default-cache}
 
 默认情况下插件会预缓存所有的 JS 和 CSS 文件，但仅缓存主页和 404 页面的 HTML。插件同时还会缓存字体文件 (woff, woff2, eot, ttf, otf) 和 SVG 图标。
 
-### 图片缓存
+### 图片缓存 {#image-cache}
 
 如果你的站点只有少量重要图片，并希望它们在离线模式下显示，你可以通过设置 `plugins.pwa.cacheImage` 选项为 `true` 来缓存站点图片。
 
 我们通过文件后缀名识别图片，任何以 `.png`, `.jpg`, `.jpeg`, `.gif`, `.bmp`, `.webp` 结尾的文件都会视为图片。
 
-### HTML 缓存
+### HTML 缓存 {#html-cache}
 
 当你网站体积不大，并且希望文档完全离线可用时，你可以通过设置 `plugins.pwa.cacheHTML` 为 `true` 来缓存所有 HTML 页面。
 
@@ -107,11 +107,11 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 
 :::
 
-### 大小控制
+### 大小控制 {#size-control}
 
 为了防止在预缓存列表中包含大文件，任何 > 2 MB 的文件或 > 1 MB 的图片都将被忽略。 你可以通过 `plugins.pwa.maxSize` 和 `plugins.pwa.maxImageSize` 来自定义大小限制 (单位为 KB)。
 
-## 更新控制
+## 更新控制 {#update-control}
 
 我们提供 `plugins.pwa.update` 选项控制用户如何接收更新。
 
@@ -123,7 +123,7 @@ VuePress 本质上是一个 SPA。这意味着你只需要缓存主页并从主�
 
 如果你希望通过 SW 来加速用户在弱网或无网条件下的访问，但同时希望用户时刻访问新内容，你可以将此选项设置为 `"force"`。这意味着检测到新 SW 后旧 SW 将会被立刻销毁并且页面会被刷新以确保用户浏览最新内容。最大的缺点就是致新 SW 发布后，用户在重新进入网站后的几秒内会遇到预期之外的突然刷新，并且他们将必须通过互联网访问文档并完全重新安装最新的 SW。
 
-### 更新提示弹窗
+### 更新提示弹窗 {#popups}
 
 当检测到新内容 (检测到新的 SW) 时，更新提示弹窗将会出现；当新内容就绪时，更新就绪弹窗将会出现。
 
@@ -157,11 +157,11 @@ import { PwaReadyPopup } from "@vuepress/plugin-pwa/client";
 </template>
 ```
 
-## 其他选项
+## 其他选项 {#other-options}
 
 插件还提供了其他 PWA 相关选项，比如微软磁贴图标与颜色设置，苹果图标等。 如果你是一个高级用户，你也可以设置 `plugins.pwa.generateSwConfig` 来配置 `workbox-build`。查看 [插件选项][pwa-config] 了解更多细节。
 
-## 相关阅读
+## 相关阅读 {#further-reading}
 
 更多内容，请详见:
 

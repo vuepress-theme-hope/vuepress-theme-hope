@@ -14,7 +14,7 @@ tag:
 
 <!-- more -->
 
-## 博客类型主页
+## 博客类型主页 {#blog-style-homepage}
 
 你需要在相应的页面的 frontmatter 中，设置 `home: true` 和 `layout: Blog` 来使用博客主页。
 

@@ -6,7 +6,7 @@ category:
   - FAQ
 ---
 
-## 确认使用正确的环境
+## 确认使用正确的环境 {#ensure-running-under-correct-environment}
 
 `vuepress-theme-hope` 仅支持当前的环境：
 
@@ -25,7 +25,7 @@ category:
 - yarn: `corepack use yarn@4`
 - pnpm: `corepack use pnpm@10`
 
-## 检查浏览器是否受支持
+## 检查浏览器是否受支持 {#check-it-the-browser-is-supported}
 
 `vuepress-theme-hope` 官方承诺：
 
@@ -39,7 +39,7 @@ category:
 - Firefox >= 78 (发布于 2020.06.30)
 - Safari >= 14.1 (发布于 2021.04.26)
 
-## 确定使用最新版本与正确的依赖树
+## 确定使用最新版本与正确的依赖树 {#ensure-using-latest-vuepress-and-its-plugins-with-a-correct-deps-tree}
 
 请确保你在使用最新的 VuePress V2 ，VuePress V2 插件以及 `vuepress-theme-hope` V2 版本，因为一些你遇到的 bug 可能已经在新版本中修复。
 
@@ -71,6 +71,6 @@ npx vp-update
 
 :::
 
-## 确认配置正确
+## 确认配置正确 {#ensure-having-correct-config}
 
 请确认你的配置文件没有出现错误 (如红色波浪线)，如果有，请根据提示修改配置文件直至你正确配置了 VuePress 与主题。

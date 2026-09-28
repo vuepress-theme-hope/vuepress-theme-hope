@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 ```ts twoslash {5} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -24,7 +24,7 @@ export default hopeTheme({
 });
 ```
 
-## 语法
+## 语法 {#syntax}
 
 使用 `<!-- @include: filename -->` 导入文件。
 
@@ -313,7 +313,7 @@ int main() {
 
 ::::
 
-## 演示
+## 演示 {#demo}
 
 `<!-- @include: ./demo.snippet.md -->`:
 
@@ -327,7 +327,7 @@ int main() {
 
 <!-- @include: ./demo.snippet.md#snippet -->
 
-## 高级用法
+## 高级用法 {#advanced}
 
 你还可以设置一个对象来自定义包含文件路径和包含行为。
 

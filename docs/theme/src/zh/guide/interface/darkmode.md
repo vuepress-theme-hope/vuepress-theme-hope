@@ -46,7 +46,7 @@ export default hopeTheme({
 
 :::
 
-## 获取状态
+## 获取状态 {#getting-status}
 
 - 在 Markdown 文件或 Vue 模板中，你可以直接获取 `$isDarkMode` 来获取当前是否为深色模式。
 

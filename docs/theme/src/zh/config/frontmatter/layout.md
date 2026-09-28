@@ -37,31 +37,31 @@ tag:
 
 是否开启路径导航。
 
-参考：[布局 → 页面](../../guide/layout/page.md#路径导航)。
+参考：[布局 → 页面](../../guide/layout/page.md#breadcrumb)。
 
 @`breadcrumbIcon` type=boolean default="主题选项中的值"
 
 是否在路径导航中显示图标。
 
-参考：[布局 → 页面](../../guide/layout/page.md#路径导航)。
+参考：[布局 → 页面](../../guide/layout/page.md#breadcrumb)。
 
 @`breadcrumbExclude` type=boolean
 
 当前页面是否被路径导航排除。
 
-参考：[布局 → 页面](../../guide/layout/page.md#路径导航)。
+参考：[布局 → 页面](../../guide/layout/page.md#breadcrumb)。
 
 @`navbar` type=boolean
 
 填入 `false` 会禁用导航栏。
 
-参考：[布局 → 导航栏](../../guide/layout/navbar.md#禁用导航栏)。
+参考：[布局 → 导航栏](../../guide/layout/navbar.md#disabling-navbar)。
 
 @`sidebar` type=`false | SidebarArrayOptions`
 
 填入 `false` 会禁用侧边栏，设置为空数组 `[]` 会只渲染侧边栏的插槽内容。
 
-参考：[布局 → 侧边栏](../../guide/layout/sidebar.md#禁用侧边栏)。
+参考：[布局 → 侧边栏](../../guide/layout/sidebar.md#disabling-sidebar)。
 
 @`index` type=boolean default=`true`
 

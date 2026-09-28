@@ -28,13 +28,13 @@ tag:
 
 <!-- more -->
 
-## 内置增强
+## 内置增强 {#built-in-enhancements}
 
 VuePress 自带的 GitHub 风格的表格，Emoji、TOC 都是开箱即用的。
 
 详细语法详见 [内置 Markdown 扩展](../../cookbook/vuepress/markdown.md)。
 
-## 启用 Markdown 增强
+## 启用 Markdown 增强 {#enable-markdown-enhancement}
 
 你可以通过主题选项中的 `markdown` 选项来控制 Markdown 语法与功能。
 

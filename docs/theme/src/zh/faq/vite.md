@@ -6,11 +6,11 @@ category:
   - FAQ
 ---
 
-## 运行错误
+## 运行错误 {#running-error}
 
 Vite 默认情况下仅支持“现代浏览器”，详见 [Vite 支持](https://vite.dev/guide/build.html#browser-compatibility)。
 
-## Vite 冷启动速度慢
+## Vite 冷启动速度慢 {#slow-in-a-cold-boot-with-vite}
 
 这是预期的行为，而且请注意开发服务器冷启动慢**不代表**构建结果部署到线上性能不佳。
 
@@ -50,7 +50,7 @@ Vite 默认情况下仅支持“现代浏览器”，详见 [Vite 支持](https:
 
 :::
 
-## `@import` 语法无效
+## `@import` 语法无效 {#import-in-css-does-not-work}
 
 在 VuePress2 中，你在 `index.scss` 中通过 `@import` 导入网络 CSS 是无效的。你可能需要在 VuePress 配置的 `head` 选项中手动导入它们。
 

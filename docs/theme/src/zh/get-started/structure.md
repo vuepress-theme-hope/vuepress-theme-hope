@@ -14,7 +14,7 @@ tag:
 
 <!-- more -->
 
-## VuePress 项目结构
+## VuePress 项目结构 {#vuepress-project-structure}
 
 VuePress 只控制 VuePress 项目文件夹中的文件，也就是默认模板生成的 `src` 文件夹，项目下的其他文件不受 VuePress 控制。
 

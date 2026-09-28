@@ -14,7 +14,7 @@ tag:
 
 <!-- more -->
 
-## 常用命令
+## 常用命令 {#common-commands}
 
 - `vuepress dev <dir>`: 启动本地开发服务器，用于实时预览文档修改。
 - `vuepress build <dir>`: 将 VuePress 站点构建为用于部署的静态文件。
@@ -63,7 +63,7 @@ tag:
 如需停止开发服务器，请点击终端窗口并按下 `Ctrl + C`。
 :::
 
-## 更新版本
+## 更新版本 {#update-version}
 
 执行以下命令即可一键升级你的主题和 VuePress 版本：
 

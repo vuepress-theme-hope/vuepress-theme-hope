@@ -10,13 +10,13 @@ tag:
   - 图标
 ---
 
-## 介绍
+## 介绍 {#intro}
 
 主题通过 `@vuepress/plugin-icon` 提供图标功能。使用说明请参阅 [图标介绍](../../guide/interface/icon.md)。
 
 此插件可以通过将 `plugins.icon` 设置为 `false` 禁用。
 
-## 选项
+## 选项 {#options}
 
 ::: fields
 @`plugins.icon.assets` type=`IconAsset`

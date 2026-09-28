@@ -10,13 +10,13 @@ tag:
   - Feed
 ---
 
-## 介绍
+## 介绍 {#intro}
 
 主题可通过 `@vuepress/plugin-feed` 生成 Feed，你需要**手动安装插件**。
 
 你可以在主题选项中设置 `plugins.feed: true` 来启用此功能。默认行为是生成 RSS 格式的 Feed。
 
-## 插件选项
+## 插件选项 {#plugin-options}
 
 主题将主题选项中的 `plugins.feed` 作为插件选项传递给 `@vuepress/plugin-feed`。
 

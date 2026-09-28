@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 在你的项目中安装 [flowchart.ts](http://flowchart.js.org/):
 
@@ -50,7 +50,7 @@ export default hopeTheme({
 });
 ```
 
-## 语法
+## 语法 {#syntax}
 
 ````md
 <!-- ↓ :preset 是可选的 -->
@@ -68,11 +68,11 @@ export default hopeTheme({
 - `ant`
 - `pie`
 
-## 在此尝试
+## 在此尝试 {#playground}
 
 <FlowChartPlayground />
 
-## 演示
+## 演示 {#demo}
 
 ::: preview Vue 主题
 
@@ -137,9 +137,9 @@ c2(no)->op2->e
 
 :::
 
-## 流程图介绍
+## 流程图介绍 {#flowchart-intro}
 
-### 节点类型
+### 节点类型 {#node-types}
 
 定义了结点形状
 
@@ -240,7 +240,7 @@ para(path2)->e
 
 :::
 
-### 链接
+### 链接 {#connections}
 
 连接方式在流程图中节点定义后描述，使用 `->` 指定一个节点之间的链接，例如 `nodeVar1->nodeVar2->nodeVar3`
 
@@ -257,7 +257,7 @@ nodeVar2->nodeVar3
 
 在 `[]` 中的项是可选的。
 
-### 方向
+### 方向 {#directions}
 
 以下方向可用，并定义了连接将从节点离开的方向。如果指定符不止一个，则总是最后一个。所有节点都有默认方向，这使其成为可选规范。`<direction>` 的可选值为:
 
@@ -266,7 +266,7 @@ nodeVar2->nodeVar3
 - `top`
 - `bottom`
 
-### 节点特定说明符
+### 节点特定说明符 {#node-specific-specifiers-by-type}
 
 每个节点变量都有可选的说明符，例如方向，有些变量有特殊的说明符，具体取决于下面定义的节点类型。在 `()` 中的变量名后添加说明符，并用`,` 分隔，例如 `nodeVar (spec1，spec2)`。
 
@@ -308,7 +308,7 @@ nodeVar2->nodeVar3
   parallelVar(path3, <direction>)->nextNode3
   ```
 
-### 网址
+### 网址 {#links}
 
 可以使用 `:>` 运算符将外部链接添加到节点。
 
@@ -319,7 +319,7 @@ st=>start: Start:>http://www.google.com[blank]
 e=>end: End:>http://www.yahoo.com
 ```
 
-### 建议
+### 建议 {#advice}
 
 文本中可能不应该使用的符号: `=>`、`->`、 `:>`、`|`、`@>` 和 `:$`
 

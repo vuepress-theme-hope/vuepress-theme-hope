@@ -7,7 +7,7 @@ icon: code
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 ::
 
@@ -52,7 +52,7 @@ export default {
 
 <!-- #region after -->
 
-## 使用
+## 使用 {#usage}
 
 你应该通过插件选项中的 `playground.presets` 添加预设。
 
@@ -66,11 +66,11 @@ export default {
 
 你可以查看以下演示以查看更多详细信息。
 
-## 可用预设
+## 可用预设 {#available-presets}
 
 目前，我们支持 `ts`、`vue`和 `unocss` 预设，我们期待更多来自 PR 的预设。
 
-如果你想添加自己的交互演示，可以在 [高级用法](#高级用法) 中添加你自己的预设。同时我们欢迎为你的精彩预设创建 PR。
+如果你想添加自己的交互演示，可以在 [高级用法](#advanced) 中添加你自己的预设。同时我们欢迎为你的精彩预设创建 PR。
 
 ::: info TS 预设
 
@@ -104,7 +104,7 @@ UnoCSS 预设默认使用[官方 playground](https://unocss.dev/play)，可通�
 在配置中，可以通过 `playground.config.unocss` 中的 `service` 选项使用官方交互演示之外的其他服务，以防你想部署自己的交互演示站点
 :::
 
-## 案例
+## 案例 {#demo}
 
 :::: preview TS
 
@@ -253,7 +253,7 @@ export default defineConfig({
 
 ::::
 
-## 高级用法
+## 高级用法 {#advanced}
 
 你可以提供自己的预设。
 

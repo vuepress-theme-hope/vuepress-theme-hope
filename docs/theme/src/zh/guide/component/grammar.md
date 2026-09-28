@@ -13,7 +13,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 ```ts twoslash {5} title=".vuepress/theme.ts"
 import { defineUserConfig } from "vuepress";
@@ -28,7 +28,7 @@ export default hopeTheme({
 });
 ```
 
-## 使用
+## 使用 {#usage}
 
 你可以使用 component 代码块来在 Markdown 中添加组件。YAML 和 JSON 的数据格式均受支持:
 
@@ -50,7 +50,7 @@ export default hopeTheme({
   ```
   ````
 
-## 案例
+## 案例 {#demo}
 
 ::: preview 快速使用 VPCard 组件
 

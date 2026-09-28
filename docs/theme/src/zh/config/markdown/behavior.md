@@ -58,13 +58,13 @@ tag:
 
 是否将独立的 `<img>` 转换为 `<figure>`。
 
-参考：[Markdown → 图片展示](../../guide/markdown/grammar/image.md#图片展示) 与 [@vuepress/plugin-markdown-image → figure][figure]。
+参考：[Markdown → 图片展示](../../guide/markdown/grammar/image.md#figure) 与 [@vuepress/plugin-markdown-image → figure][figure]。
 
 @`markdown.imgLazyload` type=boolean
 
 是否启用图片懒加载。
 
-参考：[Markdown → 图片懒加载](../../guide/markdown/grammar/image.md#图片懒加载) 与 [@vuepress/plugin-markdown-image → lazyload][lazyload]。
+参考：[Markdown → 图片懒加载](../../guide/markdown/grammar/image.md#image-lazyload) 与 [@vuepress/plugin-markdown-image → lazyload][lazyload]。
 
 @`markdown.highlighter` type=`MarkdownHighlighterOptions | "prismjs" | "shiki" | false` default=`"shiki"`
 
@@ -88,7 +88,7 @@ type MarkdownHighlighterOptions =
 
 是否启用 `@vuepress/plugin-links-check` 插件，提供 Markdown 链接检查。你可以手动设置一个布尔值来控制插件状态，或提供插件选项。
 
-参考：[Markdown → 链接检查](../../guide/markdown/others.md#链接检查) 与 [@vuepress/plugin-links-check][links-check]。
+参考：[Markdown → 链接检查](../../guide/markdown/others.md#link-check) 与 [@vuepress/plugin-links-check][links-check]。
 
 ::::
 

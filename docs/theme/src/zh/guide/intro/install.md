@@ -10,13 +10,13 @@ tag:
   - 使用
 ---
 
-## 要求
+## 要求 {#requirement}
 
 - 环境: LTS 版本 的 Node.js (^20.19.0, ^22.0.0)
 - 包管理器: npm >= 8、yarn >= 2 或 pnpm >= 7
 - 使用 Vue3 的 VuePress2 项目
 
-## 安装
+## 安装 {#install}
 
 在 `<dir>` 文件夹内新建 vuepress-theme-hope 项目:
 
@@ -72,7 +72,7 @@ npm init vuepress-theme-hope@latest add <dir>
 
 :::
 
-## 使用与配置
+## 使用与配置 {#usage-and-configuration}
 
 请在配置文件中导入并使用 `hopeTheme` 以使用 `vuepress-theme-hope`，`hopeTheme` 接受的第一个参数会作为主题配置：
 

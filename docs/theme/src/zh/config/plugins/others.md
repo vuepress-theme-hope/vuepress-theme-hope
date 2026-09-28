@@ -9,7 +9,7 @@ tag:
   - 主题配置
 ---
 
-## 选项
+## 选项 {#options}
 
 :::: fields
 @`backToTop` enabled-by-default=Yes

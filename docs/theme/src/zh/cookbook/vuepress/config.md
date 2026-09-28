@@ -10,7 +10,7 @@ tag:
   - VuePress
 ---
 
-## 配置文件
+## 配置文件 {#config-file}
 
 如果没有任何配置，你的 VuePress 站点仅有一些最基础的功能。为了更好地自定义你的网站，让我们首先在你的文档目录下创建一个 `.vuepress` 目录，所有 VuePress 相关的文件都将会被放在这里。你的项目结构可能是这样:
 
@@ -51,15 +51,15 @@ export default defineUserConfig({
 
 :::
 
-## 配置作用域
+## 配置作用域 {#config-scopes}
 
-### 站点配置
+### 站点配置 {#site-config}
 
 站点配置的意思是，无论你使用什么主题，这些配置项都可以生效。
 
 我们知道，每一个站点都应该有它的 `lang`, `title` 和 `description` 等属性，因此 VuePress 内置支持了这些属性的配置。
 
-### 主题配置
+### 主题配置 {#theme-config}
 
 主题配置将会被 VuePress 主题来处理，所以它取决于你使用的主题是什么。
 
@@ -71,7 +71,7 @@ export default defineUserConfig({
 
 :::
 
-## 客户端配置文件
+## 客户端配置文件 {#client-config-file}
 
 在大多数情况下，配置文件已经足够帮助你配置好你的 VuePress 站点。不过，有些时候用户们可能希望直接添加一些客户端代码。 VuePress 通过客户端配置文件来支持这种需求：
 

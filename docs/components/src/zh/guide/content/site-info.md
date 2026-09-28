@@ -6,7 +6,7 @@ title: SiteInfo
 
 <!-- more -->
 
-## 示例
+## 示例 {#demo}
 
 <!-- #region demo -->
 

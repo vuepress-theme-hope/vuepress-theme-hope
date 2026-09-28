@@ -18,7 +18,7 @@ tag:
 
 <!-- more -->
 
-## 启用 <Badge text="支持页面配置" />
+## 启用 <Badge text="支持页面配置" /> {#enable}
 
 ```ts twoslash {7,10} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -44,7 +44,7 @@ export default hopeTheme({
 
 :::
 
-## 评论服务
+## 评论服务 {#comment-provider}
 
 目前可以从 Giscus、Waline、Twikoo 和 Artalk 中选择。
 
@@ -61,14 +61,14 @@ Giscus 是一个基于 GitHub Discussion 的评论系统，启用简便。
 
 <!-- more -->
 
-### 准备工作
+### 准备工作 {#preparation}
 
 1. 你需要创建一个公开仓库，并开启评论区，以作为评论存放的地点
 1. 你需要安装 [Giscus App](https://github.com/apps/giscus)，使其有权限访问对应仓库。
 
 在完成以上步骤后，请前往 [Giscus 页面](https://giscus.app/zh-CN) 获得你的设置。你只需要填写仓库和 Discussion 分类，之后滚动到页面下部的 “启用 giscus” 部分，复制 `data-repo`, `data-repo-id`, `data-category` 和 `data-category-id` 四项，因为它们是必须的。
 
-### 配置
+### 配置 {#config}
 
 请将 `data-repo`, `data-repo-id`, `data-category` 和 `data-category-id` 作为插件选项传入 `repo`, `repoId`, `category` `categoryId`。
 
@@ -98,7 +98,7 @@ npm i -D @waline/client
 
 :::
 
-### 获取 APP ID 和 APP Key
+### 获取 APP ID 和 APP Key {#get-app-id-and-app-key}
 
 请先 [登录](https://console.leancloud.app/login) 或 [注册](https://console.leancloud.app/register) `LeanCloud 国际版`, 进入 [控制台](https://console.leancloud.app/applist.html#/apps) 后点击左下角 [创建应用](https://console.leancloud.app/applist.html#/newapp)。创建应用后进入该应用，选择左下角的 `设置` > `应用Key`，然后记下 `APP ID`,`APP Key` 和 `Master Key`。
 
@@ -202,11 +202,11 @@ npm i -D artalk
 
 :::
 
-### 部署 Artalk 服务端
+### 部署 Artalk 服务端 {#deploy-artalk-server}
 
 请参见 [Artalk 文档](https://artalk.js.org/guide/deploy.html)。
 
-### Artalk 配置
+### Artalk 配置 {#artalk-configuration}
 
 请配置 `provider: "Artalk"` 并将你的服务端地址传入插件选项中的 `server`。
 

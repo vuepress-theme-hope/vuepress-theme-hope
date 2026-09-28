@@ -9,7 +9,7 @@ category:
 
 <!-- more -->
 
-## 克隆并安装项目
+## 克隆并安装项目 {#clone-and-install-project}
 
 你应该预先安装 Node.js 和 Git，并使用 `corepack enable` 启用 corepack。
 
@@ -20,7 +20,7 @@ git clone git@github.com:vuepress-theme-hope/vuepress-theme-hope.git
 pnpm i
 ```
 
-## 项目文件结构
+## 项目文件结构 {#project-file-structure}
 
 本项目是一个 monorepo，使用 pnpm 管理。
 
@@ -62,7 +62,7 @@ pnpm i
 └── tsconfig.* → TypeScript 配置文件
 ```
 
-## 文档修改
+## 文档修改 {#document-modification}
 
 你可以直接在 docs 文件夹内找到对应项目，并修改对应的 Markdown。
 
@@ -76,7 +76,7 @@ pnpm i
 
 :::
 
-## 项目修改
+## 项目修改 {#project-modification}
 
 每个项目的结构都大致如下:
 
@@ -105,7 +105,7 @@ VuePress 同时运行在客户端和 Node 端。 Node 侧有像 `fs` 这样的 n
 
 为了更好的性能，所有插件在发布时都会使用 tsdown 进行打包并压缩。
 
-## 项目的运行与开发
+## 项目的运行与开发 {#project-development}
 
 1. 构建项目: `pnpm build`
    使用 `tsdown` 将源代码打包并压缩至 `dist` 目录，静态资源也会在构建过程中自动拷贝到该目录。
@@ -124,7 +124,7 @@ VuePress 同时运行在客户端和 Node 端。 Node 侧有像 `fs` 这样的 n
    如果你修改了 Markdown 文件，还需要运行 `pnpm lint:md` 命令。
    :::
 
-## 提交
+## 提交 {#commit}
 
 项目使用 `husky` 添加了额外的 Git Hooks 进行验证:
 

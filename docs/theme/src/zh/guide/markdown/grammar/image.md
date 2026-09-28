@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 ```ts twoslash {6,8,10,12} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -31,11 +31,11 @@ export default hopeTheme({
 });
 ```
 
-## 图片懒加载
+## 图片懒加载 {#image-lazyload}
 
 此功能通过原生 HTML5 启用图片的延迟加载，因此仅在 [支持 loading=lazy 属性](https://caniuse.com/loading-lazy-attr) 的浏览器生效。
 
-## 图片 ID 标记
+## 图片 ID 标记 {#image-mark}
 
 此功能允许你通过 `#light` 和 `#dark` 标记图片，使得图片只在特定的模式显示。
 
@@ -48,7 +48,7 @@ export default hopeTheme({
 
 :::
 
-### 高级用法
+### 高级用法 {#advanced}
 
 你可以将对象传递给 `markdown.imgMark` 以配置 ID 标记：
 
@@ -67,7 +67,7 @@ export default hopeTheme({
 });
 ```
 
-## 图片尺寸
+## 图片尺寸 {#image-size}
 
 当你在插件选项中设置 `imgSize: true` 时，你可以在图片替代文字后面添加 `=widthxheight`，并用空格分隔。
 
@@ -87,7 +87,7 @@ export default hopeTheme({
 <img src="/example.bmp" alt="替代文字" height="300" />
 ```
 
-### Obsidian 语法
+### Obsidian 语法 {#obsidian-syntax}
 
 当你在主题选项中设置 `markdown.obsidianImgSize: true` 时，你可以在图片替代文字后面添加 `widthxheight`，并用 `|` 分隔。
 
@@ -114,7 +114,7 @@ export default hopeTheme({
 
 :::
 
-### 旧语法 (已废弃)
+### 旧语法 (已废弃) {#legacy-syntax-deprecated}
 
 ::: warning 这种语法可能会在 GitHub 等平台上导致渲染问题。
 
@@ -138,7 +138,7 @@ export default hopeTheme({
 <img src="/example.bmp" alt="替代文字" height="300" />
 ```
 
-## 图片展示
+## 图片展示 {#figure}
 
 有时，你可能希望为图像添加描述，并将其单独展示在上下文中，在这种情况下，你应该启用此功能将图片渲染为 `<figure>`。
 

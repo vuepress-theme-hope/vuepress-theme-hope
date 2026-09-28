@@ -3,7 +3,7 @@ title: Vue 代码演示
 icon: fa7-brands:vuejs
 ---
 
-## 格式
+## 格式 {#syntax}
 
 <!-- #region syntax -->
 
@@ -42,7 +42,7 @@ export default {
 
 :::
 
-## 演示
+## 演示 {#demo}
 
 <!-- #region demo -->
 

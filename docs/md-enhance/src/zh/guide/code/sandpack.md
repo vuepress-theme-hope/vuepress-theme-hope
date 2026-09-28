@@ -15,7 +15,7 @@ icon: code
 
 :::
 
-## 配置
+## 配置 {#settings}
 
 在你的项目中安装 `sandpack-vue3`:
 
@@ -60,7 +60,7 @@ export default {
 
 <!-- #region after -->
 
-## 使用
+## 使用 {#usage}
 
 要使用交互演示，你应该使用一个名为 `sandpack#template` 的容器。
 
@@ -82,7 +82,7 @@ defineSandpackConfig({
 });
 ```
 
-## 示例
+## 示例 {#demo}
 
 :::: preview Vue 示例
 

@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 ```ts twoslash {5} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -24,7 +24,7 @@ export default hopeTheme({
 });
 ```
 
-## 用法
+## 用法 {#usage}
 
 你需要将选项卡包装在 `tabs` 容器中。
 
@@ -86,7 +86,7 @@ export default hopeTheme({
 
 你可以在每个选项卡中使用 Vue 语法和组件，并且你可以访问 `value` 和 `isActive`，表示选项卡的绑定值和选项卡是否处于激活状态。
 
-### 同步切换并保持选择
+### 同步切换并保持选择 {#switching-together-and-persisting-choice}
 
 如果你想让一些选项卡组一起切换，你可以使用相同的选项卡 ID 来绑定它们。针对每个选项卡 ID 的选择会被存储并进行持久化。
 
@@ -129,7 +129,7 @@ pnpm add -D vuepress
 
 ::::
 
-## 案例
+## 案例 {#demo}
 
 :::: preview 案例
 

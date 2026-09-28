@@ -6,7 +6,7 @@ Banner 组件，用于展示 banner。
 
 <!-- more -->
 
-## 案例
+## 案例 {#demo}
 
 <!-- #region demo -->
 

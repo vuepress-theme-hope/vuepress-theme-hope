@@ -17,7 +17,7 @@ tag:
 ![Article list](./assets/article-list-light.png#light)
 ![Article list](./assets/article-list-dark.png#dark)
 
-## 文章配置
+## 文章配置 {#article-configuration}
 
 默认情况下，所有 Markdown 文件都会被添加至文章列表。
 
@@ -28,15 +28,15 @@ tag:
 若需精确控制置顶文章的排序权重，可为 `sticky` 赋予数字（例如 `sticky: 2`）。数值越大的文章越靠前。
 :::
 
-## 摘要 (Excerpt)
+## 摘要 (Excerpt) {#excerpts}
 
-### 添加摘要
+### 添加摘要 {#defining-excerpts}
 
 在 Markdown 文件中使用 `<!-- more -->` 注释可以标记摘要。该标记前的所有内容会被提取为文章摘要。
 
 如果需要覆盖默认提取的内容，可以通过 Frontmatter 中的 `excerpt` 选项直接传入一段 HTML 字符串作为摘要。
 
-### 摘要提取
+### 摘要提取 {#auto-generation}
 
 主题默认会自动提取文章摘要。
 
@@ -52,7 +52,7 @@ tag:
 
 :::
 
-## 星标文章 (Star)
+## 星标文章 (Star) {#star-articles}
 
 在 Frontmatter 中设置 `star: true` 可将文章标记为星标（精选文章）。星标文章将被汇总在 `/star/` 路由下，并会在博客主页侧边栏中高亮展示。
 
@@ -60,7 +60,7 @@ tag:
 为 `star` 赋予数字（例如 `star: 5`）可控制星标文章的展示顺序。数值越大的文章越靠前。
 :::
 
-## 自定义文章类型 <Badge text="Advanced" type="info" />
+## 自定义文章类型 <Badge text="Advanced" type="info" /> {#custom-article-types}
 
 通过主题选项中的 `plugins.blog.type` 数组，你可以定义额外的文章分类列表。
 

@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 ```ts twoslash {5} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -24,7 +24,7 @@ export default hopeTheme({
 });
 ```
 
-## 语法
+## 语法 {#syntax}
 
 ```md
 ::: left
@@ -68,7 +68,7 @@ export default hopeTheme({
 
 :::::
 
-## 演示
+## 演示 {#demo}
 
 ::::: preview
 

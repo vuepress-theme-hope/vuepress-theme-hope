@@ -11,9 +11,9 @@ tag:
 
 为了满足不同用户的需求，主题提供了一些预设，你可以在 `vuepress-theme-hope/presets` 下获取它们并自行导入。
 
-## 组件相关
+## 组件相关 {#component-related}
 
-### 必应壁纸
+### 必应壁纸 {#bing-wallpapers}
 
 将博客主页的背景替换为每日的必应壁纸。
 
@@ -54,7 +54,7 @@ export default defineClientConfig({
 
 :::
 
-### 一言描述
+### 一言描述 {#hitokoto-description}
 
 将博客主页的描述替换为随机的一言词句。
 
@@ -99,9 +99,9 @@ export default defineClientConfig({
 
 :::
 
-## 组合式 API 相关
+## 组合式 API 相关 {#composable-related}
 
-### 透明导航栏
+### 透明导航栏 {#transparent-navbar}
 
 让导航栏在特定页面中，位于页面顶部时透明。
 
@@ -146,7 +146,7 @@ export default defineClientConfig({
 
 :::
 
-### 运行时间
+### 运行时间 {#running-time}
 
 在页脚显示站点运行时间。
 
@@ -196,7 +196,7 @@ export default defineClientConfig({
 
 :::
 
-### 下雪效果
+### 下雪效果 {#snowfall}
 
 为站点添加下雪效果。
 
@@ -252,9 +252,9 @@ export default defineClientConfig({
 
 :::
 
-## 配置相关
+## 配置相关 {#config-related}
 
-### 自定义博客类型
+### 自定义博客类型 {#custom-blog-types}
 
 - 最近更新:
 
@@ -359,27 +359,27 @@ export default defineClientConfig({
 
   :::
 
-## 样式相关
+## 样式相关 {#style-related}
 
-你可以创建 [客户端配置文件](../../cookbook/vuepress/config.md#客户端配置文件) `.vuepress/client.{ts,js}`，并通过 `import` 语句导入下方文件。
+你可以创建 [客户端配置文件](../../cookbook/vuepress/config.md#client-config-file) `.vuepress/client.{ts,js}`，并通过 `import` 语句导入下方文件。
 
-### 文档
+### 文档 {#docs}
 
 - `"vuepress-theme-hope/presets/shinning-feature-panel.scss"`: 为项目主页的特性添加闪光效果。
 
-### 博客
+### 博客 {#blog}
 
 - `"vuepress-theme-hope/presets/left-blog-info.scss"`: 将博主信息移动至文章列表的左侧。
 - `"vuepress-theme-hope/presets/round-blogger-avatar.scss"`: 将博主头像裁剪为圆形。
 - `"vuepress-theme-hope/presets/squircle-blogger-avatar.scss"`: 将博主头像裁剪为圆角矩形。
 
-### 其他
+### 其他 {#others}
 
 - `"vuepress-theme-hope/presets/bounce-icon.scss"`: 为页面图标添加鼠标悬停的跳动效果。
 - `"vuepress-theme-hope/presets/hide-navbar-icon.scss"`: 隐藏导航栏图标。
 - `"vuepress-theme-hope/presets/hide-sidebar-icon.scss"`: 隐藏侧边栏图标。
 - `"vuepress-theme-hope/presets/hr-driving-car.scss"`: 为所有 hr 元素添加驾驶的车图标
 
-## 更多
+## 更多 {#more}
 
 如果你在 VuePress Theme Hope 的基础上，做了很棒的自定义，你可以将它们抽离成预设并给我们发送 PR。

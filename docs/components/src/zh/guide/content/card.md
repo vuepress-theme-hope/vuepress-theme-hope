@@ -6,7 +6,7 @@ title: VPCard
 
 <!-- more -->
 
-## 案例
+## 案例 {#demo}
 
 <!-- #region demo -->
 
@@ -59,7 +59,7 @@ title: VPCard
 
 :::
 
-## 容器
+## 容器 {#container}
 
 如果你想要在一个响应式容器中放置多个卡片，你可以将它们包裹在一个 `div` 中，并添加 `vp-card-container` 类:
 

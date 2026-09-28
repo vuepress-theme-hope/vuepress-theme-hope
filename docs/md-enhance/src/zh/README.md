@@ -54,7 +54,7 @@ footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VueP
 copyright: false
 ---
 
-## 安装
+## 安装 {#install}
 
 ::: code-tabs#shell
 
@@ -78,7 +78,7 @@ npm i -D vuepress-plugin-md-enhance
 
 :::
 
-## 使用
+## 使用 {#usage}
 
 ::: code-tabs#language
 
@@ -112,6 +112,6 @@ export default {
 
 :::
 
-## 从 V1 迁移
+## 从 V1 迁移 {#migrating-from-v1}
 
 详见 [迁移指南](./migration.md)。

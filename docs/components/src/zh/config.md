@@ -38,7 +38,7 @@ icon: gears
 
 分享服务。
 
-参考：[指南 → Share → 设置组件](./guide/utilities/share.md#设置组件)。
+参考：[指南 → Share → 设置组件](./guide/utilities/share.md#setting-component)。
 
 @@@`componentsOptions.share.twitterUserName` type=string
 

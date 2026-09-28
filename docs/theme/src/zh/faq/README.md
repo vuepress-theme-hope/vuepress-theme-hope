@@ -10,7 +10,7 @@ category:
 
 <!-- more -->
 
-## 目录
+## 目录 {#contents}
 
 - [常见问题](common-question.md)
 
@@ -20,11 +20,11 @@ category:
 
 - [Vite 相关问题](vite.md)
 
-## 联系我们
+## 联系我们 {#contact-us}
 
 在联系我们之前，请确保按照 [故障排查](troubleshooting.md) 部分进行了检查。
 
-### 汇报问题
+### 汇报问题 {#report-a-problem}
 
 如果你确定某处存在问题，请在 GitHub 上 [新建 issue](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/new/choose) 并指出问题的具体细节。
 
@@ -32,7 +32,7 @@ category:
 
 [^minimal-reproduction-repo]: 最小复现 Repo 的基本思想是使用最少的代码和配置来触发丢失或错误的行为。最小复现 Repo 使开发人员更容易查看错误或缺失功能的位置，并验证新代码是否满足要求。
 
-## 获得帮助
+## 获得帮助 {#getting-help}
 
 ::: warning 仅限仓库内主题与插件
 
@@ -63,7 +63,7 @@ category:
 
      Mr.Hope 很忙，不想“成为文档提供者”，也不太有时间“教你如何编写代码”。
 
-### 社交群组
+### 社交群组 {#social-group}
 
 - [官方 QQ 群](https://jq.qq.com/?_wv=1027&k=rATJyxGK)（群号：1003437555）
 

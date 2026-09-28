@@ -15,7 +15,7 @@ tag:
 
 如果你不需要这个插件，请在主题选项中设置 `plugins.sitemap: false`。
 
-## 控制 Sitemap 链接
+## 控制 Sitemap 链接 {#control-sitemap-link}
 
 默认情况下，所有除 404 页面以外的网站链接均会被添加进 Sitemap。
 
@@ -25,7 +25,7 @@ tag:
 
 你还可以通过 `sitemapFilename` 选项控制输出的地址，默认为输出目录下的 `sitemap.xml`。
 
-## 更新周期
+## 更新周期 {#change-frequency}
 
 页面默认的更新周期是 `daily` (每天)，如果你希望修改全部的页面周期，请设置 `changefreq` 。你也可以在页面的 frontmatter 中设置 `sitemap.changefreq`，页面具有更高的优先级。
 

@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 在你的项目中安装 [ECharts](https://echarts.apache.org/zh/index.html):
 
@@ -50,9 +50,9 @@ export default hopeTheme({
 });
 ```
 
-## 格式
+## 格式 {#syntax}
 
-### 使用 JSON
+### 使用 JSON {#with-json}
 
 如果你可以很轻松的生成数据，你可以直接通过一个 JSON 代码块来提供 ECharts 配置:
 
@@ -68,7 +68,7 @@ export default hopeTheme({
 :::
 ````
 
-### 使用脚本
+### 使用脚本 {#with-scripts}
 
 你应该尽可能使用 `json` 代码块来提供你的 ECharts 配置，但如果需要动态生成数据，你也可以使用脚本块。
 
@@ -98,7 +98,7 @@ const option = {
 
 :::
 
-## 高级
+## 高级 {#advanced}
 
 你可以在[客户端配置文件][client-config]中导入并使用 `defineEChartsConfig` 来自定义 ECharts:
 
@@ -116,11 +116,11 @@ defineEChartsConfig({
 });
 ```
 
-## 文档
+## 文档 {#docs}
 
 相关详情，详见 [ECharts 文档](https://echarts.apache.org/handbook/zh/get-started/).
 
-## 案例
+## 案例 {#demo}
 
 :::: preview 线图
 

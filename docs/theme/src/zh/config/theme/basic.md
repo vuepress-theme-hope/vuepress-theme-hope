@@ -15,7 +15,7 @@ tag:
 
 :::
 
-## 选项
+## 选项 {#options}
 
 :::: fields
 @`hostname` type=string required root-only=Yes
@@ -32,7 +32,7 @@ tag:
 
 文章显示的默认作者。
 
-参考：[功能 → 页面信息](../../guide/feature/page-info.md#作者)。
+参考：[功能 → 页面信息](../../guide/feature/page-info.md#author)。
 
 其类型为：
 
@@ -63,7 +63,7 @@ type Author = AuthorName | AuthorName[] | AuthorInfo | AuthorInfo[];
 
 站点的默认协议。
 
-参考：[布局 → 页脚](../../guide/layout/footer.md#版权信息)。
+参考：[布局 → 页脚](../../guide/layout/footer.md#copyright-information)。
 
 @`favicon` type=string
 

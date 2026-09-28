@@ -13,7 +13,7 @@ VuePress Theme Hope 允许你通过 [`@vuepress/plugin-watermark`][watermark] �
 
 <!-- more -->
 
-## 介绍
+## 介绍 {#introduction}
 
 要使用它，先安装 `@vuepress/plugin-watermark`:
 

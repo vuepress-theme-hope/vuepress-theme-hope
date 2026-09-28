@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 禁用功能
+## 禁用功能 {#disable-feature}
 
 如果你不需要此功能，请在主题选项中设置 `plugins.photoSwipe: false`:
 
@@ -40,7 +40,7 @@ photoSwipe: false
 <img src="https://vuejs.org/images/logo.png" no-view />
 ```
 
-## 浏览模式
+## 浏览模式 {#browse-mode}
 
 在浏览模式中，你可以:
 
@@ -58,13 +58,13 @@ photoSwipe: false
 
 :::
 
-## 自定义配置
+## 自定义配置 {#customize-config}
 
 `vuepress-theme-hope` 将主题选项中的 `plugins.photoSwipe` 选项作为插件选项提供给 `@vuepress/plugin-photo-swipe`。
 
 你可以查看 [photo-swipe 插件文档][photo-swipe] 来进行高级配置。
 
-## 演示
+## 演示 {#demo}
 
 <!-- markdownlint-disable -->
 

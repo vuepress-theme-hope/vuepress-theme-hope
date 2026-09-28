@@ -50,7 +50,7 @@ export default hopeTheme({
 });
 ```
 
-## 语法
+## 语法 {#syntax}
 
 ````md
 ```markmap
@@ -60,7 +60,7 @@ export default hopeTheme({
 
 支持通过 Frontmatter 语法进行配置。
 
-## 案例
+## 案例 {#demo}
 
 ::: preview
 

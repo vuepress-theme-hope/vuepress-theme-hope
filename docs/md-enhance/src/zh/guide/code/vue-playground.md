@@ -17,7 +17,7 @@ icon: fa7-brands:vuejs
 
 <!-- #region settings -->
 
-## 配置
+## 配置 {#settings}
 
 在你的项目中安装 `@vue/repl`:
 
@@ -62,7 +62,7 @@ export default {
 
 <!-- #region after -->
 
-## 用法
+## 用法 {#usage}
 
 要使用 vue 交互演示，你应该使用一个名为 `vue-playground` 的容器。
 
@@ -86,7 +86,7 @@ defineVuePlaygroundConfig({
 });
 ```
 
-## 案例
+## 案例 {#demo}
 
 :::: preview 简单的 Vue 交互演示
 

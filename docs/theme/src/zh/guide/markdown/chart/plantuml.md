@@ -14,7 +14,7 @@ tag:
 
 <!-- more -->
 
-## 设置
+## 设置 {#settings}
 
 你可以通过下方启用此功能:
 
@@ -28,7 +28,7 @@ export default hopeTheme({
 });
 ```
 
-## 格式
+## 格式 {#syntax}
 
 你可以插入[plantuml][] 支持的相同内容，例如:
 
@@ -38,7 +38,7 @@ export default hopeTheme({
 @enduml
 ```
 
-## 示例
+## 示例 {#demo}
 
 <!-- markdownlint-disable -->
 <!-- prettier-ignore-start -->

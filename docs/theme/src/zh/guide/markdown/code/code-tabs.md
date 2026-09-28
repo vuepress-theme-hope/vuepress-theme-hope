@@ -13,7 +13,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 ```ts twoslash {5} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -25,13 +25,13 @@ export default hopeTheme({
 });
 ```
 
-## 使用
+## 使用 {#usage}
 
 此功能和 [选项卡](../content/tabs.md) 相同，但它是专门为代码块构建的。
 
 代码选项卡只会渲染 `@tab` 标记后的第一个代码块，其他 Markdown 内容将被忽略。
 
-## 演示
+## 演示 {#demo}
 
 :::: preview
 

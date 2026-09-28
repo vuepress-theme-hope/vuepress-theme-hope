@@ -22,7 +22,7 @@ copy:
 
 <!-- more -->
 
-## 启用插件
+## 启用插件 {#enable-plugin}
 
 由于相当一部分用户将本主题用于构建文档，而文档站点通常不需要附加版权信息，所以此插件并不是默认启用的。
 
@@ -62,7 +62,7 @@ export default hopeTheme({
 });
 ```
 
-## 禁用复制和选择
+## 禁用复制和选择 {#disable-copy-and-selection}
 
 - 如果你不希望用户复制你的整个站点或特定页面文字，你可以在主题选项中的 `plugins.copyright` 或在页面 frontmatter 中设置 `disableCopy` 来禁用复制，后者具有更高优先级。
 - 如果你不希望用户选择你的整个站点或特定页面文字，你可以在主题选项中的 `plugins.copyright` 或在页面 frontmatter 中设置 `disableSelection` 来禁用选择，后者具有更高优先级。
@@ -83,7 +83,7 @@ export default hopeTheme({
 });
 ```
 
-## 版权信息获取
+## 版权信息获取 {#copyright-information}
 
 你可以在主题选项中通过 `plugins.copyright.author` 和 `plugins.copyright.license` 选项设置作者和协议信息。
 
@@ -115,11 +115,11 @@ export default hopeTheme({
 });
 ```
 
-## 演示
+## 演示 {#demo}
 
 请复制这段文字粘贴到任意地点查看效果。请复制这段文字粘贴到任意地点查看效果。请复制这段文字粘贴到任意地点查看效果。请复制这段文字粘贴到任意地点查看效果。请复制这段文字粘贴到任意地点查看效果。请复制这段文字粘贴到任意地点查看效果。请复制这段文字粘贴到任意地点查看效果。请复制这段文字粘贴到任意地点查看效果。请复制这段文字粘贴到任意地点查看效果。请复制这段文字粘贴到任意地点查看效果。
 
-## 更多
+## 更多 {#more}
 
 关于插件文档，请参见 [@vuepress/plugin-copyright 文档][copyright]。
 

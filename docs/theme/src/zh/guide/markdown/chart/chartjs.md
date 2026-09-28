@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 在你的项目中安装 [chart.js](https://www.chartjs.org/docs/latest/):
 
@@ -50,7 +50,7 @@ export default hopeTheme({
 });
 ```
 
-## 格式
+## 格式 {#syntax}
 
 ````md
 ::: chartjs 标题
@@ -72,7 +72,7 @@ export default hopeTheme({
 
 :::
 
-## 案例
+## 案例 {#demo}
 
 :::: preview 块状图
 
@@ -287,6 +287,6 @@ export default hopeTheme({
 
 ::::
 
-## 文档
+## 文档 {#docs}
 
 相关详情，详见 [Chart.js 文档](https://www.chartjs.org/docs/latest/).

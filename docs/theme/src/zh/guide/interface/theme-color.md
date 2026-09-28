@@ -13,7 +13,7 @@ tag:
 
 <!-- more -->
 
-## 设置主题色
+## 设置主题色 {#setting-default-theme-color}
 
 你应该在 `.vuepress/styles/config.scss` 中通过 `$theme-color` 设置站点的主题颜色：
 
@@ -50,7 +50,7 @@ $theme-color: (
 );
 ```
 
-### 尝试
+### 尝试 {#try-it}
 
 <!-- markdownlint-disable-->
 

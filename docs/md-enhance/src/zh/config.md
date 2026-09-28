@@ -179,7 +179,7 @@ CodePen 编辑器状态。
 
 ::::
 
-## 客户端配置
+## 客户端配置 {#client-config}
 
 ### defineKotlinPlaygroundConfig
 

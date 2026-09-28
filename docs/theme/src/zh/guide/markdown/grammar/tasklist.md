@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 ```ts twoslash {5} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -24,7 +24,7 @@ export default hopeTheme({
 });
 ```
 
-## 语法
+## 语法 {#syntax}
 
 - 使用 `- [ ] 一些文字` 渲染一个未勾选的任务项
 - 使用 `- [x] 一些文字` 渲染一个勾选了的任务项 (我们也支持大写的 `X`)
@@ -36,7 +36,7 @@ export default hopeTheme({
 
 :::
 
-## 高级
+## 高级 {#advanced}
 
 除了设置 `markdown.tasklist: true` 之外，你还可以将对象作为选项传递:
 

@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 ```ts twoslash {5} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -24,7 +24,7 @@ export default hopeTheme({
 });
 ```
 
-## 使用
+## 使用 {#usage}
 
 你可以使用语法 `{attrs}` 来为 Markdown 元素添加属性。
 
@@ -54,7 +54,7 @@ export default hopeTheme({
 </p>
 ```
 
-## 高级
+## 高级 {#advanced}
 
 你可以向 `attrs` 传递选项以自定义插件行为。
 
@@ -95,7 +95,7 @@ interface MarkdownItAttrsOptions {
 }
 ```
 
-## 示例
+## 示例 {#demo}
 
 > 所有的 class 都使用 `margin:4px;padding:4px;border: 1px solid red;` 进行显示以展示效果。
 

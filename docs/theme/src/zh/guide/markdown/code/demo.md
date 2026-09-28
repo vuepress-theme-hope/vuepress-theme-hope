@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 ```ts twoslash {5} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -56,7 +56,7 @@ JSON 块是可选的，可用的配置详见 [配置](../../../config/markdown/c
 
 <!-- @include: @md-enhance/zh/guide/code/demo/README.md#language -->
 
-## 案例
+## 案例 {#demo}
 
 <!-- @include: @md-enhance/zh/guide/code/demo/normal.md#demo -->
 <!-- @include: @md-enhance/zh/guide/code/demo/vue.md#demo -->

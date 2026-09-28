@@ -12,7 +12,7 @@ tag:
 
 <!-- more -->
 
-## 配置
+## 配置 {#settings}
 
 ```ts twoslash {5} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
@@ -24,7 +24,7 @@ export default hopeTheme({
 });
 ```
 
-## 语法
+## 语法 {#syntax}
 
 使用 `fields` 容器描述字段。以 `@` 开头并紧接行内代码的每一行是一个字段项，其属性紧跟反引号之后。
 
@@ -48,7 +48,7 @@ export default hopeTheme({
 - `required`、`optional` 与 `deprecated` 会以徽章展示，被弃用的字段名会显示为红色并带有删除线。
 - 其他属性会以 `名称: 值` 的徽章展示。
 
-### 嵌套
+### 嵌套 {#nesting}
 
 若要描述对象类型的字段，可以在另一个字段项内部嵌套字段，每增加一层嵌套，开头的 `@` 就增加一个。
 
@@ -65,7 +65,7 @@ export default hopeTheme({
 :::
 ```
 
-## 演示
+## 演示 {#demo}
 
 :::: preview
 

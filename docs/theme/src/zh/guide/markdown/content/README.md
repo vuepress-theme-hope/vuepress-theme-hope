@@ -22,9 +22,9 @@ tag:
 
 <!-- more -->
 
-## 案例
+## 案例 {#demo}
 
-### 脚注
+### 脚注 {#footnote}
 
 此文字有脚注[^first].
 
@@ -32,13 +32,13 @@ tag:
 
 - [查看详情](./footnote.md)
 
-### 导入文件
+### 导入文件 {#include-files}
 
 <!-- @include: ./demo.snippet.md{9-13} -->
 
 - [查看详情](./include.md)
 
-### 幻灯片
+### 幻灯片 {#presentation}
 
 @slidestart
 
@@ -73,7 +73,7 @@ $$
 
 - [查看详情](./revealjs.md)
 
-### 选项卡
+### 选项卡 {#tabs}
 
 ::: tabs#fruit
 
@@ -93,7 +93,7 @@ Orange
 
 - [查看详情](./tabs.md)
 
-### 字段
+### 字段 {#fields}
 
 ::: fields
 @`theme` type=`ThemeConfig` required default=`{ base: '/' }`

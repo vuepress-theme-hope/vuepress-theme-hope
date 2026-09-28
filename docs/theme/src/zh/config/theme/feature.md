@@ -13,7 +13,7 @@ tag:
 
 <!-- more -->
 
-## 博客选项
+## 博客选项 {#blog-options}
 
 主题通过使用 [`@vuepress/plugin-blog`][blog] 提供博客功能，且该功能默认**禁用**。
 
@@ -199,7 +199,7 @@ tag:
 
 :::::
 
-## 加密配置 <Badge text="仅限 Root" type="warning" />
+## 加密配置 <Badge text="仅限 Root" type="warning" /> {#encrypt-config}
 
 有关详细信息，请参阅 [加密功能介绍](../../guide/feature/encrypt.md)。
 

@@ -14,7 +14,7 @@ tag:
 
 <!-- more -->
 
-## 插件选项
+## 插件选项 {#plugin-options}
 
 主题提供 `plugins` 选项向对应的插件传递所需选项。
 
@@ -30,9 +30,9 @@ tag:
 
 :::
 
-## 插件列表
+## 插件列表 {#plugin-list}
 
-### 内置插件
+### 内置插件 {#internal-plugins}
 
 下列插件在核心功能中被内部使用，且无法被禁用:
 
@@ -40,7 +40,7 @@ tag:
 
 - [@vuepress/plugin-theme-data][theme-data]: 主题配置的 Composition API 插件
 
-### 自动启用的插件
+### 自动启用的插件 {#automatically-enabled-plugins}
 
 下列插件由主题捆绑并默认启用，你可以禁用它们:
 
@@ -86,7 +86,7 @@ tag:
 
 - <ProjectLink name="components" path="/zh/">vuepress-plugin-components</ProjectLink>: 提供一些开箱即用的组件（`plugins.components`）
 
-### 需要手动启用的插件
+### 需要手动启用的插件 {#plugins-that-need-to-be-enabled-manually}
 
 主题捆绑以下插件，但它们默认处于关闭状态。你需要通过对应的选项启用它们:
 
@@ -114,7 +114,7 @@ tag:
 
 - <ProjectLink name="md-enhance" path="/zh/">vuepress-plugin-md-enhance</ProjectLink>: 提供更多 Markdown 语法（`markdown.demo`、`markdown.playground`、`markdown.kotlinPlayground`、`markdown.vuePlayground`、`markdown.sandpack`）
 
-### 内置支持的插件
+### 内置支持的插件 {#plugins-with-built-in-support}
 
 以下插件受到主题支持，但没有被捆绑。你需要在使用前自行安装它们，然后通过对应的选项启用:
 

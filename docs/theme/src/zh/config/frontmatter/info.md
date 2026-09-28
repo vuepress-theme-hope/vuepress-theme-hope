@@ -61,7 +61,7 @@ interface AuthorInfo {
 type Author = AuthorName | AuthorName[] | AuthorInfo | AuthorInfo[];
 ```
 
-参考：[功能 → 页面信息](../../guide/feature/page-info.md#作者)。
+参考：[功能 → 页面信息](../../guide/feature/page-info.md#author)。
 
 ::: tip
 
@@ -73,37 +73,37 @@ type Author = AuthorName | AuthorName[] | AuthorInfo | AuthorInfo[];
 
 当前文章是否为原创。
 
-参考：[功能 → 页面信息](../../guide/feature/page-info.md#参数)。
+参考：[功能 → 页面信息](../../guide/feature/page-info.md#parameters)。
 
 @`date` type=`DateString`
 
 写作时间，格式: `YYYY-MM-DD` 或 `YYYY-MM-DD hh:mm:ss`。
 
-参考：[功能 → 页面信息](../../guide/feature/page-info.md#写作日期)。
+参考：[功能 → 页面信息](../../guide/feature/page-info.md#writing-date)。
 
 @`category` type=`string | string[]`
 
 分类。
 
-参考：[功能 → 页面信息](../../guide/feature/page-info.md#分类与标签)。
+参考：[功能 → 页面信息](../../guide/feature/page-info.md#category-and-tags)。
 
 @`tag` type=`string | string[]`
 
 标签。
 
-参考：[功能 → 页面信息](../../guide/feature/page-info.md#分类与标签)。
+参考：[功能 → 页面信息](../../guide/feature/page-info.md#category-and-tags)。
 
 @`license` type=string default="主题选项中的值"
 
 页面的协议名称。
 
-参考：[布局 → 页脚](../../guide/layout/footer.md#版权信息)。
+参考：[布局 → 页脚](../../guide/layout/footer.md#copyright-information)。
 
 @`copyright` type=`string | false` default="主题选项中的值"
 
 页面的版权信息，会在页脚中显示。
 
-参考：[布局 → 页脚](../../guide/layout/footer.md#版权信息)。
+参考：[布局 → 页脚](../../guide/layout/footer.md#copyright-information)。
 
 @`pageview` type=boolean default="主题选项中的值"
 
@@ -121,36 +121,36 @@ type Author = AuthorName | AuthorName[] | AuthorInfo | AuthorInfo[];
 
 是否将该文章添加至文章列表中。
 
-参考：[博客 → 文章](../../guide/blog/article.md#文章配置)。
+参考：[博客 → 文章](../../guide/blog/article.md#article-configuration)。
 
 @`timeline` type=boolean default=`true`
 
 是否将该文章添加至时间线中。
 
-参考：[博客 → 时间线](../../guide/blog/timeline.md#排除文章)。
+参考：[博客 → 时间线](../../guide/blog/timeline.md#excluding-articles)。
 
 @`sticky` type=`boolean | number`
 
 是否在列表中置顶。当填入数字时，数字越大，排名越靠前。
 
-参考：[博客 → 文章](../../guide/blog/article.md#文章配置)。
+参考：[博客 → 文章](../../guide/blog/article.md#article-configuration)。
 
 @`star` type=`boolean | number`
 
 是否标为星标文章。当填入数字时，数字越大，排名越靠前。
 
-参考：[博客 → 文章](../../guide/blog/article.md#星标文章-star)。
+参考：[博客 → 文章](../../guide/blog/article.md#star-articles)。
 
 @`cover` type=string
 
 页面的预览图。
 
-参考：[常见问题 → 配置中的链接](../../faq/common-question.md#配置中的链接)。
+参考：[常见问题 → 配置中的链接](../../faq/common-question.md#links-in-config)。
 
 @`banner` type=string
 
 页面的宽屏分享图。
 
-参考：[常见问题 → 配置中的链接](../../faq/common-question.md#配置中的链接)。
+参考：[常见问题 → 配置中的链接](../../faq/common-question.md#links-in-config)。
 
 ::::

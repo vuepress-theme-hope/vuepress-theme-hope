@@ -12,7 +12,7 @@ VuePress Theme Hope 通过 [`@vuepress/plugin-catalog`][catalog] 提供目录组
 
 <!-- more -->
 
-## 自动目录页生成
+## 自动目录页生成 {#introduction}
 
 该功能是默认启用的，如果文件夹下没有 `README.md`，主题会为自动为它生成一个目录页。如需禁用，请将 `plugins.catalog` 设置为 `false`。
 
@@ -50,7 +50,7 @@ export default hopeTheme({
 
 有关详细配置，请参阅 [目录插件文档][catalog-config]。
 
-## 目录组件
+## 目录组件 {#catalog-component}
 
 你可以直接在 Markdown 中使用 `<Catalog>` 组件来显示目录。
 

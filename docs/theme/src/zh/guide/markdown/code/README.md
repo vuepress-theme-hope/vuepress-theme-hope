@@ -24,9 +24,9 @@ tag:
 
 <!-- more -->
 
-## 案例
+## 案例 {#demo}
 
-### 代码选项卡
+### 代码选项卡 {#code-tabs}
 
 ::: code-tabs#shell
 
@@ -52,7 +52,7 @@ npm i -D vuepress-theme-hope
 
 - [查看详情](./code-tabs.md)
 
-### 代码演示
+### 代码演示 {#code-demo}
 
 ::: normal-demo 一个普通 Demo
 
@@ -77,7 +77,7 @@ span {
 
 - [查看详情](./demo.md)
 
-### 交互演示
+### 交互演示 {#playground}
 
 ::: playground#ts TS 案例
 
@@ -95,7 +95,7 @@ speak(msg);
 
 - [查看详情](./playground.md)
 
-### Kotlin 交互演示
+### Kotlin 交互演示 {#kotlin-playground}
 
 ::: kotlin-playground Kotlin 交互演示
 
@@ -114,7 +114,7 @@ fun main(args: Array<String>) {
 
 - [查看详情](./kotlin-playground.md)
 
-### Vue 交互演示
+### Vue 交互演示 {#vue-playground}
 
 ::: vue-playground Vue 交互演示
 
@@ -137,7 +137,7 @@ const msg = ref("Hello World!");
 
 - [查看详情](./vue-playground.md)
 
-### Sandpack 交互演示
+### Sandpack 交互演示 {#sandpack}
 
 ::: sandpack#vue Vue 交互演示
 
@@ -160,7 +160,7 @@ const msg = ref("Hello World!");
 
 - [查看详情](./sandpack.md)
 
-### 文件树
+### 文件树 {#file-tree}
 
 ::: file-tree
 
@@ -174,7 +174,7 @@ const msg = ref("Hello World!");
 
 - [查看详情](./file-tree.md)
 
-### 代码树
+### 代码树 {#code-tree}
 
 ::: code-tree 项目文件 height="260px" entry="src/index.ts"
 

@@ -11,7 +11,7 @@ tag:
 
 你可以在页面的 frontmatter 配置以下选项控制插件行为。
 
-## `@vuepress/plugin-copyright` 选项
+## `@vuepress/plugin-copyright` 选项 {#options-for-vuepress-plugin-copyright}
 
 ::: fields
 @`copy.triggerLength` type=number default=`100`
@@ -28,7 +28,7 @@ tag:
 
 :::
 
-## `@vuepress/plugin-feed` 选项
+## `@vuepress/plugin-feed` 选项 {#options-for-vuepress-plugin-feed}
 
 :::: fields
 @`feed.title` type=string
@@ -127,7 +127,7 @@ Feed 项目的标识符，用于标识 Feed 项目。
 
 ::::
 
-## `@vuepress/plugin-sitemap` 选项
+## `@vuepress/plugin-sitemap` 选项 {#options-for-vuepress-sitemap}
 
 ::: fields
 @`sitemap.changefreq` type=`"always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never"` default=`"daily"`

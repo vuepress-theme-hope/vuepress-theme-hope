@@ -40,7 +40,7 @@ tag:
 
 <!-- more -->
 
-## 案例
+## 案例 {#demo}
 
 ### Chart.js
 
@@ -104,7 +104,7 @@ tag:
 
 - [查看详情](./echarts.md)
 
-### 流程图
+### 流程图 {#flowchart}
 
 ```flow
 cond=>condition: 是否执行操作?
@@ -150,7 +150,7 @@ markmap:
 
 - [查看详情](./markmap.md)
 
-### Mermaid 图表
+### Mermaid 图表 {#mermaid}
 
 ```mermaid
 ---

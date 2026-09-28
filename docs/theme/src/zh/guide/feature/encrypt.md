@@ -20,7 +20,7 @@ tag:
 
 <!-- more -->
 
-## 局部加密
+## 局部加密 {#local-encryption}
 
 你可以在主题选项中通过 `encrypt.config` 字段配置加密选项。
 
@@ -70,7 +70,7 @@ export default hopeTheme({
 
 :::
 
-## 全局加密
+## 全局加密 {#global-encryption}
 
 有些情况下，你可能想加密整个站点，你可以在主题选项中设置 `encrypt.global: true` 来实现它。
 
@@ -98,7 +98,7 @@ export default hopeTheme({
 
 :::
 
-## 安全地存储你的密码
+## 安全地存储你的密码 {#store-your-passwords-securely}
 
 如果你希望将源代码发布到 Git 提供商，尤其是公共代码库中，重要的是**不要在源代码中暴露**你的密码。
 

@@ -10,7 +10,7 @@ dir:
 
 <!-- more -->
 
-## 内置扩展
+## 内置扩展 {#built-in-syntax}
 
 - [内置 Markdown 扩展](../../cookbook/vuepress/markdown.md)
 

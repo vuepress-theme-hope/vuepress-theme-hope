@@ -14,7 +14,7 @@ tag:
 
 <!-- more -->
 
-## 页面生成
+## 页面生成 {#generating-pages}
 
 VuePress 基于 Markdown 文件生成独立页面。路由路径由文件的相对路径决定。
 
@@ -43,7 +43,7 @@ VuePress 基于 Markdown 文件生成独立页面。路由路径由文件的相�
 `README.md` 会被解析为 `index.html`，作为所在目录的默认索引页。
 :::
 
-## Markdown 处理
+## Markdown 处理 {#markdown-processing}
 
 VuePress Theme Hope 会将 Markdown 文件渲染为 HTML 内容。你可以编辑 Markdown 文件以修改内容，在开发服务器运行期间，这些更改会实时同步。
 
@@ -59,7 +59,7 @@ VuePress Theme Hope 会将 Markdown 文件渲染为 HTML 内容。你可以编�
 
 :::
 
-## Frontmatter 配置
+## Frontmatter 配置 {#frontmatter-configuration}
 
 Frontmatter 用于分配页面级配置。它采用 YAML 格式，必须置于 Markdown 文件顶部，并由三横线（`---`）包裹。
 
@@ -75,4 +75,4 @@ description: 页面的描述
 ...
 ```
 
-Frontmatter 属性（如 `lang`、`title`、`description`）会覆盖 [VuePress 配置文件](../cookbook/vuepress/config.md#配置文件) 中的全局设置。此配置仅在当前页面生效，且具有最高优先级。
+Frontmatter 属性（如 `lang`、`title`、`description`）会覆盖 [VuePress 配置文件](../cookbook/vuepress/config.md#config-file) 中的全局设置。此配置仅在当前页面生效，且具有最高优先级。

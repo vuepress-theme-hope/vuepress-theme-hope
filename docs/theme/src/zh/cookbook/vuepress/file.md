@@ -10,7 +10,7 @@ tag:
   - VuePress
 ---
 
-## 文件结构
+## 文件结构 {#file-structure}
 
 ```
 .

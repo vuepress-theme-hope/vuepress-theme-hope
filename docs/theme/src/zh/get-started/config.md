@@ -14,7 +14,7 @@ tag:
 
 <!-- more -->
 
-## 目录结构
+## 目录结构 {#directory-structure}
 
 VuePress 使用文档根目录下的 `.vuepress` 文件夹存储所有配置、相关文件及缓存。
 
@@ -24,7 +24,7 @@ VuePress 使用文档根目录下的 `.vuepress` 文件夹存储所有配置、�
 TypeScript 配置文件提供类型提示、自动补全和实时错误检查。如果使用 JavaScript，建议配合 VS Code 等编辑器以获得 IntelliSense 支持。
 :::
 
-## 配置文件
+## 配置文件 {#configuration-entry}
 
 你需要在 `.vuepress/config.ts` 中导出配置对象。建议使用 `defineUserConfig` 工具函数以确保类型安全：
 
@@ -38,7 +38,7 @@ export default defineUserConfig({
 });
 ```
 
-### 模块化配置
+### 模块化配置 {#modular-configuration}
 
 为保持主配置文件简洁，VuePress Theme Hope 模板利用 ESM 特性将主题、导航栏和侧边栏配置拆分为独立文件。
 
@@ -71,9 +71,9 @@ export default defineUserConfig({
 });
 ```
 
-## 配置作用域
+## 配置作用域 {#configuration-scopes}
 
-### 站点配置 (Site Config)
+### 站点配置 (Site Config) {#site-config}
 
 站点配置由 VuePress 核心直接读取，与主题无关。这些属性适用于所有主题，例如 `lang`、`title` 和 `description`。
 
@@ -81,7 +81,7 @@ export default defineUserConfig({
 查看 [VuePress2 → 核心参考 → 配置](https://vuejs.press/zh/reference/config.html) 以获取完整选项列表。
 :::
 
-### 主题配置 (Theme Config)
+### 主题配置 (Theme Config) {#theme-config}
 
 主题配置是传递给 `hopeTheme` 函数的对象，由 VuePress Theme Hope 处理。详细选项参见 [配置 → 主题配置](../config/README.md)。
 
@@ -96,7 +96,7 @@ export default defineUserConfig({
 ![选项提示](./assets/vscode-hint-dark.png#dark)
 :::
 
-### 进阶扩展
+### 进阶扩展 {#advanced-customization}
 
 ::: info 插件配置
 VuePress Theme Hope 集成了多个插件。你可以通过主题选项中的 `plugins` 字段进行配置，详见 [主题插件配置](../config/plugins/README.md)。
@@ -115,5 +115,5 @@ VuePress Theme Hope 集成了多个插件。你可以通过主题选项中的 `p
 :::
 
 ::: info 页面配置
-可以通过 Markdown 文件的 Frontmatter 为特定页面进行局部配置。详见 [项目内容 → Frontmatter](./content.md#frontmatter-配置)。
+可以通过 Markdown 文件的 Frontmatter 为特定页面进行局部配置。详见 [项目内容 → Frontmatter](./content.md#frontmatter-configuration)。
 :::
