@@ -79,6 +79,8 @@ tag:
 
   :::
 
+  ::: code-tree
+
   ```ts twoslash title=".vuepress/config.ts"
   import { defineUserConfig } from "vuepress";
   import { getDirname, path } from "vuepress/utils";
@@ -99,6 +101,8 @@ tag:
   import MyComponent from "@MyComponent";
   </script>
   ```
+
+  :::
 
 ::: important 尽可能使用局部注册
 

@@ -25,6 +25,8 @@ You can add new layouts or override existing layouts via `layouts` option in [cl
 
 <!-- #region layout -->
 
+::: code-tree
+
 ```vue title=".vuepress/layouts/Home.vue"
 <script setup lang="ts">
 import { Layout } from "vuepress-theme-hope/client";
@@ -77,6 +79,8 @@ export default defineClientConfig({
   },
 });
 ```
+
+:::
 
 <!-- #endregion layout -->
 

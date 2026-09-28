@@ -78,6 +78,8 @@ Since Markdown will be converted to Vue single-file components in the cache dire
 
   :::
 
+  ::: code-tree
+
   ```ts twoslash title=".vuepress/config.ts"
   import { defineUserConfig } from "vuepress";
   import { getDirname, path } from "vuepress/utils";
@@ -98,6 +100,8 @@ Since Markdown will be converted to Vue single-file components in the cache dire
   import MyComponent from "@MyComponent";
   </script>
   ```
+
+  :::
 
 ::: important Use local registration if possible
 
