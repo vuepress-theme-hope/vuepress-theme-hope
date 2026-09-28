@@ -580,8 +580,8 @@ importers:
         specifier: catalog:vuepress
         version: 2.0.0-rc.137(@vuepress/bundler-vite@2.0.0-rc.31(@types/node@22.20.4)(@vue/compiler-sfc@3.5.43)(esbuild@0.28.2)(jiti@2.7.0)(rollup@4.63.4)(sass-embedded@1.105.0)(sass@1.105.0)(supports-color@10.2.2)(terser@5.51.2)(typescript@6.0.3)(webpack@5.111.1(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(svgo@4.1.0)(uglify-js@3.19.3))(yaml@2.9.1))(@vuepress/bundler-webpack@2.0.0-rc.31(@vue/compiler-sfc@3.5.43)(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(debug@4.4.3(supports-color@10.2.2))(esbuild@0.28.2)(html-minifier-terser@6.1.0)(rolldown@1.2.9)(rollup@4.63.4)(supports-color@10.2.2)(svgo@4.1.0)(typescript@6.0.3)(uglify-js@3.19.3)(vite@8.2.2(@types/node@22.20.4)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.105.0)(sass@1.105.0)(terser@5.51.2)(yaml@2.9.1)))(markdown-it@15.0.2)(typescript@6.0.3)(vuepress@2.0.0-rc.31(5fda76e04f79433dc1cdb5cea3c7a14c))
       '@waline/client':
-        specifier: 3.15.2
-        version: 3.15.2(typescript@6.0.3)
+        specifier: 3.16.0
+        version: 3.16.0(typescript@6.0.3)
       chart.js:
         specifier: 4.5.1
         version: 4.5.1
@@ -4729,6 +4729,10 @@ packages:
     resolution: {integrity: sha512-QBAVbruefDR+IKyQdM/Ao9fd07Xxpx1WEJ7xI8lBVNDjMQBr1PpdwrTpLC8RrYbgUR9ymNBvtLDJi0xK3pbORQ==}
     engines: {node: '>=22'}
 
+  '@waline/client@3.16.0':
+    resolution: {integrity: sha512-pluWjHTYiSGIkK0mzejJaZazlpPxAEGGqpn9xQC8QW5SzrEqZ4lBixeR8jsivuvKAtBV2Hp6EsqZp50P+ebmZw==}
+    engines: {node: '>=22'}
+
   '@webassemblyjs/ast@1.14.1':
     resolution: {integrity: sha512-nuBEDgQfm1ccRp/8bCQrx1frohyufl4JlbMMZ4P1wpeOfDhF6FQkxZJ1b/e+PLwr6X1Nhw6OLme5usuBWYBvuQ==}
 
@@ -4773,6 +4777,9 @@ packages:
 
   '@webassemblyjs/wast-printer@1.14.1':
     resolution: {integrity: sha512-kPSSXE6De1XOR820C90RIo2ogvZG+c3KiHzqUoO/F34Y2shGzesfqv7o57xrxovZJH/MetF5UjroJ/R/3isoiw==}
+
+  '@webc.site/math@0.1.41':
+    resolution: {integrity: sha512-Tev02lqJLaEO+MNMq74lWpzuNZT/8bp2rSSzyDJR/u2ovh1jI3bW5HVveGILVKK+7Owf48KaUG9pd35BNf9mrw==}
 
   '@xmldom/xmldom@0.9.12':
     resolution: {integrity: sha512-5AXjrcMClTryPe9LgZrygpB1lj7s0S9E0+W+AHaVKAVyHanafK86iPSvG5xHVSp/jC+VH1UXu0TAEmY279xH7A==}
@@ -14083,6 +14090,20 @@ snapshots:
       vue: 3.5.43(typescript@6.0.3)
     transitivePeerDependencies:
       - typescript
+    optional: true
+
+  '@waline/client@3.16.0(typescript@6.0.3)':
+    dependencies:
+      '@vueuse/core': 14.4.0(vue@3.5.43(typescript@6.0.3))
+      '@waline/api': 1.1.2
+      '@webc.site/math': 0.1.41
+      autosize: 6.0.1
+      marked: 18.0.14
+      marked-highlight: 2.2.4(marked@18.0.14)
+      recaptcha-v3: 1.11.3
+      vue: 3.5.43(typescript@6.0.3)
+    transitivePeerDependencies:
+      - typescript
 
   '@webassemblyjs/ast@1.14.1':
     dependencies:
@@ -14159,6 +14180,8 @@ snapshots:
     dependencies:
       '@webassemblyjs/ast': 1.14.1
       '@xtuc/long': 4.2.2
+
+  '@webc.site/math@0.1.41': {}
 
   '@xmldom/xmldom@0.9.12': {}
 
