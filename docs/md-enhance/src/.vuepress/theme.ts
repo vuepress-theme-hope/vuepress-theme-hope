@@ -21,6 +21,7 @@ export default theme("md-enhance", {
 
   markdown: {
     codeTabs: true,
+    fields: true,
     figure: true,
     imgLazyload: true,
     imgMark: true,

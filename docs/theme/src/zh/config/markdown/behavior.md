@@ -13,13 +13,10 @@ tag:
 
 <!-- more -->
 
-## markdown.gfm
+## 选项 {#options}
 
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [Markdown → GFM](../../guide/markdown/others.md#gfm)
-  - [@vuepress/plugin-markdown-ext → gfm][gfm]
+:::: fields
+@`markdown.gfm` type=boolean
 
 是否支持 [GFM](https://github.github.com/gfm/)。
 
@@ -31,76 +28,45 @@ tag:
 
 :::
 
-## markdown.vPre
+参考：[Markdown → GFM](../../guide/markdown/others.md#gfm) 与 [@vuepress/plugin-markdown-ext → gfm][gfm]。
 
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [v-pre 容器](../../guide/markdown/others.md#v-pre)
-  - [@vuepress/plugin-markdown-ext → vPre][vPre]
+@`markdown.vPre` type=boolean
 
-## markdown.breaks
+是否启用 v-pre 容器。
 
-- 类型: `boolean`
-- 默认值: `false`
-- 在 GFM 中启用: 是
-- 详情:
-  - [@vuepress/plugin-markdown-ext → breaks][breaks]
+参考：[v-pre 容器](../../guide/markdown/others.md#v-pre) 与 [@vuepress/plugin-markdown-ext → vPre][vPre]。
+
+@`markdown.breaks` type=boolean gfm=Yes
 
 是否将段落中的 `\n` 转换为 `<br>`。
 
-## markdown.linkify
+参考：[@vuepress/plugin-markdown-ext → breaks][breaks]。
 
-- 类型: `boolean`
-- 默认值: `false`
-- 在 GFM 中启用: 是
-- 详情:
-  - [@vuepress/plugin-markdown-ext → linkify][linkify]
+@`markdown.linkify` type=boolean gfm=Yes
 
 是否将文本中的 URL 转换为链接。
 
-## markdown.cjkFriendly
+参考：[@vuepress/plugin-markdown-ext → linkify][linkify]。
 
-- 类型：`boolean`
-- 默认值：自动
-- 详情：
-  - [@vuepress/plugin-markdown-ext → cjkFriendly][cjkFriendly]
+@`markdown.cjkFriendly` type=boolean default="自动"
 
 是否启用针对强调标记的 CJK 友好支持。未设置时，会为站点配置中检测到的 CJK 语言（`zh`、`ja`、`ko`）自动启用。
 
-## markdown.figure
+参考：[@vuepress/plugin-markdown-ext → cjkFriendly][cjkFriendly]。
 
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [Markdown → 图片展示](../../guide/markdown/grammar/image.md#图片展示)
-  - [@vuepress/plugin-markdown-image → figure][figure]
+@`markdown.figure` type=boolean
 
 是否将独立的 `<img>` 转换为 `<figure>`。
 
-## markdown.imgLazyload
+参考：[Markdown → 图片展示](../../guide/markdown/grammar/image.md#图片展示) 与 [@vuepress/plugin-markdown-image → figure][figure]。
 
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [Markdown → 图片懒加载](../../guide/markdown/grammar/image.md#图片懒加载)
-  - [@vuepress/plugin-markdown-image → lazyload][lazyload]
+@`markdown.imgLazyload` type=boolean
 
 是否启用图片懒加载。
 
-## markdown.highlighter
+参考：[Markdown → 图片懒加载](../../guide/markdown/grammar/image.md#图片懒加载) 与 [@vuepress/plugin-markdown-image → lazyload][lazyload]。
 
-- 类型: `MarkdownHighlighterOptions | "prismjs" | "shiki" | false`
-
-  ```ts
-  type MarkdownHighlighterOptions =
-    ({ type: "prismjs" } & PrismjsPluginOptions) | ({ type: "shiki" } & ShikiPluginOptions);
-  ```
-
-- 默认值: `"shiki"`
-
-- 详情:
-  - [功能 → 代码块](../../guide/markdown/code/fence.md)
+@`markdown.highlighter` type=`MarkdownHighlighterOptions | "prismjs" | "shiki" | false` default=`"shiki"`
 
 Markdown 代码块高亮器。可以选择 `"prismjs"`、`"shiki"`、`false` 或一个带有 `type` 字段的对象，声明高亮器名称和其他插件选项。
 
@@ -108,15 +74,23 @@ Markdown 代码块高亮器。可以选择 `"prismjs"`、`"shiki"`、`false` 或
 - `"shiki"`: 使用 [@vuepress/plugin-shiki][shiki]。
 - `false`: 禁用代码块高亮。
 
-## markdown.linksCheck <Badge text="默认启用" />
+参考：[功能 → 代码块](../../guide/markdown/code/fence.md)。
 
-- 类型: `LinksCheckPluginOptions | Options`
-- 默认值: `true`
-- 详情:
-  - [Markdown → 链接检查](../../guide/markdown/others.md#链接检查)
-  - [@vuepress/plugin-links-check][links-check]
+其类型为：
+
+```ts
+type MarkdownHighlighterOptions =
+  | ({ type: "prismjs" } & PrismjsPluginOptions)
+  | ({ type: "shiki" } & ShikiPluginOptions);
+```
+
+@`markdown.linksCheck` type=`LinksCheckPluginOptions | boolean` enabled-by-default=Yes default=`true`
 
 是否启用 `@vuepress/plugin-links-check` 插件，提供 Markdown 链接检查。你可以手动设置一个布尔值来控制插件状态，或提供插件选项。
+
+参考：[Markdown → 链接检查](../../guide/markdown/others.md#链接检查) 与 [@vuepress/plugin-links-check][links-check]。
+
+::::
 
 [links-check]: https://ecosystem.vuejs.press/zh/plugins/markdown/links-check.html#options
 [breaks]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-ext.html#breaks

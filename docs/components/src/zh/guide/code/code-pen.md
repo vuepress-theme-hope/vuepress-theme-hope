@@ -46,54 +46,34 @@ title: CodePen
 
 <!-- #endregion demo -->
 
-## 属性
+## 选项 {#options}
 
-### link
-
-- 类型: `string`
-- 必填: 否
+::: fields
+@`link` type=string
 
 CodePen 项目链接。
 
-### user
+@`user` type=string required
 
-- 类型: `string`
-- 必填: 如果未设置 `link`，则是
+CodePen 用户。未设置 `link` 时为必填。
 
-CodePen 用户。
+@`slugHash` type=string required
 
-### slugHash
+CodePen 项目 slug hash。未设置 `link` 时为必填。
 
-- 类型: `string`
-- 必填: 如果未设置 `link`，则是
-
-CodePen 项目 slug hash。
-
-### title
-
-- 类型: `string`
-- 必填: 否
+@`title` type=string
 
 CodePen 项目标题。
 
-### height
-
-- 类型: `number`
-- 默认值: `380`
+@`height` type=number default=`380`
 
 以 px 为单位的编辑器高度。
 
-### theme
-
-- 类型: `"default" | "light" | "dark"`
-- 默认值: `"default"`
+@`theme` type=`"default" | "light" | "dark"` default=`"default"`
 
 编辑器主题。
 
-### status
-
-- : `"autoload" | "preview" | "clicktorun"`
-- 默认值: `"preview"`
+@`status` type=`"autoload" | "preview" | "clicktorun"` default=`"preview"`
 
 CodePen 嵌入演示状态。
 
@@ -101,9 +81,8 @@ CodePen 嵌入演示状态。
 - `"preview"`: 演示的代码会被加载并显示预览按钮。
 - `"clicktorun"`: 只有在用户单击“运行代码”按钮后才会加载演示。
 
-### defaultTab
-
-- 类型: `string[]`
-- 默认值: `["result"]`
+@`defaultTab` type=`string[]` default=`["result"]`
 
 编辑器默认打开的选项卡。
+
+:::

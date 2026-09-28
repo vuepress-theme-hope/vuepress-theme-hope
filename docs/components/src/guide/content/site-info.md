@@ -31,39 +31,27 @@ SiteInfo component, can be used as friend link or project display.
 
 <!-- #endregion demo -->
 
-## Props
+## Options
 
-### name
+::: fields
+@`name` type=string required
 
-- Type: `string`
-- Required: Yes
+Site name.
 
-Site name
+@`preview` type=string required
 
-### preview
+Site preview image, must be an absolute path or a complete URL.
 
-- Type: `string`
-- Required: Yes
+@`desc` type=string
 
-Site preview image, must be absolute path or complete URL.
+Site description.
 
-### desc
+@`logo` type=string
 
-- Type: `string`
-- Required: No
+Site logo.
 
-Site description
+@`repo` type=`string | string[]`
 
-### logo
+Site repository.
 
-- Type: `string`
-- Required: No
-
-Site logo
-
-### repo
-
-- Type: `string | string[]`
-- Required: No
-
-Site repository
+:::

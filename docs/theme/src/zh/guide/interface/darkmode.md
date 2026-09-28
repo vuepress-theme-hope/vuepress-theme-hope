@@ -13,7 +13,7 @@ tag:
 
 <!-- more -->
 
-## 选项
+## 选项 {#options}
 
 你可以在主题选项中通过 `darkmode` 来配置深色模式。
 
@@ -27,13 +27,18 @@ export default hopeTheme({
 });
 ```
 
-可选的值:
+::: fields
+@`darkmode` type=`'switch' | 'toggle' | 'auto' | 'enable' | 'disable'` default=`'switch'`
 
-- `"switch"`: 在深色模式，浅色模式和自动之间切换 (默认)
-- `"toggle"`: 在深色模式和浅色模式之间切换
-- `"auto"`: 自动根据用户设备主题或当前时间决定是否应用深色模式
-- `"enable"`: 强制深色模式
-- `"disable"`: 禁用深色模式
+是否启用深色模式支持:
+
+- `'switch'`: 在深色模式、浅色模式和自动之间切换
+- `'toggle'`: 在深色模式和浅色模式之间切换
+- `'auto'`: 自动根据用户设备主题或当前时间决定是否应用深色模式
+- `'enable'`: 强制深色模式
+- `'disable'`: 禁用深色模式
+
+:::
 
 ::: tip 尝试一下
 

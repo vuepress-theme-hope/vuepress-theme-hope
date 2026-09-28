@@ -11,234 +11,172 @@ tag:
 
 以下选项在 Markdown 中添加了新的代码功能，可以在主题选项的 `markdown` 属性下进行设置。
 
-## markdown.codeTabs
+## 选项 {#options}
 
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [Markdown → 代码选项卡](../../guide/markdown/code/code-tabs.md)
-  - [@vuepress/plugin-markdown-tab → codeTabs][codeTabs]
+:::: fields
+@`markdown.codeTabs` type=boolean
 
 是否启用选项卡支持。
 
-## markdown.fileTree
+参考：[Markdown → 代码选项卡](../../guide/markdown/code/code-tabs.md) 与 [@vuepress/plugin-markdown-tab → codeTabs][codeTabs]。
 
-- 类型：`boolean`
-- 详情：
-  - [Markdown → 文件树](../../guide/markdown/code/file-tree.md)
-  - [@vuepress/plugin-markdown-file-tree → fileTree][fileTree]
+@`markdown.fileTree` type=boolean
 
 是否启用文件树支持。
 
-## markdown.codeTree
+参考：[Markdown → 文件树](../../guide/markdown/code/file-tree.md) 与 [@vuepress/plugin-markdown-file-tree → fileTree][fileTree]。
 
-- 类型：`boolean | MarkdownCodeTreePluginOptions`
-
-  ```ts
-  interface MarkdownCodeTreePluginOptions {
-    /**
-     * 代码树的默认高度
-     *
-     * 接受 CSS 长度或像素数值。
-     *
-     * @default "320px"
-     */
-    height?: number | string;
-  }
-  ```
-
-- 详情：
-  - [Markdown → 代码树](../../guide/markdown/code/code-tree.md)
-  - [@vuepress/plugin-markdown-file-tree → codeTree][codeTree]
+@`markdown.codeTree` type=`boolean | MarkdownCodeTreePluginOptions`
 
 是否启用代码树支持。你也可以传入对象以自定义默认高度。
 
-## markdown.preview
+参考：[Markdown → 代码树](../../guide/markdown/code/code-tree.md) 与 [@vuepress/plugin-markdown-file-tree → codeTree][codeTree]。
 
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [Markdown → 预览](../../guide/markdown/code/preview.md)
-  - [@vuepress/plugin-markdown-preview][preview]
+@@`markdown.codeTree.height` type=`number | string` default=`"320px"`
+
+代码树的默认高度，接受 CSS 长度或像素数值。
+
+@`markdown.preview` type=boolean
 
 是否启用预览支持。
 
-## markdown.playground
+参考：[Markdown → 预览](../../guide/markdown/code/preview.md) 与 [@vuepress/plugin-markdown-preview][preview]。
 
-- 类型: `PlaygroundGlobalOptions`
-
-  ```ts twoslash
-  import type { CompilerOptions } from "typescript";
-
-  interface PlaygroundCodeConfig {
-    /**
-     * 代码块扩展名
-     *
-     * @description 它基于文件名，而不是代码块语言
-     */
-    ext: string;
-
-    /** 代码块内容 */
-    content: string;
-  }
-
-  interface PlaygroundData {
-    /** 交互演示标题 */
-    title?: string;
-
-    /**
-     * Import map 文件名
-     *
-     * @default "import-map.json"
-     */
-    importMap?: string;
-
-    /** 交互演示文件信息 */
-    files: Record<
-      /** 文件名 */
-      string,
-      /** 文件详情 */
-      PlaygroundCodeConfig
-    >;
-
-    /**
-     * 交互演示设置
-     *
-     * @description 它是设置指令后的 json 内容的解析结果
-     */
-    settings: Record<string, unknown>;
-
-    /**
-     * hash key based on playground content
-     *
-     * 根据交互演示内容生成的 hash key
-     */
-    key: string;
-  }
-
-  interface PlaygroundOptions {
-    /** 交互演示容器名 */
-    name: string;
-
-    /**
-     * 交互演示组件名称
-     *
-     * @default "Playground"
-     */
-    component?: string;
-
-    /** 属性获取器 */
-    propsGetter: (data: PlaygroundData) => Record<string, string>;
-  }
-
-  interface TSPresetPlaygroundOptions extends CompilerOptions {
-    /**
-     * 交互演示外部地址
-     *
-     * @default "https://www.typescriptlang.org/play"
-     */
-    service?: string;
-  }
-
-  interface VuePresetPlaygroundOptions {
-    /**
-     * 交互演示外部地址
-     *
-     * @default "https://sfc.vuejs.org/"
-     */
-    service?: string;
-
-    /**
-     * 是否启用开发版本
-     *
-     * @default false
-     */
-    dev?: boolean;
-
-    /**
-     * 是否启用 SSR
-     *
-     * @default false
-     */
-    ssr?: boolean;
-  }
-
-  interface UnoPresetPlaygroundOptions {
-    /**
-     * 交互演示外部地址
-     *
-     * @default "https://unocss.dev/play"
-     */
-    service?: string;
-  }
-
-  type BuiltInPlaygroundPreset = "ts" | "vue" | "unocss";
-
-  interface PlaygroundGlobalOptions {
-    /** 交互演示预设 */
-    presets: (BuiltInPlaygroundPreset | PlaygroundOptions)[];
-    /** 交互演示配置 */
-    config?: {
-      ts?: TSPresetPlaygroundOptions;
-      vue?: VuePresetPlaygroundOptions;
-      unocss?: UnoPresetPlaygroundOptions;
-    };
-  }
-  ```
-
-- 必填: 否
-- 详情:
-  - [Markdown → 交互演示](../../guide/markdown/code/playground.md)
+@`markdown.playground` type=`PlaygroundGlobalOptions`
 
 交互演示选项。
 
-## markdown.kotlinPlayground
+参考：[Markdown → 交互演示](../../guide/markdown/code/playground.md)。
 
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [Markdown → Kotlin 交互演示](../../guide/markdown/code/kotlin-playground.md)
+@@`markdown.playground.presets` type=`(BuiltInPlaygroundPreset | PlaygroundOptions)[]` required
+
+交互演示预设。`BuiltInPlaygroundPreset` 是 `"ts"`、`"vue"` 与 `"unocss"` 之一，用于启用内置预设，而对象则用于配置自定义交互演示。
+
+@@@`markdown.playground.presets[*].name` type=string required
+
+交互演示容器名。
+
+@@@`markdown.playground.presets[*].component` type=string default=`"Playground"`
+
+交互演示组件名称。
+
+@@@`markdown.playground.presets[*].propsGetter` type=`(data: PlaygroundData) => Record<string, string>` required
+
+属性获取器。其 `data` 参数类型如下：
+
+```ts
+interface PlaygroundCodeConfig {
+  /**
+   * 代码块扩展名
+   *
+   * @description 它基于文件名，而不是代码块语言
+   */
+  ext: string;
+
+  /** 代码块内容 */
+  content: string;
+}
+
+interface PlaygroundData {
+  /** 交互演示标题 */
+  title?: string;
+
+  /**
+   * Import map 文件名
+   *
+   * @default "import-map.json"
+   */
+  importMap?: string;
+
+  /** 交互演示文件信息 */
+  files: Record<
+    /** 文件名 */
+    string,
+    /** 文件详情 */
+    PlaygroundCodeConfig
+  >;
+
+  /**
+   * 交互演示设置
+   *
+   * @description 它是设置指令后的 json 内容的解析结果
+   */
+  settings: Record<string, unknown>;
+
+  /**
+   * hash key based on playground content
+   *
+   * 根据交互演示内容生成的 hash key
+   */
+  key: string;
+}
+```
+
+@@`markdown.playground.config` type=`{ ts?: TSPresetPlaygroundOptions; vue?: VuePresetPlaygroundOptions; unocss?: UnoPresetPlaygroundOptions }`
+
+内置预设的交互演示配置。
+
+@@@`markdown.playground.config.ts` type=`TSPresetPlaygroundOptions`
+
+`ts` 预设的选项。
+
+@@@@`markdown.playground.config.ts.service` type=string default=`"https://www.typescriptlang.org/play"`
+
+交互演示外部地址。
+
+@@@`markdown.playground.config.vue` type=`VuePresetPlaygroundOptions`
+
+`vue` 预设的选项。
+
+@@@@`markdown.playground.config.vue.service` type=string default=`"https://sfc.vuejs.org/"`
+
+交互演示外部地址。
+
+@@@@`markdown.playground.config.vue.dev` type=boolean
+
+是否启用开发版本。
+
+@@@@`markdown.playground.config.vue.ssr` type=boolean
+
+是否启用 SSR。
+
+@@@`markdown.playground.config.unocss` type=`UnoPresetPlaygroundOptions`
+
+`unocss` 预设的选项。
+
+@@@@`markdown.playground.config.unocss.service` type=string default=`"https://unocss.dev/play"`
+
+交互演示外部地址。
+
+@`markdown.kotlinPlayground` type=boolean
 
 是否启用 Kotlin 交互演示支持。
 
-## markdown.vuePlayground
+参考：[Markdown → Kotlin 交互演示](../../guide/markdown/code/kotlin-playground.md)。
 
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [Markdown → Vue 交互演示](../../guide/markdown/code/vue-playground.md)
+@`markdown.vuePlayground` type=boolean
 
 是否启用 Vue 交互演示支持。
 
-## markdown.sandpack
+参考：[Markdown → Vue 交互演示](../../guide/markdown/code/vue-playground.md)。
 
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [Markdown → Sandpack 交互演示](../../guide/markdown/code/sandpack.md)
+@`markdown.sandpack` type=boolean
 
 是否启用 Sandpack 交互演示支持。
 
-## markdown.demo
+参考：[Markdown → Sandpack 交互演示](../../guide/markdown/code/sandpack.md)。
 
-- 类型: `CodeDemoGlobalOptions | boolean`
-- 默认值: `false`
-- 详情:
-  - [Markdown → 代码演示](../../guide/markdown/code/demo.md)
+@`markdown.demo` type=`Partial<CodeDemoOptions> | boolean`
 
 是否启用代码演示支持。
 
-### markdown.demo.jsLib
+参考：[Markdown → 代码演示](../../guide/markdown/code/demo.md)。
 
-- 类型: `string[]`
-- 必填: 否
+@@`markdown.demo.jsLib` type=`string[]`
 
 CodePen, JsFiddle 需要引入的外部 JS 库。
 
-### markdown.demo.cssLib
-
-- 类型: `string[]`
-- Required: No
+@@`markdown.demo.cssLib` type=`string[]`
 
 CodePen, JsFiddle 需要引入的外部 CSS 库。
 
@@ -248,33 +186,23 @@ CodePen, JsFiddle 需要引入的外部 CSS 库。
 
 :::
 
-### markdown.demo.jsfiddle
+@@`markdown.demo.jsfiddle` type=boolean default=`true`
 
-- 类型: `boolean`
-- 默认值: `true`
+是否显示 JSFiddle 按钮。
 
-是否显示 JSFiddle 按钮
+@@`markdown.demo.codepen` type=boolean default=`true`
 
-### markdown.demo.codepen
+是否显示 CodePen 按钮。
 
-- 类型: `boolean`
-- 默认值: `true`
+@@`markdown.demo.codepenLayout` type=`"top" | "left" | "right"` default=`"left"`
 
-是否显示 CodePen 按钮
+CodePen 编辑器布局。
 
-### markdown.demo.codepenLayout
+@@`markdown.demo.codepenEditors` type=string default=`"101"`
 
-- 类型: `"top" | "left" | "right"`
-- 默认值: `"left"`
+CodePen 编辑器状态。
 
-CodePen 编辑器布局
-
-### markdown.demo.codepenEditors
-
-- 类型: `string`
-- 默认值: `"101"`
-
-CodePen 编辑器状态
+::::
 
 [fileTree]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-file-tree.html#filetree
 [codeTree]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-file-tree.html#codetree

@@ -3,19 +3,14 @@ title: 配置
 icon: gears
 ---
 
-## 插件选项
+## 选项 {#options}
 
-### selector
+:::: fields
+@`selector` type=string default=`"[vp-content] :not(a) > img:not([no-view])"`
 
-- 类型: `string`
-- 默认值: `"[vp-content] :not(a) > img:not([no-view])"`
+图片选择器。
 
-图片选择器
-
-### plugins
-
-- 类型: `string[]`
-- 默认值: `["pager", "share", "zoom"]`
+@`plugins` type=`string[]` default=`["pager", "share", "zoom"]`
 
 想要启用的 Light Gallery 插件。
 
@@ -30,6 +25,8 @@ icon: gears
 - `"zoom"`: 缩放
 
 :::
+
+::::
 
 ## 客户端配置
 

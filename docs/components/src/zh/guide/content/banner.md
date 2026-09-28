@@ -33,61 +33,46 @@ Banner 组件，用于展示 banner。
 
 <!-- #endregion demo -->
 
-## 属性
+## 选项 {#options}
 
-### title
+::: fields
+@`title` type=string required
 
-- 类型: `string`
-- 必填: 是
+横幅标题。
 
-横幅标题
+@`content` type=string
 
-### content
+横幅内容。
 
-- 类型: `string`
-- Default: `''`
+@`logo` type=string
 
-横幅内容
+横幅图标。
 
-### logo
+@`actions` type=`BannerAction[]`
 
-- 类型: `string`
-- 必填: 否
+横幅操作。
 
-横幅图标
+@@`actions[*].text` type=string required
 
-### actions
+操作的文字。
 
-- 类型: `BannerAction[]`
+@@`actions[*].link` type=string required
 
-  ```ts
-  interface BannerAction {
-    text: string;
-    link: string;
-    /**
-     * @default "primary"
-     */
-    type?: "primary" | "default";
-  }
-  ```
+操作的链接。
 
-- 必填: 否
+@@`actions[*].type` type=`"primary" | "default"` default=`"primary"`
 
-横幅操作
+操作的类型。
 
-### background
+@`background` type=string
 
-- 类型: `string`
-- 必填: 否
+横幅背景。
 
-横幅背景
+@`color` type=string
 
-### color
+横幅字体颜色。
 
-- 类型: `string`
-- 必填: 否
-
-横幅字体颜色
+:::
 
 ::: tip
 

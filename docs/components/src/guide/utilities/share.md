@@ -78,146 +78,126 @@ If you are using twitter, you can set `componentOptions.share.twitterUserName` w
 
 :::
 
-## Props
+## Options
 
-### services
-
-- Type: `string | ShareService[]`
-
-  ```ts
-  type BuiltInShareService =
-    | "buffer"
-    | "douban"
-    | "email"
-    | "evernote"
-    | "facebook"
-    | "flipboard"
-    | "line"
-    | "linkedin"
-    | "messenger"
-    | "pinterest"
-    | "qq"
-    | "qrcode"
-    | "qzone"
-    | "reddit"
-    | "skype"
-    | "sms"
-    | "snapchat"
-    | "telegram"
-    | "tumblr"
-    | "twitter"
-    | "vk"
-    | "weibo"
-    | "whatsapp"
-    | "wordpress";
-
-  interface ShareServiceConfig {
-    /**
-     * Share link
-     *
-     * @description You can use `[` and `]` to wrap the variable name, and the variable will be replaced with the value of the page.:
-     *
-     * - `title` will be replaced with the title of the page
-     * - `description` will be replaced with the description of the page
-     * - `url` will be replaced with the url of the page
-     * - `excerpt` will be replaced with the excerpt of the page
-     * - `summary` will be replaced with the summary of the page
-     * - `tags` will be replaced with the tags of the page
-     * - `cover` will be replaced with the cover/banner of the page
-     * - `image` will be replaced with the first image of the page
-     */
-    link: string;
-
-    /**
-     * Action of share button
-     *
-     * @description
-     * - `open` will open the link in a new tab
-     * - `navigate` will navigate to the link
-     * - `popup` will open a popup window
-     * - `qrcode` will show a QR code with link
-     *
-     * @default "popup"
-     */
-    action?: ShareAction;
-
-    /**
-     * Theme color of icon
-     *
-     * @default 'currentColor'
-     */
-    color?: string;
-
-    /**
-     * Plain icon shape
-     */
-    shape: string;
-
-    /**
-     * Colorful icon
-     */
-    icon?: string;
-  }
-
-  interface ShareServiceOptions extends ShareServiceConfig {
-    /**
-     * Service name
-     */
-    name: string;
-  }
-
-  type ShareService = BuiltInShareService | ShareServiceOptions;
-  ```
-
-- Default: All available services
+::: fields
+@`services` type=`string | ShareService[]` default="All available services"
 
 Share services.
 
-### titleGetter
+Its type is:
 
-- Type: `(page: PageData) => string`
-- Default: `(page) => page.title`
+```ts
+type BuiltInShareService =
+  | "buffer"
+  | "douban"
+  | "email"
+  | "evernote"
+  | "facebook"
+  | "flipboard"
+  | "line"
+  | "linkedin"
+  | "messenger"
+  | "pinterest"
+  | "qq"
+  | "qrcode"
+  | "qzone"
+  | "reddit"
+  | "skype"
+  | "sms"
+  | "snapchat"
+  | "telegram"
+  | "tumblr"
+  | "twitter"
+  | "vk"
+  | "weibo"
+  | "whatsapp"
+  | "wordpress";
+
+interface ShareServiceConfig {
+  /**
+   * Share link
+   *
+   * @description You can use `[` and `]` to wrap the variable name, and the variable will be replaced with the value of the page.:
+   *
+   * - `title` will be replaced with the title of the page
+   * - `description` will be replaced with the description of the page
+   * - `url` will be replaced with the url of the page
+   * - `excerpt` will be replaced with the excerpt of the page
+   * - `summary` will be replaced with the summary of the page
+   * - `tags` will be replaced with the tags of the page
+   * - `cover` will be replaced with the cover/banner of the page
+   * - `image` will be replaced with the first image of the page
+   */
+  link: string;
+
+  /**
+   * Action of share button
+   *
+   * @description
+   * - `open` will open the link in a new tab
+   * - `navigate` will navigate to the link
+   * - `popup` will open a popup window
+   * - `qrcode` will show a QR code with link
+   *
+   * @default "popup"
+   */
+  action?: ShareAction;
+
+  /**
+   * Theme color of icon
+   *
+   * @default 'currentColor'
+   */
+  color?: string;
+
+  /**
+   * Plain icon shape
+   */
+  shape: string;
+
+  /**
+   * Colorful icon
+   */
+  icon?: string;
+}
+
+interface ShareServiceOptions extends ShareServiceConfig {
+  /**
+   * Service name
+   */
+  name: string;
+}
+
+type ShareService = BuiltInShareService | ShareServiceOptions;
+```
+
+@`titleGetter` type=`(page: PageData) => string` default=`(page) => page.title`
 
 Title getter.
 
-### descriptionGetter
-
-- Type: `(page: PageData) => string`
-- Default: `(page) => page.frontmatter.description`
+@`descriptionGetter` type=`(page: PageData) => string` default=`(page) => page.frontmatter.description`
 
 Description getter.
 
-### summaryGetter
-
-- Type: `(page: PageData) => string`
-- Default: `(page) => page.summary`
+@`summaryGetter` type=`(page: PageData) => string` default=`(page) => page.summary`
 
 Summary getter.
 
-### coverGetter
-
-- Type: `(page: PageData) => string`
-- Default: `(page) => page.cover`
+@`coverGetter` type=`(page: PageData) => string` default=`(page) => page.cover`
 
 Cover getter.
 
-### tagGetter
-
-- Type: `(page: PageData) => string`
-- Default: `({ frontmatter }) => frontmatter["tag"] || frontmatter["tags"]`
+@`tagGetter` type=`(page: PageData) => string` default=`({ frontmatter }) => frontmatter["tag"] || frontmatter["tags"]`
 
 Tag getter.
 
-### inline
-
-- Type: `boolean`
-- Default: `false`
+@`inline` type=boolean
 
 Whether to display inline.
 
-### colorful
-
-- Type: `boolean`
-- Default: `false`
+@`colorful` type=boolean
 
 Whether to use colorful icon.
+
+:::

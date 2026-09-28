@@ -91,47 +91,4 @@
 
 ### Options Documentation Format
 
-Each option in plugin/theme documentation must include these sections **in this exact order**:
-
-1. **Type**
-   - English: `- Type: \`type\``
-   - Chinese: `- 类型：\`type\``
-   - Follow with code fence for complex types
-
-2. **Required Status**
-   - Only for required options: `- Required: Yes` / `- 必填：是`
-   - **Never write "Required: No" for optional options**
-
-3. **Default Value**
-   - **INCLUDE Default when**: Default value is NOT the expected/obvious value
-   - **OMIT Default when**: Default value is expected/obvious
-     - `boolean` options with `false` default → **OMIT**
-     - `string` options with `''` default → **OMIT**
-     - `object` options with `undefined` default → **OMIT**
-   - Format: `- Default: \`value\``/`- 默认值：\`value\``
-
-4. **Details** (必须包含)
-   - English: `- Details: Brief description`
-   - Chinese: `- 详情：简要描述`
-   - Prefer same line for short contents and paragraph for long contents.
-
-**Example Format:**
-
-```md
-### optionName
-
-- Type: `boolean`
-- Details: Whether to enable this feature.
-
-### requiredOption
-
-- Type: `string`
-- Required: Yes
-- Details: The required configuration.
-
-### optionWithNonStandardDefault
-
-- Type: `number`
-- Default: `100`
-- Details: Custom timeout value.
-```
+Options are documented with the `::: fields` container provided by `@vuepress/plugin-markdown-field`, not with `###` headings and `- Type:` lists. See [`AGENTS.md`](../AGENTS.md) for the full specification.

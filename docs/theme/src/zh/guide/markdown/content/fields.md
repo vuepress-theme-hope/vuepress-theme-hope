@@ -26,15 +26,15 @@ export default hopeTheme({
 
 ## 语法
 
-使用 `fields` 容器描述字段。以 `@名称@` 开头的每一行是一个字段项，其属性紧跟在结尾的 `@` 之后。
+使用 `fields` 容器描述字段。以 `@` 开头并紧接行内代码的每一行是一个字段项，其属性紧跟反引号之后。
 
 ```md
 ::: fields
-@theme@ type="ThemeConfig" required default="{ base: '/' }"
+@`theme` type=`ThemeConfig` required default=`{ base: '/' }`
 
 主题配置。
 
-@enabled@ type="boolean" optional default="true"
+@`enabled` type=boolean optional default=`true`
 
 是否启用。
 
@@ -50,15 +50,15 @@ export default hopeTheme({
 
 ### 嵌套
 
-若要描述对象类型的字段，可以在另一个字段项内部嵌套字段，每增加一层嵌套，开头与结尾的 `@` 就增加一个。
+若要描述对象类型的字段，可以在另一个字段项内部嵌套字段，每增加一层嵌套，开头的 `@` 就增加一个。
 
 ```md
 ::: fields
-@options@ type="object"
+@`options` type=object
 
 选项。
 
-@@options.name@ type="string"
+@@`options.name` type=string
 
 选项名称。
 
@@ -70,15 +70,15 @@ export default hopeTheme({
 :::: preview
 
 ::: fields
-@theme@ type="ThemeConfig" required default="{ base: '/' }"
+@`theme` type=`ThemeConfig` required default=`{ base: '/' }`
 
 主题配置。
 
-@enabled@ type="boolean" optional default="true"
+@`enabled` type=boolean optional default=`true`
 
 是否启用。
 
-@legacy@ type="string" deprecated
+@`legacy` type=string deprecated
 
 已弃用字段。
 

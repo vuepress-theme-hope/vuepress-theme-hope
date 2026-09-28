@@ -37,6 +37,7 @@ export default theme("components", {
 
   markdown: {
     codeTabs: true,
+    fields: true,
     imgMark: true,
     include: true,
     preview: true,

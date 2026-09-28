@@ -19,20 +19,18 @@ These options are only valid when setting directly under the theme options, sett
 
 :::
 
-## darkmode <Badge text="Enabled by default" /> <Badge text="Root only" type="warning" />
+## Options
 
-- Type: `"switch" | "toggle" | "auto" | "enable" | "disable"`
-- Default: `"switch"`
-- Details:
-  - [Interface → Dark mode](../../guide/interface/darkmode.md)
+:::: fields
+@`darkmode` type=`'switch' | 'toggle' | 'auto' | 'enable' | 'disable'` enabled-by-default=Yes root-only=Yes default=`'switch'`
 
 Dark mode support options:
 
-- `"switch"`: switch between dark, light and auto
-- `"toggle"`: toggle between lightmode and darkmode
-- `"auto"`: Automatically decide whether to apply dark mode based on user device's color-scheme or current time
-- `"enable"`: only dark mode
-- `"disable"`: disable dark mode
+- `'switch'`: switch between dark, light and auto
+- `'toggle'`: toggle between lightmode and darkmode
+- `'auto'`: Automatically decide whether to apply dark mode based on user device's color-scheme or current time
+- `'enable'`: only dark mode
+- `'disable'`: disable dark mode
 
 ::: note
 
@@ -40,28 +38,19 @@ If you don't need this feature, set `darkmode: "disable"` to disable it.
 
 :::
 
-## externalLinkIcon <Badge text="enabled by default" />
+See also: [Interface → Dark mode](../../guide/interface/darkmode.md).
 
-- Type: `boolean`
-- Default: `true`
+@`externalLinkIcon` type=boolean enabled-by-default=Yes default=`true`
 
 Controls whether an icon is displayed on external links.
 
-## fullscreen <Badge text="Root only" type="warning" />
-
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Interface → FullScreen](../../guide/interface/others.md#fullscreen-button)
+@`fullscreen` type=boolean root-only=Yes
 
 Whether show the "full screen" button.
 
-## pure <Badge text="Root only" type="warning" />
+See also: [Interface → FullScreen](../../guide/interface/others.md#fullscreen-button).
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Interface → Pure mode](../../guide/interface/others.md#pure-mode)
+@`pure` type=boolean root-only=Yes
 
 Whether enable pure mode.
 
@@ -73,20 +62,18 @@ Useful when you want to provide "A pure document site".
 
 :::
 
-## focus <Badge text="Root only" type="warning" />
+See also: [Interface → Pure mode](../../guide/interface/others.md#pure-mode).
 
-- Type: `number | boolean`
-- Default: value of `pure`
-- Details:
-  - [Interface → Focus mode](../../guide/interface/others.md#focus-mode)
+@`focus` type=`number | boolean` root-only=Yes default="value of the pure option"
 
 Whether enable focus mode, default when pure mode is enabled. Number value will be the delay time to trigger focus mode.
 
-## print <Badge text="Root only" type="warning" />
+See also: [Interface → Focus mode](../../guide/interface/others.md#focus-mode).
 
-- Type: `boolean`
-- Default: `true`
-- Details:
-  - [Interface → Print button](../../guide/interface/others.md#print-button)
+@`print` type=boolean root-only=Yes default=`true`
 
 Whether display print icon in desktop mode.
+
+See also: [Interface → Print button](../../guide/interface/others.md#print-button).
+
+::::

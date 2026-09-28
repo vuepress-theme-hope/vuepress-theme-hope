@@ -47,54 +47,34 @@ Embed CodePen demos in your Markdown.
 
 <!-- #endregion demo -->
 
-## Props
+## Options
 
-### link
-
-- Type: `string`
-- Required: No
+::: fields
+@`link` type=string
 
 CodePen project link.
 
-### user
+@`user` type=string required
 
-- Type: `string`
-- Required: Yes if `link` not set
+CodePen user. Required when `link` is not set.
 
-CodePen user.
+@`slugHash` type=string required
 
-### slugHash
+CodePen project slug hash. Required when `link` is not set.
 
-- Type: `string`
-- Required: Yes if `link` not set
-
-CodePen project slug hash.
-
-### title
-
-- Type: `string`
-- Required: No
+@`title` type=string
 
 CodePen project title.
 
-### height
+@`height` type=number default=`380`
 
-- Type: `number`
-- Default: `380`
+Editor height in pixels.
 
-Editor height in px.
+@`theme` type=`"default" | "light" | "dark"` default=`"default"`
 
-### theme
+Editor theme.
 
-- Type: `"default" | "light" | "dark"`
-- Default: `"default"`
-
-Editor theme
-
-### status
-
-- Type: `"autoload" | "preview" | "clicktorun"`
-- Default: `"preview"`
+@`status` type=`"autoload" | "preview" | "clicktorun"` default=`"preview"`
 
 CodePen embed demo status.
 
@@ -102,9 +82,8 @@ CodePen embed demo status.
 - `"preview"`: The code of demo will be loaded and a preview button will be shown.
 - `"clicktorun"`: The demo will only be loaded after user clicks the "Run Code" button.
 
-### defaultTab
-
-- Type: `string[]`
-- Default: `["result"]`
+@`defaultTab` type=`string[]` default=`["result"]`
 
 Default opened editor tab.
+
+:::

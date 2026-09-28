@@ -96,11 +96,11 @@ Orange
 ### 字段
 
 ::: fields
-@theme@ type="ThemeConfig" required default="{ base: '/' }"
+@`theme` type=`ThemeConfig` required default=`{ base: '/' }`
 
 主题配置。
 
-@enabled@ type="boolean" optional
+@`enabled` type=boolean optional
 
 是否启用。
 

@@ -18,52 +18,54 @@ tag:
 
 ## 选项
 
-### plugins.icon.assets
+::: fields
+@`plugins.icon.assets` type=`IconAsset`
 
-- 类型：`IconAsset`
+要使用的图标资源。
 
-  ```ts
-  export type BuiltInIcon = "fontawesome-with-brands" | "fontawesome" | "iconify";
+支持以下关键字，你可以使用其他 CDN 链接甚至你自己的：
 
-  export type IconLink = `//${string}` | `/${string}` | `http://${string}` | `https://${string}`;
+- `iconify`：Iconify
+- `fontawesome`：仅限 Font Awesome 免费图标
+- `fontawesome-with-brands`：Font Awesome 免费图标和品牌图标
 
-  export type IconAsset = (BuiltInIcon | IconLink)[] | BuiltInIcon | IconLink;
-  ```
+其类型为：
 
-- 详情：
+```ts
+export type BuiltInIcon = "fontawesome-with-brands" | "fontawesome" | "iconify";
 
-  要使用的图标资源。
+export type IconLink =
+  `//${string}` | `/${string}` | `http://${string}` | `https://${string}`;
 
-  支持以下关键字，你可以使用其他 CDN 链接甚至你自己的：
-  - `iconify`：Iconify
-  - `fontawesome`：仅限 Font Awesome 免费图标
-  - `fontawesome-with-brands`：Font Awesome 免费图标和品牌图标
+export type IconAsset = (BuiltInIcon | IconLink)[] | BuiltInIcon | IconLink;
+```
 
-### plugins.icon.type
+@`plugins.icon.type` type=`IconType` default="从 assets 中推断"
 
-- 类型：`IconType`
+图标的类型，插件将尝试从资源中推断类型，并回退到 `unknown`。
 
-  ```ts
-  export type IconType = "fontawesome" | "iconfont" | "iconify" | "unknown";
-  ```
+特别地，插件可以识别：
 
-- 默认值：从 `assets` 中推断
+- iconfont css 链接
+- fontawesome kits
+- fontawesome 和 iconify 的 CDN 链接
 
-- 详情：
+其类型为：
 
-  图标的类型，插件将尝试从资源中推断类型，并回退到 `unknown`。
+```ts
+export type IconType = "fontawesome" | "iconfont" | "iconify" | "unknown";
+```
 
-  特别地，插件可以识别：
-  - iconfont css 链接
-  - fontawesome kits
-  - fontawesome 和 iconify 的 CDN 链接
+@`plugins.icon.prefix` type=string default="从 assets 和 type 推断"
 
-### plugins.icon.prefix
+图标组件的前缀。默认情况下，插件将使用：
 
-- 类型：`string`
-- 默认值：从 `assets` 和 `type` 推断
-- 详情：
+- `iconfont icon-` 用于 iconfont 类型
+- `fas fa-` 用于 fontawesome 类型
+- 空字符串用于所有其他类型
 
-  图标组件的前缀。默认情况下，插件将使用：
-  - `iconfont icon-` 用于 iconfont 类型
-  - 空字符串用于所有其他类型
+@`plugins.icon.markdown` type=boolean default=`true`
+
+是否在 Markdown 中启用图标语法 (`::icon::`)。
+
+:::

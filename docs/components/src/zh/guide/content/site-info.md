@@ -31,39 +31,27 @@ title: SiteInfo
 
 <!-- #endregion demo -->
 
-## 属性
+## 选项 {#options}
 
-### name
+::: fields
+@`name` type=string required
 
-- 类型: `string`
-- 必填: 是
+站点名称。
 
-站点名称
-
-### preview
-
-- 类型: `string`
-- 必填: 是
+@`preview` type=string required
 
 站点预览图，必须为绝对路径或完整 URL。
 
-### desc
+@`desc` type=string
 
-- 类型: `string`
-- 必填: 否
+站点描述。
 
-站点描述
+@`logo` type=string
 
-### logo
+站点图标。
 
-- 类型: `string`
-- 必填: 否
-
-站点图标
-
-### repo
-
-- 类型: `string | string []`
-- 必填: 否
+@`repo` type=`string | string[]`
 
 站点源代码仓库。
+
+:::

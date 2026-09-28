@@ -37,10 +37,10 @@ export default defineUserConfig({
 });
 ```
 
-## check
+## Options
 
-- Type: `boolean`
-- Default: `true`
+:::: fields
+@`check` type=boolean default=`true`
 
 Whether to perform additional checks.
 
@@ -52,10 +52,7 @@ This option will be reverted to `false` as default value in stable version.
 
 :::
 
-## compact
-
-- Type: `boolean`
-- Default: `true`
+@`compact` type=boolean default=`true`
 
 Whether to compact historical versions (v1 the latest version and v2 beta versions).
 
@@ -68,21 +65,15 @@ This option will be reverted to `false` as default value in stable version.
 
 :::
 
-## custom
-
-- Type: `boolean`
-- Default: `false`
+@`custom` type=boolean
 
 Whether enable customization support by importing components through alias.
 
-By default, the theme will run on performance mode, which all files are bundled and imported directly.
+By default, the theme will run on performance mode, where all files are bundled and imported directly.
 
 If you want to customize theme by overriding components and layouts, set this option to `true` and the theme will load components and layouts with `@theme-hope` alias.
 
-## debug
-
-- Type: `boolean`
-- Default: `false`
+@`debug` type=boolean
 
 Whether running under debug mode.
 
@@ -94,9 +85,8 @@ You can also add `--debug` flag while running `vuepress dev` or `vuepress build`
 
 :::
 
-## checkVuePress
-
-- Type: `boolean`
-- Default: `true`
+@`checkVuePress` type=boolean default=`true`
 
 Whether check VuePress version is compatible.
+
+::::

@@ -24,109 +24,67 @@ title: StackBlitz
 
 <!-- #endregion demo -->
 
-## 属性
+## 选项 {#options}
 
-### id
+::: fields
+@`id` type=string required
 
-- 类型: `string`
-- 必填: 是
+StackBlitz id。
 
-StackBlitz id
-
-### type
-
-- 类型: `"project" | "github"`
-- 默认值: `"project"`
+@`type` type=`"project" | "github"` default=`"project"`
 
 StackBlitz 项目类型。
 
-### width
-
-- 类型: `string | number`
-- 默认值: `100%`
+@`width` type=`string | number` default=`100%`
 
 StackBlitz 组件宽度。
 
-### height
-
-- 类型: `string | number`
-- 必填：否
+@`height` type=`string | number`
 
 StackBlitz 组件高度。
 
-### ratio
+@`ratio` type=number default=`16 / 9`
 
-- 类型: `number`
-- 默认值: `16 / 9`
+StackBlitz 组件宽高比，只有当未指定 `height` 时有效。
 
-StackBlitz 组件高度宽高比，只有当未指定 `height` 时有效。
-
-### file
-
-- 类型: `string[] | string`
-- 必填: 否
+@`file` type=`string[] | string`
 
 在编辑器中打开的默认文件。
 
-### initialPath
-
-- 类型: `string`
-- 必填: 否
+@`initialPath` type=string
 
 预览时应打开的初始 URL 路径。
 
-### embed
-
-- 类型: `boolean`
-- 默认值: `false`
+@`embed` type=boolean
 
 嵌入 StackBlitz 演示。
 
-### load
+@`load` type=boolean
 
-- 类型: `boolean`
-- 默认值: `false`
+是否直接加载嵌入演示。仅在嵌入视图中有效。
 
-是否直接加载嵌入演示。(仅在嵌入视图中有效)
+@`theme` type=`"dark" | "light"` default=`"dark"`
 
-### theme
+编辑器主题。仅在嵌入视图中有效。
 
-- 类型: `"dark" | "light"`
-- 默认值: `"dark"`
+@`text` type=string default=`"Open in StackBlitz"`
 
-编辑器主题。(仅在嵌入视图中有效)
+打开 StackBlitz 按钮的文本。仅在不使用嵌入视图时有效。
 
-### view
-
-- 类型: `"default" | "editor" | "preview"`
-- 默认值: `"preview"`
+@`view` type=`"default" | "editor" | "preview"` default=`"preview"`
 
 默认打开的视图。
 
-### text
-
-- 类型: `string`
-- 默认值: `"Open in StackBlitz"`
-
-打开 StackBlitz 按钮的文本。
-
-### hideExplorer
-
-- 类型: `boolean`
-- 默认值: `false`
+@`hideExplorer` type=boolean
 
 在嵌入视图中隐藏文件资源管理器面板。
 
-### hideNavigation
-
-- 类型: `boolean`
-- 默认值: `false`
+@`hideNavigation` type=boolean
 
 在嵌入视图中隐藏导航面板。
 
-### hideDevtools
-
-- 类型: `boolean`
-- 默认值: `false`
+@`hideDevtools` type=boolean
 
 在编辑器预览中隐藏调试控制台。
+
+:::

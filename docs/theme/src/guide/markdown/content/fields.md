@@ -26,15 +26,15 @@ export default hopeTheme({
 
 ## Syntax
 
-Use a `fields` container to describe fields. Each line starting with `@name@` is a field item, and its attributes follow the closing `@`.
+Use a `fields` container to describe fields. Each line starting with `@` followed by an inline code is a field item, and its attributes follow the closing backtick.
 
 ```md
 ::: fields
-@theme@ type="ThemeConfig" required default="{ base: '/' }"
+@`theme` type=`ThemeConfig` required default=`{ base: '/' }`
 
 Theme config.
 
-@enabled@ type="boolean" optional default="true"
+@`enabled` type=boolean optional default=`true`
 
 Whether it is enabled.
 
@@ -50,15 +50,15 @@ All attributes are allowed and displayed as-is. The common ones are:
 
 ### Nesting
 
-To describe fields of an object type, nest a field item inside another one by increasing the starting `@` by one for each level of nesting.
+To describe fields of an object type, nest a field item inside another one by increasing the leading `@` by one for each level of nesting.
 
 ```md
 ::: fields
-@options@ type="object"
+@`options` type=object
 
 Options.
 
-@@options.name@ type="string"
+@@`options.name` type=string
 
 Option name.
 
@@ -70,15 +70,15 @@ Option name.
 :::: preview
 
 ::: fields
-@theme@ type="ThemeConfig" required default="{ base: '/' }"
+@`theme` type=`ThemeConfig` required default=`{ base: '/' }`
 
 Theme config.
 
-@enabled@ type="boolean" optional default="true"
+@`enabled` type=boolean optional default=`true`
 
 Whether it is enabled.
 
-@legacy@ type="string" deprecated
+@`legacy` type=string deprecated
 
 Deprecated field.
 

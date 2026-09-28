@@ -78,145 +78,125 @@ description: 分享组件，将页面内容分享到社交媒体。
 
 :::
 
-## 属性
+## 选项 {#options}
 
-### services
+::: fields
+@`services` type=`string | ShareService[]` default="所有可用的服务"
 
-- 类型: `string | ShareService[]`
+分享服务。
 
-  ```ts
-  type BuiltInShareService =
-    | "buffer"
-    | "douban"
-    | "email"
-    | "evernote"
-    | "facebook"
-    | "flipboard"
-    | "line"
-    | "linkedin"
-    | "messenger"
-    | "pinterest"
-    | "qq"
-    | "qrcode"
-    | "qzone"
-    | "reddit"
-    | "skype"
-    | "sms"
-    | "snapchat"
-    | "telegram"
-    | "tumblr"
-    | "twitter"
-    | "vk"
-    | "weibo"
-    | "whatsapp"
-    | "wordpress";
+其类型为：
 
-  interface ShareServiceConfig {
-    /**
-     * 分享链接
-     *
-     * @description 你可以使用 `[` 和 `]` 包裹变量名，变量将会被替换为页面的值：
-     *
-     * - `title` 将会被替换为页面的标题
-     * - `description` 将会被替换为页面的描述
-     * - `url` 将会被替换为页面的链接
-     * - `summary` 将会被替换为页面的综述
-     * - `tags` 将会被替换为页面的标签
-     * - `cover` 将会被替换为页面的封面
-     * - `image` 将会被替换为页面的第一张图片
-     */
-    link: string;
+```ts
+type BuiltInShareService =
+  | "buffer"
+  | "douban"
+  | "email"
+  | "evernote"
+  | "facebook"
+  | "flipboard"
+  | "line"
+  | "linkedin"
+  | "messenger"
+  | "pinterest"
+  | "qq"
+  | "qrcode"
+  | "qzone"
+  | "reddit"
+  | "skype"
+  | "sms"
+  | "snapchat"
+  | "telegram"
+  | "tumblr"
+  | "twitter"
+  | "vk"
+  | "weibo"
+  | "whatsapp"
+  | "wordpress";
 
-    /**
-     * 分享按钮的行为
-     *
-     * @description
-     * - `open` 将会在新标签页打开链接
-     * - `navigate` 将会跳转到链接
-     * - `popup` 将会打开一个弹窗
-     * - `qrcode` 将会显示一个二维码
-     *
-     * @default "popup"
-     */
-    action?: ShareAction;
+interface ShareServiceConfig {
+  /**
+   * 分享链接
+   *
+   * @description 你可以使用 `[` 和 `]` 包裹变量名，变量将会被替换为页面的值：
+   *
+   * - `title` 将会被替换为页面的标题
+   * - `description` 将会被替换为页面的描述
+   * - `url` 将会被替换为页面的链接
+   * - `summary` 将会被替换为页面的综述
+   * - `tags` 将会被替换为页面的标签
+   * - `cover` 将会被替换为页面的封面
+   * - `image` 将会被替换为页面的第一张图片
+   */
+  link: string;
 
-    /**
-     * 图标的主题色
-     *
-     * @default 'currentColor'
-     */
-    color?: string;
+  /**
+   * 分享按钮的行为
+   *
+   * @description
+   * - `open` 将会在新标签页打开链接
+   * - `navigate` 将会跳转到链接
+   * - `popup` 将会打开一个弹窗
+   * - `qrcode` 将会显示一个二维码
+   *
+   * @default "popup"
+   */
+  action?: ShareAction;
 
-    /**
-     * 纯色图标的形状
-     */
-    shape: string;
+  /**
+   * 图标的主题色
+   *
+   * @default 'currentColor'
+   */
+  color?: string;
 
-    /**
-     * 彩色图标
-     */
-    icon?: string;
-  }
+  /**
+   * 纯色图标的形状
+   */
+  shape: string;
 
-  interface ShareServiceOptions extends ShareServiceConfig {
-    /**
-     * 服务名称
-     */
-    name: string;
-  }
+  /**
+   * 彩色图标
+   */
+  icon?: string;
+}
 
-  type ShareService = BuiltInShareService | ShareServiceOptions;
-  ```
+interface ShareServiceOptions extends ShareServiceConfig {
+  /**
+   * 服务名称
+   */
+  name: string;
+}
 
-- 默认值: 所有可用的服务
+type ShareService = BuiltInShareService | ShareServiceOptions;
+```
 
-分享服务
-
-### titleGetter
-
-- 类型: `(page: PageData) => string`
-- 默认值: `(page) => page.title`
+@`titleGetter` type=`(page: PageData) => string` default=`(page) => page.title`
 
 标题获取器。
 
-### descriptionGetter
+@`descriptionGetter` type=`(page: PageData) => string` default=`(page) => page.frontmatter.description`
 
-- 类型: `(page: PageData) => string`
-- 默认值: `(page) => page.frontmatter.description`
+描述获取器。
 
-描述获取器
+@`summaryGetter` type=`(page: PageData) => string` default=`(page) => page.summary`
 
-### summaryGetter
+摘要获取器。
 
-- 类型: `(page: PageData) => string`
-- 默认值: `(page) => page.summary`
+@`coverGetter` type=`(page: PageData) => string` default=`(page) => page.cover`
 
-摘要获取器
+封面获取器。
 
-### coverGetter
+@`tagGetter` type=`(page: PageData) => string` default=`({ frontmatter }) => frontmatter["tag"] || frontmatter["tags"]`
 
-- 类型: `(page: PageData) => string`
-- 默认值: `(page) => page.cover`
+标签获取器。
 
-封面获取器
+@`inline` type=boolean
 
-### tagGetter
+是否内联显示。
 
-- 类型: `(page: PageData) => string`
-- 默认值: `({ frontmatter }) => frontmatter["tag"] || frontmatter["tags"]`
+@`colorful` type=boolean
 
-标签获取器
+是否使用彩色图标。
 
-### inline
-
-- 类型: `boolean`
-- 默认值: `false`
-
-是否内联显示
-
-### colorful
-
-- 类型: `boolean`
-- 默认值: `false`
-
-是否使用彩色图标
+:::

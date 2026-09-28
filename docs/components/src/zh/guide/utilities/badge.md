@@ -18,21 +18,16 @@ title: Badge
 
 :::
 
-## 属性
+## 选项 {#options}
 
-### text
+::: fields
+@`text` type=string required
 
-- 类型: `string`
-- 必填: 是
+徽章的文字。
 
-徽章的文字
+@`type` type=`"tip" | "warning" | "danger" | "important" | "info" | "note"` default=`"info"`
 
-### type
-
-- 类型: `"tip" | "warning" | "danger" | "important" | "info" | "note"`
-- 默认值: `"info"`
-
-徽章的类型
+徽章的类型：
 
 - <Badge text="tip" type="tip" vertical="middle" />
 - <Badge text="warning" type="warning" vertical="middle" />
@@ -41,16 +36,12 @@ title: Badge
 - <Badge text="info" type="info" vertical="middle" />
 - <Badge text="note" type="note" vertical="middle" />
 
-### color
-
-- 类型: `string`
-- 必填: 否
+@`color` type=string
 
 徽章的颜色，填入在 CSS 中合法的颜色值。
 
-### vertical
+@`vertical` type=`"top" | "middle" | "baseline" | "bottom"`
 
-- 类型: `"top" | "middle" | "baseline" | "bottom"`
-- 必填: 否
+徽章的垂直方向的位置。
 
-徽章的垂直方向的位置
+:::

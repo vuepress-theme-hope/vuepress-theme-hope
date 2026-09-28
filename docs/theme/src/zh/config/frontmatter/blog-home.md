@@ -9,165 +9,113 @@ tag:
   - 博客主页
 ---
 
-## home
+## 选项 {#options}
 
-- 类型: `true`
-- 详情: [博客 → 播客主页](../../guide/blog/home.md#博客类型主页)
+::: fields
+@`home` type=`true` required
 
 必须设置为 `true` 以使用博客主页布局。
 
-## layout
+参考：[博客 → 博客主页](../../guide/blog/home.md#博客类型主页)。
 
-- 类型: `"Blog"`
-- 详情:
-  - [博客 → 博客主页](../../guide/blog/home.md#博客类型主页)
+@`layout` type=`'Blog'` required
 
 必须设置为 `Blog` 以使用博客主页布局。
 
-## hero
+参考：[博客 → 博客主页](../../guide/blog/home.md#博客类型主页)。
 
-- 类型: `boolean`
-- 默认值: `true`
-- 详情:
-  - [博客 → 博客主页](../../guide/blog/home.md#博客类型主页)
+@`hero` type=boolean default=`true`
 
 是否显示主页的图标与描述。
 
-## title
+参考：[博客 → 博客主页](../../guide/blog/home.md#博客类型主页)。
 
-- 类型: `string`
-- 必填: 否
-- 详情:
-  - [博客 → 博客主页](../../guide/blog/home.md#博客类型主页)
+@`title` type=string
 
-设置页面标题，会用于路径导航、页面增强等。
+页面标题，会用于路径导航、页面增强等。
 
-## heroText
+参考：[博客 → 博客主页](../../guide/blog/home.md#博客类型主页)。
 
-- 类型: `string`
-- 默认值: 站点标题
-- 详情:
-  - [博客 → 博客主页](../../guide/blog/home.md#博客类型主页)
+@`heroText` type=string default="站点标题"
 
-主页标题，可通过设置为空字符串来隐藏默认标题。
+主页标题。设置为空字符串可隐藏默认标题。
 
-## tagline
+参考：[博客 → 博客主页](../../guide/blog/home.md#博客类型主页)。
 
-- 类型: `string`
-- 必填: 否
-- 详情:
-  - [博客 → 博客主页](../../guide/blog/home.md#博客类型主页)
+@`tagline` type=string
 
-附加文字描述
+主页的简短描述。
 
-## heroImage
+参考：[博客 → 博客主页](../../guide/blog/home.md#博客类型主页)。
 
-- 类型: `string`
-- 必填: 否
-- 详情:
-  - [博客 → 博客主页](../../guide/blog/home.md#博客类型主页)
-  - [常见问题 → 配置中的链接](../../faq/common-question.md#配置中的链接)
+@`heroImage` type=string
 
 主页图标 (logo) 地址。
 
-## heroImageDark
+参考：[博客 → 博客主页](../../guide/blog/home.md#博客类型主页)、[常见问题 → 配置中的链接](../../faq/common-question.md#配置中的链接)。
 
-- 类型: `string`
-- 默认值: `heroImage`
-- 详情:
-  - [博客 → 博客主页](../../guide/blog/home.md#博客类型主页)
-  - [常见问题 → 配置中的链接](../../faq/common-question.md#配置中的链接)
+@`heroImageDark` type=string default=`heroImage`
 
 深色模式下主页图标 (logo) 地址。
 
-## heroImageStyle
+参考：[博客 → 博客主页](../../guide/blog/home.md#博客类型主页)、[常见问题 → 配置中的链接](../../faq/common-question.md#配置中的链接)。
 
-- 类型: `Record<string, string> | string`
-- 必填: 否
-- 详情:
-  - [博客 → 博客主页](../../guide/blog/home.md#博客类型主页)
+@`heroImageStyle` type=`Record<string, string> | string`
 
-主页图标 (logo) 的 CSS 样式
+主页图标 (logo) 的 CSS 样式。
 
-## heroAlt
+参考：[博客 → 博客主页](../../guide/blog/home.md#博客类型主页)。
 
-- 类型: `string`
-- 必填: 否
-- 详情:
-  - [博客 → 博客主页](../../guide/blog/home.md#博客类型主页)
+@`heroAlt` type=string
 
-主页图标的替代文字
+主页图标的替代文字。
 
-## bgImage
+参考：[博客 → 博客主页](../../guide/blog/home.md#博客类型主页)。
 
-- 类型: `string | false`
-- 默认值: 一张内置风景图片
-- 详情:
-  - [博客 → 博客主页](../../guide/blog/home.md#博客类型主页)
-  - [常见问题 → 配置中的链接](../../faq/common-question.md#配置中的链接)
+@`bgImage` type=`string | false` default="一张内置风景图片"
 
 背景图片的地址，不支持相对路径。如果不填写，会自动应用一张默认的风景图片。
 
-## bgImageDark
+参考：[博客 → 博客主页](../../guide/blog/home.md#博客类型主页)、[常见问题 → 配置中的链接](../../faq/common-question.md#配置中的链接)。
 
-- 类型: `string`
-- 默认值: `bgImage`
-- 详情:
-  - [博客 → 博客主页](../../guide/blog/home.md#博客类型主页)
-  - [常见问题 → 配置中的链接](../../faq/common-question.md#配置中的链接)
+@`bgImageDark` type=string default=`bgImage`
 
 深色模式下背景图片的地址，不支持相对路径。
 
-## bgImageStyle
+参考：[博客 → 博客主页](../../guide/blog/home.md#博客类型主页)、[常见问题 → 配置中的链接](../../faq/common-question.md#配置中的链接)。
 
-- 类型: `Record<string, string> | string`
-- 必填: 否
-- 详情:
-  - [博客 → 博客主页](../../guide/blog/home.md#博客类型主页)
+@`bgImageStyle` type=`Record<string, string> | string`
 
 背景图片的 CSS 样式。
 
-## heroFullScreen
+参考：[博客 → 博客主页](../../guide/blog/home.md#博客类型主页)。
 
-- 类型: `boolean`
-- 默认值: `false`
-- 详情:
-  - [博客 → 博客主页](../../guide/blog/home.md#博客类型主页)
+@`heroFullScreen` type=boolean
 
-是否全屏显示 Hero
+是否全屏显示 Hero。
 
-## projects
+参考：[博客 → 博客主页](../../guide/blog/home.md#博客类型主页)。
 
-- 类型: `ThemeBlogHomeProjectOptions[]`
+@`projects` type=`ThemeBlogHomeProjectOptions[]`
 
-  ```ts
-  interface ThemeBlogHomeProjectOptions {
-    /**
-     * 项目名称
-     */
-    name: string;
+播客主页中的项目列表。
 
-    /**
-     * 项目描述
-     */
-    desc?: string;
+参考：[博客 → 博客主页](../../guide/blog/home.md#博客类型主页)。
 
-    /**
-     * 项目链接
-     */
-    link: string;
+@@`projects[*].name` type=string required
 
-    /**
-     * 项目图标
-     *
-     * @description 支持图片链接或者图标字体类，同时也支持 `"link"`、`"project"`、`"book"`、`"article"`、`"friend"`
-     */
-    icon?: string;
-  }
-  ```
+项目名称。
 
-- 必填: 否
-- 详情:
-  - [博客 → 博客主页](../../guide/blog/home.md#博客类型主页)
+@@`projects[*].desc` type=string
 
-播客主页中的项目列表
+项目描述。
+
+@@`projects[*].link` type=string required
+
+项目链接。
+
+@@`projects[*].icon` type=string
+
+项目图标。支持图片链接或图标字体类，同时也支持 `"link"`、`"project"`、`"book"`、`"article"`、`"friend"`。
+
+:::

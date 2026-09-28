@@ -17,10 +17,10 @@ These options are important and require you to configure them correctly.
 
 <!-- more -->
 
-## hostname <Badge text="Root only" type="warning" />
+## Options
 
-- Type: `string`
-- Required: Yes
+:::: fields
+@`hostname` type=string required root-only=Yes
 
 Domain which the site will be deployed to.
 
@@ -30,294 +30,283 @@ It should contain full protocol (e.g. `https://example.com`).
 
 :::
 
-## author
-
-- Type: `Author`
-
-  ```ts
-  type AuthorName = string;
-
-  interface AuthorInfo {
-    /**
-     * Author name
-     */
-    name: string;
-
-    /**
-     * Author website
-     */
-    url?: string;
-
-    /**
-     * Author email
-     */
-    email?: string;
-  }
-
-  type Author = AuthorName | AuthorName[] | AuthorInfo | AuthorInfo[];
-  ```
-
-- Required: No
-- Details:
-  - [Feature → Page Info](../../guide/feature/page-info.md#author)
+@`author` type=`Author`
 
 Global default author.
 
-## license
+See also: [Feature → Page Info](../../guide/feature/page-info.md#author).
 
-- Type: `string`
-- Required: No
-- Details:
-  - [Layout → Footer](../../guide/layout/footer.md#copyright-information)
+Its type is:
+
+```ts
+type AuthorName = string;
+
+interface AuthorInfo {
+  /**
+   * Author name
+   */
+  name: string;
+
+  /**
+   * Author website
+   */
+  url?: string;
+
+  /**
+   * Author email
+   */
+  email?: string;
+}
+
+type Author = AuthorName | AuthorName[] | AuthorInfo | AuthorInfo[];
+```
+
+@`license` type=string
 
 The default license of site.
 
-## favicon
+See also: [Layout → Footer](../../guide/layout/footer.md#copyright-information).
 
-- Type: `string`
-- Required: No
+@`favicon` type=string
 
 Site favicon.
 
-## navbar {#navbar-header}
+@`navbar` type=`NavbarOptions`
 
-- Type: `NavbarOptions`
+Navbar config.
 
-  ```ts
+See also: [Layout → Navbar](../../guide/layout/navbar.md).
+
+Its type is:
+
+```ts
+/**
+ * Base nav item, displayed as text
+ */
+export interface NavItemOptions {
   /**
-   * Base nav item, displayed as text
+   * Text of item
    */
-  export interface NavItemOptions {
-    /**
-     * Text of item
-     */
-    text: string;
-
-    /**
-     * Icon of item
-     */
-    icon?: string;
-
-    /**
-     * Aria label of item
-     */
-    ariaLabel?: string;
-  }
+  text: string;
 
   /**
-   * Options for `<AutoLink>`
+   * Icon of item
    */
-  export interface AutoLinkOptions extends NavItemOptions {
-    /**
-     * Link of item
-     */
-    link: string;
-
-    /**
-     * Rel of `<a>` tag
-     */
-    rel?: string;
-
-    /**
-     * Target of `<a>` tag
-     */
-    target?: string;
-
-    /**
-     * RegExp mode to be active
-     */
-    activeMatch?: string;
-
-    /**
-     * Whether it's active only when exact match
-     */
-    exact?: boolean;
-  }
+  icon?: string;
 
   /**
-   * Base nav group, has nav items children
+   * Aria label of item
    */
-  export interface NavGroup<T> extends NavItemOptions {
-    /**
-     * Link prefix of current group
-     */
-    prefix?: string;
+  ariaLabel?: string;
+}
 
-    /**
-     * Link of current group
-     */
-    link?: string;
-
-    /**
-     * Children of current group
-     */
-    children: T[];
-  }
-
-  // Navbar types
-
-  // types for NavbarItem
-  export type NavbarLinkOptions = AutoLinkOptions;
-  // types for NavbarDropdown
-  export type NavbarGroupOptions = NavGroup<
-    NavbarLinkOptions | NavGroup<NavbarLinkOptions> | string
-  >;
-  // types for navbar options
-  export type NavbarOptions = (NavbarLinkOptions | NavbarGroupOptions | string)[];
-  ```
-
-- Details: [Layout → Navbar](../../guide/layout/navbar.md)
-
-Navbar config
-
-## sidebar {#sidebar-header}
-
-- Type: `SidebarOptions`
-
-  ```ts
+/**
+ * Options for `<AutoLink>`
+ */
+export interface AutoLinkOptions extends NavItemOptions {
   /**
-   * Base nav item, displayed as text
+   * Link of item
    */
-  export interface NavItemOptions {
-    /**
-     * Text of item
-     */
-    text: string;
-
-    /**
-     * Icon of item
-     */
-    icon?: string;
-
-    /**
-     * Aria label of item
-     */
-    ariaLabel?: string;
-  }
+  link: string;
 
   /**
-   * Options for `<AutoLink>`
+   * Rel of `<a>` tag
    */
-  export interface AutoLinkOptions extends NavItemOptions {
-    /**
-     * Link of item
-     */
-    link: string;
+  rel?: string;
 
-    /**
-     * Rel of `<a>` tag
-     */
-    rel?: string;
+  /**
+   * Target of `<a>` tag
+   */
+  target?: string;
 
-    /**
-     * Target of `<a>` tag
-     */
-    target?: string;
+  /**
+   * RegExp mode to be active
+   */
+  activeMatch?: string;
 
-    /**
-     * RegExp mode to be active
-     */
-    activeMatch?: string;
+  /**
+   * Whether it's active only when exact match
+   */
+  exact?: boolean;
+}
 
-    /**
-     * Whether it's active only when exact match
-     */
-    exact?: boolean;
-  }
+/**
+ * Base nav group, has nav items children
+ */
+export interface NavGroup<T> extends NavItemOptions {
+  /**
+   * Link prefix of current group
+   */
+  prefix?: string;
 
-  export type SidebarLinkOptions = AutoLinkOptions;
+  /**
+   * Link of current group
+   */
+  link?: string;
 
-  export interface SidebarGroupOptions extends NavItemOptions {
-    /**
-     * Link prefix of current group
-     */
-    prefix?: string;
+  /**
+   * Children of current group
+   */
+  children: T[];
+}
 
-    /**
-     * Link of current group
-     */
-    link?: string;
+// Navbar types
 
-    /**
-     * Whether current group is expanded by default
-     *
-     * @default false
-     */
-    expanded?: boolean;
+// types for NavbarItem
+export type NavbarLinkOptions = AutoLinkOptions;
+// types for NavbarDropdown
+export type NavbarGroupOptions = NavGroup<
+  NavbarLinkOptions | NavGroup<NavbarLinkOptions> | string
+>;
+// types for navbar options
+export type NavbarOptions = (NavbarLinkOptions | NavbarGroupOptions | string)[];
+```
 
-    /**
-     * Whether current group is collapsible
-     *
-     * @default false
-     */
-    collapsible?: boolean;
+@`sidebar` type=`SidebarOptions`
 
-    /**
-     * Children of current group
-     */
-    children: SidebarItemOptions[];
-  }
+Sidebar config.
 
-  export interface SidebarStructureOptions extends NavItemOptions {
-    /**
-     * Link prefix of current group
-     */
-    prefix?: string;
+See also: [Layout → Sidebar](../../guide/layout/sidebar.md).
 
-    /**
-     * Link of current group
-     */
-    link?: string;
+Its type is:
 
-    /**
-     * Whether current group is expanded by default
-     *
-     * @default false
-     */
-    expanded?: boolean;
+```ts
+/**
+ * Base nav item, displayed as text
+ */
+export interface NavItemOptions {
+  /**
+   * Text of item
+   */
+  text: string;
 
-    /**
-     * Whether current group is collapsible
-     *
-     * @default false
-     */
-    collapsible?: boolean;
+  /**
+   * Icon of item
+   */
+  icon?: string;
 
-    children: "structure";
-  }
+  /**
+   * Aria label of item
+   */
+  ariaLabel?: string;
+}
 
-  export type SidebarItemOptions =
-    SidebarLinkOptions | SidebarGroupOptions | SidebarStructureOptions | string;
+/**
+ * Options for `<AutoLink>`
+ */
+export interface AutoLinkOptions extends NavItemOptions {
+  /**
+   * Link of item
+   */
+  link: string;
 
-  export type SidebarArrayOptions = SidebarItemOptions[];
+  /**
+   * Rel of `<a>` tag
+   */
+  rel?: string;
 
-  export type SidebarObjectOptions = Record<string, SidebarArrayOptions | "structure" | false>;
+  /**
+   * Target of `<a>` tag
+   */
+  target?: string;
 
-  export type SidebarOptions = SidebarArrayOptions | SidebarObjectOptions | "structure" | false;
-  ```
+  /**
+   * RegExp mode to be active
+   */
+  activeMatch?: string;
 
-- Details: [Layout → Sidebar](../../guide/layout/sidebar.md)
+  /**
+   * Whether it's active only when exact match
+   */
+  exact?: boolean;
+}
 
-Sidebar config
+export type SidebarLinkOptions = AutoLinkOptions;
 
-## locales <Badge text="Root only" type="warning" />
+export interface SidebarGroupOptions extends NavItemOptions {
+  /**
+   * Link prefix of current group
+   */
+  prefix?: string;
 
-- Type: `Record<string, ThemeLocaleOptions>`
-- Details:
-  - [Theme I18n Config](./i18n.md)
+  /**
+   * Link of current group
+   */
+  link?: string;
+
+  /**
+   * Whether current group is expanded by default
+   *
+   * @default false
+   */
+  expanded?: boolean;
+
+  /**
+   * Whether current group is collapsible
+   *
+   * @default false
+   */
+  collapsible?: boolean;
+
+  /**
+   * Children of current group
+   */
+  children: SidebarItemOptions[];
+}
+
+export interface SidebarStructureOptions extends NavItemOptions {
+  /**
+   * Link prefix of current group
+   */
+  prefix?: string;
+
+  /**
+   * Link of current group
+   */
+  link?: string;
+
+  /**
+   * Whether current group is expanded by default
+   *
+   * @default false
+   */
+  expanded?: boolean;
+
+  /**
+   * Whether current group is collapsible
+   *
+   * @default false
+   */
+  collapsible?: boolean;
+
+  children: "structure";
+}
+
+export type SidebarItemOptions =
+  SidebarLinkOptions | SidebarGroupOptions | SidebarStructureOptions | string;
+
+export type SidebarArrayOptions = SidebarItemOptions[];
+
+export type SidebarObjectOptions = Record<
+  string,
+  SidebarArrayOptions | "structure" | false
+>;
+
+export type SidebarOptions =
+  SidebarArrayOptions | SidebarObjectOptions | "structure" | false;
+```
+
+@`locales` type=`Record<string, ThemeLocaleOptions>` root-only=Yes
 
 I18n config of the theme, where you can set options for each language separately.
 
-## extraLocales <Badge text="Root only" type="warning" />
+See also: [Theme I18n Config](./i18n.md).
 
-- Type: `Record<string, string>`
+@`extraLocales` type=`Record<string, string>` root-only=Yes
 
 Extra locales for the site, where key is the language name and value is the site path, `:route` will be replaced by current route path.
 
-## hotReload <Badge text="Root only" type="warning" />
-
-- Type: `boolean`
-- Default: Whether using `--debug` flag
+@`hotReload` type=boolean root-only=Yes default="Whether using `--debug` flag"
 
 Whether to enable hot reload in the devServer.
 
@@ -340,3 +329,5 @@ By default, devServer has the following limitations:
 Enabling it means you accept that every modification will trigger some expensive recalculations and the whole application will restart, which usually results refreshing the page and a few seconds of blank screen in environments with weak performance.
 
 :::
+
+::::

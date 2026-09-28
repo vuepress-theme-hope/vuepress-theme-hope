@@ -9,157 +9,113 @@ tag:
   - Blog Home
 ---
 
-## home
+## Options
 
-- Type: `true`
-- Details:
-  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
+::: fields
+@`home` type=`true`
 
 Must be `true` to use blog home layout.
 
-## layout
+See also: [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage).
 
-- Type: `"Blog"`
-- Details:
-  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
+@`layout` type=`"Blog"`
 
 Must be `Blog` to use blog home layout.
 
-## title
+See also: [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage).
 
-- Type: `string`
-- Required: No
-- Details:
-  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
+@`hero` type=boolean default=`true`
+
+Whether to display the icon and description on the home page.
+
+See also: [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage).
+
+@`title` type=string
 
 Page title, will be used in breadcrumb, seo, etc.
 
-## heroText
+See also: [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage).
 
-- Type: `string`
-- Default: Site title
-- Details:
-  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
+@`heroText` type=string default="Site title"
 
 Hero Title, can be set to an empty string to hide the default title.
 
-## tagline
+See also: [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage).
 
-- Type: `string`
-- Required: No
-- Details:
-  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
+@`tagline` type=string
 
-Short description in hero
+Short description in hero.
 
-## heroImage
+See also: [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage).
 
-- Type: `string`
-- Required: No
-- Details:
-  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
-  - [FAQ → Links in Config](../../faq/common-question.md#links-in-config)
+@`heroImage` type=string
 
 Image link used as home hero (logo).
 
-## heroImageDark
+See also: [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage) and [FAQ → Links in Config](../../faq/common-question.md#links-in-config).
 
-- Type: `string`
-- Default: `heroImage`
-- Details:
-  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
-  - [FAQ → Links in Config](../../faq/common-question.md#links-in-config)
+@`heroImageDark` type=string default=`heroImage`
 
 Dark mode Home hero (logo) image link.
 
-## heroImageStyle
+See also: [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage) and [FAQ → Links in Config](../../faq/common-question.md#links-in-config).
 
-- Type: `Record<string, string> | string`
-- Required: No
-- Details:
-  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
+@`heroImageStyle` type=`Record<string, string> | string`
 
-CSS style for home hero (logo) image
+CSS style for home hero (logo) image.
 
-## heroAlt
+See also: [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage).
 
-- Type: `string`
-- Required: No
-- Details:
-  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
+@`heroAlt` type=string
 
-Home icon alt text
+Home icon alt text.
 
-## bgImage
+See also: [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage).
 
-- Type: `string | false`
-- Default: A built-in picture
-- Details:
-  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
-  - [FAQ → Links in Config](../../faq/common-question.md#links-in-config)
+@`bgImage` type=`string | false` default="A built-in picture"
 
-Link of background image, relative path is not supported.
+Link of background image, relative path is not supported. If it is not set, a default landscape image will be applied automatically.
 
-## bgImageDark
+See also: [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage) and [FAQ → Links in Config](../../faq/common-question.md#links-in-config).
 
-- Type: `string`
-- Default: `bgImage`
-- Details:
-  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
-  - [FAQ → Links in Config](../../faq/common-question.md#links-in-config)
+@`bgImageDark` type=string default=`bgImage`
 
 Link of dark mode background image, relative path is not supported.
 
-## bgImageStyle
+See also: [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage) and [FAQ → Links in Config](../../faq/common-question.md#links-in-config).
 
-- Type: `Record<string, string> | string`
-- Required: No
-- Details:
-  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
+@`bgImageStyle` type=`Record<string, string> | string`
 
 The CSS style of the background image.
 
-## heroFullScreen
+See also: [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage).
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
+@`heroFullScreen` type=boolean
 
-Whether Hero is full screen displayed
+Whether Hero is full screen displayed.
 
-## projects
+See also: [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage).
 
-- Type: `ThemeBlogHomeProjectOptions[]`
-
-  ```ts
-  interface ThemeBlogHomeProjectOptions {
-    /**
-     * Project name
-     */
-    name: string;
-
-    /**
-     * Project description
-     */
-    desc?: string;
-
-    /**
-     * Project link
-     */
-    link: string;
-
-    /**
-     * Project icon
-     *
-     * @description image link or icon fontClass are supported, as well as `"link"`、`"project"`、`"book"`、`"article"`、`"friend"`
-     */
-    icon?: string;
-  }
-  ```
-
-- Required: No
-- Details:
-  - [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage)
+@`projects` type=`ThemeBlogHomeProjectOptions[]`
 
 Project list displayed in blog homepage.
+
+See also: [Blog → Blog HomePage](../../guide/blog/home.md#blog-style-homepage).
+
+@@`projects[*].name` type=string required
+
+Project name.
+
+@@`projects[*].desc` type=string
+
+Project description.
+
+@@`projects[*].link` type=string required
+
+Project link.
+
+@@`projects[*].icon` type=string
+
+Project icon. Image link or icon fontClass are supported, as well as `"link"`, `"project"`, `"book"`, `"article"` and `"friend"`.
+
+:::

@@ -13,52 +13,39 @@ tag:
 
 ## `@vuepress/plugin-copyright` 选项
 
-### copy.triggerLength
+::: fields
+@`copy.triggerLength` type=number default=`100`
 
-- 类型: `number`
-- 默认值: `100`
+触发附加版权的最小字数。
 
-触发附加版权的最小字数
+@`copy.disableCopy` type=boolean
 
-### copy.disableCopy
+禁用复制。
 
-- 类型: `boolean`
-- 默认值: `false`
+@`copy.disableSelection` type=boolean
 
-禁用复制
+禁用选择。
 
-### copy.disableSelection
-
-- 类型: `boolean`
-- 默认值: `false`
-
-禁用选择
+:::
 
 ## `@vuepress/plugin-feed` 选项
 
-### feed.title
+:::: fields
+@`feed.title` type=string
 
-- 类型: `string`
+Feed 项目的标题。
 
-Feed 项目的标题
+@`feed.description` type=string
 
-### feed.description
+Feed 项目的描述。
 
-- 类型: `string`
+@`feed.content` type=string
 
-Feed 项目的描述
+Feed 项目的内容。
 
-### feed.content
+@`feed.author` type=`FeedAuthor[] | FeedAuthor`
 
-- 类型: `string`
-
-Feed 项目的内容
-
-### feed.author
-
-- 类型: `FeedAuthor[] | FeedAuthor`
-
-Feed 项目的作者
+Feed 项目的作者。
 
 ::: details FeedAuthor 格式
 
@@ -92,11 +79,9 @@ interface FeedAuthor {
 
 :::
 
-### feed.contributor
+@`feed.contributor` type=`FeedContributor[] | FeedContributor`
 
-- 类型: `FeedContributor[] | FeedContributor`
-
-Feed 项目的贡献者
+Feed 项目的贡献者。
 
 ::: details FeedContributor 格式
 
@@ -130,9 +115,7 @@ interface FeedContributor {
 
 :::
 
-### feed.guid
-
-- 类型: `string`
+@`feed.guid` type=string
 
 Feed 项目的标识符，用于标识 Feed 项目。
 
@@ -142,25 +125,21 @@ Feed 项目的标识符，用于标识 Feed 项目。
 
 :::
 
+::::
+
 ## `@vuepress/plugin-sitemap` 选项
 
-### sitemap.changefreq
-
-- 类型: `"always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never"`
-- 默认值: `"daily"`
+::: fields
+@`sitemap.changefreq` type=`"always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never"` default=`"daily"`
 
 页面默认更新频率。它会覆盖插件选项中的 changefreq 选项。
 
-### sitemap.exclude
+@`sitemap.exclude` type=boolean
 
-- 类型: `boolean`
-- 默认值: `false`
+是否不输出此页面到 Sitemap。
 
-是否不输出此页面到 Sitemap
-
-### sitemap.priority
-
-- 类型: `number`
-- 默认值: `0.5`
+@`sitemap.priority` type=number default=`0.5`
 
 页面优先级，范围 `0` 至 `1`。
+
+:::

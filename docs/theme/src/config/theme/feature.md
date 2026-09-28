@@ -27,31 +27,20 @@ For details, see [Blog Feature Intro](../../guide/blog/intro.md).
 
 :::
 
-### blog\.name
-
-- Type: `string`
-- Default: `author`
+::::: fields
+@`blog.name` type=string default=`author`
 
 Blogger name.
 
-### blog.avatar
-
-- Type: `string`
-- Default: `logo`
+@`blog.avatar` type=string default=`logo`
 
 Blogger avatar.
 
-### blog.description
-
-- Type: `string`
-- Required: No
+@`blog.description` type=string
 
 Motto, slogan or a short description.
 
-### blog.intro
-
-- Type: `string`
-- Required: No
+@`blog.intro` type=string
 
 Personal introduction address of the blogger.
 
@@ -61,15 +50,12 @@ Visitors can click on the avatar or name in "Blogger Information" to enter the p
 
 :::
 
-### blog.medias
-
-- Type: `Record<string, string | { icon: string ; link: string }>`
-- Required: No
+@`blog.medias` type=`Record<string, string | { icon: string; link: string }>`
 
 Set social links.
 
 - If the social media icon is available below, you can set `MediaName: MediaLink` directly.
-- Otherwise, you should pass in a object `MediaName: { icon: MediaSvgIconString or MediaUrl MediaLink, link: MediaLink }`,
+- Otherwise, you should pass in an object `MediaName: { icon: MediaSvgIconString or MediaUrl, link: MediaLink }`.
 
 :::: info Available Social Media
 
@@ -181,42 +167,35 @@ The following social medias has built-in icons:
 
 ::::
 
-### blog.timeline
-
-- Type: `string`
-- Default: `"Yesterday once more"`
+@`blog.timeline` type=string default=`'Yesterday once more'`
 
 Text on the top of timeline page.
 
-### blog.articlePerPage
+@`blog.articlePerPage` type=number default=`10`
 
-- Type: `number`
-- Default: `10`
+Article number per page.
 
-Article number per page
+@`blog.articleInfo` type=`ArticleInfo[]` default=`["Author", "Original", "Date", "PageView", "Category", "Tag", "ReadingTime"]`
 
-### blog.articleInfo
-
-- Type: `ArticleInfo[]`
-- Default: `["Author", "Original", "Date", "PageView", "Category", "Tag", "ReadingTime"]`
-
-Article info displayed in article list
+Article info displayed in article list.
 
 Available values for `ArticleInfo`:
 
-- `"Author"`
-- `"Category"`
-- `"Date"`
-- `"Original"`
-- `"Tag"`
-- `"ReadingTime"`
-- `"Word"`
+- `'Author'`
+- `'Category'`
+- `'Date'`
+- `'Original'`
+- `'Tag'`
+- `'ReadingTime'`
+- `'Word'`
 
 ::: warning Limitation
 
 ReadingTime and Word are not available in devServer by default, [see reasons and how to enable it](./basic.md#hotreload).
 
 :::
+
+:::::
 
 ## Encrypt Config <Badge text="Root only" type="warning" />
 
@@ -228,48 +207,42 @@ You can only set this option directly under theme options, setting it in each lo
 
 :::
 
-### encrypt.global
-
-- Type: `boolean`
-- Default: `false`
+:::: fields
+@`encrypt.global` type=boolean
 
 Whether to encrypt globally.
 
-### encrypt.admin
-
-- Type: `PasswordOptions`
-
-  ```ts
-  type PasswordOptions =
-    | string
-    | string[]
-    | {
-        password: string | string[];
-        hint: string;
-      };
-  ```
-
-- Required: No
+@`encrypt.admin` type=`PasswordOptions`
 
 Admin password with the highest authority, you can set multiple ones by using array, or adding hint with object format.
 
-### encrypt.config
+Its type is:
 
-- Type: `Record<string, PasswordOptions>`
+```ts
+type PasswordOptions =
+  | string
+  | string[]
+  | {
+      password: string | string[];
+      hint: string;
+    };
+```
 
-  ```ts
-  type PasswordOptions =
-    | string
-    | string[]
-    | {
-        password: string | string[];
-        hint: string;
-      };
-  ```
-
-- Required: No
+@`encrypt.config` type=`Record<string, PasswordOptions>`
 
 The encryption configuration is an object with a key name matching the path and a key-value corresponding to a password that accepts a string or an array of strings, or adding hint with object format.
+
+Its type is:
+
+```ts
+type PasswordOptions =
+  | string
+  | string[]
+  | {
+      password: string | string[];
+      hint: string;
+    };
+```
 
 ::: details Example
 
@@ -286,5 +259,7 @@ The encryption configuration is an object with a key name matching the path and 
 ```
 
 :::
+
+::::
 
 [blog]: https://ecosystem.vuejs.press/plugins/blog/blog/

@@ -18,6 +18,7 @@ export default theme("lightgallery", {
 
   markdown: {
     codeTabs: true,
+    fields: true,
     imgMark: true,
   },
 

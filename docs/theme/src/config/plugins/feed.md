@@ -22,55 +22,55 @@ The theme passes `plugins.feed` in theme options as plugin options to `@vuepress
 
 You can pass your own options with `plugins.feed`, here are some common ones:
 
-### atom
-
-- Type: `boolean`
-- Default: `false`
+::: fields
+@`atom` type=boolean
 
 Whether to output Atom syntax files.
 
-### json
-
-- Type: `boolean`
-- Default: `false`
+@`json` type=boolean
 
 Whether output JSON syntax files.
 
-### rss
-
-- Type: `boolean`
-- Default: `false`
+@`rss` type=boolean
 
 Whether to output RSS syntax files.
 
-### count
+@`image` type=string
 
-- Type: `number`
-- Default: `100`
+A large image of the feed, used as a banner.
+
+@`icon` type=string
+
+A small icon of the feed, displayed in subscription lists.
+
+@`count` type=number default=`100`
 
 Set the maximum number of items in the feed. After all pages are sorted, the first `count` items will be intercepted.
 
 If your site has a lot of articles, you may consider this option to reduce feed file size.
 
-### filter
-
-- Type: `(page: Page)=> boolean`
-- Default:
-
-  ```js
-  ({ frontmatter, filePathRelative }) =>
-    Boolean(frontmatter.feed ?? frontmatter.article ?? (filePathRelative && !frontmatter.home));
-  ```
+@`filter` type=`(page: Page) => boolean`
 
 A custom filter function, used to filter feed items.
 
-### sort
+Its default value is:
 
-- Type: `(pageA: Page, pageB: Page)=> number`
+```js
+({ frontmatter, filePathRelative }) =>
+  Boolean(
+    frontmatter.feed ??
+    frontmatter.article ??
+    (filePathRelative && !frontmatter.home),
+  );
+```
+
+@`sort` type=`(pageA: Page, pageB: Page) => number`
 
 Custom sorter function for feed items.
 
 The default sorting behavior is by file adding time coming from git (needs `@vuepress/plugin-git`).
+
+:::
 
 ::: info
 

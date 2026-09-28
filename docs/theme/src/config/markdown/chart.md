@@ -13,69 +13,51 @@ The following options supports different charts in markdown, and can be set **un
 
 <!-- more -->
 
-## markdown.chartjs
+## Options
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → Chart.js](../../guide/markdown/chart/chartjs.md)
+::: fields
+@`markdown.chartjs` type=boolean
 
-Whether to enable Chart.js support
+Whether to enable Chart.js support.
 
-## markdown.echarts
+See also: [Markdown → Chart.js](../../guide/markdown/chart/chartjs.md).
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → ECharts](../../guide/markdown/chart/echarts.md)
+@`markdown.echarts` type=boolean
 
-Whether to enable ECharts support
+Whether to enable ECharts support.
 
-## markdown.flowchart
+See also: [Markdown → ECharts](../../guide/markdown/chart/echarts.md).
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → Flowchart](../../guide/markdown/chart/flowchart.md)
+@`markdown.flowchart` type=boolean
 
-Whether to enable flowchart support
+Whether to enable flowchart support.
 
-## markdown.markmap
+See also: [Markdown → Flowchart](../../guide/markdown/chart/flowchart.md).
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → Markmap](../../guide/markdown/chart/markmap.md)
+@`markdown.markmap` type=boolean
 
 Whether to enable [Markmap](https://markmap.js.org/) support.
 
-## markdown.mermaid
+See also: [Markdown → Markmap](../../guide/markdown/chart/markmap.md).
 
-- Type: `boolean`
-- Default: `false`
-- Details:
-  - [Markdown → Mermaid](../../guide/markdown/chart/mermaid.md)
+@`markdown.mermaid` type=boolean
 
 Whether to enable [Mermaid](https://mermaid.js.org/) support.
 
-## markdown.plantuml
+See also: [Markdown → Mermaid](../../guide/markdown/chart/mermaid.md).
 
-- Type: `MarkdownItPlantumlOptions[] | boolean`
-- Default: `false`
-- Details:
-  - [Markdown → PlantUML](../../guide/markdown/chart/plantuml.md)
+@`markdown.plantuml` type=`MarkdownItPlantumlOptions[] | boolean`
 
 Whether to enable [plantuml](https://plantuml.com/) support.
 
-## markdown.DANGEROUS_ALLOW_SCRIPT_EXECUTION
+See also: [Markdown → PlantUML](../../guide/markdown/chart/plantuml.md).
 
-- Type: `boolean`
-- Default: `false`
+@`markdown.DANGEROUS_ALLOW_SCRIPT_EXECUTION` type=boolean
 
 Whether to allow script execution in charts.
 
-## markdown.DANGEROUS_SCRIPT_EXECUTION_ALLOWLIST
+@`markdown.DANGEROUS_SCRIPT_EXECUTION_ALLOWLIST` type=`string[] | '*'` default=`[]`
 
-- Type: `string[] | '*'`
-- Default: `[]`
-- Details: Only effective when `DANGEROUS_ALLOW_SCRIPT_EXECUTION` is enabled. A list of file paths allowed to execute chart scripts. Use `'*'` to allow all files.
+Only effective when `DANGEROUS_ALLOW_SCRIPT_EXECUTION` is enabled. A list of file paths allowed to execute chart scripts. Use `'*'` to allow all files.
+
+:::

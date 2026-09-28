@@ -22,42 +22,30 @@ tag:
 
 你可以通过 `plugins.copyright` 自行设置选项，以下是常见选项:
 
-### triggerLength
+::: fields
+@`triggerLength` type=number default=`100`
 
-- 类型: `number`
-- 默认值: `100`
+触发附加版权的最小字数。
 
-触发附加版权的最小字数
+@`global` type=boolean
 
-### global
+是否全局启用。
 
-- 类型: `boolean`
-- 默认值: `false`
+@`disableCopy` type=boolean
 
-是否全局启用
+禁用复制。
 
-### disableCopy
+@`disableSelection` type=boolean
 
-- 类型: `boolean`
-- 默认值: `false`
+禁用选择。
 
-禁用复制
+@`canonical` type=string
 
-### disableSelection
-
-- 类型: `boolean`
-- 默认值: `false`
-
-禁用选择
-
-### canonical
-
-- 类型: `string`
-- 必填: 否
-
-首选域名与部署目录
+首选域名与部署目录。
 
 当你在多个站点部署内容时很有用。
+
+:::
 
 ::: info
 
