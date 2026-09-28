@@ -86,14 +86,17 @@ peerDependencyRules:
   ignoreMissing:
     - echarts
 
+# virtualStoreType: global
+
 blockExoticSubdeps: false
-
-# enableGlobalVirtualStore: true
-
 minimumReleaseAgeExclude:
   - "@mdit/*"
+  - "@oxlint/*"
+  - "@oxfmt/*"
   - "@vuepress/*"
-
+  - oxc-config-hope
+  - oxlint
+  - oxfmt
+minimumReleaseAgeExcludePrune: true
 trustPolicy: no-downgrade
-
 trustPolicyIgnoreAfter: 720
