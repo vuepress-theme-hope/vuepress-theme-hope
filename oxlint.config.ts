@@ -78,6 +78,8 @@ export default defineHopeConfig(
           allow: [{ from: "file", name: ["convertOptions"] }],
         },
       ],
+      // FIXME: https://github.com/oxc-project/oxc/issues/27155
+      "typescript/no-generated-empty-object-type": "off",
     },
     node: ["**/node/**/*.ts", "**/create/src/**/*.ts"],
     vue: true,
