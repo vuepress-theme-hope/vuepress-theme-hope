@@ -121,7 +121,7 @@ type Author = AuthorName | AuthorName[] | AuthorInfo | AuthorInfo[];
 
 是否将该文章添加至文章列表中。
 
-参考：[博客 → 文章](../../guide/blog/article.md#文章)。
+参考：[博客 → 文章](../../guide/blog/article.md#文章配置)。
 
 @`timeline` type=boolean default=`true`
 
@@ -133,13 +133,13 @@ type Author = AuthorName | AuthorName[] | AuthorInfo | AuthorInfo[];
 
 是否在列表中置顶。当填入数字时，数字越大，排名越靠前。
 
-参考：[博客 → 文章](../../guide/blog/article.md#文章)。
+参考：[博客 → 文章](../../guide/blog/article.md#文章配置)。
 
 @`star` type=`boolean | number`
 
 是否标为星标文章。当填入数字时，数字越大，排名越靠前。
 
-参考：[博客 → 文章](../../guide/blog/article.md#星标文章)。
+参考：[博客 → 文章](../../guide/blog/article.md#星标文章-star)。
 
 @`cover` type=string
 

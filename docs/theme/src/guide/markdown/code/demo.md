@@ -28,7 +28,7 @@ export default hopeTheme({
 
 ::: tip
 
-The json block is optional, for config please see [config](../../../config/markdown/code.md#demo).
+The json block is optional, for config please see [config](../../../config/markdown/code.md#markdown-demo).
 
 :::
 

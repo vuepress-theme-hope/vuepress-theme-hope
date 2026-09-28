@@ -30,7 +30,7 @@ tag:
 
 是否启用图片标记。
 
-参考：[Markdown → 图片标记](../../guide/markdown/grammar/image.md#图片-ID-标记) 与 [@vuepress/plugin-markdown-image → mark][mark]。
+参考：[Markdown → 图片标记](../../guide/markdown/grammar/image.md#图片-id-标记) 与 [@vuepress/plugin-markdown-image → mark][mark]。
 
 @`markdown.imgSize` type=boolean
 

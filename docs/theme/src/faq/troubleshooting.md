@@ -17,7 +17,7 @@ category:
 | npm         | `>= 8`              | `npm -v`              |                                               |
 | yarn        | `>= 2`              | `yarn -v`             | `nodeLinker: 'node-modules'` in `.yarnrc.yml` |
 
-If your Node.js version does not satisfy the requirement, you should [download and install the LTS version of Node.js](../get-started/env.md#nodejs).
+If your Node.js version does not satisfy the requirement, you should [download and install the LTS version of Node.js](../get-started/env.md#node-js).
 
 To use the correct package manager, run `corepack enable` (need to run as Administrator on Windows), and run one of the following commands:
 

@@ -64,7 +64,7 @@ Slugify 函数，用于转换 key 在路由中注册的形式。
 
 额外的文章类型。
 
-参考：[指南 → 文章列表](../../guide/blog/article.md#其他类型的文章)。
+参考：[指南 → 文章列表](../../guide/blog/article.md#自定义文章类型)。
 
 @@`plugins.blog.type[*].key` type=string required
 

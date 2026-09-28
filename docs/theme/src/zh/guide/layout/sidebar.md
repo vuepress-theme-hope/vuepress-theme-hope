@@ -13,7 +13,7 @@ tag:
 
 <!-- markdownlint-disable MD051 -->
 
-主题允许你通过 [文件结构](#通过文件结构自动生成) 和 [文档标题](#通过标题自动生成) 自动生成侧边栏，也可以手动配置。
+主题允许你通过 [文件结构](#通过文件结构自动生成侧边栏) 自动生成侧边栏，也可以手动配置。
 
 <!-- markdownlint-enable MD051 -->
 
@@ -150,7 +150,10 @@ export default hopeTheme({
         {
           text: "Sub Group 2",
           prefix: "corge/",
-          children: ["fred" /* /corge/fred.html */, "grault" /* /corge/grault.html */],
+          children: [
+            "fred" /* /corge/fred.html */,
+            "grault" /* /corge/grault.html */,
+          ],
         },
         "foo" /* /foo.html */,
       ],
@@ -189,12 +192,20 @@ export default hopeTheme({
     {
       text: "Foo",
       prefix: "/foo/",
-      children: ["" /* /foo/ */, "one" /* /foo/one.html */, "two" /* /foo/two.html */],
+      children: [
+        "" /* /foo/ */,
+        "one" /* /foo/one.html */,
+        "two" /* /foo/two.html */,
+      ],
     },
     {
       text: "Bar",
       prefix: "/bar/",
-      children: ["" /* /bar/ */, "three" /* /bar/three.html */, "four" /* /bar/four.html */],
+      children: [
+        "" /* /bar/ */,
+        "three" /* /bar/three.html */,
+        "four" /* /bar/four.html */,
+      ],
     },
     "/contact" /* /contact.html */,
     "/about" /* /about.html */,
@@ -230,9 +241,17 @@ import { hopeTheme } from "vuepress-theme-hope";
 
 export default hopeTheme({
   sidebar: {
-    "/foo/": ["" /* /foo/ */, "one" /* /foo/one.html */, "two" /* /foo/two.html */],
+    "/foo/": [
+      "" /* /foo/ */,
+      "one" /* /foo/one.html */,
+      "two" /* /foo/two.html */,
+    ],
 
-    "/bar/": ["" /* /bar/ */, "three" /* /bar/three.html */, "four" /* /bar/four.html */],
+    "/bar/": [
+      "" /* /bar/ */,
+      "three" /* /bar/three.html */,
+      "four" /* /bar/four.html */,
+    ],
 
     // 回退
     "/": ["" /* / */, "contact" /* /contact.html */, "about" /* /about.html */],

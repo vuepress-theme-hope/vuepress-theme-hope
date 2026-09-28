@@ -115,5 +115,5 @@ VuePress Theme Hope 集成了多个插件。你可以通过主题选项中的 `p
 :::
 
 ::: info 页面配置
-可以通过 Markdown 文件的 Frontmatter 为特定页面进行局部配置。详见 [项目内容 → Frontmatter](./content.md#frontmatter)。
+可以通过 Markdown 文件的 Frontmatter 为特定页面进行局部配置。详见 [项目内容 → Frontmatter](./content.md#frontmatter-配置)。
 :::

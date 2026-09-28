@@ -50,7 +50,7 @@ flowchart LR
     pc<==$pc==>wide
 ```
 
-你可以通过 [样式配置文件](../config/style.md#configscss) 来调整这些断点。
+你可以通过 [样式配置文件](../config/style.md#config-scss) 来调整这些断点。
 
 比如:
 

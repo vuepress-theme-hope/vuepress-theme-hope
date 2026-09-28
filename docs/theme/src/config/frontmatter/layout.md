@@ -73,7 +73,7 @@ Page order in sidebar and catalog.
 
 @`dir`
 
-Sidebar group information used for [structure sidebar](../../guide/layout/sidebar.md#auto-sidebar).
+Sidebar group information used for [structure sidebar](../../guide/layout/sidebar.md#generate-sidebar-from-file-structure).
 
 @@`dir.text` type=string default="title of `README.md`"
 

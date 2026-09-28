@@ -28,7 +28,7 @@ export default hopeTheme({
 
 ::: tip
 
-JSON 块是可选的，可用的配置详见 [配置](../../../config/markdown/code.md#demo)。
+JSON 块是可选的，可用的配置详见 [配置](../../../config/markdown/code.md#markdown-demo)。
 
 :::
 

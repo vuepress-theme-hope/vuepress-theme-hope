@@ -64,7 +64,7 @@ Slugify function, used to convert key name which they are register in routes.
 
 Additional article type.
 
-See also: [Guide → Article List](../../guide/blog/article.md#other-types-of-articles).
+See also: [Guide → Article List](../../guide/blog/article.md#custom-article-types).
 
 @@`plugins.blog.type[*].key` type=string required
 

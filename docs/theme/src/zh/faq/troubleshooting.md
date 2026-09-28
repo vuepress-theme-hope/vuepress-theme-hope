@@ -17,7 +17,7 @@ category:
 | npm     | `>= 8`       | `npm -v`       |                                               |
 | yarn    | `>= 2`       | `yarn -v`      | `nodeLinker: 'node-modules'` in `.yarnrc.yml` |
 
-如果你的 Node.js 版本不满足要求，你应该 [下载并安装 LTS 版本的 Node.js](../get-started/env.md#nodejs)。
+如果你的 Node.js 版本不满足要求，你应该 [下载并安装 LTS 版本的 Node.js](../get-started/env.md#node-js)。
 
 要使用正确的包管理器，请运行 `corepack enable` (在 Windows 上需要以管理员身份运行)，然后运行以下命令之一：
 

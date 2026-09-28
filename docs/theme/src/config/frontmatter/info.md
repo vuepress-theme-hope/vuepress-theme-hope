@@ -121,7 +121,7 @@ See also: [Feature → Comment](../../guide/feature/comment.md#waline).
 
 Whether to add the article to the article list.
 
-See also: [Blog → Article](../../guide/blog/article.md#article).
+See also: [Blog → Article](../../guide/blog/article.md#article-configuration).
 
 @`timeline` type=boolean default=`true`
 
@@ -133,7 +133,7 @@ See also: [Blog → Timeline](../../guide/blog/timeline.md#excluding-articles).
 
 Sets whether the current article is pinned in the list. When fill in with number, greater ones come before smaller ones.
 
-See also: [Blog → Article](../../guide/blog/article.md#article).
+See also: [Blog → Article](../../guide/blog/article.md#article-configuration).
 
 @`star` type=`boolean | number`
 
