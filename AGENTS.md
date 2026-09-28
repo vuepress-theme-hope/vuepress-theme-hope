@@ -46,16 +46,47 @@ Documentation sites are built per package, e.g. `pnpm --filter docs-theme docs:v
 - No Node.js APIs in `client`, no browser APIs in `node`, and neither in `shared`.
 - No bundled external dependency warnings from the `bundle` command.
 
+### Export Requirements
+
+- Plugin and theme factory exports must be named consistently with the package name, and every type used in the exported API must also be exported.
+- A file that exports a single function or class must have a filename matching that export.
+
 ### CSS / SCSS
 
-- All CSS classes start with `vp-`; classes integrating third-party content are exempt.
+- All CSS classes start with `vp-`. Classes integrating third-party content are exempt, e.g. `waline-wrapper` for the Waline comment system.
 - Color variables must contain `-c-`; plugin variables are prefixed with the plugin name; theme variables with `vp-`.
 - Icon variables inside class definitions must use `--icon`.
 
 ### JSDoc
 
-- Required for all user-visible exports, bilingual (English, blank line, Chinese).
-- `@param` for every parameter, `@default` for every option with a default, `@example` only on exported functions.
+- Required for all user-visible exports. Internal implementations do not need it, but existing comments must stay correct.
+- Bilingual: English description first, a blank line, then Chinese.
+- `@param` is required for every parameter, written bilingually and separated with `/`.
+- `@default` is always included for user-visible things that have a default (including `@default false`); elsewhere only when the value is not obvious from the parameters.
+- `@example` only on exported functions.
+- `@description` is optional, only when extra explanation is needed.
+
+**JSDoc template:**
+
+````typescript
+/**
+ * English description
+ *
+ * 中文描述
+ *
+ * @description (optional) English detailed description
+ *
+ * 中文详细描述
+ *
+ * @param paramName - English description / 中文描述
+ *
+ * @default defaultValue
+ * @example
+ * ```ts
+ * // Example code in TypeScript
+ * ```
+ */
+````
 
 ## Commit Messages
 
@@ -74,6 +105,7 @@ Each package has its own docs site under `docs/<package>/src`, with English at t
 
 ### General Requirements
 
+- Write for developers: concise, clear and essential information only, with no typos or grammar errors.
 - Consistent with code behaviors.
 - Chinese and English content must be consistent in structure and content.
 - Keep content concise and clear, prefer shorter over longer.
