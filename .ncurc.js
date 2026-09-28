@@ -2,9 +2,12 @@ export default {
   cooldown: (name) => {
     if (
       name.startsWith("@mdit/") ||
+      name.startsWith("@mdit/") ||
       name.startsWith("@vuepress/") ||
       name.startsWith("vuepress-") ||
-      name === "vuepress"
+      name === "vuepress" ||
+      name === "oxlint" ||
+      name === "oxfmt"
     )
       return 0;
 
