@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.110](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.109...v2.0.0-rc.110) (2026-09-29)
+
+### Documentation
+
+- migrate option docs to fields container ([#5425](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5425)) ([0c1aa27](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0c1aa274460df872fad33ebc598f1c41563b9193))
+
+### Miscellaneous Chores
+
+- **deps:** update dependency markdown-it to v14.3.2 ([#5409](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5409)) ([f00cfbf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f00cfbf7d2a2ae9adbce43677892848185551ee8))
+
+### Build System
+
+- bump deps ([0dd351a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0dd351adce330cd1a660730c40e31f31b477cdce))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.109](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.108...v2.0.0-rc.109) (2026-09-07)
 
 **Note:** Version bump only for package vuepress-plugin-md-enhance

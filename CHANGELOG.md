@@ -4,6 +4,52 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.110](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.109...v2.0.0-rc.110) (2026-09-29)
+
+### ✨ Features
+
+- **theme:** add new markdown options ([#5326](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5326)) ([f1ed074](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f1ed0743399bdcca0a0632c095e0ed53e0fa07b8))
+- **theme:** bundle markdown field and file tree plugins ([#5416](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5416)) ([fc49f05](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fc49f052b1a69edd925cfb59eba2840987047309))
+- **theme:** improve i18n locale support ([eb35e08](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/eb35e0856e44a3c393d45a5c02003398b1395249))
+- **theme:** support orama search plugin ([#5418](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5418)) ([717e3c7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/717e3c70e803b14d37312a35f2f88eb5556713d0))
+- use media plugin for media components ([#5419](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5419)) ([4ea6d04](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4ea6d04e6a68097de360fa55ac1fdb2d82b51b04))
+
+### 🐛 Bug Fixes
+
+- **deps:** update dependency three to v0.186.1 ([#5362](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5362)) ([395520a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/395520a9a6e75db4ecc6e28b63fdf365085ec01a))
+
+### Documentation
+
+- mention media link syntax ([#5420](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5420)) ([aa96f27](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/aa96f277092d536bb87b58e7916a24d2e13fb0c8))
+- migrate option docs to fields container ([#5425](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5425)) ([0c1aa27](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0c1aa274460df872fad33ebc598f1c41563b9193))
+- update navbar ([340b8fd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/340b8fd55593e450e0584b21f02eb021079d69a4))
+- update README ([bd1849c](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bd1849cc8d4ef2825d670db303dabd783c9592a7))
+- use offline icon ([de40e02](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/de40e02589276f1fb504330f2ebc029e8531e517))
+
+### Styles
+
+- update linter ([f4fdfa9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f4fdfa9a6f486dfc166cdb1836784720c78a3445))
+- update linter ([e0672bf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e0672bf2d1584480487a2f0c130292e8c07b829d))
+
+### Miscellaneous Chores
+
+- **deps:** update dependency markdown-it to v14.3.2 ([#5409](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5409)) ([f00cfbf](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f00cfbf7d2a2ae9adbce43677892848185551ee8))
+- fix deps ([c4bbb39](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c4bbb397473f7aa04a1ca3ae749eb5202efe0cb8))
+
+### Build System
+
+- bump deps ([c63ec22](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c63ec22d22af56b5e5f67d817e4dfed0a42c0915))
+- bump deps ([0dd351a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0dd351adce330cd1a660730c40e31f31b477cdce))
+- bump deps ([#5426](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5426)) ([bec64a2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/bec64a294bdf556f61758ad3fcb6bee62efe0a2e))
+- bump pnpm ([89b929a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/89b929aa57065c58e3762f3e8bf066a807f060b0))
+- update sync script ([79c89a3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/79c89a3da2ec5617568baafad6daa360e67a13a6))
+
+### Continuous Integration
+
+- bump action ([3789054](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/37890549bc5fdbb4d75a1b413b10101b56828551))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.109](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.108...v2.0.0-rc.109) (2026-09-07)
 
 ### Continuous Integration

@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.110](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.109...v2.0.0-rc.110) (2026-09-29)
+
+### Build System
+
+- bump deps ([0dd351a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0dd351adce330cd1a660730c40e31f31b477cdce))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.109](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.108...v2.0.0-rc.109) (2026-09-07)
 
 **Note:** Version bump only for package create-vuepress-theme-hope

@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.110](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.109...v2.0.0-rc.110) (2026-09-29)
+
+### ✨ Features
+
+- **theme:** improve i18n locale support ([eb35e08](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/eb35e0856e44a3c393d45a5c02003398b1395249))
+- use media plugin for media components ([#5419](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5419)) ([4ea6d04](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4ea6d04e6a68097de360fa55ac1fdb2d82b51b04))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.109](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.108...v2.0.0-rc.109) (2026-09-07)
 
 **Note:** Version bump only for package vuepress-plugin-components

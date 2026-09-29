@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.110](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.109...v2.0.0-rc.110) (2026-09-29)
+
+### ✨ Features
+
+- **theme:** bundle markdown field and file tree plugins ([#5416](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5416)) ([fc49f05](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fc49f052b1a69edd925cfb59eba2840987047309))
+- **theme:** improve i18n locale support ([eb35e08](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/eb35e0856e44a3c393d45a5c02003398b1395249))
+- **theme:** support orama search plugin ([#5418](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5418)) ([717e3c7](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/717e3c70e803b14d37312a35f2f88eb5556713d0))
+- use media plugin for media components ([#5419](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5419)) ([4ea6d04](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/4ea6d04e6a68097de360fa55ac1fdb2d82b51b04))
+
+### Documentation
+
+- use offline icon ([de40e02](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/de40e02589276f1fb504330f2ebc029e8531e517))
+
+### Build System
+
+- bump deps ([0dd351a](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0dd351adce330cd1a660730c40e31f31b477cdce))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.109](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.108...v2.0.0-rc.109) (2026-09-07)
 
 **Note:** Version bump only for package vuepress-theme-hope
