@@ -1,13 +1,17 @@
 export default {
-  cooldown: (name) => {
+  cooldown: (pkg) => {
     if (
-      name.startsWith("@mdit/") ||
-      name.startsWith("@mdit/") ||
-      name.startsWith("@vuepress/") ||
-      name.startsWith("vuepress-") ||
-      name === "vuepress" ||
-      name === "oxlint" ||
-      name === "oxfmt"
+      ["@mdit/", "@mr-hope/", "@oxfmt/", "@oxlint/", "@vuepress/", "@waline/", "vuepress-"].some(
+        (prefix) => pkg.startsWith(prefix),
+      ) ||
+      [
+        "bcrypt-ts",
+        "oxc-config-hope",
+        "oxfmt",
+        "oxlint",
+        "stylelint-config-hope",
+        "vuepress",
+      ].includes(pkg)
     )
       return 0;
 

@@ -1,13 +1,23 @@
-name: Publish Packages
+name: Publish packages
 
 on:
-  workflow_call:
-    secrets:
-      NPM_TOKEN:
-        required: true
+  workflow_dispatch:
+    inputs:
+      dryrun:
+        type: boolean
+        description: Dry-Run
+      prerelease:
+        type: boolean
+        description: Force prerelease
+      graduate:
+        type: boolean
+        description: Force Conventional Graduate
+      publish_only:
+        type: boolean
+        description: "Skip running `lerna version` and run publish-only retry (useful to retry failed publish)"
 
 permissions:
-  contents: read
+  contents: write
   id-token: write
 
 jobs:
@@ -15,22 +25,50 @@ jobs:
     name: Publish packages
     runs-on: ubuntu-latest
     steps:
+      - name: Check if user is allowed to push new release
+        if: ${{ github.actor != 'Mister-Hope' }}
+        run: |
+          echo "You are not allowed to push new release."
+          exit 1
+
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
-      - name: Install pnpm
+      - name: Setup pnpm
         uses: pnpm/setup@v3
         with:
-          runtime: node@24
+          runtime: node@^24.20.0
 
-      - name: Install deps
+      - name: Install Deps
         run: pnpm ci
 
       - name: Build project
         run: pnpm run build
 
-      - name: Publish packages
-        run: pnpm publish -r --no-git-checks
+      - name: Linting check
+        run: pnpm lint:check
+
+      - name: Test check
+        run: pnpm test
+
+      - name: Config git
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - name: Lerna Version${{ inputs.dryrun == true && ' with dry run' || '' }}
+        if: ${{ inputs.publish_only != true }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pnpm exec lerna version ${{ inputs.dryrun == true && '--dry-run' || '' }} ${{ inputs.graduate == true && '--conventional-graduate' || inputs.prerelease == true && '--conventional-prerelease' || '' }} --yes
+
+      - name: Publish packages${{ inputs.dryrun == true && ' with dry run' || '' }}
+        run: |
+          pnpm exec lerna publish from-package --force-publish --yes${{ inputs.dryrun == true && ' --dry-run' || '' }}
 
       - name: Sync npmmirror
-        run: pnpm release:sync
+        if: ${{ inputs.dryrun != true }}
+        run: pnpm exec unrun scripts/syncNpmmirror.ts

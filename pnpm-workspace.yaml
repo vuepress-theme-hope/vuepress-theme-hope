@@ -17,7 +17,7 @@ catalog:
   mermaid: 12.0.0
   reveal.js: 6.0.2
   typescript: 6.0.3
-  sass-embedded: 1.105.0
+  sass-embedded: ^1.105.1
   sass-loader: 17.0.1
   vue: 3.5.43
 
@@ -25,8 +25,8 @@ catalogs:
   range:
     "@vueuse/core": ^15.0.0
     balloon-css: ^1.2.0
-    sass: ^1.105.0
-    sass-embedded: ^1.105.0
+    sass: ^1.105.1
+    sass-embedded: ^1.105.1
     sass-loader: ^17.0.1
     vue: ^3.5.43
 
@@ -91,12 +91,19 @@ peerDependencyRules:
 blockExoticSubdeps: false
 minimumReleaseAgeExclude:
   - "@mdit/*"
-  - "@oxlint/*"
+  - "@mr-hope/*"
   - "@oxfmt/*"
+  - "@oxlint/*"
   - "@vuepress/*"
-  - oxc-config-hope
-  - oxlint
-  - oxfmt
+  - "@waline/*"
+  - "bcrypt-ts"
+  - "oxc-config-hope"
+  - "oxfmt"
+  - "oxlint"
+  - "stylelint-config-hope"
+  - "vuepress"
+  - "vuepress-*"
 minimumReleaseAgeExcludePrune: true
 trustPolicy: no-downgrade
 trustPolicyIgnoreAfter: 720
+trustPolicyExcludePrune: true
