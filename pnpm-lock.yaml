@@ -532,8 +532,8 @@ importers:
         specifier: catalog:vuepress
         version: 2.0.0-rc.137(b028cc135e784eefbff44fa3e96cec41)
       katex:
-        specifier: 0.18.9
-        version: 0.18.9
+        specifier: 0.19.0
+        version: 0.19.0
       kotlin-playground:
         specifier: 1.34.0
         version: 1.34.0
@@ -592,8 +592,8 @@ importers:
         specifier: 6.1.0
         version: 6.1.0
       katex:
-        specifier: 0.18.9
-        version: 0.18.9
+        specifier: 0.19.0
+        version: 0.19.0
       kotlin-playground:
         specifier: 1.34.0
         version: 1.34.0
@@ -658,8 +658,8 @@ importers:
         specifier: 6.1.0
         version: 6.1.0
       katex:
-        specifier: 0.18.9
-        version: 0.18.9
+        specifier: 0.19.0
+        version: 0.19.0
       kotlin-playground:
         specifier: 1.34.0
         version: 1.34.0
@@ -893,8 +893,8 @@ importers:
         specifier: 3.0.3
         version: 3.0.3
       katex:
-        specifier: 0.18.9
-        version: 0.18.9
+        specifier: 0.19.0
+        version: 0.19.0
       kotlin-playground:
         specifier: 1.34.0
         version: 1.34.0
@@ -7039,6 +7039,10 @@ packages:
 
   katex@0.18.9:
     resolution: {integrity: sha512-8ad9RyoKsb/g8/yLFE+KAlP+DhbCTRUNi/V9XGsxn0R+trJJltNwzcDNo0q/DEkOy5fQUQTAQyCXCYSE+OakTQ==}
+    hasBin: true
+
+  katex@0.19.0:
+    resolution: {integrity: sha512-v6Tznz3zJ7u3niRCoDTsumM2+HA2XXcCu+WAacCeHD2z3p9A9Ks987o5FzfTGBN0e8A0vjEgIDvLbICrXpdw/Q==}
     hasBin: true
 
   keyv@5.6.0:
@@ -17301,6 +17305,11 @@ snapshots:
       commander: 8.3.0
 
   katex@0.18.9:
+    dependencies:
+      commander: 15.0.0
+    optional: true
+
+  katex@0.19.0:
     dependencies:
       commander: 15.0.0
 
