@@ -50,7 +50,7 @@
   "dependencies": {
     "@vuepress/helper": "catalog:vuepress",
     "@vuepress/plugin-sass-palette": "catalog:vuepress",
-    "lightgallery": "^2.9.0",
+    "lightgallery": "^3.0.0",
     "vue": "catalog:range",
     "vuepress-shared": "workspace:*"
   },
