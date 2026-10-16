@@ -583,8 +583,8 @@ importers:
         specifier: catalog:vuepress
         version: 2.0.0-rc.137(@vuepress/bundler-vite@2.0.0-rc.31(@types/node@22.20.4)(@vue/compiler-sfc@3.5.43)(esbuild@0.28.2)(jiti@2.7.0)(rollup@4.63.5)(sass-embedded@1.105.1)(sass@1.105.0)(supports-color@10.2.2)(terser@5.51.2)(typescript@6.0.3)(webpack@5.111.1(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.28)(svgo@4.1.0)(uglify-js@3.19.3))(yaml@2.9.1))(@vuepress/bundler-webpack@2.0.0-rc.31(@vue/compiler-sfc@3.5.43)(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.28))(csso@5.0.5)(debug@4.4.3(supports-color@10.2.2))(esbuild@0.28.2)(html-minifier-terser@6.1.0)(rolldown@1.2.11)(rollup@4.63.5)(supports-color@10.2.2)(svgo@4.1.0)(typescript@6.0.3)(uglify-js@3.19.3)(vite@8.2.2(@types/node@22.20.4)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.105.1)(sass@1.105.0)(terser@5.51.2)(yaml@2.9.1)))(markdown-it@15.0.2)(typescript@6.0.3)(vuepress@2.0.0-rc.31(4567fe15fb7223dd8c75af13c7866314))
       '@waline/client':
-        specifier: 3.16.0
-        version: 3.16.0(typescript@6.0.3)
+        specifier: 3.16.1
+        version: 3.16.1(typescript@6.0.3)
       chart.js:
         specifier: 4.5.1
         version: 4.5.1
@@ -4734,6 +4734,10 @@ packages:
 
   '@waline/client@3.16.0':
     resolution: {integrity: sha512-pluWjHTYiSGIkK0mzejJaZazlpPxAEGGqpn9xQC8QW5SzrEqZ4lBixeR8jsivuvKAtBV2Hp6EsqZp50P+ebmZw==}
+    engines: {node: '>=22'}
+
+  '@waline/client@3.16.1':
+    resolution: {integrity: sha512-3zrFOl1kK0ITz8npaB7HFecx6PS6qpTNfF9qdNx49pffGxQ4luIX06MaPBn6LgbnhCTTWHCHa0v3wHn5j7BwDw==}
     engines: {node: '>=22'}
 
   '@webassemblyjs/ast@1.14.1':
@@ -14838,6 +14842,7 @@ snapshots:
       '@vueuse/metadata': 14.4.0
       '@vueuse/shared': 14.4.0(vue@3.5.43(typescript@6.0.3))
       vue: 3.5.43(typescript@6.0.3)
+    optional: true
 
   '@vueuse/core@15.0.0(vue@3.5.43(typescript@6.0.3))':
     dependencies:
@@ -14846,13 +14851,15 @@ snapshots:
       '@vueuse/shared': 15.0.0(vue@3.5.43(typescript@6.0.3))
       vue: 3.5.43(typescript@6.0.3)
 
-  '@vueuse/metadata@14.4.0': {}
+  '@vueuse/metadata@14.4.0':
+    optional: true
 
   '@vueuse/metadata@15.0.0': {}
 
   '@vueuse/shared@14.4.0(vue@3.5.43(typescript@6.0.3))':
     dependencies:
       vue: 3.5.43(typescript@6.0.3)
+    optional: true
 
   '@vueuse/shared@15.0.0(vue@3.5.43(typescript@6.0.3))':
     dependencies:
@@ -14863,6 +14870,20 @@ snapshots:
   '@waline/client@3.16.0(typescript@6.0.3)':
     dependencies:
       '@vueuse/core': 14.4.0(vue@3.5.43(typescript@6.0.3))
+      '@waline/api': 1.1.2
+      '@webc.site/math': 0.1.41
+      autosize: 6.0.1
+      marked: 18.0.14
+      marked-highlight: 2.2.4(marked@18.0.14)
+      recaptcha-v3: 1.11.3
+      vue: 3.5.43(typescript@6.0.3)
+    transitivePeerDependencies:
+      - typescript
+    optional: true
+
+  '@waline/client@3.16.1(typescript@6.0.3)':
+    dependencies:
+      '@vueuse/core': 15.0.0(vue@3.5.43(typescript@6.0.3))
       '@waline/api': 1.1.2
       '@webc.site/math': 0.1.41
       autosize: 6.0.1
