@@ -76,14 +76,14 @@
     "@vuepress/plugin-sass-palette": "catalog:vuepress",
     "@vueuse/core": "catalog:range",
     "balloon-css": "catalog:range",
-    "js-yaml": "^5.4.2",
+    "js-yaml": "^5.5.0",
     "vue": "catalog:range",
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
     "@types/babel__core": "7.20.5",
     "@vuepress/bundler-vite": "catalog:vuepress",
-    "markdown-it": "14.3.2"
+    "markdown-it": "14.3.3"
   },
   "peerDependencies": {
     "@vue/repl": "^4.1.1",

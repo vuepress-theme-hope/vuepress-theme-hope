@@ -142,7 +142,7 @@
     "@vueuse/core": "catalog:range",
     "balloon-css": "catalog:range",
     "bcrypt-ts": "^9.0.2",
-    "chokidar": "^5.0.0",
+    "chokidar": "^6.0.0",
     "vue": "catalog:range",
     "vuepress-plugin-components": "workspace:*",
     "vuepress-plugin-md-enhance": "workspace:*",
@@ -151,7 +151,7 @@
   "devDependencies": {
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
-    "concurrently": "10.0.5",
+    "concurrently": "10.0.6",
     "typescript": "catalog:"
   },
   "peerDependencies": {
