@@ -890,8 +890,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1
       iconify-icon:
-        specifier: 3.0.3
-        version: 3.0.3
+        specifier: 3.0.4
+        version: 3.0.4
       katex:
         specifier: 0.18.9
         version: 0.18.9
@@ -6620,6 +6620,9 @@ packages:
 
   iconify-icon@3.0.3:
     resolution: {integrity: sha512-n4ZIChz3N75KqFSWLt9hHGzbrqGQeeoFxCE+nND4WFFa88x8AW8GvmnVZaVNYErhhiZkxJhBfVKMIGrF1wt3hg==}
+
+  iconify-icon@3.0.4:
+    resolution: {integrity: sha512-au7IER/1evWjPP1rtueNnBdge9E9ocoPfQ87RYTLkRMYpNt87xn5oy6i5U2qRp+wXul5aV0VyPuZAf7rt+jpRg==}
 
   iconv-lite@0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
@@ -16946,6 +16949,11 @@ snapshots:
   hyperdyperid@1.2.0: {}
 
   iconify-icon@3.0.3:
+    dependencies:
+      '@iconify/types': 2.0.0
+    optional: true
+
+  iconify-icon@3.0.4:
     dependencies:
       '@iconify/types': 2.0.0
 
