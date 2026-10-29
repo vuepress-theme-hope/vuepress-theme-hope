@@ -8,13 +8,10 @@
     ":prConcurrentLimitNone",
     ":enableVulnerabilityAlerts",
     ":dependencyDashboard",
-    "schedule:weekends"
+    "schedule:weekends",
+    "helpers:disableTypesNodeMajor"
   ],
   "packageRules": [
-    {
-      "matchPackageNames": ["@types/node"],
-      "matchUpdateTypes": ["minor", "patch"]
-    },
     {
       "groupName": "vuepress",
       "matchPackageNames": ["vuepress", "@vuepress/**", "vuepress-**"]
