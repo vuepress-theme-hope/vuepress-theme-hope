@@ -23,7 +23,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/setup@v3
         with:
-          runtime: node@24
+          runtime: node@^24.22.1
 
       - name: Install deps
         run: pnpm ci
@@ -86,7 +86,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/setup@v3
         with:
-          runtime: node@24
+          runtime: node@^24.22.1
 
       - name: Install deps
         run: pnpm ci
@@ -136,7 +136,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/setup@v3
         with:
-          runtime: node@24
+          runtime: node@^24.22.1
 
       - name: Install deps
         run: pnpm ci
@@ -198,7 +198,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/setup@v3
         with:
-          runtime: node@24
+          runtime: node@^24.22.1
 
       - name: Install deps
         run: pnpm ci
