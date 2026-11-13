@@ -8775,9 +8775,9 @@ packages:
     peerDependencies:
       seroval: ^1.0
 
-  seroval@1.6.7:
-    resolution: {integrity: sha512-AeDcLh0yO2SFm9W71essgnSzLV9DI8ZH0x0knXn2DMnUZj728mpLbxjlbB6IqKCmqh8JA3cEqRyGoNkt584JcQ==}
-    engines: {node: '>=10'}
+  seroval@1.8.1:
+    resolution: {integrity: sha512-7z9x1flFYfZBz+LfDkXNfm5UIhZJ/97ASaV8Q1wctoVkeqVfv+tLPsWebeMXBNw6XprvwxDE5wC5Ylqmr+iSrA==}
+    engines: {node: '>=20'}
 
   serve-handler@6.1.7:
     resolution: {integrity: sha512-CinAq1xWb0vR3twAv9evEU8cNWkXCb9kd5ePAHUKJBkOsUpR1wt/CvGdeca7vqumL1U5cSaeVQ6zZMxiJ3yWsg==}
@@ -18373,11 +18373,11 @@ snapshots:
 
   serialize-javascript@7.1.2: {}
 
-  seroval-plugins@1.6.7(seroval@1.6.7):
+  seroval-plugins@1.6.7(seroval@1.8.1):
     dependencies:
-      seroval: 1.6.7
+      seroval: 1.8.1
 
-  seroval@1.6.7: {}
+  seroval@1.8.1: {}
 
   serve-handler@6.1.7:
     dependencies:
@@ -18561,8 +18561,8 @@ snapshots:
   solid-js@1.9.5:
     dependencies:
       csstype: 3.2.3
-      seroval: 1.6.7
-      seroval-plugins: 1.6.7(seroval@1.6.7)
+      seroval: 1.8.1
+      seroval-plugins: 1.6.7(seroval@1.8.1)
 
   sort-keys@6.0.1:
     dependencies:
