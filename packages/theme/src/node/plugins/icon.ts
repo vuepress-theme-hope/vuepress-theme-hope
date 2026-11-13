@@ -91,14 +91,30 @@ export const getIconPlugin = (
 ): Plugin | null => {
   if (options === false) return null;
 
-  const { scan, ...rest } = isPlainObject(options) ? options : {};
+  const { offline, scan, ...rest } = isPlainObject(options) ? options : {};
+
+  const baseOptions = {
+    ...rest,
+    // force to use VPIcon component
+    component: "VPIcon",
+  };
+
+  // `scan` only takes effect in the offline mode, so the theme scan must not
+  // be passed when the offline mode is disabled, or
+  // `@vuepress/plugin-icon` warns that the option is ignored. A user-provided
+  // `scan` is still passed through, so the plugin can warn about it.
+  if (!offline) {
+    return iconPlugin({
+      ...baseOptions,
+      ...(scan ? { scan } : {}),
+    });
+  }
 
   const themeIcons = getThemeIcons(themeData);
 
   return iconPlugin({
-    ...rest,
-    // force to use VPIcon component
-    component: "VPIcon",
+    ...baseOptions,
+    offline,
     scan: {
       ...scan,
       // include the icons used by the theme front matter
