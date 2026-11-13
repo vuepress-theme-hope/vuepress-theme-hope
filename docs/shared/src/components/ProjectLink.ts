@@ -12,7 +12,7 @@ export interface ProjectLinkProps {
 
 const ProjectLink: FunctionalComponent<
   ProjectLinkProps,
-  Record<never, never>,
+  Record<string, never>,
   { default: () => string }
 > = ({ name, type = "plugin", path = "/" }, { slots }) => {
   const base = name === "hope" ? "" : `/${name.replace(/\d+$/u, "")}`;

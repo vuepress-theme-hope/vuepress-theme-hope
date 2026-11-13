@@ -262,32 +262,26 @@ interface PlaygroundCodeConfig {
   /**
    * Code block extension
    *
-   * @description It's based on filename, not code fence language
+   * It's based on filename, not code fence language
    */
   ext: string;
 
-  /**
-   * Code block content
-   */
+  /** Code block content */
   content: string;
 }
 
 interface PlaygroundData {
-  /**
-   * Title of Playground
-   */
+  /** Title of Playground */
   title?: string;
 
   /**
    * Import map file name
    *
-   * @default 'import-map.json'
+   * @default "import-map.json"
    */
   importMap?: string;
 
-  /**
-   * Playground files info
-   */
+  /** Playground files info */
   files: Record<
     /** File name */
     string,
@@ -298,32 +292,26 @@ interface PlaygroundData {
   /**
    * Playground settings
    *
-   * @description It's parsed result of json content after setting directive
+   * It's parsed result of json content after setting directive
    */
   settings: Record<string, unknown>;
 
-  /**
-   * hash key based on playground content
-   */
+  /** Hash key based on playground content */
   key: string;
 }
 
 interface PlaygroundOptions {
-  /**
-   * Playground container name
-   */
+  /** Playground container name */
   name: string;
 
   /**
    * Playground component name
    *
-   * @default 'Playground'
+   * @default "Playground"
    */
   component?: string;
 
-  /**
-   * Props getter
-   */
+  /** Props getter */
   propsGetter: (data: PlaygroundData) => Record<string, string>;
 }
 ```

@@ -1,4 +1,5 @@
 import { theme } from "@docs/shared";
+import { ModuleResolutionKind } from "typescript";
 import { AVAILABLE_SERVICES } from "vuepress-plugin-components";
 import { getRecentUpdatedArticles } from "vuepress-theme-hope/presets/getRecentUpdatedArticles.js";
 import { getSlides } from "vuepress-theme-hope/presets/getSlides.js";
@@ -176,7 +177,7 @@ export default theme(
           twoslashOptions: {
             compilerOptions: {
               /* bundler */
-              moduleResolution: 100,
+              moduleResolution: ModuleResolutionKind.Bundler,
             },
           },
         },

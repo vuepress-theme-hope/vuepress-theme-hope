@@ -34,9 +34,9 @@ Your theme's `alias` (in theme options) and `layouts` (in client config file) ov
 @tab TS
 
 ```ts twoslash title=".vuepress/theme/index.ts"
-import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
 import type { ThemeOptions } from "vuepress-theme-hope";
+import { getDirname, path } from "vuepress/utils";
 
 const __dirname = getDirname(import.meta.url);
 
@@ -59,8 +59,8 @@ export default (options: ThemeOptions) => ({
 @tab JS
 
 ```js title=".vuepress/theme/index.js"
-import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
+import { getDirname, path } from "vuepress/utils";
 
 const __dirname = getDirname(import.meta.url);
 

@@ -40,19 +40,13 @@ tag:
 type AuthorName = string;
 
 interface AuthorInfo {
-  /**
-   * 作者姓名
-   */
+  /** 作者姓名 */
   name: string;
 
-  /**
-   * 作者网站
-   */
+  /** 作者网站 */
   url?: string;
 
-  /**
-   * 作者 Email
-   */
+  /** 作者 Email */
   email?: string;
 }
 
@@ -78,73 +72,45 @@ type Author = AuthorName | AuthorName[] | AuthorInfo | AuthorInfo[];
 其类型为：
 
 ```ts
-/**
- * Base nav item, displayed as text
- */
+/** Base nav item, displayed as text */
 export interface NavItemOptions {
-  /**
-   * 项目文字
-   */
+  /** 项目文字 */
   text: string;
 
-  /**
-   * 项目图标
-   */
+  /** 项目图标 */
   icon?: string;
 
-  /**
-   * 项目无障碍标签
-   */
+  /** 项目无障碍标签 */
   ariaLabel?: string;
 }
 
-/**
- * Options for `<AutoLink>`
- */
+/** Options for `<AutoLink>` */
 export interface AutoLinkOptions extends NavItemOptions {
-  /**
-   * 当前页面链接
-   */
+  /** 当前页面链接 */
   link: string;
 
-  /**
-   * `<a>` 标签的 `rel` 属性
-   */
+  /** `<a>` 标签的 `rel` 属性 */
   rel?: string;
 
-  /**
-   * `<a>` 标签的 `target` 属性
-   */
+  /** `<a>` 标签的 `target` 属性 */
   target?: string;
 
-  /**
-   * 匹配激活的正则表达式
-   */
+  /** 匹配激活的正则表达式 */
   activeMatch?: string;
 
-  /**
-   * 是否仅在完全匹配时激活
-   */
+  /** 是否仅在完全匹配时激活 */
   exact?: boolean;
 }
 
-/**
- * Base nav group, has nav items children
- */
+/** Base nav group, has nav items children */
 export interface NavGroup<T> extends NavItemOptions {
-  /**
-   * 当前分组的页面前缀
-   */
+  /** 当前分组的页面前缀 */
   prefix?: string;
 
-  /**
-   * 当前分组的链接
-   */
+  /** 当前分组的链接 */
   link?: string;
 
-  /**
-   * 当前分组的子项
-   */
+  /** 当前分组的子项 */
   children: T[];
 }
 
@@ -169,67 +135,43 @@ export type NavbarOptions = (NavbarLinkOptions | NavbarGroupOptions | string)[];
 其类型为：
 
 ```ts
-/**
- * Base nav item, displayed as text
- */
+/** Base nav item, displayed as text */
 export interface NavItemOptions {
-  /**
-   * 项目文字
-   */
+  /** 项目文字 */
   text: string;
 
-  /**
-   * 项目图标
-   */
+  /** 项目图标 */
   icon?: string;
 
-  /**
-   * 项目无障碍标签
-   */
+  /** 项目无障碍标签 */
   ariaLabel?: string;
 }
 
-/**
- * Options for `<AutoLink>`
- */
+/** Options for `<AutoLink>` */
 export interface AutoLinkOptions extends NavItemOptions {
-  /**
-   * 当前页面链接
-   */
+  /** 当前页面链接 */
   link: string;
 
-  /**
-   * `<a>` 标签的 `rel` 属性
-   */
+  /** `<a>` 标签的 `rel` 属性 */
   rel?: string;
 
-  /**
-   * `<a>` 标签的 `target` 属性
-   */
+  /** `<a>` 标签的 `target` 属性 */
   target?: string;
 
-  /**
-   * 匹配激活的正则表达式
-   */
+  /** 匹配激活的正则表达式 */
   activeMatch?: string;
 
-  /**
-   * 是否仅在完全匹配时激活
-   */
+  /** 是否仅在完全匹配时激活 */
   exact?: boolean;
 }
 
 export type SidebarLinkOptions = AutoLinkOptions;
 
 export interface SidebarGroupOptions extends NavItemOptions {
-  /**
-   * 当前分组的页面前缀
-   */
+  /** 当前分组的页面前缀 */
   prefix?: string;
 
-  /**
-   * 当前分组的链接
-   */
+  /** 当前分组的链接 */
   link?: string;
 
   /**
@@ -246,21 +188,15 @@ export interface SidebarGroupOptions extends NavItemOptions {
    */
   collapsible?: boolean;
 
-  /**
-   * 当前分组的子项
-   */
+  /** 当前分组的子项 */
   children: SidebarItemOptions[];
 }
 
 export interface SidebarStructureOptions extends NavItemOptions {
-  /**
-   * 当前分组的页面前缀
-   */
+  /** 当前分组的页面前缀 */
   prefix?: string;
 
-  /**
-   * 当前分组的链接
-   */
+  /** 当前分组的链接 */
   link?: string;
 
   /**
@@ -281,7 +217,10 @@ export interface SidebarStructureOptions extends NavItemOptions {
 }
 
 export type SidebarItemOptions =
-  SidebarLinkOptions | SidebarGroupOptions | SidebarStructureOptions | string;
+  | SidebarLinkOptions
+  | SidebarGroupOptions
+  | SidebarStructureOptions
+  | string;
 
 export type SidebarArrayOptions = SidebarItemOptions[];
 
@@ -291,7 +230,10 @@ export type SidebarObjectOptions = Record<
 >;
 
 export type SidebarOptions =
-  SidebarArrayOptions | SidebarObjectOptions | "structure" | false;
+  | SidebarArrayOptions
+  | SidebarObjectOptions
+  | "structure"
+  | false;
 ```
 
 @`locales` type=`Record<string, ThemeLocaleOptions>` root-only=Yes

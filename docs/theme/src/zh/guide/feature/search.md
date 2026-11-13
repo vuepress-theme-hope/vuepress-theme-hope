@@ -435,6 +435,7 @@ tag:
    ::: important 配置文件要求
 
    为了让插件正常工作：
+
    - `lang` 选择器必须在 `selectors` 字段中保持不变
    - `custom_settings` 中的所有当前字段不得删除。
 

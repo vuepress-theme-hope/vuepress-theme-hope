@@ -22,8 +22,9 @@ See [VuePress Client Config Usage](https://vuejs.press/advanced/cookbook/usage-o
 ## Example
 
 ```ts title=".vuepress/client.ts"
-import { defineClientConfig } from "vuepress/client";
 import { onMounted } from "vue";
+import { defineClientConfig } from "vuepress/client";
+
 import ExampleGlobalComponent from "./components/ExampleGlobalComponent.vue";
 import ExampleRootComponent from "./components/ExampleRootComponent.vue";
 import { setupExampleCompositionAPI } from "./composables/exampleCompositionAPI";

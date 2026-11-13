@@ -42,19 +42,13 @@ Its type is:
 type AuthorName = string;
 
 interface AuthorInfo {
-  /**
-   * Author name
-   */
+  /** Author name */
   name: string;
 
-  /**
-   * Author website
-   */
+  /** Author website */
   url?: string;
 
-  /**
-   * Author email
-   */
+  /** Author email */
   email?: string;
 }
 
@@ -80,73 +74,45 @@ See also: [Layout → Navbar](../../guide/layout/navbar.md).
 Its type is:
 
 ```ts
-/**
- * Base nav item, displayed as text
- */
+/** Base nav item, displayed as text */
 export interface NavItemOptions {
-  /**
-   * Text of item
-   */
+  /** Text of item */
   text: string;
 
-  /**
-   * Icon of item
-   */
+  /** Icon of item */
   icon?: string;
 
-  /**
-   * Aria label of item
-   */
+  /** Aria label of item */
   ariaLabel?: string;
 }
 
-/**
- * Options for `<AutoLink>`
- */
+/** Options for `<AutoLink>` */
 export interface AutoLinkOptions extends NavItemOptions {
-  /**
-   * Link of item
-   */
+  /** Link of item */
   link: string;
 
-  /**
-   * Rel of `<a>` tag
-   */
+  /** Rel of `<a>` tag */
   rel?: string;
 
-  /**
-   * Target of `<a>` tag
-   */
+  /** Target of `<a>` tag */
   target?: string;
 
-  /**
-   * RegExp mode to be active
-   */
+  /** RegExp mode to be active */
   activeMatch?: string;
 
-  /**
-   * Whether it's active only when exact match
-   */
+  /** Whether it's active only when exact match */
   exact?: boolean;
 }
 
-/**
- * Base nav group, has nav items children
- */
+/** Base nav group, has nav items children */
 export interface NavGroup<T> extends NavItemOptions {
-  /**
-   * Link prefix of current group
-   */
+  /** Link prefix of current group */
   prefix?: string;
 
-  /**
-   * Link of current group
-   */
+  /** Link of current group */
   link?: string;
 
-  /**
-   * Children of current group
-   */
+  /** Children of current group */
   children: T[];
 }
 
@@ -171,67 +137,43 @@ See also: [Layout → Sidebar](../../guide/layout/sidebar.md).
 Its type is:
 
 ```ts
-/**
- * Base nav item, displayed as text
- */
+/** Base nav item, displayed as text */
 export interface NavItemOptions {
-  /**
-   * Text of item
-   */
+  /** Text of item */
   text: string;
 
-  /**
-   * Icon of item
-   */
+  /** Icon of item */
   icon?: string;
 
-  /**
-   * Aria label of item
-   */
+  /** Aria label of item */
   ariaLabel?: string;
 }
 
-/**
- * Options for `<AutoLink>`
- */
+/** Options for `<AutoLink>` */
 export interface AutoLinkOptions extends NavItemOptions {
-  /**
-   * Link of item
-   */
+  /** Link of item */
   link: string;
 
-  /**
-   * Rel of `<a>` tag
-   */
+  /** Rel of `<a>` tag */
   rel?: string;
 
-  /**
-   * Target of `<a>` tag
-   */
+  /** Target of `<a>` tag */
   target?: string;
 
-  /**
-   * RegExp mode to be active
-   */
+  /** RegExp mode to be active */
   activeMatch?: string;
 
-  /**
-   * Whether it's active only when exact match
-   */
+  /** Whether it's active only when exact match */
   exact?: boolean;
 }
 
 export type SidebarLinkOptions = AutoLinkOptions;
 
 export interface SidebarGroupOptions extends NavItemOptions {
-  /**
-   * Link prefix of current group
-   */
+  /** Link prefix of current group */
   prefix?: string;
 
-  /**
-   * Link of current group
-   */
+  /** Link of current group */
   link?: string;
 
   /**
@@ -248,21 +190,15 @@ export interface SidebarGroupOptions extends NavItemOptions {
    */
   collapsible?: boolean;
 
-  /**
-   * Children of current group
-   */
+  /** Children of current group */
   children: SidebarItemOptions[];
 }
 
 export interface SidebarStructureOptions extends NavItemOptions {
-  /**
-   * Link prefix of current group
-   */
+  /** Link prefix of current group */
   prefix?: string;
 
-  /**
-   * Link of current group
-   */
+  /** Link of current group */
   link?: string;
 
   /**
@@ -283,7 +219,10 @@ export interface SidebarStructureOptions extends NavItemOptions {
 }
 
 export type SidebarItemOptions =
-  SidebarLinkOptions | SidebarGroupOptions | SidebarStructureOptions | string;
+  | SidebarLinkOptions
+  | SidebarGroupOptions
+  | SidebarStructureOptions
+  | string;
 
 export type SidebarArrayOptions = SidebarItemOptions[];
 
@@ -293,7 +232,10 @@ export type SidebarObjectOptions = Record<
 >;
 
 export type SidebarOptions =
-  SidebarArrayOptions | SidebarObjectOptions | "structure" | false;
+  | SidebarArrayOptions
+  | SidebarObjectOptions
+  | "structure"
+  | false;
 ```
 
 @`locales` type=`Record<string, ThemeLocaleOptions>` root-only=Yes

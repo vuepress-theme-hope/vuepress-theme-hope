@@ -36,6 +36,7 @@ You can create `.vuepress/client.js` or `.vuepress/client.ts` and register compo
 
 ```ts title=".vuepress/config.ts"
 import { defineClientConfig } from "vuepress/client";
+
 import MyComponent from "./MyComponent.vue";
 
 export default defineClientConfig({

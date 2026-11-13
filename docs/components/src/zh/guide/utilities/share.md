@@ -118,7 +118,7 @@ interface ShareServiceConfig {
   /**
    * 分享链接
    *
-   * @description 你可以使用 `[` 和 `]` 包裹变量名，变量将会被替换为页面的值：
+   * 你可以使用 `[` 和 `]` 包裹变量名，变量将会被替换为页面的值：
    *
    * - `title` 将会被替换为页面的标题
    * - `description` 将会被替换为页面的描述
@@ -133,7 +133,6 @@ interface ShareServiceConfig {
   /**
    * 分享按钮的行为
    *
-   * @description
    * - `open` 将会在新标签页打开链接
    * - `navigate` 将会跳转到链接
    * - `popup` 将会打开一个弹窗
@@ -146,25 +145,19 @@ interface ShareServiceConfig {
   /**
    * 图标的主题色
    *
-   * @default 'currentColor'
+   * @default "currentColor"
    */
   color?: string;
 
-  /**
-   * 纯色图标的形状
-   */
+  /** 纯色图标的形状 */
   shape: string;
 
-  /**
-   * 彩色图标
-   */
+  /** 彩色图标 */
   icon?: string;
 }
 
 interface ShareServiceOptions extends ShareServiceConfig {
-  /**
-   * 服务名称
-   */
+  /** 服务名称 */
   name: string;
 }
 

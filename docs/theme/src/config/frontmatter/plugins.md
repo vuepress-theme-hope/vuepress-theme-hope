@@ -51,27 +51,23 @@ The author of the feed item.
 
 ```ts
 interface FeedAuthor {
-  /**
-   * Author name
-   */
+  /** Author name */
   name?: string;
 
-  /**
-   * Author email
-   */
+  /** Author email */
   email?: string;
 
   /**
    * Author site
    *
-   * @description json format only
+   * Json format only
    */
   url?: string;
 
   /**
    * Author avatar
    *
-   * @description json format only
+   * Json format only
    */
   avatar?: string;
 }
@@ -87,27 +83,23 @@ Contributors to feed item.
 
 ```ts
 interface FeedContributor {
-  /**
-   * Author name
-   */
+  /** Author name */
   name?: string;
 
-  /**
-   * Author email
-   */
+  /** Author email */
   email?: string;
 
   /**
    * Author site
    *
-   * @description json format only
+   * Json format only
    */
   url?: string;
 
   /**
    * Author avatar
    *
-   * @description json format only
+   * Json format only
    */
   avatar?: string;
 }

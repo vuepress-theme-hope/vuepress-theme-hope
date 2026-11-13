@@ -50,19 +50,13 @@ Its type is:
 type AuthorName = string;
 
 interface AuthorInfo {
-  /**
-   * Author name
-   */
+  /** Author name */
   name: string;
 
-  /**
-   * Author website
-   */
+  /** Author website */
   url?: string;
 
-  /**
-   * Author email
-   */
+  /** Author email */
   email?: string;
 }
 

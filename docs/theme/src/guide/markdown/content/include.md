@@ -98,8 +98,8 @@ cupiditate sequi.
 @tab TS
 
 ```ts
-import MarkdownIt from "markdown-it";
 import { include } from "@mdit/plugin-include";
+import MarkdownIt from "markdown-it";
 
 // #region snippet
 const mdIt = new MarkdownIt().use(include, {
@@ -334,7 +334,7 @@ You can also set an object to customize include filepath and include behavior.
 ```ts
 interface IncludeOptions {
   /**
-   * handle include filePath
+   * Handle include filePath
    *
    * @default (path) => path
    */
@@ -346,7 +346,8 @@ interface IncludeOptions {
    */
   deep?: boolean;
   /**
-   * Whether use `<!-- @include: xxx -->` instead of `@include: xxx` to include files
+   * Whether use `<!-- @include: xxx -->` instead of `@include: xxx` to include
+   * files
    *
    * @default true
    */

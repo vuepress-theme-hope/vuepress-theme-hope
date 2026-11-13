@@ -18,8 +18,8 @@ tag:
 你需要在自己的 VuePress 配置文件通过 `alias` 替换主题中使用的组件别名。
 
 ```ts twoslash title=".vuepress/config.ts"
-import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
+import { getDirname, path } from "vuepress/utils";
 
 const __dirname = getDirname(import.meta.url);
 

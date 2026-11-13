@@ -1,5 +1,5 @@
 import type { Slot } from "@vuepress/helper/client";
-import type { FunctionalComponent, VNode } from "vue";
+import type { FunctionalComponent, VNode, VNodeProps } from "vue";
 import { h } from "vue";
 
 import BloggerInfo from "@theme-hope/components/blog/BloggerInfo";
@@ -10,7 +10,7 @@ import type { BloggerInfoSlotData } from "@theme-hope/typings/slots";
 import "../../styles/blog/info-panel.scss";
 
 const InfoPanel: FunctionalComponent<
-  Record<never, never>,
+  Pick<VNodeProps, "key">,
   [],
   {
     bloggerInfo?: Slot<BloggerInfoSlotData>;

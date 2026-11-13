@@ -13,7 +13,7 @@ import "../../styles/home/feature-panel.scss";
 
 const FeatureSection: FunctionalComponent<
   ThemeProjectHomeFeatureOptions,
-  Record<never, never>,
+  Record<string, never>,
   {
     image?: Slot<ThemeProjectHomeFeatureOptions>;
     info?: Slot<ThemeProjectHomeFeatureOptions>;

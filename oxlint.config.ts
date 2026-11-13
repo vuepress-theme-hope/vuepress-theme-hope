@@ -5,26 +5,6 @@ export default defineHopeConfig(
     ignore: ["packages/*/assets/**", "**/vendors/lzstring.ts"],
 
     rules: {
-      // the following rules are still not supported by oxlint yet
-      // "import-x/no-restricted-paths": [
-      //   "error",
-      //   {
-      //     "zones": [
-      //       {
-      //         "target": "packages/*/src/client/**",
-      //         "from": "packages/*/src/node/**",
-      //       },
-      //       {
-      //         "target": "packages/*/src/node/**",
-      //         "from": "packages/*/src/client/**",
-      //       },
-      //     ],
-      //   },
-      // ],
-      // "vue/multi-word-component-names": [
-      //   "error",
-      //   { "ignores": ["Blog", "Layout", "Slides"] },
-      // ],
       "id-length": [
         "warn",
         {
@@ -78,8 +58,6 @@ export default defineHopeConfig(
           allow: [{ from: "file", name: ["convertOptions"] }],
         },
       ],
-      // FIXME: https://github.com/oxc-project/oxc/issues/27155
-      "typescript/no-generated-empty-object-type": "off",
     },
     node: ["**/node/**/*.ts", "**/create/src/**/*.ts"],
     vue: true,
@@ -138,12 +116,6 @@ export default defineHopeConfig(
     rules: {
       // loose max lines for components setup blocks
       "max-lines-per-function": ["warn", { max: 300, skipBlankLines: true, skipComments: true }],
-    },
-  },
-  {
-    files: ["**/*.d.ts"],
-    rules: {
-      "unicorn/prefer-export-from": "off",
     },
   },
 );

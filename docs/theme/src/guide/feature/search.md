@@ -436,6 +436,7 @@ This requires you to have a own server with docker to run MeiliSearch.
    ::: important Requirements for the configuration file
 
    To let the plugin work:
+
    - `lang` selector must be kept as is in `selectors` filed
    - All fields that are currently in `custom_settings` must not be removed.
 

@@ -42,19 +42,13 @@ tag:
 type AuthorName = string;
 
 interface AuthorInfo {
-  /**
-   * 作者姓名
-   */
+  /** 作者姓名 */
   name: string;
 
-  /**
-   * 作者网站
-   */
+  /** 作者网站 */
   url?: string;
 
-  /**
-   * 作者 Email
-   */
+  /** 作者 Email */
   email?: string;
 }
 

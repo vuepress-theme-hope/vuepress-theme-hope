@@ -54,8 +54,7 @@ export default {
 <template>
   <div class="box">
     <code>vuepress-theme-hope</code> is
-    <span @click="handler">{{ message }}</span
-    >!
+    <span @click="handler">{{ message }}</span>!
   </div>
 </template>
 <script>
@@ -95,8 +94,7 @@ export default {
 <template>
   <div class="box">
     <code>vuepress-theme-hope</code> is
-    <span @click="handler">{{ message }}</span
-    >!
+    <span @click="handler">{{ message }}</span>!
   </div>
 </template>
 <script>

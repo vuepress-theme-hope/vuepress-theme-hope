@@ -150,8 +150,8 @@ You can also config your social media links with `blog.medias` option.
 ::: details Example
 
 ```ts twoslash title=".vuepress/theme.ts"
-import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
+import { getDirname, path } from "vuepress/utils";
 
 const __dirname = getDirname(import.meta.url);
 

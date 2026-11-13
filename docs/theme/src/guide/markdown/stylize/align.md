@@ -50,9 +50,11 @@ Nesting can be done by increasing marker number of outer container:
 
 :::: center
 Center contents...
+
 ::: left
 Left contents...
 :::
+
 Center contents...
 ::::
 

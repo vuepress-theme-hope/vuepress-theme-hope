@@ -42,8 +42,8 @@
     "dev": "pnpm build --watch"
   },
   "dependencies": {
-    "@inquirer/prompts": "^8.7.2",
-    "commander": "^15.0.0"
+    "@inquirer/prompts": "^8.8.0",
+    "commander": "^15.1.0"
   },
   "devDependencies": {
     "sass-embedded": "catalog:range",

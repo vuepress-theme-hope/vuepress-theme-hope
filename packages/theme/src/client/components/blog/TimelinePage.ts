@@ -7,7 +7,7 @@ import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import type { BloggerInfoSlotData } from "@theme-hope/typings/slots";
 
 const TimelinePage: FunctionalComponent<
-  Record<never, never>,
+  Record<string, never>,
   [],
   {
     // articles

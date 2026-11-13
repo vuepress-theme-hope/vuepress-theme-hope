@@ -32,7 +32,12 @@ tag:
 
 ```ts
 type NavbarComponent =
-  "Brand" | "Links" | "Language" | "Search" | "Outlook" | "Repo";
+  | "Brand"
+  | "Links"
+  | "Language"
+  | "Search"
+  | "Outlook"
+  | "Repo";
 ```
 
 @@`navbarLayout.start` type=`(NavbarComponent | string)[]`
@@ -166,7 +171,12 @@ interface SidebarDirInfo {
 type SidebarInfo = SidebarFileInfo | SidebarDirInfo;
 
 type SidebarSorterKeyword =
-  "readme" | "order" | "date" | "date-desc" | "filename" | "title";
+  | "readme"
+  | "order"
+  | "date"
+  | "date-desc"
+  | "filename"
+  | "title";
 
 type SidebarSorterFunction = (infoA: SidebarInfo, infoB: SidebarInfo) => number;
 

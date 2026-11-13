@@ -47,26 +47,19 @@ The theme logic is defined in `.vuepress/theme.ts`:
 ```ts twoslash
 import { hopeTheme } from "vuepress-theme-hope";
 
-/**
- * Export theme configuration
- */
-export default hopeTheme({
-  /**
-   * Theme-specific options
-   */
-});
+/** Export theme configuration */
+export default hopeTheme({/** Theme-specific options */});
 ```
 
 Import this into the main configuration file:
 
 ```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
+
 import theme from "./theme.js";
 
 export default defineUserConfig({
-  /**
-   * Equivalent to theme: hopeTheme({ ... })
-   */
+  /** Equivalent to theme: hopeTheme({ ... }) */
   theme,
 });
 ```

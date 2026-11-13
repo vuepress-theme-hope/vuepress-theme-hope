@@ -49,7 +49,7 @@ To disable auto-generation and exclusively display manually specified excerpts o
   - The `[[toc]]` marker cannot resolve headings located outside the excerpt.
   - Reference links and footnotes defined outside the excerpt will not render correctly.
 - DOM Injection: Excerpts defined via Frontmatter or auto-generation are injected directly via `innerHTML`. Vue components and specific VuePress directives will parse as native HTML tags and fail to render.
-  :::
+:::
 
 ## Star Articles
 

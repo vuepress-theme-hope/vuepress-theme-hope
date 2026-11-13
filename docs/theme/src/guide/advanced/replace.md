@@ -18,8 +18,8 @@ Replace theme components using alias when `{ custom: true }` is set in [behavior
 Configure component replacement in your VuePress config:
 
 ```ts twoslash title=".vuepress/config.ts"
-import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
+import { getDirname, path } from "vuepress/utils";
 
 const __dirname = getDirname(import.meta.url);
 

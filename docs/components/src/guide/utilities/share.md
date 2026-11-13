@@ -118,7 +118,8 @@ interface ShareServiceConfig {
   /**
    * Share link
    *
-   * @description You can use `[` and `]` to wrap the variable name, and the variable will be replaced with the value of the page.:
+   * You can use `[` and `]` to wrap the variable name, and the variable will be
+   * replaced with the value of the page.:
    *
    * - `title` will be replaced with the title of the page
    * - `description` will be replaced with the description of the page
@@ -134,7 +135,6 @@ interface ShareServiceConfig {
   /**
    * Action of share button
    *
-   * @description
    * - `open` will open the link in a new tab
    * - `navigate` will navigate to the link
    * - `popup` will open a popup window
@@ -147,25 +147,19 @@ interface ShareServiceConfig {
   /**
    * Theme color of icon
    *
-   * @default 'currentColor'
+   * @default "currentColor"
    */
   color?: string;
 
-  /**
-   * Plain icon shape
-   */
+  /** Plain icon shape */
   shape: string;
 
-  /**
-   * Colorful icon
-   */
+  /** Colorful icon */
   icon?: string;
 }
 
 interface ShareServiceOptions extends ShareServiceConfig {
-  /**
-   * Service name
-   */
+  /** Service name */
   name: string;
 }
 
