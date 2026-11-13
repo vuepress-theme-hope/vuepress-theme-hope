@@ -29,7 +29,7 @@ const TimelinePage: FunctionalComponent<
         h(DropTransition, { appear: true }, () => h(TimelineItems)),
         slots.articlesAfter?.(),
       ]),
-      h(DropTransition, { appear: true }, () => h(InfoPanel, {}, slots)),
+      h(DropTransition, { appear: true }, () => h(InfoPanel, { key: "blog" }, slots)),
     ]),
   );
 
