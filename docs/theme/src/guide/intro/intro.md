@@ -155,11 +155,3 @@ The theme includes the following plugins, you can use them in other themes or di
 - <ProjectLink name="components">vuepress-plugin-components</ProjectLink>: Provide some out of box plugins
 
 - <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink>: Provide more Markdown syntax
-
-::: tip
-
-Here are some other plugins that are not bundled by the theme, you can enable them according to your own needs.
-
-- <ProjectLink name="lightgallery">vuepress-plugin-lightgallery</ProjectLink>: Image preview plugin based on lightgallery
-
-:::

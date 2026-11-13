@@ -39,10 +39,8 @@ jobs:
       - name: Combine output
         run: |
           mkdir -p dist/components
-          mkdir -p dist/lightgallery
           mkdir -p dist/md-enhance
           cp -r docs/components/dist/* dist/components/
-          cp -r docs/lightgallery/dist/* dist/lightgallery/
           cp -r docs/md-enhance/dist/* dist/md-enhance/
           cp -r docs/theme/dist/* dist/
 
