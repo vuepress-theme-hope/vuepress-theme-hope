@@ -50,9 +50,11 @@ export default hopeTheme({
 
 :::: center
 居中的内容...
+
 ::: left
 左对齐的内容...
 :::
+
 居中的内容...
 ::::
 

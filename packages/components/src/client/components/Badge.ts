@@ -46,7 +46,7 @@ export interface BadgeProps {
   color?: string;
 }
 
-const Badge: FunctionalComponent<BadgeProps, Record<never, never>, { default?: Slot }> = (
+const Badge: FunctionalComponent<BadgeProps, Record<string, never>, { default?: Slot }> = (
   { type = "info", text = "", vertical, color, bgColor },
   { slots },
 ) =>

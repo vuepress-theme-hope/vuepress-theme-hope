@@ -74,29 +74,35 @@ You can pass options to `attrs` to customize plugin behavior.
 
 ```ts
 type MarkdownItAttrRuleName =
-  "fence" | "inline" | "table" | "list" | "hr" | "softbreak" | "block";
+  | "fence"
+  | "inline"
+  | "table"
+  | "list"
+  | "hr"
+  | "softbreak"
+  | "block";
 
 interface MarkdownItAttrsOptions {
   /**
-   * left delimiter
+   * Left delimiter
    *
-   * @default '{'
+   * @default "{"
    */
   left?: string;
 
   /**
-   * right delimiter
+   * Right delimiter
    *
-   * @default '}'
+   * @default "}"
    */
   right?: string;
 
   /**
-   * allowed attributes
+   * Allowed attributes
    *
-   * @description An empty list means allowing all attribute
+   * An empty list means allowing all attribute
    *
-   * @default []
+   * @default [ ]
    */
   allowed?: (string | RegExp)[];
 

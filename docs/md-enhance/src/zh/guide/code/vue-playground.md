@@ -120,6 +120,7 @@ const msg = ref("你好交互演示!");
 ```vue
 <script setup>
 import { ref } from "vue";
+
 import Comp from "./Comp.vue";
 
 const msg = ref("Hello Playground!");

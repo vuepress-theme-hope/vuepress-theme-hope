@@ -10,7 +10,7 @@ import type { BloggerInfoSlotData } from "@theme-hope/typings/slots";
 import "../../styles/blog/info-panel.scss";
 
 const InfoPanel: FunctionalComponent<
-  Record<never, never>,
+  Record<string, never>,
   [],
   {
     bloggerInfo?: Slot<BloggerInfoSlotData>;

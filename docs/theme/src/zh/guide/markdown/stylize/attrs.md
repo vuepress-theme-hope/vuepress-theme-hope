@@ -60,29 +60,35 @@ export default hopeTheme({
 
 ```ts
 type MarkdownItAttrRuleName =
-  "fence" | "inline" | "table" | "list" | "hr" | "softbreak" | "block";
+  | "fence"
+  | "inline"
+  | "table"
+  | "list"
+  | "hr"
+  | "softbreak"
+  | "block";
 
 interface MarkdownItAttrsOptions {
   /**
    * 左分隔符
    *
-   * @default '{'
+   * @default "{"
    */
   left?: string;
 
   /**
    * 右分隔符
    *
-   * @default '}'
+   * @default "}"
    */
   right?: string;
 
   /**
    * 允许的属性
    *
-   * @description 设置空数组意味着允许所有属性
+   * 设置空数组意味着允许所有属性
    *
-   * @default []
+   * @default [ ]
    */
   allowed?: (string | RegExp)[];
 

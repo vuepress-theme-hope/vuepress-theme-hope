@@ -74,17 +74,17 @@ Documentation sites are built per package, e.g. `pnpm --filter docs-theme docs:v
  *
  * 中文描述
  *
- * @description (optional) English detailed description
+ * (optional) English detailed description
  *
  * 中文详细描述
  *
- * @param paramName - English description / 中文描述
+ * @example
+ *   ```ts
+ *   // Example code in TypeScript
+ *   ```;
  *
  * @default defaultValue
- * @example
- * ```ts
- * // Example code in TypeScript
- * ```
+ * @param paramName - English description / 中文描述
  */
 ````
 

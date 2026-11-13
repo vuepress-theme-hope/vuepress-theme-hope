@@ -51,27 +51,23 @@ Feed 项目的作者。
 
 ```ts
 interface FeedAuthor {
-  /**
-   * 作者名字
-   */
+  /** 作者名字 */
   name?: string;
 
-  /**
-   * 作者邮件
-   */
+  /** 作者邮件 */
   email?: string;
 
   /**
    * 作者网站
    *
-   * @description json format only
+   * Json format only
    */
   url?: string;
 
   /**
    * 作者头像
    *
-   * @description json format only
+   * Json format only
    */
   avatar?: string;
 }
@@ -87,27 +83,23 @@ Feed 项目的贡献者。
 
 ```ts
 interface FeedContributor {
-  /**
-   * 作者名字
-   */
+  /** 作者名字 */
   name?: string;
 
-  /**
-   * 作者邮件
-   */
+  /** 作者邮件 */
   email?: string;
 
   /**
    * 作者网站
    *
-   * @description json format only
+   * Json format only
    */
   url?: string;
 
   /**
    * 作者头像
    *
-   * @description json format only
+   * Json format only
    */
   avatar?: string;
 }

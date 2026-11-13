@@ -30,6 +30,7 @@ const msg = ref("Hello Playground!");
 ```vue
 <script setup>
 import { ref } from "vue";
+
 import Comp from "./Comp.vue";
 
 const msg = ref("Hello Playground!");

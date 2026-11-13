@@ -75,9 +75,7 @@ export default defineComponent({
               slots.articlesAfter?.(),
             ],
           ),
-          h(DropTransition, { appear: true, delay: 0.08 }, () =>
-            h(InfoPanel, { key: "blog" }, slots),
-          ),
+          h(DropTransition, { appear: true, delay: 0.08 }, () => h(InfoPanel, {}, slots)),
         ]),
       );
   },

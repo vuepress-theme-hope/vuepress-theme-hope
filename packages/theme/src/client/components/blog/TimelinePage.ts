@@ -7,7 +7,7 @@ import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import type { BloggerInfoSlotData } from "@theme-hope/typings/slots";
 
 const TimelinePage: FunctionalComponent<
-  Record<never, never>,
+  Record<string, never>,
   [],
   {
     // articles
@@ -29,7 +29,7 @@ const TimelinePage: FunctionalComponent<
         h(DropTransition, { appear: true }, () => h(TimelineItems)),
         slots.articlesAfter?.(),
       ]),
-      h(DropTransition, { appear: true }, () => h(InfoPanel, { key: "blog" }, slots)),
+      h(DropTransition, { appear: true }, () => h(InfoPanel, {}, slots)),
     ]),
   );
 

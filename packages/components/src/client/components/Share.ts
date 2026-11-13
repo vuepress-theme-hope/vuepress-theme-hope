@@ -54,7 +54,7 @@ export default defineComponent({
     tagGetter: {
       type: Function as PropType<(page: PageData) => string | string[] | undefined | null>,
 
-      default: ({ frontmatter }: PageData<Record<never, never>>) =>
+      default: ({ frontmatter }: PageData<Record<string, never>>) =>
         frontmatter.tag ?? frontmatter.tags,
     },
 

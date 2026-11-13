@@ -105,7 +105,7 @@ interface MarkdownKatexPluginOptions extends KatexOptions {
   /**
    * 是否允许两端带空格的内联数学
    *
-   * @description 不建议将此设置为 true，因为它很可能会破坏 $ 的默认使用
+   * 不建议将此设置为 true，因为它很可能会破坏 $ 的默认使用
    *
    * @default false
    */
@@ -135,7 +135,7 @@ interface MarkdownMathjaxPluginOptions extends Omit<
   /**
    * 是否允许两端带空格的内联数学
    *
-   * @description 不建议将此设置为 true，因为它很可能会破坏 $ 的默认使用
+   * 不建议将此设置为 true，因为它很可能会破坏 $ 的默认使用
    *
    * @default false
    */
@@ -144,7 +144,7 @@ interface MarkdownMathjaxPluginOptions extends Omit<
   /**
    * 输出格式
    *
-   * @default 'svg'
+   * @default "svg"
    */
   output?: "chtml" | "svg";
 
@@ -155,24 +155,19 @@ interface MarkdownMathjaxPluginOptions extends Omit<
    */
   a11y?: boolean;
 
-  /**
-   * TeX 输入选项
-   */
+  /** TeX 输入选项 */
   tex?: MathJaxTexInputOptions;
 
-  /**
-   * 通用 HTML 输出选项
-   */
+  /** 通用 HTML 输出选项 */
   chtml?: MathjaxCommonHTMLOutputOptions;
 
-  /**
-   * SVG 输出选项
-   */
+  /** SVG 输出选项 */
   svg?: MathjaxSVGOutputOptions;
 }
 
 type MarkdownMathPluginOptions =
-  MarkdownKatexPluginOptions | MarkdownMathjaxPluginOptions;
+  | MarkdownKatexPluginOptions
+  | MarkdownMathjaxPluginOptions;
 ```
 
 @`markdown.revealjs` type=`RevealJsPluginOptions | boolean`

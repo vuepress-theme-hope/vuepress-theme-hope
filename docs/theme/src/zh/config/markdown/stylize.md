@@ -106,17 +106,11 @@ tag:
 
 ```ts
 interface MarkdownItStylizeResult {
-  /**
-   * 渲染的标签名称
-   */
+  /** 渲染的标签名称 */
   tag: string;
-  /**
-   * 属性设置
-   */
+  /** 属性设置 */
   attrs: Record<string, string>;
-  /**
-   * 标签内容
-   */
+  /** 标签内容 */
   content: string;
 }
 ```

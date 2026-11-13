@@ -40,6 +40,7 @@ import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.j
 
 ```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
+
 import Blog from "./layouts/Blog.vue";
 
 export default defineClientConfig({
@@ -81,6 +82,7 @@ import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";
 
 ```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
+
 import Blog from "./layouts/Blog.vue";
 
 export default defineClientConfig({
@@ -103,9 +105,7 @@ Make navbar transparent in certain pages while at page top.
 
 ```ts
 export declare const setupTransparentNavbar: (options?: {
-  /**
-   * @default 'blog-homepage'
-   */
+  /** @default "blog-homepage" */
   type?: "homepage" | "blog-homepage" | "all";
 
   /**
@@ -115,14 +115,10 @@ export declare const setupTransparentNavbar: (options?: {
    */
   threshold?: number;
 
-  /**
-   * Text color in light mode
-   */
+  /** Text color in light mode */
   light?: string;
 
-  /**
-   * Text color in dark mode
-   */
+  /** Text color in dark mode */
   dark?: string;
 }) => void;
 ```
@@ -130,8 +126,8 @@ export declare const setupTransparentNavbar: (options?: {
 ::: details Code Example
 
 ```ts twoslash title=".vuepress/client.ts"
-import { defineClientConfig } from "vuepress/client";
 import { setupTransparentNavbar } from "vuepress-theme-hope/presets/transparentNavbar.js";
+import { defineClientConfig } from "vuepress/client";
 
 export default defineClientConfig({
   setup: () => {
@@ -148,14 +144,12 @@ Display running time of the site in footer.
 
 ```ts
 export declare const setupRunningTimeFooter: (
-  /**
-   * The date to calculate the running time
-   */
+  /** The date to calculate the running time */
   date: string | Date,
   /**
    * The locales of running time
    *
-   * @description :day, :hour, :minute, :second will be replaced by the corresponding value
+   * :day, :hour, :minute, :second will be replaced by the corresponding value
    *
    * @default { "/": "Running time: :day days :hour hours :minute minutes :second seconds" }
    */
@@ -172,8 +166,8 @@ export declare const setupRunningTimeFooter: (
 ::: details Code Example
 
 ```ts twoslash title=".vuepress/client.ts"
-import { defineClientConfig } from "vuepress/client";
 import { setupRunningTimeFooter } from "vuepress-theme-hope/presets/footerRunningTime.js";
+import { defineClientConfig } from "vuepress/client";
 
 export default defineClientConfig({
   setup() {
@@ -197,9 +191,7 @@ Add snowfall effect to the site.
 
 ```ts
 export declare const setupSnowFall: (options: {
-  /**
-   * Image of snowflake
-   */
+  /** Image of snowflake */
   image?: string;
 
   /**
@@ -235,8 +227,8 @@ export declare const setupSnowFall: (options: {
 ::: details Code Example
 
 ```ts twoslash title=".vuepress/client.ts"
-import { defineClientConfig } from "vuepress/client";
 import { setupSnowFall } from "vuepress-theme-hope/presets/snowFall.js";
+import { defineClientConfig } from "vuepress/client";
 
 export default defineClientConfig({
   setup() {
@@ -266,10 +258,11 @@ export default defineClientConfig({
     /**
      * Locale text for the blog type
      *
-     * @example {
-     *  '/': 'Recent Updated',
-     *  '/zh/': '最近更新',
-     * }
+     * @example
+     *   {
+     *   "/": "Recent Updated",
+     *   "/zh/": "最近更新"
+     *   }
      */
     locales?: Record<string, string>;
   }
@@ -318,10 +311,11 @@ export default defineClientConfig({
     /**
      * Locales for the blog type
      *
-     * @example {
-     *  '/': 'Slides',
-     *  '/zh/': '幻灯片',
-     * }
+     * @example
+     *   {
+     *   "/": "Slides",
+     *   "/zh/": "幻灯片"
+     *   }
      */
     locales?: Record<string, string>;
   }

@@ -40,6 +40,7 @@ import BingHeroBackground from "vuepress-theme-hope/presets/BingHeroBackground.j
 
 ```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
+
 import Blog from "./layouts/Blog.vue";
 
 export default defineClientConfig({
@@ -85,6 +86,7 @@ import HitokotoBlogHero from "vuepress-theme-hope/presets/HitokotoBlogHero.js";
 
 ```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
+
 import Blog from "./layouts/Blog.vue";
 
 export default defineClientConfig({
@@ -107,9 +109,7 @@ export default defineClientConfig({
 
 ```ts
 export declare const setupTransparentNavbar: (options?: {
-  /**
-   * @default 'blog-homepage'
-   */
+  /** @default "blog-homepage" */
   type?: "homepage" | "blog-homepage" | "all";
 
   /**
@@ -119,14 +119,10 @@ export declare const setupTransparentNavbar: (options?: {
    */
   threshold?: number;
 
-  /**
-   * 浅色模式下字体颜色
-   */
+  /** 浅色模式下字体颜色 */
   light?: string;
 
-  /**
-   * 深色模式下字体颜色
-   */
+  /** 深色模式下字体颜色 */
   dark?: string;
 }) => void;
 ```
@@ -134,8 +130,8 @@ export declare const setupTransparentNavbar: (options?: {
 ::: details 代码示例
 
 ```ts twoslash title=".vuepress/client.ts"
-import { defineClientConfig } from "vuepress/client";
 import { setupTransparentNavbar } from "vuepress-theme-hope/presets/transparentNavbar.js";
+import { defineClientConfig } from "vuepress/client";
 
 export default defineClientConfig({
   setup: () => {
@@ -152,14 +148,12 @@ export default defineClientConfig({
 
 ```ts
 export declare const setupRunningTimeFooter: (
-  /**
-   * 计算运行时间的日期
-   */
+  /** 计算运行时间的日期 */
   date: string | Date,
   /**
    * 运行时间的本地化文字
    *
-   * @description :day, :hour, :minute, :second 会被对应的值替换
+   * :day, :hour, :minute, :second 会被对应的值替换
    *
    * @default { "/": "Running time: :day days :hour hours :minute minutes :second seconds" }
    */
@@ -177,8 +171,8 @@ export declare const setupRunningTimeFooter: (
 ::: details 代码示例
 
 ```ts twoslash title=".vuepress/client.ts"
-import { defineClientConfig } from "vuepress/client";
 import { setupRunningTimeFooter } from "vuepress-theme-hope/presets/footerRunningTime.js";
+import { defineClientConfig } from "vuepress/client";
 
 export default defineClientConfig({
   setup() {
@@ -202,9 +196,7 @@ export default defineClientConfig({
 
 ```ts
 export declare const setupSnowFall: (options: {
-  /**
-   * 雪花的图片文件
-   */
+  /** 雪花的图片文件 */
   image?: string;
 
   /**
@@ -240,8 +232,8 @@ export declare const setupSnowFall: (options: {
 ::: details 代码示例
 
 ```ts twoslash title=".vuepress/client.ts"
-import { defineClientConfig } from "vuepress/client";
 import { setupSnowFall } from "vuepress-theme-hope/presets/snowFall.js";
+import { defineClientConfig } from "vuepress/client";
 
 export default defineClientConfig({
   setup() {
@@ -271,10 +263,11 @@ export default defineClientConfig({
     /**
      * 博客类型的本地化文字
      *
-     * @example {
-     *  '/': 'Recent Updated',
-     *  '/zh/': '最近更新',
-     * }
+     * @example
+     *   {
+     *   "/": "Recent Updated",
+     *   "/zh/": "最近更新"
+     *   }
      */
     locales?: Record<string, string>;
   }
@@ -316,7 +309,6 @@ export default defineClientConfig({
     /**
      * 此博客类型的路径
      *
-     *
      * @default "/slides/"
      */
     path?: string;
@@ -324,10 +316,11 @@ export default defineClientConfig({
     /**
      * 博客类型的本地化文文字
      *
-     * @example {
-     *  '/': 'Slides',
-     *  '/zh/': '幻灯片',
-     * }
+     * @example
+     *   {
+     *   "/": "Slides",
+     *   "/zh/": "幻灯片"
+     *   }
      */
     locales?: Record<string, string>;
   }

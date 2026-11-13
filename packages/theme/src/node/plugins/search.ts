@@ -70,7 +70,7 @@ export const getSearchPlugin = (
   // Add supports for category and tags
   const customFields: CustomFieldOptions[] = [
     {
-      getter: (page: Page<Record<never, never>, ThemeBasePageFrontmatter>) =>
+      getter: (page: Page<Record<string, unknown>, ThemeBasePageFrontmatter>) =>
         page.frontmatter.category,
       formatter: getFullLocaleConfig({
         app,
@@ -81,7 +81,8 @@ export const getSearchPlugin = (
       }),
     },
     {
-      getter: (page: Page<Record<never, never>, ThemeBasePageFrontmatter>) => page.frontmatter.tag,
+      getter: (page: Page<Record<string, unknown>, ThemeBasePageFrontmatter>) =>
+        page.frontmatter.tag,
       formatter: getFullLocaleConfig({
         app,
         default: themeLocaleInfo.map(([langs, { blogLocales }]) => [

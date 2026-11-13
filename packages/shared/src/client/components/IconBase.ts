@@ -10,7 +10,7 @@ export interface IconBaseProps {
 
 export const IconBase: FunctionalComponent<
   IconBaseProps,
-  Record<never, never>,
+  Record<string, never>,
   { default: RequiredSlot }
 > = ({ name = "", color = "currentColor", ariaLabel }, { attrs, slots }) =>
   h(

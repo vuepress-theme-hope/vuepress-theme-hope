@@ -58,7 +58,7 @@ Syntax extensions available in the environment:
 
 - VuePress base extensions:[VuePress → Markdown](../cookbook/vuepress/markdown.md).
 - Theme plugin extensions: [Guide → Markdown](../guide/intro/markdown.md).
-  :::
+:::
 
 ## Frontmatter Configuration
 

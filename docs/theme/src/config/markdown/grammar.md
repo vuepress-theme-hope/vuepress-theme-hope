@@ -105,7 +105,8 @@ interface MarkdownKatexPluginOptions extends KatexOptions {
   /**
    * Whether to allow inline math with spaces on ends
    *
-   * @description NOT recommended to set this to true, because it will likely break the default usage of $
+   * NOT recommended to set this to true, because it will likely break the
+   * default usage of $
    *
    * @default false
    */
@@ -135,7 +136,8 @@ interface MarkdownMathjaxPluginOptions extends Omit<
   /**
    * Whether to allow inline math with spaces on ends
    *
-   * @description NOT recommended to set this to true, because it will likely break the default usage of $
+   * NOT recommended to set this to true, because it will likely break the
+   * default usage of $
    *
    * @default false
    */
@@ -144,7 +146,7 @@ interface MarkdownMathjaxPluginOptions extends Omit<
   /**
    * Output syntax
    *
-   * @default 'svg'
+   * @default "svg"
    */
   output?: "chtml" | "svg";
 
@@ -155,24 +157,19 @@ interface MarkdownMathjaxPluginOptions extends Omit<
    */
   a11y?: boolean;
 
-  /**
-   * TeX input options
-   */
+  /** TeX input options */
   tex?: MathJaxTexInputOptions;
 
-  /**
-   * Common HTML output options
-   */
+  /** Common HTML output options */
   chtml?: MathjaxCommonHTMLOutputOptions;
 
-  /**
-   * SVG output options
-   */
+  /** SVG output options */
   svg?: MathjaxSVGOutputOptions;
 }
 
 type MarkdownMathPluginOptions =
-  MarkdownKatexPluginOptions | MarkdownMathjaxPluginOptions;
+  | MarkdownKatexPluginOptions
+  | MarkdownMathjaxPluginOptions;
 ```
 
 @`markdown.revealjs` type=`RevealJsPluginOptions | boolean`

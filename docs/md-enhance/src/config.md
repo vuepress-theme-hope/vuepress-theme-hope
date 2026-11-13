@@ -36,7 +36,7 @@ interface PlaygroundCodeConfig {
   /**
    * Code block extension
    *
-   * @description It's based on filename, not code fence language
+   * It's based on filename, not code fence language
    */
   ext: string;
 
@@ -66,11 +66,11 @@ interface PlaygroundData {
   /**
    * Playground settings
    *
-   * @description It's parsed result of json content after setting directive
+   * It's parsed result of json content after setting directive
    */
   settings: Record<string, unknown>;
 
-  /** hash key based on playground content */
+  /** Hash key based on playground content */
   key: string;
 }
 ```

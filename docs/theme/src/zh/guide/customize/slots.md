@@ -63,6 +63,7 @@ import { Layout } from "vuepress-theme-hope/client";
 
 ```ts title=".vuepress/client.ts"
 import { defineClientConfig } from "vuepress/client";
+
 import Changelog from "./layouts/Changelog.vue";
 import Home from "./layouts/Home.vue";
 import Layout from "./layouts/Layout.vue";

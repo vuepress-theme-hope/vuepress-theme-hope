@@ -13,7 +13,7 @@ import "../../styles/home/highlight-panel.scss";
 
 const HighlightSection: FunctionalComponent<
   ThemeProjectHomeHighlightOptions,
-  Record<never, never>,
+  Record<string, never>,
   {
     image?: Slot<ThemeProjectHomeHighlightOptions>;
     info?: Slot<ThemeProjectHomeHighlightOptions>;

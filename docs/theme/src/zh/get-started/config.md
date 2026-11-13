@@ -47,26 +47,19 @@ export default defineUserConfig({
 ```ts twoslash
 import { hopeTheme } from "vuepress-theme-hope";
 
-/**
- * 导出主题配置
- */
-export default hopeTheme({
-  /**
-   * 主题特定选项
-   */
-});
+/** 导出主题配置 */
+export default hopeTheme({/** 主题特定选项 */});
 ```
 
 然后在主配置文件中引入：
 
 ```ts title=".vuepress/config.ts"
 import { defineUserConfig } from "vuepress";
+
 import theme from "./theme.js";
 
 export default defineUserConfig({
-  /**
-   * 等同于 theme: hopeTheme({ ... })
-   */
+  /** 等同于 theme: hopeTheme({ ... }) */
   theme,
 });
 ```

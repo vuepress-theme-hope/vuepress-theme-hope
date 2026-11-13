@@ -152,8 +152,8 @@ tag:
 ::: details 例子
 
 ```ts twoslash title=".vuepress/theme.ts"
-import { getDirname, path } from "vuepress/utils";
 import { hopeTheme } from "vuepress-theme-hope";
+import { getDirname, path } from "vuepress/utils";
 
 const __dirname = getDirname(import.meta.url);
 

@@ -106,17 +106,11 @@ Content replacer. `MarkdownItStylizeResult` is:
 
 ```ts
 interface MarkdownItStylizeResult {
-  /**
-   * Tag name
-   */
+  /** Tag name */
   tag: string;
-  /**
-   * Attributes settings
-   */
+  /** Attributes settings */
   attrs: Record<string, string>;
-  /**
-   * Tag content
-   */
+  /** Tag content */
   content: string;
 }
 ```
