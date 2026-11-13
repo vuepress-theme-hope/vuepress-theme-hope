@@ -1043,10 +1043,10 @@ importers:
     dependencies:
       '@mdit/plugin-container':
         specifier: ^2.2.0
-        version: 2.2.0(markdown-it@14.3.2)
+        version: 2.2.0(markdown-it@14.3.3)
       '@mdit/plugin-demo':
         specifier: ^2.1.1
-        version: 2.1.1(markdown-it@14.3.2)
+        version: 2.1.1(markdown-it@14.3.3)
       '@types/markdown-it':
         specifier: ^14.2.0
         version: 14.2.0
@@ -1103,8 +1103,8 @@ importers:
         specifier: catalog:vuepress
         version: 2.0.0-rc.31(@types/node@22.20.5)(@vue/compiler-sfc@3.5.45)(esbuild@0.28.2)(jiti@2.7.0)(rollup@4.63.5)(sass-embedded@1.108.2)(sass@1.108.2)(supports-color@10.2.2)(terser@5.51.2)(typescript@6.0.3)(webpack@5.111.1(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.32))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.32)(svgo@4.1.0)(uglify-js@3.19.3))(yaml@2.9.1)
       markdown-it:
-        specifier: 14.3.2
-        version: 14.3.2
+        specifier: 14.3.3
+        version: 14.3.3
 
   packages/shared:
     dependencies:
@@ -7230,8 +7230,8 @@ packages:
   markdown-it-sup@2.0.0:
     resolution: {integrity: sha512-5VgmdKlkBd8sgXuoDoxMpiU+BiEt3I49GItBzzw7Mxq9CxvnhE/k09HFli09zgfFDRixDQDfDxi0mgBCXtaTvA==}
 
-  markdown-it@14.3.2:
-    resolution: {integrity: sha512-sHHjZ5fJKlgrG4qns2YwVcdNep35h5fERrfkD2YNsb9UFk0UIHarbiTaHKVMlPuWAoiilyK8Fv/jAm11slsY7Q==}
+  markdown-it@14.3.3:
+    resolution: {integrity: sha512-L//tDAkjTjJCU6pBUSBTgs3Kg4InVaZuUZog/b6V12UKhcDQ7S78877ibbCanRExwPuYP1CZD7Gd2dxSy1GXRg==}
     hasBin: true
 
   markdown-it@15.0.3:
@@ -11409,47 +11409,47 @@ snapshots:
   '@mdit-vue/plugin-component@3.0.2':
     dependencies:
       '@types/markdown-it': 14.2.0
-      markdown-it: 14.3.2
+      markdown-it: 14.3.3
 
   '@mdit-vue/plugin-frontmatter@3.0.2':
     dependencies:
       '@mdit-vue/types': 3.0.2
       '@types/markdown-it': 14.2.0
       gray-matter: 4.0.3
-      markdown-it: 14.3.2
+      markdown-it: 14.3.3
 
   '@mdit-vue/plugin-headers@3.0.2':
     dependencies:
       '@mdit-vue/shared': 3.0.2
       '@mdit-vue/types': 3.0.2
       '@types/markdown-it': 14.2.0
-      markdown-it: 14.3.2
+      markdown-it: 14.3.3
 
   '@mdit-vue/plugin-sfc@3.0.2':
     dependencies:
       '@mdit-vue/types': 3.0.2
       '@types/markdown-it': 14.2.0
-      markdown-it: 14.3.2
+      markdown-it: 14.3.3
 
   '@mdit-vue/plugin-title@3.0.2':
     dependencies:
       '@mdit-vue/shared': 3.0.2
       '@mdit-vue/types': 3.0.2
       '@types/markdown-it': 14.2.0
-      markdown-it: 14.3.2
+      markdown-it: 14.3.3
 
   '@mdit-vue/plugin-toc@3.0.2':
     dependencies:
       '@mdit-vue/shared': 3.0.2
       '@mdit-vue/types': 3.0.2
       '@types/markdown-it': 14.2.0
-      markdown-it: 14.3.2
+      markdown-it: 14.3.3
 
   '@mdit-vue/shared@3.0.2':
     dependencies:
       '@mdit-vue/types': 3.0.2
       '@types/markdown-it': 14.2.0
-      markdown-it: 14.3.2
+      markdown-it: 14.3.3
 
   '@mdit-vue/types@3.0.2': {}
 
@@ -11457,9 +11457,9 @@ snapshots:
     optionalDependencies:
       markdown-it: 15.0.3
 
-  '@mdit/helper@1.2.1(markdown-it@14.3.2)':
+  '@mdit/helper@1.2.1(markdown-it@14.3.3)':
     optionalDependencies:
-      markdown-it: 14.3.2
+      markdown-it: 14.3.3
 
   '@mdit/helper@1.2.1(markdown-it@15.0.3)':
     optionalDependencies:
@@ -11496,11 +11496,11 @@ snapshots:
     optionalDependencies:
       markdown-it: 15.0.3
 
-  '@mdit/plugin-container@2.2.0(markdown-it@14.3.2)':
+  '@mdit/plugin-container@2.2.0(markdown-it@14.3.3)':
     dependencies:
-      '@mdit/helper': 1.2.1(markdown-it@14.3.2)
+      '@mdit/helper': 1.2.1(markdown-it@14.3.3)
     optionalDependencies:
-      markdown-it: 14.3.2
+      markdown-it: 14.3.3
 
   '@mdit/plugin-container@2.2.0(markdown-it@15.0.3)':
     dependencies:
@@ -11508,11 +11508,11 @@ snapshots:
     optionalDependencies:
       markdown-it: 15.0.3
 
-  '@mdit/plugin-demo@2.1.1(markdown-it@14.3.2)':
+  '@mdit/plugin-demo@2.1.1(markdown-it@14.3.3)':
     dependencies:
-      '@mdit/helper': 1.2.1(markdown-it@14.3.2)
+      '@mdit/helper': 1.2.1(markdown-it@14.3.3)
     optionalDependencies:
-      markdown-it: 14.3.2
+      markdown-it: 14.3.3
 
   '@mdit/plugin-demo@2.1.1(markdown-it@15.0.3)':
     dependencies:
@@ -13276,8 +13276,8 @@ snapshots:
       '@types/markdown-it-emoji': 3.0.1
       '@vuepress/shared': 2.0.0-rc.31
       '@vuepress/utils': 2.0.0-rc.31(supports-color@10.2.2)
-      markdown-it: 14.3.2
-      markdown-it-anchor: 9.2.1(@types/markdown-it@14.2.0)(markdown-it@14.3.2)
+      markdown-it: 14.3.3
+      markdown-it-anchor: 9.2.1(@types/markdown-it@14.2.0)(markdown-it@14.3.3)
       markdown-it-emoji: 3.1.0
       mdurl: 2.1.0
     transitivePeerDependencies:
@@ -16560,10 +16560,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  markdown-it-anchor@9.2.1(@types/markdown-it@14.2.0)(markdown-it@14.3.2):
+  markdown-it-anchor@9.2.1(@types/markdown-it@14.2.0)(markdown-it@14.3.3):
     dependencies:
       '@types/markdown-it': 14.2.0
-      markdown-it: 14.3.2
+      markdown-it: 14.3.3
 
   markdown-it-cjk-friendly@3.0.0(@types/markdown-it@14.2.0)(markdown-it@15.0.3):
     dependencies:
@@ -16582,7 +16582,7 @@ snapshots:
 
   markdown-it-sup@2.0.0: {}
 
-  markdown-it@14.3.2:
+  markdown-it@14.3.3:
     dependencies:
       argparse: 2.0.1
       entities: 4.5.0
@@ -16661,7 +16661,7 @@ snapshots:
       '@vscode/markdown-it-katex': 1.1.2
       highlight.js: 11.12.0
       katex: 0.16.47
-      markdown-it: 14.3.2
+      markdown-it: 14.3.3
       markdown-it-ins: 4.0.0
       markdown-it-mark: 4.0.0
       markdown-it-sub: 2.0.0
