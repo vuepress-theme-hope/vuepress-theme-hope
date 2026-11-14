@@ -7,8 +7,8 @@ Guidance for AI agents working on this monorepo. Read it before making changes.
 A [pnpm workspaces](https://pnpm.io/workspaces) monorepo holding the VuePress Hope theme and its companion plugins, plus the documentation sites for each of them.
 
 ```plain
-packages/   # Published packages (components, create, lightgallery, md-enhance, shared, theme)
-docs/       # Documentation sites (components, lightgallery, md-enhance, shared, theme)
+packages/   # Published packages (components, create, md-enhance, shared, theme)
+docs/       # Documentation sites (components, md-enhance, shared, theme)
 demo/       # Demo sites for each package
 scripts/    # Shared build / release helpers
 ```
@@ -97,7 +97,7 @@ feat(theme): add markdown field option
 ```
 
 Allowed types: `feat|fix|docs|style|refactor|perf|test|workflow|build|ci|chore|types|release`.
-Allowed scopes: `components|create|lightgallery|md-enhance|shared|theme|deps|demo|release` (or none).
+Allowed scopes: `components|create|md-enhance|shared|theme|deps|demo|release` (or none).
 
 ## Documentation
 

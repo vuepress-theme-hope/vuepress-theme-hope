@@ -46,15 +46,6 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           single-commit: true
 
-      - name: Deploy lightgallery docs
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          repository-name: vuepress-theme-hope/lightgallery-docs
-          branch: netlify
-          folder: docs/lightgallery/dist
-          token: ${{ secrets.ACCESS_TOKEN }}
-          single-commit: true
-
       - name: Deploy md-enhance docs
         uses: JamesIves/github-pages-deploy-action@v4
         with:
@@ -103,10 +94,8 @@ jobs:
       - name: Combine output
         run: |
           mkdir -p dist/components
-          mkdir -p dist/lightgallery
           mkdir -p dist/md-enhance
           cp -r docs/components/dist/* dist/components/
-          cp -r docs/lightgallery/dist/* dist/lightgallery/
           cp -r docs/md-enhance/dist/* dist/md-enhance/
           cp -r docs/theme/dist/* dist/
 
@@ -186,7 +175,6 @@ jobs:
       matrix:
         plugin-name:
           - components
-          - lightgallery
           - md-enhance
 
     steps:
