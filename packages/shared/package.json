@@ -60,7 +60,7 @@
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/plugin-git": "catalog:vuepress",
-    "vite": "8.2.6"
+    "vite": "8.3.8"
   },
   "peerDependencies": {
     "vuepress": "catalog:vuepress"
