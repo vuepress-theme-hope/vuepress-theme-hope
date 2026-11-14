@@ -142,7 +142,8 @@ export default hopeTheme(
       imgSize: true,
       include: true,
       mark: true,
-      math: true,
+      // Use KaTeX to avoid the upstream rc.138 MathJax SSR retry error; revisit when fixed.
+      math: { type: "katex" },
       revealjs: {
         plugins: ["highlight", "math", "search", "notes", "zoom"],
       },

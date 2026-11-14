@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@types/three": "0.187.0",
+    "@vuepress/bundler-rspack": "catalog:vuepress",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/helper": "catalog:vuepress",

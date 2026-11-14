@@ -62,11 +62,10 @@ import { hopeTheme } from "vuepress-theme-hope";
 export default hopeTheme({
   plugins: {
     icon: {
-      // an array of above
+      // an array of links
       assets: [
         "/base/my/font-icon/resource.js",
         "https://example/my/fonr-icon/resouce.css",
-        "fontawesome",
       ],
     },
   },

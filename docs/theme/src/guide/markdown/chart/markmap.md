@@ -14,26 +14,26 @@ Let the Markdown file support markmap in your VuePress site.
 
 ## Settings
 
-Install `markmap-lib`, `markmap-toolbar` and `markmap-view` in your project:
+Install `@markmap/parse`, `@markmap/plugin-math`, `@markmap/render`, `@markmap/toolbar` and `@markmap/view` in your project:
 
 ::: code-tabs#shell
 
 @tab pnpm
 
 ```bash
-pnpm add -D markmap-lib markmap-toolbar markmap-view
+pnpm add -D @markmap/parse @markmap/plugin-math @markmap/render @markmap/toolbar @markmap/view
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D markmap-lib markmap-toolbar markmap-view
+yarn add -D @markmap/parse @markmap/plugin-math @markmap/render @markmap/toolbar @markmap/view
 ```
 
 @tab npm
 
 ```bash
-npm i -D markmap-lib markmap-toolbar markmap-view
+npm i -D @markmap/parse @markmap/plugin-math @markmap/render @markmap/toolbar @markmap/view
 ```
 
 :::
@@ -49,6 +49,12 @@ export default hopeTheme({
   },
 });
 ```
+
+::: warning MathJax
+
+`@markmap/plugin-math` brings its own `@mathjax/src`. If MathJax is auto-detected for markdown math, the rc.138 MathJax renderer can fail during the build with `MathJax retry`. Use KaTeX (`markdown.math.type: "katex"`) until this is fixed upstream.
+
+:::
 
 ## Syntax
 

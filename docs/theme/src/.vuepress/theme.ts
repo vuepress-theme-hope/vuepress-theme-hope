@@ -101,6 +101,8 @@ export default theme(
       imgSize: true,
       include: {
         deep: true,
+        // Keep includes such as ../../../packages/theme/CHANGELOG.md inside the project root.
+        projectRoot: path.resolve(__dirname, "../../../.."),
         resolvePath: (file) => {
           if (file.startsWith("@components/"))
             return file.replace("@components", path.resolve(__dirname, "../../../components/src"));
@@ -116,7 +118,8 @@ export default theme(
         resolveLinkPath: false,
       },
       layout: true,
-      math: true,
+      // Use KaTeX to avoid the upstream rc.138 MathJax SSR retry error; revisit when fixed.
+      math: { type: "katex" },
       mark: true,
       preview: true,
       revealjs: {

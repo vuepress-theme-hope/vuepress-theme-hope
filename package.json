@@ -13,6 +13,7 @@
     "bundle": "cross-env NODE_ENV=production pnpm run --stream -r build",
     "clean": "pnpm run --stream -r clean",
     "dev": "pnpm run --parallel -r dev",
+    "docs:rspack-build": "pnpm run -r docs:rspack-build",
     "docs:vite-build": "pnpm run -r docs:vite-build",
     "docs:webpack-build": "pnpm run -r docs:webpack-build",
     "lint": "pnpm lint:oxlint --fix && oxfmt . & pnpm lint:stylelint --fix",

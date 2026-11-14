@@ -60,9 +60,9 @@ Playground container name.
 
 Playground component name.
 
-@@@`markdown.playground.presets[*].propsGetter` type=`(data: PlaygroundData) => Record<string, string>` required
+@@@`markdown.playground.presets[*].propsGetter` type=`(data: PlaygroundData) => Record<string, string>`
 
-Props getter. Its `data` argument has the following types:
+Props getter. By default, the playground `key`, `title`, `files` and `settings` are passed to the component. Its `data` argument has the following types:
 
 ```ts
 interface PlaygroundCodeConfig {

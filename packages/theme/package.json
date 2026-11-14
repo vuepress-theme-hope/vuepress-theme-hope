@@ -149,6 +149,7 @@
     "vuepress-shared": "workspace:*"
   },
   "devDependencies": {
+    "@vuepress/bundler-rspack": "catalog:vuepress",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "concurrently": "10.0.7",
