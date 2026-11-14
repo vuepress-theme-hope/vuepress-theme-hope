@@ -81,7 +81,7 @@ export default hopeTheme(
       imgSize: true,
       include: true,
       mark: true,
-      math: true,
+      math: { type: "katex" },
       revealjs: {
         plugins: ["highlight", "math", "search", "notes", "zoom"],
       },

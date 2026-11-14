@@ -101,6 +101,7 @@ export default theme(
       imgSize: true,
       include: {
         deep: true,
+        projectRoot: path.resolve(__dirname, "../../../.."),
         resolvePath: (file) => {
           if (file.startsWith("@components/"))
             return file.replace("@components", path.resolve(__dirname, "../../../components/src"));
@@ -116,7 +117,7 @@ export default theme(
         resolveLinkPath: false,
       },
       layout: true,
-      math: true,
+      math: { type: "katex" },
       mark: true,
       preview: true,
       revealjs: {
