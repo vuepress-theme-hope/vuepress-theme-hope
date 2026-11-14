@@ -30,6 +30,11 @@
     "demo:webpack-dev": "cross-env BUNDLER=webpack vuepress dev src"
   },
   "devDependencies": {
+    "@markmap/parse": "catalog:",
+    "@markmap/plugin-math": "catalog:",
+    "@markmap/render": "catalog:",
+    "@markmap/toolbar": "catalog:",
+    "@markmap/view": "catalog:",
     "@mathjax/src": "catalog:",
     "@vue/repl": "4.7.2",
     "@vuepress/bundler-rspack": "catalog:vuepress",
@@ -43,9 +48,6 @@
     "echarts": "6.1.0",
     "katex": "0.19.1",
     "kotlin-playground": "1.34.0",
-    "markmap-lib": "catalog:",
-    "markmap-toolbar": "catalog:",
-    "markmap-view": "catalog:",
     "mermaid": "catalog:",
     "reveal.js": "catalog:",
     "sandpack-vue3": "3.1.12",

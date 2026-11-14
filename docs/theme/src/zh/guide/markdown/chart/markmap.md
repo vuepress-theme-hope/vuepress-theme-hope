@@ -14,26 +14,26 @@ tag:
 
 ## Settings
 
-在你的项目中安装 `markmap-lib`, `markmap-toolbar` and `markmap-view`:
+在你的项目中安装 `@markmap/parse`, `@markmap/plugin-math`, `@markmap/render`, `@markmap/toolbar` 和 `@markmap/view`:
 
 ::: code-tabs#shell
 
 @tab pnpm
 
 ```bash
-pnpm add -D markmap-lib markmap-toolbar markmap-view
+pnpm add -D @markmap/parse @markmap/plugin-math @markmap/render @markmap/toolbar @markmap/view
 ```
 
 @tab yarn
 
 ```bash
-yarn add -D markmap-lib markmap-toolbar markmap-view
+yarn add -D @markmap/parse @markmap/plugin-math @markmap/render @markmap/toolbar @markmap/view
 ```
 
 @tab npm
 
 ```bash
-npm i -D markmap-lib markmap-toolbar markmap-view
+npm i -D @markmap/parse @markmap/plugin-math @markmap/render @markmap/toolbar @markmap/view
 ```
 
 :::
