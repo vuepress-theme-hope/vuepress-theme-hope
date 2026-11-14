@@ -31,8 +31,9 @@ catalogs:
     vue: ^3.5.45
 
   vuepress:
-    "@vuepress/bundler-vite": 2.0.0-rc.31
-    "@vuepress/bundler-webpack": 2.0.0-rc.31
+    "@vuepress/bundler-rspack": 2.0.0-rc.32
+    "@vuepress/bundler-vite": 2.0.0-rc.32
+    "@vuepress/bundler-webpack": 2.0.0-rc.32
     "@vuepress/helper": 2.0.0-rc.135
     "@vuepress/highlighter-helper": 2.0.0-rc.135
     "@vuepress/plugin-active-header-links": 2.0.0-rc.135
@@ -80,7 +81,7 @@ catalogs:
     "@vuepress/plugin-watermark": 2.0.0-rc.135
     "@vuepress/shiki-twoslash": 2.0.0-rc.135
     "@vuepress/theme-default": 2.0.0-rc.137
-    vuepress: 2.0.0-rc.31
+    vuepress: 2.0.0-rc.32
 
 peerDependencyRules:
   ignoreMissing:

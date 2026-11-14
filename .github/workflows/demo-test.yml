@@ -18,6 +18,7 @@ jobs:
         bundler:
           - vite
           - webpack
+          - rspack
     name: Test demos using ${{ matrix.bundler }}
     runs-on: ubuntu-latest
     if: inputs.strict-checking == false
@@ -43,7 +44,13 @@ jobs:
           pnpm run -r demo:${{ matrix.bundler }}-build
 
   test-docs:
-    name: Test docs
+    strategy:
+      fail-fast: false
+      matrix:
+        bundler:
+          - vite
+          - rspack
+    name: Test docs using ${{ matrix.bundler }}
     runs-on: ubuntu-latest
     if: inputs.strict-checking == true
     steps:
@@ -66,7 +73,7 @@ jobs:
       - name: Docs build
         env:
           NODE_OPTIONS: --max_old_space_size=8192
-        run: pnpm run docs:vite-build
+        run: pnpm run docs:${{ matrix.bundler }}-build
 
   strict-test-demos:
     strategy:
@@ -79,6 +86,7 @@ jobs:
         bundler:
           - vite
           - webpack
+          - rspack
         env:
           - ubuntu-latest
           - windows-latest

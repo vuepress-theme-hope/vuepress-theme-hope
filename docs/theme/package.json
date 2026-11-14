@@ -10,6 +10,9 @@
   },
   "type": "module",
   "scripts": {
+    "docs:rspack-build": "cross-env BUNDLER=rspack vuepress build src",
+    "docs:rspack-clean-dev": "cross-env BUNDLER=rspack vuepress dev src --clean-cache --clean-temp",
+    "docs:rspack-dev": "cross-env BUNDLER=rspack vuepress dev src",
     "docs:serve": "http-server -a localhost dist -o",
     "docs:vite-build": "vuepress build src",
     "docs:vite-clean-dev": "vuepress dev src --clean-cache --clean-temp",
@@ -25,6 +28,7 @@
     "@iconify-json/lucide": "^1.2.153",
     "@types/katex": "0.16.8",
     "@vue/repl": "4.7.2",
+    "@vuepress/bundler-rspack": "catalog:vuepress",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/helper": "catalog:vuepress",

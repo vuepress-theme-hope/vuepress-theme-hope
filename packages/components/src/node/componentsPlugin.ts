@@ -1,5 +1,6 @@
 import { addViteSsrNoExternal, getModulePath } from "@vuepress/helper";
 import { useSassPalettePlugin } from "@vuepress/plugin-sass-palette";
+import { addRspackSassPalette } from "vuepress-shared";
 import type { PluginFunction } from "vuepress/core";
 
 import { convertOptions } from "./compact/index.js";
@@ -27,6 +28,7 @@ export const componentsPlugin =
       define: getDefine(options),
 
       extendsBundlerOptions: (bundlerOptions): void => {
+        addRspackSassPalette(bundlerOptions, app);
         addViteSsrNoExternal(bundlerOptions, app, ["@vuepress/helper", "vuepress-shared"]);
       },
 

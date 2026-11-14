@@ -6,6 +6,13 @@
   "author": "Mr.Hope",
   "type": "module",
   "scripts": {
+    "demo:rspack-build": "pnpm demo:rspack-bundle-build && pnpm demo:rspack-custom-build",
+    "demo:rspack-bundle-build": "cross-env BUNDLER=rspack vuepress build src --clean-cache --clean-temp",
+    "demo:rspack-clean-dev": "cross-env BUNDLER=rspack vuepress dev src --clean-cache --clean-temp",
+    "demo:rspack-custom-build": "cross-env THEME_CUSTOM=true cross-env BUNDLER=rspack vuepress build src --clean-cache --clean-temp",
+    "demo:rspack-custom-clean-dev": "cross-env THEME_CUSTOM=true cross-env BUNDLER=rspack vuepress dev src --clean-cache --clean-temp",
+    "demo:rspack-custom-dev": "cross-env THEME_CUSTOM=true cross-env BUNDLER=rspack vuepress dev src",
+    "demo:rspack-dev": "cross-env BUNDLER=rspack vuepress dev src",
     "demo:serve": "http-server -a localhost dist -o",
     "demo:vite-build": "pnpm demo:vite-bundle-build && pnpm demo:vite-custom-build",
     "demo:vite-bundle-build": "vuepress build src --clean-cache --clean-temp",
@@ -25,6 +32,7 @@
   "devDependencies": {
     "@mathjax/src": "catalog:",
     "@vue/repl": "4.7.2",
+    "@vuepress/bundler-rspack": "catalog:vuepress",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/helper": "catalog:vuepress",

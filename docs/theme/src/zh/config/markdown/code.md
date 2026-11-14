@@ -60,9 +60,9 @@ tag:
 
 交互演示组件名称。
 
-@@@`markdown.playground.presets[*].propsGetter` type=`(data: PlaygroundData) => Record<string, string>` required
+@@@`markdown.playground.presets[*].propsGetter` type=`(data: PlaygroundData) => Record<string, string>`
 
-属性获取器。其 `data` 参数类型如下：
+属性获取器。默认会将交互演示的 `key`、`title`、`files` 与 `settings` 传给组件。其 `data` 参数类型如下：
 
 ```ts
 interface PlaygroundCodeConfig {

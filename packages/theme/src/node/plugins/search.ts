@@ -1,4 +1,4 @@
-import { getFullLocaleConfig, isPlainObject, keys, startsWith } from "@vuepress/helper";
+import { getLocaleInfo, isPlainObject, keys, startsWith } from "@vuepress/helper";
 import type { DocSearchPluginOptions } from "@vuepress/plugin-docsearch";
 import type { MeiliSearchPluginOptions } from "@vuepress/plugin-meilisearch";
 import type { CustomFieldOptions, OramaPluginOptions } from "@vuepress/plugin-orama";
@@ -12,6 +12,37 @@ import { themeLocaleInfo } from "../locales/index.js";
 import type { ThemePluginsOptions } from "../typings/index.js";
 import { logger } from "../utils.js";
 import { logMissingPkg } from "./utils.js";
+
+// Build the locale template map directly: `getFullLocaleConfig` expects object locale data
+// and deep-assigns it, which mangles the string templates used by search custom fields.
+const getStringLocaleConfig = ({
+  app,
+  default: defaultLocaleData,
+}: {
+  app: App;
+  default: [lang: string[], data: string][];
+}): Record<string, string> => {
+  const getDefaultData = (lang: string): string | undefined => {
+    const exact = defaultLocaleData.find(([langs]) => langs.includes(lang))?.[1];
+
+    if (exact) return exact;
+
+    if (lang.includes("-")) {
+      const base = defaultLocaleData.find(([langs]) => langs.includes(lang.split("-")[0]))?.[1];
+
+      if (base) return base;
+    }
+
+    return (
+      defaultLocaleData.find(([langs]) => langs.includes("en-US"))?.[1] ??
+      defaultLocaleData.find(([langs]) => langs.some((item) => item.startsWith("en")))?.[1]
+    );
+  };
+
+  return Object.fromEntries(
+    getLocaleInfo(app).map(([localePath, lang]) => [localePath, getDefaultData(lang) ?? ""]),
+  );
+};
 
 let docsearchPlugin: ((options: DocSearchPluginOptions) => Plugin) | null = null;
 let meilisearchPlugin: ((options: MeiliSearchPluginOptions) => Plugin) | null = null;
@@ -72,7 +103,7 @@ export const getSearchPlugin = (
     {
       getter: (page: Page<Record<string, unknown>, ThemeBasePageFrontmatter>) =>
         page.frontmatter.category,
-      formatter: getFullLocaleConfig({
+      formatter: getStringLocaleConfig({
         app,
         default: themeLocaleInfo.map(([langs, { blogLocales }]) => [
           langs,
@@ -83,7 +114,7 @@ export const getSearchPlugin = (
     {
       getter: (page: Page<Record<string, unknown>, ThemeBasePageFrontmatter>) =>
         page.frontmatter.tag,
-      formatter: getFullLocaleConfig({
+      formatter: getStringLocaleConfig({
         app,
         default: themeLocaleInfo.map(([langs, { blogLocales }]) => [
           langs,
