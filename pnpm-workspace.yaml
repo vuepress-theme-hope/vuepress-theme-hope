@@ -88,8 +88,6 @@ catalogs:
 peerDependencyRules:
   allowedVersions:
     "echarts-wordcloud>echarts": "6"
-  ignoreMissing:
-    - echarts
 
 # virtualStoreType: global
 
