@@ -8,10 +8,10 @@ import { BUNDLE_FOLDER, CLIENT_FOLDER } from "../utils.js";
 const scrollBehaviorCode = `\
     const { scrollBehavior } = router.options;
 
-    // VuePress rc.32+ restores the scroll position itself with vue-router's
-    // ScrollRestoration. Only defer hash scrolling until the page transition
-    // has inserted the target element, and let VuePress own the rest so we do
-    // not override its restored position with a second scroll.
+    // VuePress rc.32+ restores the scroll position right after the route
+    // changes, before the page transition has inserted the new page. Restore
+    // it after the transition ourselves so hash targets exist when they are
+    // scrolled into view.
     router.options.scrollBehavior = scrollBehavior
       ? async (...args) => {
           await scrollPromise.wait();
@@ -24,7 +24,7 @@ const scrollBehaviorCode = `\
           if (savedPosition) return savedPosition;
           if (to.hash) return { el: to.hash };
 
-          return false;
+          return { top: 0 };
         };
 `;
 
