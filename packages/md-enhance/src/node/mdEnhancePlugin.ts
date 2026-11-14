@@ -8,7 +8,6 @@ import {
   isPlainObject,
 } from "@vuepress/helper";
 import { useSassPalettePlugin } from "@vuepress/plugin-sass-palette";
-import { addRspackSassPalette } from "vuepress-shared";
 import type { PluginFunction } from "vuepress/core";
 
 import { convertOptions, legacyCodeDemo, mdDemo } from "./compact/index.js";
@@ -63,7 +62,6 @@ export const mdEnhancePlugin =
       }),
 
       extendsBundlerOptions: (bundlerOptions): void => {
-        addRspackSassPalette(bundlerOptions, app);
         addViteSsrNoExternal(bundlerOptions, app, [
           "@vuepress/helper",
           "fflate",
