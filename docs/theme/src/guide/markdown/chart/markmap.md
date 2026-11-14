@@ -50,6 +50,12 @@ export default hopeTheme({
 });
 ```
 
+::: warning MathJax
+
+`@markmap/plugin-math` brings its own `@mathjax/src`. If MathJax is auto-detected for markdown math, the rc.138 MathJax renderer can fail during the build with `MathJax retry`. Use KaTeX (`markdown.math.type: "katex"`) until this is fixed upstream.
+
+:::
+
 ## Syntax
 
 ````md

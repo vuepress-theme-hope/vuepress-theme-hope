@@ -50,6 +50,12 @@ export default hopeTheme({
 });
 ```
 
+::: warning MathJax
+
+`@markmap/plugin-math` 会引入 `@mathjax/src`。如果 Markdown 数学公式自动检测到 MathJax，rc.138 的 MathJax 渲染器在构建时可能报 `MathJax retry`。在上游修复前，请使用 KaTeX（`markdown.math.type: "katex"`）。
+
+:::
+
 ## 语法 {#syntax}
 
 ````md
