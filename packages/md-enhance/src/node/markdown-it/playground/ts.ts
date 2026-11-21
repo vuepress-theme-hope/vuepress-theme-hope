@@ -32,9 +32,10 @@ export const getTypescriptPlaygroundHash = (
       const { type } = item;
 
       if (isPlainObject(type)) {
-        const result = type[value as keyof typeof type];
+        // Enum options are passed as numbers in the query string
+        const enumValue = typeof value === "number" ? value : type[value as keyof typeof type];
 
-        return result?.toString() ?? "";
+        return typeof enumValue === "number" ? `${key}=${enumValue}` : "";
       }
 
       return `${key}=${encodeURIComponent(value as string)}`;
