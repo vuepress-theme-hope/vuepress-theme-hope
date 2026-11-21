@@ -439,8 +439,8 @@ importers:
         specifier: 6.1.4
         version: 6.1.4
       serve:
-        specifier: 14.2.7
-        version: 14.2.7(supports-color@10.2.2)
+        specifier: 14.2.8
+        version: 14.2.8(supports-color@10.2.2)
       stylelint:
         specifier: 17.16.0
         version: 17.16.0(supports-color@10.2.2)(typescript@6.0.3)
@@ -5308,10 +5308,6 @@ packages:
     resolution: {integrity: sha512-AF3r7P5dWxL8MxyITRMlORQNaOA2IkAFaTr4k7BUumjPtRpGDTZpl0Pb1XCO6JeDCBdp126Cgs9sMxqSjgYyRg==}
     engines: {node: '>= 0.6'}
 
-  compression@1.8.1:
-    resolution: {integrity: sha512-9mAqGPHLakhCLeNyxPkK4xVo746zQ/czLH1Ky+vkitMnWfWZps8r0qXuwhwizagCRttsL4lfG4pIOvaWLpAP0w==}
-    engines: {node: '>= 0.8.0'}
-
   compression@1.8.2:
     resolution: {integrity: sha512-o8vI5RE5A6EVVOd9o41jKp41aJom+QTEO/Bx8MYNjexMo/Bv2WOjUfZr+aL0WnYSgymUy6zeguqLTsIhV0gMvQ==}
     engines: {node: '>= 0.8.0'}
@@ -8711,8 +8707,8 @@ packages:
     resolution: {integrity: sha512-x0RTqQel6g5SY7Lg6ZreMmsOzncHFU7nhnRWkKgWuMTu5NN0DR5oruckMqRvacAN9d5w6ARnRBXl9xhDCgfMeA==}
     engines: {node: '>= 0.8.0'}
 
-  serve@14.2.7:
-    resolution: {integrity: sha512-mTJ9LAyBwHhO2T/PNaI0oWxmKl7FFuJ+ZEHKL1rRO69fWV1Y4qcsFB3gpuD2HfHvJCwvJq5ChibjjAGe0wc0vw==}
+  serve@14.2.8:
+    resolution: {integrity: sha512-7or7YqR3zXwHhiBGj40l9yODyQY146O+hXKaEAfQYQkcvHtMDdX95K96xr50qL9EjXScyYVJb1NIgVE8F0i5cA==}
     engines: {node: '>= 14'}
     hasBin: true
 
@@ -14531,18 +14527,6 @@ snapshots:
     dependencies:
       mime-db: 1.54.0
 
-  compression@1.8.1(supports-color@10.2.2):
-    dependencies:
-      bytes: 3.1.2
-      compressible: 2.0.18
-      debug: 2.6.9(supports-color@10.2.2)
-      negotiator: 0.6.4
-      on-headers: 1.1.0
-      safe-buffer: 5.2.1
-      vary: 1.1.2
-    transitivePeerDependencies:
-      - supports-color
-
   compression@1.8.2(supports-color@10.2.2):
     dependencies:
       bytes: 3.1.2
@@ -18331,7 +18315,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  serve@14.2.7(supports-color@10.2.2):
+  serve@14.2.8(supports-color@10.2.2):
     dependencies:
       '@zeit/schemas': 2.36.0
       ajv: 8.18.0
@@ -18339,7 +18323,7 @@ snapshots:
       boxen: 7.0.0
       chalk: 5.0.1
       chalk-template: 0.4.0
-      compression: 1.8.1(supports-color@10.2.2)
+      compression: 1.8.2(supports-color@10.2.2)
       is-port-reachable: 4.0.0
       serve-handler: 6.1.7
       tinyclip: 0.1.15
