@@ -17,6 +17,14 @@
       "matchPackageNames": ["vuepress", "@vuepress/**", "vuepress-**"]
     },
     {
+      "groupName": "markmap",
+      "matchPackageNames": ["@markmap/**"]
+    },
+    {
+      "groupName": "oxc",
+      "matchPackageNames": ["oxc-config-hope", "oxfmt", "oxlint", "oxlint-tsgolint"]
+    },
+    {
       "matchPackageNames": ["!vite", "!vuepress", "!@vuepress/**", "!vuepress-**"]
     },
     {
