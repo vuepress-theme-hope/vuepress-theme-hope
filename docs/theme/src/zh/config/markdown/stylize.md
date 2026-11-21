@@ -90,6 +90,12 @@ tag:
 
 参考：[Markdown → 步骤](../../guide/markdown/stylize/steps.md) 与 [@vuepress/plugin-markdown-stylize → steps][steps]。
 
+@`markdown.window` type=`MarkdownStylizeWindowStyle | boolean`
+
+是否启用窗口容器支持。将其设置为 `"mac"` 或 `"windows"` 可指定默认的窗口样式。
+
+参考：[Markdown → 窗口](../../guide/markdown/stylize/window.md) 与 [@vuepress/plugin-markdown-stylize → window][window]。
+
 @`markdown.stylize` type=`MarkdownItStylizeConfig[] | false`
 
 样式化内联标记以创建所需的片段。
@@ -128,3 +134,4 @@ interface MarkdownItStylizeResult {
 [spoiler]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html#spoiler
 [steps]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html#steps
 [stylize]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html#custom
+[window]: https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html#window

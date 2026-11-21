@@ -90,6 +90,12 @@ Whether to enable steps support.
 
 See also: [Markdown → Steps](../../guide/markdown/stylize/steps.md) and [@vuepress/plugin-markdown-stylize → steps][steps].
 
+@`markdown.window` type=`MarkdownStylizeWindowStyle | boolean`
+
+Whether to enable window container support. Set it to `"mac"` or `"windows"` to specify the default window style.
+
+See also: [Markdown → Window](../../guide/markdown/stylize/window.md) and [@vuepress/plugin-markdown-stylize → window][window].
+
 @`markdown.stylize` type=`MarkdownItStylizeConfig[] | false`
 
 Stylize inline tokens to create snippet you want.
@@ -128,3 +134,4 @@ interface MarkdownItStylizeResult {
 [spoiler]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html#spoiler
 [steps]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html#steps
 [stylize]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html#custom
+[window]: https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html#window
