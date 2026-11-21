@@ -396,7 +396,7 @@ overrides:
   katex@>=0.11.0 <0.18.2: 0.19.1
   launch-editor@<2.14.2: 2.14.2
   minimatch@>=7.0.0 <11.0.1: 11.0.9
-  qs@>=6.7.0 <6.16.1: 6.16.2
+  qs@>=6.7.0 <6.16.1: 6.17.1
   serialize-javascript@<7.1.3: 7.1.3
   undici@>=4.0.0 <6.29.1: 6.29.1
   undici@>=7.0.0 <7.30.1: 7.30.2
@@ -8318,10 +8318,6 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  qs@6.16.2:
-    resolution: {integrity: sha512-VYdnB5S7/0IeXzBacUtwNAaM6d7Y/PgYnNC7bJCI6meqA/OgnsQbZMtVW8Dt2D1PHgbHGtYmhSoEIgvt7xZ2ZA==}
-    engines: {node: '>=0.6'}
-
   qs@6.17.1:
     resolution: {integrity: sha512-jd3COkaKVgGUW+ZHyEHCG9bH7RoaaiWuMgzsIBjUMVjLAaWGWpoUAVwljVvBHxRu/2qEHnadLGZrkutYUBPQJA==}
     engines: {node: '>=0.6'}
@@ -15608,7 +15604,7 @@ snapshots:
       once: 1.4.0
       parseurl: 1.3.3
       proxy-addr: 2.0.8
-      qs: 6.16.2
+      qs: 6.17.1
       range-parser: 1.3.0
       router: 2.3.0(supports-color@10.2.2)
       send: 1.2.1(supports-color@10.2.2)
@@ -17946,11 +17942,6 @@ snapshots:
       dijkstrajs: 1.0.3
       pngjs: 5.0.0
       yargs: 15.4.1
-
-  qs@6.16.2:
-    dependencies:
-      es-define-property: 1.0.1
-      side-channel: 1.1.1
 
   qs@6.17.1:
     dependencies:
