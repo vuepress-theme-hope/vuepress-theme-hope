@@ -14,6 +14,8 @@ tag:
 
 你可以通过主题选项中的 `markdown.linksCheck` 自定义此功能，详见 [links-check 文档][links-check]。
 
+锚点检查默认开启：当链接的锚点在目标页面中不存在时，该链接会被判定为死链接。可将 `markdown.linksCheck.anchors` 设置为 `"same-page"` 仅检查指向当前页面的锚点，或设置为 `false` 跳过锚点检查。只有由 Markdown 渲染的页面才会检查锚点，因为其它页面的锚点是未知的。
+
 ## GFM
 
 如果你的文档既在文档站点上提供又直接在 GitHub 上提供，我们提供了 `markdown.gfm` 选项来使你的 Markdown 行为与 GitHub 保持一致。

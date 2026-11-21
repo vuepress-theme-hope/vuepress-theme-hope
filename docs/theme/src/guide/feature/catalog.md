@@ -37,7 +37,7 @@ import { hopeTheme } from "vuepress-theme-hope";
 export default hopeTheme({
   plugins: {
     catalog: {
-      frontmatter: (path) => {
+      frontmatter: (path, app) => {
         if (path.startsWith("/zh/")) return { title: "目录" };
 
         return { title: "Catalog" };
@@ -47,6 +47,8 @@ export default hopeTheme({
   },
 });
 ```
+
+The getter also receives the VuePress app instance as its second argument, so you can customize frontmatter based on the environment.
 
 For detailed configuration, see [Catalog plugin docs][catalog-config].
 

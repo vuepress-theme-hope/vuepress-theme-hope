@@ -170,6 +170,10 @@ type MarkdownMathPluginOptions =
   | MarkdownMathjaxPluginOptions;
 ```
 
+@@`markdown.math.preloadDynamicFonts` type=boolean default=`true` mathjax=Yes
+
+是否在创建 MathJax 实例时预加载所选输出格式的全部动态字体文件。预加载可避免 `\mathbb` 等动态字形触发重试错误。仅在使用 MathJax 时生效。
+
 @`markdown.revealjs` type=`RevealJsPluginOptions | boolean`
 
 控制 `@vuepress/plugin-revealjs`，提供幻灯片支持。你可以设置 `true` 来直接启用它，或提供插件选项。

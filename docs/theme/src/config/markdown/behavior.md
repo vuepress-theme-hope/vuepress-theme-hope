@@ -91,6 +91,12 @@ Whether to enable `@vuepress/plugin-links-check` plugin, which provides link che
 
 See also: [Markdown → Link check](../../guide/markdown/others.md#link-check) and [@vuepress/plugin-links-check][links-check].
 
+Anchor checking is enabled by default, so dead anchors will fail the build with `build: "error"`. When checking anchors, the `exclude` option matches links both as written (including the anchor) and with the anchor removed.
+
+@@`markdown.linksCheck.anchors` type=`"same-page" | boolean` default=`true`
+
+Whether to check anchors of links. Set to `"same-page"` to only check anchors pointing to the current page, or `false` to disable anchor checking.
+
 ::::
 
 [links-check]: https://ecosystem.vuejs.press/plugins/markdown/links-check.html#options

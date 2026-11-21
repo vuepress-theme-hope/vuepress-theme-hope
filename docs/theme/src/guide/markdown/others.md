@@ -14,6 +14,8 @@ The theme will use `@vuepress/plugin-links-check` to check your Markdown links b
 
 You can customize this feature through `markdown.linksCheck` in theme options, check [links-check docs][links-check] for more details.
 
+Anchor checking is enabled by default: a link is reported as broken when its anchor does not exist in the target page. Set `markdown.linksCheck.anchors` to `"same-page"` to only check the anchors pointing to the current page, or to `false` to skip anchor checking. Anchors are only checked for pages rendered by Markdown, since the anchors of other pages are unknown.
+
 ## GFM
 
 If your docs both serve on documentation site and directly on GitHub, we provide `markdown.gfm` in theme options to align your Markdown behavior with GitHub.
