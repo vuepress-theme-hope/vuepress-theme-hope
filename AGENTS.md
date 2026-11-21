@@ -90,14 +90,16 @@ Documentation sites are built per package, e.g. `pnpm --filter docs-theme docs:v
 
 ## Commit Messages
 
-Conventional Commits, single line only (the `commit-msg` hook rejects a body and enforces a 1–50 character subject):
+Conventional Commits, single line only. The `commit-msg` hook validates the first line: it requires a known type, an optional known scope, and a 1–50 character description after `:` followed by a space.
 
 ```plain
-feat(theme): add markdown field option
+feat(vuepress-theme-hope): add markdown field option
 ```
 
 Allowed types: `feat|fix|docs|style|refactor|perf|test|workflow|build|ci|chore|types|release`.
-Allowed scopes: `components|create|md-enhance|shared|theme|deps|demo|release` (or none).
+Allowed scopes: `vuepress-plugin-components|create-vuepress-theme-hope|vuepress-plugin-md-enhance|vuepress-shared|vuepress-theme-hope|deps|demo|release` (or none).
+
+A scope is the name of a published package under `packages/` (from its `package.json`), plus `deps`, `demo` and `release`. So write `vuepress-theme-hope`, not `theme`.
 
 ## Documentation
 
