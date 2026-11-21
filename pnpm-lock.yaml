@@ -174,20 +174,20 @@ settings:
 catalogs:
   default:
     '@markmap/parse':
-      specifier: 1.1.0
-      version: 1.1.0
+      specifier: 1.1.1
+      version: 1.1.1
     '@markmap/plugin-math':
-      specifier: 1.1.0
-      version: 1.1.0
+      specifier: 1.1.1
+      version: 1.1.1
     '@markmap/render':
-      specifier: 1.1.0
-      version: 1.1.0
+      specifier: 1.1.1
+      version: 1.1.1
     '@markmap/toolbar':
-      specifier: 1.1.0
-      version: 1.1.0
+      specifier: 1.1.1
+      version: 1.1.1
     '@markmap/view':
-      specifier: 1.1.0
-      version: 1.1.0
+      specifier: 1.1.1
+      version: 1.1.1
     '@mathjax/src':
       specifier: 4.1.3
       version: 4.1.3
@@ -560,19 +560,19 @@ importers:
     devDependencies:
       '@markmap/parse':
         specifier: 'catalog:'
-        version: 1.1.0(supports-color@10.2.2)
+        version: 1.1.1(supports-color@10.2.2)
       '@markmap/plugin-math':
         specifier: 'catalog:'
-        version: 1.1.0(supports-color@10.2.2)
+        version: 1.1.1(supports-color@10.2.2)
       '@markmap/render':
         specifier: 'catalog:'
-        version: 1.1.0
+        version: 1.1.1
       '@markmap/toolbar':
         specifier: 'catalog:'
-        version: 1.1.0(@markmap/view@1.1.0)
+        version: 1.1.1(@markmap/view@1.1.1)
       '@markmap/view':
         specifier: 'catalog:'
-        version: 1.1.0
+        version: 1.1.1
       '@mathjax/src':
         specifier: 'catalog:'
         version: 4.1.3
@@ -641,19 +641,19 @@ importers:
     devDependencies:
       '@markmap/parse':
         specifier: 'catalog:'
-        version: 1.1.0(supports-color@10.2.2)
+        version: 1.1.1(supports-color@10.2.2)
       '@markmap/plugin-math':
         specifier: 'catalog:'
-        version: 1.1.0(supports-color@10.2.2)
+        version: 1.1.1(supports-color@10.2.2)
       '@markmap/render':
         specifier: 'catalog:'
-        version: 1.1.0
+        version: 1.1.1
       '@markmap/toolbar':
         specifier: 'catalog:'
-        version: 1.1.0(@markmap/view@1.1.0)
+        version: 1.1.1(@markmap/view@1.1.1)
       '@markmap/view':
         specifier: 'catalog:'
-        version: 1.1.0
+        version: 1.1.1
       '@mathjax/src':
         specifier: 'catalog:'
         version: 4.1.3
@@ -849,19 +849,19 @@ importers:
         version: 1.2.153
       '@markmap/parse':
         specifier: 'catalog:'
-        version: 1.1.0(supports-color@10.2.2)
+        version: 1.1.1(supports-color@10.2.2)
       '@markmap/plugin-math':
         specifier: 'catalog:'
-        version: 1.1.0(supports-color@10.2.2)
+        version: 1.1.1(supports-color@10.2.2)
       '@markmap/render':
         specifier: 'catalog:'
-        version: 1.1.0
+        version: 1.1.1
       '@markmap/toolbar':
         specifier: 'catalog:'
-        version: 1.1.0(@markmap/view@1.1.0)
+        version: 1.1.1(@markmap/view@1.1.1)
       '@markmap/view':
         specifier: 'catalog:'
-        version: 1.1.0
+        version: 1.1.1
       '@types/katex':
         specifier: 0.16.8
         version: 0.16.8
@@ -888,7 +888,7 @@ importers:
         version: 2.0.0-rc.139(d6ce48fed16af1391648e7cde9963e93)
       '@vuepress/plugin-markdown-chart':
         specifier: catalog:vuepress
-        version: 2.0.0-rc.139(721adf339e629b19a054d5b97a6a8882)
+        version: 2.0.0-rc.139(bd0ed1f27a252eb5d75aabe80a1e9f92)
       '@vuepress/plugin-revealjs':
         specifier: catalog:vuepress
         version: 2.0.0-rc.139(55cfb6758bcf0cc876b7803a6bf7acdd)
@@ -1159,7 +1159,7 @@ importers:
         version: 2.0.0-rc.139(55cfb6758bcf0cc876b7803a6bf7acdd)
       '@vuepress/plugin-markdown-chart':
         specifier: catalog:vuepress
-        version: 2.0.0-rc.139(721adf339e629b19a054d5b97a6a8882)
+        version: 2.0.0-rc.139(bd0ed1f27a252eb5d75aabe80a1e9f92)
       '@vuepress/plugin-markdown-ext':
         specifier: catalog:vuepress
         version: 2.0.0-rc.139(c0a014807c3fb6079302f8312c4f4cd7)
@@ -2553,25 +2553,25 @@ packages:
   '@marijn/find-cluster-break@1.0.4':
     resolution: {integrity: sha512-Wy0V7+SGUjnF9/TkiM1hKVDPj7jKXduPNboMVtHTA8dySMURWqfg/JZ9E2Sq8JgSJmkl7k7Qe9FLeMSrSraWmQ==}
 
-  '@markmap/core@1.1.0':
-    resolution: {integrity: sha512-KsPt8dOAiMjNrFA7u3AmFTqiynbX30kvMCLu/66xf6qfylYVgIjSJgV6cpTWvouZYA5VtwWyLMZMwMZHo0NB3w==}
+  '@markmap/core@1.1.1':
+    resolution: {integrity: sha512-413Cg3My6YnHf55AnnwGpJ4SR2JxYU3VrbPbhAI20IxITRFszoFwpSYXZ7Jy3w2K05ZAoOTEjJXibkG32aUs6g==}
 
-  '@markmap/parse@1.1.0':
-    resolution: {integrity: sha512-Gr5LOtr4pwN2sISMVolCUdSfbCW74/n2z5+WVfMNlv8Djuna1BHNwg0tSpBE17C6SM9i0SEUi3oZa6e5J3IC8A==}
+  '@markmap/parse@1.1.1':
+    resolution: {integrity: sha512-hRbBYtD6WToXKwoB68HsDq3nlwRX6obW8aA6soAr1WqMoGkZhuZb1+//838MTZPI+wD+6+Fn6jgt64WaGmKrlA==}
 
-  '@markmap/plugin-math@1.1.0':
-    resolution: {integrity: sha512-xlQSbmTf5YAo/FYnE/a1c1JCDvhb9RR/jnTegVT9ewrAPQPwmrFMwioYBYucD27mcCO6ao+g2u8b1QuLZ4LHmw==}
+  '@markmap/plugin-math@1.1.1':
+    resolution: {integrity: sha512-6jIM51am5RjPQ2GGCIJ/Qma4pcX7ArCH9dFasGZmvf2enGV4WzrZTHGTL0S7do6b3A6y/3idV69KdixV2Cr4+g==}
 
-  '@markmap/render@1.1.0':
-    resolution: {integrity: sha512-nHHLi+YsCJISrW3Ge+M+IWU+l3dUIi2kUHQBG6qwVGjyRqWsStEQ5Yz9wjXyXTOmoIX5gJHzJ3H6Ks5tM3kfmw==}
+  '@markmap/render@1.1.1':
+    resolution: {integrity: sha512-nzSKwAdeuPPB2J0QOSi4dPyyNpiz9LocaCZRviayKDtpjgsMrFSgWm8mBOHKcCfDGYzTHWEtB1TnF0F+AVVcKg==}
 
-  '@markmap/toolbar@1.1.0':
-    resolution: {integrity: sha512-YCH7OJD3EMEbeXg2loj49GNIwe/TWhPczIHVi5eEIGLZjBhiEa7IzYyVY/gLHLZ+TLeHf1oQMUMYnkcf4ScYGQ==}
+  '@markmap/toolbar@1.1.1':
+    resolution: {integrity: sha512-jkjO51HhjYH7N1AzhZ83sjJyWgfVIdKgebbcX9r+su71lGQ/f8fMQb9Dn1afGWUAUa/Pg00DVXHuNjg7yA8Pzw==}
     peerDependencies:
-      '@markmap/view': ^1.1.0
+      '@markmap/view': ^1.1.1
 
-  '@markmap/view@1.1.0':
-    resolution: {integrity: sha512-0uvtZaCtqpsCt0NVjhPLwuiHpkb61z5FXsdbxwEqfPWW2NoR4GDy95ewUfHDVL3YLLtCENijivaCLBNqYPatiw==}
+  '@markmap/view@1.1.1':
+    resolution: {integrity: sha512-094ev5E/NsVx+5jjTQ7pEuvK9stilpyeDTHsXXTWCj3ffK1NC/aD3Se2pPevMvnTmnSB66LXRgXDPFGxRauqtw==}
 
   '@mathjax/mathjax-newcm-font@4.1.3':
     resolution: {integrity: sha512-gzAB3dFHilHX1l5x2xUqRL+1jDQt3Fyza1DkEMVXWC4E8SvsGdlgEza47HYi2WhVcgfkvf4zgUGzuhbq3Pjlew==}
@@ -11401,14 +11401,17 @@ snapshots:
 
   '@marijn/find-cluster-break@1.0.4': {}
 
-  '@markmap/core@1.1.0':
+  '@markmap/core@1.1.1':
     dependencies:
       '@types/hast': 3.0.5
       '@types/mdast': 4.0.4
 
-  '@markmap/parse@1.1.0(supports-color@10.2.2)':
+  '@markmap/parse@1.1.1(supports-color@10.2.2)':
     dependencies:
-      '@markmap/core': 1.1.0
+      '@markmap/core': 1.1.1
+      micromark-util-chunked: 2.0.1
+      micromark-util-classify-character: 2.0.1
+      micromark-util-resolve-all: 2.0.1
       remark-frontmatter: 5.0.0(supports-color@10.2.2)
       remark-gfm: 4.0.1(supports-color@10.2.2)
       remark-parse: 11.0.0(supports-color@10.2.2)
@@ -11417,9 +11420,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@markmap/plugin-math@1.1.0(supports-color@10.2.2)':
+  '@markmap/plugin-math@1.1.1(supports-color@10.2.2)':
     dependencies:
-      '@markmap/core': 1.1.0
+      '@markmap/core': 1.1.1
       '@mathjax/mathjax-tex-font': 4.1.3
       '@mathjax/src': 4.1.3
       mdast-util-math: 3.0.0(supports-color@10.2.2)
@@ -11427,19 +11430,19 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@markmap/render@1.1.0':
+  '@markmap/render@1.1.1':
     dependencies:
-      '@markmap/core': 1.1.0
+      '@markmap/core': 1.1.1
       d3-flextree: 2.1.2
 
-  '@markmap/toolbar@1.1.0(@markmap/view@1.1.0)':
+  '@markmap/toolbar@1.1.1(@markmap/view@1.1.1)':
     dependencies:
-      '@markmap/view': 1.1.0
+      '@markmap/view': 1.1.1
 
-  '@markmap/view@1.1.0':
+  '@markmap/view@1.1.1':
     dependencies:
-      '@markmap/core': 1.1.0
-      '@markmap/render': 1.1.0
+      '@markmap/core': 1.1.1
+      '@markmap/render': 1.1.1
       d3-selection: 3.0.1
       d3-zoom: 3.0.1
       flatbush: 4.7.0
@@ -11447,7 +11450,7 @@ snapshots:
       hast-util-to-html: 9.0.7
       hast-util-to-text: 4.0.3
       lowlight: 3.3.0
-      mdast-util-to-hast: 13.2.1
+      mdast-util-to-hast: 13.2.2
 
   '@mathjax/mathjax-newcm-font@4.1.3': {}
 
@@ -13562,7 +13565,7 @@ snapshots:
       - markdown-it
       - typescript
 
-  '@vuepress/plugin-markdown-chart@2.0.0-rc.139(721adf339e629b19a054d5b97a6a8882)':
+  '@vuepress/plugin-markdown-chart@2.0.0-rc.139(bd0ed1f27a252eb5d75aabe80a1e9f92)':
     dependencies:
       '@mdit/helper': 1.2.1(markdown-it@15.0.3)
       '@mdit/plugin-container': 2.2.0(markdown-it@15.0.3)
@@ -13572,11 +13575,11 @@ snapshots:
       vue: 3.5.45(typescript@6.0.3)
       vuepress: 2.0.0-rc.32(f9277f588ed805139daa45824e27fe5b)
     optionalDependencies:
-      '@markmap/parse': 1.1.0(supports-color@10.2.2)
-      '@markmap/plugin-math': 1.1.0(supports-color@10.2.2)
-      '@markmap/render': 1.1.0
-      '@markmap/toolbar': 1.1.0(@markmap/view@1.1.0)
-      '@markmap/view': 1.1.0
+      '@markmap/parse': 1.1.1(supports-color@10.2.2)
+      '@markmap/plugin-math': 1.1.1(supports-color@10.2.2)
+      '@markmap/render': 1.1.1
+      '@markmap/toolbar': 1.1.1(@markmap/view@1.1.1)
+      '@markmap/view': 1.1.1
       chart.js: 4.6.1
       echarts: 6.1.0
       flowchart.ts: 4.0.0
@@ -15955,7 +15958,7 @@ snapshots:
       comma-separated-tokens: 2.0.3
       hast-util-whitespace: 3.0.0
       html-void-elements: 3.0.0
-      mdast-util-to-hast: 13.2.1
+      mdast-util-to-hast: 13.2.2
       property-information: 7.2.0
       space-separated-tokens: 2.0.2
       stringify-entities: 4.0.4
@@ -16738,7 +16741,7 @@ snapshots:
       '@types/mdast': 4.0.4
       devlop: 1.1.0
       escape-string-regexp: 5.0.0
-      mdast-util-from-markdown: 2.0.3(supports-color@10.2.2)
+      mdast-util-from-markdown: 2.1.0(supports-color@10.2.2)
       mdast-util-to-markdown: 2.1.3
       micromark-extension-frontmatter: 2.0.0
     transitivePeerDependencies:
@@ -16807,7 +16810,7 @@ snapshots:
       '@types/mdast': 4.0.4
       devlop: 1.1.0
       longest-streak: 3.1.0
-      mdast-util-from-markdown: 2.0.3(supports-color@10.2.2)
+      mdast-util-from-markdown: 2.1.0(supports-color@10.2.2)
       mdast-util-to-markdown: 2.1.3
       unist-util-remove-position: 5.0.0
     transitivePeerDependencies:
@@ -18121,7 +18124,7 @@ snapshots:
   remark-parse@11.0.0(supports-color@10.2.2):
     dependencies:
       '@types/mdast': 4.0.4
-      mdast-util-from-markdown: 2.0.3(supports-color@10.2.2)
+      mdast-util-from-markdown: 2.1.0(supports-color@10.2.2)
       micromark-util-types: 2.0.3
       unified: 11.0.5
     transitivePeerDependencies:

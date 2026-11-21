@@ -9,11 +9,11 @@ allowBuilds:
   unrs-resolver: true
 
 catalog:
-  "@markmap/parse": 1.1.0
-  "@markmap/plugin-math": 1.1.0
-  "@markmap/render": 1.1.0
-  "@markmap/toolbar": 1.1.0
-  "@markmap/view": 1.1.0
+  "@markmap/parse": 1.1.1
+  "@markmap/plugin-math": 1.1.1
+  "@markmap/render": 1.1.1
+  "@markmap/toolbar": 1.1.1
+  "@markmap/view": 1.1.1
   "@mathjax/src": 4.1.3
   "@vueuse/core": 15.0.0
   mermaid: 12.3.0
