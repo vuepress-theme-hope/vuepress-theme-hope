@@ -36,7 +36,7 @@
     "@mr-hope/verify-commit-message": "0.1.1",
     "@types/node": "22.20.5",
     "@types/webpack-env": "1.18.8",
-    "@vitest/coverage-istanbul": "5.1.0",
+    "@vitest/coverage-istanbul": "5.1.1",
     "conventional-changelog-conventionalcommits": "10.4.1",
     "cross-env": "10.1.0",
     "husky": "9.1.7",
@@ -56,7 +56,7 @@
     "typescript": "catalog:",
     "unrun": "0.3.1",
     "vite": "8.3.8",
-    "vitest": "5.1.0",
+    "vitest": "5.1.1",
     "vuepress": "catalog:vuepress"
   },
   "nano-staged": {
