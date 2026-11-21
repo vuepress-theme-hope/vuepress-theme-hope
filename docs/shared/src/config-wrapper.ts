@@ -1,3 +1,4 @@
+import { rspackBundler } from "@vuepress/bundler-rspack";
 import { viteBundler } from "@vuepress/bundler-vite";
 import { webpackBundler } from "@vuepress/bundler-webpack";
 import { addViteOptimizeDepsInclude } from "@vuepress/helper";
@@ -16,15 +17,21 @@ const IS_GITHUB = !IS_GITEE && !IS_NETLIFY;
 export const config = (name: string, userConfig: UserConfig): UserConfig => {
   const base = name.replace(/\d+$/u, "");
   const docsBase = IS_NETLIFY ? "/" : base ? (`/v2/${base}/` as `/${string}/`) : "/v2/";
+  const bundler =
+    process.env.BUNDLER === "webpack"
+      ? webpackBundler()
+      : process.env.BUNDLER === "rspack"
+        ? rspackBundler()
+        : viteBundler();
 
   return defineUserConfig({
     base: docsBase,
 
+    bundler,
+
     dest: "./dist",
 
     head: pwaHead,
-
-    bundler: process.env.BUNDLER === "webpack" ? webpackBundler() : viteBundler(),
 
     define: () => ({
       IS_GITEE,

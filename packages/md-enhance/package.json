@@ -69,9 +69,9 @@
     "dev": "pnpm build --watch"
   },
   "dependencies": {
+    "@mdit/helper": "^1.2.1",
     "@mdit/plugin-container": "^2.2.0",
     "@mdit/plugin-demo": "^2.1.1",
-    "@types/markdown-it": "^14.2.0",
     "@vuepress/helper": "catalog:vuepress",
     "@vuepress/plugin-sass-palette": "catalog:vuepress",
     "@vueuse/core": "catalog:range",
@@ -83,7 +83,7 @@
   "devDependencies": {
     "@types/babel__core": "7.20.5",
     "@vuepress/bundler-vite": "catalog:vuepress",
-    "markdown-it": "14.3.3"
+    "markdown-it": "15.0.3"
   },
   "peerDependencies": {
     "@vue/repl": "^4.1.1",

@@ -1,7 +1,7 @@
+import type { PluginSimple } from "@mdit/helper";
 import { container } from "@mdit/plugin-container";
 import { demo } from "@mdit/plugin-demo";
 import { encodeData } from "@vuepress/helper";
-import type { PluginSimple } from "markdown-it";
 
 import { escapeHtml } from "../markdown-it/utils.js";
 import { logger } from "../utils.js";
@@ -64,8 +64,7 @@ export const mdDemo: PluginSimple = (md) => {
     },
     // oxlint-disable-next-line max-params
     codeRenderer: (tokens, index, options, _env, self) =>
-      // oxlint-disable-next-line typescript/no-non-null-assertion
-      `<template #code>\n${self.rules.fence!(tokens, index, options, _env, self)}</template>\n`,
+      `<template #code>\n${self.rules.fence(tokens, index, options, _env, self)}</template>\n`,
     contentOpenRenderer: () => `<template #default>\n`,
     contentCloseRenderer: () => `</template>\n`,
     closeRenderer: () => "</MdDemo>\n",

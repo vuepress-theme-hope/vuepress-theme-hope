@@ -1,7 +1,7 @@
+import type { PluginSimple } from "@mdit/helper";
 import { container } from "@mdit/plugin-container";
 import { encodeData } from "@vuepress/helper";
-import type { PluginSimple } from "markdown-it";
-import type Token from "markdown-it/lib/token.mjs";
+import type { Token } from "markdown-it";
 
 import type { CodeDemoOptions } from "../../shared/index.js";
 

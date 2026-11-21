@@ -4,13 +4,14 @@ import {
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrNoExternal,
+  chainRspack,
   chainWebpack,
   getBundlerName,
 } from "@vuepress/helper";
 import type { App } from "vuepress/core";
 
 const VITE_DEFAULT_CONDITIONS = ["module", "browser", "development|production"];
-const WEBPACK_DEFAULT_CONDITION_NAMES = ["browser", "import", "default"];
+const BUNDLER_DEFAULT_CONDITION_NAMES = ["browser", "import", "default"];
 
 export const extendsBundlerOptions = (bundlerOptions: unknown, app: App, custom = false): void => {
   addViteConfig(bundlerOptions, app, {
@@ -46,7 +47,13 @@ export const extendsBundlerOptions = (bundlerOptions: unknown, app: App, custom 
     chainWebpack(bundlerOptions, app, (config) => {
       if (config.resolve.conditionNames.values().length > 0)
         config.resolve.conditionNames.prepend("hope-custom");
-      else config.resolve.conditionNames.merge(["hope-custom", ...WEBPACK_DEFAULT_CONDITION_NAMES]);
+      else config.resolve.conditionNames.merge(["hope-custom", ...BUNDLER_DEFAULT_CONDITION_NAMES]);
+    });
+
+    chainRspack(bundlerOptions, app, (config) => {
+      if (config.resolve.conditionNames.values().length > 0)
+        config.resolve.conditionNames.prepend("hope-custom");
+      else config.resolve.conditionNames.merge(["hope-custom", ...BUNDLER_DEFAULT_CONDITION_NAMES]);
     });
   }
 

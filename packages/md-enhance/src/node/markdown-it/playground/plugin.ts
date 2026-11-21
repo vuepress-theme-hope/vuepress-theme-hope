@@ -1,6 +1,5 @@
+import type { BlockRule, PluginWithOptions } from "@mdit/helper";
 import { entries } from "@vuepress/helper";
-import type { PluginWithOptions } from "markdown-it";
-import type { RuleBlock } from "markdown-it/lib/parser_block.mjs";
 import { hash } from "vuepress/utils";
 
 import type { PlaygroundData, PlaygroundOptions } from "../../typings/index.js";
@@ -10,7 +9,7 @@ const AT_MARKER = `@`;
 const VALID_MARKERS = ["file", "import", "setting"] as const;
 
 const getPlaygroundRule =
-  (name: string): RuleBlock =>
+  (name: string): BlockRule =>
   // oxlint-disable-next-line max-statements
   (state, startLine, endLine, silent) => {
     let start = state.bMarks[startLine] + state.tShift[startLine];
@@ -97,7 +96,6 @@ const getPlaygroundRule =
     const oldParent = state.parentType;
     const oldLineMax = state.lineMax;
 
-    // @ts-expect-error: name is an unknown type to markdown-it
     state.parentType = name;
 
     // This will prevent lazy continuations from ever going past our end marker
@@ -125,7 +123,7 @@ const getPlaygroundRule =
   };
 
 const atMarkerRule =
-  (markerName: string): RuleBlock =>
+  (markerName: string): BlockRule =>
   // oxlint-disable-next-line max-statements
   (state, startLine, endLine, silent) => {
     let start = state.bMarks[startLine] + state.tShift[startLine];
@@ -203,7 +201,6 @@ const atMarkerRule =
     const oldParent = state.parentType;
     const oldLineMax = state.lineMax;
 
-    // @ts-expect-error: unknown type for markdown-it
     state.parentType = markerName;
 
     // This will prevent lazy continuations from ever going past our end marker
@@ -251,8 +248,7 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (md, options) =>
 
   VALID_MARKERS.forEach((marker) => {
     // Note: Here we use an internal variable to make sure tab rule is not registered
-    // @ts-expect-error: __rules__ is a private property
-    // oxlint-disable-next-line no-shadow, no-underscore-dangle, typescript/no-unsafe-call, typescript/no-unsafe-member-access
+    // oxlint-disable-next-line no-shadow, no-underscore-dangle
     if (!md.block.ruler.__rules__.some(({ name }) => name === `at-${marker}`)) {
       md.block.ruler.before("fence", `at-${marker}`, atMarkerRule(marker), {
         alt: ["paragraph", "reference", "blockquote", "list"],

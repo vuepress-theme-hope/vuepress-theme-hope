@@ -101,6 +101,8 @@ export default theme(
       imgSize: true,
       include: {
         deep: true,
+        // Keep includes such as ../../../packages/theme/CHANGELOG.md inside the project root.
+        projectRoot: path.resolve(__dirname, "../../../.."),
         resolvePath: (file) => {
           if (file.startsWith("@components/"))
             return file.replace("@components", path.resolve(__dirname, "../../../components/src"));

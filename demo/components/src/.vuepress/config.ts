@@ -1,3 +1,4 @@
+import { rspackBundler } from "@vuepress/bundler-rspack";
 import { viteBundler } from "@vuepress/bundler-vite";
 import { webpackBundler } from "@vuepress/bundler-webpack";
 import { defaultTheme } from "@vuepress/theme-default";
@@ -12,7 +13,12 @@ export default defineUserConfig({
   title: "Components Lib",
   description: "Components library for VuePress2",
 
-  bundler: process.env.BUNDLER === "webpack" ? webpackBundler() : viteBundler(),
+  bundler:
+    process.env.BUNDLER === "webpack"
+      ? webpackBundler()
+      : process.env.BUNDLER === "rspack"
+        ? rspackBundler()
+        : viteBundler(),
 
   theme: defaultTheme({
     logo: "https://theme-hope-assets.vuejs.press/logo.svg",

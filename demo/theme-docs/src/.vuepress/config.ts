@@ -1,3 +1,4 @@
+import { rspackBundler } from "@vuepress/bundler-rspack";
 import { viteBundler } from "@vuepress/bundler-vite";
 import { webpackBundler } from "@vuepress/bundler-webpack";
 import { defineUserConfig } from "vuepress";
@@ -24,7 +25,12 @@ export default defineUserConfig({
     },
   },
 
-  bundler: process.env.BUNDLER === "webpack" ? webpackBundler() : viteBundler(),
+  bundler:
+    process.env.BUNDLER === "webpack"
+      ? webpackBundler()
+      : process.env.BUNDLER === "rspack"
+        ? rspackBundler()
+        : viteBundler(),
 
   theme,
 

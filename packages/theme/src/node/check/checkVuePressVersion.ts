@@ -11,13 +11,13 @@ interface PackageJSON extends Record<string, unknown> {
   devDependencies?: Record<string, string>;
 }
 
-const BUNDLERS = ["vite", "webpack"] as const;
+const BUNDLERS = ["rspack", "vite", "webpack"] as const;
 const BUNDLER_PREFIX = "@vuepress/bundler-";
 const VUEPRESS_BUNDLERS = new Set(BUNDLERS.map((bundler) => `${BUNDLER_PREFIX}${bundler}`));
 const VUEPRESS_CORE_PACKAGES = new Set(
   ["core", "client", "cli", "markdown", "shared", "utils"].map((item) => `@vuepress/${item}`),
 );
-const DEPRECATED_PACKAGES = new Set(BUNDLERS.map((item) => `vuepress-${item}`));
+const DEPRECATED_PACKAGES = new Set(["vuepress-vite", "vuepress-webpack"]);
 
 export const checkVuePressVersion = (): boolean => {
   const sourceFolderPath = path.join(process.cwd(), process.argv[3]);

@@ -62,11 +62,10 @@ import { hopeTheme } from "vuepress-theme-hope";
 export default hopeTheme({
   plugins: {
     icon: {
-      // 上述内容的数组
+      // 链接数组
       assets: [
         "/base/my/font-icon/resource.js",
         "https://example/my/fonr-icon/resouce.css",
-        "fontawesome",
       ],
     },
   },

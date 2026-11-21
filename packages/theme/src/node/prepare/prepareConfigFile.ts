@@ -5,6 +5,29 @@ import type { ThemeStatus } from "../config/index.js";
 import type { ThemeBehaviorOptions } from "../typings/index.js";
 import { BUNDLE_FOLDER, CLIENT_FOLDER } from "../utils.js";
 
+const scrollBehaviorCode = `\
+    const { scrollBehavior } = router.options;
+
+    // VuePress rc.32+ restores the scroll position right after the route
+    // changes, before the page transition has inserted the new page. Restore
+    // it after the transition ourselves so hash targets exist when they are
+    // scrolled into view.
+    router.options.scrollBehavior = scrollBehavior
+      ? async (...args) => {
+          await scrollPromise.wait();
+
+          return scrollBehavior(...args);
+        }
+      : async (to, _from, savedPosition) => {
+          await scrollPromise.wait();
+
+          if (savedPosition) return savedPosition;
+          if (to.hash) return { el: to.hash };
+
+          return { top: 0 };
+        };
+`;
+
 export const prepareConfigFile = (
   app: App,
   { enableCatalog, enableBlog, enableEncrypt, enableIcon }: ThemeStatus,
@@ -89,14 +112,7 @@ ${actions.join("\n")}
 
 export default {
   enhance: ({ app, router }) => {
-    const { scrollBehavior } = router.options;
-
-    router.options.scrollBehavior = async (...args) => {
-      await scrollPromise.wait();
-
-      return scrollBehavior(...args);
-    };
-
+${scrollBehaviorCode}
     // inject global properties
     injectDarkMode(app);
 

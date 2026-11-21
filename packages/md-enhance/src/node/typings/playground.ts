@@ -97,8 +97,10 @@ export interface PlaygroundOptions {
    * Props getter
    *
    * 属性获取器
+   *
+   * @default A getter that passes the playground key, title, files and settings to the component
    */
-  propsGetter: (data: PlaygroundData) => Record<string, string>;
+  propsGetter?: (data: PlaygroundData) => Record<string, string>;
 }
 
 export interface TSPresetPlaygroundOptions extends CompilerOptions {

@@ -6,6 +6,9 @@
   "author": "Mr.Hope",
   "type": "module",
   "scripts": {
+    "demo:rspack-build": "cross-env BUNDLER=rspack vuepress build src",
+    "demo:rspack-clean-dev": "cross-env BUNDLER=rspack vuepress dev src --clean-cache --clean-temp",
+    "demo:rspack-dev": "cross-env BUNDLER=rspack vuepress dev src",
     "demo:serve": "http-server -a localhost src/.vuepress/dist -o",
     "demo:vite-build": "vuepress build src",
     "demo:vite-clean-dev": "vuepress dev src --clean-cache --clean-temp",
@@ -17,6 +20,7 @@
   "devDependencies": {
     "@mathjax/src": "catalog:",
     "@vue/repl": "4.7.2",
+    "@vuepress/bundler-rspack": "catalog:vuepress",
     "@vuepress/bundler-vite": "catalog:vuepress",
     "@vuepress/bundler-webpack": "catalog:vuepress",
     "@vuepress/theme-default": "catalog:vuepress",

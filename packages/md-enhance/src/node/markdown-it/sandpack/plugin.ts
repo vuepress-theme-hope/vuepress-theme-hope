@@ -1,6 +1,5 @@
+import type { BlockRule, PluginSimple } from "@mdit/helper";
 import { encodeData, entries, keys } from "@vuepress/helper";
-import type { PluginSimple } from "markdown-it";
-import type { RuleBlock } from "markdown-it/lib/parser_block.mjs";
 import type {
   SandpackFile,
   SandpackOptions,
@@ -28,7 +27,7 @@ const jsRunner = (jsCode: string): unknown =>
   (new Function(`return ${jsCode};`) as () => unknown)();
 
 // oxlint-disable-next-line complexity, max-statements
-const sandpackRule: RuleBlock = (state, startLine, endLine, silent) => {
+const sandpackRule: BlockRule = (state, startLine, endLine, silent) => {
   let start = state.bMarks[startLine] + state.tShift[startLine];
   let max = state.eMarks[startLine];
 
@@ -122,7 +121,6 @@ const sandpackRule: RuleBlock = (state, startLine, endLine, silent) => {
   const oldParent = state.parentType;
   const oldLineMax = state.lineMax;
 
-  // @ts-expect-error: sandpack is an unknown type to markdown-it
   state.parentType = "sandpack";
 
   // This will prevent lazy continuations from ever going past our end marker
@@ -151,7 +149,7 @@ const sandpackRule: RuleBlock = (state, startLine, endLine, silent) => {
 };
 
 const atMarkerRule =
-  (markerName: string): RuleBlock =>
+  (markerName: string): BlockRule =>
   // oxlint-disable-next-line max-statements
   (state, startLine, endLine, silent) => {
     let start = state.bMarks[startLine] + state.tShift[startLine];
@@ -229,7 +227,6 @@ const atMarkerRule =
     const oldParent = state.parentType;
     const oldLineMax = state.lineMax;
 
-    // @ts-expect-error: unknown type to markdown-it
     state.parentType = markerName;
 
     // This will prevent lazy continuations from ever going past our end marker
@@ -264,8 +261,7 @@ export const sandpack: PluginSimple = (md) => {
 
   VALID_MARKERS.forEach((marker) => {
     // Note: Here we use an internal variable to make sure tab rule is not registered
-    // @ts-expect-error: __rules__ is a private property
-    // oxlint-disable-next-line no-underscore-dangle, typescript/no-unsafe-call, typescript/no-unsafe-member-access
+    // oxlint-disable-next-line no-underscore-dangle
     if (!md.block.ruler.__rules__.some(({ name }) => name === `at-${marker}`)) {
       md.block.ruler.before("fence", `at-${marker}`, atMarkerRule(marker), {
         alt: ["paragraph", "reference", "blockquote", "list"],
