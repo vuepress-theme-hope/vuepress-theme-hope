@@ -47,6 +47,7 @@ catalogs:
     "@vuepress/plugin-copyright": 2.0.0-rc.139
     "@vuepress/plugin-docsearch": 2.0.0-rc.139
     "@vuepress/plugin-feed": 2.0.0-rc.139
+    "@vuepress/plugin-flexsearch": 2.0.0-rc.139
     "@vuepress/plugin-git": 2.0.0-rc.139
     "@vuepress/plugin-icon": 2.0.0-rc.139
     "@vuepress/plugin-links-check": 2.0.0-rc.139

@@ -122,6 +122,8 @@ tag:
 
 - [@vuepress/plugin-feed][feed]: Feed 支持（`plugins.feed`）
 
+- [@vuepress/plugin-flexsearch][flexsearch]: 基于 FlexSearch 的客户端搜索插件（`plugins.flexsearch`）
+
 - [@vuepress/plugin-meilisearch][meilisearch]: 基于 MeiliSearch 的开源搜索插件（`plugins.meilisearch`）
 
 - [@vuepress/plugin-orama][orama]: 基于 Orama 的客户端搜索插件（`plugins.orama`）
@@ -155,6 +157,7 @@ tag:
 [copyright]: https://ecosystem.vuejs.press/zh/plugins/features/copyright.html
 [docsearch]: https://ecosystem.vuejs.press/zh/plugins/search/docsearch.html
 [feed]: https://ecosystem.vuejs.press/zh/plugins/blog/feed/
+[flexsearch]: https://ecosystem.vuejs.press/zh/plugins/search/flexsearch.html
 [git]: https://ecosystem.vuejs.press/zh/plugins/development/git.html
 [icon]: https://ecosystem.vuejs.press/zh/plugins/features/icon.html
 [links-check]: https://ecosystem.vuejs.press/zh/plugins/markdown/links-check.html

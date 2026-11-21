@@ -1,5 +1,6 @@
 import { getFullLocaleConfig, isPlainObject, keys, startsWith } from "@vuepress/helper";
 import type { DocSearchPluginOptions } from "@vuepress/plugin-docsearch";
+import type { FlexSearchPluginOptions } from "@vuepress/plugin-flexsearch";
 import type { MeiliSearchPluginOptions } from "@vuepress/plugin-meilisearch";
 import type { CustomFieldOptions, OramaPluginOptions } from "@vuepress/plugin-orama";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
@@ -14,6 +15,7 @@ import { logger } from "../utils.js";
 import { logMissingPkg } from "./utils.js";
 
 let docsearchPlugin: ((options: DocSearchPluginOptions) => Plugin) | null = null;
+let flexsearchPlugin: ((options: FlexSearchPluginOptions) => Plugin) | null = null;
 let meilisearchPlugin: ((options: MeiliSearchPluginOptions) => Plugin) | null = null;
 let oramaPlugin: ((options: OramaPluginOptions) => Plugin) | null = null;
 let searchPlugin: ((options: SearchPluginOptions) => Plugin) | null = null;
@@ -21,6 +23,12 @@ let slimsearchPlugin: ((options: SlimSearchPluginOptions) => Plugin) | null = nu
 
 try {
   ({ docsearchPlugin } = await import("@vuepress/plugin-docsearch"));
+} catch {
+  // Do nothing
+}
+
+try {
+  ({ flexsearchPlugin } = await import("@vuepress/plugin-flexsearch"));
 } catch {
   // Do nothing
 }
@@ -50,14 +58,16 @@ try {
 }
 
 /**
- * Resolve options for `@vuepress/plugin-docsearch`, `@vuepress/plugin-meilisearch`,
- * `@vuepress/plugin-orama`, `@vuepress/plugin-search` and `@vuepress/plugin-slimsearch`
+ * Resolve options for `@vuepress/plugin-docsearch`, `@vuepress/plugin-flexsearch`,
+ * `@vuepress/plugin-meilisearch`, `@vuepress/plugin-orama`, `@vuepress/plugin-search` and
+ * `@vuepress/plugin-slimsearch`
  *
  * @param app VuePress app instance
  * @param themeData Theme data
  * @param plugins Theme plugins options
  * @returns Search plugin instance or null
  */
+// oxlint-disable-next-line max-statements
 export const getSearchPlugin = (
   app: App,
   themeData: ThemeData,
@@ -142,6 +152,21 @@ export const getSearchPlugin = (
       customFields,
       filter: (page) => !isPageEncrypted(page),
       ...(isPlainObject(plugins.orama) ? plugins.orama : {}),
+    });
+  }
+
+  if (plugins.flexsearch) {
+    if (!flexsearchPlugin) {
+      logMissingPkg("@vuepress/plugin-flexsearch");
+
+      return null;
+    }
+
+    return flexsearchPlugin({
+      indexContent: true,
+      customFields,
+      filter: (page) => !isPageEncrypted(page),
+      ...(isPlainObject(plugins.flexsearch) ? plugins.flexsearch : {}),
     });
   }
 

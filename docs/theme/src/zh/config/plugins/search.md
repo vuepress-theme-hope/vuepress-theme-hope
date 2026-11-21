@@ -12,25 +12,26 @@ tag:
 
 ## 介绍 {#intro}
 
-主题内置支持以下 5 个插件:
+主题内置支持以下 6 个插件:
 
 - @vuepress/plugin-docsearch
 - @vuepress/plugin-meilisearch
 - @vuepress/plugin-slimsearch
 - @vuepress/plugin-orama
+- @vuepress/plugin-flexsearch
 - @vuepress/plugin-search
 
 ::: important
 
 你需要手动安装你想要的插件。
 
-搜索插件只能同时启用其中 1 个，优先级为 `docsearch` > `meilisearch` > `slimsearch` > `orama` > `search`。
+搜索插件只能同时启用其中 1 个，优先级为 `docsearch` > `meilisearch` > `slimsearch` > `orama` > `flexsearch` > `search`。
 
 :::
 
 ::: tip 推荐
 
-`slimsearch` 与 `orama` 都提供客户端搜索，其中推荐使用 `slimsearch`，它的索引与 Worker 产物体积要小得多。只有当你看重 `orama` 更严格的 `AND` 匹配语义，或者计划使用 Orama 生态时，才选择 `orama`。
+`slimsearch` 与 `orama` 都提供客户端搜索，其中推荐使用 `slimsearch`，它的索引与 Worker 产物体积要小得多。只有当你看重 `orama` 更严格的 `AND` 匹配语义，或者计划使用 Orama 生态时，才选择 `orama`。`flexsearch` 的可配置项更多，但除索引外它还会把 FlexSearch 库发送到客户端，因此客户端产物比 `slimsearch` 更大。
 
 :::
 
@@ -54,6 +55,12 @@ tag:
 
 更多详情，请参阅 [Orama 插件文档][orama]。
 
+## plugins.flexsearch
+
+你可以将其设置为 `true` 来直接启用它，或者将其设置为将传递给 `@vuepress/plugin-flexsearch` 的配置对象。
+
+更多详情，请参阅 [FlexSearch 插件文档][flexsearch]。
+
 ## plugins.search
 
 你可以将其设置为 `true` 来直接启用它，或者将其设置为将传递给 `@vuepress/plugin-search` 的配置对象。
@@ -61,6 +68,7 @@ tag:
 详情请参阅 [search 插件文档][search]。
 
 [docsearch]: https://ecosystem.vuejs.press/zh/plugins/search/docsearch.html
+[flexsearch]: https://ecosystem.vuejs.press/zh/plugins/search/flexsearch.html
 [meilisearch]: https://ecosystem.vuejs.press/zh/plugins/search/meilisearch.html
 [orama]: https://ecosystem.vuejs.press/zh/plugins/search/orama.html
 [search]: https://ecosystem.vuejs.press/zh/plugins/search/search.html

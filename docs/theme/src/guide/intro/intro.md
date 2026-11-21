@@ -122,6 +122,7 @@ In short, anyone can enjoy the convenience of Markdown's enhanced syntax.
 - Search feature
   - [Crawler search support with docsearch](../feature/search.md#use-vuepress-plugin-docsearch)
   - [Powerful client search support with slimsearch](../feature/search.md#use-vuepress-plugin-slimsearch).
+  - [Customizable client search support with flexsearch](../feature/search.md#use-vuepress-plugin-flexsearch).
 
 - [Page Encryption](../feature/encrypt.md) feature to limit access.
 

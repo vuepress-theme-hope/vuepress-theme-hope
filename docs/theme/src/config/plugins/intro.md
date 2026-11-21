@@ -122,6 +122,8 @@ These plugins are supported by theme, but they are not bundled. You need to inst
 
 - [@vuepress/plugin-feed][feed]: Feed support (`plugins.feed`)
 
+- [@vuepress/plugin-flexsearch][flexsearch]: Client search plugin using FlexSearch (`plugins.flexsearch`)
+
 - [@vuepress/plugin-meilisearch][meilisearch]: Open source search plugin with MeiliSearch (`plugins.meilisearch`)
 
 - [@vuepress/plugin-orama][orama]: Client search plugin using Orama (`plugins.orama`)
@@ -155,6 +157,7 @@ These plugins are supported by theme, but they are not bundled. You need to inst
 [copyright]: https://ecosystem.vuejs.press/plugins/features/copyright.html
 [docsearch]: https://ecosystem.vuejs.press/plugins/search/docsearch.html
 [feed]: https://ecosystem.vuejs.press/plugins/blog/feed/
+[flexsearch]: https://ecosystem.vuejs.press/plugins/search/flexsearch.html
 [git]: https://ecosystem.vuejs.press/plugins/development/git.html
 [icon]: https://ecosystem.vuejs.press/plugins/features/icon.html
 [links-check]: https://ecosystem.vuejs.press/plugins/markdown/links-check.html

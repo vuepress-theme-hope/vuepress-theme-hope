@@ -12,25 +12,26 @@ tag:
 
 ## Intro
 
-The theme adds built-in support for the following 5 plugins:
+The theme adds built-in support for the following 6 plugins:
 
 - @vuepress/plugin-docsearch
 - @vuepress/plugin-meilisearch
 - @vuepress/plugin-slimsearch
 - @vuepress/plugin-orama
+- @vuepress/plugin-flexsearch
 - @vuepress/plugin-search
 
 ::: important
 
 You need to install the plugin that you want manually.
 
-Only 1 of the 5 search plugins can be enabled at the same time, and the priority is `docsearch` > `meilisearch` > `slimsearch` > `orama` > `search`.
+Only 1 of the 6 search plugins can be enabled at the same time, and the priority is `docsearch` > `meilisearch` > `slimsearch` > `orama` > `flexsearch` > `search`.
 
 :::
 
 ::: tip Recommendation
 
-`slimsearch` and `orama` both provide client-side search. `slimsearch` is recommended, as it ships a much smaller index and worker bundle. Pick `orama` only when you prefer its stricter `AND` matching or plan to use the Orama ecosystem.
+`slimsearch` and `orama` both provide client-side search. `slimsearch` is recommended, as it ships a much smaller index and worker bundle. Pick `orama` only when you prefer its stricter `AND` matching or plan to use the Orama ecosystem. `flexsearch` is more configurable, but it ships the FlexSearch library to the client in addition to the index, so its client bundle is larger than `slimsearch`'s.
 
 :::
 
@@ -54,6 +55,12 @@ You can set it to `true` to enable it directly, or an object to configure will b
 
 For details, see [Orama plugin documentation][orama].
 
+## plugins.flexsearch
+
+You can set it to `true` to enable it directly, or an object to configure will be passed to `@vuepress/plugin-flexsearch`.
+
+For details, see [FlexSearch plugin documentation][flexsearch].
+
 ## plugins.search
 
 You can set it to `true` to enable it directly, or an object to configure will be passed to `@vuepress/plugin-search`.
@@ -61,6 +68,7 @@ You can set it to `true` to enable it directly, or an object to configure will b
 For details, see [search plugin documentation][search].
 
 [docsearch]: https://ecosystem.vuejs.press/plugins/search/docsearch.html
+[flexsearch]: https://ecosystem.vuejs.press/plugins/search/flexsearch.html
 [meilisearch]: https://ecosystem.vuejs.press/plugins/search/meilisearch.html
 [orama]: https://ecosystem.vuejs.press/plugins/search/orama.html
 [slimsearch]: https://ecosystem.vuejs.press/plugins/search/slimsearch.html
