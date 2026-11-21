@@ -103,6 +103,7 @@ minimumReleaseAgeExclude:
   - "stylelint-config-hope"
   - "vuepress"
   - "vuepress-*"
+  - "stylelint@18.1.0"
 minimumReleaseAgeExcludePrune: true
 trustPolicy: no-downgrade
 trustPolicyIgnoreAfter: 720
