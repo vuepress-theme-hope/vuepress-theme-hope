@@ -13,10 +13,6 @@ export default defineHopeConfig({
     "declaration-block-no-redundant-longhand-properties": true,
     "media-feature-range-notation": "prefix",
     "no-descending-specificity": null,
-    // FIXME: stylelint-scss bug
-    "block-no-redundant-nested-style-rules": null,
-    // FIXME: stylelint-scss bug
-    "no-invalid-position-declaration": null,
   },
   scss: true,
 });

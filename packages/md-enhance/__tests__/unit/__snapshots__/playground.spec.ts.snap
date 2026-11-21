@@ -25,7 +25,7 @@ exports[`playground > ts preset > should work > demo 1`] = `
 `;
 
 exports[`playground > ts preset > should work > demo with settings 1`] = `
-"<Playground title="TS%20demo%202" link="https%3A%2F%2Fwww.typescriptlang.org%2Fplay%3F1%26declaration%3Dtrue%23code%2FMYewdgzgLgBAthA5jAvDARACwKYBtcgwDuIATrgCboDcAULaJLBAA7YCGA1qjABQKIAXDGikAlmEQBKVAD4YjCCFzYAdBIBmIfkil1arDpx3S6QA">
+"<Playground title="TS%20demo%202" link="https%3A%2F%2Fwww.typescriptlang.org%2Fplay%3Ftarget%3D1%26declaration%3Dtrue%23code%2FMYewdgzgLgBAthA5jAvDARACwKYBtcgwDuIATrgCboDcAULaJLBAA7YCGA1qjABQKIAXDGikAlmEQBKVAD4YjCCFzYAdBIBmIfkil1arDpx3S6QA">
 </Playground>
 "
 `;

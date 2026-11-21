@@ -1,9 +1,11 @@
 // oxlint-disable vitest/max-expects
 import MarkdownIt from "markdown-it";
+import type { CompilerOptions } from "typescript";
 import { describe, expect, it } from "vitest";
 
 import {
   getTSPlaygroundPreset,
+  getTypescriptPlaygroundHash,
   getUnoPlaygroundPreset,
   getVuePlaygroundPreset,
   playground,
@@ -192,6 +194,45 @@ speak(msg);
 
       expect(result1).toMatchSnapshot("demo");
       expect(result2).toMatchSnapshot("demo with settings");
+    });
+  });
+
+  describe(getTypescriptPlaygroundHash, () => {
+    // Settings are parsed from JSON, where enum options can be written as names
+    const getQuery = (compilerOptions: Record<string, unknown>): string => {
+      const [query] = getTypescriptPlaygroundHash(
+        "let x = 1",
+        compilerOptions as CompilerOptions,
+      ).split("#code/");
+
+      return query;
+    };
+
+    it("should keep option name for enum options", () => {
+      expect(getQuery({ target: "es5" })).toBe("?target=1");
+      expect(getQuery({ target: "es3" })).toBe("?target=0");
+      expect(getQuery({ module: "nodenext" })).toBe("?module=199");
+      expect(getQuery({ jsx: "react-jsx" })).toBe("?jsx=4");
+      expect(getQuery({ moduleResolution: "bundler" })).toBe("?moduleResolution=100");
+    });
+
+    it("should support numeric enum values", () => {
+      expect(getQuery({ target: 1 })).toBe("?target=1");
+      expect(getQuery({ target: 0 })).toBe("?target=0");
+      expect(getQuery({ moduleResolution: 100 })).toBe("?moduleResolution=100");
+    });
+
+    it("should combine enum and boolean options", () => {
+      expect(getQuery({ strict: false, module: "nodenext" })).toBe("?strict=false&module=199");
+      expect(getQuery({ target: "es5", declaration: true })).toBe("?target=1&declaration=true");
+    });
+
+    it("should ignore empty or unsupported options", () => {
+      expect(getQuery({})).toBe("");
+      expect(getQuery({ target: undefined })).toBe("");
+      expect(getQuery({ target: true })).toBe("");
+      expect(getQuery({ target: "not-a-target" })).toBe("");
+      expect(getQuery({ unknownOption: 1 })).toBe("");
     });
   });
 
