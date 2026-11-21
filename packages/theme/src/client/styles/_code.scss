@@ -70,10 +70,12 @@ div[class*="language-"] {
 }
 
 @if highlighter.$highlighter == "shiki" {
-  @if helper.get-color(hope-config.$code-color) ==
-    helper.get-dark-color(hope-config.$code-color) and
-    helper.get-color(hope-config.$code-bg-color) ==
-    helper.get-dark-color(hope-config.$code-bg-color)
+  @if helper.get-color(hope-config.$code-color) == helper.get-dark-color(
+      hope-config.$code-color
+    ) and
+    helper.get-color(hope-config.$code-bg-color) == helper.get-dark-color(
+      hope-config.$code-bg-color
+    )
   {
     :root {
       @include code-vars(
