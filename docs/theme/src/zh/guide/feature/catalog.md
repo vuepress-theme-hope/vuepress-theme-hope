@@ -37,7 +37,7 @@ import { hopeTheme } from "vuepress-theme-hope";
 export default hopeTheme({
   plugins: {
     catalog: {
-      frontmatter: (path) => {
+      frontmatter: (path, app) => {
         if (path.startsWith("/zh/")) return { title: "目录" };
 
         return { title: "Catalog" };
@@ -47,6 +47,8 @@ export default hopeTheme({
   },
 });
 ```
+
+getter 还会收到 VuePress 应用实例作为第二个参数，因此你可以根据环境定制 frontmatter。
 
 有关详细配置，请参阅 [目录插件文档][catalog-config]。
 

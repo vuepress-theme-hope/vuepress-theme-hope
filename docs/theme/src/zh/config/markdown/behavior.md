@@ -90,6 +90,12 @@ type MarkdownHighlighterOptions =
 
 参考：[Markdown → 链接检查](../../guide/markdown/others.md#link-check) 与 [@vuepress/plugin-links-check][links-check]。
 
+锚点检查默认开启，因此在 `build: "error"` 时死锚点将导致构建失败。检查锚点时，`exclude` 选项会同时按链接原样（含锚点）和去掉锚点后的路径进行匹配。
+
+@@`markdown.linksCheck.anchors` type=`"same-page" | boolean` default=`true`
+
+是否检查链接的锚点。设置为 `"same-page"` 时仅检查指向当前页面的锚点，设置为 `false` 时禁用锚点检查。
+
 ::::
 
 [links-check]: https://ecosystem.vuejs.press/zh/plugins/markdown/links-check.html#options

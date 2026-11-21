@@ -172,6 +172,10 @@ type MarkdownMathPluginOptions =
   | MarkdownMathjaxPluginOptions;
 ```
 
+@@`markdown.math.preloadDynamicFonts` type=boolean default=`true` mathjax=Yes
+
+Whether to preload all dynamic font files of the selected output when the MathJax instance is created. Preloading avoids retry errors for dynamic glyphs such as `\mathbb`. Only used by MathJax.
+
 @`markdown.revealjs` type=`RevealJsPluginOptions | boolean`
 
 Controls `@vuepress/plugin-revealjs` which provides presentation support. You can set `true` to directly enable it, or provide plugin options.
