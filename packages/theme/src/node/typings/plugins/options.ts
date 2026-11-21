@@ -5,6 +5,7 @@ import type { CopyCodePluginOptions } from "@vuepress/plugin-copy-code";
 import type { CopyrightPluginOptions } from "@vuepress/plugin-copyright";
 import type { DocSearchPluginOptions } from "@vuepress/plugin-docsearch";
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
+import type { FlexSearchPluginOptions } from "@vuepress/plugin-flexsearch";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
 import type { IconPluginOptions } from "@vuepress/plugin-icon";
 import type { MediaPluginOptions } from "@vuepress/plugin-media";
@@ -162,6 +163,16 @@ export interface ThemePluginsOptions extends DeprecatedThemePluginsOptions {
    * @see https://ecosystem.vuejs.press/zh/plugins/blog/feed/config.html
    */
   feed?: Omit<FeedPluginOptions, "hostname"> | boolean;
+
+  /**
+   * FlexSearch plugin options
+   *
+   * FlexSearch 插件配置
+   *
+   * @see https://ecosystem.vuejs.press/plugins/search/flexsearch.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/search/flexsearch.html
+   */
+  flexsearch?: FlexSearchPluginOptions | boolean;
 
   /**
    * Git plugin options

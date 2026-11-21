@@ -7,6 +7,7 @@ export const PLUGIN_CHECKLIST: [name: string, options: string | string[], hint?:
   ["@vuepress/plugin-copyright", "plugins.copyright"],
   ["@vuepress/plugin-docsearch", "plugins.docsearch"],
   ["@vuepress/plugin-feed", "plugins.feed"],
+  ["@vuepress/plugin-flexsearch", "plugins.flexsearch"],
   ["@vuepress/plugin-git", "plugins.git"],
   ["@vuepress/plugin-icon", "plugins.icon"],
   ["@vuepress/plugin-links-check", "markdown.linksCheck"],

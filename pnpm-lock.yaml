@@ -274,6 +274,9 @@ catalogs:
     '@vuepress/plugin-feed':
       specifier: 2.0.0-rc.139
       version: 2.0.0-rc.139
+    '@vuepress/plugin-flexsearch':
+      specifier: 2.0.0-rc.139
+      version: 2.0.0-rc.139
     '@vuepress/plugin-git':
       specifier: 2.0.0-rc.139
       version: 2.0.0-rc.139
@@ -1146,6 +1149,9 @@ importers:
         specifier: catalog:vuepress
         version: 2.0.0-rc.139(d6ce48fed16af1391648e7cde9963e93)
       '@vuepress/plugin-feed':
+        specifier: catalog:vuepress
+        version: 2.0.0-rc.139(d6ce48fed16af1391648e7cde9963e93)
+      '@vuepress/plugin-flexsearch':
         specifier: catalog:vuepress
         version: 2.0.0-rc.139(d6ce48fed16af1391648e7cde9963e93)
       '@vuepress/plugin-git':
@@ -4576,6 +4582,11 @@ packages:
     peerDependencies:
       vuepress: 2.0.0-rc.32
 
+  '@vuepress/plugin-flexsearch@2.0.0-rc.139':
+    resolution: {integrity: sha512-BhbjucH2/aAOel3M5hNQJLUr80Lyw0a0vFIbrplFHwWuH8UTYFBembUR7NLC1pmwuuU8bbKL0k+C0kM22QMauA==}
+    peerDependencies:
+      vuepress: 2.0.0-rc.32
+
   '@vuepress/plugin-git@2.0.0-rc.139':
     resolution: {integrity: sha512-M8OM4iIRhr7xNrLx+5r4CsluZubgc5OAyGkMrlbckvZs2N6m9VPAq8wKGPW5riJQoRkamiRsCb6teChNwMDgvw==}
     peerDependencies:
@@ -6313,6 +6324,9 @@ packages:
 
   flatqueue@3.1.0:
     resolution: {integrity: sha512-Ia4qIYrrsEqIRx3c3XhkT+QDLQuUV5ovsr6ah1rIgKT5wclhoGK3lAMS1bWRAWxlx7wtlTBpV7QXB5d9fOSRxA==}
+
+  flexsearch@0.8.212:
+    resolution: {integrity: sha512-wSyJr1GUWoOOIISRu+X2IXiOcVfg9qqBRyCPRUdLMIGJqPzMo+jMRlvE83t14v1j0dRMEaBbER/adQjp6Du2pw==}
 
   floating-vue@5.4.0:
     resolution: {integrity: sha512-hb5y5N8sXs9Dy4iZfWBKLzf3FkUkqhbkQREhRulAEvIihMlSGxc/7pXGrIDetoqXm/RRHNVjvN6lql9IhMM+tQ==}
@@ -13519,6 +13533,20 @@ snapshots:
       - '@vuepress/bundler-webpack'
       - typescript
 
+  '@vuepress/plugin-flexsearch@2.0.0-rc.139(d6ce48fed16af1391648e7cde9963e93)':
+    dependencies:
+      '@vuepress/helper': 2.0.0-rc.139(d6ce48fed16af1391648e7cde9963e93)
+      '@vuepress/search-helper': 2.0.0-rc.139(d6ce48fed16af1391648e7cde9963e93)
+      '@vueuse/core': 15.0.0(vue@3.5.45(typescript@6.0.3))
+      flexsearch: 0.8.212
+      vue: 3.5.45(typescript@6.0.3)
+      vuepress: 2.0.0-rc.32(f9277f588ed805139daa45824e27fe5b)
+    transitivePeerDependencies:
+      - '@vuepress/bundler-rspack'
+      - '@vuepress/bundler-vite'
+      - '@vuepress/bundler-webpack'
+      - typescript
+
   '@vuepress/plugin-git@2.0.0-rc.139(d6ce48fed16af1391648e7cde9963e93)':
     dependencies:
       '@vuepress/helper': 2.0.0-rc.139(d6ce48fed16af1391648e7cde9963e93)
@@ -15692,6 +15720,8 @@ snapshots:
       flatqueue: 3.1.0
 
   flatqueue@3.1.0: {}
+
+  flexsearch@0.8.212: {}
 
   floating-vue@5.4.0(vue@3.5.45(typescript@6.0.3)):
     dependencies:

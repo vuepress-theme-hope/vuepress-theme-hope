@@ -8,7 +8,7 @@ tag:
   - Search
 ---
 
-The theme adds built-in support for [`@vuepress/plugin-docsearch`][docsearch], [@vuepress/plugin-meilisearch][meilisearch], [@vuepress/plugin-slimsearch][slimsearch], [@vuepress/plugin-orama][orama] and [`@vuepress/plugin-search`][search]. Just install the plugin you want and config it, you will get a search box in navbar.
+The theme adds built-in support for [`@vuepress/plugin-docsearch`][docsearch], [@vuepress/plugin-meilisearch][meilisearch], [@vuepress/plugin-slimsearch][slimsearch], [@vuepress/plugin-orama][orama], [`@vuepress/plugin-flexsearch`][flexsearch] and [`@vuepress/plugin-search`][search]. Just install the plugin you want and config it, you will get a search box in navbar.
 
 <!-- more -->
 
@@ -301,6 +301,55 @@ See [plugin docs][slimsearch] for available options.
 ::: info More
 
 See [plugin docs][orama] for available options.
+
+:::
+
+## Use `@vuepress/plugin-flexsearch`
+
+1. Install `@vuepress/plugin-flexsearch`
+
+   ::: code-tabs#shell
+
+   @tab pnpm
+
+   ```bash
+   pnpm add -D @vuepress/plugin-flexsearch@next
+   ```
+
+   @tab yarn
+
+   ```bash
+   yarn add -D @vuepress/plugin-flexsearch@next
+   ```
+
+   @tab npm
+
+   ```bash
+   npm i -D @vuepress/plugin-flexsearch@next
+   ```
+
+   :::
+
+1. Customize `plugins.flexsearch` in theme options.
+
+   You can set `plugins.flexsearch` to `true` to enable it directly, or set it to an object to customize the plugin.
+
+   ```ts twoslash {5-8} title=".vuepress/theme.ts"
+   import { hopeTheme } from "vuepress-theme-hope";
+
+   export default hopeTheme({
+     plugins: {
+       flexsearch: {
+         // plugin options here
+       },
+       // or flexsearch: true,
+     },
+   });
+   ```
+
+::: info More
+
+See [plugin docs][flexsearch] for available options.
 
 :::
 
@@ -649,6 +698,7 @@ See [plugin docs][search] for available options.
 :::
 
 [docsearch]: https://ecosystem.vuejs.press/plugins/search/docsearch.html
+[flexsearch]: https://ecosystem.vuejs.press/plugins/search/flexsearch.html
 [meilisearch]: https://ecosystem.vuejs.press/plugins/search/meilisearch.html
 [orama]: https://ecosystem.vuejs.press/plugins/search/orama.html
 [search]: https://ecosystem.vuejs.press/plugins/search/search.html

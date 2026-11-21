@@ -120,6 +120,7 @@ VuePress 在一定程度上扩展了 Markdown 语法，但仍然缺少一些常�
 - 搜索功能
   - [基于 docsearch 的爬虫搜索支持](../feature/search.md#use-vuepress-plugin-docsearch)
   - [基于 slimsearch 的强大客户端搜索支持](../feature/search.md#use-vuepress-plugin-slimsearch)。
+  - [基于 flexsearch 的可定制客户端搜索支持](../feature/search.md#use-vuepress-plugin-flexsearch)。
 
 - [页面加密](../feature/encrypt.md) 功能来限制访问。
 
