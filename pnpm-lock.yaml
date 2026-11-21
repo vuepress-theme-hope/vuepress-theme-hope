@@ -180,8 +180,8 @@ catalogs:
       specifier: 1.1.0
       version: 1.1.0
     '@markmap/render':
-      specifier: 1.1.0
-      version: 1.1.0
+      specifier: 1.1.1
+      version: 1.1.1
     '@markmap/toolbar':
       specifier: 1.1.0
       version: 1.1.0
@@ -566,7 +566,7 @@ importers:
         version: 1.1.0(supports-color@10.2.2)
       '@markmap/render':
         specifier: 'catalog:'
-        version: 1.1.0
+        version: 1.1.1
       '@markmap/toolbar':
         specifier: 'catalog:'
         version: 1.1.0(@markmap/view@1.1.0)
@@ -647,7 +647,7 @@ importers:
         version: 1.1.0(supports-color@10.2.2)
       '@markmap/render':
         specifier: 'catalog:'
-        version: 1.1.0
+        version: 1.1.1
       '@markmap/toolbar':
         specifier: 'catalog:'
         version: 1.1.0(@markmap/view@1.1.0)
@@ -855,7 +855,7 @@ importers:
         version: 1.1.0(supports-color@10.2.2)
       '@markmap/render':
         specifier: 'catalog:'
-        version: 1.1.0
+        version: 1.1.1
       '@markmap/toolbar':
         specifier: 'catalog:'
         version: 1.1.0(@markmap/view@1.1.0)
@@ -888,7 +888,7 @@ importers:
         version: 2.0.0-rc.139(d6ce48fed16af1391648e7cde9963e93)
       '@vuepress/plugin-markdown-chart':
         specifier: catalog:vuepress
-        version: 2.0.0-rc.139(721adf339e629b19a054d5b97a6a8882)
+        version: 2.0.0-rc.139(4cc12d96c849a000165d3840410dedc3)
       '@vuepress/plugin-revealjs':
         specifier: catalog:vuepress
         version: 2.0.0-rc.139(55cfb6758bcf0cc876b7803a6bf7acdd)
@@ -2556,6 +2556,9 @@ packages:
   '@markmap/core@1.1.0':
     resolution: {integrity: sha512-KsPt8dOAiMjNrFA7u3AmFTqiynbX30kvMCLu/66xf6qfylYVgIjSJgV6cpTWvouZYA5VtwWyLMZMwMZHo0NB3w==}
 
+  '@markmap/core@1.1.1':
+    resolution: {integrity: sha512-413Cg3My6YnHf55AnnwGpJ4SR2JxYU3VrbPbhAI20IxITRFszoFwpSYXZ7Jy3w2K05ZAoOTEjJXibkG32aUs6g==}
+
   '@markmap/parse@1.1.0':
     resolution: {integrity: sha512-Gr5LOtr4pwN2sISMVolCUdSfbCW74/n2z5+WVfMNlv8Djuna1BHNwg0tSpBE17C6SM9i0SEUi3oZa6e5J3IC8A==}
 
@@ -2564,6 +2567,9 @@ packages:
 
   '@markmap/render@1.1.0':
     resolution: {integrity: sha512-nHHLi+YsCJISrW3Ge+M+IWU+l3dUIi2kUHQBG6qwVGjyRqWsStEQ5Yz9wjXyXTOmoIX5gJHzJ3H6Ks5tM3kfmw==}
+
+  '@markmap/render@1.1.1':
+    resolution: {integrity: sha512-nzSKwAdeuPPB2J0QOSi4dPyyNpiz9LocaCZRviayKDtpjgsMrFSgWm8mBOHKcCfDGYzTHWEtB1TnF0F+AVVcKg==}
 
   '@markmap/toolbar@1.1.0':
     resolution: {integrity: sha512-YCH7OJD3EMEbeXg2loj49GNIwe/TWhPczIHVi5eEIGLZjBhiEa7IzYyVY/gLHLZ+TLeHf1oQMUMYnkcf4ScYGQ==}
@@ -11406,6 +11412,11 @@ snapshots:
       '@types/hast': 3.0.5
       '@types/mdast': 4.0.4
 
+  '@markmap/core@1.1.1':
+    dependencies:
+      '@types/hast': 3.0.5
+      '@types/mdast': 4.0.4
+
   '@markmap/parse@1.1.0(supports-color@10.2.2)':
     dependencies:
       '@markmap/core': 1.1.0
@@ -11430,6 +11441,11 @@ snapshots:
   '@markmap/render@1.1.0':
     dependencies:
       '@markmap/core': 1.1.0
+      d3-flextree: 2.1.2
+
+  '@markmap/render@1.1.1':
+    dependencies:
+      '@markmap/core': 1.1.1
       d3-flextree: 2.1.2
 
   '@markmap/toolbar@1.1.0(@markmap/view@1.1.0)':
@@ -13555,6 +13571,32 @@ snapshots:
       '@mdit/helper': 1.2.1(markdown-it@15.0.3)
       '@vuepress/helper': 2.0.0-rc.139(d6ce48fed16af1391648e7cde9963e93)
       vuepress: 2.0.0-rc.32(f9277f588ed805139daa45824e27fe5b)
+    transitivePeerDependencies:
+      - '@vuepress/bundler-rspack'
+      - '@vuepress/bundler-vite'
+      - '@vuepress/bundler-webpack'
+      - markdown-it
+      - typescript
+
+  '@vuepress/plugin-markdown-chart@2.0.0-rc.139(4cc12d96c849a000165d3840410dedc3)':
+    dependencies:
+      '@mdit/helper': 1.2.1(markdown-it@15.0.3)
+      '@mdit/plugin-container': 2.2.0(markdown-it@15.0.3)
+      '@mdit/plugin-plantuml': 2.1.0(markdown-it@15.0.3)
+      '@vuepress/helper': 2.0.0-rc.139(d6ce48fed16af1391648e7cde9963e93)
+      '@vueuse/core': 15.0.0(vue@3.5.45(typescript@6.0.3))
+      vue: 3.5.45(typescript@6.0.3)
+      vuepress: 2.0.0-rc.32(f9277f588ed805139daa45824e27fe5b)
+    optionalDependencies:
+      '@markmap/parse': 1.1.0(supports-color@10.2.2)
+      '@markmap/plugin-math': 1.1.0(supports-color@10.2.2)
+      '@markmap/render': 1.1.1
+      '@markmap/toolbar': 1.1.0(@markmap/view@1.1.0)
+      '@markmap/view': 1.1.0
+      chart.js: 4.6.1
+      echarts: 6.1.0
+      flowchart.ts: 4.0.0
+      mermaid: 12.3.0
     transitivePeerDependencies:
       - '@vuepress/bundler-rspack'
       - '@vuepress/bundler-vite'

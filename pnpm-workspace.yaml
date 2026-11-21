@@ -11,7 +11,7 @@ allowBuilds:
 catalog:
   "@markmap/parse": 1.1.0
   "@markmap/plugin-math": 1.1.0
-  "@markmap/render": 1.1.0
+  "@markmap/render": 1.1.1
   "@markmap/toolbar": 1.1.0
   "@markmap/view": 1.1.0
   "@mathjax/src": 4.1.3
