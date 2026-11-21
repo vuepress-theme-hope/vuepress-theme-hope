@@ -51,7 +51,7 @@
     "rimraf": "6.1.4",
     "serve": "14.2.8",
     "stylelint": "17.16.0",
-    "stylelint-config-hope": "12.1.0",
+    "stylelint-config-hope": "13.0.0",
     "tsdown": "0.23.7",
     "typescript": "catalog:",
     "unrun": "0.3.1",
