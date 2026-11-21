@@ -118,8 +118,7 @@ export default theme(
         resolveLinkPath: false,
       },
       layout: true,
-      // Use KaTeX to avoid the upstream rc.138 MathJax SSR retry error; revisit when fixed.
-      math: { type: "katex" },
+      math: true,
       mark: true,
       preview: true,
       revealjs: {
