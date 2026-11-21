@@ -7,7 +7,10 @@ import type { MarkdownHintPluginOptions } from "@vuepress/plugin-markdown-hint";
 import type { MarkdownImagePluginOptions } from "@vuepress/plugin-markdown-image";
 import type { MarkdownIncludePluginOptions } from "@vuepress/plugin-markdown-include";
 import type { MarkdownMathPluginOptions } from "@vuepress/plugin-markdown-math";
-import type { MarkdownStylizePluginOptions } from "@vuepress/plugin-markdown-stylize";
+import type {
+  MarkdownStylizePluginOptions,
+  MarkdownStylizeWindowStyle,
+} from "@vuepress/plugin-markdown-stylize";
 import type { MarkdownTabPluginOptions } from "@vuepress/plugin-markdown-tab";
 import type { PrismjsPluginOptions } from "@vuepress/plugin-prismjs";
 import type { RevealJsPluginOptions } from "@vuepress/plugin-revealjs";
@@ -112,6 +115,21 @@ export interface ThemeMarkdownOptions
    * 是否启用预览支持
    */
   preview?: boolean;
+
+  /**
+   * Whether to enable window container support
+   *
+   * Set it to `"mac"` or `"windows"` to specify the default window style.
+   *
+   * 是否启用窗口容器支持。
+   *
+   * 设置为 `"mac"` 或 `"windows"` 可指定默认的窗口样式。
+   *
+   * @default false
+   * @see https://ecosystem.vuejs.press/plugins/markdown/markdown-stylize.html#window
+   * @see https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-stylize.html#window
+   */
+  window?: MarkdownStylizeWindowStyle | boolean;
 
   /**
    * Customizing token stylize

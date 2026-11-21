@@ -69,6 +69,7 @@ export const KNOWN_THEME_MARKDOWN_OPTIONS = [
   "mark",
   "spoiler",
   "steps",
+  "window",
   "stylize",
 
   // plugin-markdown-tab

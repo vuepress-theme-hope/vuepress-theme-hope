@@ -22,6 +22,7 @@ The theme provides the following features to stylize your content:
 - Superscript and Subscript
 - Spoiler: Hide spoiler content
 - Steps: Show content as progressive steps
+- Window: Display content in a window with a titlebar
 - Stylize: Customizable token stylizer
 
 <!-- more -->
@@ -100,6 +101,16 @@ VuePress Theme Hope is !!powerful!!.
 :::
 
 - [View Detail](./steps.md)
+
+### Window
+
+::: window title="Hello World"
+
+The content of the window supports any Markdown syntax.
+
+:::
+
+- [View Detail](./window.md)
 
 ### Stylize
 

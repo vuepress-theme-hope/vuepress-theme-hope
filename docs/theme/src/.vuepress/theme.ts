@@ -160,6 +160,7 @@ export default theme(
       tabs: true,
       tasklist: true,
       vPre: true,
+      window: true,
 
       highlighter: {
         type: "shiki",
