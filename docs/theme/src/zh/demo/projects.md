@@ -293,9 +293,9 @@ docs:
 
   - name: Wwiot-Camerasys
     desc: Wwiot-Camerasys是一个意想不到的视频监控平台
-    logo: https://doc.wzciot.site/img/fastRequestnew.svg
-    url: https://doc.wzciot.site
-    repo: https://wzciot.site
+    logo: https://doc.aigdp.top/img/fastRequestnew.svg
+    url: https://doc.aigdp.top
+    repo: https://aigdp.top
     preview: /assets/image/wwiot-camerasys-home.jpg
 
   - name: Warm-Flow
@@ -331,6 +331,13 @@ docs:
     url: https://handbook.fortinet.com.cn/
     repo: https://github.com/Cyndice/fortigate_docs_fortios7_vue
     preview: /images/preview.png
+
+  - name: Jiang's Blog
+    desc: 专注 Web 开发，记录从 0 到 1 的技术进阶
+    logo: https://picui.ogmua.cn/s1/2026/10/09/6ac90f4273a80.webp
+    url: https://gingesmallfish.github.io/
+    repo: https://github.com/Gingesmallfish/gingesmallfish.github.io.git
+    preview: https://picui.ogmua.cn/s1/2026/10/09/6ac90f4273a80.webp
 
 portfolios:
   - name: 尚程
