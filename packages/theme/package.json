@@ -136,6 +136,7 @@
     "@vuepress/plugin-rtl": "catalog:vuepress",
     "@vuepress/plugin-sass-palette": "catalog:vuepress",
     "@vuepress/plugin-seo": "catalog:vuepress",
+    "@vuepress/plugin-share": "catalog:vuepress",
     "@vuepress/plugin-shiki": "catalog:vuepress",
     "@vuepress/plugin-sitemap": "catalog:vuepress",
     "@vuepress/plugin-theme-data": "catalog:vuepress",

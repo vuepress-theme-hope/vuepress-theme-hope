@@ -38,6 +38,7 @@ export const PLUGIN_CHECKLIST: [name: string, options: string | string[], hint?:
   ["@vuepress/plugin-rtl", "", 'Set "rtl: true" in the needed theme locales.'],
   ["@vuepress/plugin-search", "plugins.search"],
   ["@vuepress/plugin-seo", "plugins.seo"],
+  ["@vuepress/plugin-share", "plugins.share"],
   ["@vuepress/plugin-shiki", 'markdown.highlighter: { type: "shiki", ... your options }'],
   ["@vuepress/plugin-slimsearch", "plugins.slimsearch"],
   ["@vuepress/plugin-sitemap", "plugins.sitemap"],

@@ -18,6 +18,7 @@ import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
 import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
 import type { SeoPluginOptions } from "@vuepress/plugin-seo";
+import type { SharePluginOptions } from "@vuepress/plugin-share";
 import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
 import type { SlimSearchPluginOptions } from "@vuepress/plugin-slimsearch";
 import type { WatermarkPluginOptions } from "@vuepress/plugin-watermark";
@@ -318,6 +319,16 @@ export interface ThemePluginsOptions extends DeprecatedThemePluginsOptions {
    * @see https://ecosystem.vuejs.press/zh/plugins/seo/seo/config.html
    */
   seo?: Omit<SeoPluginOptions, "hostname" | "author"> | boolean;
+
+  /**
+   * Share plugin options
+   *
+   * 分享插件选项
+   *
+   * @see https://ecosystem.vuejs.press/plugins/features/share.html
+   * @see https://ecosystem.vuejs.press/zh/plugins/features/share.html
+   */
+  share?: SharePluginOptions | false;
 
   /**
    * Sitemap plugin options
