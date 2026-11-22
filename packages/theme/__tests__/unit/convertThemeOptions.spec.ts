@@ -18,6 +18,7 @@ interface LegacyComponentOptions {
 interface LegacyPluginOptions {
   components?: LegacyComponentOptions;
   media?: MediaPluginOptions | false;
+  share?: Record<string, unknown> | false;
 }
 
 const convert = (pluginOptions: LegacyPluginOptions): LegacyPluginOptions =>
@@ -153,6 +154,102 @@ describe("should convert media components to media plugin options", () => {
   it("should be idempotent", () => {
     const themeOptions: Record<string, unknown> = {
       plugins: { components: { components: ["ArtPlayer", "Badge", "BiliBili"] } },
+    };
+
+    convertThemeOptions(themeOptions);
+
+    const firstResult = structuredClone(themeOptions);
+
+    convertThemeOptions(themeOptions);
+
+    expect(themeOptions).toStrictEqual(firstResult);
+  });
+});
+
+describe("should convert the share component to the share plugin options", () => {
+  it("should convert the share component", () => {
+    const { components, share } = convert({ components: { components: ["Share"] } });
+
+    // The converted component is removed from the component plugin options
+    expect(components).toStrictEqual({});
+    expect(share).toStrictEqual({});
+  });
+
+  it("should keep the components that are not converted", () => {
+    const { components, share } = convert({
+      components: { components: ["Badge", "Share", "VPCard"] },
+    });
+
+    expect(components).toStrictEqual({ components: ["Badge", "VPCard"] });
+    expect(share).toStrictEqual({});
+  });
+
+  it("should convert the legacy share options", () => {
+    const { components, share } = convert({
+      components: {
+        components: ["Share"],
+        componentOptions: {
+          share: {
+            services: ["twitter", { name: "mastodon", link: "[url]", shape: "<svg />" }],
+            twitterUserName: "vuejs",
+          },
+        },
+      },
+    });
+
+    expect(share).toStrictEqual({
+      services: ["x", { name: "mastodon", link: "[url]", shape: "<svg />" }],
+      xUserName: "vuejs",
+    });
+    expect(components?.componentOptions).toStrictEqual({});
+  });
+
+  it("should keep the user share options", () => {
+    const { share } = convert({
+      components: {
+        components: ["Share"],
+        componentOptions: { share: { services: ["twitter"], twitterUserName: "vuejs" } },
+      },
+      share: { services: ["x", "weibo"], xUserName: "vuepress" },
+    });
+
+    expect(share).toStrictEqual({ services: ["x", "weibo"], xUserName: "vuepress" });
+  });
+
+  it("should not convert the share component when the share plugin is disabled", () => {
+    const { components, share } = convert({
+      components: { components: ["Share", "Badge"] },
+      share: false,
+    });
+
+    expect(share).toBe(false);
+    expect(components).toStrictEqual({ components: ["Share", "Badge"] });
+  });
+
+  it("should accept the legacy array form of components", () => {
+    const { components, share } = convert({
+      components: ["Share", "Badge"] as unknown as LegacyComponentOptions,
+    });
+
+    expect(components).toStrictEqual({ components: ["Badge"] });
+    expect(share).toStrictEqual({});
+  });
+
+  it("should not touch other components", () => {
+    const { components, share } = convert({ components: { components: ["Badge"] } });
+
+    expect(components).toStrictEqual({ components: ["Badge"] });
+    expect(share).toBeUndefined();
+  });
+
+  it("should be idempotent", () => {
+    const themeOptions: Record<string, unknown> = {
+      plugins: {
+        components: {
+          components: ["Share", "Badge"],
+          componentOptions: { share: { services: ["twitter"] } },
+        },
+      },
     };
 
     convertThemeOptions(themeOptions);

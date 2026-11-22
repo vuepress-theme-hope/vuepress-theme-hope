@@ -280,6 +280,68 @@ const convertComponentOptions = (pluginOptions: Record<string, unknown>): void =
 };
 
 /**
+ * Move the `Share` component of `vuepress-plugin-components` to `@vuepress/plugin-share`
+ *
+ * 将 `vuepress-plugin-components` 的 `Share` 组件迁移至 `@vuepress/plugin-share`
+ *
+ * @deprecated You should use V2 standard options and avoid using it
+ * @param pluginOptions - Theme plugin options
+ */
+const convertShareComponent = (pluginOptions: Record<string, unknown>): void => {
+  const componentsOptions = pluginOptions.components;
+
+  if (!isPlainObject<Record<string, unknown>>(componentsOptions)) return;
+
+  const componentNames = isArray(componentsOptions.components)
+    ? (componentsOptions.components as string[])
+    : [];
+
+  if (!componentNames.includes("Share")) return;
+  // Keep the share plugin disabled when the user disables it
+  if ("share" in pluginOptions && !isPlainObject(pluginOptions.share)) return;
+
+  const shareOptions: Record<string, unknown> = isPlainObject<Record<string, unknown>>(
+    pluginOptions.share,
+  )
+    ? pluginOptions.share
+    : {};
+
+  const componentGlobalOptions = componentsOptions.componentOptions;
+
+  if (isPlainObject<Record<string, unknown>>(componentGlobalOptions)) {
+    const { share: legacyShareOptions } = componentGlobalOptions;
+
+    if (isPlainObject<Record<string, unknown>>(legacyShareOptions)) {
+      if (isArray(legacyShareOptions.services) && !("services" in shareOptions)) {
+        shareOptions.services = (legacyShareOptions.services as string[]).map((service) =>
+          service === "twitter" ? "x" : service,
+        );
+      }
+
+      if (typeof legacyShareOptions.twitterUserName === "string" && !("xUserName" in shareOptions))
+        shareOptions.xUserName = legacyShareOptions.twitterUserName;
+
+      delete componentGlobalOptions.share;
+    }
+  }
+
+  const restComponents = componentNames.filter((name) => name !== "Share");
+
+  if (restComponents.length) componentsOptions.components = restComponents;
+  else delete componentsOptions.components;
+
+  pluginOptions.share = shareOptions;
+
+  logger.warn(
+    `Share component is removed from ${colors.magenta(
+      "plugins.components",
+    )}, please use ${colors.magenta("plugins.share")} of ${colors.cyan(
+      "@vuepress/plugin-share",
+    )} instead. The component is converted for you.`,
+  );
+};
+
+/**
  * @deprecated You should use V2 standard options and avoid using it
  * @param themeOptions - Theme options
  */
@@ -306,6 +368,7 @@ const covertPluginOptions = (themeOptions: Record<string, unknown>): void => {
   }
 
   convertComponentOptions(pluginOptions);
+  convertShareComponent(pluginOptions);
 
   if (pluginOptions.linksCheck) {
     deprecatedLogger({

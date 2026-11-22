@@ -39,6 +39,7 @@ import { getRevealJsPlugin } from "./revealjs.js";
 import { getRtlPlugin } from "./rtl.js";
 import { getSearchPlugin } from "./search.js";
 import { getSEOPlugin } from "./seo.js";
+import { getSharePlugin } from "./share.js";
 import { getSitemapPlugin } from "./sitemap.js";
 import { getWatermarkPlugin } from "./watermark.js";
 
@@ -121,6 +122,7 @@ export const getPlugins = (
 
     getComponentsPlugin(pluginsOptions.components, compact),
     getMediaPlugin(pluginsOptions.media),
+    getSharePlugin(pluginsOptions.share),
     getActiveHeaderLinksPlugin(pluginsOptions.activeHeaderLinks),
     getCatalogPlugin(pluginsOptions.catalog),
     pluginsOptions.nprogress === false ? null : nprogressPlugin(),
