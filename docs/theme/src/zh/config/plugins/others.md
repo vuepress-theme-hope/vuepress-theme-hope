@@ -36,7 +36,6 @@ tag:
 
 - Badge: 多彩的徽章组件
 - CodePen: 嵌入 CodePen 演示
-- Share: 通过社交媒体分享当前页面
 - StackBlitz: 嵌入 StackBlitz 演示
 - SiteInfo: 显示站点
 - VPBanner: 一个横幅组件
@@ -48,7 +47,7 @@ tag:
 
 ::: tip
 
-媒体组件已迁移至 [`@vuepress/plugin-media`](https://ecosystem.vuejs.press/zh/plugins/features/media.html)。
+媒体组件已迁移至 [`@vuepress/plugin-media`](https://ecosystem.vuejs.press/zh/plugins/features/media.html)（`plugins.media`），分享组件已迁移至 [`@vuepress/plugin-share`](https://ecosystem.vuejs.press/zh/plugins/features/share.html)（`plugins.share`）。
 
 :::
 
@@ -122,6 +121,14 @@ tag:
 
 插件选项请参阅 [seo 插件文档][seo-config]。
 
+@`share`
+
+控制 `@vuepress/plugin-share`，为页面提供分享按钮。
+
+该插件默认不启用，你需要设置 `plugins.share` 并传入插件选项来启用它。设置为 `false` 可保持禁用。
+
+插件选项请参阅 [share 插件文档][share-config]，使用方法请参阅 [分享](../../guide/feature/share.md)。
+
 @`sitemap` enabled-by-default=Yes
 
 控制 `@vuepress/plugin-sitemap`，为网站自动生成 Sitemap。
@@ -148,5 +155,6 @@ tag:
 [reading-time-config]: https://ecosystem.vuejs.press/zh/plugins/development/reading-time.html#选项
 [redirect-config]: https://ecosystem.vuejs.press/zh/plugins/tools/redirect.html#选项
 [seo-config]: https://ecosystem.vuejs.press/zh/plugins/seo/seo/config.html
+[share-config]: https://ecosystem.vuejs.press/zh/plugins/features/share.html#选项
 [sitemap-config]: https://ecosystem.vuejs.press/zh/plugins/seo/sitemap/config.html
 [watermark-config]: https://ecosystem.vuejs.press/zh/plugins/features/watermark.html

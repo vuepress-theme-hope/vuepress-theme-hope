@@ -15,7 +15,6 @@ Available components:
 
 - Badge: Colorful badge component
 - CodePen: Embedded CodePen demo
-- Share: Sharing current page with social medias
 - StackBlitz: Embedded StackBlitz demo
 - SiteInfo: Display sites
 - VPBanner: A banner component
@@ -25,7 +24,7 @@ To enable components, you should set `plugins.components.components` with an arr
 
 ::: tip
 
-Media components are provided by [`@vuepress/plugin-media`](../feature/media.md), which are enabled via `plugins.media`.
+Media components are provided by [`@vuepress/plugin-media`](../feature/media.md), which are enabled via `plugins.media`. The Share component is provided by [`@vuepress/plugin-share`](../feature/share.md), which is enabled via `plugins.share`.
 
 :::
 
@@ -37,7 +36,7 @@ By default, `<Badge />` is available to align with `@vuepress/theme-default`.
 
 :::
 
-```ts twoslash {7-15} title=".vuepress/theme.ts"
+```ts twoslash {7-14} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default hopeTheme({
@@ -47,7 +46,6 @@ export default hopeTheme({
       components: [
         "Badge",
         "CodePen",
-        "Share",
         "SiteInfo",
         "StackBlitz",
         "VPBanner",
@@ -80,12 +78,6 @@ See <ProjectLink name="components" path="/guide/utilities/badge.html">Badge</Pro
 <!-- @include: @components/guide/content/site-info.md#demo -->
 
 See <ProjectLink name="components" path="/guide/content/site-info.html">SiteInfo</ProjectLink> page for available props.
-
-### Share
-
-<!-- @include: @components/guide/utilities/share.md#demo -->
-
-See <ProjectLink name="components" path="/guide/utilities/share.html">Share</ProjectLink> page for available props.
 
 ## Code
 
