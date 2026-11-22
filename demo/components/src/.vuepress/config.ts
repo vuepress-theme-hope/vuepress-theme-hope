@@ -31,7 +31,6 @@ export default defineUserConfig({
       "/demo/",
       "/demo/badge",
       "/demo/code-pen",
-      "/demo/share",
       "/demo/site-info",
       "/demo/stack-blitz",
       "/demo/vp-banner",
@@ -41,7 +40,7 @@ export default defineUserConfig({
 
   plugins: [
     componentsPlugin({
-      components: ["Badge", "CodePen", "Share", "SiteInfo", "StackBlitz", "VPBanner", "VPCard"],
+      components: ["Badge", "CodePen", "SiteInfo", "StackBlitz", "VPBanner", "VPCard"],
     }),
   ],
 });

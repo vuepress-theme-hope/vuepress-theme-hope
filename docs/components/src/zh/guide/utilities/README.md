@@ -9,5 +9,3 @@ index: false
 ## 组件 {#components}
 
 - [Badge](./badge.md): 徽章
-
-- [Share](share.md): 分享组件

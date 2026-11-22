@@ -1,5 +1,4 @@
 import { theme } from "@docs/shared";
-import { AVAILABLE_SERVICES } from "vuepress-plugin-components";
 
 // The theme wrapper is located in <root>/docs/shared/src/theme-wrapper.ts
 export default theme("components", {
@@ -46,13 +45,7 @@ export default theme("components", {
 
   plugins: {
     components: {
-      components: ["Badge", "CodePen", "Share", "SiteInfo", "StackBlitz", "VPBanner", "VPCard"],
-
-      componentOptions: {
-        share: {
-          services: AVAILABLE_SERVICES,
-        },
-      },
+      components: ["Badge", "CodePen", "SiteInfo", "StackBlitz", "VPBanner", "VPCard"],
     },
   },
 });
