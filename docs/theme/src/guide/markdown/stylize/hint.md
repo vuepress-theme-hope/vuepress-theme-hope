@@ -157,3 +157,15 @@ const a = 1;
 :::
 
 ::::
+
+:::: preview Container without title
+
+::: tip {no-title}
+
+An untitled tip container.
+
+:::
+
+::::
+
+`{no-title}` is ignored by the `details` container, which always needs a summary.
