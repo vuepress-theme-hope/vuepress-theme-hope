@@ -248,6 +248,16 @@ type SidebarSorter =
 
 是否显示变更日志。
 
+@`share` type=`false | 'left' | 'right'` default=`'right'`
+
+分享按钮在页面元信息区域中的显示位置。仅在启用 `@vuepress/plugin-share` 时生效。
+
+- `false`: 禁用按钮
+- `'left'`: 显示在左下角
+- `'right'`: 显示在右下角
+
+参考：[功能 → 分享 → 页面元信息按钮](../../guide/feature/share.md#page-meta-buttons)。
+
 @`editLink` type=boolean default=`true`
 
 是否展示编辑此页链接。

@@ -150,6 +150,13 @@ export interface ThemeNormalPageFrontmatter extends ThemeBasePageFrontmatter {
   editLink?: boolean;
 
   /**
+   * Whether to display share buttons
+   *
+   * 是否显示分享按钮
+   */
+  share?: boolean;
+
+  /**
    * Previous page link
    *
    * 上一页链接

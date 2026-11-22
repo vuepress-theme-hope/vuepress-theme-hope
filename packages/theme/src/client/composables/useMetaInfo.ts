@@ -12,6 +12,8 @@ export interface MetaInfo {
   contributors: ComputedRef<"content" | "meta" | boolean>;
   /** Whether to show "Last updated" or not */
   lastUpdated: ComputedRef<boolean>;
+  /** Where to display the share buttons, or `false` to hide them / 分享按钮的显示位置，`false` 表示隐藏 */
+  share: ComputedRef<false | "left" | "right">;
 }
 
 export const useMetaInfo = (): MetaInfo => {
@@ -39,9 +41,21 @@ export const useMetaInfo = (): MetaInfo => {
     () => frontmatter.value.lastUpdated ?? themeLocale.value.lastUpdated ?? true,
   );
 
+  const share = computed<false | "left" | "right">(() => {
+    const localeOption = themeLocale.value.share ?? "right";
+    const option = frontmatter.value.share ?? localeOption;
+
+    if (option === false) return false;
+    // `true` only comes from frontmatter, which keeps the placement configured by the theme
+    if (option === true) return localeOption === false ? "right" : localeOption;
+
+    return option;
+  });
+
   return {
     changelog,
     contributors,
     lastUpdated,
+    share,
   };
 };

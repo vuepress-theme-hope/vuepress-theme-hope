@@ -128,6 +128,10 @@ Whether to show contributors.
 
 Whether to display changelog.
 
+@`share` type=boolean default="value in theme options"
+
+Whether to display share buttons. `true` shows them at the position configured by the `share` theme option, falling back to the bottom right when that option is disabled.
+
 @`prev` type=`AutoLinkConfig | string | false`
 
 Previous article link.

@@ -131,6 +131,10 @@ tag:
 
 是否显示变更日志。
 
+@`share` type=boolean default="主题选项中的值"
+
+是否显示分享按钮。`true` 会在 `share` 主题选项配置的位置显示，当该选项为 `false` 时回落到右下角。
+
 @`prev` type=`AutoLinkConfig | string | false`
 
 上一篇文章链接。
