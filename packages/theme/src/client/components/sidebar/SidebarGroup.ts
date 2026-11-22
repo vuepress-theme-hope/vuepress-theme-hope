@@ -36,7 +36,9 @@ export default defineComponent({
     },
   },
 
-  emits: ["toggle"],
+  emits: {
+    toggle: (open: boolean): boolean => typeof open === "boolean",
+  },
 
   setup(props, { emit }) {
     const route = useRoute();
@@ -71,8 +73,13 @@ export default defineComponent({
               ? {
                   type: "button",
                   onClick: (): void => {
+                    // The group may be open because of the `expanded` option while
+                    // `open` is still false, so the next state must be computed from
+                    // the rendered state instead of the `open` prop.
+                    const nextOpen = !shouldOpen.value;
+
                     hasBeenToggled.value = true;
-                    emit("toggle");
+                    emit("toggle", nextOpen);
                   },
                 }
               : {}),

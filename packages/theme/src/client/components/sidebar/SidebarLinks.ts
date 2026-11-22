@@ -31,8 +31,9 @@ export default defineComponent({
     const routePath = useRoutePath();
     const openGroupIndex = ref(-1);
 
-    const toggleGroup = (index: number): void => {
-      openGroupIndex.value = index === openGroupIndex.value ? -1 : index;
+    const toggleGroup = (index: number, open: boolean): void => {
+      if (open) openGroupIndex.value = index;
+      else if (index === openGroupIndex.value) openGroupIndex.value = -1;
     };
 
     watchImmediate(
@@ -56,8 +57,8 @@ export default defineComponent({
               ? h(SidebarGroup, {
                   config,
                   open: index === openGroupIndex.value,
-                  onToggle: () => {
-                    toggleGroup(index);
+                  onToggle: (open: boolean) => {
+                    toggleGroup(index, open);
                   },
                 })
               : h(SidebarChild, { config }),
