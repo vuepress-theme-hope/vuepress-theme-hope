@@ -125,7 +125,7 @@ tag:
 
 控制 `@vuepress/plugin-share`，为页面提供分享按钮。
 
-该插件默认不启用，你需要设置 `plugins.share` 并传入插件选项来启用它。设置为 `false` 可保持禁用。
+该插件默认不启用。将 `plugins.share` 设为 `true` 可使用默认分享服务启用它，或传入插件选项来使用自定义配置。设置为 `false` 可保持禁用。
 
 插件选项请参阅 [share 插件文档][share-config]，使用方法请参阅 [分享](../../guide/feature/share.md)。
 

@@ -8,8 +8,9 @@ import type { Plugin } from "vuepress/core";
  *
  * 解析 `@vuepress/plugin-share` 的选项
  *
- * @param share - User options / 用户选项
+ * @param share - User options, or `true` to use the default share services / 用户选项，或 `true`
+ *   表示使用默认分享服务
  * @returns Share plugin instance or `null` / 分享插件实例或 `null`
  */
-export const getSharePlugin = (share?: SharePluginOptions | false): Plugin | null =>
-  isPlainObject(share) ? sharePlugin(share) : null;
+export const getSharePlugin = (share?: SharePluginOptions | boolean): Plugin | null =>
+  share ? sharePlugin(isPlainObject(share) ? share : {}) : null;
