@@ -129,7 +129,7 @@ Check [seo plugin docs][seo-config] for available plugin options.
 
 Controls `@vuepress/plugin-share` which provides share buttons for pages.
 
-The plugin is disabled by default, you need to set `plugins.share` with plugin options to enable it. Setting it to `false` keeps it disabled.
+The plugin is disabled by default. Set `plugins.share` to `true` to enable it with the default share services, or pass plugin options to enable it with custom options. Setting it to `false` keeps it disabled.
 
 Check [share plugin docs][share-config] for available plugin options, and [Share](../../guide/feature/share.md) for instructions.
 

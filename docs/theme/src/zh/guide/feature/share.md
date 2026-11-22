@@ -19,14 +19,14 @@ VuePress Theme Hope 通过 [`@vuepress/plugin-share`][share] 允许你为页面�
 
 ## 启用功能 {#enable-feature}
 
-该插件默认不启用，你需要在主题选项中设置 `plugins.share` 来启用它:
+该插件默认不启用。将 `plugins.share` 设为 `true` 可使用默认分享服务启用它，或传入插件选项来自定义分享服务:
 
 ```ts twoslash {5} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default hopeTheme({
   plugins: {
-    share: {},
+    share: true,
   },
 });
 ```

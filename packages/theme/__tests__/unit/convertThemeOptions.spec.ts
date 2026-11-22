@@ -18,7 +18,7 @@ interface LegacyComponentOptions {
 interface LegacyPluginOptions {
   components?: LegacyComponentOptions;
   media?: MediaPluginOptions | false;
-  share?: Record<string, unknown> | false;
+  share?: Record<string, unknown> | boolean;
 }
 
 const convert = (pluginOptions: LegacyPluginOptions): LegacyPluginOptions =>
@@ -214,6 +214,19 @@ describe("should convert the share component to the share plugin options", () =>
     });
 
     expect(share).toStrictEqual({ services: ["x", "weibo"], xUserName: "vuepress" });
+  });
+
+  it("should convert the share component when the share plugin is enabled with a boolean", () => {
+    const { components, share } = convert({
+      components: {
+        components: ["Share"],
+        componentOptions: { share: { services: ["twitter"], twitterUserName: "vuejs" } },
+      },
+      share: true,
+    });
+
+    expect(share).toStrictEqual({ services: ["x"], xUserName: "vuejs" });
+    expect(components?.componentOptions).toStrictEqual({});
   });
 
   it("should not convert the share component when the share plugin is disabled", () => {

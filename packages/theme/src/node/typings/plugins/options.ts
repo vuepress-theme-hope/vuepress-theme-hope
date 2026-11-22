@@ -323,12 +323,16 @@ export interface ThemePluginsOptions extends DeprecatedThemePluginsOptions {
   /**
    * Share plugin options
    *
+   * Set it to `true` to enable the plugin with the default share services.
+   *
    * 分享插件选项
+   *
+   * 设置为 `true` 使用默认分享服务启用插件。
    *
    * @see https://ecosystem.vuejs.press/plugins/features/share.html
    * @see https://ecosystem.vuejs.press/zh/plugins/features/share.html
    */
-  share?: SharePluginOptions | false;
+  share?: SharePluginOptions | boolean;
 
   /**
    * Sitemap plugin options

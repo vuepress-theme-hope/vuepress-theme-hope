@@ -298,7 +298,7 @@ const convertShareComponent = (pluginOptions: Record<string, unknown>): void => 
 
   if (!componentNames.includes("Share")) return;
   // Keep the share plugin disabled when the user disables it
-  if ("share" in pluginOptions && !isPlainObject(pluginOptions.share)) return;
+  if (pluginOptions.share === false) return;
 
   const shareOptions: Record<string, unknown> = isPlainObject<Record<string, unknown>>(
     pluginOptions.share,

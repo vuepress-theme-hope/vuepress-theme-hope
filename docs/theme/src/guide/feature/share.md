@@ -19,14 +19,14 @@ The plugin registers a global `<Share />` component, which renders share buttons
 
 ## Enable Feature
 
-The plugin is disabled by default, you should set `plugins.share` in theme options to enable it:
+The plugin is disabled by default. Set `plugins.share` to `true` to enable it with the default share services, or pass plugin options to customize them:
 
 ```ts twoslash {5} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default hopeTheme({
   plugins: {
-    share: {},
+    share: true,
   },
 });
 ```
