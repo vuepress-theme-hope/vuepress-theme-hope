@@ -55,7 +55,7 @@ catalogs:
     "@vuepress/plugin-markdown-ext": 2.0.0-rc.139
     "@vuepress/plugin-markdown-field": 2.0.0-rc.139
     "@vuepress/plugin-markdown-file-tree": 2.0.0-rc.139
-    "@vuepress/plugin-markdown-hint": 2.0.0-rc.139
+    "@vuepress/plugin-markdown-hint": 2.0.0-rc.140
     "@vuepress/plugin-markdown-image": 2.0.0-rc.139
     "@vuepress/plugin-markdown-include": 2.0.0-rc.139
     "@vuepress/plugin-markdown-math": 2.0.0-rc.139
@@ -83,7 +83,7 @@ catalogs:
     "@vuepress/plugin-theme-data": 2.0.0-rc.138
     "@vuepress/plugin-watermark": 2.0.0-rc.139
     "@vuepress/shiki-twoslash": 2.0.0-rc.139
-    "@vuepress/theme-default": 2.0.0-rc.139
+    "@vuepress/theme-default": 2.0.0-rc.140
     vuepress: 2.0.0-rc.32
 
 peerDependencyRules:

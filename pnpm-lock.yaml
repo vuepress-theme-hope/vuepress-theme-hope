@@ -299,8 +299,8 @@ catalogs:
       specifier: 2.0.0-rc.139
       version: 2.0.0-rc.139
     '@vuepress/plugin-markdown-hint':
-      specifier: 2.0.0-rc.139
-      version: 2.0.0-rc.139
+      specifier: 2.0.0-rc.140
+      version: 2.0.0-rc.140
     '@vuepress/plugin-markdown-image':
       specifier: 2.0.0-rc.139
       version: 2.0.0-rc.139
@@ -383,8 +383,8 @@ catalogs:
       specifier: 2.0.0-rc.139
       version: 2.0.0-rc.139
     '@vuepress/theme-default':
-      specifier: 2.0.0-rc.139
-      version: 2.0.0-rc.139
+      specifier: 2.0.0-rc.140
+      version: 2.0.0-rc.140
     vuepress:
       specifier: 2.0.0-rc.32
       version: 2.0.0-rc.32
@@ -499,7 +499,7 @@ importers:
         version: 2.0.0-rc.139(d6ce48fed16af1391648e7cde9963e93)
       '@vuepress/theme-default':
         specifier: catalog:vuepress
-        version: 2.0.0-rc.139(ce9c86983aa657ebedf019f26c9e80e3)
+        version: 2.0.0-rc.140(ce9c86983aa657ebedf019f26c9e80e3)
       sass-embedded:
         specifier: 'catalog:'
         version: 1.108.2
@@ -535,7 +535,7 @@ importers:
         version: 2.0.0-rc.32(@rspack/core@2.3.3)(@types/markdown-it@14.2.0)(@vue/compiler-sfc@3.5.45)(clean-css@5.3.3)(cssnano@7.1.9(postcss@8.5.33))(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(rolldown@1.3.2)(rollup@4.63.5)(supports-color@10.2.2)(svgo@4.1.0)(typescript@6.0.3)(uglify-js@3.19.3)(vite@8.3.8(@types/node@22.20.5)(esbuild@0.28.2)(jiti@2.7.0)(sass-embedded@1.108.2)(sass@1.108.2)(terser@5.51.2)(yaml@2.9.1))
       '@vuepress/theme-default':
         specifier: catalog:vuepress
-        version: 2.0.0-rc.139(ce9c86983aa657ebedf019f26c9e80e3)
+        version: 2.0.0-rc.140(ce9c86983aa657ebedf019f26c9e80e3)
       katex:
         specifier: 0.19.1
         version: 0.19.1
@@ -1182,7 +1182,7 @@ importers:
         version: 2.0.0-rc.139(a23eba64df28c774c7ce2c8761fc0fd3)
       '@vuepress/plugin-markdown-hint':
         specifier: catalog:vuepress
-        version: 2.0.0-rc.139(adeb9250e87ce10cb115f773b823a7c1)
+        version: 2.0.0-rc.140(adeb9250e87ce10cb115f773b823a7c1)
       '@vuepress/plugin-markdown-image':
         specifier: catalog:vuepress
         version: 2.0.0-rc.139(55cfb6758bcf0cc876b7803a6bf7acdd)
@@ -4674,8 +4674,8 @@ packages:
       iconify-icon:
         optional: true
 
-  '@vuepress/plugin-markdown-hint@2.0.0-rc.139':
-    resolution: {integrity: sha512-+FXyHFsxcu/RdJe0CeLBx4hXIVZpApBMs10OF4mdcmesUOKCBjRIDh6k82067WIYX2oHI7n/F49/4Qj5RJ0hmA==}
+  '@vuepress/plugin-markdown-hint@2.0.0-rc.140':
+    resolution: {integrity: sha512-hYhs8E5He+3Tfl3TB0rdc/8yqs+VHGkRJ84AA4f1UrhdItFe6OQxBntKTKsm/LVAC+rfOfzHX7op89wwKbMPpQ==}
     peerDependencies:
       vuepress: 2.0.0-rc.32
 
@@ -4895,8 +4895,8 @@ packages:
     peerDependencies:
       vuepress: 2.0.0-rc.32
 
-  '@vuepress/theme-default@2.0.0-rc.139':
-    resolution: {integrity: sha512-f/xeTYClUVVzj8n6IKNFzhxP8eki3sV6x2VdV2boalaFHxV3lFWd9/zarGEKbd7NkeNLWtL7seu3ejAP2VBx9A==}
+  '@vuepress/theme-default@2.0.0-rc.140':
+    resolution: {integrity: sha512-xT648eyeN7PUQm/z/JYbN9YCah1kTyogFIb/UMhsxFNPJRpXaTKG8InlKIASv3IBkCkOInh3zc/6TlilDT2Vjw==}
     peerDependencies:
       sass: ^1.108.2
       sass-embedded: ^1.108.2
@@ -13638,7 +13638,7 @@ snapshots:
       - markdown-it
       - typescript
 
-  '@vuepress/plugin-markdown-hint@2.0.0-rc.139(adeb9250e87ce10cb115f773b823a7c1)':
+  '@vuepress/plugin-markdown-hint@2.0.0-rc.140(adeb9250e87ce10cb115f773b823a7c1)':
     dependencies:
       '@mdit/helper': 1.2.1(markdown-it@15.0.3)
       '@mdit/plugin-alert': 2.2.0(markdown-it@15.0.3)
@@ -14076,7 +14076,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@vuepress/theme-default@2.0.0-rc.139(ce9c86983aa657ebedf019f26c9e80e3)':
+  '@vuepress/theme-default@2.0.0-rc.140(ce9c86983aa657ebedf019f26c9e80e3)':
     dependencies:
       '@vuepress/helper': 2.0.0-rc.139(d6ce48fed16af1391648e7cde9963e93)
       '@vuepress/plugin-active-header-links': 2.0.0-rc.138(typescript@6.0.3)(vuepress@2.0.0-rc.32(f9277f588ed805139daa45824e27fe5b))
@@ -14084,7 +14084,7 @@ snapshots:
       '@vuepress/plugin-copy-code': 2.0.0-rc.139(d6ce48fed16af1391648e7cde9963e93)
       '@vuepress/plugin-git': 2.0.0-rc.139(d6ce48fed16af1391648e7cde9963e93)
       '@vuepress/plugin-links-check': 2.0.0-rc.139(55cfb6758bcf0cc876b7803a6bf7acdd)
-      '@vuepress/plugin-markdown-hint': 2.0.0-rc.139(adeb9250e87ce10cb115f773b823a7c1)
+      '@vuepress/plugin-markdown-hint': 2.0.0-rc.140(adeb9250e87ce10cb115f773b823a7c1)
       '@vuepress/plugin-markdown-tab': 2.0.0-rc.139(55cfb6758bcf0cc876b7803a6bf7acdd)
       '@vuepress/plugin-medium-zoom': 2.0.0-rc.139(d6ce48fed16af1391648e7cde9963e93)
       '@vuepress/plugin-nprogress': 2.0.0-rc.139(d6ce48fed16af1391648e7cde9963e93)
