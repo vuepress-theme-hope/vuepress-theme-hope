@@ -36,7 +36,6 @@ Available component which can be used in Markdown files are:
 
 - Badge: Colorful badge component
 - CodePen: Embedded CodePen demo
-- Share: Sharing current page with social medias
 - StackBlitz: Embedded StackBlitz demo
 - SiteInfo: Display sites
 - VPBanner: A banner component
@@ -50,7 +49,7 @@ Check <ProjectLink name="components" path="/config.html">components plugin docs<
 
 ::: tip
 
-The media components are moved to [`@vuepress/plugin-media`](https://ecosystem.vuejs.press/plugins/features/media.html).
+The media components are moved to [`@vuepress/plugin-media`](https://ecosystem.vuejs.press/plugins/features/media.html) (`plugins.media`), and the Share component is moved to [`@vuepress/plugin-share`](https://ecosystem.vuejs.press/plugins/features/share.html) (`plugins.share`).
 
 :::
 
@@ -126,6 +125,14 @@ No extra config is required by default. Set it to `false` if you don't need it.
 
 Check [seo plugin docs][seo-config] for available plugin options.
 
+@`share`
+
+Controls `@vuepress/plugin-share` which provides share buttons for pages.
+
+The plugin is disabled by default, you need to set `plugins.share` with plugin options to enable it. Setting it to `false` keeps it disabled.
+
+Check [share plugin docs][share-config] for available plugin options, and [Share](../../guide/feature/share.md) for instructions.
+
 @`sitemap` enabled-by-default=Yes
 
 Controls `@vuepress/plugin-sitemap` which provides sitemap.
@@ -152,5 +159,6 @@ Check [watermark plugin docs][watermark-config] for available plugin options.
 [reading-time-config]: https://ecosystem.vuejs.press/plugins/development/reading-time.html#options
 [redirect-config]: https://ecosystem.vuejs.press/plugins/tools/redirect.html#options
 [seo-config]: https://ecosystem.vuejs.press/plugins/seo/seo/config.html
+[share-config]: https://ecosystem.vuejs.press/plugins/features/share.html#options
 [sitemap-config]: https://ecosystem.vuejs.press/plugins/seo/sitemap/config.html
 [watermark-config]: https://ecosystem.vuejs.press/plugins/features/watermark.html

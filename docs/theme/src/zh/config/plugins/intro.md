@@ -112,6 +112,8 @@ tag:
 
 - [@vuepress/plugin-rtl][rtl]: 提供 RTL 支持（在需要的主题语言配置中设置 `rtl: true`）
 
+- [@vuepress/plugin-share][share]: 为页面提供分享按钮（`plugins.share`）
+
 - <ProjectLink name="md-enhance" path="/zh/">vuepress-plugin-md-enhance</ProjectLink>: 提供更多 Markdown 语法（`markdown.demo`、`markdown.playground`、`markdown.kotlinPlayground`、`markdown.vuePlayground`、`markdown.sandpack`）
 
 ### 内置支持的插件 {#plugins-with-built-in-support}
@@ -187,6 +189,7 @@ tag:
 [sass-palette]: https://ecosystem.vuejs.press/zh/plugins/development/sass-palette/
 [search]: https://ecosystem.vuejs.press/zh/plugins/search/search.html
 [seo]: https://ecosystem.vuejs.press/zh/plugins/seo/seo/config.html
+[share]: https://ecosystem.vuejs.press/zh/plugins/features/share.html
 [shiki]: https://ecosystem.vuejs.press/zh/plugins/markdown/shiki.html
 [shiki-twoslash]: https://ecosystem.vuejs.press/zh/plugins/markdown/shiki.html#twoslash
 [sitemap]: https://ecosystem.vuejs.press/zh/plugins/seo/sitemap/config.html

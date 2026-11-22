@@ -15,7 +15,6 @@ tag:
 
 - Badge: 多彩的徽章组件
 - CodePen: 嵌入 CodePen 演示
-- Share: 通过社交媒体分享当前页面
 - StackBlitz: 嵌入 StackBlitz 演示
 - SiteInfo: 显示站点
 - VPBanner: 一个横幅组件
@@ -25,7 +24,7 @@ tag:
 
 ::: tip
 
-媒体组件由 [`@vuepress/plugin-media`](../feature/media.md) 提供，它们通过 `plugins.media` 启用。
+媒体组件由 [`@vuepress/plugin-media`](../feature/media.md) 提供，它们通过 `plugins.media` 启用。分享组件由 [`@vuepress/plugin-share`](../feature/share.md) 提供，它通过 `plugins.share` 启用。
 
 :::
 
@@ -37,7 +36,7 @@ tag:
 
 :::
 
-```ts twoslash {7-15} title=".vuepress/theme.ts"
+```ts twoslash {7-14} title=".vuepress/theme.ts"
 import { hopeTheme } from "vuepress-theme-hope";
 
 export default hopeTheme({
@@ -47,7 +46,6 @@ export default hopeTheme({
       components: [
         "Badge",
         "CodePen",
-        "Share",
         "SiteInfo",
         "StackBlitz",
         "VPBanner",
@@ -82,12 +80,6 @@ export default hopeTheme({
 <!-- @include: @components/zh/guide/content/site-info.md#demo -->
 
 有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/content/site-info.html">SiteInfo</ProjectLink> 页面。
-
-### Share
-
-<!-- @include: @components/zh/guide/utilities/share.md#demo -->
-
-有关可用属性，请参阅 <ProjectLink name="components" path="/zh/guide/utilities/share.html">Share</ProjectLink> 页面。
 
 ## 代码相关 {#code}
 

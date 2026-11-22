@@ -112,6 +112,8 @@ The following plugins are bundled by theme, but they are disabled by default. Yo
 
 - [@vuepress/plugin-rtl][rtl]: Provides rtl support (set `rtl: true` in the needed theme locales)
 
+- [@vuepress/plugin-share][share]: Provides share buttons for pages (`plugins.share`)
+
 - <ProjectLink name="md-enhance">vuepress-plugin-md-enhance</ProjectLink>: Provides more Markdown syntax (`markdown.demo`, `markdown.playground`, `markdown.kotlinPlayground`, `markdown.vuePlayground`, `markdown.sandpack`)
 
 ### Plugins with Built-in Support
@@ -187,6 +189,7 @@ These plugins are supported by theme, but they are not bundled. You need to inst
 [sass-palette]: https://ecosystem.vuejs.press/plugins/development/sass-palette/
 [search]: https://ecosystem.vuejs.press/plugins/search/search.html
 [seo]: https://ecosystem.vuejs.press/plugins/seo/seo/config.html
+[share]: https://ecosystem.vuejs.press/plugins/features/share.html
 [shiki]: https://ecosystem.vuejs.press/plugins/markdown/shiki.html
 [shiki-twoslash]: https://ecosystem.vuejs.press/plugins/markdown/shiki.html#twoslash
 [sitemap]: https://ecosystem.vuejs.press/plugins/seo/sitemap/config.html

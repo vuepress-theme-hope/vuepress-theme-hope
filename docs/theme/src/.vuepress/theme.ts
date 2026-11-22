@@ -1,6 +1,5 @@
 import { theme } from "@docs/shared";
 import { ModuleResolutionKind } from "typescript";
-import { AVAILABLE_SERVICES } from "vuepress-plugin-components";
 import { getRecentUpdatedArticles } from "vuepress-theme-hope/presets/getRecentUpdatedArticles.js";
 import { getSlides } from "vuepress-theme-hope/presets/getSlides.js";
 import { getDirname, path } from "vuepress/utils";
@@ -221,13 +220,7 @@ export default theme(
       },
 
       components: {
-        components: ["Badge", "CodePen", "Share", "SiteInfo", "StackBlitz", "VPBanner", "VPCard"],
-
-        componentOptions: {
-          share: {
-            services: AVAILABLE_SERVICES,
-          },
-        },
+        components: ["Badge", "CodePen", "SiteInfo", "StackBlitz", "VPBanner", "VPCard"],
       },
 
       copyright: {
@@ -239,6 +232,8 @@ export default theme(
         json: true,
         rss: true,
       },
+
+      share: {},
 
       watermark: {
         enabled: false,
