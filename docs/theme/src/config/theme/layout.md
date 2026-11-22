@@ -248,6 +248,16 @@ Whether to show "Contributors" or not.
 
 Whether to show changelog.
 
+@`share` type=`false | 'left' | 'right'` default=`'right'`
+
+Where to display the share buttons in the page meta area. Only works when `@vuepress/plugin-share` is enabled.
+
+- `false`: disable the buttons
+- `'left'`: display at the bottom left
+- `'right'`: display at the bottom right
+
+See also: [Feature → Share → Page Meta Buttons](../../guide/feature/share.md#page-meta-buttons).
+
 @`editLink` type=boolean default=`true`
 
 Whether to show "Edit this page" or not.

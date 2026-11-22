@@ -6,6 +6,7 @@ category:
 tag:
   - Feature
   - Share
+share: true
 ---
 
 VuePress Theme Hope allows you to add share buttons to pages with [`@vuepress/plugin-share`][share].
@@ -56,6 +57,28 @@ export default hopeTheme({
   },
 });
 ```
+
+## Page Meta Buttons
+
+The theme renders share buttons in the page meta area at the bottom of each content page once the plugin is enabled, so visitors can share the page without adding `<Share />` manually. They are placed at the bottom right by default.
+
+You can set the `share` theme option to `"left"` to place them at the bottom left, or to `false` to disable them. The `share` frontmatter of a page accepts a boolean to show or hide the buttons for that page:
+
+```ts twoslash {4} title=".vuepress/theme.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default hopeTheme({
+  share: "left",
+});
+```
+
+```md
+---
+share: false
+---
+```
+
+The buttons are only rendered when `@vuepress/plugin-share` is enabled.
 
 ## Services
 

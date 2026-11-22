@@ -1,7 +1,7 @@
 import { hasGlobalComponent } from "@vuepress/helper/client";
 import { useContributors, useLastUpdated } from "@vuepress/plugin-git/client";
 import type { VNode } from "vue";
-import { defineComponent, h } from "vue";
+import { defineComponent, h, resolveComponent } from "vue";
 
 import AutoLink from "@theme-hope/components/base/AutoLink";
 import EditIcon from "@theme-hope/components/base/EditIcon";
@@ -61,6 +61,18 @@ export default defineComponent({
               ])
             : null,
         ]),
+        metaInfo.share.value && hasGlobalComponent("Share")
+          ? h(
+              "div",
+              {
+                class: [
+                  "vp-page-meta-share",
+                  metaInfo.share.value === "left" ? "align-left" : "align-right",
+                ],
+              },
+              h(resolveComponent("Share"), { inline: true }),
+            )
+          : null,
       ]);
   },
 });

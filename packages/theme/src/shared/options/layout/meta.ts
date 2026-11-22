@@ -138,4 +138,17 @@ export interface MetaLocaleOptions {
    * @default true
    */
   editLink?: boolean;
+
+  /**
+   * Where to display the share buttons in the page meta area
+   *
+   * Only works when `@vuepress/plugin-share` is enabled
+   *
+   * 分享按钮在页面元信息区域中显示的位置
+   *
+   * 仅在启用 `@vuepress/plugin-share` 时生效
+   *
+   * @default "right"
+   */
+  share?: false | "left" | "right";
 }

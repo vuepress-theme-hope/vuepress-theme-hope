@@ -44,6 +44,24 @@
     text-align: end;
   }
 
+  .vp-page-meta-share {
+    display: flex;
+    flex-basis: 100%;
+    margin-top: 0.25rem;
+
+    @media print {
+      display: none;
+    }
+
+    &.align-left {
+      justify-content: left;
+    }
+
+    &.align-right {
+      justify-content: right;
+    }
+  }
+
   .edit-link {
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;

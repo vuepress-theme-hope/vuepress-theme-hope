@@ -14,6 +14,9 @@ export default theme(
   "theme",
   {
     repo: "vuepress-theme-hope/vuepress-theme-hope",
+
+    // Disable page meta share buttons by default, the share feature page enables them via frontmatter
+    share: false,
     blog: {
       name: "VuePress Theme Hope",
       medias: {

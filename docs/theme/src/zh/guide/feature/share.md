@@ -6,6 +6,7 @@ category:
 tag:
   - 功能
   - 分享
+share: true
 ---
 
 VuePress Theme Hope 通过 [`@vuepress/plugin-share`][share] 允许你为页面添加分享按钮。
@@ -56,6 +57,28 @@ export default hopeTheme({
   },
 });
 ```
+
+## 页面元信息按钮 {#page-meta-buttons}
+
+启用插件后，主题会在每个内容页底部的页面元信息区渲染分享按钮，访客无需手动添加 `<Share />` 即可分享页面。按钮默认显示在右下角。
+
+你可以将主题选项 `share` 设为 `"left"` 让按钮显示在左下角，或设为 `false` 禁用它们。页面 frontmatter 中的 `share` 布尔值用于为单个页面显示或隐藏分享按钮:
+
+```ts twoslash {4} title=".vuepress/theme.ts"
+import { hopeTheme } from "vuepress-theme-hope";
+
+export default hopeTheme({
+  share: "left",
+});
+```
+
+```md
+---
+share: false
+---
+```
+
+仅在启用 `@vuepress/plugin-share` 时才会渲染这些按钮。
 
 ## 分享服务 {#services}
 
