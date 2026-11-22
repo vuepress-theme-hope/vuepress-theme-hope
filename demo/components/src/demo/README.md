@@ -4,8 +4,6 @@
 
 - [CodePen](code-pen.md)
 
-- [Share](share.md)
-
 - [SiteInfo](site-info.md)
 
 - [StackBlitz](stack-blitz.md)

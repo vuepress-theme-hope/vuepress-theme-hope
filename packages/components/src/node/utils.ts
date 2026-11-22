@@ -8,7 +8,6 @@ const __dirname = getDirname(import.meta.url);
 export const AVAILABLE_COMPONENTS: AvailableComponent[] = [
   "Badge",
   "CodePen",
-  "Share",
   "SiteInfo",
   "StackBlitz",
   "VPBanner",

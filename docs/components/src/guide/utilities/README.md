@@ -9,5 +9,3 @@ index: false
 ## Components
 
 - [Badge](./badge.md)
-
-- [Share](share.md)

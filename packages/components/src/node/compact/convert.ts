@@ -21,11 +21,46 @@ const MEDIA_COMPONENTS = [
 ];
 
 /**
+ * Check the removed `Share` component and its options
+ *
+ * 检查已移除的 `Share` 组件及其选项
+ *
+ * @param options - Old component plugin options
+ */
+const checkRemovedShareOptions = (options: Record<string, unknown>): void => {
+  if (isArray(options.components) && options.components.includes("Share")) {
+    logger.error(
+      `${colors.cyan("Share")} component is no longer supported, please use ${colors.magenta(
+        "@vuepress/plugin-share",
+      )} instead.`,
+    );
+  }
+
+  if (isPlainObject(options.componentOptions)) {
+    const componentOptions = options.componentOptions as Record<string, unknown>;
+
+    if ("share" in componentOptions) {
+      logger.error(
+        `${colors.magenta(
+          "componentOptions.share",
+        )} is removed, please use the ${colors.magenta("services")} option of ${colors.cyan(
+          "@vuepress/plugin-share",
+        )} instead.`,
+      );
+      delete componentOptions.share;
+    }
+  }
+};
+
+/**
  * @deprecated
  * @param options - Old component plugin options
  */
+// oxlint-disable-next-line max-statements
 export const convertOptions = (options: ComponentPluginOptions & Record<string, unknown>): void => {
   const { deprecatedLogger, droppedLogger } = createConverter("components");
+
+  checkRemovedShareOptions(options);
 
   droppedLogger({
     options,

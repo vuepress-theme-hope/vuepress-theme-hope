@@ -1,8 +1,9 @@
 import { getModulePath } from "@vuepress/helper";
 import type { App } from "vuepress/core";
+import { colors } from "vuepress/utils";
 
 import type { ComponentPluginOptions } from "./options/index.js";
-import { AVAILABLE_COMPONENTS, CLIENT_FOLDER } from "./utils.js";
+import { AVAILABLE_COMPONENTS, CLIENT_FOLDER, logger } from "./utils.js";
 
 export const prepareConfigFile = (
   app: App,
@@ -20,6 +21,10 @@ export const prepareConfigFile = (
       enhance += `\
 if(!hasGlobalComponent("${item}")) app.component("${item}", ${item});
 `;
+    } else {
+      logger.warn(
+        `${colors.cyan(item)} component is not available, it will be ignored. Please check your options.`,
+      );
     }
   });
 

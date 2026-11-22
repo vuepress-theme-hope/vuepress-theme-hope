@@ -5,7 +5,6 @@ export default tsdownConfig(
     "node/index",
     "client/components/Badge",
     "client/components/CodePen",
-    "client/components/Share",
     "client/components/SiteInfo",
     "client/components/StackBlitz",
     "client/components/VPBanner",
