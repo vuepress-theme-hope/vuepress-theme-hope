@@ -212,10 +212,11 @@ $headings: (2, 3, 4, 5, 6);
   overflow: hidden;
 
   max-width: 100%;
+  min-height: 2rem;
 
   color: var(--vp-c-text-mute);
 
-  line-height: inherit;
+  line-height: 2rem;
   text-overflow: ellipsis;
   white-space: nowrap;
 
@@ -229,13 +230,8 @@ $headings: (2, 3, 4, 5, 6);
 
 .vp-toc-item {
   position: relative;
-
   box-sizing: border-box;
-  height: 2rem;
-
   list-style: none;
-
-  line-height: 2rem;
 
   @media (min-width: hope-config.$pc) {
     padding: 0 0.5rem;

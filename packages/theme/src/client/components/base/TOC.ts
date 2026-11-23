@@ -153,20 +153,15 @@ export default defineComponent({
         ? h(
             "ul",
             { class: "vp-toc-list" },
-            pageHeaders.map((header) => {
-              const children = renderChildren(header.children);
-
-              return [
-                h(
-                  "li",
-                  {
-                    class: ["vp-toc-item", { active: route.hash === `#${header.slug}` }],
-                  },
-                  renderHeader(header),
-                ),
-                children ? h("li", children) : null,
-              ];
-            }),
+            pageHeaders.map((header) =>
+              h(
+                "li",
+                {
+                  class: ["vp-toc-item", { active: route.hash === `#${header.slug}` }],
+                },
+                [renderHeader(header), renderChildren(header.children)],
+              ),
+            ),
           )
         : null;
 
