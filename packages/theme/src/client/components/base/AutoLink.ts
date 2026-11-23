@@ -52,5 +52,6 @@ const AutoLink: FunctionalComponent<
 };
 
 AutoLink.displayName = "AutoLink";
+AutoLink.emits = ["focusout"];
 
 export default AutoLink;
