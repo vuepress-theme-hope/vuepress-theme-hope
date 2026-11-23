@@ -51,6 +51,7 @@ export default defineComponent({
       const isTriggerByTab = event.detail === 0;
 
       if (isTriggerByTab) open.value = !open.value;
+      else if (!open.value) open.value = true;
     };
 
     onContentUpdated(() => {
@@ -65,8 +66,9 @@ export default defineComponent({
           onMouseenter: () => {
             open.value = true;
           },
-          onMouseleave: () => {
-            open.value = false;
+          onMouseleave: (event: MouseEvent) => {
+            if (!(event.currentTarget as HTMLElement).contains(document.activeElement))
+              open.value = false;
           },
           onKeydown: (event: KeyboardEvent) => {
             if (event.key === "Escape" && open.value) {

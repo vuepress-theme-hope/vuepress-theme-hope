@@ -61,7 +61,9 @@ export default defineComponent({
           onMouseenter: () => {
             open.value = true;
           },
-          onMouseleave: close,
+          onMouseleave: (event: MouseEvent) => {
+            if (!(event.currentTarget as HTMLElement).contains(document.activeElement)) close();
+          },
           onFocusout: (event: FocusEvent) => {
             const next = event.relatedTarget as Node | null;
 

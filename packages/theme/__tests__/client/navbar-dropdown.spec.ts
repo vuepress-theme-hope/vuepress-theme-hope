@@ -68,15 +68,21 @@ describe("navbar dropdown", () => {
     wrapper.unmount();
   });
 
-  it("opens only when activated from the keyboard", async () => {
+  it("opens on pointer click and toggles with keyboard activation", async () => {
     const wrapper = await mountDropdown();
+    const dropdown = wrapper.find(".vp-dropdown-wrapper");
+    const title = wrapper.find("button.vp-dropdown-title");
 
-    await wrapper.find("button.vp-dropdown-title").trigger("click", { detail: 1 });
-    expect(wrapper.find(".vp-dropdown-wrapper").classes()).not.toContain("open");
+    await title.trigger("click", { detail: 1 });
+    expect(dropdown.classes()).toContain("open");
 
-    await wrapper.find("button.vp-dropdown-title").trigger("click", { detail: 0 });
-    expect(wrapper.find(".vp-dropdown-wrapper").classes()).toContain("open");
-    expect(wrapper.find("button.vp-dropdown-title").attributes("aria-expanded")).toBe("true");
+    await title.trigger("click", { detail: 0 });
+    expect(dropdown.classes()).not.toContain("open");
+    expect(title.attributes("aria-expanded")).toBe("false");
+
+    await title.trigger("click", { detail: 0 });
+    expect(dropdown.classes()).toContain("open");
+    expect(title.attributes("aria-expanded")).toBe("true");
 
     wrapper.unmount();
   });
@@ -95,6 +101,25 @@ describe("navbar dropdown", () => {
 
     expect(dropdown.classes()).not.toContain("open");
     expect(title.attributes("aria-expanded")).toBe("false");
+
+    wrapper.unmount();
+  });
+
+  it("closes on escape while hovered and reopens on click", async () => {
+    const wrapper = await mountDropdown();
+    const dropdown = wrapper.find(".vp-dropdown-wrapper");
+    const title = wrapper.find("button.vp-dropdown-title");
+
+    await dropdown.trigger("mouseenter");
+    await dropdown.trigger("keydown", { key: "Escape" });
+
+    expect(dropdown.classes()).not.toContain("open");
+    expect(title.attributes("aria-expanded")).toBe("false");
+
+    await title.trigger("click", { detail: 1 });
+
+    expect(dropdown.classes()).toContain("open");
+    expect(title.attributes("aria-expanded")).toBe("true");
 
     wrapper.unmount();
   });

@@ -1,5 +1,5 @@
 import type { VNode } from "vue";
-import { defineComponent, h, nextTick } from "vue";
+import { defineComponent, h, nextTick, onUnmounted } from "vue";
 import { useRouter } from "vuepress/client";
 
 import { useThemeLocale } from "@theme-hope/composables/useTheme";
@@ -23,10 +23,6 @@ const focusMainContent = ({ target }: Event): void => {
   if (el) focusElement(el);
 };
 
-// Track the routers that already have a navigation listener, so each app
-// focuses the new main content exactly once per navigation.
-const observedRouters = new WeakSet<object>();
-
 export default defineComponent({
   name: "SkipLink",
 
@@ -45,19 +41,17 @@ export default defineComponent({
     // Focus the main content after a navigation instead of using
     // `onContentUpdated`, whose first callback would steal focus while the
     // initial page is mounted.
-    if (!observedRouters.has(router)) {
-      observedRouters.add(router);
+    const removeAfterEach = router.afterEach((to, from, failure) => {
+      if (failure || to.path === from.path) return;
 
-      router.afterEach((to, from) => {
-        if (to.path === from.path) return;
+      void nextTick().then(() => {
+        const el = document.querySelector<HTMLElement>(`#${props.content}`);
 
-        void nextTick().then(() => {
-          const el = document.querySelector<HTMLElement>(`#${props.content}`);
-
-          if (el) focusElement(el);
-        });
+        if (el) focusElement(el);
       });
-    }
+    });
+
+    onUnmounted(removeAfterEach);
 
     return (): VNode =>
       h(

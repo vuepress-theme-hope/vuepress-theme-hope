@@ -88,6 +88,34 @@ describe("appearance button", () => {
     wrapper.unmount();
   });
 
+  it("hides the menu when clicking while it is hovered", async () => {
+    const wrapper = await mountAppearanceButton();
+    const button = wrapper.find("button.vp-appearance-button");
+    const appearance = wrapper.find(".vp-appearance");
+
+    await appearance.trigger("mouseenter");
+    await button.trigger("click");
+
+    expect(button.attributes("aria-expanded")).toBe("false");
+    expect(button.classes()).not.toContain("open");
+
+    wrapper.unmount();
+  });
+
+  it("closes on escape while it is hovered", async () => {
+    const wrapper = await mountAppearanceButton();
+    const button = wrapper.find("button.vp-appearance-button");
+    const appearance = wrapper.find(".vp-appearance");
+
+    await appearance.trigger("mouseenter");
+    await appearance.trigger("keydown", { key: "Escape" });
+
+    expect(button.attributes("aria-expanded")).toBe("false");
+    expect(button.classes()).not.toContain("open");
+
+    wrapper.unmount();
+  });
+
   it("closes on escape and restores focus to the trigger", async () => {
     const wrapper = await mountAppearanceButton();
     const button = wrapper.find("button.vp-appearance-button");

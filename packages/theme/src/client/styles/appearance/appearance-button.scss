@@ -55,7 +55,6 @@
     border-bottom: 1px solid var(--vp-c-border);
   }
 
-  .vp-appearance:hover &,
   .vp-appearance-button.open + & {
     z-index: 2;
     opacity: 1;
