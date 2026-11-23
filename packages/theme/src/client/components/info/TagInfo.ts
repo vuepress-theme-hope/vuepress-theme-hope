@@ -1,10 +1,10 @@
 import type { PropType, VNode } from "vue";
 import { defineComponent, h } from "vue";
 import { generateIndexFromHash } from "vuepress-shared/client";
+import { RouteLink } from "vuepress/client";
 
 import { TagIcon } from "@theme-hope/components/info/icons";
 import { useMetaLocale } from "@theme-hope/composables/info/useMetaLocale";
-import { useNavigate } from "@theme-hope/composables/useNavigate";
 import { usePure } from "@theme-hope/composables/usePure";
 import type { PageTag } from "@theme-hope/utils/info/typings";
 
@@ -27,7 +27,6 @@ export default defineComponent({
 
   setup(props) {
     const metaLocale = useMetaLocale();
-    const navigate = useNavigate();
     const isPure = usePure();
 
     return (): VNode | null =>
@@ -43,24 +42,35 @@ export default defineComponent({
               h(TagIcon),
 
               props.tag.map(({ name, path }) =>
-                h(
-                  "span",
-                  {
-                    class: [
-                      "page-tag-item",
+                path
+                  ? h(
+                      RouteLink,
                       {
-                        [`color${generateIndexFromHash(name, Number(cssVariables.colorNumber))}`]:
-                          !isPure.value,
-                        clickable: path,
+                        class: [
+                          "page-tag-item",
+                          {
+                            [`color${generateIndexFromHash(name, Number(cssVariables.colorNumber))}`]:
+                              !isPure.value,
+                            clickable: true,
+                          },
+                        ],
+                        to: path,
                       },
-                    ],
-                    role: path ? "navigation" : "",
-                    onClick: () => {
-                      if (path) navigate(path);
-                    },
-                  },
-                  name,
-                ),
+                      () => name,
+                    )
+                  : h(
+                      "span",
+                      {
+                        class: [
+                          "page-tag-item",
+                          {
+                            [`color${generateIndexFromHash(name, Number(cssVariables.colorNumber))}`]:
+                              !isPure.value,
+                          },
+                        ],
+                      },
+                      name,
+                    ),
               ),
               h("meta", {
                 property: "keywords",

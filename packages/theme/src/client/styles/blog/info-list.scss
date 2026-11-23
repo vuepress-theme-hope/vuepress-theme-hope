@@ -79,7 +79,14 @@
   padding: 8px 0;
 
   .title {
+    display: block;
+    color: inherit;
+    text-decoration: none;
     cursor: pointer;
+
+    &:hover {
+      color: var(--vp-c-accent);
+    }
 
     .icon {
       position: relative;

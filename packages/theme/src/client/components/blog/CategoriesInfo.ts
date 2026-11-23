@@ -1,13 +1,13 @@
 import { keys } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
+import { RouteLink } from "vuepress/client";
 
 import CategoryList from "@theme-hope/components/blog/CategoryList";
 import { CategoryIcon } from "@theme-hope/components/blog/icons";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { useBlogLocale } from "@theme-hope/composables/blog/useBlogLocale";
 import { useCategoryMap } from "@theme-hope/composables/blog/useCategoryMap";
-import { useNavigate } from "@theme-hope/composables/useNavigate";
 
 export default defineComponent({
   name: "CategoriesInfo",
@@ -15,7 +15,6 @@ export default defineComponent({
   setup() {
     const blogLocale = useBlogLocale();
     const categoryMap = useCategoryMap();
-    const navigate = useNavigate();
 
     const categoryNumber = computed(() => keys(categoryMap.value.map).length);
 
@@ -24,12 +23,10 @@ export default defineComponent({
         categoryNumber.value
           ? [
               h(
-                "div",
+                RouteLink,
                 {
                   class: "title",
-                  onClick: () => {
-                    navigate(categoryMap.value.path);
-                  },
+                  to: categoryMap.value.path,
                 },
                 [
                   h(CategoryIcon),

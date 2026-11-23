@@ -7,7 +7,6 @@ import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { useArticles } from "@theme-hope/composables/blog/useArticles";
 import { useBlogLocale } from "@theme-hope/composables/blog/useBlogLocale";
 import { useStars } from "@theme-hope/composables/blog/useStars";
-import { useNavigate } from "@theme-hope/composables/useNavigate";
 
 export default defineComponent({
   name: "ArticlesInfo",
@@ -16,7 +15,6 @@ export default defineComponent({
     const articles = useArticles();
     const blogLocale = useBlogLocale();
     const stars = useStars();
-    const navigate = useNavigate();
 
     const articleCount = computed(() => articles.value.items.length);
     const starredArticles = computed(() => stars.value.items);
@@ -25,12 +23,10 @@ export default defineComponent({
       h(DropTransition, () =>
         h("div", { class: "vp-star-article-wrapper" }, [
           h(
-            "div",
+            RouteLink,
             {
               class: "title",
-              onClick: () => {
-                navigate(articles.value.path);
-              },
+              to: articles.value.path,
             },
             [
               h(ArticleIcon),

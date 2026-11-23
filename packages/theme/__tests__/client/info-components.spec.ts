@@ -148,9 +148,10 @@ describe("category info", () => {
     const items = wrapper.findAll(".page-category-item");
 
     expect(items).toHaveLength(2);
-    expect(items[0].attributes("role")).toBe("navigation");
+    expect(items[0].element.tagName).toBe("A");
+    expect(items[0].attributes("href")).toBe("/category/frontend/");
     expect(items[0].text()).toBe("Frontend");
-    expect(items[1].attributes("role")).toBeFalsy();
+    expect(items[1].element.tagName).toBe("SPAN");
     expect(wrapper.find("meta[property='articleSection']").attributes("content")).toBe(
       "Frontend,Vue",
     );
@@ -173,6 +174,7 @@ describe("tag info", () => {
       tag: [{ name: "VuePress", path: "/tag/vuepress/" }],
     });
 
+    expect(wrapper.find(".page-tag-item").element.tagName).toBe("A");
     expect(wrapper.find(".page-tag-item").text()).toBe("VuePress");
     expect(wrapper.find("meta[property='keywords']").attributes("content")).toBe("VuePress");
 
