@@ -1,5 +1,5 @@
 import type { VNode } from "vue";
-import { defineComponent, h, nextTick, onUnmounted } from "vue";
+import { defineComponent, h, nextTick, onMounted, onUnmounted } from "vue";
 import { useRouter } from "vuepress/client";
 
 import { useThemeLocale } from "@theme-hope/composables/useTheme";
@@ -41,17 +41,24 @@ export default defineComponent({
     // Focus the main content after a navigation instead of using
     // `onContentUpdated`, whose first callback would steal focus while the
     // initial page is mounted.
-    const removeAfterEach = router.afterEach((to, from, failure) => {
-      if (failure || to.path === from.path) return;
+    let removeAfterEach: (() => void) | undefined;
 
-      void nextTick().then(() => {
-        const el = document.querySelector<HTMLElement>(`#${props.content}`);
+    // Register after mount so server-side rendering never touches `document`.
+    onMounted(() => {
+      removeAfterEach = router.afterEach((to, from, failure) => {
+        if (failure || to.path === from.path) return;
 
-        if (el) focusElement(el);
+        void nextTick().then(() => {
+          const el = document.querySelector<HTMLElement>(`#${props.content}`);
+
+          if (el) focusElement(el);
+        });
       });
     });
 
-    onUnmounted(removeAfterEach);
+    onUnmounted(() => {
+      removeAfterEach?.();
+    });
 
     return (): VNode =>
       h(
