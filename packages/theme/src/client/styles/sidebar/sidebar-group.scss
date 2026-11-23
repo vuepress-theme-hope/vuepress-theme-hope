@@ -70,6 +70,25 @@
     flex: 1;
   }
 
+  .vp-sidebar-toggle {
+    @include reset.button;
+
+    & {
+      display: inline-flex;
+      align-items: center;
+
+      padding: 0;
+
+      color: inherit;
+
+      font-size: inherit;
+    }
+
+    &:hover {
+      color: var(--vp-c-accent);
+    }
+  }
+
   .vp-arrow {
     @include arrow.arrow;
 

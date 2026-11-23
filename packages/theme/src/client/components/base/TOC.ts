@@ -9,6 +9,7 @@ import { ClientOnly, RouteLink, useRoute } from "vuepress/client";
 import PrintButton from "@theme-hope/components/base/PrintButton";
 import { useMetaLocale } from "@theme-hope/composables/info/useMetaLocale";
 import { useData } from "@theme-hope/composables/useData";
+import { useWindowSize } from "@theme-hope/composables/useWindowSize";
 import type { TocSlotData } from "@theme-hope/typings/slots";
 
 import "../../styles/info/toc.scss";
@@ -57,6 +58,7 @@ export default defineComponent({
     const headers = useHeaders(tocOptions);
     const route = useRoute();
     const metaLocale = useMetaLocale();
+    const { isPC } = useWindowSize();
     const [isExpanded, toggleExpanded] = useToggle();
 
     const toc = shallowRef<HTMLElement>();
@@ -173,32 +175,29 @@ export default defineComponent({
               slots.toc?.(headers.value) ??
               (tocHeaders
                 ? [
-                    h(
-                      "div",
-                      {
-                        class: "vp-toc-header",
-                        role: "button",
-                        tabindex: "0",
-                        "aria-expanded": isExpanded.value,
-                        "aria-controls": "toc-content",
-                        onClick: () => {
-                          toggleExpanded();
-                        },
-                        onKeydown: (event: KeyboardEvent) => {
-                          if (event.key === "Enter" || event.key === " ") {
-                            event.preventDefault();
-                            toggleExpanded();
-                          }
-                        },
-                      },
-                      [
-                        metaLocale.value.toc,
-                        h(PrintButton),
-                        h("div", {
-                          class: ["arrow", isExpanded.value ? "down" : "end"],
-                        }),
-                      ],
-                    ),
+                    h("div", { class: "vp-toc-header" }, [
+                      isPC.value
+                        ? h("span", { class: "vp-toc-title" }, metaLocale.value.toc)
+                        : h(
+                            "button",
+                            {
+                              type: "button",
+                              class: "vp-toc-toggle",
+                              "aria-expanded": isExpanded.value,
+                              "aria-controls": "toc-content",
+                              onClick: () => {
+                                toggleExpanded();
+                              },
+                            },
+                            [
+                              h("span", { class: "vp-toc-title" }, metaLocale.value.toc),
+                              h("span", {
+                                class: ["arrow", isExpanded.value ? "down" : "end"],
+                              }),
+                            ],
+                          ),
+                      h(PrintButton),
+                    ]),
                     h(
                       "div",
                       {

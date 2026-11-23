@@ -262,8 +262,10 @@ export default defineComponent({
                       {
                         type: "button",
                         class: "toggle-sidebar-wrapper",
-                        "aria-label": "Toggle sidebar",
+                        "aria-label":
+                          themeLocale.value.navbarLocales.toggleSidebar ?? "Toggle sidebar",
                         "aria-expanded": !isDesktopSidebarCollapsed.value,
+                        "aria-controls": "sidebar",
                         onClick: () => toggleDesktopSidebar(),
                       },
                       h("span", {

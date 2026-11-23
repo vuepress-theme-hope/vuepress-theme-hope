@@ -40,6 +40,11 @@
 
     // sidebar should be collapsed by default
     visibility: hidden;
+
+    transition:
+      transform var(--vp-t-transform),
+      visibility 0s linear var(--vp-t-transform);
+
     transform: translateX(-100%);
 
     [dir="rtl"] & {

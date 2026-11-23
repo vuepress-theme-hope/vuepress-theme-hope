@@ -61,17 +61,21 @@ export default defineComponent({
         [
           props.showTitle ? h(PageTitle) : null,
           h("div", { class: "vp-decrypt-modal" }, [
-            h(
-              "div",
-              {
-                id: "password-hint",
-                class: ["vp-decrypt-hint", { tried: hasTried.value }],
-                ...(hasTried.value ? { role: "alert" } : {}),
-              },
-              hasTried.value
-                ? encryptLocale.value.errorHint
-                : h(LockIcon, { "aria-label": encryptLocale.value.iconLabel }),
-            ),
+            h("div", { class: ["vp-decrypt-hint", { tried: hasTried.value }] }, [
+              hasTried.value ? null : h(LockIcon, { "aria-label": encryptLocale.value.iconLabel }),
+              // Keep the live region mounted so that the error message is
+              // announced when its text changes.
+              h(
+                "div",
+                {
+                  id: "password-hint",
+                  role: "alert",
+                  "aria-live": "assertive",
+                  "aria-atomic": "true",
+                },
+                hasTried.value ? encryptLocale.value.errorHint : "",
+              ),
+            ]),
             props.hint ? h("div", { class: "vp-decrypt-hint" }, props.hint) : null,
             h("div", { class: "vp-decrypt-input" }, [
               h("input", {

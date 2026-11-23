@@ -1,6 +1,6 @@
 import type { Slot } from "@vuepress/helper/client";
 import type { PropType, SlotsType, VNode } from "vue";
-import { computed, defineComponent, h, ref, resolveComponent, toRef } from "vue";
+import { computed, defineComponent, h, ref, resolveComponent, toRef, useId } from "vue";
 import { onContentUpdated } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/base/AutoLink";
@@ -8,8 +8,6 @@ import AutoLink from "@theme-hope/components/base/AutoLink";
 import type { AutoLinkOptions, NavGroup } from "../../../shared/index.js";
 
 import "../../styles/navbar/navbar-dropdown.scss";
-
-let dropdownId = 0;
 
 export default defineComponent({
   name: "NavbarDropdown",
@@ -37,9 +35,7 @@ export default defineComponent({
     const dropdownAriaLabel = computed(() => config.value.ariaLabel ?? config.value.text);
 
     const open = ref(false);
-    const id = `vp-dropdown-${dropdownId}`;
-
-    dropdownId += 1;
+    const id = `vp-dropdown-${useId()}`;
     const button = ref<HTMLButtonElement>();
 
     /**

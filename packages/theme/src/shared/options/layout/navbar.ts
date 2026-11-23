@@ -23,6 +23,15 @@ export interface NavbarLocaleData {
    * @default "Navigation"
    */
   navScreen?: string;
+
+  /**
+   * Aria label of the sidebar toggle button
+   *
+   * 侧边栏切换按钮的无障碍标签
+   *
+   * @default "Toggle sidebar"
+   */
+  toggleSidebar?: string;
 }
 
 /**

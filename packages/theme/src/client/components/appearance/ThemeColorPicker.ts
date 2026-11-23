@@ -1,6 +1,7 @@
 import type { PropType, VNode } from "vue";
-import { computed, defineComponent, h, onMounted } from "vue";
+import { computed, defineComponent, h, onMounted, ref } from "vue";
 
+import { useAppearanceLocale } from "@theme-hope/composables/appearance/useAppearanceLocale";
 import { useDarkMode } from "@theme-hope/composables/useDarkMode";
 
 import "../../styles/appearance/theme-color-picker.scss";
@@ -24,6 +25,8 @@ export default defineComponent({
 
   setup(props) {
     const { isDarkMode } = useDarkMode();
+    const appearanceLocale = useAppearanceLocale();
+    const activeColor = ref("");
 
     const activeThemeColors = computed(() => {
       const themeColors = new Map<string, string>(Object.entries(props.themeColors));
@@ -55,6 +58,7 @@ export default defineComponent({
       if (!name) {
         localStorage.removeItem(THEME_COLOR_KEY);
         classes.remove(...colorNames);
+        activeColor.value = "";
 
         return;
       }
@@ -63,6 +67,7 @@ export default defineComponent({
 
       classes.add(name);
       localStorage.setItem(THEME_COLOR_KEY, name);
+      activeColor.value = name;
     };
 
     onMounted(() => {
@@ -72,27 +77,42 @@ export default defineComponent({
     });
 
     return (): VNode =>
-      h("ul", { class: "vp-theme-color-picker", id: "theme-color-picker" }, [
-        h(
-          "li",
-          h("span", {
-            class: "theme-color",
-            onClick: () => {
-              setThemeColor();
-            },
-          }),
-        ),
-        activeThemeColors.value.map(({ name, color }) =>
+      h(
+        "ul",
+        {
+          class: "vp-theme-color-picker",
+          role: "group",
+          "aria-label": appearanceLocale.value.themeColor,
+        },
+        [
           h(
             "li",
-            h("span", {
-              style: { background: color },
+            h("button", {
+              type: "button",
+              class: "theme-color",
+              "aria-label": appearanceLocale.value.themeColor,
+              "aria-pressed": activeColor.value === "",
               onClick: () => {
-                setThemeColor(name);
+                setThemeColor();
               },
             }),
           ),
-        ),
-      ]);
+          activeThemeColors.value.map(({ name, color }) =>
+            h(
+              "li",
+              h("button", {
+                type: "button",
+                class: "theme-color",
+                style: { background: color },
+                "aria-label": name,
+                "aria-pressed": activeColor.value === name,
+                onClick: () => {
+                  setThemeColor(name);
+                },
+              }),
+            ),
+          ),
+        ],
+      );
   },
 });

@@ -1,28 +1,32 @@
-import type { FunctionalComponent, VNode } from "vue";
-import { h } from "vue";
+import type { VNode } from "vue";
+import { defineComponent, h } from "vue";
+
+import { useThemeLocale } from "@theme-hope/composables/useTheme";
 
 import "../../styles/navbar/toggle-sidebar-button.scss";
 
-const ToggleSidebarButton: FunctionalComponent<{ onToggle: () => void }, { toggle: () => void }> = (
-  _,
-  { emit },
-): VNode =>
-  h(
-    "button",
-    {
-      type: "button",
-      class: "vp-toggle-sidebar-button",
-      title: "Toggle Sidebar",
-      "aria-label": "Toggle Sidebar",
-      onClick: () => {
-        emit("toggle");
-      },
-    },
-    h("span", { class: "icon" }),
-  );
+export default defineComponent({
+  name: "ToggleSidebarButton",
 
-ToggleSidebarButton.displayName = "ToggleSidebarButton";
+  emits: ["toggle"],
 
-ToggleSidebarButton.emits = ["toggle"];
+  setup(_props, { emit }) {
+    const themeLocale = useThemeLocale();
 
-export default ToggleSidebarButton;
+    return (): VNode =>
+      h(
+        "button",
+        {
+          type: "button",
+          class: "vp-toggle-sidebar-button",
+          title: themeLocale.value.navbarLocales.toggleSidebar ?? "Toggle sidebar",
+          "aria-label": themeLocale.value.navbarLocales.toggleSidebar ?? "Toggle sidebar",
+          "aria-controls": "sidebar",
+          onClick: () => {
+            emit("toggle");
+          },
+        },
+        h("span", { class: "icon" }),
+      );
+  },
+});

@@ -26,6 +26,7 @@ exports[`getThemeData > should contain basic properties 1`] = `
         "langName": "English",
         "navScreen": "Navigation",
         "selectLangAriaLabel": "Select language",
+        "toggleSidebar": "Toggle sidebar",
       },
       "outlookLocales": {
         "appearance": "Appearance",

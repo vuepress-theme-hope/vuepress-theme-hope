@@ -90,4 +90,39 @@ describe("nav screen", () => {
 
     wrapper.unmount();
   });
+
+  it("wraps shift+tab from the first focusable element to the last", async () => {
+    const wrapper = await mountNavScreen();
+
+    await flushPromises();
+
+    const focusable = wrapper.findAll("#nav-screen a[href], #nav-screen button");
+    const first = focusable[0].element as HTMLElement;
+    const last = focusable[focusable.length - 1].element as HTMLElement;
+
+    first.focus();
+    globalThis.dispatchEvent(new KeyboardEvent("keydown", { key: "Tab", shiftKey: true }));
+    await flushPromises();
+
+    expect(document.activeElement).toBe(last);
+
+    wrapper.unmount();
+  });
+
+  it("locks body scrolling when it opens", async () => {
+    const show = ref(false);
+    const wrapper = await mountTheme({
+      clientConfigs: [darkModeClientConfig],
+      content: defineComponent({
+        setup: () => (): VNode => h(NavScreen, { show: show.value }),
+      }),
+    });
+
+    show.value = true;
+    await flushPromises();
+
+    expect(document.body.style.overflow).toBe("hidden");
+
+    wrapper.unmount();
+  });
 });

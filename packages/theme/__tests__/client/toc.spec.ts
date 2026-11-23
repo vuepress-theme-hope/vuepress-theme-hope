@@ -62,12 +62,12 @@ describe("toc", () => {
 
     await nextTick();
 
-    const header = wrapper.find(".vp-toc-header");
+    const toggle = wrapper.find(".vp-toc-toggle");
 
-    expect(header.attributes("role")).toBe("button");
-    expect(header.attributes("tabindex")).toBe("0");
-    expect(header.attributes("aria-expanded")).toBe("false");
-    expect(header.attributes("aria-controls")).toBe("toc-content");
+    expect(toggle.element.tagName).toBe("BUTTON");
+    expect(toggle.attributes("type")).toBe("button");
+    expect(toggle.attributes("aria-expanded")).toBe("false");
+    expect(toggle.attributes("aria-controls")).toBe("toc-content");
 
     wrapper.unmount();
   });
@@ -78,17 +78,17 @@ describe("toc", () => {
 
     expect(wrapper.find(".vp-toc-wrapper").classes()).not.toContain("open");
 
-    await wrapper.find(".vp-toc-header").trigger("click");
+    await wrapper.find(".vp-toc-toggle").trigger("click");
     expect(wrapper.find(".vp-toc-wrapper").classes()).toContain("open");
-    expect(wrapper.find(".vp-toc-header").attributes("aria-expanded")).toBe("true");
+    expect(wrapper.find(".vp-toc-toggle").attributes("aria-expanded")).toBe("true");
 
-    await wrapper.find(".vp-toc-header").trigger("click");
+    await wrapper.find(".vp-toc-toggle").trigger("click");
     expect(wrapper.find(".vp-toc-wrapper").classes()).not.toContain("open");
 
     wrapper.unmount();
   });
 
-  it("toggles with the keyboard and ignores the print button click", async () => {
+  it("keeps the print button outside the toggle", async () => {
     const print = vi.fn<() => void>();
 
     vi.stubGlobal("print", print);
@@ -97,12 +97,14 @@ describe("toc", () => {
 
     await nextTick();
 
-    await wrapper.find(".vp-toc-header").trigger("keydown", { key: "Enter" });
-    expect(wrapper.find(".vp-toc-wrapper").classes()).toContain("open");
+    const toggle = wrapper.find(".vp-toc-toggle");
+
+    expect(toggle.find(".print-button").exists()).toBe(false);
 
     await wrapper.find(".print-button").trigger("click");
+
     expect(print).toHaveBeenCalledTimes(1);
-    expect(wrapper.find(".vp-toc-wrapper").classes()).toContain("open");
+    expect(wrapper.find(".vp-toc-wrapper").classes()).not.toContain("open");
 
     wrapper.unmount();
     vi.unstubAllGlobals();

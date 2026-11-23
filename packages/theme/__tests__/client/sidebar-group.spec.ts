@@ -45,7 +45,7 @@ describe("sidebar group collapsing", () => {
     expect(group.find(".vp-arrow").classes()).toContain("down");
     expect(group.find(".vp-sidebar-header").attributes("aria-expanded")).toBe("true");
     expect(group.find(".vp-sidebar-header").attributes("aria-controls")).toBe(
-      group.find(".vp-sidebar-links").attributes("id"),
+      group.find(".vp-sidebar-group-content").attributes("id"),
     );
 
     await group.find(".vp-sidebar-header").trigger("click");

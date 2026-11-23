@@ -36,8 +36,20 @@ export default defineComponent({
 
   setup(props) {
     const themeLocale = useThemeLocale();
+    let hasMounted = false;
 
-    onContentUpdated(() => {
+    onContentUpdated((reason) => {
+      // The first callback is fired while the initial page is mounted. Moving
+      // focus to the main content there would steal focus from the document
+      // start, so only restore it after an actual page navigation.
+      if (!hasMounted) {
+        hasMounted = true;
+
+        return;
+      }
+
+      if (reason !== "mounted") return;
+
       const el = document.querySelector<HTMLElement>(`#${props.content}`);
 
       if (el) focusElement(el);

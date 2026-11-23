@@ -61,9 +61,16 @@ export default defineComponent({
       Search: hasGlobalComponent("SearchBox") ? resolveComponent("SearchBox") : noopComponent,
     };
 
-    const getNavbarComponent = (component: string): Component | string =>
-      navbarComponentMap[component] ??
-      (hasGlobalComponent(component) ? resolveComponent(component) : noopComponent);
+    const getNavbarComponent = (component: string): Component | string => {
+      // The nav screen renders its own appearance settings. Mounting the
+      // navbar copy as well would duplicate the ids used by their labels.
+      if (component === "Outlook" && showScreen.value) return noopComponent;
+
+      return (
+        navbarComponentMap[component] ??
+        (hasGlobalComponent(component) ? resolveComponent(component) : noopComponent)
+      );
+    };
 
     onContentUpdated(() => {
       showScreen.value = false;

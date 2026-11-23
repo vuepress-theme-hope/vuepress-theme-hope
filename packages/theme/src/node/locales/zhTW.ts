@@ -7,6 +7,7 @@ export const zhTWLocale: ThemeLocaleData = {
     langName: "繁體中文",
     selectLangAriaLabel: "選擇語言",
     navScreen: "導覽",
+    toggleSidebar: "切換側邊欄",
   },
 
   metaLocales: {

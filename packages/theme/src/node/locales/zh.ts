@@ -7,6 +7,7 @@ export const zhLocale: ThemeLocaleData = {
     langName: "简体中文",
     selectLangAriaLabel: "选择语言",
     navScreen: "导航",
+    toggleSidebar: "切换侧边栏",
   },
 
   metaLocales: {

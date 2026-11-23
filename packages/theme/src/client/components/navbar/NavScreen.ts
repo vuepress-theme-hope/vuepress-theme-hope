@@ -11,7 +11,6 @@ import {
   shallowRef,
   watch,
 } from "vue";
-import { onContentUpdated } from "vuepress/client";
 
 import AppearanceSettings from "@theme-hope/components/appearance/AppearanceSettings";
 import NavScreenLinks from "@theme-hope/components/navbar/NavScreenLinks";
@@ -50,13 +49,20 @@ export default defineComponent({
     const container = shallowRef<HTMLElement>();
     const isLocked = useScrollLock(body);
 
-    const getFocusableElements = (): HTMLElement[] => [
-      ...(container.value?.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR) ?? []),
-    ];
+    const getFocusableElements = (): HTMLElement[] =>
+      [...(container.value?.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR) ?? [])].filter(
+        (element) => {
+          const style = globalThis.getComputedStyle(element);
+
+          return style.display !== "none" && style.visibility !== "hidden";
+        },
+      );
 
     watch(
       () => props.show,
       (show) => {
+        isLocked.value = show;
+
         if (show) {
           void nextTick().then(() => {
             (getFocusableElements()[0] ?? container.value)?.focus();
@@ -97,16 +103,14 @@ export default defineComponent({
       }
     });
 
-    onContentUpdated(() => {
-      isLocked.value = false;
-    });
-
     watch(isMobile, (value) => {
       if (!value && props.show) isLocked.value = false;
     });
 
     onMounted(() => {
       body.value = document.body;
+
+      if (props.show) isLocked.value = true;
     });
 
     onUnmounted(() => {
@@ -118,6 +122,7 @@ export default defineComponent({
         Transition,
         {
           name: "fade-in-down",
+          appear: true,
           onEnter: () => {
             isLocked.value = true;
           },

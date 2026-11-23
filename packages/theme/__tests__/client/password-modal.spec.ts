@@ -85,16 +85,18 @@ describe("password modal", () => {
     await wrapper.find("button.vp-decrypt-submit").trigger("click");
     await nextTick();
 
-    const hint = wrapper.find(".vp-decrypt-hint.tried");
+    const region = wrapper.find("#password-hint");
 
-    expect(hint.text()).toBe("Please enter the correct password!");
-    expect(hint.attributes("role")).toBe("alert");
+    expect(region.text()).toBe("Please enter the correct password!");
+    expect(region.attributes("role")).toBe("alert");
+    expect(region.attributes("aria-live")).toBe("assertive");
     expect(wrapper.find("input[type='password']").attributes("aria-invalid")).toBe("true");
 
     await wrapper.find("input[type='password']").setValue("another");
     await nextTick();
 
-    expect(wrapper.find(".vp-decrypt-hint.tried").exists()).toBe(false);
+    expect(wrapper.find("#password-hint").text()).toBe("");
+    expect(wrapper.find("#password-hint").attributes("role")).toBe("alert");
     expect(wrapper.find("input[type='password']").attributes("aria-invalid")).toBe("false");
 
     wrapper.unmount();

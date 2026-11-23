@@ -1,5 +1,5 @@
 import type { PropType, VNode } from "vue";
-import { computed, defineComponent, h, ref, resolveComponent } from "vue";
+import { computed, defineComponent, h, ref, resolveComponent, useId } from "vue";
 import { useRoute } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/base/AutoLink";
@@ -10,8 +10,6 @@ import { isActiveItem } from "@theme-hope/utils/isActiveItem";
 import { isActiveSidebarItem } from "@theme-hope/utils/sidebar/isActiveSidebarItem";
 
 import "../../styles/sidebar/sidebar-group.scss";
-
-let groupId = 0;
 
 export default defineComponent({
   name: "SidebarGroup",
@@ -46,9 +44,7 @@ export default defineComponent({
     const route = useRoute();
 
     const hasBeenToggled = ref(false);
-    const contentId = `vp-sidebar-group-${groupId}`;
-
-    groupId += 1;
+    const contentId = `vp-sidebar-group-${useId()}`;
 
     const active = computed(() => isActiveSidebarItem(route, props.config));
 
@@ -61,58 +57,75 @@ export default defineComponent({
     return (): VNode => {
       const { collapsible, children, icon, prefix, link, text } = props.config;
 
+      const title = link
+        ? h(AutoLink, {
+            class: "vp-sidebar-title no-external-link-icon",
+            config: { text, link },
+          })
+        : h("span", { class: "vp-sidebar-title" }, text);
+
+      const iconNode = h(resolveComponent("VPIcon"), { icon, sizing: "both" });
+      const arrowNode = h("span", {
+        class: ["vp-arrow", shouldOpen.value ? "down" : "end"],
+      });
+
+      const headerClasses = [
+        "vp-sidebar-header",
+        {
+          // oxlint-disable-next-line typescript/prefer-nullish-coalescing
+          clickable: collapsible || link,
+          exact: exact.value,
+          active: active.value,
+        },
+      ];
+
+      const toggle = (): void => {
+        // The group may be open because of the `expanded` option while `open`
+        // is still false, so the next state must be computed from the rendered
+        // state instead of the `open` prop.
+        const nextOpen = !shouldOpen.value;
+
+        hasBeenToggled.value = true;
+        emit("toggle", nextOpen);
+      };
+
+      const toggleButton = h(
+        "button",
+        {
+          type: "button",
+          class: "vp-sidebar-toggle",
+          "aria-label": text,
+          "aria-expanded": shouldOpen.value,
+          "aria-controls": contentId,
+          onClick: toggle,
+        },
+        arrowNode,
+      );
+
       return h("section", { class: "vp-sidebar-group" }, [
-        h(
-          collapsible ? "button" : "p",
-          {
-            class: [
-              "vp-sidebar-header",
-              {
-                // oxlint-disable-next-line typescript/prefer-nullish-coalescing
-                clickable: collapsible || link,
-                exact: exact.value,
-                active: active.value,
-              },
-            ],
-            ...(collapsible
-              ? {
+        collapsible && link
+          ? h("div", { class: headerClasses }, [iconNode, title, toggleButton])
+          : collapsible
+            ? h(
+                "button",
+                {
                   type: "button",
+                  class: headerClasses,
                   "aria-expanded": shouldOpen.value,
                   "aria-controls": contentId,
-                  onClick: (): void => {
-                    // The group may be open because of the `expanded` option while
-                    // `open` is still false, so the next state must be computed from
-                    // the rendered state instead of the `open` prop.
-                    const nextOpen = !shouldOpen.value;
+                  onClick: toggle,
+                },
+                [iconNode, title, arrowNode],
+              )
+            : h("p", { class: headerClasses }, [iconNode, title]),
 
-                    hasBeenToggled.value = true;
-                    emit("toggle", nextOpen);
-                  },
-                }
-              : {}),
-          },
-          [
-            // Icon
-            h(resolveComponent("VPIcon"), { icon, sizing: "both" }),
-            // Title
-            link
-              ? h(AutoLink, {
-                  class: "vp-sidebar-title no-external-link-icon",
-                  config: { text, link },
-                })
-              : h("span", { class: "vp-sidebar-title" }, text),
-            // Arrow
-            collapsible
-              ? h("span", {
-                  class: ["vp-arrow", shouldOpen.value ? "down" : "end"],
-                })
-              : null,
-          ],
-        ),
-
-        shouldOpen.value || !collapsible
-          ? h(SidebarLinks, { key: prefix, id: contentId, config: children })
-          : null,
+        collapsible
+          ? h(
+              "div",
+              { id: contentId, class: "vp-sidebar-group-content" },
+              shouldOpen.value ? [h(SidebarLinks, { key: prefix, config: children ?? [] })] : [],
+            )
+          : h(SidebarLinks, { key: prefix, config: children ?? [] }),
       ]);
     };
   },

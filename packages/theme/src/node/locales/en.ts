@@ -7,6 +7,7 @@ export const enLocale: ThemeLocaleData = {
     langName: "English",
     selectLangAriaLabel: "Select language",
     navScreen: "Navigation",
+    toggleSidebar: "Toggle sidebar",
   },
 
   metaLocales: {

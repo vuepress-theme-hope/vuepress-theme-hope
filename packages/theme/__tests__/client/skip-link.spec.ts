@@ -32,6 +32,16 @@ describe("skip link", () => {
     wrapper.unmount();
   });
 
+  it("does not steal focus when the initial page is mounted", async () => {
+    const wrapper = await mountSkipLink();
+    const main = wrapper.find("main");
+
+    expect(document.activeElement).not.toBe(main.element);
+    expect(main.attributes("tabindex")).toBeUndefined();
+
+    wrapper.unmount();
+  });
+
   it("focuses the main content and marks it focusable when clicked", async () => {
     const wrapper = await mountSkipLink();
     const main = wrapper.find("main");
