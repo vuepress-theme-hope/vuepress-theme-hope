@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.111](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.110...v2.0.0-rc.111) (2026-11-23)
+
+### ✨ Features
+
+- **vuepress-plugin-components:** remove share component ([abc5c10](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/abc5c10cc1471f730b4a2910426f52b0c05203ed))
+
+### Tests
+
+- **vuepress-plugin-components:** adopt @vuepress/test-utils ([#5495](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5495)) ([e143746](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e143746391768c01332a6053bea7f720e4bd25bb))
+
+### Build System
+
+- bump deps ([#5463](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5463)) ([f504703](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f504703114bbf6b5c584167528123db6372e0aec))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.110](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.109...v2.0.0-rc.110) (2026-09-29)
 
 ### ✨ Features

@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.111](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.110...v2.0.0-rc.111) (2026-11-23)
+
+### 🐛 Bug Fixes
+
+- **vuepress-shared:** avoid polynomial regex parsing link hash ([#5512](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5512)) ([80b6910](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/80b691078df22fa119125078ab2d7a41f21c8f62))
+
+### Miscellaneous Chores
+
+- **deps:** update dependency vite to v8.3.8 ([#5468](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5468)) ([f9dccce](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f9dccce7d938476385df7bc96e141850985e8c23))
+
+### Build System
+
+- bump deps ([#5463](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5463)) ([f504703](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f504703114bbf6b5c584167528123db6372e0aec))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.110](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.109...v2.0.0-rc.110) (2026-09-29)
 
 **Note:** Version bump only for package vuepress-shared

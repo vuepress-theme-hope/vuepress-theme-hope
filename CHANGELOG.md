@@ -4,6 +4,78 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.111](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.110...v2.0.0-rc.111) (2026-11-23)
+
+### ✨ Features
+
+- support rspack bundler and upgrade VuePress ecosystem ([#5470](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5470)) ([cf2fee0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cf2fee0f2da91603bd1a754a6772c6a57adcbbb5))
+- **vuepress-plugin-components:** remove share component ([abc5c10](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/abc5c10cc1471f730b4a2910426f52b0c05203ed))
+- **vuepress-theme-hope:** support boolean share plugin option ([#5508](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5508)) ([cab00e3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cab00e3e399b2cf1cffc6ebc01d6266e8e91262a))
+- **vuepress-theme-hope:** support flexsearch plugin ([#5494](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5494)) ([8bda3db](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8bda3dbf3da3ee7aeea34e2e95b38d30411805e8))
+- **vuepress-theme-hope:** support share buttons in page meta ([a7d9ffd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a7d9ffdd848a88eb9a6ebc0c71be79305a80dd99))
+- **vuepress-theme-hope:** support share plugin ([f9589ac](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f9589acd7b895b8503ce7097c638a59ee6488674))
+- **vuepress-theme-hope:** support window container ([#5492](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5492)) ([0540ddc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0540ddcd99e4de513f137935d7c50131a7c9f00d))
+
+### 🐛 Bug Fixes
+
+- **vuepress-plugin-md-enhance:** add keys to ts playground query ([#5480](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5480)) ([42b3c67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/42b3c67aa79950d79748585aec44059b20ea71b9))
+- **vuepress-shared:** avoid polynomial regex parsing link hash ([#5512](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5512)) ([80b6910](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/80b691078df22fa119125078ab2d7a41f21c8f62))
+- **vuepress-theme-hope:** pass icon scan only in offline mode ([#5462](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5462)) ([fafd0a1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fafd0a11bfe0555b6eec6448c7a607d24570f326))
+- **vuepress-theme-hope:** toggle expanded sidebar group with one click ([#5511](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5511)) ([2dc99fb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2dc99fb95d65dcf037ea3dc83576d764995a4134))
+
+### Documentation
+
+- Add Jiang's Blog to projects list ([#5432](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5432)) ([7f6d0db](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/7f6d0db155d2c163eab761db7040d5321da05361))
+- document new upstream options ([#5493](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5493)) ([1b447f4](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/1b447f45810a03fe7589b67e61ca883ce0438368))
+- document share plugin ([d755a1f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/d755a1fbcc02c8d1f33bb82c88ad38ab10a5d152))
+- document valid commit scopes ([#5484](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5484)) ([76f1670](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/76f1670b0470dca850c29288b6fca5c28b516f79))
+- Modify Wwiot-Camerasys project details ([#5439](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5439)) ([9dd80ab](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9dd80ab0ff9d66f8220da50faa5ad2261b8cbec7))
+
+### Miscellaneous Chores
+
+- **deps:** group markmap and oxc dependency updates ([#5491](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5491)) ([22e2181](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/22e21819722ba6b786c02e7fe041e55f875a84aa))
+- **deps:** update dependency markdown-it to v14.3.3 [security] ([#5452](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5452)) ([243be96](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/243be965fe3833bd16445b1e23c56175924a6d74))
+- **deps:** update dependency markdownlint-cli2 to v0.24.1 ([#5455](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5455)) ([9624698](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/9624698a1631af907b86fc82e42f4c34e96e2836))
+- **deps:** update dependency markdownlint-cli2 to v0.24.2 ([#5481](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5481)) ([2f8f313](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2f8f3137e3d1132112dd3b42b14f59d82cf83c24))
+- **deps:** update dependency oxlint to v1.94.0 ([#5477](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5477)) ([c0569d8](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c0569d87e857e073bfbba0a1626373c4cba515a3))
+- **deps:** update dependency oxlint-tsgolint to v7.0.2007 ([#5442](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5442)) ([ccbe256](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/ccbe256f99a3c1ff480ee23785c2f0c8e9549d84))
+- **deps:** update dependency oxlint-tsgolint to v7.0.2008 ([#5505](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5505)) ([afb4f73](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/afb4f7309c24b2efe32b22302d1bd58a6f71989e))
+- **deps:** update dependency serve to v14.2.8 ([#5471](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5471)) ([83fe9f9](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/83fe9f9b2aaa24dec58f735f0d1943c17c7d77f2))
+- **deps:** update dependency vite to v8.3.8 ([#5468](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5468)) ([f9dccce](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f9dccce7d938476385df7bc96e141850985e8c23))
+- **deps:** update lerna-lite monorepo to v5.9.0 ([#5478](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5478)) ([95f663d](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/95f663d80734a5cb7ea16391f789bebc1fe7d871))
+- **deps:** update lockfile ([#5415](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5415)) ([c2923be](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c2923becd25ca1ac90cf7f13efc4a49a217f1807))
+- **deps:** update markmap to v1.1.1 ([#5496](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5496)) ([cc38c91](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cc38c91e65775abf4a999a176e442d05be1f276a))
+- **deps:** update pnpm to v12.21.0 ([#5437](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5437)) ([f168579](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f168579013512894c41c9441e35504b746ce591c))
+- **deps:** update vitest monorepo to v5.1.1 ([#5475](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5475)) ([e0c2f3f](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e0c2f3f6fab60f48c4bc928d18529403850fb81f))
+- remove lightgallery plugin ([#5466](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5466)) ([f9bd112](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f9bd112f928fbbc12a176ed676fb5b6f78c7d2d3))
+- update lockfile ([6ef6c11](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/6ef6c11620b2d76d22cdafea7d7568952cb20228))
+
+### Code Refactoring
+
+- **vuepress-theme-hope:** drop InfoPanel key ([#5474](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5474)) ([68940ee](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/68940ee62966e3728ce2c3e3bd4fd2a1e8fd04f3))
+
+### Tests
+
+- **vuepress-plugin-components:** adopt @vuepress/test-utils ([#5495](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5495)) ([e143746](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/e143746391768c01332a6053bea7f720e4bd25bb))
+
+### Build System
+
+- bump deps ([#5463](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5463)) ([f504703](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f504703114bbf6b5c584167528123db6372e0aec))
+- **deps:** bump follow-redirects from 1.16.0 to 1.16.3 ([#5465](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5465)) ([0861558](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/086155880f8cc626e14b3c33d776d8a1b6dde169))
+- **deps:** bump seroval from 1.6.7 to 1.8.1 ([#5464](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5464)) ([43a74ef](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/43a74ef850fdfd52d8e195b795b765d3a78d0096))
+- **deps:** bump vuepress ecosystem to 2.0.0-rc.140 ([#5504](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5504)) ([64e2ed5](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/64e2ed5bd7b3ccd1d90b5b11ecb40d71c9b46def))
+- **deps:** drop redundant security overrides ([#5503](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5503)) ([46f3bbd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/46f3bbd7aaae9a89b5fa2d44df61c362ea4f8805))
+- **deps:** fix Dependabot security alerts ([#5497](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5497)) ([2d5a2e2](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2d5a2e2c950a1ddd7676964e15930094b750efde))
+- **deps:** upgrade oxfmt and stylelint ([#5482](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5482)) ([37ca8eb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/37ca8ebf00cb970f02a7c24b5dd543003cf44401))
+- update config and bump deps ([cf6ec9e](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cf6ec9e010e77a2142632af0740f5c7f4d640841))
+
+### Continuous Integration
+
+- disable major @types/node updates with the official helper ([#5458](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5458)) ([c6d1d78](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/c6d1d7835d7d6044ff9ef1e94857a257772241da))
+- use non-vulnerable Node releases ([#5450](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5450)) ([b7ba3ff](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/b7ba3ffd37ac06c1057931972139210a0ee364e7))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.110](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.109...v2.0.0-rc.110) (2026-09-29)
 
 ### ✨ Features

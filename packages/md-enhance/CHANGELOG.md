@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.111](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.110...v2.0.0-rc.111) (2026-11-23)
+
+### ✨ Features
+
+- support rspack bundler and upgrade VuePress ecosystem ([#5470](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5470)) ([cf2fee0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cf2fee0f2da91603bd1a754a6772c6a57adcbbb5))
+
+### 🐛 Bug Fixes
+
+- **vuepress-plugin-md-enhance:** add keys to ts playground query ([#5480](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5480)) ([42b3c67](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/42b3c67aa79950d79748585aec44059b20ea71b9))
+
+### Miscellaneous Chores
+
+- **deps:** update dependency markdown-it to v14.3.3 [security] ([#5452](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5452)) ([243be96](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/243be965fe3833bd16445b1e23c56175924a6d74))
+
+### Build System
+
+- bump deps ([#5463](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5463)) ([f504703](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f504703114bbf6b5c584167528123db6372e0aec))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.110](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.109...v2.0.0-rc.110) (2026-09-29)
 
 ### Documentation

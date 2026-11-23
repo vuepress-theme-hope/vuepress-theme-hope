@@ -4,6 +4,33 @@ All notable changes to this project will be documented in this file. See [Conven
 
 <!-- #region recent-change -->
 
+## [2.0.0-rc.111](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.110...v2.0.0-rc.111) (2026-11-23)
+
+### ✨ Features
+
+- support rspack bundler and upgrade VuePress ecosystem ([#5470](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5470)) ([cf2fee0](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cf2fee0f2da91603bd1a754a6772c6a57adcbbb5))
+- **vuepress-theme-hope:** support boolean share plugin option ([#5508](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5508)) ([cab00e3](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/cab00e3e399b2cf1cffc6ebc01d6266e8e91262a))
+- **vuepress-theme-hope:** support flexsearch plugin ([#5494](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5494)) ([8bda3db](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/8bda3dbf3da3ee7aeea34e2e95b38d30411805e8))
+- **vuepress-theme-hope:** support share buttons in page meta ([a7d9ffd](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/a7d9ffdd848a88eb9a6ebc0c71be79305a80dd99))
+- **vuepress-theme-hope:** support share plugin ([f9589ac](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f9589acd7b895b8503ce7097c638a59ee6488674))
+- **vuepress-theme-hope:** support window container ([#5492](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5492)) ([0540ddc](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/0540ddcd99e4de513f137935d7c50131a7c9f00d))
+
+### 🐛 Bug Fixes
+
+- **vuepress-theme-hope:** pass icon scan only in offline mode ([#5462](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5462)) ([fafd0a1](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/fafd0a11bfe0555b6eec6448c7a607d24570f326))
+- **vuepress-theme-hope:** toggle expanded sidebar group with one click ([#5511](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5511)) ([2dc99fb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/2dc99fb95d65dcf037ea3dc83576d764995a4134))
+
+### Code Refactoring
+
+- **vuepress-theme-hope:** drop InfoPanel key ([#5474](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5474)) ([68940ee](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/68940ee62966e3728ce2c3e3bd4fd2a1e8fd04f3))
+
+### Build System
+
+- bump deps ([#5463](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5463)) ([f504703](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/f504703114bbf6b5c584167528123db6372e0aec))
+- **deps:** upgrade oxfmt and stylelint ([#5482](https://github.com/vuepress-theme-hope/vuepress-theme-hope/issues/5482)) ([37ca8eb](https://github.com/vuepress-theme-hope/vuepress-theme-hope/commit/37ca8ebf00cb970f02a7c24b5dd543003cf44401))
+
+<!-- #region recent-change -->
+
 ## [2.0.0-rc.110](https://github.com/vuepress-theme-hope/vuepress-theme-hope/compare/v2.0.0-rc.109...v2.0.0-rc.110) (2026-09-29)
 
 ### ✨ Features
