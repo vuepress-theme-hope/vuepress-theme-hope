@@ -39,21 +39,16 @@ export default defineComponent({
 
     const encryptLocale = computed(() => themeLocale.value.encryptLocales);
 
-    let hintHandler: number | null = null;
+    const passwordLabel = computed(() => encryptLocale.value.password ?? "Password");
+    const submitText = computed(() => encryptLocale.value.submit ?? "OK");
 
     const verify = (): void => {
-      // Clear previous handler
-      if (hintHandler) clearTimeout(hintHandler);
       hasTried.value = false;
 
       emit("verify", password.value, remember.value);
 
       void nextTick().then(() => {
         hasTried.value = true;
-
-        hintHandler = setTimeout(() => {
-          hasTried.value = false;
-        }, 1000) as unknown as number;
       });
     };
 
@@ -68,7 +63,11 @@ export default defineComponent({
           h("div", { class: "vp-decrypt-modal" }, [
             h(
               "div",
-              { class: ["vp-decrypt-hint", { tried: hasTried.value }] },
+              {
+                id: "password-hint",
+                class: ["vp-decrypt-hint", { tried: hasTried.value }],
+                ...(hasTried.value ? { role: "alert" } : {}),
+              },
               hasTried.value
                 ? encryptLocale.value.errorHint
                 : h(LockIcon, { "aria-label": encryptLocale.value.iconLabel }),
@@ -76,11 +75,17 @@ export default defineComponent({
             props.hint ? h("div", { class: "vp-decrypt-hint" }, props.hint) : null,
             h("div", { class: "vp-decrypt-input" }, [
               h("input", {
+                id: "password-input",
                 type: "password",
                 value: password.value,
                 placeholder: encryptLocale.value.placeholder,
+                autocomplete: "current-password",
+                "aria-label": passwordLabel.value,
+                "aria-invalid": hasTried.value ? "true" : "false",
+                "aria-describedby": "password-hint",
                 onInput: ({ target }: InputEvent) => {
                   password.value = (target as HTMLInputElement).value;
+                  hasTried.value = false;
                 },
                 onKeydown: ({ key }: KeyboardEvent) => {
                   if (key === "Enter") verify();
@@ -107,7 +112,7 @@ export default defineComponent({
                   verify();
                 },
               },
-              "OK",
+              submitText.value,
             ),
           ]),
         ],

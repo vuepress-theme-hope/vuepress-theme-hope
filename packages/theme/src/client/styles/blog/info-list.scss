@@ -37,8 +37,9 @@
 
   color: var(--vp-c-text);
 
-  &:focus {
-    outline: none;
+  &:focus-visible {
+    outline: 2px solid var(--vp-c-accent);
+    outline-offset: 2px;
   }
 }
 

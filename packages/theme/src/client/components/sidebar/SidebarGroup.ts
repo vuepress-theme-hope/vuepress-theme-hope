@@ -11,6 +11,8 @@ import { isActiveSidebarItem } from "@theme-hope/utils/sidebar/isActiveSidebarIt
 
 import "../../styles/sidebar/sidebar-group.scss";
 
+let groupId = 0;
+
 export default defineComponent({
   name: "SidebarGroup",
 
@@ -44,6 +46,9 @@ export default defineComponent({
     const route = useRoute();
 
     const hasBeenToggled = ref(false);
+    const contentId = `vp-sidebar-group-${groupId}`;
+
+    groupId += 1;
 
     const active = computed(() => isActiveSidebarItem(route, props.config));
 
@@ -72,6 +77,8 @@ export default defineComponent({
             ...(collapsible
               ? {
                   type: "button",
+                  "aria-expanded": shouldOpen.value,
+                  "aria-controls": contentId,
                   onClick: (): void => {
                     // The group may be open because of the `expanded` option while
                     // `open` is still false, so the next state must be computed from
@@ -104,7 +111,7 @@ export default defineComponent({
         ),
 
         shouldOpen.value || !collapsible
-          ? h(SidebarLinks, { key: prefix, config: children })
+          ? h(SidebarLinks, { key: prefix, id: contentId, config: children })
           : null,
       ]);
     };

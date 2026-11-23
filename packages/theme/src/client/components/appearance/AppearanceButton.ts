@@ -10,7 +10,7 @@ import { hasMultipleThemeColors } from "@theme-hope/components/appearance/ThemeC
 import ToggleFullScreenButton from "@theme-hope/components/appearance/ToggleFullScreenButton";
 import { useDarkMode } from "@theme-hope/composables/useDarkMode";
 import { usePure } from "@theme-hope/composables/usePure";
-import { useTheme } from "@theme-hope/composables/useTheme";
+import { useTheme, useThemeLocale } from "@theme-hope/composables/useTheme";
 
 import "../../styles/appearance/appearance-button.scss";
 
@@ -19,11 +19,13 @@ export default defineComponent({
 
   setup() {
     const theme = useTheme();
+    const themeLocale = useThemeLocale();
     const { canToggle } = useDarkMode();
     const { isSupported } = useFullscreen();
     const isPure = usePure();
 
     const open = ref(false);
+    const button = ref<HTMLButtonElement>();
 
     const enableFullScreen = computed(() => !isPure.value && theme.value.fullscreen && isSupported);
 
@@ -31,35 +33,68 @@ export default defineComponent({
       () => hasMultipleThemeColors || canToggle.value || enableFullScreen.value,
     );
 
-    onContentUpdated(() => {
-      open.value = false;
-    });
+    const appearanceLabel = computed(
+      () => themeLocale.value.outlookLocales.appearance ?? "Appearance",
+    );
 
-    return (): VNode | null =>
-      enabled.value
-        ? h(
+    const close = (): void => {
+      open.value = false;
+    };
+
+    onContentUpdated(close);
+
+    return (): VNode | null => {
+      if (!enabled.value) return null;
+
+      // Only ColorModeSwitch is enabled
+      if (canToggle.value && !enableFullScreen.value && !hasMultipleThemeColors)
+        return h("div", { class: "vp-nav-item hide-in-mobile" }, h(ColorModeSwitch));
+
+      // Only FullScreen is enabled
+      if (enableFullScreen.value && !canToggle.value && !hasMultipleThemeColors)
+        return h("div", { class: "vp-nav-item hide-in-mobile" }, h(ToggleFullScreenButton));
+
+      return h(
+        "div",
+        {
+          class: "vp-nav-item hide-in-mobile vp-appearance",
+          onFocusout: (event: FocusEvent) => {
+            const next = event.relatedTarget as Node | null;
+
+            if (open.value && (!next || !(event.currentTarget as HTMLElement).contains(next)))
+              close();
+          },
+          onKeydown: (event: KeyboardEvent) => {
+            if (event.key === "Escape" && open.value) {
+              event.stopPropagation();
+              close();
+              button.value?.focus();
+            }
+          },
+        },
+        [
+          h(
+            "button",
+            {
+              ref: button,
+              type: "button",
+              class: ["vp-appearance-button", { open: open.value }],
+              "aria-label": appearanceLabel.value,
+              "aria-expanded": open.value,
+              "aria-controls": "appearance-dropdown",
+              onClick: () => {
+                open.value = !open.value;
+              },
+            },
+            h(AppearanceIcon),
+          ),
+          h(
             "div",
-            { class: "vp-nav-item hide-in-mobile" },
-            // Only ColorModeSwitch is enabled
-            canToggle.value && !enableFullScreen.value && !hasMultipleThemeColors
-              ? h(ColorModeSwitch)
-              : // Only FullScreen is enabled
-                enableFullScreen.value && !canToggle.value && !hasMultipleThemeColors
-                ? h(ToggleFullScreenButton)
-                : h(
-                    "button",
-                    {
-                      type: "button",
-                      class: ["vp-appearance-button", { open: open.value }],
-                      tabindex: "-1",
-                      "aria-hidden": true,
-                    },
-                    [
-                      h(AppearanceIcon),
-                      h("div", { class: "vp-appearance-dropdown" }, h(AppearanceSettings)),
-                    ],
-                  ),
-          )
-        : null;
+            { id: "appearance-dropdown", class: "vp-appearance-dropdown" },
+            h(AppearanceSettings),
+          ),
+        ],
+      );
+    };
   },
 });

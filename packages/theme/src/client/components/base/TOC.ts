@@ -132,6 +132,7 @@ export default defineComponent({
         {
           to: `#${slug}`,
           class: ["vp-toc-link", `level${level}`],
+          ...(route.hash === `#${slug}` ? { "aria-current": "location" } : {}),
           onClick: () => {
             toggleExpanded();
           },
@@ -176,8 +177,18 @@ export default defineComponent({
                       "div",
                       {
                         class: "vp-toc-header",
+                        role: "button",
+                        tabindex: "0",
+                        "aria-expanded": isExpanded.value,
+                        "aria-controls": "toc-content",
                         onClick: () => {
                           toggleExpanded();
+                        },
+                        onKeydown: (event: KeyboardEvent) => {
+                          if (event.key === "Enter" || event.key === " ") {
+                            event.preventDefault();
+                            toggleExpanded();
+                          }
                         },
                       },
                       [
@@ -191,6 +202,7 @@ export default defineComponent({
                     h(
                       "div",
                       {
+                        id: "toc-content",
                         class: ["vp-toc-wrapper", isExpanded.value ? "open" : ""],
                         ref: toc,
                       },
@@ -217,7 +229,7 @@ export default defineComponent({
             return isTOCEmpty
               ? null
               : h("div", { class: "vp-toc-placeholder" }, [
-                  h("aside", { id: "toc", "vp-toc": "" }, [
+                  h("aside", { id: "toc", "aria-label": metaLocale.value.toc, "vp-toc": "" }, [
                     beforeContent,
                     defaultContent,
                     afterContent,

@@ -1,15 +1,28 @@
 import type { Slot } from "@vuepress/helper/client";
-import { useScrollLock } from "@vueuse/core";
+import { useEventListener, useScrollLock } from "@vueuse/core";
 import type { SlotsType, VNode } from "vue";
-import { Transition, defineComponent, h, onMounted, onUnmounted, shallowRef, watch } from "vue";
+import {
+  Transition,
+  defineComponent,
+  h,
+  nextTick,
+  onMounted,
+  onUnmounted,
+  shallowRef,
+  watch,
+} from "vue";
 import { onContentUpdated } from "vuepress/client";
 
 import AppearanceSettings from "@theme-hope/components/appearance/AppearanceSettings";
 import NavScreenLinks from "@theme-hope/components/navbar/NavScreenLinks";
+import { useThemeLocale } from "@theme-hope/composables/useTheme";
 import { useWindowSize } from "@theme-hope/composables/useWindowSize";
 
 import "@vuepress/helper/transition/fade-in-down.css";
 import "../../styles/navbar/nav-screen.scss";
+
+const FOCUSABLE_SELECTOR =
+  'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 export default defineComponent({
   name: "NavScreen",
@@ -23,15 +36,66 @@ export default defineComponent({
     show: Boolean,
   },
 
+  emits: ["close"],
+
   slots: Object as SlotsType<{
     navScreenTop?: Slot;
     navScreenBottom?: Slot;
   }>,
 
-  setup(props, { slots }) {
+  setup(props, { emit, slots }) {
+    const themeLocale = useThemeLocale();
     const { isMobile } = useWindowSize();
     const body = shallowRef<HTMLElement>();
+    const container = shallowRef<HTMLElement>();
     const isLocked = useScrollLock(body);
+
+    const getFocusableElements = (): HTMLElement[] => [
+      ...(container.value?.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR) ?? []),
+    ];
+
+    watch(
+      () => props.show,
+      (show) => {
+        if (show) {
+          void nextTick().then(() => {
+            (getFocusableElements()[0] ?? container.value)?.focus();
+          });
+        }
+      },
+      { immediate: true },
+    );
+
+    useEventListener("keydown", (event: KeyboardEvent) => {
+      if (!props.show) return;
+
+      if (event.key === "Escape") {
+        event.preventDefault();
+        emit("close");
+
+        return;
+      }
+
+      if (event.key !== "Tab") return;
+
+      const focusable = getFocusableElements();
+
+      if (!focusable.length) return;
+
+      const [first] = focusable;
+      const last = focusable[focusable.length - 1];
+
+      if (
+        event.shiftKey &&
+        (document.activeElement === first || document.activeElement === container.value)
+      ) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
 
     onContentUpdated(() => {
       isLocked.value = false;
@@ -65,7 +129,15 @@ export default defineComponent({
           props.show
             ? h(
                 "div",
-                { id: "nav-screen", class: "vp-nav-screen" },
+                {
+                  id: "nav-screen",
+                  ref: container,
+                  class: "vp-nav-screen",
+                  role: "dialog",
+                  "aria-modal": "true",
+                  "aria-label": themeLocale.value.navbarLocales.navScreen ?? "Navigation",
+                  tabindex: "-1",
+                },
                 h("div", { class: "vp-nav-screen-container" }, [
                   slots.navScreenTop?.(),
                   h(NavScreenLinks),

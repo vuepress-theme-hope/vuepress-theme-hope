@@ -124,21 +124,41 @@ export default defineComponent({
       }
     };
 
+    /**
+     * Render a page number button
+     *
+     * @param num - Page number
+     * @returns The page number button
+     */
+    const renderNumber = (num: number): VNode =>
+      h(
+        "button",
+        {
+          key: num,
+          type: "button",
+          class: { active: props.current === num },
+          ...(props.current === num ? { "aria-current": "page" } : {}),
+          onClick: () => {
+            navigate(num);
+          },
+        },
+        num,
+      );
+
     return (): VNode =>
       h(
         "div",
         { class: "vp-pagination" },
         enable.value
           ? h("nav", { class: "vp-pagination-list" }, [
-              h("div", { class: "vp-pagination-number " }, [
+              h("div", { class: "vp-pagination-number" }, [
                 // Prev button
                 props.current > 1
                   ? h(
-                      "div",
+                      "button",
                       {
+                        type: "button",
                         class: "prev",
-                        role: "navigation",
-                        unselectable: "on",
                         onClick: () => {
                           navigate(props.current - 1);
                         },
@@ -150,59 +170,27 @@ export default defineComponent({
                 // Left ellipsis
                 displayLeftEllipsis.value
                   ? [
-                      h(
-                        "div",
-                        {
-                          role: "navigation",
-                          onClick: () => {
-                            navigate(1);
-                          },
-                        },
-                        1,
-                      ),
-                      h("div", { class: "ellipsis" }, "..."),
+                      renderNumber(1),
+                      h("span", { class: "ellipsis", "aria-hidden": "true" }, "..."),
                     ]
                   : null,
                 // Numbers
-                indexes.value.map((num) =>
-                  h(
-                    "div",
-                    {
-                      key: num,
-                      class: { active: props.current === num },
-                      role: "navigation",
-                      onClick: () => {
-                        navigate(num);
-                      },
-                    },
-                    num,
-                  ),
-                ),
+                indexes.value.map(renderNumber),
 
                 // Right ellipsis
                 displayRightEllipsis.value
                   ? [
-                      h("div", { class: "ellipsis" }, "..."),
-                      h(
-                        "div",
-                        {
-                          role: "navigation",
-                          onClick: () => {
-                            navigate(totalPages.value);
-                          },
-                        },
-                        totalPages.value,
-                      ),
+                      h("span", { class: "ellipsis", "aria-hidden": "true" }, "..."),
+                      renderNumber(totalPages.value),
                     ]
                   : null,
                 // Next button
                 props.current < totalPages.value
                   ? h(
-                      "div",
+                      "button",
                       {
+                        type: "button",
                         class: "next",
-                        role: "navigation",
-                        unselectable: "on",
                         onClick: () => {
                           navigate(props.current + 1);
                         },
@@ -231,7 +219,6 @@ export default defineComponent({
                   {
                     class: "vp-pagination-button",
                     type: "button",
-                    role: "navigation",
                     title: paginationLocale.value.action,
                     onClick: () => {
                       jumpPage(input.value);

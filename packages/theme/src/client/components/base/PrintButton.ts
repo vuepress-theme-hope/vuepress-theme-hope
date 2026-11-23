@@ -23,7 +23,8 @@ export default defineComponent({
               type: "button",
               class: "print-button",
               title: metaLocale.value.print,
-              onClick: () => {
+              onClick: (event: MouseEvent) => {
+                event.stopPropagation();
                 globalThis.print();
               },
             },

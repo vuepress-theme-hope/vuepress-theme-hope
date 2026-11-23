@@ -3,6 +3,8 @@ import type { FunctionalComponent, VNode } from "vue";
 import { defineComponent, h } from "vue";
 import { IconBase } from "vuepress-shared/client";
 
+import { useThemeLocale } from "@theme-hope/composables/useTheme";
+
 import "../../styles/appearance/toggle-full-screen-button.scss";
 
 const CancelFullScreenIcon: FunctionalComponent = () =>
@@ -28,6 +30,7 @@ export default defineComponent({
 
   setup() {
     const { isSupported, isFullscreen, toggle } = useFullscreen();
+    const themeLocale = useThemeLocale();
 
     return (): VNode | null =>
       isSupported.value
@@ -37,7 +40,8 @@ export default defineComponent({
               type: "button",
               id: "full-screen-switch",
               class: "full-screen",
-              ariaPressed: isFullscreen.value,
+              "aria-label": themeLocale.value.outlookLocales.fullscreen,
+              "aria-pressed": isFullscreen.value,
               onClick: () => toggle(),
             },
             isFullscreen.value ? h(CancelFullScreenIcon) : h(EnterFullScreenIcon),

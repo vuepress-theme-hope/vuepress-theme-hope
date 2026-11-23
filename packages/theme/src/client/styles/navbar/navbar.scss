@@ -28,6 +28,7 @@
   }
 
   .hide-navbar &.auto-hide {
+    visibility: hidden;
     transform: translateY(-100%);
   }
 

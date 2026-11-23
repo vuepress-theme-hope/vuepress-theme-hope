@@ -1,7 +1,7 @@
 // @vitest-environment happy-dom
 
 import type { VueWrapper } from "@vue/test-utils";
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 import type { VNode } from "vue";
 import { defineComponent, h, nextTick } from "vue";
 
@@ -33,6 +33,8 @@ describe("password modal", () => {
 
     expect(input.exists()).toBe(true);
     expect(input.attributes("placeholder")).toBe("Enter password");
+    expect(input.attributes("aria-label")).toBe("Password");
+    expect(input.attributes("autocomplete")).toBe("current-password");
 
     wrapper.unmount();
   });
@@ -77,25 +79,25 @@ describe("password modal", () => {
     wrapper.unmount();
   });
 
-  it("shows the error hint after a failed attempt", async () => {
-    vi.useFakeTimers();
-
+  it("announces the error hint until the password changes", async () => {
     const wrapper = await mountPasswordModal();
 
     await wrapper.find("button.vp-decrypt-submit").trigger("click");
     await nextTick();
 
-    expect(wrapper.find(".vp-decrypt-hint.tried").text()).toBe(
-      "Please enter the correct password!",
-    );
+    const hint = wrapper.find(".vp-decrypt-hint.tried");
 
-    vi.advanceTimersByTime(1000);
+    expect(hint.text()).toBe("Please enter the correct password!");
+    expect(hint.attributes("role")).toBe("alert");
+    expect(wrapper.find("input[type='password']").attributes("aria-invalid")).toBe("true");
+
+    await wrapper.find("input[type='password']").setValue("another");
     await nextTick();
 
     expect(wrapper.find(".vp-decrypt-hint.tried").exists()).toBe(false);
+    expect(wrapper.find("input[type='password']").attributes("aria-invalid")).toBe("false");
 
     wrapper.unmount();
-    vi.useRealTimers();
   });
 
   it("shows the page title when requested", async () => {

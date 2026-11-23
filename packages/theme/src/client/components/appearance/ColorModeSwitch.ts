@@ -5,6 +5,7 @@ import { IconBase } from "vuepress-shared/client";
 import type { DarkmodeStatus } from "@theme-hope/composables/useDarkMode";
 import { useDarkMode } from "@theme-hope/composables/useDarkMode";
 import { usePure } from "@theme-hope/composables/usePure";
+import { useThemeLocale } from "@theme-hope/composables/useTheme";
 
 import "../../styles/appearance/color-mode-switch.scss";
 
@@ -40,6 +41,7 @@ export default defineComponent({
 
   setup() {
     const { config, isDarkMode, status } = useDarkMode();
+    const themeLocale = useThemeLocale();
     const isPure = usePure();
 
     const updateDarkmodeStatus = (): void => {
@@ -107,6 +109,7 @@ export default defineComponent({
           type: "button",
           class: "vp-color-mode-switch",
           id: "color-mode-switch",
+          "aria-label": themeLocale.value.outlookLocales.darkmode,
           onClick: toggleDarkmode,
         },
         [

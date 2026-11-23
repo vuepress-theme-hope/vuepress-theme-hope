@@ -6,6 +6,7 @@ export const zhTWLocale: ThemeLocaleData = {
   navbarLocales: {
     langName: "繁體中文",
     selectLangAriaLabel: "選擇語言",
+    navScreen: "導覽",
   },
 
   metaLocales: {
@@ -50,6 +51,7 @@ export const zhTWLocale: ThemeLocaleData = {
     themeColor: "主題色",
     darkmode: "主題模式",
     fullscreen: "全屏",
+    appearance: "外觀",
   },
 
   encryptLocales: {
@@ -57,6 +59,8 @@ export const zhTWLocale: ThemeLocaleData = {
     placeholder: "輸入密碼",
     remember: "記憶密碼",
     errorHint: "請輸入正確密碼",
+    password: "密碼",
+    submit: "確定",
   },
 
   routerLocales: {

@@ -14,6 +14,15 @@ export interface NavbarLocaleData {
    * 当前语言的名称
    */
   langName: string;
+
+  /**
+   * Aria label of the mobile navigation screen
+   *
+   * 移动端导航面板的无障碍标签
+   *
+   * @default "Navigation"
+   */
+  navScreen?: string;
 }
 
 /**

@@ -9,6 +9,11 @@ body {
   font-family: var(--vp-font);
 }
 
+:focus-visible {
+  outline: 2px solid var(--vp-c-accent);
+  outline-offset: 2px;
+}
+
 h1,
 h2,
 h3,

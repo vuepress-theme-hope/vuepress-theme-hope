@@ -39,6 +39,7 @@
     box-shadow: none;
 
     // sidebar should be collapsed by default
+    visibility: hidden;
     transform: translateX(-100%);
 
     [dir="rtl"] & {

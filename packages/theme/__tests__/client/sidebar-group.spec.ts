@@ -43,11 +43,16 @@ describe("sidebar group collapsing", () => {
 
     expect(group.find(".vp-sidebar-links").exists()).toBe(true);
     expect(group.find(".vp-arrow").classes()).toContain("down");
+    expect(group.find(".vp-sidebar-header").attributes("aria-expanded")).toBe("true");
+    expect(group.find(".vp-sidebar-header").attributes("aria-controls")).toBe(
+      group.find(".vp-sidebar-links").attributes("id"),
+    );
 
     await group.find(".vp-sidebar-header").trigger("click");
 
     expect(group.find(".vp-sidebar-links").exists()).toBe(false);
     expect(group.find(".vp-arrow").classes()).toContain("end");
+    expect(group.find(".vp-sidebar-header").attributes("aria-expanded")).toBe("false");
 
     wrapper.unmount();
   });

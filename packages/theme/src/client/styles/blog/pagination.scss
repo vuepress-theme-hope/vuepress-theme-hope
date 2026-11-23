@@ -1,3 +1,5 @@
+@use "vuepress-shared/scss/reset";
+
 .vp-pagination {
   margin: 1.25rem 0 0.75rem;
   font-weight: 600;
@@ -25,13 +27,18 @@
   border: 1px solid var(--vp-c-border);
   border-radius: 0.25rem;
 
-  div {
+  button {
+    @include reset.button;
+
     position: relative;
 
     padding: 0 0.5rem;
 
     background: var(--vp-c-bg);
     color: var(--vp-c-accent);
+
+    font: inherit;
+    line-height: inherit;
 
     cursor: pointer;
 
@@ -56,16 +63,21 @@
       color: var(--vp-c-accent-hover);
     }
 
-    &.active {
-      background: var(--vp-c-accent-bg);
-      color: var(--vp-c-white);
-
-      &::before {
-        background: var(--vp-c-accent-bg);
-      }
+    &:focus-visible {
+      outline: 2px solid var(--vp-c-accent);
+      outline-offset: -2px;
     }
 
-    &.active + div::before {
+    &[aria-current="page"] {
+      background: var(--vp-c-accent-bg);
+      color: var(--vp-c-white);
+    }
+
+    &[aria-current="page"]::before {
+      background: var(--vp-c-accent-bg);
+    }
+
+    &[aria-current="page"] + button::before {
       background: var(--vp-c-accent-bg);
     }
 
@@ -74,11 +86,12 @@
       font-size: 13px;
       line-height: 30px;
     }
+  }
 
-    &.active,
-    &.ellipsis {
-      cursor: default;
-    }
+  .ellipsis {
+    padding: 0 0.5rem;
+    color: var(--vp-c-accent);
+    cursor: default;
   }
 }
 
@@ -96,10 +109,14 @@
 
     background: var(--vp-c-bg);
     color: var(--vp-c-text);
-    outline: none;
 
     line-height: 2;
     text-align: center;
+
+    &:focus-visible {
+      outline: 2px solid var(--vp-c-accent);
+      outline-offset: 1px;
+    }
   }
 }
 
@@ -112,7 +129,6 @@
 
   background: var(--vp-c-bg);
   color: var(--vp-c-accent);
-  outline: none;
 
   font-weight: 600;
   font-size: 15px;
@@ -122,5 +138,10 @@
 
   &:hover {
     color: var(--vp-c-accent-hover);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--vp-c-accent);
+    outline-offset: 2px;
   }
 }

@@ -37,7 +37,11 @@ describe("navbar dropdown", () => {
     expect(title.exists()).toBe(true);
     expect(title.attributes("type")).toBe("button");
     expect(title.attributes("aria-label")).toBe("Resources");
+    expect(title.attributes("aria-expanded")).toBe("false");
+    expect(title.attributes("aria-controls")).toBe(wrapper.find("ul.vp-dropdown").attributes("id"));
     expect(title.text()).toContain("Resources");
+    // The dropdown list must not be nested inside the button
+    expect(title.find("ul.vp-dropdown").exists()).toBe(false);
 
     wrapper.unmount();
   });
@@ -72,6 +76,7 @@ describe("navbar dropdown", () => {
 
     await wrapper.find("button.vp-dropdown-title").trigger("click", { detail: 0 });
     expect(wrapper.find(".vp-dropdown-wrapper").classes()).toContain("open");
+    expect(wrapper.find("button.vp-dropdown-title").attributes("aria-expanded")).toBe("true");
 
     wrapper.unmount();
   });

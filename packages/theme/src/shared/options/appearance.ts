@@ -9,6 +9,15 @@ export interface OutlookLocaleData {
 
   /** Theme mode */
   fullscreen: string;
+
+  /**
+   * Aria label of the appearance button
+   *
+   * 外观按钮的无障碍标签
+   *
+   * @default "Appearance"
+   */
+  appearance?: string;
 }
 
 export interface AppearanceLocaleData {
@@ -33,6 +42,15 @@ export interface AppearanceLocaleData {
      * 全屏文字
      */
     fullscreen: string;
+
+    /**
+     * Aria label of the appearance button
+     *
+     * 外观按钮的无障碍标签
+     *
+     * @default "Appearance"
+     */
+    appearance?: string;
   };
 }
 

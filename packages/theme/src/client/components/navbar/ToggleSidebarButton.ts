@@ -13,6 +13,7 @@ const ToggleSidebarButton: FunctionalComponent<{ onToggle: () => void }, { toggl
       type: "button",
       class: "vp-toggle-sidebar-button",
       title: "Toggle Sidebar",
+      "aria-label": "Toggle Sidebar",
       onClick: () => {
         emit("toggle");
       },

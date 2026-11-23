@@ -248,6 +248,7 @@ export default defineComponent({
                 isMobileSidebarOpen.value
                   ? h("div", {
                       class: "vp-sidebar-mask",
+                      "aria-hidden": "true",
                       onClick: () => toggleMobileSidebar(false),
                     })
                   : null,
@@ -257,9 +258,12 @@ export default defineComponent({
                 isMobile.value
                   ? null
                   : h(
-                      "div",
+                      "button",
                       {
+                        type: "button",
                         class: "toggle-sidebar-wrapper",
+                        "aria-label": "Toggle sidebar",
+                        "aria-expanded": !isDesktopSidebarCollapsed.value,
                         onClick: () => toggleDesktopSidebar(),
                       },
                       h("span", {

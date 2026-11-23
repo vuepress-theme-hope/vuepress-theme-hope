@@ -2,7 +2,7 @@ import type { Slot } from "@vuepress/helper/client";
 import { hasGlobalComponent } from "@vuepress/helper/client";
 import noopComponent from "@vuepress/helper/noopComponent";
 import type { Component, ComponentOptions, FunctionalComponent, SlotsType, VNode } from "vue";
-import { computed, defineComponent, h, ref, resolveComponent, watch } from "vue";
+import { computed, defineComponent, h, nextTick, ref, resolveComponent, watch } from "vue";
 import { onContentUpdated } from "vuepress/client";
 
 import AppearanceButton from "@theme-hope/components/appearance/AppearanceButton";
@@ -114,7 +114,20 @@ export default defineComponent({
           ]),
         ],
       ),
-      h(NavScreen, { show: showScreen.value }, slots),
+      h(
+        NavScreen,
+        {
+          show: showScreen.value,
+          onClose: () => {
+            showScreen.value = false;
+
+            void nextTick().then(() => {
+              document.querySelector<HTMLElement>(".vp-toggle-navbar-button")?.focus();
+            });
+          },
+        },
+        slots,
+      ),
     ];
   },
 });
