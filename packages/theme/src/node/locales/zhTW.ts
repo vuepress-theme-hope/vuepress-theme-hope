@@ -53,6 +53,7 @@ export const zhTWLocale: ThemeLocaleData = {
     darkmode: "主題模式",
     fullscreen: "全屏",
     appearance: "外觀",
+    defaultColor: "預設主題色",
   },
 
   encryptLocales: {

@@ -50,8 +50,8 @@ export default defineComponent({
 
     const exact = computed(() => isActiveItem(route, props.config));
 
-    const shouldOpen = computed(
-      () => props.open || (props.config.expanded && !hasBeenToggled.value),
+    const shouldOpen = computed(() =>
+      Boolean(props.open || (props.config.expanded && !hasBeenToggled.value)),
     );
 
     return (): VNode => {
@@ -72,8 +72,9 @@ export default defineComponent({
       const headerClasses = [
         "vp-sidebar-header",
         {
-          // oxlint-disable-next-line typescript/prefer-nullish-coalescing
-          clickable: collapsible || link,
+          // The header itself is not interactive when it contains a link: only
+          // the dedicated toggle button collapses the group.
+          clickable: collapsible && !link,
           exact: exact.value,
           active: active.value,
         },

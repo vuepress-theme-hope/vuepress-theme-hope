@@ -8,9 +8,18 @@ import "../../styles/navbar/toggle-sidebar-button.scss";
 export default defineComponent({
   name: "ToggleSidebarButton",
 
+  props: {
+    /**
+     * Whether the mobile sidebar is open
+     *
+     * 移动端侧边栏是否打开
+     */
+    active: Boolean,
+  },
+
   emits: ["toggle"],
 
-  setup(_props, { emit }) {
+  setup(props, { emit }) {
     const themeLocale = useThemeLocale();
 
     return (): VNode =>
@@ -22,6 +31,7 @@ export default defineComponent({
           title: themeLocale.value.navbarLocales.toggleSidebar ?? "Toggle sidebar",
           "aria-label": themeLocale.value.navbarLocales.toggleSidebar ?? "Toggle sidebar",
           "aria-controls": "sidebar",
+          "aria-expanded": props.active,
           onClick: () => {
             emit("toggle");
           },

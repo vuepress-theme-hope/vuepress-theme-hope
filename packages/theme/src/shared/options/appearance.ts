@@ -18,6 +18,15 @@ export interface OutlookLocaleData {
    * @default "Appearance"
    */
   appearance?: string;
+
+  /**
+   * Aria label of the default theme color option
+   *
+   * 默认主题色选项的无障碍标签
+   *
+   * @default "Default theme color"
+   */
+  defaultColor?: string;
 }
 
 export interface AppearanceLocaleData {
@@ -51,6 +60,15 @@ export interface AppearanceLocaleData {
      * @default "Appearance"
      */
     appearance?: string;
+
+    /**
+     * Aria label of the default theme color option
+     *
+     * 默认主题色选项的无障碍标签
+     *
+     * @default "Default theme color"
+     */
+    defaultColor?: string;
   };
 }
 

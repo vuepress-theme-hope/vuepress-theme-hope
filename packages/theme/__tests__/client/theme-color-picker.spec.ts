@@ -44,7 +44,7 @@ describe("theme color picker", () => {
     expect(buttons).toHaveLength(3);
     expect(buttons.every((button) => button.attributes("type") === "button")).toBe(true);
     expect(buttons.map((button) => button.attributes("aria-label"))).toStrictEqual([
-      "Theme Color",
+      "Default theme color",
       "theme-1",
       "theme-2",
     ]);

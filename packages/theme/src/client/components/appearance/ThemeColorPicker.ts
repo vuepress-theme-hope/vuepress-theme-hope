@@ -90,7 +90,7 @@ export default defineComponent({
             h("button", {
               type: "button",
               class: "theme-color",
-              "aria-label": appearanceLocale.value.themeColor,
+              "aria-label": appearanceLocale.value.defaultColor ?? "Default theme color",
               "aria-pressed": activeColor.value === "",
               onClick: () => {
                 setThemeColor();

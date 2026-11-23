@@ -31,6 +31,7 @@ exports[`getThemeData > should contain basic properties 1`] = `
       "outlookLocales": {
         "appearance": "Appearance",
         "darkmode": "Theme Mode",
+        "defaultColor": "Default theme color",
         "fullscreen": "Full Screen",
         "themeColor": "Theme Color",
       },

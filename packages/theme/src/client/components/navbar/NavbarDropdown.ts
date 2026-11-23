@@ -62,6 +62,12 @@ export default defineComponent({
         "div",
         {
           class: ["vp-dropdown-wrapper", { open: open.value }],
+          onMouseenter: () => {
+            open.value = true;
+          },
+          onMouseleave: () => {
+            open.value = false;
+          },
           onKeydown: (event: KeyboardEvent) => {
             if (event.key === "Escape" && open.value) {
               open.value = false;

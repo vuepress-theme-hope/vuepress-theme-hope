@@ -53,6 +53,7 @@ export const enLocale: ThemeLocaleData = {
     darkmode: "Theme Mode",
     fullscreen: "Full Screen",
     appearance: "Appearance",
+    defaultColor: "Default theme color",
   },
 
   encryptLocales: {

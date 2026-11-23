@@ -63,6 +63,10 @@ export default defineComponent({
 
     const toc = shallowRef<HTMLElement>();
     const tocMarkerTop = ref("-2rem");
+    // `useWindowSize` only resolves the viewport after mount. Rendering a
+    // disclosure button before that would announce a collapsed state on a
+    // desktop layout where the TOC list is always visible.
+    const isMounted = ref(false);
 
     const scrollTo = (top: number): void => {
       toc.value?.scrollTo({ top, behavior: "smooth" });
@@ -90,6 +94,8 @@ export default defineComponent({
     };
 
     onMounted(() => {
+      isMounted.value = true;
+
       // Scroll to active toc item
       watchImmediate(
         () => route.hash,
@@ -176,7 +182,7 @@ export default defineComponent({
               (tocHeaders
                 ? [
                     h("div", { class: "vp-toc-header" }, [
-                      isPC.value
+                      isPC.value || !isMounted.value
                         ? h("span", { class: "vp-toc-title" }, metaLocale.value.toc)
                         : h(
                             "button",

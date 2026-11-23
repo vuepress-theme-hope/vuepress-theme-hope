@@ -241,7 +241,14 @@ export default defineComponent({
             [
               // Navbar
               enableNavbar.value
-                ? h(Navbar, { onToggleSidebar: () => toggleMobileSidebar() }, slots)
+                ? h(
+                    Navbar,
+                    {
+                      sidebarActive: isMobileSidebarOpen.value,
+                      onToggleSidebar: () => toggleMobileSidebar(),
+                    },
+                    slots,
+                  )
                 : null,
               // Sidebar mask
               h(Transition, { name: "fade-in" }, () =>

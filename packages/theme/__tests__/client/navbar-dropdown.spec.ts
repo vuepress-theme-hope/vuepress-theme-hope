@@ -81,6 +81,24 @@ describe("navbar dropdown", () => {
     wrapper.unmount();
   });
 
+  it("reports the hover state of the dropdown", async () => {
+    const wrapper = await mountDropdown();
+    const dropdown = wrapper.find(".vp-dropdown-wrapper");
+    const title = wrapper.find("button.vp-dropdown-title");
+
+    await dropdown.trigger("mouseenter");
+
+    expect(dropdown.classes()).toContain("open");
+    expect(title.attributes("aria-expanded")).toBe("true");
+
+    await dropdown.trigger("mouseleave");
+
+    expect(dropdown.classes()).not.toContain("open");
+    expect(title.attributes("aria-expanded")).toBe("false");
+
+    wrapper.unmount();
+  });
+
   it("closes when the last item loses focus", async () => {
     const wrapper = await mountDropdown();
 

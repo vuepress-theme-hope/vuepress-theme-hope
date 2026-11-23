@@ -58,6 +58,10 @@ export default defineComponent({
         "div",
         {
           class: "vp-nav-item hide-in-mobile vp-appearance",
+          onMouseenter: () => {
+            open.value = true;
+          },
+          onMouseleave: close,
           onFocusout: (event: FocusEvent) => {
             const next = event.relatedTarget as Node | null;
 

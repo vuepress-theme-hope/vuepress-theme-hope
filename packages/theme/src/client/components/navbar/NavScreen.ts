@@ -23,6 +23,20 @@ import "../../styles/navbar/nav-screen.scss";
 const FOCUSABLE_SELECTOR =
   'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
+const isVisible = (element: HTMLElement): boolean => {
+  let node: HTMLElement | null = element;
+
+  while (node) {
+    const style = globalThis.getComputedStyle(node);
+
+    if (style.display === "none" || style.visibility === "hidden") return false;
+
+    node = node.parentElement;
+  }
+
+  return true;
+};
+
 export default defineComponent({
   name: "NavScreen",
 
@@ -35,7 +49,7 @@ export default defineComponent({
     show: Boolean,
   },
 
-  emits: ["close"],
+  emits: ["close", "closed"],
 
   slots: Object as SlotsType<{
     navScreenTop?: Slot;
@@ -51,19 +65,15 @@ export default defineComponent({
 
     const getFocusableElements = (): HTMLElement[] =>
       [...(container.value?.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR) ?? [])].filter(
-        (element) => {
-          const style = globalThis.getComputedStyle(element);
-
-          return style.display !== "none" && style.visibility !== "hidden";
-        },
+        (element) => isVisible(element),
       );
 
     watch(
       () => props.show,
       (show) => {
-        isLocked.value = show;
-
         if (show) {
+          isLocked.value = true;
+
           void nextTick().then(() => {
             (getFocusableElements()[0] ?? container.value)?.focus();
           });
@@ -128,6 +138,7 @@ export default defineComponent({
           },
           onAfterLeave: () => {
             isLocked.value = false;
+            emit("closed");
           },
         },
         () =>

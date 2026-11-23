@@ -72,6 +72,22 @@ describe("appearance button", () => {
     wrapper.unmount();
   });
 
+  it("reports the hover state of the menu", async () => {
+    const wrapper = await mountAppearanceButton();
+    const button = wrapper.find("button.vp-appearance-button");
+    const appearance = wrapper.find(".vp-appearance");
+
+    await appearance.trigger("mouseenter");
+
+    expect(button.attributes("aria-expanded")).toBe("true");
+
+    await appearance.trigger("mouseleave");
+
+    expect(button.attributes("aria-expanded")).toBe("false");
+
+    wrapper.unmount();
+  });
+
   it("closes on escape and restores focus to the trigger", async () => {
     const wrapper = await mountAppearanceButton();
     const button = wrapper.find("button.vp-appearance-button");

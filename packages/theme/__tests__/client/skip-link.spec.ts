@@ -1,13 +1,18 @@
 // @vitest-environment happy-dom
 
 import type { VueWrapper } from "@vue/test-utils";
+import { flushPromises } from "@vue/test-utils";
 import { describe, expect, it } from "vitest";
 import type { VNode } from "vue";
 import { defineComponent, h } from "vue";
 
 import SkipLink from "@theme-hope/components/base/SkipLink";
 
-import { mountTheme } from "./helpers.js";
+import { createThemeClient, mountTheme } from "./helpers.js";
+
+const skipLinkPage = defineComponent({
+  setup: () => (): VNode[] => [h(SkipLink), h("main", { id: "main-content" }, "Page content")],
+});
 
 const mountSkipLink = (content = "main-content"): Promise<VueWrapper> =>
   mountTheme({
@@ -38,6 +43,24 @@ describe("skip link", () => {
 
     expect(document.activeElement).not.toBe(main.element);
     expect(main.attributes("tabindex")).toBeUndefined();
+
+    wrapper.unmount();
+  });
+
+  it("focuses the main content after navigation", async () => {
+    const client = await createThemeClient({
+      content: skipLinkPage,
+      routes: { "/next.html": { component: skipLinkPage } },
+    });
+    const wrapper = await client.mount({ attachTo: document.body });
+
+    await client.router.push("/next.html");
+    await flushPromises();
+
+    const main = document.querySelector("#main-content");
+
+    expect(document.activeElement).toBe(main);
+    expect(main?.getAttribute("tabindex")).toBe("-1");
 
     wrapper.unmount();
   });
