@@ -28,9 +28,20 @@ describe("navbar brand", () => {
 
     expect(brand.exists()).toBe(true);
     expect(brand.attributes("href")).toBe("/");
-    expect(brand.attributes("aria-label")).toBe("Take me home");
+    expect(brand.attributes("aria-label")).toBe("Test Site");
     expect(wrapper.find(".vp-site-name").text()).toBe("Test Site");
     expect(wrapper.find("img").exists()).toBe(false);
+
+    wrapper.unmount();
+  });
+
+  it("labels the brand when there is no visible site name", async () => {
+    const wrapper = await mountNavbarBrand({ themeData: { navbarTitle: "" } });
+
+    const brand = wrapper.find("a.vp-brand");
+
+    expect(brand.attributes("aria-label")).toBe("Take me home");
+    expect(wrapper.find(".vp-site-name").exists()).toBe(false);
 
     wrapper.unmount();
   });
@@ -47,6 +58,7 @@ describe("navbar brand", () => {
     expect(logo.attributes("alt")).toBe("");
     expect(logo.classes()).not.toContain("light");
     expect(wrapper.find(".vp-site-name").classes()).toContain("hide-in-pad");
+    expect(wrapper.find("a.vp-brand").attributes("aria-label")).toBe("Test Site");
 
     wrapper.unmount();
   });
@@ -91,6 +103,7 @@ describe("navbar brand", () => {
     const wrapper = await mountNavbarBrand({ site: { title: "" } });
 
     expect(wrapper.find(".vp-site-name").exists()).toBe(false);
+    expect(wrapper.find("a.vp-brand").attributes("aria-label")).toBe("Take me home");
 
     wrapper.unmount();
   });

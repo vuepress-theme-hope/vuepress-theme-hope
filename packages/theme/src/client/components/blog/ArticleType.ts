@@ -46,7 +46,14 @@ export default defineComponent({
             {
               class: ["vp-article-type", { active: type.path === page.value.path }],
             },
-            h(RouteLink, { to: type.path }, () => type.text),
+            h(
+              RouteLink,
+              {
+                to: type.path,
+                ...(type.path === page.value.path ? { "aria-current": "page" } : {}),
+              },
+              () => type.text,
+            ),
           ),
         ),
       );

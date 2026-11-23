@@ -31,7 +31,7 @@ export default defineComponent({
         {
           to: siteBrandLink.value,
           class: "vp-brand",
-          "aria-label": themeLocale.value.routerLocales.home,
+          "aria-label": siteBrandTitle.value || themeLocale.value.routerLocales.home,
         },
         () => [
           siteBrandLogo.value

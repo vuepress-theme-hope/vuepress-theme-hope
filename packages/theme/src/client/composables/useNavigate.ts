@@ -12,7 +12,7 @@ export const useNavigate = (): ((url: string) => void) => {
 
     // Outer url
     if (isLinkWithProtocol(url)) {
-      window.open(url);
+      window.open(url, "_blank", "noopener,noreferrer");
       return;
     }
 
