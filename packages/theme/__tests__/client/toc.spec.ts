@@ -57,6 +57,17 @@ describe("toc", () => {
     wrapper.unmount();
   });
 
+  it("nests the child list inside the parent item", async () => {
+    const wrapper = await mountTOC({ items });
+    await nextTick();
+
+    const sectionAItem = wrapper.find("a[href='#section-a']").element.closest("li.vp-toc-item");
+
+    expect(sectionAItem?.querySelector("ul.vp-toc-list a[href='#sub-a']")).not.toBeNull();
+
+    wrapper.unmount();
+  });
+
   it("exposes the toc toggle semantics", async () => {
     const wrapper = await mountTOC({ items });
 
