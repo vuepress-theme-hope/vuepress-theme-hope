@@ -6,6 +6,8 @@ export const ukLocale: ThemeLocaleData = {
   navbarLocales: {
     langName: "Українська",
     selectLangAriaLabel: "Оберіть мову",
+    navScreen: "Навігація",
+    toggleSidebar: "Перемкнути бічну панель",
   },
 
   metaLocales: {
@@ -50,6 +52,7 @@ export const ukLocale: ThemeLocaleData = {
     themeColor: "Колір теми",
     darkmode: "Тематичний режим",
     fullscreen: "Повноекранний",
+    appearance: "Вигляд",
   },
 
   encryptLocales: {
@@ -57,6 +60,8 @@ export const ukLocale: ThemeLocaleData = {
     placeholder: "Введіть пароль",
     remember: "Запам'яти пароль",
     errorHint: "Будь ласка, введіть правильний пароль!",
+    password: "Пароль",
+    submit: "OK",
   },
 
   routerLocales: {

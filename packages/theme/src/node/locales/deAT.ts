@@ -6,6 +6,8 @@ export const deATLocale: ThemeLocaleData = {
   navbarLocales: {
     langName: "Deutsch (Österreich)",
     selectLangAriaLabel: "Sprache wählen",
+    navScreen: "Navigation",
+    toggleSidebar: "Seitenleiste umschalten",
   },
 
   metaLocales: {
@@ -50,6 +52,7 @@ export const deATLocale: ThemeLocaleData = {
     themeColor: "Design-Farbe",
     darkmode: "Design-Modus",
     fullscreen: "Vollbild",
+    appearance: "Darstellung",
   },
 
   encryptLocales: {
@@ -57,6 +60,8 @@ export const deATLocale: ThemeLocaleData = {
     placeholder: "Passwort eingeben",
     remember: "Passwort merken",
     errorHint: "Bitte das korrekte Passwort eingeben!",
+    password: "Passwort",
+    submit: "OK",
   },
 
   routerLocales: {

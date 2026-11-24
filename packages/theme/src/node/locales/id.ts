@@ -6,6 +6,8 @@ export const idLocale: ThemeLocaleData = {
   navbarLocales: {
     langName: "Bahasa Indonesia",
     selectLangAriaLabel: "Pilih Bahasa",
+    navScreen: "Navigasi",
+    toggleSidebar: "Alihkan bilah sisi",
   },
 
   metaLocales: {
@@ -50,6 +52,7 @@ export const idLocale: ThemeLocaleData = {
     themeColor: "Warna Tema",
     darkmode: "Mode Tema",
     fullscreen: "Layar Penuh",
+    appearance: "Tampilan",
   },
 
   encryptLocales: {
@@ -57,6 +60,8 @@ export const idLocale: ThemeLocaleData = {
     placeholder: "Masukkan kata sandi",
     remember: "Ingat kata sandi",
     errorHint: "Mohon masukkan kata sandi yang benar!",
+    password: "Kata sandi",
+    submit: "OK",
   },
 
   routerLocales: {

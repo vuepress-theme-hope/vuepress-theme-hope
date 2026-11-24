@@ -6,6 +6,8 @@ export const nlLocale: ThemeLocaleData = {
   navbarLocales: {
     langName: "Nederlands",
     selectLangAriaLabel: "Selecteer taal",
+    navScreen: "Navigatie",
+    toggleSidebar: "Zijbalk wisselen",
   },
 
   metaLocales: {
@@ -50,6 +52,7 @@ export const nlLocale: ThemeLocaleData = {
     themeColor: "Themakleur",
     darkmode: "Thema modus",
     fullscreen: "Volledig scherm",
+    appearance: "Weergave",
   },
 
   encryptLocales: {
@@ -57,6 +60,8 @@ export const nlLocale: ThemeLocaleData = {
     placeholder: "Voeg paswoord in",
     remember: "Herinner paswoord",
     errorHint: "Gelieve het juiste paswoord in te vullen!",
+    password: "Wachtwoord",
+    submit: "OK",
   },
 
   routerLocales: {

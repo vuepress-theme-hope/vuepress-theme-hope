@@ -6,6 +6,8 @@ export const trLocale: ThemeLocaleData = {
   navbarLocales: {
     langName: "Türkçe",
     selectLangAriaLabel: "Dil seçin",
+    navScreen: "Gezinme",
+    toggleSidebar: "Kenar çubuğunu aç/kapat",
   },
 
   metaLocales: {
@@ -50,6 +52,7 @@ export const trLocale: ThemeLocaleData = {
     themeColor: "Tema Rengi",
     darkmode: "Tema Modu",
     fullscreen: "Tam Ekran",
+    appearance: "Görünüm",
   },
 
   encryptLocales: {
@@ -57,6 +60,8 @@ export const trLocale: ThemeLocaleData = {
     placeholder: "Şifrenizi girin",
     remember: "Şifreyi hatırla",
     errorHint: "Lütfen doğru şifreyi girin!",
+    password: "Parola",
+    submit: "Tamam",
   },
 
   routerLocales: {
