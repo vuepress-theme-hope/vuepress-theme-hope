@@ -60,7 +60,7 @@ export const trLocale: ThemeLocaleData = {
     placeholder: "Şifrenizi girin",
     remember: "Şifreyi hatırla",
     errorHint: "Lütfen doğru şifreyi girin!",
-    password: "Parola",
+    password: "Şifre",
     submit: "Tamam",
   },
 
