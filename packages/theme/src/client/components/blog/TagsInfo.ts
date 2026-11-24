@@ -1,13 +1,13 @@
 import { keys } from "@vuepress/helper/client";
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
+import { RouteLink } from "vuepress/client";
 
 import { TagIcon } from "@theme-hope/components/blog/icons";
 import TagList from "@theme-hope/components/blog/TagList";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { useBlogLocale } from "@theme-hope/composables/blog/useBlogLocale";
 import { useTagMap } from "@theme-hope/composables/blog/useTagMap";
-import { useNavigate } from "@theme-hope/composables/useNavigate";
 
 export default defineComponent({
   name: "TagsInfo",
@@ -15,7 +15,6 @@ export default defineComponent({
   setup() {
     const blogLocale = useBlogLocale();
     const tagMap = useTagMap();
-    const navigate = useNavigate();
 
     const tagNumber = computed(() => keys(tagMap.value.map).length);
 
@@ -24,12 +23,10 @@ export default defineComponent({
         tagNumber.value
           ? [
               h(
-                "div",
+                RouteLink,
                 {
                   class: "title",
-                  onClick: () => {
-                    navigate(tagMap.value.path);
-                  },
+                  to: tagMap.value.path,
                 },
                 [h(TagIcon), h("span", { class: "num" }, tagNumber.value), blogLocale.value.tag],
               ),

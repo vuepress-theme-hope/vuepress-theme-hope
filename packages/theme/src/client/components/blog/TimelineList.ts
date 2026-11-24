@@ -6,7 +6,6 @@ import { TimelineIcon } from "@theme-hope/components/blog/icons";
 import DropTransition from "@theme-hope/components/transitions/DropTransition";
 import { useBlogLocale } from "@theme-hope/composables/blog/useBlogLocale";
 import { useTimeline } from "@theme-hope/composables/blog/useTimeline";
-import { useNavigate } from "@theme-hope/composables/useNavigate";
 
 import "../../styles/blog/timeline-list.scss";
 
@@ -16,17 +15,14 @@ export default defineComponent({
   setup() {
     const blogLocale = useBlogLocale();
     const timelines = useTimeline();
-    const navigate = useNavigate();
 
     return (): VNode =>
       h("div", { class: "timeline-list-wrapper" }, [
         h(
-          "div",
+          RouteLink,
           {
             class: "title",
-            onClick: () => {
-              navigate(timelines.value.path);
-            },
+            to: timelines.value.path,
           },
           [
             h(TimelineIcon),

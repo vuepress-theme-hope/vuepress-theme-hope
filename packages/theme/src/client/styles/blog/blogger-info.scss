@@ -26,11 +26,17 @@
 }
 
 .vp-blogger {
-  padding: 0.5rem;
-  text-align: center;
+  display: block;
 
-  &[role="link"] {
-    cursor: pointer;
+  padding: 0.5rem;
+
+  color: inherit;
+
+  text-align: center;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--vp-c-accent);
   }
 }
 

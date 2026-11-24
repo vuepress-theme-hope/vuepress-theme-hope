@@ -45,6 +45,9 @@ export default defineComponent({
               {
                 type: "button",
                 class: "vp-blog-type-button",
+                "aria-label": blogLocale.value[key],
+                "aria-pressed": activeType.value === key,
+                "data-balloon-pos": "down",
                 onClick: () => {
                   activeType.value = key;
                 },
@@ -53,8 +56,7 @@ export default defineComponent({
                 "div",
                 {
                   class: ["vp-blog-type-icon-wrapper", { active: activeType.value === key }],
-                  "aria-label": blogLocale.value[key],
-                  "data-balloon-pos": "down",
+                  "aria-hidden": "true",
                 },
                 h(Icon),
               ),

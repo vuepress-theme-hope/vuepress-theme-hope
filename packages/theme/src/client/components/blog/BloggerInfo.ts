@@ -12,7 +12,6 @@ import { useCategoryMap } from "@theme-hope/composables/blog/useCategoryMap";
 import { useTagMap } from "@theme-hope/composables/blog/useTagMap";
 import { useTimeline } from "@theme-hope/composables/blog/useTimeline";
 import { useData } from "@theme-hope/composables/useData";
-import { useNavigate } from "@theme-hope/composables/useNavigate";
 import type { BloggerInfoSlotData } from "@theme-hope/typings/slots";
 
 import { getAuthor } from "../../../shared/index.js";
@@ -34,7 +33,6 @@ export default defineComponent({
     const categoryMap = useCategoryMap();
     const tagMap = useTagMap();
     const timelines = useTimeline();
-    const navigate = useNavigate();
 
     const bloggerInfo = computed(() => ({
       name:
@@ -47,6 +45,10 @@ export default defineComponent({
 
     const intro = computed(() => blogOptions.value.intro);
 
+    const bloggerLabel = computed(() =>
+      [blogLocale.value.intro, bloggerInfo.value.name].filter(Boolean).join(": "),
+    );
+
     return (): VNode => {
       const { article, category, tag, timeline } = blogLocale.value;
       const countItems: [string, number, string][] = [
@@ -54,6 +56,28 @@ export default defineComponent({
         [categoryMap.value.path, keys(categoryMap.value.map).length, category],
         [tagMap.value.path, keys(tagMap.value.map).length, tag],
         [timelines.value.path, timelines.value.items.length, timeline],
+      ];
+
+      const bloggerContent = [
+        bloggerInfo.value.avatar
+          ? h("img", {
+              class: "vp-blogger-avatar",
+              src: withBase(bloggerInfo.value.avatar),
+              property: "image",
+              alt: "Blogger Avatar",
+              loading: "lazy",
+            })
+          : null,
+        bloggerInfo.value.name
+          ? h("div", { class: "vp-blogger-name", property: "name" }, bloggerInfo.value.name)
+          : null,
+        bloggerInfo.value.description
+          ? h("div", {
+              class: "vp-blogger-description",
+              innerHTML: bloggerInfo.value.description,
+            })
+          : null,
+        intro.value ? h("meta", { property: "url", content: withBase(intro.value) }) : null,
       ];
 
       return h(
@@ -64,44 +88,18 @@ export default defineComponent({
           typeof: "Person",
         },
         slots.bloggerInfo?.(bloggerInfo.value) ?? [
-          h(
-            "div",
-            {
-              class: "vp-blogger",
-              ...(intro.value
-                ? {
-                    "aria-label": blogLocale.value.intro,
-                    "data-balloon-pos": "down",
-                    role: "link",
-                    onClick: (): void => {
-                      // oxlint-disable-next-line typescript/no-non-null-assertion
-                      navigate(intro.value!);
-                    },
-                  }
-                : {}),
-            },
-            [
-              bloggerInfo.value.avatar
-                ? h("img", {
-                    class: "vp-blogger-avatar",
-                    src: withBase(bloggerInfo.value.avatar),
-                    property: "image",
-                    alt: "Blogger Avatar",
-                    loading: "lazy",
-                  })
-                : null,
-              bloggerInfo.value.name
-                ? h("div", { class: "vp-blogger-name", property: "name" }, bloggerInfo.value.name)
-                : null,
-              bloggerInfo.value.description
-                ? h("div", {
-                    class: "vp-blogger-description",
-                    innerHTML: bloggerInfo.value.description,
-                  })
-                : null,
-              intro.value ? h("meta", { property: "url", content: withBase(intro.value) }) : null,
-            ],
-          ),
+          intro.value
+            ? h(
+                RouteLink,
+                {
+                  class: "vp-blogger",
+                  to: intro.value,
+                  "aria-label": bloggerLabel.value,
+                  "data-balloon-pos": "down",
+                },
+                () => bloggerContent,
+              )
+            : h("div", { class: "vp-blogger" }, bloggerContent),
           h(
             "div",
             { class: "vp-blog-counts" },
