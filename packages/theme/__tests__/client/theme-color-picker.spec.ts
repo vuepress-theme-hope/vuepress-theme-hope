@@ -1,17 +1,25 @@
 // @vitest-environment happy-dom
 
 import type { VueWrapper } from "@vue/test-utils";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import type { VNode } from "vue";
 import { computed, defineComponent, h, ref } from "vue";
 import type { ClientConfig } from "vuepress/client";
 
+import ThemeColor from "@theme-hope/components/appearance/ThemeColor";
 import ThemeColorPicker from "@theme-hope/components/appearance/ThemeColorPicker";
 import type { DarkmodeStatus } from "@theme-hope/composables/useDarkMode";
 import { darkModeSymbol } from "@theme-hope/composables/useDarkMode";
 
 import type { DarkModeOptions } from "../../src/shared/index.js";
 import { mountTheme } from "./helpers.js";
+
+vi.mock(import("../../src/client/styles/variables.module.scss"), () => ({
+  default: {
+    hasMultipleThemeColors: "true",
+    "theme-1": "#f00",
+  },
+}));
 
 const darkModeClientConfig: ClientConfig = {
   enhance: ({ app }) => {
@@ -35,21 +43,37 @@ const mountPicker = (): Promise<VueWrapper> =>
   });
 
 describe("theme color picker", () => {
-  it("renders every color as a labelled button", async () => {
+  it("renders decorative swatches outside the accessibility tree", async () => {
     localStorage.clear();
 
     const wrapper = await mountPicker();
-    const buttons = wrapper.findAll("button");
+    const list = wrapper.find("ul.vp-theme-color-picker");
 
-    expect(buttons).toHaveLength(3);
-    expect(buttons.every((button) => button.attributes("type") === "button")).toBe(true);
-    expect(buttons.map((button) => button.attributes("aria-label"))).toStrictEqual([
-      "Default theme color",
-      "theme-1",
-      "theme-2",
-    ]);
-    expect(wrapper.find("ul").attributes("role")).toBe("group");
-    expect(wrapper.find("ul").attributes("aria-label")).toBe("Theme Color");
+    expect(list.attributes("aria-hidden")).toBe("true");
+    expect(list.attributes("role")).toBeUndefined();
+    expect(wrapper.find("button").exists()).toBe(false);
+    expect(wrapper.findAll("li > span.theme-color")).toHaveLength(3);
+    expect(wrapper.findAll("[tabindex]")).toHaveLength(0);
+    expect(wrapper.findAll("button, a, input, [tabindex]")).toHaveLength(0);
+
+    wrapper.unmount();
+  });
+
+  it("hides the whole theme color group", async () => {
+    localStorage.clear();
+
+    const wrapper = await mountTheme({
+      clientConfigs: [darkModeClientConfig],
+      content: defineComponent({
+        setup: () => (): VNode => h(ThemeColor),
+      }),
+    });
+    const group = wrapper.find(".vp-theme-color");
+
+    expect(group.exists()).toBe(true);
+    expect(group.attributes("aria-hidden")).toBe("true");
+    expect(wrapper.find(".vp-theme-color-title").text()).toBe("Theme Color");
+    expect(wrapper.findAll("button, a, input, [tabindex]")).toHaveLength(0);
 
     wrapper.unmount();
   });
@@ -58,22 +82,19 @@ describe("theme color picker", () => {
     localStorage.clear();
 
     const wrapper = await mountPicker();
-    const buttons = wrapper.findAll("button");
+    const swatches = wrapper.findAll("li > span.theme-color");
 
-    buttons[1].element.click();
+    (swatches[1].element as HTMLElement).click();
     await wrapper.vm.$nextTick();
 
     expect(document.documentElement.classList.contains("theme-1")).toBe(true);
     expect(localStorage.getItem("VUEPRESS_THEME_COLOR")).toBe("theme-1");
-    expect(buttons[1].attributes("aria-pressed")).toBe("true");
-    expect(buttons[0].attributes("aria-pressed")).toBe("false");
 
-    buttons[0].element.click();
+    (swatches[0].element as HTMLElement).click();
     await wrapper.vm.$nextTick();
 
     expect(document.documentElement.classList.contains("theme-1")).toBe(false);
     expect(localStorage.getItem("VUEPRESS_THEME_COLOR")).toBeNull();
-    expect(buttons[0].attributes("aria-pressed")).toBe("true");
 
     wrapper.unmount();
   });

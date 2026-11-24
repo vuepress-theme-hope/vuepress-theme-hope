@@ -51,8 +51,13 @@ export default defineComponent({
         return h("div", { class: "vp-nav-item hide-in-mobile" }, h(ColorModeSwitch));
 
       // Only FullScreen is enabled
-      if (enableFullScreen.value && !canToggle.value && !hasMultipleThemeColors)
-        return h("div", { class: "vp-nav-item hide-in-mobile" }, h(ToggleFullScreenButton));
+      if (enableFullScreen.value && !canToggle.value && !hasMultipleThemeColors) {
+        return h(
+          "div",
+          { class: "vp-nav-item hide-in-mobile", "aria-hidden": "true" },
+          h(ToggleFullScreenButton),
+        );
+      }
 
       return h(
         "div",

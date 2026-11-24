@@ -22,7 +22,7 @@ export default defineComponent({
 
     return (): VNode | null =>
       hasMultipleThemeColors
-        ? h("div", { class: "vp-theme-color" }, [
+        ? h("div", { class: "vp-theme-color", "aria-hidden": "true" }, [
             h("span", { class: "vp-theme-color-title" }, appearanceLocale.value.themeColor),
             h(ThemeColorPicker, { themeColors }),
           ])

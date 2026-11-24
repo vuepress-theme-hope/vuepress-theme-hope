@@ -16,12 +16,8 @@ export default defineComponent({
 
     return (): VNode | null =>
       isSupported.value
-        ? h("div", { class: "full-screen-wrapper" }, [
-            h(
-              "label",
-              { class: "full-screen-title", for: "full-screen-switch" },
-              appearanceLocale.value.fullscreen,
-            ),
+        ? h("div", { class: "full-screen-wrapper", "aria-hidden": "true" }, [
+            h("span", { class: "full-screen-title" }, appearanceLocale.value.fullscreen),
             h(ToggleFullScreenButton),
           ])
         : null;
