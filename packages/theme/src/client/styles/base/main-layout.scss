@@ -12,7 +12,15 @@
   align-items: center;
   justify-content: center;
 
+  padding: 0;
+  border-width: 0;
+
+  background: transparent;
+  color: inherit;
+
   font-size: 2rem;
+
+  cursor: pointer;
 
   transition: inset-inline-start var(--vp-t-transform);
 
@@ -103,6 +111,10 @@
       box-shadow: none;
 
       // collapse sidebar
+      visibility: hidden;
+      transition:
+        transform var(--vp-t-transform),
+        visibility 0s linear var(--vp-t-transform);
       transform: translateX(-100%);
 
       [dir="rtl"] & {
@@ -149,6 +161,10 @@
       box-shadow: 2px 0 8px var(--vp-c-shadow);
 
       // show sidebar
+      visibility: visible;
+      transition:
+        transform var(--vp-t-transform),
+        visibility 0s;
       transform: translateX(0);
     }
   }

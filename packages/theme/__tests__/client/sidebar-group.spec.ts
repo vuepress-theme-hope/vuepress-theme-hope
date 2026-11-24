@@ -43,11 +43,16 @@ describe("sidebar group collapsing", () => {
 
     expect(group.find(".vp-sidebar-links").exists()).toBe(true);
     expect(group.find(".vp-arrow").classes()).toContain("down");
+    expect(group.find(".vp-sidebar-header").attributes("aria-expanded")).toBe("true");
+    expect(group.find(".vp-sidebar-header").attributes("aria-controls")).toBe(
+      group.find(".vp-sidebar-group-content").attributes("id"),
+    );
 
     await group.find(".vp-sidebar-header").trigger("click");
 
     expect(group.find(".vp-sidebar-links").exists()).toBe(false);
     expect(group.find(".vp-arrow").classes()).toContain("end");
+    expect(group.find(".vp-sidebar-header").attributes("aria-expanded")).toBe("false");
 
     wrapper.unmount();
   });
@@ -64,6 +69,38 @@ describe("sidebar group collapsing", () => {
 
     expect(group.find(".vp-sidebar-links").exists()).toBe(true);
     expect(group.find(".vp-arrow").classes()).toContain("down");
+
+    wrapper.unmount();
+  });
+
+  it("keeps a linked group header separate from its toggle button", async () => {
+    const wrapper = await mountSidebar([
+      { text: "Changelog", link: "/vps/changelog.html" },
+      {
+        text: "Details",
+        link: "/vps/changelog.html",
+        collapsible: true,
+        children: [{ text: "Test", link: "/vps/used/test.html" }],
+      },
+    ]);
+    const group = wrapper.find(".vp-sidebar-group");
+    const header = group.find(".vp-sidebar-header");
+    const toggle = group.find("button.vp-sidebar-toggle");
+
+    expect(header.element.tagName).toBe("DIV");
+    expect(header.classes()).not.toContain("clickable");
+    expect(header.attributes("aria-expanded")).toBeUndefined();
+    expect(header.find("a.vp-sidebar-title").attributes("href")).toBe("/vps/changelog.html");
+    expect(toggle.attributes("aria-expanded")).toBe("false");
+
+    await header.trigger("click");
+
+    expect(group.find(".vp-sidebar-links").exists()).toBe(false);
+
+    await toggle.trigger("click");
+
+    expect(toggle.attributes("aria-expanded")).toBe("true");
+    expect(group.find(".vp-sidebar-links").exists()).toBe(true);
 
     wrapper.unmount();
   });

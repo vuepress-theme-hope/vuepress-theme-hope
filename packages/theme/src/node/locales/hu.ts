@@ -6,6 +6,8 @@ export const huLocale: ThemeLocaleData = {
   navbarLocales: {
     langName: "Magyar",
     selectLangAriaLabel: "Nyelv kiválasztása",
+    navScreen: "Navigáció",
+    toggleSidebar: "Oldalsáv be- és kikapcsolása",
   },
 
   metaLocales: {
@@ -50,6 +52,7 @@ export const huLocale: ThemeLocaleData = {
     themeColor: "Téma színe",
     darkmode: "Téma mód",
     fullscreen: "Teljes képernyő",
+    appearance: "Megjelenés",
   },
 
   encryptLocales: {
@@ -57,6 +60,8 @@ export const huLocale: ThemeLocaleData = {
     placeholder: "Add meg a jelszót",
     remember: "Jelszó megjegyzése",
     errorHint: "Kérjük, add meg a helyes jelszót!",
+    password: "Jelszó",
+    submit: "OK",
   },
 
   routerLocales: {

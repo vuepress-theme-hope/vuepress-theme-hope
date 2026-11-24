@@ -1,25 +1,26 @@
 import type { VNode } from "vue";
-import { defineComponent, h, shallowRef } from "vue";
-import { onContentUpdated } from "vuepress/client";
+import { defineComponent, h, nextTick, onMounted, onUnmounted } from "vue";
+import { useRouter } from "vuepress/client";
 
 import { useThemeLocale } from "@theme-hope/composables/useTheme";
 
 import "../../styles/base/skip-link.scss";
 
+const focusElement = (el: HTMLElement): void => {
+  const removeTabIndex = (): void => {
+    el.removeAttribute("tabindex");
+    el.removeEventListener("blur", removeTabIndex);
+  };
+
+  el.setAttribute("tabindex", "-1");
+  el.addEventListener("blur", removeTabIndex);
+  el.focus();
+};
+
 const focusMainContent = ({ target }: Event): void => {
   const el = document.querySelector<HTMLElement>((target as HTMLAnchorElement).hash);
 
-  if (el) {
-    const removeTabIndex = (): void => {
-      el.removeAttribute("tabindex");
-      el.removeEventListener("blur", removeTabIndex);
-    };
-
-    el.setAttribute("tabindex", "-1");
-    el.addEventListener("blur", removeTabIndex);
-    el.focus();
-    window.scrollTo(0, 0);
-  }
+  if (el) focusElement(el);
 };
 
 export default defineComponent({
@@ -35,18 +36,31 @@ export default defineComponent({
 
   setup(props) {
     const themeLocale = useThemeLocale();
+    const router = useRouter();
 
-    const skipToMainContent = shallowRef<HTMLSpanElement>();
+    // Focus the main content after a navigation instead of using
+    // `onContentUpdated`, whose first callback would steal focus while the
+    // initial page is mounted.
+    let removeAfterEach: (() => void) | undefined;
 
-    onContentUpdated(() => {
-      skipToMainContent.value?.focus();
+    // Register after mount so server-side rendering never touches `document`.
+    onMounted(() => {
+      removeAfterEach = router.afterEach((to, from, failure) => {
+        if (failure || to.path === from.path) return;
+
+        void nextTick().then(() => {
+          const el = document.querySelector<HTMLElement>(`#${props.content}`);
+
+          if (el) focusElement(el);
+        });
+      });
     });
 
-    return (): VNode[] => [
-      h("span", {
-        ref: skipToMainContent,
-        tabindex: "-1",
-      }),
+    onUnmounted(() => {
+      removeAfterEach?.();
+    });
+
+    return (): VNode =>
       h(
         "a",
         {
@@ -55,7 +69,6 @@ export default defineComponent({
           onClick: focusMainContent,
         },
         themeLocale.value.routerLocales.skipToContent,
-      ),
-    ];
+      );
   },
 });

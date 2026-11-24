@@ -11,7 +11,7 @@ import { mountTheme } from "./helpers.js";
 
 const pageNumbers = (wrapper: VueWrapper): string[] =>
   wrapper
-    .findAll(".vp-pagination-number > div")
+    .findAll(".vp-pagination-number > button")
     .filter((item) => !item.classes("prev") && !item.classes("next") && !item.classes("ellipsis"))
     .map((item) => item.text());
 
@@ -65,7 +65,7 @@ describe("pagination", () => {
   it("emits the clicked page number", async () => {
     const wrapper = await mountPagination({ current: 1, perPage: 5, total: 15 });
 
-    await wrapper.findAll(".vp-pagination-number > div")[1].trigger("click");
+    await wrapper.findAll(".vp-pagination-number > button")[1].trigger("click");
 
     expect(wrapper.findComponent(Pagination).emitted("updateCurrentPage")).toStrictEqual([[2]]);
 
@@ -95,6 +95,18 @@ describe("pagination", () => {
     expect(lastPage.findAll(".ellipsis")).toHaveLength(1);
 
     lastPage.unmount();
+  });
+
+  it("exposes accessible page controls", async () => {
+    const wrapper = await mountPagination({ current: 2, perPage: 5, total: 15 });
+
+    expect(wrapper.find(".vp-pagination-number .prev").element.tagName).toBe("BUTTON");
+    expect(wrapper.find(".vp-pagination-number .next").element.tagName).toBe("BUTTON");
+    expect(wrapper.find(".vp-pagination-number .active").attributes("aria-current")).toBe("page");
+    expect(wrapper.find(".vp-pagination-number div[role='navigation']").exists()).toBe(false);
+    expect(wrapper.find("button.vp-pagination-button").attributes("role")).toBeUndefined();
+
+    wrapper.unmount();
   });
 
   it("does not render the pager for a single page", async () => {

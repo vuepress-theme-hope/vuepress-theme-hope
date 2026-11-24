@@ -6,6 +6,8 @@ export const ruLocale: ThemeLocaleData = {
   navbarLocales: {
     langName: "Русский",
     selectLangAriaLabel: "Выберите язык",
+    navScreen: "Навигация",
+    toggleSidebar: "Переключить боковую панель",
   },
 
   metaLocales: {
@@ -50,6 +52,7 @@ export const ruLocale: ThemeLocaleData = {
     themeColor: "Цвет темы",
     darkmode: "Режим темы",
     fullscreen: "Полный экран",
+    appearance: "Внешний вид",
   },
 
   encryptLocales: {
@@ -57,6 +60,8 @@ export const ruLocale: ThemeLocaleData = {
     placeholder: "Введите пароль",
     remember: "Запомнить пароль",
     errorHint: "Пожалуйста, введите правильный пароль!",
+    password: "Пароль",
+    submit: "OK",
   },
 
   routerLocales: {

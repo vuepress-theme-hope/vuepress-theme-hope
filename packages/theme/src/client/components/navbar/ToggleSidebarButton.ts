@@ -1,27 +1,42 @@
-import type { FunctionalComponent, VNode } from "vue";
-import { h } from "vue";
+import type { VNode } from "vue";
+import { defineComponent, h } from "vue";
+
+import { useThemeLocale } from "@theme-hope/composables/useTheme";
 
 import "../../styles/navbar/toggle-sidebar-button.scss";
 
-const ToggleSidebarButton: FunctionalComponent<{ onToggle: () => void }, { toggle: () => void }> = (
-  _,
-  { emit },
-): VNode =>
-  h(
-    "button",
-    {
-      type: "button",
-      class: "vp-toggle-sidebar-button",
-      title: "Toggle Sidebar",
-      onClick: () => {
-        emit("toggle");
-      },
-    },
-    h("span", { class: "icon" }),
-  );
+export default defineComponent({
+  name: "ToggleSidebarButton",
 
-ToggleSidebarButton.displayName = "ToggleSidebarButton";
+  props: {
+    /**
+     * Whether the mobile sidebar is open
+     *
+     * 移动端侧边栏是否打开
+     */
+    active: Boolean,
+  },
 
-ToggleSidebarButton.emits = ["toggle"];
+  emits: ["toggle"],
 
-export default ToggleSidebarButton;
+  setup(props, { emit }) {
+    const themeLocale = useThemeLocale();
+
+    return (): VNode =>
+      h(
+        "button",
+        {
+          type: "button",
+          class: "vp-toggle-sidebar-button",
+          title: themeLocale.value.navbarLocales.toggleSidebar ?? "Toggle sidebar",
+          "aria-label": themeLocale.value.navbarLocales.toggleSidebar ?? "Toggle sidebar",
+          "aria-controls": "sidebar",
+          "aria-expanded": props.active,
+          onClick: () => {
+            emit("toggle");
+          },
+        },
+        h("span", { class: "icon" }),
+      );
+  },
+});

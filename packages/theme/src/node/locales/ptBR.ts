@@ -6,6 +6,8 @@ export const ptBRLocale: ThemeLocaleData = {
   navbarLocales: {
     langName: "Português (Brasil)",
     selectLangAriaLabel: "Selecione a língua",
+    navScreen: "Navegação",
+    toggleSidebar: "Alternar barra lateral",
   },
 
   metaLocales: {
@@ -50,6 +52,7 @@ export const ptBRLocale: ThemeLocaleData = {
     themeColor: "Cor do Tema",
     darkmode: "Modo do Tema",
     fullscreen: "Tela cheia",
+    appearance: "Aparência",
   },
 
   encryptLocales: {
@@ -57,6 +60,8 @@ export const ptBRLocale: ThemeLocaleData = {
     placeholder: "Entre a senha",
     remember: "Lembrar a senha",
     errorHint: "Por favor, entre a senha correta!",
+    password: "Senha",
+    submit: "OK",
   },
 
   routerLocales: {

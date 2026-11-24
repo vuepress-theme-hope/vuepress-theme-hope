@@ -71,28 +71,38 @@ export default defineComponent({
       if (theme) setThemeColor(theme);
     });
 
+    // The color picker is a visual preference: keep it out of the tab order and
+    // the accessibility tree so screen reader users are not forced to read it.
     return (): VNode =>
-      h("ul", { class: "vp-theme-color-picker", id: "theme-color-picker" }, [
-        h(
-          "li",
-          h("span", {
-            class: "theme-color",
-            onClick: () => {
-              setThemeColor();
-            },
-          }),
-        ),
-        activeThemeColors.value.map(({ name, color }) =>
+      h(
+        "ul",
+        {
+          class: "vp-theme-color-picker",
+          "aria-hidden": "true",
+        },
+        [
           h(
             "li",
             h("span", {
-              style: { background: color },
+              class: "theme-color",
               onClick: () => {
-                setThemeColor(name);
+                setThemeColor();
               },
             }),
           ),
-        ),
-      ]);
+          activeThemeColors.value.map(({ name, color }) =>
+            h(
+              "li",
+              h("span", {
+                class: "theme-color",
+                style: { background: color },
+                onClick: () => {
+                  setThemeColor(name);
+                },
+              }),
+            ),
+          ),
+        ],
+      );
   },
 });

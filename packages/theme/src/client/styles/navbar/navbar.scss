@@ -21,13 +21,19 @@
 
   backdrop-filter: saturate(150%) blur(12px);
 
-  transition: transform var(--vp-t-transform);
+  transition:
+    transform var(--vp-t-transform),
+    visibility 0s;
 
   @media print {
     display: none;
   }
 
   .hide-navbar &.auto-hide {
+    visibility: hidden;
+    transition:
+      transform var(--vp-t-transform),
+      visibility 0s linear var(--vp-t-transform);
     transform: translateY(-100%);
   }
 

@@ -24,10 +24,15 @@ $has-multiple-theme-colors: list ==
       display: inline-block;
       vertical-align: middle;
 
+      box-sizing: border-box;
       width: 15px;
       height: 15px;
       margin: 0 2px;
+      padding: 0;
+      border-width: 0;
       border-radius: 2px;
+
+      cursor: pointer;
 
       // original theme-color
       &.theme-color {

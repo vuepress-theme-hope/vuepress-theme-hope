@@ -1,6 +1,6 @@
 import type { Slot } from "@vuepress/helper/client";
 import type { PropType, SlotsType, VNode } from "vue";
-import { computed, defineComponent, h, ref, resolveComponent, toRef } from "vue";
+import { computed, defineComponent, h, ref, resolveComponent, toRef, useId } from "vue";
 import { onContentUpdated } from "vuepress/client";
 
 import AutoLink from "@theme-hope/components/base/AutoLink";
@@ -35,6 +35,8 @@ export default defineComponent({
     const dropdownAriaLabel = computed(() => config.value.ariaLabel ?? config.value.text);
 
     const open = ref(false);
+    const id = `vp-dropdown-${useId()}`;
+    const button = ref<HTMLButtonElement>();
 
     /**
      * Open the dropdown when user tab and click from keyboard.
@@ -49,6 +51,7 @@ export default defineComponent({
       const isTriggerByTab = event.detail === 0;
 
       if (isTriggerByTab) open.value = !open.value;
+      else if (!open.value) open.value = true;
     };
 
     onContentUpdated(() => {
@@ -56,82 +59,104 @@ export default defineComponent({
     });
 
     return (): VNode =>
-      h("div", { class: ["vp-dropdown-wrapper", { open: open.value }] }, [
-        h(
-          "button",
-          {
-            type: "button",
-            class: "vp-dropdown-title",
-            "aria-label": dropdownAriaLabel.value,
-            onClick: handleDropdown,
+      h(
+        "div",
+        {
+          class: ["vp-dropdown-wrapper", { open: open.value }],
+          onMouseenter: () => {
+            open.value = true;
           },
-          [
-            slots.title?.() ?? [
-              h(resolveComponent("VPIcon"), { icon: config.value.icon }),
-              props.config.text,
+          onMouseleave: (event: MouseEvent) => {
+            if (!(event.currentTarget as HTMLElement).contains(document.activeElement))
+              open.value = false;
+          },
+          onKeydown: (event: KeyboardEvent) => {
+            if (event.key === "Escape" && open.value) {
+              open.value = false;
+              button.value?.focus();
+            }
+          },
+        },
+        [
+          h(
+            "button",
+            {
+              ref: button,
+              type: "button",
+              class: "vp-dropdown-title",
+              "aria-label": dropdownAriaLabel.value,
+              "aria-expanded": open.value,
+              "aria-controls": id,
+              onClick: handleDropdown,
+            },
+            [
+              slots.title?.() ?? [
+                h(resolveComponent("VPIcon"), { icon: config.value.icon }),
+                props.config.text,
+              ],
+              h("span", { class: "arrow" }),
             ],
-            h("span", { class: "arrow" }),
-            h(
-              "ul",
-              { class: "vp-dropdown" },
-              config.value.children.map((child, index) => {
-                const isLastChild = index === config.value.children.length - 1;
+          ),
+          h(
+            "ul",
+            { id, class: "vp-dropdown" },
+            config.value.children.map((child, index) => {
+              const isLastChild = index === config.value.children.length - 1;
 
-                return h(
-                  "li",
-                  { class: "vp-dropdown-item" },
-                  "children" in child
-                    ? [
-                        h(
-                          "h4",
-                          { class: "vp-dropdown-subtitle" },
-                          child.link
-                            ? h(AutoLink, {
-                                config: child as AutoLinkOptions,
-                                onFocusout: () => {
-                                  if (
-                                    // No children
-                                    child.children.length === 0 &&
-                                    isLastChild
-                                  )
-                                    open.value = false;
-                                },
-                              })
-                            : child.text,
-                        ),
-                        h(
-                          "ul",
-                          { class: "vp-dropdown-subitems" },
-                          child.children.map((grandchild, grandIndex) =>
-                            h(
-                              "li",
-                              { class: "vp-dropdown-subitem" },
-                              h(AutoLink, {
-                                config: grandchild,
-                                onFocusout: () => {
-                                  if (
-                                    // Last item of grandchild
-                                    grandIndex === child.children.length - 1 &&
-                                    isLastChild
-                                  )
-                                    open.value = false;
-                                },
-                              }),
-                            ),
+              return h(
+                "li",
+                { class: "vp-dropdown-item" },
+                "children" in child
+                  ? [
+                      h(
+                        "h4",
+                        { class: "vp-dropdown-subtitle" },
+                        child.link
+                          ? h(AutoLink, {
+                              config: child as AutoLinkOptions,
+                              onFocusout: () => {
+                                if (
+                                  // No children
+                                  child.children.length === 0 &&
+                                  isLastChild
+                                )
+                                  open.value = false;
+                              },
+                            })
+                          : child.text,
+                      ),
+                      h(
+                        "ul",
+                        { class: "vp-dropdown-subitems" },
+                        child.children.map((grandchild, grandIndex) =>
+                          h(
+                            "li",
+                            { class: "vp-dropdown-subitem" },
+                            h(AutoLink, {
+                              config: grandchild,
+                              onFocusout: () => {
+                                if (
+                                  // Last item of grandchild
+                                  grandIndex === child.children.length - 1 &&
+                                  isLastChild
+                                )
+                                  open.value = false;
+                              },
+                            }),
                           ),
                         ),
-                      ]
-                    : h(AutoLink, {
-                        config: child,
-                        onFocusout: () => {
-                          if (isLastChild) open.value = false;
-                        },
-                      }),
-                );
-              }),
-            ),
-          ],
-        ),
-      ]);
+                      ),
+                    ]
+                  : h(AutoLink, {
+                      config: child,
+                      onFocusout: () => {
+                        if (isLastChild) open.value = false;
+                      },
+                    }),
+              );
+            }),
+          ),
+        ],
+      );
   },
 });

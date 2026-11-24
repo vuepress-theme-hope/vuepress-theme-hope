@@ -1,5 +1,6 @@
 @use "sass:math";
 @use "vuepress-shared/scss/arrow";
+@use "vuepress-shared/scss/reset";
 @use "../wrapper";
 
 $headings: (2, 3, 4, 5, 6);
@@ -59,12 +60,36 @@ $headings: (2, 3, 4, 5, 6);
 }
 
 .vp-toc-header {
+  display: flex;
+  align-items: center;
   padding: 0.5rem 1rem;
   font-weight: 600;
 
   @media (min-width: hope-config.$pc) {
     padding-top: 0;
     font-size: 0.875rem;
+  }
+
+  .vp-toc-title {
+    flex: 1;
+    text-align: start;
+  }
+
+  .vp-toc-toggle {
+    @include reset.button;
+
+    & {
+      display: flex;
+      flex: 1;
+      align-items: center;
+
+      padding: 0;
+
+      color: inherit;
+
+      font: inherit;
+      text-align: start;
+    }
   }
 
   .arrow {

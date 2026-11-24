@@ -6,6 +6,8 @@ export const koLocale: ThemeLocaleData = {
   navbarLocales: {
     langName: "한국어",
     selectLangAriaLabel: "언어 선택",
+    navScreen: "탐색",
+    toggleSidebar: "사이드바 전환",
   },
 
   metaLocales: {
@@ -50,6 +52,7 @@ export const koLocale: ThemeLocaleData = {
     themeColor: "테마 색상",
     darkmode: "테마 모드",
     fullscreen: "전체 화면",
+    appearance: "모양",
   },
 
   encryptLocales: {
@@ -57,6 +60,8 @@ export const koLocale: ThemeLocaleData = {
     placeholder: "비밀번호 입력",
     remember: "비밀번호 기억",
     errorHint: "정확한 비밀번호를 입력해주세요!",
+    password: "비밀번호",
+    submit: "확인",
   },
 
   routerLocales: {

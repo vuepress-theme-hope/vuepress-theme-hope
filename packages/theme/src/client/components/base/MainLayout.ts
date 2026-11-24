@@ -241,13 +241,21 @@ export default defineComponent({
             [
               // Navbar
               enableNavbar.value
-                ? h(Navbar, { onToggleSidebar: () => toggleMobileSidebar() }, slots)
+                ? h(
+                    Navbar,
+                    {
+                      sidebarActive: isMobileSidebarOpen.value,
+                      onToggleSidebar: () => toggleMobileSidebar(),
+                    },
+                    slots,
+                  )
                 : null,
               // Sidebar mask
               h(Transition, { name: "fade-in" }, () =>
                 isMobileSidebarOpen.value
                   ? h("div", {
                       class: "vp-sidebar-mask",
+                      "aria-hidden": "true",
                       onClick: () => toggleMobileSidebar(false),
                     })
                   : null,
@@ -257,9 +265,14 @@ export default defineComponent({
                 isMobile.value
                   ? null
                   : h(
-                      "div",
+                      "button",
                       {
+                        type: "button",
                         class: "toggle-sidebar-wrapper",
+                        "aria-label":
+                          themeLocale.value.navbarLocales.toggleSidebar ?? "Toggle sidebar",
+                        "aria-expanded": !isDesktopSidebarCollapsed.value,
+                        "aria-controls": "sidebar",
                         onClick: () => toggleDesktopSidebar(),
                       },
                       h("span", {

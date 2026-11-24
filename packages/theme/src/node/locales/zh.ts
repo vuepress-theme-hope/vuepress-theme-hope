@@ -6,6 +6,8 @@ export const zhLocale: ThemeLocaleData = {
   navbarLocales: {
     langName: "简体中文",
     selectLangAriaLabel: "选择语言",
+    navScreen: "导航",
+    toggleSidebar: "切换侧边栏",
   },
 
   metaLocales: {
@@ -50,6 +52,7 @@ export const zhLocale: ThemeLocaleData = {
     themeColor: "主题色",
     darkmode: "外观",
     fullscreen: "全屏",
+    appearance: "外观",
   },
 
   encryptLocales: {
@@ -57,6 +60,8 @@ export const zhLocale: ThemeLocaleData = {
     placeholder: "输入密码",
     remember: "记住密码",
     errorHint: "请输入正确的密码",
+    password: "密码",
+    submit: "确定",
   },
 
   routerLocales: {

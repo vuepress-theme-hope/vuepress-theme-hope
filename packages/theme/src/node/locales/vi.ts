@@ -6,6 +6,8 @@ export const viLocale: ThemeLocaleData = {
   navbarLocales: {
     langName: "Tiếng Việt",
     selectLangAriaLabel: "Chọn ngôn ngữ",
+    navScreen: "Điều hướng",
+    toggleSidebar: "Chuyển thanh bên",
   },
 
   metaLocales: {
@@ -50,6 +52,7 @@ export const viLocale: ThemeLocaleData = {
     themeColor: "Màu nền",
     darkmode: "Chế độ giao diện",
     fullscreen: "Toàn màn hình",
+    appearance: "Giao diện",
   },
 
   encryptLocales: {
@@ -57,6 +60,8 @@ export const viLocale: ThemeLocaleData = {
     placeholder: "Nhập mật khẩu",
     remember: "Ghi nhớ mật khẩu",
     errorHint: "Vui lòng nhập đúng mật khẩu",
+    password: "Mật khẩu",
+    submit: "OK",
   },
 
   routerLocales: {

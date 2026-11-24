@@ -9,6 +9,7 @@ import { ClientOnly, RouteLink, useRoute } from "vuepress/client";
 import PrintButton from "@theme-hope/components/base/PrintButton";
 import { useMetaLocale } from "@theme-hope/composables/info/useMetaLocale";
 import { useData } from "@theme-hope/composables/useData";
+import { useWindowSize } from "@theme-hope/composables/useWindowSize";
 import type { TocSlotData } from "@theme-hope/typings/slots";
 
 import "../../styles/info/toc.scss";
@@ -57,10 +58,15 @@ export default defineComponent({
     const headers = useHeaders(tocOptions);
     const route = useRoute();
     const metaLocale = useMetaLocale();
+    const { isPC } = useWindowSize();
     const [isExpanded, toggleExpanded] = useToggle();
 
     const toc = shallowRef<HTMLElement>();
     const tocMarkerTop = ref("-2rem");
+    // `useWindowSize` only resolves the viewport after mount. Rendering a
+    // disclosure button before that would announce a collapsed state on a
+    // desktop layout where the TOC list is always visible.
+    const isMounted = ref(false);
 
     const scrollTo = (top: number): void => {
       toc.value?.scrollTo({ top, behavior: "smooth" });
@@ -88,6 +94,8 @@ export default defineComponent({
     };
 
     onMounted(() => {
+      isMounted.value = true;
+
       // Scroll to active toc item
       watchImmediate(
         () => route.hash,
@@ -132,6 +140,7 @@ export default defineComponent({
         {
           to: `#${slug}`,
           class: ["vp-toc-link", `level${level}`],
+          ...(route.hash === `#${slug}` ? { "aria-current": "location" } : {}),
           onClick: () => {
             toggleExpanded();
           },
@@ -172,25 +181,33 @@ export default defineComponent({
               slots.toc?.(headers.value) ??
               (tocHeaders
                 ? [
+                    h("div", { class: "vp-toc-header" }, [
+                      isPC.value || !isMounted.value
+                        ? h("span", { class: "vp-toc-title" }, metaLocale.value.toc)
+                        : h(
+                            "button",
+                            {
+                              type: "button",
+                              class: "vp-toc-toggle",
+                              "aria-expanded": isExpanded.value,
+                              "aria-controls": "toc-content",
+                              onClick: () => {
+                                toggleExpanded();
+                              },
+                            },
+                            [
+                              h("span", { class: "vp-toc-title" }, metaLocale.value.toc),
+                              h("span", {
+                                class: ["arrow", isExpanded.value ? "down" : "end"],
+                              }),
+                            ],
+                          ),
+                      h(PrintButton),
+                    ]),
                     h(
                       "div",
                       {
-                        class: "vp-toc-header",
-                        onClick: () => {
-                          toggleExpanded();
-                        },
-                      },
-                      [
-                        metaLocale.value.toc,
-                        h(PrintButton),
-                        h("div", {
-                          class: ["arrow", isExpanded.value ? "down" : "end"],
-                        }),
-                      ],
-                    ),
-                    h(
-                      "div",
-                      {
+                        id: "toc-content",
                         class: ["vp-toc-wrapper", isExpanded.value ? "open" : ""],
                         ref: toc,
                       },
@@ -217,7 +234,7 @@ export default defineComponent({
             return isTOCEmpty
               ? null
               : h("div", { class: "vp-toc-placeholder" }, [
-                  h("aside", { id: "toc", "vp-toc": "" }, [
+                  h("aside", { id: "toc", "aria-label": metaLocale.value.toc, "vp-toc": "" }, [
                     beforeContent,
                     defaultContent,
                     afterContent,

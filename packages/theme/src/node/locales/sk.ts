@@ -6,6 +6,8 @@ export const skLocale: ThemeLocaleData = {
   navbarLocales: {
     langName: "Slovenčina",
     selectLangAriaLabel: "Vyber si jazyk",
+    navScreen: "Navigácia",
+    toggleSidebar: "Prepnúť bočný panel",
   },
 
   metaLocales: {
@@ -50,6 +52,7 @@ export const skLocale: ThemeLocaleData = {
     themeColor: "Farba témy",
     darkmode: "Mód témy",
     fullscreen: "Celá obrazovka",
+    appearance: "Vzhľad",
   },
 
   encryptLocales: {
@@ -57,6 +60,8 @@ export const skLocale: ThemeLocaleData = {
     placeholder: "Zadaj heslo",
     remember: "Zapamätať si heslo",
     errorHint: "Prosím, zadaj správne heslo!",
+    password: "Heslo",
+    submit: "OK",
   },
 
   routerLocales: {

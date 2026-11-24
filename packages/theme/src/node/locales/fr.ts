@@ -6,6 +6,8 @@ export const frLocale: ThemeLocaleData = {
   navbarLocales: {
     langName: "Français",
     selectLangAriaLabel: "Sélection de la langue",
+    navScreen: "Navigation",
+    toggleSidebar: "Afficher ou masquer la barre latérale",
   },
 
   metaLocales: {
@@ -50,6 +52,7 @@ export const frLocale: ThemeLocaleData = {
     themeColor: "Couleur du thème",
     darkmode: "Mode du thème",
     fullscreen: "Plein écran",
+    appearance: "Apparence",
   },
 
   encryptLocales: {
@@ -57,6 +60,8 @@ export const frLocale: ThemeLocaleData = {
     placeholder: "Entrez le mot de passe",
     remember: "Se souvenir du mot de passe",
     errorHint: "Merci d'entrer un mot de passe valide !",
+    password: "Mot de passe",
+    submit: "OK",
   },
 
   routerLocales: {

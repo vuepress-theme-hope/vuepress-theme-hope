@@ -2,7 +2,7 @@ import type { Slot } from "@vuepress/helper/client";
 import { hasGlobalComponent } from "@vuepress/helper/client";
 import noopComponent from "@vuepress/helper/noopComponent";
 import type { Component, ComponentOptions, FunctionalComponent, SlotsType, VNode } from "vue";
-import { computed, defineComponent, h, ref, resolveComponent, watch } from "vue";
+import { computed, defineComponent, h, nextTick, ref, resolveComponent, watch } from "vue";
 import { onContentUpdated } from "vuepress/client";
 
 import AppearanceButton from "@theme-hope/components/appearance/AppearanceButton";
@@ -26,6 +26,15 @@ declare const __VP_I18N__: boolean;
 export default defineComponent({
   name: "NavBar",
 
+  props: {
+    /**
+     * Whether the mobile sidebar is open
+     *
+     * 移动端侧边栏是否打开
+     */
+    sidebarActive: Boolean,
+  },
+
   emits: ["toggleSidebar"],
 
   slots: Object as SlotsType<{
@@ -34,11 +43,18 @@ export default defineComponent({
     navScreenBottom?: Slot;
   }>,
 
-  setup(_props, { emit, slots }) {
+  setup(props, { emit, slots }) {
     const themeLocale = useThemeLocale();
     const { isMobile } = useWindowSize();
 
     const showScreen = ref(false);
+    // The nav screen stays mounted during its leave transition, so the navbar
+    // copy of the appearance settings must stay unmounted until it is gone.
+    const navScreenMounted = ref(false);
+
+    watch(showScreen, (show) => {
+      if (show) navScreenMounted.value = true;
+    });
 
     const autoHide = useNavbarAutoHide();
 
@@ -61,9 +77,16 @@ export default defineComponent({
       Search: hasGlobalComponent("SearchBox") ? resolveComponent("SearchBox") : noopComponent,
     };
 
-    const getNavbarComponent = (component: string): Component | string =>
-      navbarComponentMap[component] ??
-      (hasGlobalComponent(component) ? resolveComponent(component) : noopComponent);
+    const getNavbarComponent = (component: string): Component | string => {
+      // The nav screen renders its own appearance settings. Mounting the
+      // navbar copy as well would duplicate the ids used by their labels.
+      if (component === "Outlook" && navScreenMounted.value) return noopComponent;
+
+      return (
+        navbarComponentMap[component] ??
+        (hasGlobalComponent(component) ? resolveComponent(component) : noopComponent)
+      );
+    };
 
     onContentUpdated(() => {
       showScreen.value = false;
@@ -85,6 +108,7 @@ export default defineComponent({
         [
           h("div", { class: "vp-navbar-start" }, [
             h(ToggleSidebarButton, {
+              active: props.sidebarActive,
               onToggle: () => {
                 if (showScreen.value) showScreen.value = false;
                 emit("toggleSidebar");
@@ -114,7 +138,23 @@ export default defineComponent({
           ]),
         ],
       ),
-      h(NavScreen, { show: showScreen.value }, slots),
+      h(
+        NavScreen,
+        {
+          show: showScreen.value,
+          onClosed: () => {
+            navScreenMounted.value = false;
+          },
+          onClose: () => {
+            showScreen.value = false;
+
+            void nextTick().then(() => {
+              document.querySelector<HTMLElement>(".vp-toggle-navbar-button")?.focus();
+            });
+          },
+        },
+        slots,
+      ),
     ];
   },
 });

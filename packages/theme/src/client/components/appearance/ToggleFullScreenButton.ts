@@ -29,15 +29,14 @@ export default defineComponent({
   setup() {
     const { isSupported, isFullscreen, toggle } = useFullscreen();
 
+    // Fullscreen is a browser function: keep it as a mouse-only decoration so
+    // it does not add a control to the accessibility tree.
     return (): VNode | null =>
       isSupported.value
         ? h(
-            "button",
+            "span",
             {
-              type: "button",
-              id: "full-screen-switch",
               class: "full-screen",
-              ariaPressed: isFullscreen.value,
               onClick: () => toggle(),
             },
             isFullscreen.value ? h(CancelFullScreenIcon) : h(EnterFullScreenIcon),

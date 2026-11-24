@@ -24,9 +24,12 @@ exports[`getThemeData > should contain basic properties 1`] = `
       },
       "navbarLocales": {
         "langName": "English",
+        "navScreen": "Navigation",
         "selectLangAriaLabel": "Select language",
+        "toggleSidebar": "Toggle sidebar",
       },
       "outlookLocales": {
+        "appearance": "Appearance",
         "darkmode": "Theme Mode",
         "fullscreen": "Full Screen",
         "themeColor": "Theme Color",

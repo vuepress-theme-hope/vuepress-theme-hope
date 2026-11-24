@@ -6,6 +6,8 @@ export const fiLocale: ThemeLocaleData = {
   navbarLocales: {
     langName: "Suomi",
     selectLangAriaLabel: "Valitse kieli",
+    navScreen: "Navigointi",
+    toggleSidebar: "Vaihda sivupalkki",
   },
 
   metaLocales: {
@@ -50,6 +52,7 @@ export const fiLocale: ThemeLocaleData = {
     themeColor: "Teemaväri",
     darkmode: "Teeman tila",
     fullscreen: "Koko näyttö",
+    appearance: "Ulkoasu",
   },
 
   encryptLocales: {
@@ -57,6 +60,8 @@ export const fiLocale: ThemeLocaleData = {
     placeholder: "Anna salasana",
     remember: "Muista salasana",
     errorHint: "Anna oikea salasana!",
+    password: "Salasana",
+    submit: "OK",
   },
 
   routerLocales: {

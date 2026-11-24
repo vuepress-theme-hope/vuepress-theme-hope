@@ -6,6 +6,8 @@ export const plLocale: ThemeLocaleData = {
   navbarLocales: {
     langName: "Polski",
     selectLangAriaLabel: "Wybierz język",
+    navScreen: "Nawigacja",
+    toggleSidebar: "Przełącz pasek boczny",
   },
 
   metaLocales: {
@@ -50,6 +52,7 @@ export const plLocale: ThemeLocaleData = {
     themeColor: "Kolor tematu",
     darkmode: "Tryb motywu",
     fullscreen: "Pełny ekran",
+    appearance: "Wygląd",
   },
 
   encryptLocales: {
@@ -57,6 +60,8 @@ export const plLocale: ThemeLocaleData = {
     placeholder: "Wprowadź hasło",
     remember: "Zapamiętaj hasło",
     errorHint: "Podaj poprawne hasło!",
+    password: "Hasło",
+    submit: "OK",
   },
 
   routerLocales: {

@@ -26,6 +26,24 @@ export interface EncryptLocaleData {
    * 密码错误提示
    */
   errorHint: string;
+
+  /**
+   * Aria label of the password input
+   *
+   * 密码输入框的无障碍标签
+   *
+   * @default "Password"
+   */
+  password?: string;
+
+  /**
+   * Text of the submit button
+   *
+   * 提交按钮的文字
+   *
+   * @default "OK"
+   */
+  submit?: string;
 }
 
 export type PasswordOptions =

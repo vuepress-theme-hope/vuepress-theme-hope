@@ -6,6 +6,8 @@ export const jaLocale: ThemeLocaleData = {
   navbarLocales: {
     langName: "日本語",
     selectLangAriaLabel: "言語の選択",
+    navScreen: "ナビゲーション",
+    toggleSidebar: "サイドバーの表示切り替え",
   },
 
   metaLocales: {
@@ -50,6 +52,7 @@ export const jaLocale: ThemeLocaleData = {
     themeColor: "テーマの色",
     darkmode: "テーマモード",
     fullscreen: "全画面",
+    appearance: "外観",
   },
 
   encryptLocales: {
@@ -57,6 +60,8 @@ export const jaLocale: ThemeLocaleData = {
     placeholder: "パスワードの入力",
     remember: "パスワードを記憶する",
     errorHint: "正しいパスワードを入力してください!",
+    password: "パスワード",
+    submit: "OK",
   },
 
   routerLocales: {
