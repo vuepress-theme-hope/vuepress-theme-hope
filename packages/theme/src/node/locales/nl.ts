@@ -7,7 +7,7 @@ export const nlLocale: ThemeLocaleData = {
     langName: "Nederlands",
     selectLangAriaLabel: "Selecteer taal",
     navScreen: "Navigatie",
-    toggleSidebar: "Zijbalk wisselen",
+    toggleSidebar: "Zijbalk in-/uitklappen",
   },
 
   metaLocales: {
@@ -60,7 +60,7 @@ export const nlLocale: ThemeLocaleData = {
     placeholder: "Voeg paswoord in",
     remember: "Herinner paswoord",
     errorHint: "Gelieve het juiste paswoord in te vullen!",
-    password: "Wachtwoord",
+    password: "Paswoord",
     submit: "OK",
   },
 

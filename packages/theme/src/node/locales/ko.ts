@@ -6,7 +6,7 @@ export const koLocale: ThemeLocaleData = {
   navbarLocales: {
     langName: "한국어",
     selectLangAriaLabel: "언어 선택",
-    navScreen: "탐색",
+    navScreen: "내비게이션",
     toggleSidebar: "사이드바 전환",
   },
 

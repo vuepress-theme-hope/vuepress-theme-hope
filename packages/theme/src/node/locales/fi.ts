@@ -7,7 +7,7 @@ export const fiLocale: ThemeLocaleData = {
     langName: "Suomi",
     selectLangAriaLabel: "Valitse kieli",
     navScreen: "Navigointi",
-    toggleSidebar: "Vaihda sivupalkki",
+    toggleSidebar: "Näytä tai piilota sivupalkki",
   },
 
   metaLocales: {
