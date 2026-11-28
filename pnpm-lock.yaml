@@ -630,8 +630,8 @@ importers:
         specifier: 3.16.2
         version: 3.16.2(typescript@6.0.3)
       chart.js:
-        specifier: 4.6.1
-        version: 4.6.1
+        specifier: 4.6.2
+        version: 4.6.2
       echarts:
         specifier: 6.1.0
         version: 6.1.0
@@ -705,8 +705,8 @@ importers:
         specifier: catalog:vuepress
         version: 2.0.0-rc.139(1b67ae576e88535015d48cff2ee117a0)
       chart.js:
-        specifier: 4.6.1
-        version: 4.6.1
+        specifier: 4.6.2
+        version: 4.6.2
       echarts:
         specifier: 6.1.0
         version: 6.1.0
@@ -917,7 +917,7 @@ importers:
         version: 2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)
       '@vuepress/plugin-markdown-chart':
         specifier: catalog:vuepress
-        version: 2.0.0-rc.139(9b8ba68d6e5333fd371212eb34062e98)
+        version: 2.0.0-rc.139(6f86813dd81e253bb636475dce7c8bb8)
       '@vuepress/plugin-revealjs':
         specifier: catalog:vuepress
         version: 2.0.0-rc.139(1b67ae576e88535015d48cff2ee117a0)
@@ -1185,7 +1185,7 @@ importers:
         version: 2.0.0-rc.139(1b67ae576e88535015d48cff2ee117a0)
       '@vuepress/plugin-markdown-chart':
         specifier: catalog:vuepress
-        version: 2.0.0-rc.139(9b8ba68d6e5333fd371212eb34062e98)
+        version: 2.0.0-rc.139(6f86813dd81e253bb636475dce7c8bb8)
       '@vuepress/plugin-markdown-ext':
         specifier: catalog:vuepress
         version: 2.0.0-rc.139(1b67ae576e88535015d48cff2ee117a0)
@@ -2497,8 +2497,8 @@ packages:
     peerDependencies:
       tslib: '2'
 
-  '@kurkle/color@0.3.4':
-    resolution: {integrity: sha512-M5UknZPHRu3DEDWoipU6sE8PdkZ6Z/S+v4dD+Ke8IaNlpdSQah50lz1KtcFBa2vsdOnwbbnxJwVM4wty6udA5w==}
+  '@kurkle/color@0.6.6':
+    resolution: {integrity: sha512-Bd1NjGyoe27ExXRIBu13YymFP6k/wFxpUkX97Z3RlofLFV43nECB2G8vETZzcZzz2Ct2oRzwYElX65lxyi5UNg==}
 
   '@leichtgewicht/ip-codec@2.0.5':
     resolution: {integrity: sha512-Vo+PSpZG2/fmgmiNzYK9qWRh8h/CHrwD0mo1h1DzL4yzHNSfWYujGTYsWGreD000gcgmZ7K4Ys6Tx9TxtsKdDw==}
@@ -5411,9 +5411,9 @@ packages:
   chardet@2.2.0:
     resolution: {integrity: sha512-rddelWYNPRrXq6PtNEN2S3f6t9ILzvqaN5pVgi4kqt9jHQaXIial9PznB5iSPVlQSLNaaH22ItWz3EJtQ10+OA==}
 
-  chart.js@4.6.1:
-    resolution: {integrity: sha512-hJyniucsFmq//EvXYvJ6c6mahPoI3kaxdjVH8awTaJ/fDNWeSqqqArixMJWkWNN6fcYvPU3HneSANFNYtRi61g==}
-    engines: {pnpm: '>=8'}
+  chart.js@4.6.2:
+    resolution: {integrity: sha512-xachB+pPHjp0syJi7llUBA1w3kMYl6NF3o7eVrvjnWCT+IB2zMaF2pX5UYDiwbbfsioFEIRnAjreNOMsGj5TIA==}
+    engines: {pnpm: '>=12'}
 
   cheerio-select@2.1.0:
     resolution: {integrity: sha512-9v9kG0LvzrlcungtnJtpGNxY+fzECQKhK4EGJX2vByejiMX84MFNQw4UxPJl3bFbTMw+Dfs37XaIkCwTZfLh4g==}
@@ -11241,7 +11241,7 @@ snapshots:
       '@jsonjoy.com/codegen': 17.67.0(tslib@2.9.1)
       tslib: 2.9.1
 
-  '@kurkle/color@0.3.4': {}
+  '@kurkle/color@0.6.6': {}
 
   '@leichtgewicht/ip-codec@2.0.5': {}
 
@@ -13558,7 +13558,7 @@ snapshots:
       - markdown-it
       - typescript
 
-  '@vuepress/plugin-markdown-chart@2.0.0-rc.139(9b8ba68d6e5333fd371212eb34062e98)':
+  '@vuepress/plugin-markdown-chart@2.0.0-rc.139(6f86813dd81e253bb636475dce7c8bb8)':
     dependencies:
       '@mdit/helper': 1.2.1(markdown-it@15.0.3)
       '@mdit/plugin-container': 2.2.0(markdown-it@15.0.3)
@@ -13573,7 +13573,7 @@ snapshots:
       '@markmap/render': 1.1.1
       '@markmap/toolbar': 1.1.1(@markmap/view@1.1.1)
       '@markmap/view': 1.1.1
-      chart.js: 4.6.1
+      chart.js: 4.6.2
       echarts: 6.1.0
       flowchart.ts: 4.0.0
       mermaid: 12.3.0
@@ -14642,9 +14642,9 @@ snapshots:
 
   chardet@2.2.0: {}
 
-  chart.js@4.6.1:
+  chart.js@4.6.2:
     dependencies:
-      '@kurkle/color': 0.3.4
+      '@kurkle/color': 0.6.6
 
   cheerio-select@2.1.0:
     dependencies:
