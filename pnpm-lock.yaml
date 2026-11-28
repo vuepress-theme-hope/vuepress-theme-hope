@@ -195,8 +195,8 @@ catalogs:
       specifier: ^2.6.0
       version: 2.6.0
     '@vueuse/core':
-      specifier: 15.0.0
-      version: 15.0.0
+      specifier: 15.1.0
+      version: 15.1.0
     happy-dom:
       specifier: ^21.0.4
       version: 21.0.4
@@ -796,7 +796,7 @@ importers:
         version: 2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)
       '@vueuse/core':
         specifier: 'catalog:'
-        version: 15.0.0(vue@3.5.46(typescript@6.0.3))
+        version: 15.1.0(vue@3.5.46(typescript@6.0.3))
       sandpack-vue3:
         specifier: 3.1.12
         version: 3.1.12(vue@3.5.46(typescript@6.0.3))
@@ -844,7 +844,7 @@ importers:
         version: 2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)
       '@vueuse/core':
         specifier: 'catalog:'
-        version: 15.0.0(vue@3.5.46(typescript@6.0.3))
+        version: 15.1.0(vue@3.5.46(typescript@6.0.3))
       three:
         specifier: 0.187.0
         version: 0.187.0
@@ -911,7 +911,7 @@ importers:
         version: 2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)
       '@vuepress/highlighter-helper':
         specifier: catalog:vuepress
-        version: 2.0.0-rc.139(@vuepress/helper@2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b))(@vueuse/core@15.0.0(vue@3.5.46(typescript@6.0.3)))(vuepress@2.0.0-rc.32(046d04bd1f53335cfe0a6ce360dc5e23))
+        version: 2.0.0-rc.139(@vuepress/helper@2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b))(@vueuse/core@15.1.0(vue@3.5.46(typescript@6.0.3)))(vuepress@2.0.0-rc.32(046d04bd1f53335cfe0a6ce360dc5e23))
       '@vuepress/plugin-feed':
         specifier: catalog:vuepress
         version: 2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)
@@ -926,7 +926,7 @@ importers:
         version: 2.0.0-rc.139(68f7dfd84b0df2629e5873bb061cb57a)
       '@vueuse/core':
         specifier: 'catalog:'
-        version: 15.0.0(vue@3.5.46(typescript@6.0.3))
+        version: 15.1.0(vue@3.5.46(typescript@6.0.3))
       echarts:
         specifier: 6.1.0
         version: 6.1.0
@@ -4356,6 +4356,9 @@ packages:
   '@types/web-bluetooth@0.0.21':
     resolution: {integrity: sha512-oIQLCGWtcFZy2JW77j9k8nHzAOpqMHLQejDA48XXMWH6tjCQHz5RCFz1bzsmROyL6PUm+LLnUiI4BCn221inxA==}
 
+  '@types/web-bluetooth@0.0.22':
+    resolution: {integrity: sha512-4O7kU0Ut0irZvFyk3EvgDrzFYBQI80Puhkb65I7eV6WTZX4iOo5zoDrEfjDBRB7x5Stz31csoHO4hAjSiRTALw==}
+
   '@types/webpack-env@1.18.8':
     resolution: {integrity: sha512-G9eAoJRMLjcvN4I08wB5I7YofOb/kaJNd5uoCMX+LbKXTPCF+ZIHuqTnFaK9Jz1rgs035f9JUPUhNFtqgucy/A==}
 
@@ -4957,12 +4960,28 @@ packages:
     peerDependencies:
       vue: ^3.5.0
 
+  '@vueuse/core@15.1.0':
+    resolution: {integrity: sha512-OuZ5ecLw/sikX0HFjlJM/p/PkfL0567Ntfov9G0jYlw92QqZpPVikZOoB1Mpe4unZ+7E/QQ+uFpEgAjj2FYRbw==}
+    engines: {node: '>=22'}
+    peerDependencies:
+      vue: ^3.5.0
+
   '@vueuse/metadata@15.0.0':
     resolution: {integrity: sha512-sfWE5LADAKJ0KnjtGliMdSN8Ij/L7uP6rXIZlgPloAI4zvvefbw6H5Lt7KJA6RqQOYgVqWF5Guj50HHMIzygBg==}
     engines: {node: '>=22'}
 
+  '@vueuse/metadata@15.1.0':
+    resolution: {integrity: sha512-yHKFelRTdQdp7vdjXXEw68Wh9v8OgyxWm1v1aHbGM6Z4qbqHhB6QgB8MTNB76pZYh22wPeALCdr8qjShlxPBHA==}
+    engines: {node: '>=22'}
+
   '@vueuse/shared@15.0.0':
     resolution: {integrity: sha512-vbNXhGrbV53xPOMSyOzMHQRvhMgZf7oNDw2RChUetVxwTIEkInQ1joZ9JbT0G3z2n2AJNjvmCWeM9ySYrnvogA==}
+    engines: {node: '>=22'}
+    peerDependencies:
+      vue: ^3.5.0
+
+  '@vueuse/shared@15.1.0':
+    resolution: {integrity: sha512-JAbQLO+vOULt8MPR4oRbvstBuztTTMIX4LOfCGeBvp9JSgj5OppZDing3gKDrmlyUQvYYFSPIX4dxkfJgdsxWQ==}
     engines: {node: '>=22'}
     peerDependencies:
       vue: ^3.5.0
@@ -12920,6 +12939,8 @@ snapshots:
 
   '@types/web-bluetooth@0.0.21': {}
 
+  '@types/web-bluetooth@0.0.22': {}
+
   '@types/webpack-env@1.18.8': {}
 
   '@types/webxr@0.5.24': {}
@@ -13352,7 +13373,7 @@ snapshots:
   '@vuepress/helper@2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)':
     dependencies:
       '@vue/shared': 3.5.46
-      '@vueuse/core': 15.0.0(vue@3.5.46(typescript@6.0.3))
+      '@vueuse/core': 15.1.0(vue@3.5.46(typescript@6.0.3))
       cheerio: 1.2.0
       fflate: 0.8.3
       gray-matter: 4.0.3
@@ -13371,6 +13392,13 @@ snapshots:
       vuepress: 2.0.0-rc.32(046d04bd1f53335cfe0a6ce360dc5e23)
     optionalDependencies:
       '@vueuse/core': 15.0.0(vue@3.5.46(typescript@6.0.3))
+
+  '@vuepress/highlighter-helper@2.0.0-rc.139(@vuepress/helper@2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b))(@vueuse/core@15.1.0(vue@3.5.46(typescript@6.0.3)))(vuepress@2.0.0-rc.32(046d04bd1f53335cfe0a6ce360dc5e23))':
+    dependencies:
+      '@vuepress/helper': 2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)
+      vuepress: 2.0.0-rc.32(046d04bd1f53335cfe0a6ce360dc5e23)
+    optionalDependencies:
+      '@vueuse/core': 15.1.0(vue@3.5.46(typescript@6.0.3))
 
   '@vuepress/markdown@2.0.0-rc.32(supports-color@10.2.2)':
     dependencies:
@@ -13394,7 +13422,7 @@ snapshots:
 
   '@vuepress/plugin-active-header-links@2.0.0-rc.138(typescript@6.0.3)(vuepress@2.0.0-rc.32(046d04bd1f53335cfe0a6ce360dc5e23))':
     dependencies:
-      '@vueuse/core': 15.0.0(vue@3.5.46(typescript@6.0.3))
+      '@vueuse/core': 15.1.0(vue@3.5.46(typescript@6.0.3))
       vue: 3.5.46(typescript@6.0.3)
       vuepress: 2.0.0-rc.32(046d04bd1f53335cfe0a6ce360dc5e23)
     transitivePeerDependencies:
@@ -13403,7 +13431,7 @@ snapshots:
   '@vuepress/plugin-back-to-top@2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)':
     dependencies:
       '@vuepress/helper': 2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)
-      '@vueuse/core': 15.0.0(vue@3.5.46(typescript@6.0.3))
+      '@vueuse/core': 15.1.0(vue@3.5.46(typescript@6.0.3))
       vue: 3.5.46(typescript@6.0.3)
       vuepress: 2.0.0-rc.32(046d04bd1f53335cfe0a6ce360dc5e23)
     transitivePeerDependencies:
@@ -13452,7 +13480,7 @@ snapshots:
   '@vuepress/plugin-copy-code@2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)':
     dependencies:
       '@vuepress/helper': 2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)
-      '@vueuse/core': 15.0.0(vue@3.5.46(typescript@6.0.3))
+      '@vueuse/core': 15.1.0(vue@3.5.46(typescript@6.0.3))
       vue: 3.5.46(typescript@6.0.3)
       vuepress: 2.0.0-rc.32(046d04bd1f53335cfe0a6ce360dc5e23)
     transitivePeerDependencies:
@@ -13478,7 +13506,7 @@ snapshots:
       '@docsearch/css': 5.2.0
       '@docsearch/js': 5.2.0
       '@vuepress/helper': 2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)
-      '@vueuse/core': 15.0.0(vue@3.5.46(typescript@6.0.3))
+      '@vueuse/core': 15.1.0(vue@3.5.46(typescript@6.0.3))
       vue: 3.5.46(typescript@6.0.3)
       vuepress: 2.0.0-rc.32(046d04bd1f53335cfe0a6ce360dc5e23)
     transitivePeerDependencies:
@@ -13515,7 +13543,7 @@ snapshots:
   '@vuepress/plugin-git@2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)':
     dependencies:
       '@vuepress/helper': 2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)
-      '@vueuse/core': 15.0.0(vue@3.5.46(typescript@6.0.3))
+      '@vueuse/core': 15.1.0(vue@3.5.46(typescript@6.0.3))
       rehype-parse: 9.0.1
       rehype-sanitize: 6.0.0
       rehype-stringify: 10.0.1
@@ -13564,7 +13592,7 @@ snapshots:
       '@mdit/plugin-container': 2.2.0(markdown-it@15.0.3)
       '@mdit/plugin-plantuml': 2.1.0(markdown-it@15.0.3)
       '@vuepress/helper': 2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)
-      '@vueuse/core': 15.0.0(vue@3.5.46(typescript@6.0.3))
+      '@vueuse/core': 15.1.0(vue@3.5.46(typescript@6.0.3))
       vue: 3.5.46(typescript@6.0.3)
       vuepress: 2.0.0-rc.32(046d04bd1f53335cfe0a6ce360dc5e23)
     optionalDependencies:
@@ -13640,7 +13668,7 @@ snapshots:
       '@mdit/plugin-alert': 2.2.0(markdown-it@15.0.3)
       '@mdit/plugin-container': 2.2.0(markdown-it@15.0.3)
       '@vuepress/helper': 2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)
-      '@vueuse/core': 15.0.0(vue@3.5.46(typescript@6.0.3))
+      '@vueuse/core': 15.1.0(vue@3.5.46(typescript@6.0.3))
       vuepress: 2.0.0-rc.32(046d04bd1f53335cfe0a6ce360dc5e23)
     transitivePeerDependencies:
       - '@vuepress/bundler-rspack'
@@ -13736,7 +13764,7 @@ snapshots:
       '@mdit/helper': 1.2.1(markdown-it@15.0.3)
       '@mdit/plugin-tab': 2.1.1(markdown-it@15.0.3)
       '@vuepress/helper': 2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)
-      '@vueuse/core': 15.0.0(vue@3.5.46(typescript@6.0.3))
+      '@vueuse/core': 15.1.0(vue@3.5.46(typescript@6.0.3))
       vue: 3.5.46(typescript@6.0.3)
       vuepress: 2.0.0-rc.32(046d04bd1f53335cfe0a6ce360dc5e23)
     transitivePeerDependencies:
@@ -13852,6 +13880,19 @@ snapshots:
       - '@vuepress/bundler-webpack'
       - typescript
 
+  '@vuepress/plugin-prismjs@2.0.0-rc.139(9b84fb68862df0a780f0e5e89ed129be)':
+    dependencies:
+      '@vuepress/helper': 2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)
+      '@vuepress/highlighter-helper': 2.0.0-rc.139(@vuepress/helper@2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b))(@vueuse/core@15.1.0(vue@3.5.46(typescript@6.0.3)))(vuepress@2.0.0-rc.32(046d04bd1f53335cfe0a6ce360dc5e23))
+      prismjs: 1.30.0
+      vuepress: 2.0.0-rc.32(046d04bd1f53335cfe0a6ce360dc5e23)
+    transitivePeerDependencies:
+      - '@vuepress/bundler-rspack'
+      - '@vuepress/bundler-vite'
+      - '@vuepress/bundler-webpack'
+      - '@vueuse/core'
+      - typescript
+
   '@vuepress/plugin-prismjs@2.0.0-rc.139(aef4507751cd481ab6b8d0bbee4d22dc)':
     dependencies:
       '@vuepress/helper': 2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)
@@ -13911,7 +13952,7 @@ snapshots:
       '@mdit/helper': 1.2.1(markdown-it@15.0.3)
       '@mdit/plugin-uml': 2.1.0(markdown-it@15.0.3)
       '@vuepress/helper': 2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)
-      '@vueuse/core': 15.0.0(vue@3.5.46(typescript@6.0.3))
+      '@vueuse/core': 15.1.0(vue@3.5.46(typescript@6.0.3))
       reveal.js: 6.0.2
       vue: 3.5.46(typescript@6.0.3)
       vuepress: 2.0.0-rc.32(046d04bd1f53335cfe0a6ce360dc5e23)
@@ -14122,11 +14163,11 @@ snapshots:
       '@vuepress/plugin-medium-zoom': 2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)
       '@vuepress/plugin-nprogress': 2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)
       '@vuepress/plugin-palette': 2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)
-      '@vuepress/plugin-prismjs': 2.0.0-rc.139(aef4507751cd481ab6b8d0bbee4d22dc)
+      '@vuepress/plugin-prismjs': 2.0.0-rc.139(9b84fb68862df0a780f0e5e89ed129be)
       '@vuepress/plugin-seo': 2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)
       '@vuepress/plugin-sitemap': 2.0.0-rc.139(3ce25f67fffd3bcb7d607b92e78c7c1b)
       '@vuepress/plugin-theme-data': 2.0.0-rc.138(typescript@6.0.3)(vuepress@2.0.0-rc.32(046d04bd1f53335cfe0a6ce360dc5e23))
-      '@vueuse/core': 15.0.0(vue@3.5.46(typescript@6.0.3))
+      '@vueuse/core': 15.1.0(vue@3.5.46(typescript@6.0.3))
       vue: 3.5.46(typescript@6.0.3)
       vuepress: 2.0.0-rc.32(046d04bd1f53335cfe0a6ce360dc5e23)
     optionalDependencies:
@@ -14165,9 +14206,22 @@ snapshots:
       '@vueuse/shared': 15.0.0(vue@3.5.46(typescript@6.0.3))
       vue: 3.5.46(typescript@6.0.3)
 
+  '@vueuse/core@15.1.0(vue@3.5.46(typescript@6.0.3))':
+    dependencies:
+      '@types/web-bluetooth': 0.0.22
+      '@vueuse/metadata': 15.1.0
+      '@vueuse/shared': 15.1.0(vue@3.5.46(typescript@6.0.3))
+      vue: 3.5.46(typescript@6.0.3)
+
   '@vueuse/metadata@15.0.0': {}
 
+  '@vueuse/metadata@15.1.0': {}
+
   '@vueuse/shared@15.0.0(vue@3.5.46(typescript@6.0.3))':
+    dependencies:
+      vue: 3.5.46(typescript@6.0.3)
+
+  '@vueuse/shared@15.1.0(vue@3.5.46(typescript@6.0.3))':
     dependencies:
       vue: 3.5.46(typescript@6.0.3)
 
@@ -14175,7 +14229,7 @@ snapshots:
 
   '@waline/client@3.16.2(typescript@6.0.3)':
     dependencies:
-      '@vueuse/core': 15.0.0(vue@3.5.46(typescript@6.0.3))
+      '@vueuse/core': 15.1.0(vue@3.5.46(typescript@6.0.3))
       '@waline/api': 1.1.2
       '@webc.site/math': 0.1.41
       autosize: 6.0.1
